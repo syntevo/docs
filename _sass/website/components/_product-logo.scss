@@ -1,0 +1,119 @@
+.product-logo {
+  $products: (
+    smart-git: (
+      vertical: (
+        base-width: 65.54,
+        base-height: 46.36,
+        base-offsets: ( top: 11.75, bottom: 3.82 ),
+        sizes: ( medium: 86px ),
+      ),
+      horizontal: (
+        base-width: 828.70,
+        base-height: 147.37,
+        base-offsets: ( top: -8.1, bottom: -20.6 ),
+        sizes: ( medium: 25px ),
+      ),
+    ),
+    smart-svn: (
+      vertical: (
+        base-width: 78.34,
+        base-height: 42.55,
+        base-offsets: ( top: 17.78, bottom: 3.82 ),
+        sizes: ( medium: 99px ),
+      ),
+      horizontal: (
+        base-width: 829.00,
+        base-height: 142.99,
+        base-offsets: ( top: -13.0, bottom: -27.2 ),
+        sizes: ( medium: 28px ),
+      ),
+    ),
+    deep-git: (
+      vertical: (
+        base-width: 56.89,
+        base-height: 60.63,
+        base-offsets: ( top: 0, bottom: 0 ),
+        sizes: ( medium: 76px ),
+      ),
+      horizontal: (
+        base-width: 778.00,
+        base-height: 212.62,
+        base-offsets: ( top: -48.0, bottom: -50.0 ),
+        sizes: ( medium: 37px ),
+      ),
+    ),
+    smart-synchronize: (
+      vertical: (
+        base-width: 132.64,
+        base-height: 56.38,
+        base-offsets: ( top: 3.40, bottom: 0.10 ),
+        sizes: ( medium: 180px ),
+      ),
+      horizontal: (
+        base-width: 832.00,
+        base-height: 119.70,
+        base-offsets: ( top: -24.5, bottom: -28.5 ),
+        sizes: ( medium: 36px ),
+      ),
+    ),
+    smart-cvs: (
+      vertical: (
+        base-width: 72.65,
+        base-height: 44.78,
+        base-offsets: ( top: 14.65, bottom: 3.82 ),
+        sizes: ( medium: 93px ),
+      ),
+      horizontal: (
+        base-width: 830.00,
+        base-height: 138.41,
+        base-offsets: ( top: -11.0, bottom: -20.5 ),
+        sizes: ( medium: 26px ),
+      ),
+    ),
+  );
+
+  @each $product in $products {
+    $product-name: nth($product, 1);
+    $product: nth($product, 2);
+    $vertical: map-get($product, vertical);
+    $horizontal: map-get($product, horizontal);
+
+    @each $size in map-get($vertical, sizes) {
+      $size-name: nth($size, 1);
+      $width: nth($size, 2);
+      $aspect-ratio: map-get($vertical, base-width) / map-get($vertical, base-height);
+      $offsets: map-get($vertical, base-offsets);
+      $height: $width / $aspect-ratio;
+      $margin-top: $height * (map-get($offsets, top) / map-get($vertical, base-height));
+      $margin-bottom: $height * (map-get($offsets, bottom) / map-get($vertical, base-height));
+
+      &--#{$product-name}#{&}--vertical#{&}--#{$size-name} {
+        width: $width;
+        height: $height;
+      }
+      &--#{$product-name}#{&}--vertical#{&}--#{$size-name}#{&}--offset {
+        margin-top: $margin-top;
+        margin-bottom: $margin-bottom;
+      }
+    }
+
+    @each $size in map-get($horizontal, sizes) {
+      $size-name: nth($size, 1);
+      $height: nth($size, 2);
+      $aspect-ratio: map-get($horizontal, base-width) / map-get($horizontal, base-height);
+      $offsets: map-get($horizontal, base-offsets);
+      $width: $height * $aspect-ratio;
+      $margin-top: $height * (map-get($offsets, top) / map-get($horizontal, base-height));
+      $margin-bottom: $height * (map-get($offsets, bottom) / map-get($horizontal, base-height));
+
+      &--#{$product-name}#{&}--horizontal#{&}--#{$size-name} {
+        width: $width;
+        height: $height;
+      }
+      &--#{$product-name}#{&}--horizontal#{&}--#{$size-name}#{&}--offset {
+        margin-top: $margin-top;
+        margin-bottom: $margin-bottom;
+      }
+    }
+  }
+}
