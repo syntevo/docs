@@ -1,0 +1,75 @@
+$default-grid: (
+  columns: 12,
+  gutter: 20px,
+);
+
+// general colors
+$green: #a3bf2b;
+$light-gray: #f7f7f7;
+$dark-gray: #636363;
+$white: #ffffff;
+
+$default-font-color: $dark-gray;
+$light-font-color: $white;
+$primary-color: $green;
+
+// product colors
+$product-colors: (
+  smart-git: #3e3f85,
+  smart-synchronize: #f29100,
+  smart-cvs: #e20511,
+  smart-svn: #0069b4,
+  deep-git: #6866a2,
+);
+
+$base-font-size: 18px;
+$base-line-height: 25px;
+$type-factor: 1/1.125;
+$navigation-font-size: 20px;
+
+$small-header-height: 64px;
+$large-header-height: 74px;
+
+$button-border-width: 2px;
+
+$breakpoint-mobile-landscape: 520px;
+$breakpoint-tablet-portrait: 740px;
+$breakpoint-tablet-landscape: 1020px;
+$breakpoint-desktop: 1240px;
+$breakpoint-desktop-large: 1560px;
+
+$layout-mobile-width: 100%;
+$layout-tablet-width: 92%;
+$layout-desktop-width: 92%;
+
+$layout-mobile-max-width: $breakpoint-mobile-landscape;
+$layout-tablet-max-width: $breakpoint-tablet-portrait;
+$layout-desktop-max-width: 1280px;
+
+// xs sm md lg xl xxl
+$layout-sizes: (
+  s1: (
+    min-width: null,
+    max-width: $breakpoint-mobile-landscape - 1px,
+  ),
+  s2: (
+    min-width: $breakpoint-mobile-landscape,
+    max-width: $breakpoint-tablet-portrait - 1px,
+  ),
+  s3: (
+    min-width: $breakpoint-tablet-portrait,
+    max-width: $breakpoint-tablet-landscape - 1px,
+  ),
+  s4: (
+    min-width: $breakpoint-tablet-landscape,
+    max-width: $breakpoint-desktop - 1px,
+  ),
+  s5: (
+    min-width: $breakpoint-desktop,
+    max-width: $breakpoint-desktop-large - 1px,
+  ),
+  s6: (
+    min-width: $breakpoint-desktop-large,
+    max-width: null,
+  ),
+);

@@ -1,6 +1,12 @@
-# Latest (in development)
+# Latest
 
-> ⚠️ **Warning:**
-> This repository is currently under development.
+**TODO** - Complete tree or derive tree automatically from file system
 
-Here we are working on the new documentation for [[SmartGit 24.1 Window Comparison]].
+-   Git Commands
+    - [Working with Repositories](<Repository-Related>)
+      - [Clone](<Clone>)
+- Using the SmartGit Application
+  - [Main Windows](<Main-Windows>)
+  - [Preferences](<Preferences>)
+    - [Tools](<Tools>)
+    - [User Interface Preferences](<GUI/Preferences/User Interface>)

@@ -1,0 +1,107 @@
+.page-header {
+  background-color: $white;
+  min-height: $small-header-height;
+  @include clearfix;
+
+  @media (min-width: $breakpoint-tablet-landscape) {
+    min-height: $large-header-height;
+
+    &--transparent,
+    &--translucent {
+      @include position(absolute, 0px null null 0px);
+      width: 100%;
+    }
+
+    &--transparent { background-color: transparent; }
+    &--translucent { background-color: rgba($light-gray, 0.7); }
+    &--filled { background-color: $light-gray; }
+  }
+
+  &__mobile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: block;
+    width: 168px;
+
+    img {
+      display: block;
+      width: inherit;
+    }
+  }
+
+  &__navigation-toggle {
+    display: block;
+    margin-left: auto !important;
+
+    &:focus { outline: none; }
+  }
+
+  .no-js &__navigation-toggle {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  @media (max-width: $breakpoint-tablet-landscape - 1px) {
+    background-color: $primary-color;
+
+    &__mobile-bar {
+      background-color: $light-gray;
+      position: relative;
+      z-index: 10;
+    }
+
+    &__mobile-container {
+      @include grid-container;
+      @include grid-container-dimensions;
+      padding: 16px map-get($default-grid, gutter);
+    }
+
+    &__navigation {
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      overflow: hidden;
+      max-height: 0;
+      transform: translateY(-200%);
+      transition-property: transform, max-height;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+    }
+
+    .no-js &__navigation,
+    &__navigation.is-active {
+      transform: translateY(0);
+      max-height: 800px;
+    }
+
+    &__navigation a {
+      display: block;
+      @include grid-container-dimensions;
+      padding-left: map-get($default-grid, gutter);
+      padding-right: map-get($default-grid, gutter);
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet-landscape) {
+    padding: 20px 0;
+
+    &__navigation-toggle { display: none !important; }
+
+    &__desktop-container {
+      @include grid-container;
+      @include grid-container-dimensions;
+    }
+
+    &__mobile-container { @include grid-column(4 of 12, $default-grid); }
+
+    &__navigation { @include grid-column(8 of 12, $default-grid); }
+
+    &__navigation { display: block; }
+
+    &__logo { width: 220px; }
+  }
+}

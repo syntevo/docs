@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en-US" }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% seo %}
+  <link rel="stylesheet" href="/assets/css/style.css">
+  {% include head-custom.html %}
+</head>
+
+<body class="page-layout">
+  <header class="page-layout__header">
+    {% include header.html path=page.path %}
+  </header>
+  <main class="page-layout__body">
+    <div class="page-body px-outer">
+      <div class="container-lg my-5 markdown-body">
+        {% include breadcrumbs.html path=page.path title=page.title %}
+        {{ content }}
+      </div>
+    </div>
+  </main>
+  <footer class="page-layout__footer">
+    {% include footer.html %}
+  </footer>
+  <script src="/assets/anchor.min.js"></script>
+  <script>anchors.add();</script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+@function column-width($count, $total-columns) {
+  $gutter: map-get($default-grid, gutter);
+
+  @return unquote("#{$count/$total-columns * 100%} - #{$gutter + ($gutter * $count/$total-columns)}");
+}
+
+@mixin grid-container-dimensions {
+  width: $layout-mobile-width;
+  max-width: $layout-mobile-max-width + (map-get($default-grid, gutter) * 2);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $breakpoint-tablet-portrait) {
+    max-width: $layout-tablet-max-width + (map-get($default-grid, gutter) * 2);
+    width: $layout-tablet-width;
+  }
+
+  @media screen and (min-width: $breakpoint-tablet-landscape) {
+    max-width: $layout-desktop-max-width + (map-get($default-grid, gutter) * 2);
+    width: $layout-desktop-width;
+  }
+}
+
+@mixin flex-grid-column {
+  $columns: map-get($default-grid, columns);
+  $gutter: map-get($default-grid, gutter);
+
+  @for $i from 1 through $columns {
+    &-#{$i} {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: calc(#{$i / $columns * 100%} - #{$gutter});
+      max-width: calc(#{$i / $columns * 100%} - #{$gutter});
+      margin-left: $gutter / 2;
+      margin-right: $gutter / 2;
+    }
+  }
+
+  @for $i from 1 through $columns {
+    &-push-#{$i} {
+      margin-left: calc(#{$i / $columns * 100%} + #{$gutter / 2});
+    }
+  }
+}
+
+@mixin default-grid-column($base, $suffix: '') {
+  @for $i from 1 through $base {
+    &-#{$i}#{$suffix} { @include grid-column($i of $base, $default-grid); }
+  }
+  @for $i from 1 through $base {
+    &-push-#{$i}#{$suffix} { @include grid-push($i of $base, $default-grid); }
+  }
+}
+
+@mixin responsive-type-size($font-size, $line-height, $factor: $type-factor) {
+  font-size: floor($font-size * $factor);
+  line-height: floor($line-height * $factor);
+
+  @media (min-width: $breakpoint-tablet-portrait) {
+    font-size: $font-size;
+    line-height: $line-height;
+  }
+}
+
+@mixin responsive-styles($as-modifier: false, $property: min-width) {
+  $prefix: if($as-modifier, '--', '-');
+
+  @each $size in $layout-sizes {
+    $size-name: nth($size, 1);
+    $limits: nth($size, 2);
+
+    @if map-get($limits, $property) == null {
+      &#{$prefix}#{$size-name} { @content; }
+    } @else {
+      @media (#{$property}: map-get($limits, $property)) {
+        &#{$prefix}#{$size-name} { @content; }
+      }
+    }
+  }
+}
+
+@mixin property-variations($property, $maximum-factor: 10, $step-size: 10px) {
+  @for $i from 0 through $maximum-factor {
+    &-#{$i}x { #{$property}: $step-size * $i; }
+  }
+}
+
+@mixin suffix-class($suffix) {
+  #{$suffix} { @at-root { @content; } }
+}
+
+@mixin responsive-steps($property: min-width) {
+  @each $size in $layout-sizes {
+    $size-name: nth($size, 1);
+    $limits: nth($size, 2);
+
+    @if map-get($limits, $property) == null {
+      @include suffix-class($size-name) { @content; }
+    } @else {
+      @media (#{$property}: map-get($limits, $property)) {
+        @include suffix-class($size-name) { @content; }
+      }
+    }
+  }
+}
