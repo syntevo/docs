@@ -1,6 +1,11 @@
-# Repository-Related
+---
+redirect_from:
+  - /SmartGit/Latest/Repository-Related
+  - /SmartGit/Latest/Repository-Related.html
+---
+# Working with Repositories
 
-SmartGit remembers opened repositories and (primarily) GUI-related
+SmartGit remembers previously opened repositories and GUI-related
 settings. To open a repository, double-click it. If it already is open
 in another window when double-clicking, the window with the opened
 repository will become focused. The repository will open in a new window

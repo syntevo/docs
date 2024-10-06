@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Synchronizing-with-Remote-Repositories
+  - /SmartGit/Latest/Synchronizing-with-Remote-Repositories.html
+---
 # Synchronizing with Remote Repositories
 
 Synchronizing the states of local and remote repositories consists of

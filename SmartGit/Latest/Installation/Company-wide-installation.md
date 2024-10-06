@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Company-wide-installation.html
+  - /SmartGit/Latest/Company-wide-installation
+---
 # Company-wide installation
 
 For company-wide installations, the administrator may install SmartGit on a read-only location or network share or customize the installation process by e.g. using batch files.

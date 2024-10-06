@@ -1,23 +1,11 @@
-# Submodules
+---
+redirect_from:
+  - /SmartGit/Latest/Submodules
+  - /SmartGit/Latest/Submodules.html
+---
+# Submodules in SmartGit
 
-Often, software projects are not completely self-contained, but share
-common parts with other software projects. Git offers a feature called
-*submodules*, which allows you to embed one Git repository into another.
-
-A submodule is a nested repository that is embedded in a dedicated
-subdirectory of the working tree (which belongs to the parent
-repository). The submodule is always pointing at a particular commit of
-the embedded repository. The definition of the submodule is stored as a
-separate entry in the parent repository's git object database.
-
-The link between working tree entry and foreign repository is stored in
-the `.gitmodules` file of the parent repository. The `.gitmodules` file
-is usually versioned, so it can be maintained by all users and/or
-changes are propagated to all users.
-
-Setting submodule repositories involves an initialization process, in
-which the required entries are added to the `.git/config` file. The user
-may later adjust it, for example to fix SSH login names.
+Submodules offer a way to link one or embedded repositories into a parent repository. Please refer to [Submodule Concepts](../GitConcepts/Submodules.md) for background information.
 
 ## Submodules in the UI
 

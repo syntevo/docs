@@ -1,71 +1,72 @@
-# Rebase
+---
+redirect_from:
+  - /SmartGit/Latest/Rebase
+  - /SmartGit/Latest/Rebase.html
+---
+# Rebasing in SmartGit
+[Rebasing](../../GitConcepts/Rebasing.md) is a powerful feature of Git which allows the commit history of branches and commits in a repository to be rearranged.
 
-The Rebase command allows you to apply commits from one branch to another.
-Rebase can be viewed as more powerful version of [Cherry-Pick](Cherry-Pick.md), which is optimized to apply multiple commits from one branch to another.
+In SmartGit, there are several ways to initiate a rebase:
 
-**Rebase** "moves" (actually "rewrites") the commits below the HEAD to the selected commit. The HEAD will be moved to the new fork.
+- **Menu and toolbar:** On the Working tree window, select **Branch\|Rebase** to open the **Rebase** dialog, where you can select the branch to rebase the HEAD onto, or the branch to rebase onto the HEAD, respectively. 
+
+You can open this dialog using the **Rebase** toolbar button, depending on your toolbar settings.
+- **Branches view:** In the **Branches** view, you can right-click on a branch and select **Rebase** to rebase your current HEAD onto the selected branch.
+- On the **Log Graph** of the **Log** window, you can use either of these approaches:
+  - **Option 1:** You can perform a rebase by right-clicking on a commit and selecting **Rebase** from the context-menu. 
+  - **Option 2:** You can drag and drop commits or refs and then select to rebase in the occurring dialog after the drop.
+
+As with merge and cherry-picking, a Rebasing may fail due to merge conflicts.
+
+When a conflict happens, SmartGit will leave the working tree in [*rebasing* state](../../GitConcepts/Working-Tree-States.md), allowing you to either [resolve the conflicts](Conflict-Solver.md) or to **Abort** the rebase manually.
+
+In addition, SmartGit provides advanced UI to support *interactive rebasing*. Please refer to [Interactive Rebasing](Rebase-Interactive.md).
+
+## Rebase Onto
+
+Rebasing Onto allows the parent commit of an existing commit to be changed.
+
+**Rebase Onto** operations can be performed from the **Log** window.
+
+Example : In the below, we've made a mistake when starting branch `quickfix2`. Instead of creating a new branch from `main`, we've accidentally branched off branch `quickfix1`. As a result, `quickfix2` ALSO has all the commits that `quickfix1` in its branch, which means that `quickfix2` cannot be merged into `main` independently of `quickfix1`.
+
+To fix this, we need the `quickfix2` branch to start on the `main` branch instead of the `quickfix1` branch.
 
 ``` text
-o  [> master] A               o  [> master] A'
-|                             |
-o   B                         o  B'
-|                             |
-o   C                         o  C'
-|                             |
-|   o  [a-branch] D           |   o  [a-branch] D
-|   |                         |  /
-|   |                         | /
-|   o  E (selected)   ===>    o   E
-|  /                          |
-| /                           |
-o   F                         o   F
+     o q2b [quickfix2]
+     |
+     o q2a
+    /
+   o q1b [quickfix1]
+   |
+   o q1a
+ /
+ o A [main]
+ |
+ .
 ```
-To **Rebase Onto** you may use the **Log** window.
-Consider following example where the `quickfix2` branch should not start at the `quickfix1` branch, but rather on the `master` branch:
+
+To fix the branching, drag the `q2a` commit onto the `A [main]` commit. This will result in the intended branching:
 
 ``` text
-q2b (quickfix2)
- |
-q2a
- |
-q1b (quickfix1)
- |
-q1a
- |
- x (master)
- |
-...
-```
-To achieve this, just drag the `q2a` commit onto the `x (master)` commit and you will get the desired result:
-``` text
-q2b (quickfix2)
- |
-q2a
- |
- |  q1b (quickfix1)
- |   |
- |  q1b
- | /
- x (master)
- |
-...
-```
-In SmartGit, there are several places from which you can initiate a rebase:
 
--   **Menu and toolbar** On the Working tree window, select **Branch\|Rebase** to open the **Rebase** dialog, where you can select the branch to rebase the HEAD onto, or the branch to rebase onto the HEAD, respectively.
-    Depending on your toolbar settings, you can also open this dialog using the **Rebase* toolbar button.
--   **Branches view** In the **Branches** view, you can right-click on a branch and select **Rebase** to rebase your current HEAD onto the selected branch.
--   **Log Graph** On the Log graph of the **Log** window, you can perform a rebase by right-clicking on a commit and selecting **Rebase** from the context-menu.
--   **Log Graph** In the Log graph of the **Log** window, you can drag and drop commits or refs and then select to rebase in the occurring dialog after the drop.
+ o q1b [quickfix1]
+ |
+ |       o q2b [quickfix2]
+ |       |
+ o q1b   o q2a
+  \     /  
+   \   /  
+     o A [main]
+     |
+     .
+```
 
-Just like a merge, a rebase may fail due to merge conflicts.
-If that happens, SmartGit will leave the working tree in *rebasing* state, allowing you to either manually resolve the conflicts or to **Abort** the rebase.
 
 ## Resolving Conflicts
 
-Core Git rebase conflicts are different to other kinds of merge conflicts, because *left* and *right* files are swapped: when rebasing branch `A` to `B`, Git will first checkout `B`, then applies all commits from `A`.
-If a conflict occurs, `HEAD` still points to `B` and hence the *left* file would be the file as it's present in `B`.
+When a merge conflict occurs during Git Rebasing, rebase conflicts differ from regular merge conflicts because the *left* and *right* files are swapped in the 3 way merge process. 
 
-## Interactive Rebase
+e.g. When rebasing branch `A` onto branch `B`, Git first checks out branch `B`, then applies all commits from branch `A`.
 
-For details on *interactive rebase* refer to [Interactive Rebase](Rebase-Interactive.md).
+If a conflict occurs during the rebase operation, the `HEAD` of the Working Tree will be left pointing to branch `B`, so files in the *left* pane refer to the version in branch `B`, and the *right* pane will be Branch `A`.
