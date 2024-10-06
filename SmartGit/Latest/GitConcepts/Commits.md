@@ -47,13 +47,13 @@ because no other commits descend from them.
 The following example shows how commits, branches, pushing, fetching, and
 (basic) merging interact.
 
-Let's assume we have commits `A`, `B`, and `C`. Both **`main`** and
-**`origin/main`** point to `C`, and **`HEAD`** points to **`main`**. In
-other words. the working tree has been switched to the branch **main**.
+Let's assume we have commits `A`, `B`, and `C`. Both **`master`** and
+**`origin/master`** point to `C`, and **`HEAD`** points to **`master`**. In
+other words. the working tree has been switched to the branch **master**.
 This looks as follows:
 
 ``` text
-o [> main][origin/main] C
+o [> master][origin/master] C
 |
 o B
 |
@@ -61,26 +61,39 @@ o A
 ```
 
 Committing a set of changes results in commit `D`, which is a child of
-`C`. **`main`** now points to `D`, meaning it is one commit ahead of the
-tracked branch **`origin/main`**:
+`C`. **`master`** now points to `D`, meaning it is one commit ahead of the
+tracked branch **`origin/master`**:
 
 ``` text
-o [> main] D
+o [> master] D
 |
-o [origin/main] C
+o [origin/master] C
 |
 o B
 |
 o A
 ```
 
+<div class="mermaid">
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 
+  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
+  'themeVariables': {
+     'commitLabelFontSize': '1.1em'
+   } } }%%
+gitGraph BT:
+  commit id: "A"
+  commit id: "B"
+  commit id: "[origin/master] C"
+  commit id: "[HEAD master] D"
+</div>
+
 As a result of a Push, Git sends commit `D` to the origin
-repository, moving **`main`** to the new commit `D`. Because a remote
+repository, moving **`master`** to the new commit `D`. Because a remote
 branch always refers to a branch in the remote repository,
-**`origin/main`** of our repository will also be set to commit `D`:
+**`origin/master`** of our repository will also be set to commit `D`:
 
 ``` text
-o [> main][origin/main] D
+o [> master][origin/master] D
 |
 o C
 |
@@ -90,15 +103,15 @@ o A
 ```
 
 Let's assume someone else has modified the remote repository
-and committed `E`, a child of `D`. This means the **`main`** in
+and committed `E`, a child of `D`. This means the **`master`** in
 the origin repository now points to `E`. When fetching from the origin
 repository, we will receive commit `E`, and our repository's
-**`origin/main`** will be moved to `E`:
+**`origin/master`** will be moved to `E`:
 
 ``` text
-o [origin/main] E
+o [origin/master] E
 |
-o [> main] D
+o [> master] D
 |
 o C
 |
@@ -107,12 +120,12 @@ o B
 o A
 ```
 
-Finally, we will now merge our local **`main`** with its tracking branch
-**`origin/main`**. Because there are no new local commits, this will
-simply move **`main`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merging.md#fast-forward-merge)).
+Finally, we will now merge our local **`master`** with its tracking branch
+**`origin/master`**. Because there are no new local commits, this will
+simply move **`master`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merge.md#fast-forward-merge)).
 
 ``` text
-o [> main][origin/main] E
+o [> master][origin/master] E
 |
 o D
 |
