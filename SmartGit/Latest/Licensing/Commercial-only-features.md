@@ -10,7 +10,7 @@ A commercial license is in general required when running SmartGit in a commercia
 
 A few features of SmartGit are only available when running SmartGit with a commercial license (no guarantee on completeness):
 
-- [Standard window](https://www.syntevo.com/smartgit/standard-window/)
+- [Standard window](../GUI/Standard-Window.md)
 - [GitHub Enterprise integration](../Integrations/GitHub-Enterprise-Integration.md)
 - [GitLab (Self-Hosted) integration](../Integrations/GitLab.md)
 - [Bitbucket Server (Atlassian Stash) integration](../Integrations/BitBucket-Server-Atlassian-Stash-integration.md)
