@@ -2,7 +2,7 @@
 
 Welcome to SmartGit!
 
-If you're new to SmartGit, we suggest you get started on the [SmartGit User Interface Reference](GUI/SmartGit-Commands.md).
+If you're new to SmartGit, we suggest you get started on the [SmartGit User Interface Reference](GUI/GUI.md).
 
 Alternatively, you can follow one of the below topics:
 
