@@ -5,14 +5,14 @@ SmartGit will display TeamCity build results in the **My History** view of
 
 ## Configuration
 
-The integration is configured in the repository's `.git/config`,
-using `smartgit.teamcity.`-keys:
+The integration is configured in the repository's `.git/config`, using `smartgit.teamcity.`-keys:
 
 * `url`: the root URL of your TeamCity server
 * `project`: the TeamCity project name for your Git repository
 * `buildConfigurations`: a comma-separated list of TeamCity build configuration names which should be queried
 
 #### Example
+
 >
 >``` text
 >[smartgit "teamcity"]

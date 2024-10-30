@@ -5,8 +5,7 @@ SmartGit will display Jenkins job results in the **My History** view of
 
 ## Configuration
 
-The integration is configured in the repository's `.git/config`,
-using `smartgit.jenkins.`-keys:
+The integration is configured in the repository's `.git/config`, using `smartgit.jenkins.`-keys:
 
 * `url`: the root URL of your Jenkins server
 
@@ -16,6 +15,7 @@ At least one project type must be configured:
 * `multiBranchPipelines`: a comma-separated list of multibranch pipeline project names which should be queried
 
 #### Example
+
 >
 >``` text
 >[smartgit "jenkins"]

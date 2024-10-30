@@ -4,9 +4,9 @@ A commercial license is in general required when running SmartGit in a commercia
 
 A few features of SmartGit are only available when running SmartGit with a commercial license (no guarantee on completeness):
 
--   [Standard window](https://www.syntevo.com/smartgit/standard-window/)
--   [JIRA Integration](JIRA.md)
--   [GitHub Enterprise integration](GitHub-Enterprise-Integration.md)
--   [Bitbucket Server (Atlassian Stash) integration](BitBucket-Server-Atlassian-Stash-integration.md)
--   [Distributed Reviews](Distributed-Reviews-add-on-.md) (require a license add-on, too)
--   DeepGit license included
+- [Standard window](https://www.syntevo.com/smartgit/standard-window/)
+- [JIRA Integration](JIRA.md)
+- [GitHub Enterprise integration](GitHub-Enterprise-Integration.md)
+- [Bitbucket Server (Atlassian Stash) integration](BitBucket-Server-Atlassian-Stash-integration.md)
+- [Distributed Reviews](Distributed-Reviews-add-on-.md) (require a license add-on, too)
+- DeepGit license included

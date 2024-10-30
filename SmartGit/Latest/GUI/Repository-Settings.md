@@ -1,7 +1,6 @@
 # Repository \| Settings
 
-Use this dialog to configure certain options of your repository (`<repository>/.git/config`).
-The same global options can be found in the preferences.
+Use this dialog to configure certain options of your repository (`<repository>/.git/config`). The same global options can be found in the preferences.
 
 ## User
 
@@ -17,29 +16,27 @@ Configure what should happen with submodules if you push a submodule change.
 
 ## Signing
 
-Configure the GPG program and your signing key to Sign Tags and Commits.
-See [Signing](../HowTos/Sign-Tags-and-Commits.md).
+Configure the GPG program and your signing key to Sign Tags and Commits. See [Signing](../HowTos/Sign-Tags-and-Commits.md).
 
 #### Info
+
 > You need to ensure the specified GPG program is configured to use an agent that can ask you for your key's passphrase using a GUI.
-> 
+>
 > Otherwise you may get a gpg error "cannot open tty \`/dev/tty': Device not configured".
 
 ## Encoding
 
 Here you can also configure the text encoding SmartGit should assume when viewing or editing text files, e.g. with the Compare, Index Editor or Conflict Solver.
 
-UTF-8 with BOM, UTF-16 with BOM are detected automatically.
-Files with UTF-8 and without BOM are likely to be automatically detected from the content.
+UTF-8 with BOM, UTF-16 with BOM are detected automatically. Files with UTF-8 and without BOM are likely to be automatically detected from the content.
 
 ## Tag-Grouping
 
-Tag-Grouping specifies how tags (or more general: refs) will be grouped together.
-This grouping:
+Tag-Grouping specifies how tags (or more general: refs) will be grouped together. This grouping:
 
--   allows a more compact display of a range of tags in the Log **Graph**
--   introduces additional "group"-nodes in the **Branches** view
--   adds **Closest Tags** category to the **Commit** view
+- allows a more compact display of a range of tags in the Log **Graph**
+- introduces additional "group"-nodes in the **Branches** view
+- adds **Closest Tags** category to the **Commit** view
 
 For details on how tag-grouping patterns are specified, however over the blue ![](images/icons/emoticons/information.png) markers.
 

@@ -8,9 +8,7 @@ The configuration is stored in `tools.yml` file in the [settings directory](Inst
 
 By default, some default tools will be configured on the first application start.
 
-The **Open File** tool will invoke the system's default open command, e.g. to launch a graphic viewer for `.png` files.
-The **Open in Terminal** tool will open the selected directory in the terminal application.
-The **Open Git-Shell** tool will open the repository in the Git shell.
+The **Open File** tool will invoke the system's default open command, e.g. to launch a graphic viewer for `.png` files. The **Open in Terminal** tool will open the selected directory in the terminal application. The **Open Git-Shell** tool will open the repository in the Git shell.
 
 To re-add default tools, click the **Re-Add Defaults** button.
 
@@ -25,8 +23,7 @@ To re-add default tools, click the **Re-Add Defaults** button.
 
 Use **Add** or **Copy** to create a new tool (using the latter will copy all values from the currently selected tool for easier application of tiny changes).
 
-The **Command** means just the executable file without any argument.
-The **Arguments** can contain following variables accessible using the drop-down button at the right:
+The **Command** means just the executable file without any argument. The **Arguments** can contain following variables accessible using the drop-down button at the right:
 
 - `${filePath}` = the path of the selected file or directory, e.g. `C:\repository\readme.txt`
 - `${fileName}` = the name of the selected file or directory, e.g. `readme.txt`
@@ -44,25 +41,25 @@ The **Arguments** can contain following variables accessible using the drop-down
 - `${gitDir}` = the (root) path configured Git installation, e.g. `C:\Program Files\SmartGit\git`
 - `${smartGitDir}` = the (root) path of the SmartGit installation, e.g. `C:\Program Files\SmartGit`
 
-The *working directory* when launching the tool will be the root directory of the corresponding repository (which may also be a submodule).
-When launching a tool on a set of files which belong to different repositories, it will be the closest common directory of all affected repositories.
+The *working directory* when launching the tool will be the root directory of the corresponding repository (which may also be a submodule). When launching a tool on a set of files which belong to different repositories, it will be the closest common directory of all affected repositories.
 
-If **Can be used by the Open command** is selected, SmartGit will consider to use this tool when invoking **Open** (or **Open from Working Tree**) in the **Files** view.
-The **Handles: Files, Directories, Both** and **Handles: Refs, Commits, Both** options determines on what selection the tool should operate, e.g. on file, directory, ref (tags or branches) or commit selection.
+If **Can be used by the Open command** is selected, SmartGit will consider to use this tool when invoking **Open** (or **Open from Working Tree**) in the **Files** view. The **Handles: Files, Directories, Both** and **Handles: Refs, Commits, Both** options determines on what selection the tool should operate, e.g. on file, directory, ref (tags or branches) or commit selection.
 
 A file or directory name pattern may be specified in **Applies To**.
+
 #### Note
+
 > For repository root directories, the name "" (empty string) is used as name which only is matched by the pattern "*".
 
 
-If **Request confirmation before invoking** is selected and a message is provided, the user needs to confirm this dialog's message before the command is invoked.
-If **Show output and wait until finished** is selected, SmartGit waits until the command is finished and shows the output.
+If **Request confirmation before invoking** is selected and a message is provided, the user needs to confirm this dialog's message before the command is invoked. If **Show output and wait until finished** is selected, SmartGit waits until the command is finished and shows the output.
 
 ## Example Tools
 
 ### Format Patch
 
 Save this content to a file `format-patch.yml` and use the *Import* button on the Tools page of the preferences to restore the *Format Patch* feature from SmartGit versions < 22.1.
+
 ``` yml
 tools:
 - name: Format Patch
@@ -82,9 +79,11 @@ tools:
 The following tool can be used to apply the authorship information (name, email, and dates) of the selected commit (in the Log graph) to the current HEAD commit.
 
 #### Note
+
 > The following definition apply for Windows. For Linux/macOS you will have to adjust the escaping/quoting.
 
 Save this content to a file `apply-authorship.yml` and use the *Import* button on the Tools page of the preferences.
+
 ``` yml
 tools:
 - name: Apply Authorship
@@ -106,9 +105,7 @@ tools:
 
 ### Open top-most Visual Studio solution from current repository
 
-This powershell script can be used to open a solution file `.sln` inside a repository, in Visual Studio.
-The script iterates through the repository folders and looks for a `.sln` file.
-It stops at the first match and then launches Visual Studio.
+This powershell script can be used to open a solution file `.sln` inside a repository, in Visual Studio. The script iterates through the repository folders and looks for a `.sln` file. It stops at the first match and then launches Visual Studio.
 
 ![](attachments/53215435/53215436.png)
 

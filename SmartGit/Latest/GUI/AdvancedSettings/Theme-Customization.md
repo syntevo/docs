@@ -1,11 +1,9 @@
 # Customizing SmartGit's theme colors
 
-You can customize certain colors in SmartGit by patching its themes.
-The custom colors are configured in files `light-patch.theme` and `dark-patch.theme` in [SmartGit's Settings Directory](#Company-wideinstallation-settings-dir.default-location).
-Depending on the selected theme from the Preferences, the appropriate file will be used.
-In case of automatic theme selection (which is the default), your system theme (light or dark) will determine the used file.
+You can customize certain colors in SmartGit by patching its themes. The custom colors are configured in files `light-patch.theme` and `dark-patch.theme` in [SmartGit's Settings Directory](#Company-wideinstallation-settings-dir.default-location). Depending on the selected theme from the Preferences, the appropriate file will be used. In case of automatic theme selection (which is the default), your system theme (light or dark) will determine the used file.
 
 #### Note
+
 > These files only will be read on SmartGit start.
 
 ## List of customizable colors
@@ -13,14 +11,14 @@ In case of automatic theme selection (which is the default), your system theme (
 To get a complete list of customizable colors, you can run SmartGit from command line using parameter `--write-default-theme-file`.
 
 #### Example
+
 >
 >On Windows, you have to run `smartgitc.exe`:
 >```
 >smartgitc.exe --write-default-theme-file
 >```
 
-This will create `own-dark.theme` and `own-light.theme` files in SmartGit's settings directory which will contain all keys and their defaults.
-You can now copy over selected keys to your `patch`-files; be sure to drop the leading comment mark `#`.
+This will create `own-dark.theme` and `own-light.theme` files in SmartGit's settings directory which will contain all keys and their defaults. You can now copy over selected keys to your `patch`-files; be sure to drop the leading comment mark `#`.
 
 ### Sample colors
 
@@ -76,6 +74,7 @@ graph.truncatedRefs
 ```
 
 #### Example
+
 > Following `light-patch.theme` will give an almost identical palette as for version 21.2:
 >
 >``` text
@@ -98,6 +97,7 @@ graph.truncatedRefs
 >```
 
 #### Example
+
 > This will use a light-yellow tag symbol background in the graph as until SmartGit 21.2.
 >```text
 >graph.tag=#FFF1BF

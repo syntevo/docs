@@ -1,35 +1,17 @@
 # Repositories, Directories and Files
 
-The Repositories view shows all repositories known to SmartGit and, for
-repositories opened in this window, the directory structure (and their
-states). The Files view displays the status of your working tree (and
-Index). The primary directory states are listed in [Primary Directory States](#directory-states), and
-possible states of submodules in [Submodule States](#submodule-states).
-The possible file states are listed in [File States](#file-states).
+The Repositories view shows all repositories known to SmartGit and, for repositories opened in this window, the directory structure (and their states). The Files view displays the status of your working tree (and Index). The primary directory states are listed in [Primary Directory States](#directory-states), and possible states of submodules in [Submodule States](#submodule-states). The possible file states are listed in [File States](#file-states).
 
 ## Repository Management
 
-To add existing or new local repositories to SmartGit, please take a
-look at the section [Repository-Related](Repository-Related.md).
+To add existing or new local repositories to SmartGit, please take a look at the section [Repository-Related](Repository-Related.md).
 
 ## File Filtering
 
-The **Files** view can be filtered by file state and
-name. The state filters can be set using the small toolbar buttons above
-the table as well as the menu items in the **View** menu. By default, if
-committable files (e.g. *index-only changed* or *untracked*) are hidden,
-the background turns to light-red as a reminder to not forget about
-them. If this annoys you because you permanently have untracked files in
-your working, you should consider to mark them as ignored. If this is no
-option for you, you can deactivate this coloring feature in the
-Preferences (page **Low-level Properties**, option **filteredTable.useBackgroundColor**).
+The **Files** view can be filtered by file state and name. The state filters can be set using the small toolbar buttons above the table as well as the menu items in the **View** menu. By default, if committable files (e.g. *index-only changed* or *untracked*) are hidden, the background turns to light-red as a reminder to not forget about them. If this annoys you because you permanently have untracked files in your working, you should consider to mark them as ignored. If this is no option for you, you can deactivate this coloring feature in the Preferences (page **Low-level Properties**, option **filteredTable.useBackgroundColor**).
 
 To filter by name, use the input field (or *\<Ctrl/Cmd>+\<F>*-keystroke)
-above the file table. The context menu allows to enable regular
-expressions and save patterns for later usage or delete them. Even if
-unchanged files are hidden, they can be found by filtering by name - the
-files matching by name but not by state are shown in gray, while a
-light-yellow background indicates the name-filtering state.
+above the file table. The context menu allows to enable regular expressions and save patterns for later usage or delete them. Even if unchanged files are hidden, they can be found by filtering by name - the files matching by name but not by state are shown in gray, while a light-yellow background indicates the name-filtering state.
 
 ## Directory States
 
@@ -75,11 +57,8 @@ Icon | State | Description
 
 ## Submodule States
 
-Many of the file states apply for submodules, too. In addition, there
-are following notable submodule states which may either refer to the
-*state of the submodule point* relative to the parent repository or to
-the *contents of the submodule working tree* or to a combination of both
-of them.
+Many of the file states apply for submodules, too. In addition, there are following notable submodule states which may either refer to the
+*state of the submodule point* relative to the parent repository or to the *contents of the submodule working tree* or to a combination of both of them.
 
 Icon | State | Description
 -------- | -------- | --------
@@ -92,22 +71,13 @@ Icon | State | Description
 
 ## File table "duplicate(!)" marker
 
-If the file table shows a **duplicate(!)** marker after a file name,
-this means that you are on Windows or on MacOS with case-insensitive
-file name and your repository contains the same file, just with changed
-case. Such a constellation does not work well for (Smart)Git, so you
-should resolve the problem of duplicate files. The easiest way will
-probably be to fix this on a case-sensitive file system.
+If the file table shows a **duplicate(!)** marker after a file name, this means that you are on Windows or on MacOS with case-insensitive file name and your repository contains the same file, just with changed case. Such a constellation does not work well for (Smart)Git, so you should resolve the problem of duplicate files. The easiest way will probably be to fix this on a case-sensitive file system.
 
 ## Fixing 'Modified (File Mode)' on Windows
 
-On Windows, the *Modified (File Mode)* state is usually caused due to a
-misconfiguration of your local repository, when not having
-`core.filemode` configuration option explicitly set to `false` (the
-default value is `true`).
+On Windows, the *Modified (File Mode)* state is usually caused due to a misconfiguration of your local repository, when not having
+`core.filemode` configuration option explicitly set to `false` (the default value is `true`).
 
-Hence, if this option in not present in `.git/config` of your
-repository, invoke `git config core.filemode false` in the root
-directory of your repository to fix this problem.
+Hence, if this option in not present in `.git/config` of your repository, invoke `git config core.filemode false` in the root directory of your repository to fix this problem.
 
 

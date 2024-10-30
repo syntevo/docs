@@ -1,7 +1,6 @@
 # On-premise License Server
 
-To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*.
-This will be especially important if the SmartGit installations of your users are not allowed to connect to our central cloud license server.
+To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. This will be especially important if the SmartGit installations of your users are not allowed to connect to our central cloud license server.
 
 ## Requirements
 
@@ -17,11 +16,11 @@ To run our on-premise server, only Docker is required. This document describes h
 
 1. Create a GitHub Personal Access Token to log in with Docker:
 
-   1. Go to https://github.com/settings/tokens
+    1. Go to https://github.com/settings/tokens
 
-   1. Click on **Generate Token** and select **Generate new token (classic)**
+    1. Click on **Generate Token** and select **Generate new token (classic)**
 
-   1. Configure only the **read:packages** scope
+    1. Configure only the **read:packages** scope
 
 1. From the command line, log in to the GitHub Docker repository:
 
@@ -39,11 +38,11 @@ To run our on-premise server, only Docker is required. This document describes h
 
 1. Prepare host directories for the Docker volumes
 
-   1. On the target server where the Docker image will be run, create a top-level directory `<license-server-root>` which will contain the persistent data of the license server, for example, `/var/syntevo-license-server`.
+    1. On the target server where the Docker image will be run, create a top-level directory `<license-server-root>` which will contain the persistent data of the license server, for example, `/var/syntevo-license-server`.
 
-   1. In this directory, create a sub-directory named `licenses`.
+    1. In this directory, create a sub-directory named `licenses`.
 
-   1. Put the *on-premise license file* you have received from us into this directory. Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
+    1. Put the *on-premise license file* you have received from us into this directory. Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
 
 1. Start the license server:
 
@@ -146,6 +145,7 @@ You can configure the on-premise server LDAP functionality using environment var
 * `SPRING_LDAP_BASE`: root node to start the search in; we'll always do a subtree search
 
 #### Example
+
 > A Linux/MacOS example for starting the on-premise license server which queries the Active Directory:
 >```
 >docker run --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY='(&(objectClass=user)(userPrincipalName={0}))' -e SPRING_LDAP_URLS=ldap://ad.syntevo.com -e SPRING_LDAP_USERNAME='uid=admin' -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE='dc=syntevo,dc=com' ghcr.io/syntevo/license-opserver:latest
@@ -156,13 +156,14 @@ You can configure the on-premise server LDAP functionality using environment var
 > * The Active Directory server is located at `ldap://ad.syntevo.com` and runs on the default port.
 
 #### Example
+
 > A Windows example for connecting to a local LDAP server (e.g. for testing):
 > ```
 > docker run --rm --network syntevo-op-server --name syntevo-license-server -v D:\license-server\.op\data:/data -v D:\license-server\.op\licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY="(&(objectClass=person)(uid={0}))" -e SPRING_LDAP_URLS="ldap://syntevo-license-ldap-server:8389" -e SPRING_LDAP_USERNAME="uid=admin" -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE="dc=springframework,dc=org" ghcr.io/syntevo/license-opserver:latest
 > ```
 >
 > Notes:
-> * We are using double-quotes (`"`). On Windows, you will have to use single-quotes (`'`). 
+> * We are using double-quotes (`"`). On Windows, you will have to use single-quotes (`'`).
 > * We are assuming that `D:\license-server\.op` contains both `data` and `licenses`.
 > * Both, the local LDAP server and the on-premise license server run on the same Docker network `syntevo-op-server`.
 > * The image of the LDAP server is `syntevo-license-ldap-server` which results in URL `ldap://syntevo-license-ldap-server:8389`; it serves `dc=springframework,dc=org`.
@@ -188,13 +189,14 @@ The license server provides a reporting endpoint which is meant to be used by ad
    curl -u admin:<password> <license-server-url>/v1/reportOp?type=<type>
    ```
 
-   1. `<password>` needs to be replaced by the current password.
-   1. `<license-server-url>` needs to be replaced by the root URL of your on-premise license server.
-   1. `<type>` specifies the report type: `raw`, `user` or `masterLicense`
+    1. `<password>` needs to be replaced by the current password.
+    1. `<license-server-url>` needs to be replaced by the root URL of your on-premise license server.
+    1. `<type>` specifies the report type: `raw`, `user` or `masterLicense`
 
 #### Note
+
 > You can specify a custom admin password, by adding the Docker environment variable `-e ADMIN_PASSWORD=<password>`, for example:
-> 
+>
 > ```
 > docker run -e ADMINPASSWORD=mysecretpassword --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:latest
 > ```
@@ -210,6 +212,7 @@ curl -u admin:<password> <license-server-url>/v1/reportOp?type=raw[&from=<from>&
 Optional parameters `<from>` and `<to>` specify the time range for the `raw` report. If either `<from>` or `<to>` is present, the other must also be included.
 
 #### Example
+
 > ```
 > curl -u admin:ebc89b1511c6eaf29921d7f9219b608e383384df3ac161287d80c39911e10eb4 "https://syntevo.com/license-server/v1/reportOp?type=raw&from=2000-01-01&to=2030-12-31"
 > ```

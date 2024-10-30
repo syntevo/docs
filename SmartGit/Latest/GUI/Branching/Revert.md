@@ -1,9 +1,6 @@
 # Revert
 
-The Revert command allows you to 'undo' certain commits (from whatever
-branch) in the current branch.
-
-
+The Revert command allows you to 'undo' certain commits (from whatever branch) in the current branch.
 
 ``` text
 o                        o  reversed-C  [> master]
@@ -22,18 +19,11 @@ o   |  D         ===>    o   |  D
 o                        o
 ```
 
+In SmartGit, there are several places from which you can initiate a Revert:
 
-
-In SmartGit, there are several places from which you can initiate a
-Revert:
-
--   **Menu and toolbar** On the Working tree window, select **Branch\|Revert**
-    to open the **Revert** dialog, where you can select one or more
-    commits to revert. Depending on your toolbar settings, you can also
-    open this dialog via the **Revert** button on the toolbar.
--   **Log Graph** On the Log graph of the **Log** window, you can
-    perform a revert by right-clicking on one or more commits and
-    selecting **Revert** from the context-menu.
+- **Menu and toolbar** On the Working tree window, select **Branch\|Revert**
+  to open the **Revert** dialog, where you can select one or more commits to revert. Depending on your toolbar settings, you can also open this dialog via the **Revert** button on the toolbar.
+- **Log Graph** On the Log graph of the **Log** window, you can perform a revert by right-clicking on one or more commits and selecting **Revert** from the context-menu.
 
 In case of a conflict, the Revert may stop in "reverting" state for which you can either:
 
