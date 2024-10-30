@@ -12,6 +12,8 @@ A few features of SmartGit are only available when running SmartGit with a comme
 
 - [Standard window](https://www.syntevo.com/smartgit/standard-window/)
 - [GitHub Enterprise integration](../Integrations/GitHub-Enterprise-Integration.md)
+- [GitLab (Self-Hosted) integration](../Integrations/GitLab.md)
 - [Bitbucket Server (Atlassian Stash) integration](../Integrations/BitBucket-Server-Atlassian-Stash-integration.md)
+- [Azure DevOps Server integration](../Integrations/Azure-DevOps.md)
 - [Distributed Reviews](../AddOns/Distributed-Reviews-add-on-.md) (will require an additional add-on license)
 - DeepGit license included
