@@ -1,6 +1,12 @@
+---
+redirect_from:
+  - /SmartGit/Latest/On-premise-license-server
+  - /SmartGit/Latest/On-premise-license-server.html
+---
+
 # On-premise License Server
 
-To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. This will be especially important if the SmartGit installations of your users are not allowed to connect to our central cloud license server.
+To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server.
 
 ## Requirements
 
@@ -33,7 +39,7 @@ To run our on-premise server, only Docker is required. This document describes h
 1. Pull the Docker image:
 
    ```
-   docker pull ghcr.io/syntevo/license-opserver:latest
+   docker pull ghcr.io/syntevo/license-opserver:stable
    ```
 
 1. Prepare host directories for the Docker volumes
@@ -47,13 +53,13 @@ To run our on-premise server, only Docker is required. This document describes h
 1. Start the license server:
 
    ```
-   docker run --restart unless-stopped --name syntevo-license-server -d -v <license-server-root>/data:/data -v <license-server-root>/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:latest
+   docker run --restart unless-stopped --name syntevo-license-server -d -v <license-server-root>/data:/data -v <license-server-root>/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:stable
    ```
 
    For the above command, replace `<license-server-root>` with the actual top-level directory, for example:
 
    ```
-   docker run --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:latest
+   docker run --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:stable
    ```
 
 1. Confirm that the license server has been properly started:
@@ -79,7 +85,7 @@ If you're unable to directly connect to `ghcr.io` from your server, you have the
 1. Use the following command to create the tarball:
 
 ```
-docker save -o syntevo-license-opserver.tar ghcr.io/syntevo/license-opserver:latest
+docker save -o syntevo-license-opserver.tar ghcr.io/syntevo/license-opserver:stable
 ```
 
 1. Transfer the `syntevo-license-opserver.tar` to your server.
@@ -148,7 +154,7 @@ You can configure the on-premise server LDAP functionality using environment var
 
 > A Linux/MacOS example for starting the on-premise license server which queries the Active Directory:
 >```
->docker run --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY='(&(objectClass=user)(userPrincipalName={0}))' -e SPRING_LDAP_URLS=ldap://ad.syntevo.com -e SPRING_LDAP_USERNAME='uid=admin' -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE='dc=syntevo,dc=com' ghcr.io/syntevo/license-opserver:latest
+>docker run --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY='(&(objectClass=user)(userPrincipalName={0}))' -e SPRING_LDAP_URLS=ldap://ad.syntevo.com -e SPRING_LDAP_USERNAME='uid=admin' -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE='dc=syntevo,dc=com' ghcr.io/syntevo/license-opserver:stable
 >```
 >
 > Notes:
@@ -159,7 +165,7 @@ You can configure the on-premise server LDAP functionality using environment var
 
 > A Windows example for connecting to a local LDAP server (e.g. for testing):
 > ```
-> docker run --rm --network syntevo-op-server --name syntevo-license-server -v D:\license-server\.op\data:/data -v D:\license-server\.op\licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY="(&(objectClass=person)(uid={0}))" -e SPRING_LDAP_URLS="ldap://syntevo-license-ldap-server:8389" -e SPRING_LDAP_USERNAME="uid=admin" -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE="dc=springframework,dc=org" ghcr.io/syntevo/license-opserver:latest
+> docker run --rm --network syntevo-op-server --name syntevo-license-server -v D:\license-server\.op\data:/data -v D:\license-server\.op\licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY="(&(objectClass=person)(uid={0}))" -e SPRING_LDAP_URLS="ldap://syntevo-license-ldap-server:8389" -e SPRING_LDAP_USERNAME="uid=admin" -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE="dc=springframework,dc=org" ghcr.io/syntevo/license-opserver:stable
 > ```
 >
 > Notes:
@@ -198,7 +204,7 @@ The license server provides a reporting endpoint which is meant to be used by ad
 > You can specify a custom admin password, by adding the Docker environment variable `-e ADMIN_PASSWORD=<password>`, for example:
 >
 > ```
-> docker run -e ADMINPASSWORD=mysecretpassword --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:latest
+> docker run -e ADMINPASSWORD=mysecretpassword --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:stable
 > ```
 
 ### Raw Usage Data

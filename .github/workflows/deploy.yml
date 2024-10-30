@@ -28,10 +28,33 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Compress _site directory
+        run: |
+          tar -czf site.tar.gz -C _site .
+#      - name: Upload compressed _site as artifact
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: site
+#          path: site.tar.gz
+      - name: Copy _site to .upload
+        run: |
+          cp -R _site .upload
+      - name: Convert redirects.json to _redirects
+        run: |
+          jq -r 'to_entries | map("\(.key) \(.value | sub("\\.html$"; "")) 301") | .[]' .upload/redirects.json > .upload/_redirects
+          rm .upload/redirects.json
+      - name: Delete HTML stub files from jekyll-redirect-from plugin
+        run: |
+          find .upload -type f -name '*.html' -exec sh -c '
+            if grep -q "http-equiv=\"refresh\"" "$1" && ! grep -q "<body" "$1"; then
+              echo "Deleting: $1"
+              rm "$1"
+            fi
+          ' sh {} \;
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ${{ env.CLOUDFLARE_PROJECT_NAME }}
-          directory: ./_site
+          directory: ./.upload

@@ -1,3 +1,9 @@
+---
+redirect_from:
+  - /SmartGit/Latest/GitHub-integration
+  - /SmartGit/Latest/GitHub-integration.html
+---
+
 # GitHub integration
 
 SmartGit integrates GitHub workflows in various places, provided that the connection to *github.com* or a custom *GitHub Enterprise instance* has been configured in the Preferences.
@@ -6,7 +12,7 @@ SmartGit integrates GitHub workflows in various places, provided that the connec
 
 To set up the GitHub integration, go to **Preferences**, section **Hosting Providers** and click the **Add** button. In the **Add Hosting Provider** dialog, have **GitHub** selected and invoke **Generate Token**. This should open up your default web browser where you will have to confirm by **Authorize Application**. Be sure to also **Grant Access** to all of your organizations, otherwise the corresponding organization repositories won't show up/can't be accessed.
 
-![](attachments/53215440/53215447.png)
+![](../attachments/53215440/53215447.png)
 
 Once you have confirmed this page, you will be redirected to a specific port on `127.0.0.1`, where SmartGit is waiting to intercept a one-time authorization code. The code will be used to create an *application access token* which will be used to populate the **Token** field.
 
@@ -27,7 +33,7 @@ Finally, confirm the **Add Hosting Provider** dialog using **Add**.
 
 > Once you have authorized SmartGit, it will show up in your GitHub **Settings**, section **Authorized Applications**.
 > If you need to rerun through the Authorization process outlined above, you have to **Revoke** access there first and start over.
-> ![](attachments/53215440/53215443.png)
+> ![](../attachments/53215440/53215443.png)
 
 #### Personal Access Tokens
 
@@ -36,9 +42,9 @@ Instead of an OAuth token, you may alternatively use a personal access token whi
 
 ## Clone
 
-When [cloning](Clone.md) a repository, you can select your repository from a list, instead of entering the URL. SmartGit will display your own (*user*) repositories, as well as repositories of your *organization* (*org*).
+When [cloning](../GUI/Repository/Clone.md) a repository, you can select your repository from a list, instead of entering the URL. SmartGit will display your own (*user*) repositories, as well as repositories of your *organization* (*org*).
 
-![](images/github-clone.png)
+![](../images/github-clone.png)
 
 ## Working Tree window
 
@@ -82,7 +88,7 @@ Both, Pull Request and Plain Commit Comments, can refer either to a commit itsel
 
 Comments can be created, modified and removed using the corresponding actions from the **Comments** menu or context menu actions in the **Commits** and **Changes** view. If a pull request *merge* commit is selected, only line-comments of the pull request can be manipulated.
 
-More behavior of the GitHub integration can be customized by [Low-Level Properties](Preferences.md).
+More behavior of the GitHub integration can be customized by [Low-Level Properties](../GUI/Preferences/Preferences.md).
 
 ### Re-setup OAuth
 
@@ -93,7 +99,7 @@ Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version
     2. get rid of the GitHub hosting provider from **Preferences**, section **Hosting Providers**
 2. In GitHub, open the [SmartGit application](https://github.com/settings/connections/applications/99bbba5634b1f1ef3b57) from your profile **Settings**, **Applications**, tab **Authorized OAuth Apps**:
     1. Select "SmartGit" there:
-       ![](attachments/53215440/53215441.png)
+       ![](../attachments/53215440/53215441.png)
     2. Invoke **Revoke Access**
 3. In SmartGit, rerun through the *OAuth* setup again:
     1. open **Preferences**, section **Hosting Providers**
@@ -123,12 +129,12 @@ It may be resolved in two ways:
 
 If you are authenticating using *OAuth* and you can't see private repositories of your GitHub *organization* or pushing to your organization's repositories fails with HTTP error code *403*, make sure that your organization allows **Third-party access** and SmartGit is **Approved**. Your organization settings might look like this:
 
-![](attachments/53215440/53215446.png)
+![](../attachments/53215440/53215446.png)
 
 Note that the screenshot above shows the interface of the organization's manager. If you are not the manager, but just a member of the organization, you can request access for the [SmartGit application](https://github.com/settings/connections/applications/d9f33087e985e76e9029) to this organization from your **Settings - Applications**, tab **Authorized OAuth Apps**:
 select **SmartGit** here and check for which organizations you may request access. The screenshot below shows `syntdev2` for which access can be requested. Once done so, the organization manager will receive a notification and may confirm.
 
-![](attachments/53215440/53215442.png)
+![](../attachments/53215440/53215442.png)
 
 #### Note
 
@@ -136,7 +142,7 @@ select **SmartGit** here and check for which organizations you may request acces
 
 ### Git-Flow Pull Requests will be closed on Finish Feature
 
-When using [Git-Flow](Git-Flow.md) or [Git-Flow Light](Git-Flow-Light.md) in combination with pull requests, pull requests may be marked as **Closed** instead of **Merged** after invoking **Finish Feature**. This happens when you have **Delete Feature Branch** selected for the **Finish Feature** dialog: with this option selected, the local and remote feature branch will be deleted immediately, however the resulting merge/rebase has not yet been pushed. If a branch will be deleted *before* it has been merged, GitHub will mark the pull request as **Closed**. If it's only deleted *after* the branch has been merged, it will be marked as **Merged**. If you don't want your pull requests to become **Closed**, unselect **Delete Feature Branch**, push the resulting merge/rebase first and only then **Delete** the feature branch from GitHub (e.g. from the **Branches** view).
+When using [Git-Flow](../DevelopmentProcesses/Git-Flow.md) or [Git-Flow Light](../DevelopmentProcesses/Git-Flow-Light.md) in combination with pull requests, pull requests may be marked as **Closed** instead of **Merged** after invoking **Finish Feature**. This happens when you have **Delete Feature Branch** selected for the **Finish Feature** dialog: with this option selected, the local and remote feature branch will be deleted immediately, however the resulting merge/rebase has not yet been pushed. If a branch will be deleted *before* it has been merged, GitHub will mark the pull request as **Closed**. If it's only deleted *after* the branch has been merged, it will be marked as **Merged**. If you don't want your pull requests to become **Closed**, unselect **Delete Feature Branch**, push the resulting merge/rebase first and only then **Delete** the feature branch from GitHub (e.g. from the **Branches** view).
 
 ### Push fails with OAuth 'scope'-related warning
 
@@ -157,7 +163,7 @@ Typical Git error messages hinting to this kind of problem:
 
 ### Distributed Reviews interference
 
-When using GitHub, be sure to have [Distributed Reviews](Distributed-Reviews-add-on-.md) disabled for your repository, otherwise there may be confusion about GitHub vs. Distributed Reviews pull requests. To be sure to have Distributed Reviews disabled, invoke **Review\|Configure**:
+When using GitHub, be sure to have [Distributed Reviews](../AddOns/Distributed-Reviews-add-on-.md) disabled for your repository, otherwise there may be confusion about GitHub vs. Distributed Reviews pull requests. To be sure to have Distributed Reviews disabled, invoke **Review\|Configure**:
 
 - if SmartGit asks you whether to initialize the Review database, Distributed Reviews are not enabled (as it should be). Select **Cancel** to keep it disabled.
 - if SmartGit asks you what to configure, Distributed Reviews are enabled. Select **Dispose Database** to disable it.

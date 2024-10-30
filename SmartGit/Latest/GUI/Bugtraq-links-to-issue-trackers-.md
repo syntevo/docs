@@ -1,7 +1,14 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Bugtraq-links-to-issue-trackers-
+  - /SmartGit/Latest/Bugtraq-links-to-issue-trackers-.html
+---
+
 # Bugtraq (links to issue trackers)
 
-If you have set up a so called *Bugtraq Configuration*, SmartGit will detect issue IDs in commit messages and display links to the issue tracker in this case. The Bugtraq configuration is stored either in the
-`.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you). It consists of a named `bugtraq` section which basically defines a regular expression to match issue IDs in your commit message and an URL template to open when clicking at such an issue link.
+Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, enabling integration between tools such as SmartGit and common Bug Tracking tools such as JIRA or GitHub issues.
+
+If you have set up a *Bugtraq Configuration*, SmartGit will detect issue IDs in commit messages and display links to the issue tracker in this case. The Bugtraq configuration is stored either in the `.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you). It consists of a named `bugtraq` section which basically defines a regular expression to match issue IDs in your commit message and an URL template to open when clicking at such an issue link.
 
 #### Example
 

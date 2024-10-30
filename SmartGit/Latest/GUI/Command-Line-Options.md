@@ -1,8 +1,15 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Command-Line-Options
+  - /SmartGit/Latest/Command-Line-Options.html
+---
+
 # Command-Line Options
 
-This section gives an overview of the various options SmartGit can be started with. These options should be given as parameters to the SmartGit launcher. The launcher to be used depends on your platform:
+This section gives an overview of the various command-line options which can be passed as parameters to the SmartGit launcher at start-up. The launcher used by SmartGit depends on your platform:
 
-- **Windows** `bin\smartgit.exe` or `bin\smartgitc.exe`. The first one is meant for regular usage, while the second one will print additional information on the console while the program runs.
+- **Windows** `bin\smartgit.exe` or `bin\smartgitc.exe`.
+  `smartgit.exe` is meant for regular usage, while `smartgitc.exe` will print additional information on the console while the program runs.
 - **MacOS** `SmartGit <version-number>.app/Contents/MacOS/SmartGit`
 - **Linux** `bin/smartgit.sh`
 
@@ -94,12 +101,12 @@ This option can be optionally specified in addition to "--log", "--blame" and "-
 
 ## Option "--write-default-theme-file"
 
-Use this option to create the file `own.theme` in the SmartGit [settings directory](VM-Options.md) (the exact file path is displayed) as starting base for creating a SmartGit theme. You can rename or move the file.
+Use this option to create the file `own.theme` in the SmartGit [settings directory](../AdvancedSettings/VM-Options.md) (the exact file path is displayed) as starting base for creating a SmartGit theme. You can rename or move the file.
 
 The file contains *key=value* lines, a leading \# comments out the line. The most keys should be self-explaining. The value usually is a color defined as `#rrggbb` using hexadecimal values, but it also can be name of another key which makes it easier to create a couple of named colors instead of having to write the same `#rrggbb` value for different controls.
 *inherit* means to inherit the color from the parent control, *default* forces the control to use its default color from the operating system. You can SmartGit tell to load this file by selecting it in the preferences:
 
-![](attachments/53215487/53215488.png)
+![](../attachments/53215487/53215488.png)
 
 #### Example
 

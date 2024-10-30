@@ -1,10 +1,16 @@
+---
+redirect_from:
+  - /SmartGit/Latest/JIRA
+  - /SmartGit/Latest/JIRA.html
+---
+
 # JIRA
 
-The JIRA integration allows to select a commit message (including JIRA key) directly from (open) JIRA issues and to optionally mark issues as resolved on **Push**.
+The SmartGit integration to Atlassian JIRA allows you to select a commit message (including JIRA key) directly from (open) JIRA issues and to optionally mark issues as resolved on **Push**.
 
 ## Prerequisites
 
-The JIRA integration is only available for **commercial** licenses and will only be present, if the [Bugtraq configuration](Bugtraq-links-to-issue-trackers-.md) has been set up properly for your JIRA server.
+The JIRA integration is only available for **commercial** licenses and will only be present, if the [Bugtraq configuration](../GUI/Bugtraq-links-to-issue-trackers-.md) has been set up properly for your JIRA server.
 
 #### Note
 
@@ -14,40 +20,39 @@ The JIRA integration is only available for **commercial** licenses and will only
 
 ## Authentication with API
 
-Depending on the JIRA version and/or server vs. cloud instance, it may be fine to authenticate to JIRA using your username/password or it may be necessary to create an API token.
+Depending on the JIRA version and/or server vs. cloud instance, authenticate with JIRA can either be:
 
-To create an API token, open your JIRA account and select **Security**
-settings there.
+- using your username/password or
+- it may be necessary to create an API token.
+
+To create an API token, open your JIRA account and select **Security** settings.
 
 #### Info
 
 > For the cloud instance, you can find security settings at:
 > <https://id.atlassian.com/manage-profile/security>
 
-
-
 In the **API token** section, select **Create and manage API tokens**, then select **Create API token**, label it e.g. "SmartGit" and finally confirm with **Create**.
 
-![](attachments/53215463/53215465.png)
+![](../attachments/53215463/53215465.png)
 
 In the next dialog, invoke **Copy to clipboard**. Finally, the token should show up in the list.
 
-![](attachments/53215463/53215466.png)
+![](../attachments/53215463/53215466.png)
 
 You should now be able to authenticate to JIRA from within SmartGit by using your email address as **User Name** and the token as **Password**.
 
-![](attachments/53215463/53215464.png)
+![](../attachments/53215463/53215464.png)
 
 ## Commit Message Selection
 
 The commit message selection is available in the Commit and Edit Last Commit Message commands as well in some interactive rebase commands of the **Journal** view.
 
-![](attachments/53215463/53215467.png)
+![](../attachments/53215463/53215467.png)
 
 ## Resolving on Push
 
-For all **Push** operations (except of **Push To**), SmartGit checks the pushed commits for *affected* JIRA issues and offers to mark them as resolved in one or more JIRA versions. A JIRA issue is considered as
-*affected*, if
+For all **Push** operations (except of **Push To**), SmartGit checks the pushed commits for *affected* JIRA issues and offers to mark them as resolved in one or more JIRA versions. A JIRA issue is considered as *affected*, if:
 
 1. It's mentioned in at least one commit message of the *local* branch commits which are pushed; and
 
@@ -75,18 +80,18 @@ For all **Push** operations (except of **Push To**), SmartGit checks the pushed 
 
 ### Custom workflows
 
-For the detection of *resolvable* issues, SmartGit supports the common default JIRA workflows. If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [low-level properties](System-Properties.md).
+For the detection of *resolvable* issues, SmartGit supports the common default JIRA workflows. If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
 
 #### Note
 
 > SmartGit will only offer resolution of issues if your JIRA credentials
 > are properly configured. To ensure this, invoke **Select from JIRA** and
 > enter your credentials these.  
-> You can completely disable this functionality using [low-level properties](System-Properties.md).
+> You can completely disable this functionality using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
 
 ## Support for 'commit.template'
 
-The JIRA integration will honor the Git `commit.template` configuration. Following keywords are substituted by the according JIRA issue attributes:
+The JIRA integration will honor the Git `commit.template` configuration. The following keywords are substituted by the according JIRA issue attributes:
 
 - `%BUGID%`
 - `%BUGSUMMARY%`
@@ -94,9 +99,9 @@ The JIRA integration will honor the Git `commit.template` configuration. Followi
 
 ## Miscellaneous
 
-The configuration of your JIRA connections are stored in `bugtracker.yml`, in the [Settings directory](Installation-and-Files.md). Referenced passwords are stored in `passwords`.
+The configuration of your JIRA connections are stored in `bugtracker.yml`, in the [Settings directory](../Installation/Installation-and-Files.md). Referenced passwords are stored in `passwords`.
 
-## Possible problems and solutions
+## Solutions to troubleshoot potential problems
 
 ### "No project could be found with key '...'" or "The value '...' does not exist for the field 'project'"
 

@@ -1,68 +1,77 @@
-# Log
+---
+redirect_from:
+  - /SmartGit/Latest/Log
+  - /SmartGit/Latest/Log.html
+---
 
-SmartGit's Log displays the working tree state and the repository's history as a list of commits, sorted by increasing age, and with a graph on the left side to show the parent-child relationships between the commits. What is shown on the Log depends on what was selected when the Log command was invoked:
+# Git Log
 
-- To view the history of the entire repository (*root* Log), select the repository in the **Repositories** view before invoking the Log command.
-- To view the history of a directory within the repository, select the directory in the **Repositories** view before invoking the Log command.
-- To view the history of a single file within the repository, select the file in the **Files** view before invoking the Log command. If the file is not visible in the **Files** view, either adjust the file table's filter settings (on its top right), or enter the name of the file in the search field above the file table.
+The SmartGit Log display provides interactive visualization of the Git Log, allowing you to view the structure of the commit history in a repository, and to visualize the changes made to files and directories as commits are added.
+
+Log is invoked from the **Query\|Log** menu option.
+
+#### Tip
+
+> If you make frequent use of the Log, you should consider looking into making the [Log Window](Log-Window.md) your primary window when using SmartGit.
+
+SmartGit's Log extends changes to not just your local repository's commits, but also allows you to use the **Working Tree \| Index** node to operate on local changes which are not yet committed.
+
+The Log display has the following elements:
+
+- The [*Branches View*](Branches-View.md), allowing you to select which branches should be include in the log display. Toggle a branch to include/exclude as necessary.
+- The [*Graph View*](Graph-View.md), showing a visualization of the commit history and the current HEAD references of the selected branches. You can select one or more commits on the Graph to compare changes between commits.
+- The [*Commit View*](Commit-View.md), showing audit information about who and when a commit was authored, as well as the commit SHA and message.
+- The *Files View*, showing state of the files as at the time of the selected Commit.
+- The *Changes View*, showing differences between commits.
+
+SmartGit's Log displays the working tree state and the repository's history as a list of commits, sorted by increasing age, and with a graph on the left side to show the parent-child relationships between the commits.
+
+# Controlling the Scope of Files available in the Log Tool
+
+The content displayed in the Log depends on what was selected when the Log command was invoked:
+
+- To view the history of the entire repository (*root* Log), select the repository in the *Repositories View* before invoking the Log command.
+- To view the history of a directory within the repository, select the directory in the *Repositories View* before invoking the Log command.
+- To view the history of a single file within the repository, select the file in the *Files View* before invoking the Log command. If the file is not visible in the *Files View*, either adjust the file table's filter settings (on its top right), or enter the name of the file in the search field above the file table.
 
 A *root* Log can be invoked from other places in SmartGit as well:
 
-- In the **Branches** view (just in the *Working Tree* window), you can right-click on a branch and select **Log** to open the Log for the selected branch.
-- In the **Journal** view, you can right-click on a specific commit and invoke **Log** to open the Log for the current branch, with the selected commit pre-selected in the Log.
+- In the *Branches View* (just in the *Working Tree* window), you can right-click on a branch and select **Log** to open the Log for the selected branch.
+- In the *Journal View*, you can right-click on a specific commit and invoke **Log** to open the Log for the current branch, with the selected commit pre-selected in the Log.
 
-## Graph view
+# Comparing Changes between Commits
 
-The **Graph** displays the log graph ("history") starting from the selected **Branches** anchors. Branches/tags and other *refs* will show up at the "appropriate" commits. In case of File (or Subtree) Logs or filtered Logs (see **Filter** input field, below), every *ref* will be mapped to the most recent commit of the graph which is still part of the ref's history. In case of File (or Subtree) Logs, the file (or subtree)
-content of the mapped ref commit will be identical to the content of the actual commit to which the refs points. For filtered Logs, there is no such relation between the mapped commit and the actual commit, still you will be able to see which of your filtered commits are part of which ref's history. Mapped refs which are not exactly located at the commit to which they are attached will be denoted by `~`.
+- If you select a single commit:
+    - the *Commit View* shows the audit and commit message information for the commit.
+    - the *Files view* shows the files state as at the selected commit.
+    - selecting a file will show the changes committed made to this file between this commit and the previous commit, in the *Changes View*.
+- If you select any two commits Graph View:
+    - When you select a file in the *Files View* SmartGit will compare these two commits in the *Changes View*
+    - The *Commit View* will show the respective commit audit and message information for both commits.
 
-The **Graph** can be customized in many ways from the *Options*-menu
-(≡).
+If the **Working Tree/Index** node is selected at the top of the commit tree, the *Files view* shows the files from the index and working tree. Selecting a file will display its index or working tree changes.
 
-## Graph filter
-
-Using the **Filter** field above the **Graph**, you can restrict the displayed commits to those matching a certain filter criterion. On change of the **Filter** field, SmartGit will restart the search from the select **Branches** and report matching commits bit by bit. The search will be performed directly in the repository, so eventually SmartGit will find all matching commits in the entire repository.
-
-## Commit view
-
-The layout of the **Commit** view depends on the **Graph** selection:
-
-If the *working tree* node is selected, it shows a field to compose the message for the next commit, a couple of options and finally a **Commit** button to actually perform the commit.
-
-If a commit is selected, it shows details for the selected commit:
-
-- **branches** and **tags** shows all branch/tag-refs which are displayed in the **Graph** for the selected commit
-- **same state tags** (only File Logs) shows those tags which contain the file with exactly the same content as for the selected commit; this category will only be present if **Tag-Grouping** has been configured in the **Repository Settings** (for details refer there).
-- **closest tags** shows those tags for a commit:
-    - from which the commit is reachable; and
-    - from which there is no other tag reachable from which the commit is reachable, too.
-
-  In addition, more relevant tags will be added if **Tag-Grouping** has been configured in the **Repository Settings** (for details refer there).
-- **on branches** shows all branch-refs for which the selected commit is an ancestor reachable by following only "primary" parents, i.e. is part of the branch's "natural" history
-- **merged to branches** shows all branch-refs for which the selected commit is an ancestor, but only reachable by following at least one merge parent (2nd or higher parent of a commit)
+Use the checkboxes in the *Branches view* to control what is displayed in the *Graph view*. The *Recyclable Commits* checkbox at the bottom of the *Branch view* will display all commits no longer accessible from a branch or tag. This can be useful for accessing "lost" commits.
 
 #### Note
 
-> Git does not remember the (current) branch as part of a commit. However,
-> when creating merge commits, Git always uses the currently checked out
-> (branch that points to a) commit as first parent and the merged one as
-> second parent. This way it's possible to find out which commits belong
-> to the same branch (first parent) and which were merged (second parent).
+> Git does not keep record of the (current) branch as part of a commit.
+> However, when creating merge commits, Git always uses the currently checked out (branch that points to a) commit as first parent and the merged one as
+> second parent.
+> This way it's possible to find out which commits belong to the same branch (first parent) and which were merged (second parent).
 
 ## Log Commands
 
-In the *Log* window, virtually all commands which are known from the *Working Tree* window are available as well:
+In the *Log* window, virtually all commands which are available in the context of the *Working Tree* window are available here:
 
-- most of them are available from the main menu bar
-- the context menu on a commit provides certain commands
-- certain items in the **Graph** view, like *local refs* or the *HEAD*-arrow can be modified using drag-and-drop
-- there are several ways to write commits, for details refer to [Interactive Rebase](Rebase-Interactive.md)
+- Commands which are available from the main menu bar
+- Commands available on the context menu when a commit is selected
+- Commands available in the **Graph** view, like *local refs* or the *HEAD*-arrow can be modified using drag-and-drop
+- Commands which assist with re-writing commits. For details refer to [Interactive Rebase](Branch/Rebase-Interactive.md)
 
 ## Compare Commits
 
-You can compare two commits in the **Graph** by selecting both commits
-(*Ctrl*-click). The difference from the *newer* commit compared to the
-*older* commit will be displayed in the **Files** view. By selecting a file you can see detailed change in the **Changes** view. In a similar way, you can compare the Index against a specific commit.
+You can compare two commits in the **Graph** by selecting both commits (*Ctrl*-click). The difference from the *newer* commit compared to the *older* commit will be displayed in the **Files** view. By selecting a file you can see detailed change in the **Changes** view. In a similar way, you can compare the Index against a specific commit.
 
 #### Tip
 
@@ -72,7 +81,8 @@ You can compare two commits in the **Graph** by selecting both commits
 
 ## Recyclable Commits
 
-In the **Branches** view, you can toggle **Recyclable Commits** to get back obsolete heads which are not reachable anymore from any ref. Technically, SmartGit will include all commits which are found in the reflogs (`.git/logs`-files).
+In the **Branches** view, you can toggle **Recyclable Commits** to get list obsolete heads which are no longer reachable from any *ref* in git. These unreachable commits may be eligible for permanent deletion (garbage collection).
+(Technically, SmartGit will include all commits which are found in the reflogs (`.git/logs`-files) when determining which commits are `Recyclable`.)
 
 ## Skip merge optimization when filtering
 

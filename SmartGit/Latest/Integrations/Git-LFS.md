@@ -1,6 +1,12 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Git-LFS
+  - /SmartGit/Latest/Git-LFS.html
+---
+
 # Git-LFS
 
-SmartGit provides the common Git-LFS operations, provided that Git-LFS has been installed on your system and it's configured in your Git config files, so it will work from command line.
+SmartGit provides support for common Git Large File Storage (Git-LFS) operations, provided that Git-LFS has been installed on your system and it's configured in your Git config files, so that Git-LFS is already configured and tested to be working from the command line.
 
 ## Implementing low-level commands
 
@@ -67,7 +73,7 @@ The following screenshot shows how this display will look like:
 - `huge2` is *locked by yourself*
 - `huge3` is *lockable* (configured in` .gitattributes`)
 
-![](attachments/53215476/53215477.png)
+![](../attachments/53215476/53215477.png)
 
 #### Note
 

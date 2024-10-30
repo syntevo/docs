@@ -1,49 +1,41 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Main-Windows
+  - /SmartGit/Latest/Main-Windows.html
+---
+
 # Main Windows
 
-SmartGit comes with 3 different main windows that all can execute Git commands:
+SmartGit provides three different Main Windows, all of which can execute Git commands, but each is tailored to a different type of git usage:
 
-- the [Working Tree window](#Working-tree-window) focuses on a file-centric display of changes; it also shows the **Journal**, a tiny log for the latest commits of the current branch and from another branch (e.g. for cherry-picking),
-- the [Log window](#Log-window) focuses on the commit graph history; local changes are displayed as a separate node attached to the HEAD;
-- the [Standard window](#Standard-window) focuses on easier (more limited) work-flows; it combines a file-centric **Local Files** and a graph-based **History** view of the repository
+- The [Working Tree Window](Working-Tree-Window.md) focuses on a file-centric display of changes; it also shows the [**Journal**](Journal-View.md), a log of the latest commits in the current branch, and a baseline/comparative branch (e.g., for cherry-picking).
+- The [Standard Window](Standard-Window.md) simplifies workflows by combining a file-centric **Local Files** view with a graph-based **History** view of the repository. The Standard Window also provides access to the [Feature-Flow development process](../DevelopmentProcesses/Feature-Flow.md)
+- The [Log Window](Log-Window.md) emphasizes the commit graph history, displaying local changes as a separate node attached to the HEAD. The Log Window is ideal for power users who wish to have complete control over their repository's commit history, using features such as Rebase, Squashing commits together, and re-writing commits.
 
-There are two ways to specify which window to prefer. You can decide during the Setup wizard:
+## Default SmartGit Startup Behaviour
 
-![Setup wizard, window selection](images/Setup-wizard-window-selection.png)
+Each time SmartGit is launched, SmartGit will open the Window mode that you have configured as your preferred Window. You can specify your preferred window in two ways:
 
-or later using the Preferences:
+1. During the *Setup wizard*:
 
-![Preferences, user interface](images/Preferences-user-interface-window-selection.png)
+![Setup wizard, window selection](../images/Setup-wizard-window-selection.png)
 
-You can use all 3 different main windows at the same time, but the default one you can configure in the preferences. The default window is used, e.g. if you open a repository using the command line.
+2. After setup, through the *Preferences* (Edit \| Preferences).
 
-### Rearrange views
+![Preferences, user interface](../images/Preferences-user-interface-window-selection.png)
 
-For the Working Tree and Log windows you can rearrange the views by dragging their titles. To place multiple views into one tab group, drag them onto the center of another view. To restore the default layout, use **Window\|Reset Perspective**. Each of these windows can remember two different layouts (called *perspectives*). You can switch between them using **Window\|Main Perspective** and **Windows\|Review Perspective**.
+### Using Multiple Windows
 
-## Working Tree window
+You can use all three main windows simultaneously, but you can configure only one default in the Preferences. For example, the default window is used when you open a repository using the command line.
 
-![Working Tree window](images/Working-Tree-window.png)
+To open another Window mode (in addition to the current Window you have open), use the **Window** Menu, and choose **Standard**, **Working Tree** or **Log Window**, depending on which Window is currently in Context. You can open a second Window of the same type by selecting **New Window**. Context, such as the current repository, will be transferred to the new Window.
 
-The Working Tree window focuses on the (changed) files of your working tree. Selecting a file will show its changes in the Changes view.
+### Rearrange View Layouts (Perspectives) within Windows
 
-The *Journal view* shows the latest commits of the current branch and one optional other branch (e.g. to cherry pick commits from). To see the full history of the repository, you need to open the [Log window](#Log-window).
+You can rearrange the views by dragging their titles in the Working Tree and Log windows. To place multiple views into one tab group, drag a view onto the center of another view. To restore the default layout, use **Window \| Reset Perspective**. Each of these windows can remember two different layouts (called perspectives). You can switch between them using **Window \| Main Perspective** and **Window \| Review Perspective**.
 
-## Log window
+For further information on each of the Main Windows in SmartGit, please refer to:
 
-![Log window](images/Log-window.png)
-
-The Log window focuses on the commits of your repository, but also allows to operate on local changes with the help of the **Working Tree/Index** node.
-
-If a commit is selected, the *Files view* shows the files from the commit. Selecting a file will show its committed changes in the *Changes view*.
-
-If the **Working Tree/Index** node is selected, the *Files view* shows the files from the index and working tree. Selecting a file will show its index or working tree changes.
-
-Use the checkboxes in front of the items in the *Branches view* to select what is shown in the *Graph view*. The *Recyclable Commits* checkbox will cause all commits to be shown which are not accessible from a branch or tag (any more). This can be very useful to get access to "lost" commits.
-
-## Standard window
-
-![Standard window](images/Standard-window.png)
-
-The Standard window focuses on simpler work-flows.
-
-The left most *Local Files* and *History* toolbar buttons let you switch between showing working tree and index files, and the history graph.
+- [Working Tree Window](Working-Tree-Window.md)
+- [Log Window](Log-Window.md)
+- [Standard Window](Standard-Window.md)

@@ -1,3 +1,9 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Gerrit
+  - /SmartGit/Latest/Gerrit.html
+---
+
 # Gerrit
 
 SmartGit provides integration with Gerrit in the *Log* and the *Working Tree* windows. You can invoke the **Push to Gerrit** command in the **Branches** view if a Gerrit remote has been detected. It will offer a dialog with special Gerrit-related Push options.
@@ -25,12 +31,11 @@ If there is no `.gitreview` file present, SmartGit will detect a remote as being
 #### Tip
 
 > To have Gerrit-related commands available in context menu,
-> set [Low-level Property](System-Properties.md) `ui.showPushToGerritInMenu`.
+> set [Low-level Property](../GUI/AdvancedSettings/System-Properties.md) `ui.showPushToGerritInMenu`.
 
 #### Info
 
-> If **Push to Gerrit** doesn't show up for you despite of the above
-> conditions being met, you may enable debug logging for
+> If **Push to Gerrit** doesn't show up for you despite of the above conditions being met, you may enable debug logging for
 > "smartgit.gerrit". For details refer to Debugging.
 
 

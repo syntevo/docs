@@ -1,28 +1,46 @@
-# System Properties
+---
+redirect_from:
+  - /SmartGit/Latest/System-Properties
+  - /SmartGit/Latest/System-Properties.html
+---
 
-Most of the system properties can be edited directly in the **Preferences**, section **Low-Level Properties**. This will adjust the `smartgit.properties` file which is located in [SmartGit's Settings Directory](Installation-and-Files.md#default-path-of-smartgits-settings-directory). Only some specific properties may require to edit `smartgit.properties` directly.
+# Changing System Properties in SmartGit
+
+In addition to the options available in the [SmartGit Preferences](../Preferences/Preferences.md), there are additional customization options to SmartGit available through the System Properties file (`smartgit.properties`) - this article describes these additional properties.
+
+Most of the below system properties can be edited directly in the **Edit|Preferences** settings dialog, under the section **Low-Level Properties**. Changing these values updates the `smartgit.properties` file which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
+
+In some rare instances, you may need to resort to editing the `smartgit.properties` file directly.
 
 Each of the settings in `smartgit.properties` is specified on a separate line, according to the following syntax:
 
 `key=value`
 
-If a line starts with`#`, the entire line is treated as a comment and ignored by SmartGit. The file encoding is `UTF-8`.
+If a line starts with`#`, the entire line is treated as a comment and ignored by SmartGit.
+
+The file encoding is `UTF-8`.
 
 #### Note
 
-> The file `smartgit.properties` contains only settings for SmartGit itself.
-> If you want to configure your Git repositories, have a look at the various Git configuration files instead, such as `.git/config` for the configuration of individual Git repositories, and `~\.gitconfig` (in your HOME directory) for global configuration options.
+>
+>
+>The `smartgit.properties` file contains only settings for SmartGit itself.
+> If you want to configure the underlying behaviour of git, have a look at
+> the various Git configuration files instead, such as `.git/config` for
+> the configuration of individual Git repositories, and `~\.gitconfig` (in
+> your HOME directory) for global configuration options.
+>
+>
 
 ## Networking
 
 ### java.net.preferIPv4Stack
 
-By default, SmartGit prefers to connect via IPv4. To connect via IPv6 instead, set this option to `false`.
+By default, SmartGit prefers to connect via IPv4. To instead connect via IPv6, set this option to `false`.
 
 ### http.nonProxyHosts
 
-Use these properties to specify servers to connect directly to, bypassing the configured proxy, for example: `*.foo.com|localhost`. Note, that only internal code of SmartGit is honoring `http.nonProxyHosts`.
-*This does not include Git itself.*
+Use these properties to specify servers to connect directly to, bypassing the configured proxy, for example: `*.foo.com|localhost`. Note: This only affects the behavior of SmartGit. Any git usage outside of SmartGit will not use the `http.nonProxyHosts`.
 
 ## Company-wide configuration
 
@@ -85,13 +103,13 @@ Set to `false` to hide **Help\|Check for Latest Build**.
 
 ### smartgit.installation.update.workingArea
 
-Use this property to customize the [program updater](Installation-and-Files.md)'s temporary directory, which is by default located in your home directory/profile. This should only be necessary if updating is not possible due to (file system) restrictions in this default directory, e.g. if execution of files is prevented by the system. On Windows, paths have to be specified using forward-slashes, like `c:/temp`.
+Use this property to customize the [program updater](../../Installation/Installation-and-Files.md)'s temporary directory, which is by default located in your home directory/profile. This should only be necessary if updating is not possible due to (file system) restrictions in this default directory, e.g. if execution of files is prevented by the system. On Windows, paths have to be specified using forward-slashes, like `c:/temp`.
 
 ## Bug Reporting
 
 ### smartgit.disableBugReporting
 
-Set to `true` to disable sending of [crash footprints](Bug-Reports.md) (even if configured in the **Preferences**) and skip the option to send bug reports to us. When setting this option, you will probably also want to hide the corresponding page from the **Preferences**, see [smartgit.preferences.bugReports.visible](#smartgitpreferencescategoryvisible).
+Set to `true` to disable sending of [crash footprints](../Bug-Reports.md) (even if configured in the **Preferences**) and skip the option to send bug reports to us. When setting this option, you will probably also want to hide the corresponding page from the **Preferences**, see [smartgit.preferences.bugReports.visible](#smartgitpreferencescategoryvisible).
 
 #### Warning
 
@@ -99,7 +117,7 @@ Set to `true` to disable sending of [crash footprints](Bug-Reports.md) (even if 
 
 ### smartgit.license.defaultPath
 
-By default, SmartGit will look for a "default" license file in the [installation default directory](Company-wide-installation.md). You can use this system property to specify a different **file system path** for the default license to look for.
+By default, SmartGit will look for a "default" license file in the [installation default directory](../../Installation/Company-wide-installation.md). You can use this system property to specify a different **file system path** for the default license to look for.
 
 #### Example
 

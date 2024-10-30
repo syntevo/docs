@@ -1,3 +1,9 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Distributed-Reviews-add-on-
+  - /SmartGit/Latest/Distributed-Reviews-add-on-.html
+---
+
 # Distributed Reviews (add-on)
 
 The *Distributed Reviews* add-on allows your team to create a *Pull Request* from one branch to another and to *comment* on pull requests and individual commits. Contrary to *centralized* code reviewing systems like GitHub, no dedicated server is required: all review metadata is stored in the Git repository itself and distributed the same way as your primary content/commits. This gives you all the benefits of Git: you can work offline and you can prepare your pull requests and comments locally and only push them when ready, or discard them if you change your mind, without affecting anyone else.
@@ -17,8 +23,7 @@ For a *shared* repository (including all its *clones*), the initialization of a 
 ### Using a Pull Request to request a review or integration of a feature
 
 *Pull Requests* are used to signal that you consider a *feature branch*
-as 'ready' and request someone else to review and integrate this branch into the main development line (usually `master` or `develop` in case of
-[Git-Flow](Git-Flow.md)).
+as 'ready' and request someone else to review and integrate this branch into the main development line (usually `master` or `develop` in case of [Git-Flow](../DevelopmentProcesses/Git-Flow.md)).
 
 To create a Pull Request, select your *feature branch* in the
 **Branches** view and invoke **Create Pull Request** from the context menu. In the upcoming dialog, select the **target** branch and a
@@ -35,7 +40,7 @@ To review or integrate a Pull Request, open the Log and select and reveal the Pu
 - If the Pull Request is not yet ready for merge and/or there is something to object to, you may leave a comment (see section
   [Commenting changes](#commenting-changes)) and **Reject** the Pull Request. At the same time, you will probably want to assign the Pull Request back to the author or someone else who you think can best deal with your comments. Comments may be applied to the Pull Request commit itself (either to the commit of the affected files' changes)
   or to individual commits of the Pull Request, whatever suits your needs better.
-- If the Pull Request is fine, you may **Integrate** the Pull Request from the **Branches** view context menu. The **Integrate** dialog is similar to [Git-Flow's Finish Feature dialog](Git-Flow.md#finish-feature):
+- If the Pull Request is fine, you may **Integrate** the Pull Request from the **Branches** view context menu. The **Integrate** dialog is similar to [Git-Flow's Finish Feature dialog](../DevelopmentProcesses/Git-Flow.md#finish-feature):
   you can select how to integrate the commits and some optional cleanup tasks. Alternately, you may just **Approve** the Pull Request and assign it to someone who should finally **Integrate** the Pull Request.
 - If you don't feel to be the right assignee for the Pull Request at all, you may simply **Assign** it to someone else who you think can deal with it better.
 
@@ -183,7 +188,7 @@ To get rid of Distributed Reviews data not just for your local clone, but also f
 ## Customizing the pull request integration message
 
 The default message which will be set for the **Integrate Pull Request**
-dialog can be customized by using a message template. The message template will be specified using [system property](System-Properties.md) `smartgit.reviews.integrateMessageTemplate`. Following variables can be used:
+dialog can be customized by using a message template. The message template will be specified using [system property](../GUI/AdvancedSettings/System-Properties.md) `smartgit.reviews.integrateMessageTemplate`. Following variables can be used:
 
 - `${id}:` the short pull request ID
 - `${message}:` the entire pull request message (including new lines)
