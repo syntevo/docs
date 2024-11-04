@@ -6,7 +6,7 @@
 There are a couple of possible reasons which may result in slower
 refreshing:
 
--   **Insufficient heap size:** try to increase the [maximum memory limit](../Latest/VM-options.md).
+-   **Insufficient heap size:** try to increase the [maximum memory limit](../Latest/GUI/AdvancedSettings/VM-options.md).
 -   **Network Shares:** make sure, your repository and Git's `HOME`
     directory is located on a local drive. Tests have shown that
     repositories accesses over network shares (SMB or SSHFS) can be up
@@ -22,7 +22,7 @@ refreshing:
 -   **Big Repositories:** if SmartGit is close to the maximum memory
     limit, refreshing may become very slow. Usually, the pre-configured
     memory limit is sufficient, however for large repositories it may be
-    too low. Try to increase the limit according to [these instructions](../Latest/VM-options.md).
+    too low. Try to increase the limit according to [these instructions](../Latest/GUI/AdvancedSettings/VM-options.md).
 -   **.git/index timestamps wrong:** sometimes `.git/index` timestamps
     may be incorrectly set/rounded, resulting in a content comparison
     for all your working tree files. A possible solution may be to

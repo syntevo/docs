@@ -8,7 +8,7 @@ debug log sent and received JSON objects. To do so:
 1.  create a temporary debug output directory on your hard disk, which
     is writable for SmartGit (e.g. `c:/temp/json`)
 
-2.  add following line to [smartgit.properties](../Latest/System-Properties.md) for
+2.  add following line to [smartgit.properties](../Latest/GUI/AdvancedSettings/System-Properties.md) for
     which you will replace `<absolute-path-to-debug-directory>` by your
     directory's path (on Windows, be sure to use forward-slashes instead
     of back-slashes)
@@ -38,7 +38,7 @@ debug log sent and received JSON objects. To do so:
 
 4.  shutdown SmartGit
 
-5.  get rid of `logs/log.txt*` from [SmartGit's Settings](../Latest/System-Properties.md) directory (it's the same directory where `smartgit.properties` is located)
+5.  get rid of `logs/log.txt*` from [SmartGit's Settings](../Latest/GUI/AdvancedSettings/System-Properties.md) directory (it's the same directory where `smartgit.properties` is located)
 
 6.  restart SmartGit to have the changes take effect
 

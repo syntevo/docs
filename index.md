@@ -1,6 +1,6 @@
-# Documentations
+# Documentation for Syntevo Products
 
-Here you can find the documentation for Syntevo's products:
+Please choose from one of below Syntevo products for online documentation:
 
 - [SmartGit](SmartGit/index.md)
 - [SmartSVN](SmartSVN/index.md)

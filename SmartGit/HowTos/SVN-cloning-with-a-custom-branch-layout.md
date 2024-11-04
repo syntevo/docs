@@ -3,7 +3,7 @@
 There are scenarios where the default branch-tag-layout may not be
 sufficient. Following procedure allows you to customize the layout:
 
--   Edit the `smartgit.properties` file that you can find in [SmartGit's settings directory](../Latest/Installation-and-Files.md).
+-   Edit the `smartgit.properties` file that you can find in [SmartGit's settings directory](../Latest/Installation/Installation-and-Files.md).
 -   Add following line to the beginning of the file:
 
 ``` text

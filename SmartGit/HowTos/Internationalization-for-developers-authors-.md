@@ -35,7 +35,7 @@ This requires an initial setup effort but rewards you by seeing your translation
 1.  Fork the [smartgit-translations](https://github.com/syntevo/smartgit-translations)  repository in GitHub and get a local clone of your fork to your disk.
     For subsequent explanations, we assume the clone to be located in `D:\smartgit-translations`.
 
-2.  To put SmartGit into i18n development mode, add following properties to [smartgit.properties](../Latest/System-Properties.md):
+2.  To put SmartGit into i18n development mode, add following properties to [smartgit.properties](../Latest/GUI/AdvancedSettings/System-Properties.md):
 
     ```
     smartgit.i18n=<locale>

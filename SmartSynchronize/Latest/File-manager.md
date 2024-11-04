@@ -27,7 +27,7 @@ Note, that favorite names have precedence over drives.
 
 ## Sorting
 
-In the [Preferences](Configurations.md#preferences) you can configure whether sub directories will be sorted like normal files or always shown before the files (default).
+In the [Preferences](Preferences.md) you can configure whether sub directories will be sorted like normal files or always shown before the files (default).
 SmartSynchronize can remember different sortings for different directories, and one default sorting.
 For example, it makes sense to keep the `Downloads` directory sorted by *Last Modified Time*, so newly downloaded files show up at the top, while for nearly all other directories sorting by *Name* or *Extension* might be more appropriate.
 

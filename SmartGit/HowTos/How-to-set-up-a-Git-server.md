@@ -8,7 +8,7 @@ Of course, you could use cloud based Git hosting providers like GitHub,
 Assembla or BitBucket, but here we want to cover the topic of using an
 own server. Some Git hosting providers also offer a version that you
 could install on your own server. A free and good one is GitLab
-([www.gitlab.com](www.gitlab.com.md)).
+([www.gitlab.com](https://www.gitlab.com)).
 
 Usually, Linux servers are used. They make authentication with SSH
 simple and, if there already runs an Apache, https-authentication also

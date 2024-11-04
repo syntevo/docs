@@ -6,7 +6,7 @@ Various built-in SmartGit functionality will connect to *https* URLs, for exampl
 - various integrations, like Hosting Providers
 
 When experiencing problems here, it can be helpful to debug Java's networking layer.
-To do that, add the `javax.net.debug` property to the [smartgit.properties](../Latest/System-Properties.md) file.
+To do that, add the `javax.net.debug` property to the [smartgit.properties](../Latest/GUI/AdvancedSettings/System-Properties.md) file.
 The property value depends on the type of logging you are looking for:
 
 * `javax.net.debug=ssl:trustmanager` to debug problems with server certificates

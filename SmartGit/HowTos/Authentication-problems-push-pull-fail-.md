@@ -4,7 +4,7 @@ This is a collection of common problems and resolutions related to authenticatio
 
 # Preparation/general
 
-`log` denotes directory inside the [Settings Directory](../Latest/Installation-and-Files.md) containing SmartGit's log files.
+`log` denotes directory inside the [Settings Directory](../Latest/Installation/Installation-and-Files.md) containing SmartGit's log files.
 
 While resolving authentication-related problems, it's recommended to disable **Detect remote changes** option in the **Preferences**, section **Background Commands** to prevent background operations spoiling the log file with too many problems.
 
@@ -41,7 +41,7 @@ SmartGit's **Hosting Provider** configuration may interfere with the authenticat
     -   If the command works there, re-setup the hosting provider in the **Preferences** again and retry
         -   if it stops working again, continue with step "Contact Support".
     -   If the command does not work without the hosting provider configured, continue below.
--   If your repository is connected to GitHub, check whether this problem might be related to [organization access](../Latest/GitHub-integration.md#private-repositories-do-not-show-up).
+-   If your repository is connected to GitHub, check whether this problem might be related to [organization access](../Latest/Integrations/GitHub-integration.md#private-repositories-do-not-show-up).
 -   If you are not connected to a hosting provider  
     -   if you are on Windows, continue with the next step.
     -   continue with step "Check Firewalls/Antivirus tools".

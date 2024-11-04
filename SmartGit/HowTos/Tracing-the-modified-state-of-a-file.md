@@ -20,7 +20,7 @@ status detection and Git's status.
 -   Shutdown SmartGit.
 
 -   Add `smartgit.statusscanner.trace`=\<relative-path>
-    to [smartgit.properties](../Latest/System-Properties.md)
+    to [smartgit.properties](../Latest/GUI/AdvancedSettings/System-Properties.md)
     (in the settings directory, see About dialog).  
     `<relative-`path> is the repository-relative path of the file for
     which the modification should be traced. On Windows, also replace
