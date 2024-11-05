@@ -1,6 +1,0 @@
-REGEDIT4
-
-[-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\SmartSVN]
-[-HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\SmartSVN]
-[-HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\SmartSVN]
-[-HKEY_CLASSES_ROOT\Folder\shellex\ContextMenuHandlers\SmartSVN]
