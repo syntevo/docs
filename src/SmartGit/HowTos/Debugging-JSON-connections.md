@@ -30,8 +30,12 @@ debug log sent and received JSON objects. To do so:
     smartgit.json.debugHeaders=true
     ```
 
-	#### Note
-	> The debug log of *sent* headers will also include `Authorization`
+    #### Note
+    > Debug headers are not supported for certain types of integrations, notably
+    > not for GraphQL-related integrations, such as GitHub.
+
+    #### Note
+    > If enabled, the debug log of *sent* headers will also include `Authorization`
 	> and similar headers which contain your username/password or similar
 	> credentials. Thus, be sure to remove the debug output files from
 	> your disk as soon as you have finished the debugging.
