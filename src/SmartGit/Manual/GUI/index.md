@@ -12,7 +12,7 @@ Please follow one of the below links to get started with one of the following to
     - The [Working Tree Window](Working-Tree-Window.md)
     - The [Standard Window](Standard-Window.md)
     - The [Log Window](Log-Window.md)
-- Customizing SmartGit according to your [User Preferences](Preferences/Preferences.md)
+- Customizing SmartGit according to your [User Preferences](Preferences/index.md)
 - Additional Features of SmartGit
     - [SmartGit Blame](Blame.md)
     - [SmartGit Bisect](Bisect.md)
@@ -21,12 +21,12 @@ Please follow one of the below links to get started with one of the following to
 
 Additional Topics:
 
-- [Working with Repositories](Repository/Repository.md)
-- [Working with Branches](Branch/Branching.md)
+- [Working with Repositories](Repository/index.md)
+- [Working with Branches](Branch/index.md)
 - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree.md)
-- [General Concepts in Git](../GitConcepts/Git-Concepts.md)
-- [Installing SmartGit](../Installation/Installation-and-Files.md)
-- [SmartGit's Integration with Git Hosting and Issue Tracking systems](../Installation/Installation-and-Files.md) such as GitHub, JIRA, Azure DevOps, TeamCity and Jenkins.
+- [General Concepts in Git](../GitConcepts/index.md)
+- [Installing SmartGit](../Installation/index.md)
+- [SmartGit's Integration with Git Hosting and Issue Tracking systems](../Installation/index.md) such as GitHub, JIRA, Azure DevOps, TeamCity and Jenkins.
 
 Also Available:
 

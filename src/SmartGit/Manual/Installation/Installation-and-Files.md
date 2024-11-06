@@ -43,7 +43,7 @@ Below are the locations of SmartGit's settings files, depending on the OS:
 - `preferences.yml` stores the application-wide settings (preferences) of SmartGit. You should not remove this file, unless you want to completely reset SmartGit.
 - `repositories.yml` stores information about known repositories and submodules, e.g. recently used commit messages.
 - `repository-grouping.yml` stores information about added repositories, their names and repository groups.
-- `tools.yml` stores *external* tools which have been configured in [Preferences](../GUI/Preferences/Preferences.md). You probably do not want to remove this file, as all external tools configurations will be lost. However, if you've set up all tool configurations you believe your team needs, you can then share this file with your team mates.
+- `tools.yml` stores *external* tools which have been configured in [Preferences](../GUI/Preferences/index.md). You probably do not want to remove this file, as all external tools configurations will be lost. However, if you've set up all tool configurations you believe your team needs, you can then share this file with your team mates.
 - `ui-config.yml` stores UI related, more stable settings, e.g. the toolbar configurations. Removing this file will reset affected aspects of the UI back to defaults.
 - `ui-state.yml` stores UI related, volatile settings, e.g. window sizes and positions or column widths. Removing this file will reset affected aspects of the UI back to defaults.
 

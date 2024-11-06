@@ -2,7 +2,7 @@
 
 The *Repositories View* shows a list of repositories known to SmartGit on the local computer, allowing you to open an existing repository, and shows you which repository(ies) are currently open by a **bold** highlight.
 
-Please also refer to [Working with Repositories](Repository/Repository.md) for general Repository operations.
+Please also refer to [Working with Repositories](Repository/index.md) for general Repository operations.
 
 SmartGit remembers repositories that you've previously opened and any GUI-related settings applied to each repository. To open a repository, double-click it. If the repository is already is open in another window, SmartGit will focus on that window. If the current window executes commands or **Open in New Window** has been selected from the repository's context menu, the repository will open in a new window. To open multiple repositories simultaneously, select and highlight each repository (e.g., using **`Ctrl/Cmd` + click**) and choose **Open** from the context menu.
 

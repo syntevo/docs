@@ -13,7 +13,7 @@ The Log Window is aimed at experienced Git Users who which to gain full understa
 The Log Window contains the following views:
 
 - The [Repositories View](Repositories-View.md), showing all repositories added to SmartGit, and allowing you to switch between open repositories.
-- The [Branches View](Branches-view.md), allowing you to toggle which branches are to be included int the *Graph View*, and other [Branch](Branch/Branching.md) related features.
+- The [Branches View](Branches-view.md), allowing you to toggle which branches are to be included int the *Graph View*, and other [Branch](Branch/index.md) related features.
 - The [Graph View](Graph-View.md), providing a graphical visualization of the commit history in the selected branches.
 - The [Commit View](Commit-View.md) allowing Commits to be viewed, and new Commits to be created.
 - The *Files View*, showing which files have changed in the selected commit. The standard filtering widgets can be applied to control which files are listed.

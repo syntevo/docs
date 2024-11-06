@@ -88,7 +88,7 @@ Both, Pull Request and Plain Commit Comments, can refer either to a commit itsel
 
 Comments can be created, modified and removed using the corresponding actions from the **Comments** menu or context menu actions in the **Commits** and **Changes** view. If a pull request *merge* commit is selected, only line-comments of the pull request can be manipulated.
 
-More behavior of the GitHub integration can be customized by [Low-Level Properties](../GUI/Preferences/Preferences.md).
+More behavior of the GitHub integration can be customized by [Low-Level Properties](../GUI/Preferences/index.md).
 
 ### Re-setup OAuth
 

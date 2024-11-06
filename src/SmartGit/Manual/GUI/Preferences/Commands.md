@@ -138,7 +138,7 @@ This tab-set allows you to edit your `.gitconfig` file, which controls a number 
 
 
 #### Tip - Feature Branch Prefixing
-> For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md), it is possible to provide a standard branch prefix across all 3 [Development Processes](../../DevelopmentProcesses/Development-Processes.md) through the following `.gitconfig` setting:
+> For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md), it is possible to provide a standard branch prefix across all 3 [Development Processes](../../DevelopmentProcesses/index.md) through the following `.gitconfig` setting:
 
 ```
 [smartgit "gui"]

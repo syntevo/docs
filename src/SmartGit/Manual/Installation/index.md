@@ -13,7 +13,7 @@ Please select one of the below topics relating to SmartGit Installation:
   - [On-premise license server](On-premise-license-server.md)
 
 Other related links:
-- [Using Smart Git](../GUI/GUI.md)
+- [Using Smart Git](../GUI/index.md)
 - [SmartGit online Help - Table of Contents](../index.md)
 - [SmartGit Command-Line Options](../GUI/Command-Line-Options.md)
 
