@@ -20,7 +20,7 @@ For a reference on what the various state colours and and icons mean, please con
 
 ## Repository Management
 
-To add existing or new local repositories to SmartGit, please take a look at [Working with Repositories](Repository.md#opening-a-repository).
+To add existing or new local repositories to SmartGit, please take a look at [Working with Repositories](index.md#opening-a-repository).
 
 ## File Filtering in the Files view
 

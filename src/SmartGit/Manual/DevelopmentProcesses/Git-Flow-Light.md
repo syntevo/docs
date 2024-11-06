@@ -41,4 +41,4 @@ For existing repositories, you can set `main` as your development branch (histor
 Since Git-Flow Light is a subset of GitFlow, refer to [the Git-Flow documentation](Git-Flow.md#git-flow-commands) for the meaning and purpose of each command.
 
 #### Tip
-> For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
+> For users who use a combination of [**Feature-Flow**](Feature-Flow.md), [**Git-Flow**](Git-Flow.md) or [**Git-Flow-Light**](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).

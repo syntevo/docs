@@ -66,7 +66,7 @@ o  ... commit forked from [develop] to create branch [feature/feature-A]
 ```
 
 #### Tip
-> For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
+> For users who use a combination of [**Feature-Flow**](Feature-Flow.md), [**Git-Flow**](Git-Flow.md) or [**Git-Flow-Light**](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
 
 ### Release Branches
 

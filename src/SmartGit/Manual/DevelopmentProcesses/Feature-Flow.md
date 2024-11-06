@@ -29,7 +29,7 @@ RegEx patterns can also be specified as a branch pattern, e.g. If you need to su
 In addition, you can specify the Feature Prefix to be used on new features. This will default to `feature/`, which is the Git-Flow standard. You can leave the Feature Prefix blank to remove any prefix from your feature branch names when you start new features.
 
 #### Tip
-> For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
+> For users who use a combination of [**Feature-Flow**](Feature-Flow.md), [**Git-Flow**](Git-Flow.md) or [**Git-Flow-Light**](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
 
 ![Feature-Flow configuration](../images/Feature-Flow-Configuration.png)
 

@@ -24,7 +24,7 @@ When a [Merge](Merging.md) or [Rebase](Rebasing.md) fails due to conflicts in fi
 
 In this case, you can complete the merge in two ways:
 
-- Resolve the conflict using a tool like the [SmartGit Conflict Resolver](/SmartGit/Manual/GUI/Branch/Conflict-Solver.md), stage the file changes, and commit at the Working Tree root.
+- Resolve the conflict using a tool like the [SmartGit Conflict Resolver](../GUI/Branch/Conflict-Solver.md), stage the file changes, and commit at the Working Tree root.
 - Revert the entire Working Tree to its state before the merge (`git merge --abort`) or before the rebase (`git rebase --abort`).
 
 SmartGit automatically detects when the Working Tree is in Merging state and guides you through the conflict resolution process.

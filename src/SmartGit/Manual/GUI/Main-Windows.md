@@ -44,4 +44,4 @@ For further information on each of the Main Windows in SmartGit, please refer to
 - [Working Tree Window](Working-Tree-Window.md)
 - [Log Window](Log-Window.md)
 - [Standard Window](Standard-Window.md)
-- [Using the SmartGit Application](GUI.md)
+- [Using the SmartGit Application](index.md)
