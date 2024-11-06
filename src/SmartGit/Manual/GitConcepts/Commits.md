@@ -15,7 +15,7 @@ This creates a 'commit graph' (technically a Directed Acyclic Graph (DAG) consis
 Hence, a commit is not just a set of changes; due to its fixed location in the commit graph, it also represents a unique repository state.
 
 > <sup>1</sup> It is possible for a git repository to contain more than one root commit (`git checkout --orphan`) and therefore contain multiple unrelated commit graphs.
-> The wisdom of having more than on root commit needs to be balanced against creating separate repositories for each project.
+> The wisdom of having more than one root commit needs to be balanced against creating separate repositories for each project.
 
 Therefore:
 
