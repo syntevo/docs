@@ -1,8 +1,6 @@
-# Getting started with SmartGit
+# SmartGit documentation
 
 If you are new to [SmartGit](https://www.syntevo.com/smartgit/), the [SmartGit User Interface Reference](GUI/index.md) is a good place to start.
-
-# SmartGit documentation
 
 This documentation is split into two sections, and each serves a distinct purpose:
 - [Manual](Manual/index.md) 
