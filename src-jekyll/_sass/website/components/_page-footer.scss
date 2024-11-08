@@ -1,0 +1,12 @@
+.page-footer {
+  @include responsive-type-size(14px, 21px);
+  background-color: $dark-gray;
+  color: white;
+  padding: 40px 0;
+
+  a { text-decoration: underline; }
+
+  @media (min-width: $breakpoint-tablet-portrait) {
+    padding: 80px 0;
+  }
+}

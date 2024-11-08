@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{%if page.path contains "SmartGit/Latest"%}
+<div class="improve-link">
+  <a href="{{ site.github.repository_url }}/edit/main/src/{{ page.path | remove: 'Latest/' }}/">Propose Changes</a>
+</div>
+{%endif%}
+
+{{ content }}

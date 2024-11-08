@@ -1,0 +1,15 @@
+.product-page-header {
+  padding: 30px 0;
+
+  @each $product in $product-colors {
+    $color-name: nth($product, 1);
+    $color: nth($product, 2);
+
+    &--#{$color-name} { background-color: $color; }
+  }
+
+  &__logo svg {
+    display: block;
+    fill: $white;
+  }
+}
