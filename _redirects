@@ -9,8 +9,7 @@
 /DeepGit/Latest/Bug-Reports.html /DeepGit/Latest/Manual/Bug-Reports 301
 /DeepGit/Latest/Integrations /DeepGit/Latest/Manual/Integrations 301
 /DeepGit/Latest/Integrations.html /DeepGit/Latest/Manual/Integrations 301
-/DeepGit/Latest/Manual /DeepGit/Latest/Manual/Manual 301
-/DeepGit/Latest/Manual.html /DeepGit/Latest/Manual/Manual 301
+/DeepGit/Latest/Manual.html /DeepGit/Latest/Manual/ 301
 /DeepGit/Latest/index.html /DeepGit/Latest/Manual/ 301
 /DeepGit/index.html /DeepGit/ 301
 /SmartGit/HowTos/Authentication-problems-push-pull-fail- /SmartGit/Latest/HowTos/Authentication-problems-push-pull-fail- 301
@@ -302,7 +301,6 @@
 /SmartGit/Latest/Managing-Remotes.html /SmartGit/Latest/Manual/GUI/Repository/Managing-Remotes 301
 /SmartGit/Latest/Manipulating-branches-tags /SmartGit/Latest/Manual/GUI/Branch/Manipulating-branches-tags 301
 /SmartGit/Latest/Manipulating-branches-tags.html /SmartGit/Latest/Manual/GUI/Branch/Manipulating-branches-tags 301
-/SmartGit/Latest/Manual /SmartGit/Latest/Manual/Manual 301
 /SmartGit/Latest/Merge /SmartGit/Latest/Manual/GUI/Branch/Merge 301
 /SmartGit/Latest/Merge.html /SmartGit/Latest/Manual/GUI/Branch/Merge 301
 /SmartGit/Latest/On-premise-license-server /SmartGit/Latest/Manual/Installation/On-premise-license-server 301
@@ -457,8 +455,7 @@
 /SmartSVN/Latest/Log.html /SmartSVN/Latest/Manual/Log 301
 /SmartSVN/Latest/MIME-Type /SmartSVN/Latest/Manual/MIME-Type 301
 /SmartSVN/Latest/MIME-Type.html /SmartSVN/Latest/Manual/MIME-Type 301
-/SmartSVN/Latest/Manual /SmartSVN/Latest/Manual/Manual 301
-/SmartSVN/Latest/Manual.html /SmartSVN/Latest/Manual/Manual 301
+/SmartSVN/Latest/Manual.html /SmartSVN/Latest/Manual 301
 /SmartSVN/Latest/Mark-Replaced /SmartSVN/Latest/Manual/Mark-Replaced 301
 /SmartSVN/Latest/Mark-Replaced.html /SmartSVN/Latest/Manual/Mark-Replaced 301
 /SmartSVN/Latest/Mark-Resolved /SmartSVN/Latest/Manual/Mark-Resolved 301
