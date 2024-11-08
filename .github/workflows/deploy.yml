@@ -1,114 +1,26 @@
-name: Deploy to Cloudflare Pages
+name: Trigger Deployment
+
 on:
   push:
     branches:
-      - main
-      - develop
+      - latest
       - smartgit/*
-  workflow_dispatch:  # Allow the workflow to be triggered manually
 
-env:
-  MAIN_BRANCH: ${{ github.ref == 'refs/heads/develop' && 'develop' || 'main' }}
-  CLOUDFLARE_PROJECT_NAME: docs
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages-${{ github.ref }}"
-  cancel-in-progress: true
+permissions:
+  contents: write
+  actions: write
 
 jobs:
-  build:
+  dispatch_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ env.MAIN_BRANCH }}
-          path: main
-
-      - name: Detect Branches
-        working-directory: main
+      - name: Trigger Deployment Workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git fetch --no-tags --prune --depth=1
-          feature_branches=$(git branch -r | grep 'origin/smartgit/' | sed 's|origin/||' | tr '\n' ' ')
-          branches="${{ env.MAIN_BRANCH }} $feature_branches"
-          echo "BRANCHES=$branches" >> $GITHUB_ENV
-
-      - name: Checkout branches
-        run: |
-          mkdir -p branches
-          for branch in ${{ env.BRANCHES }}; do
-            git clone --branch "$branch" --single-branch https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git branches/"$branch"
-          done
-          git clone --branch "legacy" --single-branch https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git branches/legacy
-
-      - name: Prepare build directory
-        run: |
-          mkdir -p .build
-          shopt -s extglob
-          for branch in ${{ env.BRANCHES }}; do
-            if [ "$branch" = "${{ env.MAIN_BRANCH }}" ]; then
-              cp -r branches/"$branch"/src-jekyll/* .build/
-              mkdir -p .build/DeepGit/Latest
-              cp -r branches/"$branch"/src/DeepGit/* .build/DeepGit/Latest/
-              mkdir -p .build/SmartGit/Latest
-              cp -r branches/"$branch"/src/SmartGit/* .build/SmartGit/Latest/
-              mkdir -p .build/SmartSVN/Latest
-              cp -r branches/"$branch"/src/SmartSVN/* .build/SmartSVN/Latest/
-              mkdir -p .build/SmartSynchronize/Latest
-              cp -r branches/"$branch"/src/SmartSynchronize/* .build/SmartSynchronize/Latest/
-            elif [[ "$branch" == smartgit/* ]]; then
-              version=$(echo "$branch" | cut -d'/' -f2)
-              mkdir -p .build/SmartGit/"$version"
-              cp -r branches/"$branch"/src/SmartGit/* .build/SmartGit/"$version"/
-            fi
-          done
-          for version in "6.5" "7.0" "7.1" "8.0" "17.0" "17.1" "18.1" "18.2" "19.1" "20.1" "20.2" "21.1" "21.2" "22.1" "23.1"; do
-            mkdir -p .build/SmartGit/"$version"
-            cp -r branches/legacy/SmartGit/"$version"/* .build/SmartGit/"$version"
-          done
-          for version in "14.0" "14.1"; do
-            mkdir -p .build/SmartSVN/"$version"
-            cp -r branches/legacy/SmartSVN/"$version"/* .build/SmartSVN/"$version"
-          done
-          cp -r branches/"${{ env.MAIN_BRANCH }}"/src-inflated/* .build
-          find .build -type f -printf "%P\n"
-
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: .build/
-          destination: ./_site
-
-      - name: Compress _site directory
-        run: |
-          tar -czf site.tar.gz -C _site .
-
-      - name: Copy _site to .upload
-        run: |
-          cp -R _site .upload
-
-      - name: Convert redirects.json to _redirects
-        run: |
-          cp branches/"${{ env.MAIN_BRANCH }}"/_redirects .upload/
-          cp branches/"${{ env.MAIN_BRANCH }}"/404.html .upload/
-
-      - name: Delete HTML stub files from jekyll-redirect-from plugin and Markdown files
-        run: |
-          find .upload -type f -name '*.html' -exec sh -c '
-            if grep -q "http-equiv=\"refresh\"" "$1" && ! grep -q "<body" "$1"; then
-              echo "Deleting: $1"
-              rm "$1"
-            fi
-          ' sh {} \;
-          find .upload -type f -name '*.md' -exec rm {} \;
-
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.CLOUDFLARE_PROJECT_NAME }}
-          directory: ./.upload
-          branch: ${{ env.MAIN_BRANCH }}
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches \
+            -d '{"ref": "main"}'
