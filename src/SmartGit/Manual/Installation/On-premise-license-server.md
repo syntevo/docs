@@ -150,6 +150,17 @@ You can configure the on-premise server LDAP functionality using environment var
 * `SPRING_LDAP_PASSWORD`: the password (you are advised to use Docker/Kubernetes secrets for this)
 * `SPRING_LDAP_BASE`: root node to start the search in; we'll always do a subtree search
 
+We use Spring Boot (currently at version 2.7) with its built-in LDAP functionality. Please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/application-properties.html#appendix.application-properties) to find additional LDAP properties that the framework supports.
+
+#### LDAP over SSL
+
+In case you want to connect to your LDAP using SSL, you need to use a custom truststore by setting the `SYNTEVO_OPSERVER_TRUSTSTORE_PATH` and `SYNTEVO_OPSERVER_TRUSTSTORE_PASSWORD` environment variables. Don't forget to mount the truststore itself by adding something along the lines of `-v /path/to/opserver_truststore.p12:/opserver_truststore.p12` to the docker run arguments. Note though, that this will fully replace the default truststore. In case you still want to use services like automatically checking for updates, it's best if you inherit from the default one installed with your JVM. Here is an example script to create such a truststore:
+
+```
+keytool -importkeystore -srckeystore /usr/lib/jvm/java-11-openjdk-amd64/lib/security/cacerts -destkeystore opserver_truststore.p12 -srcstoretype PKCS12 -deststoretype PKCS12
+keytool -importcert -alias ldap_server_cert -file ldap_server_certificate.pem -keystore opserver_truststore.p12
+```
+
 #### Example
 
 > A Linux/MacOS example for starting the on-premise license server which queries the Active Directory:
@@ -174,10 +185,6 @@ You can configure the on-premise server LDAP functionality using environment var
 > * Both, the local LDAP server and the on-premise license server run on the same Docker network `syntevo-op-server`.
 > * The image of the LDAP server is `syntevo-license-ldap-server` which results in URL `ldap://syntevo-license-ldap-server:8389`; it serves `dc=springframework,dc=org`.
 > * We are using `--rm` to re-create the container from scratch with every invocation.
-
-We use Spring Boot (currently at version 2.7) with its built-in LDAP functionality. Please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/application-properties.html#appendix.application-properties) to find additional LDAP properties that the framework supports.
-
-In case you need to connect to your LDAP using SSL, you need to set up keystore and truststore in the container using [standard JVM properties](https://docs.oracle.com/en/java/javase/11/security/java-secure-socket-extension-jsse-reference-guide.html#GUID-460C3E5A-A373-4742-9E84-EB42A7A3C363). This requires modifying the container startup arguments, so it is a more advanced use case. Please get in touch with us should you have this requirement.
 
 ## Reporting
 
