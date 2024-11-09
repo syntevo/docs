@@ -136,7 +136,7 @@ You can configure the on-premise license server to check authorization to use Sm
 Configure SmartGit to read the logged-in user on the client and send it to the license server. For this, just append `?verify=ldap` to the property `smartgit.opLicenseServer.url`, e.g.:
 
 ```
-smartgit.opLicenseServer.url=http://localhost:8080/v1?verify=ldap
+smartgit.opLicenseServer.url=http://localhost:8080/public/v1?verify=ldap
 ```
 
 ### Configure License Server
@@ -192,7 +192,7 @@ The license server provides a reporting endpoint which is meant to be used by ad
 1. Invoke the `reportOp` endpoint:
 
    ```
-   curl -u admin:<password> <license-server-url>/v1/reportOp?type=<type>
+   curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=<type>
    ```
 
     1. `<password>` needs to be replaced by the current password.
@@ -212,7 +212,7 @@ The license server provides a reporting endpoint which is meant to be used by ad
 The report type `raw` provides detailed, low-level usage information and has the following format:
 
 ```
-curl -u admin:<password> <license-server-url>/v1/reportOp?type=raw[&from=<from>&to=<to>]
+curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=raw[&from=<from>&to=<to>]
 ```
 
 Optional parameters `<from>` and `<to>` specify the time range for the `raw` report. If either `<from>` or `<to>` is present, the other must also be included.
@@ -220,7 +220,7 @@ Optional parameters `<from>` and `<to>` specify the time range for the `raw` rep
 #### Example
 
 > ```
-> curl -u admin:ebc89b1511c6eaf29921d7f9219b608e383384df3ac161287d80c39911e10eb4 "https://syntevo.com/license-server/v1/reportOp?type=raw&from=2000-01-01&to=2030-12-31"
+> curl -u admin:ebc89b1511c6eaf29921d7f9219b608e383384df3ac161287d80c39911e10eb4 "https://opserver.syntevo.com/admin/v1/reportOp?type=raw&from=2000-01-01&to=2030-12-31"
 > ```
 
 ### User Data
@@ -228,7 +228,7 @@ Optional parameters `<from>` and `<to>` specify the time range for the `raw` rep
 The report type `user` provides a high-level summary of usage, with data aggregated per user:
 
 ```
-curl -u admin:<password> <license-server-url>/v1/reportOp?type=user
+curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=user
 ```
 
 ### Master License
@@ -236,7 +236,7 @@ curl -u admin:<password> <license-server-url>/v1/reportOp?type=user
 The report type `masterLicense` provides an executive summary, with data aggregated per master license:
 
 ```
-curl -u admin:<password> <license-server-url>/v1/reportOp?type=masterLicense
+curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=masterLicense
 ```
 
 ## Debugging
@@ -246,5 +246,5 @@ curl -u admin:<password> <license-server-url>/v1/reportOp?type=masterLicense
 For testing purposes, it may be convenient to manually perform the same kind of license request that SmartGit will use. For a server running at `http://localhost:8080`, sending an example request using *curl* might look like:
 
 ```
-curl -X POST http://localhost:8080/v1/licenseOp -H "Content-Type: application/json" -d "{ \"Build\": 20118, \"Email\": \"someone@example.com\", \"HardwareHashes\": { \"wmg\": \"foo\", \"wvi\": \"bar\" }, \"MajorVersion\": \"23.1\", \"MinorVersion\": \"23.1.1\", \"OperatingSystem\": \"windows\", \"Product\": \"SmartGit\" }"
+curl -X POST http://localhost:8080/public/v1/licenseOp -H "Content-Type: application/json" -d "{ \"Build\": 20118, \"Email\": \"someone@example.com\", \"HardwareHashes\": { \"wmg\": \"foo\", \"wvi\": \"bar\" }, \"MajorVersion\": \"23.1\", \"MinorVersion\": \"23.1.1\", \"OperatingSystem\": \"windows\", \"Product\": \"SmartGit\" }"
 ```
