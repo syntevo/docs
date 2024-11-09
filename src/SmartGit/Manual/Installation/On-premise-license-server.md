@@ -46,7 +46,7 @@ To run our on-premise server, only Docker is required. This document describes h
 
     1. On the target server where the Docker image will be run, create a top-level directory `<license-server-root>` which will contain the persistent data of the license server, for example, `/var/syntevo-license-server`.
 
-    1. In this directory, create a sub-directory named `licenses`.
+    1. In this directory, create sub-directories named `licenses` and `data`.
 
     1. Put the *on-premise license file* you have received from us into this directory. Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
 
