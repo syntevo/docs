@@ -17,6 +17,8 @@ If the *working tree* node is selected, it shows :
 - options available in the current context
 - a **Commit** button to actually perform the commit, with the option to instead **Amend** the previous commit.
 
+#### Options
+
 The hamburger icon (☰) at the top right of the commit view provides additional functionality:
 - Toggles the *More Options* setting. When More Options is enabled, the following additional options appear:
   - *Add `Signed Off By` signature* (i.e. the `--signoff` flag). Use this option to declare that changes in this commit does not infringe on copyrights held by other parties.
