@@ -39,9 +39,9 @@ To run our on-premise server, only Docker is required. This document describes h
 
 1. Prepare host directories for the Docker volumes
 
-   1. On the target server where the Docker image will be run, create a top-level directory `<license-server-root>` which will contain the persistent data of the license server, for example, `/var/syntevo-license-server`.
+    1. On the target server where the Docker image will be run, create a top-level directory `<license-server-root>` which will contain the persistent data of the license server, for example, `/var/syntevo-license-server`.
 
-   1. In this directory, create a sub-directory named `licenses`.
+    1. In this directory, create sub-directories named `licenses` and `data`.
 
    1. Put the *on-premise license file* you have received from us into this directory. Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
 
@@ -98,7 +98,7 @@ docker load -i syntevo-license-opserver.tar
 We recommend deploying SmartGit with the [system property](System-Properties.md) `smartgit.opLicenseServer.url` pre-configured, so the license server will be contacted automatically on startup. For example:
 
 ```
-smartgit.opLicenseServer.url=http://localhost:8080/v1
+smartgit.opLicenseServer.url=http://localhost:8080/
 ```
 
 ### Configuration during Setup
@@ -109,7 +109,7 @@ If required, users can configure the license server on-the-fly during setup:
 
 1. In the lower right area of the wizard, click **Have an on-premise license server**.
 
-1. For the upcoming **License Server URL** text field, enter the URL of the license server, e.g., `http://localhost:8080/v1`.
+1. For the upcoming **License Server URL** text field, enter the URL of the license server, e.g., `http://localhost:8080/`.
 
 ### Configuration after Setup
 
@@ -131,7 +131,7 @@ You can configure the on-premise license server to check authorization to use Sm
 Configure SmartGit to read the logged-in user on the client and send it to the license server. For this, just append `?verify=ldap` to the property `smartgit.opLicenseServer.url`, e.g.:
 
 ```
-smartgit.opLicenseServer.url=http://localhost:8080/v1?verify=ldap
+smartgit.opLicenseServer.url=http://localhost:8080/public/v1?verify=ldap
 ```
 
 ### Configure License Server
@@ -144,6 +144,17 @@ You can configure the on-premise server LDAP functionality using environment var
 * `SPRING_LDAP_USERNAME`: the username which the license server will use to connect to LDAP
 * `SPRING_LDAP_PASSWORD`: the password (you are advised to use Docker/Kubernetes secrets for this)
 * `SPRING_LDAP_BASE`: root node to start the search in; we'll always do a subtree search
+
+We use Spring Boot (currently at version 2.7) with its built-in LDAP functionality. Please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/application-properties.html#appendix.application-properties) to find additional LDAP properties that the framework supports.
+
+#### LDAP over SSL
+
+In case you want to connect to your LDAP using SSL, you need to use a custom truststore by setting the `SYNTEVO_OPSERVER_TRUSTSTORE_PATH` and `SYNTEVO_OPSERVER_TRUSTSTORE_PASSWORD` environment variables. Don't forget to mount the truststore itself by adding something along the lines of `-v /path/to/opserver_truststore.p12:/opserver_truststore.p12` to the docker run arguments. Note though, that this will fully replace the default truststore. In case you still want to use services like automatically checking for updates, it's best if you inherit from the default one installed with your JVM. Here is an example script to create such a truststore:
+
+```
+keytool -importkeystore -srckeystore /usr/lib/jvm/java-11-openjdk-amd64/lib/security/cacerts -destkeystore opserver_truststore.p12 -srcstoretype PKCS12 -deststoretype PKCS12
+keytool -importcert -alias ldap_server_cert -file ldap_server_certificate.pem -keystore opserver_truststore.p12
+```
 
 #### Example
 > A Linux/MacOS example for starting the on-premise license server which queries the Active Directory:
@@ -168,10 +179,6 @@ You can configure the on-premise server LDAP functionality using environment var
 > * The image of the LDAP server is `syntevo-license-ldap-server` which results in URL `ldap://syntevo-license-ldap-server:8389`; it serves `dc=springframework,dc=org`.
 > * We are using `--rm` to re-create the container from scratch with every invocation.
 
-We use Spring Boot (currently at version 2.7) with its built-in LDAP functionality. Please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/application-properties.html#appendix.application-properties) to find additional LDAP properties that the framework supports.
-
-In case you need to connect to your LDAP using SSL, you need to set up keystore and truststore in the container using [standard JVM properties](https://docs.oracle.com/en/java/javase/11/security/java-secure-socket-extension-jsse-reference-guide.html#GUID-460C3E5A-A373-4742-9E84-EB42A7A3C363). This requires modifying the container startup arguments, so it is a more advanced use case. Please get in touch with us should you have this requirement.
-
 ## Reporting
 
 The license server provides a reporting endpoint which is meant to be used by administrators only. It is protected by HTTP basic authentication.
@@ -185,7 +192,7 @@ The license server provides a reporting endpoint which is meant to be used by ad
 1. Invoke the `reportOp` endpoint:
 
    ```
-   curl -u admin:<password> <license-server-url>/v1/reportOp?type=<type>
+   curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=<type>
    ```
 
    1. `<password>` needs to be replaced by the current password.
@@ -204,14 +211,14 @@ The license server provides a reporting endpoint which is meant to be used by ad
 The report type `raw` provides detailed, low-level usage information and has the following format:
 
 ```
-curl -u admin:<password> <license-server-url>/v1/reportOp?type=raw[&from=<from>&to=<to>]
+curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=raw[&from=<from>&to=<to>]
 ```
 
 Optional parameters `<from>` and `<to>` specify the time range for the `raw` report. If either `<from>` or `<to>` is present, the other must also be included.
 
 #### Example
 > ```
-> curl -u admin:ebc89b1511c6eaf29921d7f9219b608e383384df3ac161287d80c39911e10eb4 "https://syntevo.com/license-server/v1/reportOp?type=raw&from=2000-01-01&to=2030-12-31"
+> curl -u admin:ebc89b1511c6eaf29921d7f9219b608e383384df3ac161287d80c39911e10eb4 "https://opserver.syntevo.com/admin/v1/reportOp?type=raw&from=2000-01-01&to=2030-12-31"
 > ```
 
 ### User Data
@@ -219,7 +226,7 @@ Optional parameters `<from>` and `<to>` specify the time range for the `raw` rep
 The report type `user` provides a high-level summary of usage, with data aggregated per user:
 
 ```
-curl -u admin:<password> <license-server-url>/v1/reportOp?type=user
+curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=user
 ```
 
 ### Master License
@@ -227,7 +234,7 @@ curl -u admin:<password> <license-server-url>/v1/reportOp?type=user
 The report type `masterLicense` provides an executive summary, with data aggregated per master license:
 
 ```
-curl -u admin:<password> <license-server-url>/v1/reportOp?type=masterLicense
+curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=masterLicense
 ```
 
 ## Debugging
@@ -237,5 +244,5 @@ curl -u admin:<password> <license-server-url>/v1/reportOp?type=masterLicense
 For testing purposes, it may be convenient to manually perform the same kind of license request that SmartGit will use. For a server running at `http://localhost:8080`, sending an example request using *curl* might look like:
 
 ```
-curl -X POST http://localhost:8080/v1/licenseOp -H "Content-Type: application/json" -d "{ \"Build\": 20118, \"Email\": \"someone@example.com\", \"HardwareHashes\": { \"wmg\": \"foo\", \"wvi\": \"bar\" }, \"MajorVersion\": \"23.1\", \"MinorVersion\": \"23.1.1\", \"OperatingSystem\": \"windows\", \"Product\": \"SmartGit\" }"
+curl -X POST http://localhost:8080/public/v1/licenseOp -H "Content-Type: application/json" -d "{ \"Build\": 20118, \"Email\": \"someone@example.com\", \"HardwareHashes\": { \"wmg\": \"foo\", \"wvi\": \"bar\" }, \"MajorVersion\": \"23.1\", \"MinorVersion\": \"23.1.1\", \"OperatingSystem\": \"windows\", \"Product\": \"SmartGit\" }"
 ```
