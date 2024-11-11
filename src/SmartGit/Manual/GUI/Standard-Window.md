@@ -4,7 +4,7 @@ The Standard Window is one of the [Main Windows](Main-Windows.md) available in S
 
 ## Why Use the Standard Window?
 
-The Standard Window hides many of the more advanced Git capabilities, and concentrates on assisting development teams to create new features, address bugfixes, and generally work in a uniform, disciplined approach, against a single remote repository.
+The Standard Window simplifies access to many common Git features, and hides some of the advanced Git capabilities, to assist development teams to create new features, address bugfixes, and generally work in a uniform, disciplined approach, against a single remote repository.
 
 Each tab in the Standard Window focuses on a single Repository at a time. Additional repository tabs can be added by clicking on the `+` icon, opening the **Repository Selection View**.
 
@@ -12,25 +12,22 @@ Each tab in the Standard Window focuses on a single Repository at a time. Additi
 
 ![Standard window](../images/Standard-window.png)
 
-There are two perspectives (i.e. layouts) available in the Standard Window:
+There are two layouts available in the Standard Window:
 
-- A **Local Files** perspective, which focuses on the local Working Tree of the current repository, on a single branch (usually a new feature or bugfix branch):
+- A **Local Files** layout, which focuses on the local Working Tree of the current repository, on a single branch (usually a new feature or bugfix branch):
     - The *Directories View*, showing the folder structure of the current branch in the Repository.
     - A variant of the *Files View*, showing the files within the directory selected in the *Directories View*. A simplified drop-down filter allows control of the files listed in the View:
         - Whether to show All, Changed, and/or Ignored files
         - Define the Sort Order of files in the view.
-    - A **Commit View** (in working tree mode), allowing new commits to be created from staged Working Tree changes
-      In the **Standard Window**, the **Commit View** includes additional functionality:
-      - A **Journal** view of the most recent commits. You can copy the commit message from a previous commit by clicking on it in the Journal tree.
-      - The option to [Push](Repository/Synchronizing-with-Remote-Repositories.md#push) to the configured tracking remote after the commit is completed.
+    - A **Commit View** (in working tree mode), allowing new commits to be created from staged Working Tree changes. See [below](#commit-view-behavior-in-the-standard-window) for details.
     - A **Compare View**, showing changes made on the selected file in the Working Tree, or changes between the selected commit(s).
-- A **History** perspective, which focuses on the local Working Tree of the current repository:
+- A **History** layout, which focuses on the local Working Tree of the current repository:
     - An accordion containing the below views. Click on one of the labels in the accordion to select the view:
         - The **My History View** - This view shows all branches in the Repository that the user has used recently. Double clicking on a branch will attempt check-out on that branch.
         - The **All Branches + Tags View** - Although similar to the **My History View**, all branches and tags are shown in the **All Branches + Tags View**, including remote branches. There is a search widget at the top of the view to allow you to quickly find a particular branch or tag in a large repository.
     - **Stashes View** - The **Stashes View** shows any locally stashed commits, which can be applied to a branch, or discarded, as required.
     - **Reflog View** - Shows the Git Reflog, showing an audit of the changes to `refs/` in the current repository.
-- A variant of the **Graph View**, showing the visual history of the repository, as at the state of the current checked out HEAD. Above this view, there are widgets to:
+  - A variant of the **Graph View**, showing the visual history of the repository, as at the state of the current checked out HEAD. Above this view, there are widgets to:
     - Control the width of the Log Graph, from the viewpoint of either just the Current Branch, or for the entire repository.
     - Perform a search (click on the *filter icon*), for a specific author, committer, commit message, or SHA ID. Additionally, search within file content itself is possible, however this is very resource intensive and is not generally encouraged.
     - The `☰` icon allows configuration of:
@@ -50,3 +47,29 @@ The following functionality is unique to the Standard Window:
 - Support for [GitHub Actions](../Integrations/GitHub-Actions.md), if you have the GitHub integration enabled and configured
 - Support for showing [Jenkins job results](../Integrations/Jenkins.md), if you have the Jenkins integration enabled and configured
 - Support for showing [Team City Build results](../Integrations/TeamCity.md), if you have the TeamCity integration enabled and configured
+
+## Commit View behavior in the Standard Window
+The behavior of the **Commit View** is different in the **Standard Window**:
+
+  - The option to [Push](Repository/Synchronizing-with-Remote-Repositories.md#push) to the configured tracking remote after the commit is completed.
+  - An abbreviated graph of the most recent commits is shown at the bottom of the view.
+    - The commit message can be copied from a previous commit by clicking on the commit message of a recent commit node in the graph.
+    - Clicking on a commit node will switch to the **History** layout of the **Standard View**, highlighting the selected commit.
+  - The option to [Push](Repository/Synchronizing-with-Remote-Repositories.md#push) to the configured tracking remote after the commit is completed.
+  - The hamburger icon (☰) at the top right of the **Commit View** provides additional functionality:
+    - The commit message from a recent commit history can be selected
+    - The commit message History can be cleared
+    - The text in the commit message input can be cleared by selecting *Reset to Default*
+  - Depending on whether the *Local Files* or *History* layout toggle is selected in the **Standard Window**, the commit view will switch between adding a commit (when the *Local Files* layout is selected):
+
+![SmartGit Commit View - Adding a new Commit](../images/Commit-View-Add-Commit.png)
+
+*SmartGit Commit View - Adding new Commit*
+
+Or viewing a commit (when the *History* layout is selected):
+    
+![SmartGit Commit View - Viewing an existing Commit](../images/Commit-View-Show-Mode.png)
+
+*SmartGit Commit View - Viewing existing Commits*
+
+

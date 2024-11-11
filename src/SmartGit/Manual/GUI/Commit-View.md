@@ -13,13 +13,17 @@ The layout of the **Commit** view depends on the **Graph** selection:
 
 If the *working tree* node is selected, it shows :
 
-- a field to compose the message for the next commit
+- a text input field to compose the *Message* for the next commit
 - options available in the current context
 - a **Commit** button to actually perform the commit, with the option to instead **Amend** the previous commit.
 
-![SmartGit Commit View - Adding a new Commit](../images/Commit-View-Add-Commit.png)
-
-*SmartGit Commit View - Adding new Commit*
+The hamburger icon (☰) at the top right of the commit view provides additional functionality:
+- Toggles the *More Options* setting. When More Options is enabled, the following additional options appear:
+  - *Add `Signed Off By` signature* (i.e. the `--signoff` flag). Use this option to declare that changes in this commit does not infringe on copyrights held by other parties.
+  - *Bypass commit hook*. This option prevents any configured [commit hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) from being invoked during the commit (`--no-verify` switch)
+  - *{Recent commit messages}* - A list of recent commit messages may appear in this menu. If you select a previous message, it will copy it into the commit message input.
+  - *Clear History* - Selecting this will clear the recent commit messages from the menu.
+  - *Reset to default* - Selecting this will reset any text in the commit message input
 
 ### View Existing Commit
 
@@ -33,14 +37,13 @@ However, if an existing commit is selected, it shows details for the selected co
 - **on branches** shows all branch-refs for which the selected commit is an ancestor reachable by following only "primary" parents, i.e. is part of the branch's "natural" history
 - **merged to branches** shows all branch-refs for which the selected commit is an ancestor, but only reachable by following at least one merge parent (2nd or higher parent of a commit)
 
-![SmartGit Commit View - Viewing an existing Commit](../images/Commit-View-Show-Mode.png)
-
-*SmartGit Commit View - Viewing existing Commits*
-
 #### Tip
 
-> As per the above image, you can select up to 2 Commits - the **Commit** view will show both commits.
+> You can select 2 commits for viewing side by side  - the **Commit** view will show both commits.
 
 ## Variations of the Commit View
 
-- When using the [Standard Window](Standard-Window.md), the Commit View will also show an exerpt of the 'Journal' beneath the view.
+- When using the [Standard Window](Standard-Window.md), the **Commit View** will also show a recent commit history beneath the view (similar to an abbreviated **Journal View**), however, the **More Options** selection is not available in the **Standard Window**.
+- When using the [Working Tree Window](Working-Tree-Window.md), the **Commit View** will toggle between [Create New Commit](#create-new-commit) and [View Existing Commit](#view-existing-commit) by selecting between the **Local Files** and **History** perspective buttons in the **Working Tree Window**.
+- When using the [Working Tree Window](Working-Tree-Window.md), the **Commit View** has an additional *Select from Log* option in the *hamburger menu* (☰), which allows a commit to be selected from the Log graph, and the commit message will be defaulted to the commit message for the selected commit.
+- When using the [Log Window](Log-Window.md), the option to *Select from Log* is not available.
