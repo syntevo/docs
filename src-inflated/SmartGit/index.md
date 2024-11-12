@@ -8,7 +8,7 @@
 
 The documentation for outdated SmartGit versions is just given for your convenience. Layout may not be perfect and links may not work properly.
 
-- [23.1](23.1/index.md)
+- [23.1](23.1/Manual/index.md)
 - [22.1](22.1/index.md)
 - [21.2](21.2/index.md)
 - [21.1](21.1/index.md)
