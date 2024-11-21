@@ -6,7 +6,9 @@ redirect_from:
 
 # On-premise License Server
 
-To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server.
+To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server. Additionally, the bundled frontend is great to quickly monitor the usage of our products within your organization.
+
+![](../images/OpLicenseServer-frontend.png)
 
 ## Requirements
 
@@ -83,6 +85,8 @@ To run our on-premise server, only Docker is required. This document describes h
    ```
    docker ps | grep syntevo-license-server
    ```
+
+   You should now be able to access the frontend by navigating to `http://localhost:8080` if running Docker locally, or `http://<host-IP>:8080` if accessing from another machine.
 
 ### Logs
 
