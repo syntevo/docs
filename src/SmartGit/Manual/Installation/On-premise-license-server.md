@@ -235,8 +235,8 @@ The license server provides a reporting endpoint which is meant to be used by ad
    curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=<type>
    ```
 
-    1. `<password>` needs to be replaced by the current password.
-    2. `<license-server-url>` needs to be replaced by the root URL of your on-premise license server.
+    1. `<password>` needs to be replaced with the current password.
+    2. `<license-server-url>` needs to be replaced with the root URL of your on-premise license server.
     3. `<type>` specifies the report type: `raw`, `user` or `masterLicense`
 
 ### Raw Usage Data
