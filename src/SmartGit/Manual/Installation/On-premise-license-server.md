@@ -88,6 +88,19 @@ To run our on-premise server, only Docker is required. This document describes h
 
    You should now be able to access the frontend by navigating to `http://localhost:8080` if running Docker locally, or `http://<host-IP>:8080` if accessing from another machine.
 
+### URL Customization
+
+The On-premise License Server will work flawlessly behind a reverse proxy setup that customizes the **hostname** including subdomains and **port** as long as X-Forwarded headers are used properly. Note that simple docker port mappings using the `-p` or `--publish` flags are also supported. Additionally, you can easily change the **context path** by setting the `SERVER_SERVLET_CONTEXT_PATH` container environment variable to a value like "/some/context/path".
+
+Here is a minimal example if you want the License Server to be available on `http://<host-IP>:80/licensing`:
+
+```
+docker run \
+   -e "SERVER_SERVLET_CONTEXT_PATH=/licensing" \
+   -p 80:8080 \
+   ghcr.io/syntevo/license-opserver:stable
+```
+
 ### Logs
 
 Once the Docker container is running, you can check the logs using:
