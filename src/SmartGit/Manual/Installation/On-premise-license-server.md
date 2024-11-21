@@ -53,13 +53,27 @@ To run our on-premise server, only Docker is required. This document describes h
 1. Start the license server:
 
    ```
-   docker run --restart unless-stopped --name syntevo-license-server -d -v <license-server-root>/data:/data -v <license-server-root>/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:stable
+   docker run \
+     --restart unless-stopped \
+     --name syntevo-license-server \
+     -d \
+     -v <license-server-root>/data:/data \
+     -v <license-server-root>/licenses:/licenses \
+     -p 8080:8080 \
+     ghcr.io/syntevo/license-opserver:stable
    ```
 
    For the above command, replace `<license-server-root>` with the actual top-level directory, for example:
 
    ```
-   docker run --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:stable
+   docker run \
+     --restart unless-stopped \
+     --name syntevo-license-server \
+     -d \
+     -v /var/syntevo-license-server/data:/data \
+     -v /var/syntevo-license-server/licenses:/licenses \
+     -p 8080:8080 \
+     ghcr.io/syntevo/license-opserver:stable
    ```
 
 1. Confirm that the license server has been properly started:
