@@ -6,13 +6,20 @@ redirect_from:
 
 # Changing System Properties in SmartGit
 
-In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), there are additional customization options to SmartGit available through the System Properties file (`smartgit.properties`) - this article describes these additional properties.
+In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the System Properties file (`smartgit.properties`). This article describes these additional properties.
 
-Most of the below system properties can be edited directly in the **Edit|Preferences** settings dialog, under the section **Low-Level Properties**. Changing these values updates the `smartgit.properties` file which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
+Most system properties below can be edited directly in the **Edit | Preferences** settings dialog under the **Low-Level Properties** section. 
+Changing these values updates the `smartgit.properties` file, which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
 
-In some rare instances, you may need to resort to editing the `smartgit.properties` file directly.
+In rare instances, you may need to edit the `smartgit.properties` file directly.
 
-Each of the settings in `smartgit.properties` is specified on a separate line, according to the following syntax:
+#### Warning
+> - Changing settings in `smartgit.properties` with an invalid value can cause issues with the normal operation of SmartGit.
+> It is strongly recommended that a backup copy of the `smartgit.properties` file be made before making direct changes.
+> - You can reset a setting by selecting it and clicking the **Reset** command in the context menu.
+> - As a last resort, you can delete or rename the `smartgit.properties` file to reset all settings to the installation defaults.
+
+Each setting in `smartgit.properties` must be specified on a separate line using the following syntax:
 
 `key=value`
 
@@ -22,15 +29,23 @@ The file encoding is `UTF-8`.
 
 #### Note
 
->
->
->The `smartgit.properties` file contains only settings for SmartGit itself.
-> If you want to configure the underlying behaviour of git, have a look at
-> the various Git configuration files instead, such as `.git/config` for
-> the configuration of individual Git repositories, and `~\.gitconfig` (in
-> your HOME directory) for global configuration options.
->
->
+>- The `smartgit.properties` file contains only SmartGit-specific settings.
+> To configure the underlying behavior of *Git*, use [**Edit | Preferences | Git Config**](../Preferences/Commands.md#git-config)
+> to change common `git.config` settings. Alternatively, you can edit Git configuration files,
+> such as `.git/config` (for individual Git repository settings) and `~\.gitconfig` (in your HOME directory for global configuration options).
+> - After editing any of the low-level SmartGit properties, you will must restart SmartGit for the changes to take effect.
+
+## Compare Window
+
+### smartgit.compare.maximumFileSize
+
+By default, the file comparison is disabled for very large files for performance reasons. Use this setting to adjust the size (in bytes) at which a file is considered too large for the **Changes View**. The default value is approximately 1 MB.
+
+When you attempt to compare a file that exceeds the `maximumFileSize` setting in the **Changes View**, SmartGit will warn:
+**File size exceeds the configured limit**. You can, however, click **Force Compare** to override the limit and perform the comparison.
+
+#### Note
+> - It is recommended to keep this setting at a reasonable level (a few MB), as setting it too high could negatively impact the performance of the user interface.
 
 ## Networking
 
