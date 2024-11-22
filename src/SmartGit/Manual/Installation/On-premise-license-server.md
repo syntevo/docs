@@ -6,7 +6,9 @@ redirect_from:
 
 # On-premise License Server
 
-To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server.
+To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server. Additionally, the bundled frontend is great to quickly monitor the usage of our products within your organization.
+
+![](../images/OpLicenseServer-frontend.png)
 
 ## Requirements
 
@@ -57,30 +59,47 @@ To run our on-premise server, only Docker is required. This document describes h
      --restart unless-stopped \
      --name syntevo-license-server \
      -d \
+     -e ADMIN_PASSWORD=<password> \
      -v <license-server-root>/data:/data \
      -v <license-server-root>/licenses:/licenses \
      -p 8080:8080 \
      ghcr.io/syntevo/license-opserver:stable
    ```
 
-   For the above command, replace `<license-server-root>` with the actual top-level directory, for example:
+   For the above command, replace `<password>` with some custom password you will use to access the frontend and reporting endpoints and `<license-server-root>` with the actual top-level directory, for example:
 
    ```
    docker run \
      --restart unless-stopped \
      --name syntevo-license-server \
      -d \
+     -e ADMIN_PASSWORD=mysecretpassword \
      -v /var/syntevo-license-server/data:/data \
      -v /var/syntevo-license-server/licenses:/licenses \
      -p 8080:8080 \
      ghcr.io/syntevo/license-opserver:stable
    ```
 
-1. Confirm that the license server has been properly started:
+2. Confirm that the license server has been properly started:
 
    ```
    docker ps | grep syntevo-license-server
    ```
+
+   You should now be able to access the frontend by navigating to `http://localhost:8080` if running Docker locally, or `http://<host-IP>:8080` if accessing from another machine.
+
+### URL Customization
+
+The On-premise License Server will work flawlessly behind a reverse proxy setup that customizes the **hostname** including subdomains and **port** as long as X-Forwarded headers are used properly. Note that simple docker port mappings using the `-p` or `--publish` flags are also supported. Additionally, you can easily change the **context path** by setting the `SERVER_SERVLET_CONTEXT_PATH` container environment variable to a value like "/some/context/path".
+
+Here is a minimal example if you want the License Server to be available on `http://<host-IP>:80/licensing`:
+
+```
+docker run \
+   -e "SERVER_SERVLET_CONTEXT_PATH=/licensing" \
+   -p 80:8080 \
+   ghcr.io/syntevo/license-opserver:stable
+```
 
 ### Logs
 
@@ -204,29 +223,21 @@ keytool -importcert -alias ldap_server_cert -file ldap_server_certificate.pem -k
 
 The license server provides a reporting endpoint which is meant to be used by administrators only. It is protected by HTTP basic authentication.
 
-1. Find out password: By default, a random password is generated for every startup which is logged to the Docker log file. To find out the password, invoke:
+1. Look up your admin password: This is the admin password you have specified as the value of the `ADMIN_PASSWORD` environment variable back when you first installed the server. In case you did not set this environment variable a random password is generated for every startup which is logged to the Docker log file. To find out the password, invoke:
 
    ```
    docker logs license-opserver | grep "Reporting: "
    ```
 
-1. Invoke the `reportOp` endpoint:
+2. Invoke the `reportOp` endpoint:
 
    ```
    curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=<type>
    ```
 
-    1. `<password>` needs to be replaced by the current password.
-    1. `<license-server-url>` needs to be replaced by the root URL of your on-premise license server.
-    1. `<type>` specifies the report type: `raw`, `user` or `masterLicense`
-
-#### Note
-
-> You can specify a custom admin password, by adding the Docker environment variable `-e ADMIN_PASSWORD=<password>`, for example:
->
-> ```
-> docker run -e ADMINPASSWORD=mysecretpassword --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 ghcr.io/syntevo/license-opserver:stable
-> ```
+    1. `<password>` needs to be replaced with the current password.
+    2. `<license-server-url>` needs to be replaced with the root URL of your on-premise license server.
+    3. `<type>` specifies the report type: `raw`, `user` or `masterLicense`
 
 ### Raw Usage Data
 
