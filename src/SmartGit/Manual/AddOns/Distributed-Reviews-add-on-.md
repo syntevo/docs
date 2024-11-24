@@ -188,7 +188,7 @@ To get rid of Distributed Reviews data not just for your local clone, but also f
 ## Customizing the pull request integration message
 
 The default message which will be set for the **Integrate Pull Request**
-dialog can be customized by using a message template. The message template will be specified using [system property](../GUI/AdvancedSettings/System-Properties.md) `smartgit.reviews.integrateMessageTemplate`. Following variables can be used:
+dialog can be customized by using a message template. The message template will be specified using [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md) `smartgit.reviews.integrateMessageTemplate`. Following variables can be used:
 
 - `${id}:` the short pull request ID
 - `${message}:` the entire pull request message (including new lines)

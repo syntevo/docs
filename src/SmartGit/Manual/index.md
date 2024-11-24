@@ -68,7 +68,7 @@ Alternatively, you can follow one of the below topics:
     - [User Interface Preferences](GUI/Preferences/User-Interface.md)
     - [Tools](GUI/Preferences/Tools.md)
   - [Advanced Settings](GUI/AdvancedSettings/index.md)
-    - [System Properties](GUI/AdvancedSettings/System-Properties.md)
+    - [SmartGit Low-Level Properties](GUI/AdvancedSettings/Low-Level-Properties.md)
     - [VM Options](GUI/AdvancedSettings/VM-options.md)
     - [Theme Customization](GUI/AdvancedSettings/Theme-Customization.md)
 - [Installing SmartGit](Installation/index.md)
