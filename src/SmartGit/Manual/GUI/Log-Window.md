@@ -1,6 +1,6 @@
 # Log Window
 
-The Log Window in SmartGit (not to be confused with the [Git Log tool](Log.md)) is one of the [Main Windows](Main-Windows.md) of SmartGit, and allows Git power-users to have complete control over a repository.
+The **Log Window** in SmartGit (not to be confused with the [Git Log tool](Log.md)) is one of the [Main Windows](Main-Windows.md) of SmartGit, and allows Git power-users to have complete control over a repository.
 
 ## Why use the Log Window?
 
@@ -18,3 +18,6 @@ The Log Window contains the following views:
 - The [Commit View](Commit-View.md) allowing Commits to be viewed, and new Commits to be created.
 - The *Files View*, showing which files have changed in the selected commit. The standard filtering widgets can be applied to control which files are listed.
 - The *Changes View*, showing the changes in the file selected in the *Files View* for the selected commit in the *Graph View*, or the difference in the file between any 2 commits, if exactly 2 commits are selected in the *Graph View*.
+
+#### Tip
+> You can view commits eligible for [garbage collection](Repository/index.md#the-garbage-collector) in SmartGit's Log by selecting the **Recyclable Commits** option in the *Branches* view of the **Log Window**.

@@ -4,9 +4,9 @@ redirect_from:
   - /SmartGit/Manual/System-Properties.html
 ---
 
-# Changing System Properties in SmartGit
+# Changing Low Level Properties in SmartGit
 
-In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the System Properties file (`smartgit.properties`). This article describes these additional properties.
+In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the SmartGit Properties file (`smartgit.properties`). This article describes these additional properties.
 
 Most system properties below can be edited directly in the **Edit | Preferences** settings dialog under the **Low-Level Properties** section. 
 Changing these values updates the `smartgit.properties` file, which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
@@ -37,9 +37,9 @@ The file encoding is `UTF-8`.
 
 ## Compare Window
 
-### smartgit.compare.maximumFileSize
+### changes.maximumFileSize
 
-By default, the file comparison is disabled for very large files for performance reasons. Use this setting to adjust the size (in bytes) at which a file is considered too large for the **Changes View**. The default value is approximately 1 MB.
+By default, the file comparison is disabled for very large files for performance reasons. Use this setting to adjust the size (in bytes) at which a file is considered too large for the [**Changes View**](../Changes-View.md). The default value is approximately 1 MB.
 
 When you attempt to compare a file that exceeds the `maximumFileSize` setting in the **Changes View**, SmartGit will warn:
 **File size exceeds the configured limit**. You can, however, click **Force Compare** to override the limit and perform the comparison.
