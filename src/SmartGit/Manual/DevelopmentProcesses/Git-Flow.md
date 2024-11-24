@@ -178,7 +178,7 @@ When merging or squashing, you need to enter the commit message for the new comm
 
 #### Info
 
-> To change the merge message template, define the [System Property](../GUI/AdvancedSettings/System-Properties.md) `gitflow.finishFeature.message`.
+> To change the merge message template, define the [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md) `gitflow.finishFeature.message`.
 
 ### Integrate Develop
 
@@ -192,7 +192,7 @@ To prepare a new bugfix release version based on the latest release (i.e., the `
 
 ### Finish Hotfix
 
-Once changes for the bugfix release are ready, you can make them public with this command. This will create a tag for the hotfix, merge it to the `main` and `develop` it. The actual commit that will be tagged when finishing a hotfix depends on [System Property](../GUI/AdvancedSettings/System-Properties.md)
+Once changes for the bugfix release are ready, you can make them public with this command. This will create a tag for the hotfix, merge it to the `main` and `develop` it. The actual commit that will be tagged when finishing a hotfix depends on [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md)
 `gitflow.tagLastHotfixCommitInsteadOfMaster.`
 
 ### Start Release
@@ -202,7 +202,7 @@ Use this command to prepare a release independent of further changes in the `dev
 
 ### Finish Release
 
-Use this command if you have prepared changes for the release and want to make it publicly available. This will create a tag for the release, merge it into the `main` and `develop` branch. The actual commit which will be tagged when finishing a hotfix depends on [System Property](../GUI/AdvancedSettings/System-Properties.md)
+Use this command if you have prepared changes for the release and want to make it publicly available. This will create a tag for the release, merge it into the `main` and `develop` branch. The actual commit which will be tagged when finishing a hotfix depends on [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md)
 `gitflow.tagLastReleaseCommitInsteadOfMaster.`
 
 ### Start Support Branch

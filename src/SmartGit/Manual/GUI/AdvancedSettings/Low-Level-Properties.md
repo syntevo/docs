@@ -6,9 +6,10 @@ redirect_from:
 
 # Changing Low Level Properties in SmartGit
 
-In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the SmartGit Properties file (`smartgit.properties`). This article describes these additional properties.
+In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the SmartGit Properties file (`smartgit.properties`). 
+This article describes these additional properties.
 
-Most system properties below can be edited directly in the **Edit | Preferences** settings dialog under the **Low-Level Properties** section. 
+Most low-level properties below can be edited directly in the **Edit | Preferences** settings dialog under the **Low-Level Properties** section. 
 Changing these values updates the `smartgit.properties` file, which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
 
 In rare instances, you may need to edit the `smartgit.properties` file directly.
@@ -56,7 +57,7 @@ This setting specifies the URL to open after SmartGit has been started for the f
 
 ### smartgit.preferences.\<category>.visible
 
-You can use this system property to hide certain **Preferences** pages. Available categories are:
+You can use this low-level property to hide certain **Preferences** pages. Available categories are:
 
 - `executables`
 - `externalTools`
@@ -123,7 +124,8 @@ Set to `true` to disable sending of [crash footprints](../Bug-Reports.md) (even 
 
 ### smartgit.license.defaultPath
 
-By default, SmartGit will look for a "default" license file in the [installation default directory](../../Installation/Company-wide-installation.md). You can use this system property to specify a different **file system path** for the default license to look for.
+By default, SmartGit will look for a "default" license file in the [installation default directory](../../Installation/Company-wide-installation.md).
+You can use this low-level property to specify a different **file system path** for the default license to look for.
 
 #### Example
 

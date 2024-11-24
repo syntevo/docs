@@ -39,7 +39,7 @@ The `license` file (only for 10+ user *Commercial* licenses) can also be placed 
 #### Note
 
 > Be sure to name the license file `license` in the `default` directory without any extension.
-> There are a couple of [system properties](../GUI/AdvancedSettings/System-Properties.md#license-userseat-tracking) related to SmartGit's license management.
+> There are a couple of [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md#license-userseat-tracking) related to SmartGit's license management.
 
 To preconfigure only a subset of default options to custom values and leave initialization of other defaults to SmartGit, you may provide reduced versions of the settings `.yml` files in the `default` directory.
 
@@ -54,7 +54,7 @@ git:
 
 ### System properties vs. VM options
 
-From a technical perspective, [system properties](../GUI/AdvancedSettings/System-Properties.md) and [VM options](../GUI/AdvancedSettings/VM-options.md) are the same thing, they are just specified in different files. System properties are specified in `smartgit.properties` in the [SmartGit's Settings Directory](Installation-and-Files.md#default-path-of-smartgits-settings-directory), VM options are specified in the `smartgit.vmoptions` file. From an administrative perspective, it's recommended to configure all system properties in the `smartgit.vmoptions` file and leave individual user `smartgit.properties` files untouched.
+From a technical perspective, [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md) and [VM options](../GUI/AdvancedSettings/VM-options.md) are the same thing, they are just specified in different files. System properties are specified in `smartgit.properties` in the [SmartGit's Settings Directory](Installation-and-Files.md#default-path-of-smartgits-settings-directory), VM options are specified in the `smartgit.vmoptions` file. From an administrative perspective, it's recommended to configure all system properties in the `smartgit.vmoptions` file and leave individual user `smartgit.properties` files untouched.
 
 #### Note
 
@@ -113,4 +113,5 @@ Patching of `.yml` files works according to the following rules:
 
 ### Hide Preferences
 
-When you are providing initial defaults or specify to overwrite defaults, you usually don't want the user to change these settings in the **Preferences**. Therefore, you might want to hide certain **Preferences** pages, using [system properties](../GUI/AdvancedSettings/System-Properties.md#smartgitpreferencescategoryvisible).
+When you are providing initial defaults or specify to overwrite defaults, you usually don't want the user to change these settings in the **Preferences**. 
+Therefore, you might want to hide certain **Preferences** pages, using [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md#smartgitpreferencescategoryvisible).

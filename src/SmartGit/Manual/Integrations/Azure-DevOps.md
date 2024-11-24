@@ -6,7 +6,8 @@ redirect_from:
 
 # Azure DevOps
 
-SmartGit integrates Azure DevOps workflows in several places, very similar to [GitHub](GitHub-integration.md) integration. Some behavior can be customized by [system properties](../GUI/AdvancedSettings/System-Properties.md#SystemProperties-properties.bitbucket).
+SmartGit integrates Azure DevOps workflows in several places, very similar to [GitHub](GitHub-integration.md) integration. 
+Some behavior can be customized by [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md#SystemProperties-properties.bitbucket).
 
 ### Setup
 
