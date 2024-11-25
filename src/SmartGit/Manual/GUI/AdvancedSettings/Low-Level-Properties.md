@@ -19,6 +19,7 @@ In rare instances, you may need to edit the `smartgit.properties` file directly.
 > It is strongly recommended that a backup copy of the `smartgit.properties` file be made before making direct changes.
 > - You can reset a setting by selecting it and clicking the **Reset** command in the context menu.
 > - As a last resort, you can delete or rename the `smartgit.properties` file to reset all settings to the installation defaults.
+> - After editing the `smartgit.properties` file directly, you will need to restart SmartGit for the changes to take effect.
 
 Each setting in `smartgit.properties` must be specified on a separate line using the following syntax:
 
@@ -34,7 +35,6 @@ The file encoding is `UTF-8`.
 > To configure the underlying behavior of *Git*, use [**Edit | Preferences | Git Config**](../Preferences/Commands.md#git-config)
 > to change common `git.config` settings. Alternatively, you can edit Git configuration files,
 > such as `.git/config` (for individual Git repository settings) and `~\.gitconfig` (in your HOME directory for global configuration options).
-> - After editing any of the low-level SmartGit properties, you will must restart SmartGit for the changes to take effect.
 
 ## Compare Window
 
