@@ -26,6 +26,7 @@ This section describes common SmartGit actions you'll need to use when working w
     - [Signing Options](Repository-Settings.md#signing-tab)
     - [Tag Grouping Settings](Repository-Settings.md#tag-grouping)
 - Working with [Submodules](Submodules.md) and [Subtrees](Subtrees.md)
+- [The Garbage Collector](#the-garbage-collector)
 
 ## Opening a Repository
 
@@ -36,3 +37,15 @@ Specify the local directory you want to open. If the specified directory is not 
 ## Settings
 
 Once you have a opened a repository, use [**Repository \| Settings**](Repository-Settings.md) to configure repository-specific settings.
+
+## The Garbage Collector
+
+The Git Garbage Collector performs housekeeping tasks such as deleting commits which are no longer referenced in the repository, such as:
+
+- commits which have been rebased
+- commits which have been amended and rewritten to a new commit
+- commits which have been squashed
+
+The Git Garbage Collector usually runs in the background, however, you can choose to explicitly execute the **Run Garbage Collector** command to force the garbage collector (`git gc`) to run immediately.
+
+You can view commits eligible for garbage collection in SmartGit's Log by selecting the **Recyclable Commits** option in the *Branches* view of the [Log Window](../Log-Window.md).

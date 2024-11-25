@@ -4,9 +4,9 @@ redirect_from:
   - /SmartGit/Manual/System-Properties.html
 ---
 
-# Changing System Properties in SmartGit
+# Changing Low Level Properties in SmartGit
 
-In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the System Properties file (`smartgit.properties`). This article describes these additional properties.
+In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the SmartGit Properties file (`smartgit.properties`). This article describes these additional properties.
 
 Most system properties below can be edited directly in the **Edit | Preferences** settings dialog under the **Low-Level Properties** section. 
 Changing these values updates the `smartgit.properties` file, which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
