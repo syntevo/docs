@@ -133,7 +133,9 @@ docker load -i syntevo-license-opserver.tar
 
 ### Configuration by system property
 
-We recommend deploying SmartGit with the [system property](../GUI/AdvancedSettings/System-Properties.md) `smartgit.opLicenseServer.url` pre-configured, so the license server will be contacted automatically on startup. For example:
+We recommend deploying SmartGit with the [low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md) `smartgit.opLicenseServer.url` pre-configured, 
+so the license server will be contacted automatically on startup. 
+For example:
 
 ```
 smartgit.opLicenseServer.url=http://localhost:8080/

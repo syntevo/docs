@@ -8,7 +8,7 @@ The **Working Tree Window** consists of the following Views:
 - The [Branches View](Branches-view.md), showing available branches in the current repository, and allowing quick checkout of a different branch.
 - The **Files View]**, showing Files in the currently selected Working Tree folder in the Repository, and filtered by any of the filter widgets selected above the view.
 - The [Commit View](Commit-View.md), allowing you to quickly create a new Commit by adding a commit message, or optionally amending the previous commit.
-- A variant of the **Changes View**, showing any differences of the file selected in the *Files View*, between the Working Tree and the Index.
+- A variant of the [Changes View](Changes-View.md), showing any differences of the file selected in the *Files View*, between the Working Tree and the Index.
 - The [Journal View](Journal-View.md), showing a linear history commits in the current branch (only).
 
 ![Working Tree window](../images/Working-Tree-window.png)

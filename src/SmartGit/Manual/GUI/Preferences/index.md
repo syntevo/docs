@@ -28,6 +28,7 @@ The [Commands](Commands.md) section allows configuration of common Git, and Smar
 - [Git Executable preferences](Commands.md#git-executable)
 - [Git Config file editor](Commands.md#git-config)
 - [Authentication options](Commands.md#authentication)
+- [Editing SmartGit Low Level Properties](../AdvancedSettings/Low-Level-Properties.md)
 
 ## User Interface Preferences
 

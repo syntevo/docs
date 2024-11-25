@@ -6,7 +6,8 @@ redirect_from:
 
 # Bitbucket integration
 
-SmartGit integrates Bitbucket workflows in various places, very similar to the [GitHub](GitHub-integration.md) integration. Some behavior can be customized by [system properties](../GUI/AdvancedSettings/System-Properties.md#SystemProperties-properties.bitbucket).
+SmartGit integrates Bitbucket workflows in various places, very similar to the [GitHub](GitHub-integration.md) integration. 
+Some behavior can be customized by [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md#SystemProperties-properties.bitbucket).
 
 ### Setup
 

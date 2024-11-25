@@ -35,7 +35,8 @@ See [Installation and Files](../../Installation/Installation-and-Files.md) for i
 
 > Changing the settings directory's location is *not* supported on MacOS
 
-Within the value of `smartgit.settings`, certain Java system properties are allowed, such as `user.home`. Another accepted value is the special `smartgit.installation` property, which refers to the SmartGit installation directory.
+Within the value of `smartgit.settings`, certain Java system properties are allowed, such as `user.home`. 
+Another accepted value is the special `smartgit.installation` property, which refers to the SmartGit installation directory.
 
 #### Example
 
