@@ -62,8 +62,6 @@ The output of these `git lfs locks` commands will be written to:
 
 Once these files are present, the **Name** column icon will start denoting the locking state for LFS files.
 
-To make SmartGit also display which files are lockable, set low-level property `status.evaluateLfsLockableState`. This will evaluate the Git-LFS `lockable` attribute for every file during the refresh.
-
 #### Example
 
 The following screenshot shows how this display will look like:
