@@ -108,6 +108,15 @@ When starting SmartGit, the `bootloader.jar` from the installation directory is 
 >
 >
 
+#### Tip
+
+> 
+> On Windows, if you encounter file system access issues during an installation update, it might be related to Windows itself or the Attack Surface Reduction (ASR) feature in Windows Security. In such cases, you can try excluding the `SmartGit` and `SmartGit.new` directories from this feature. For example, if SmartGit is installed at `C:\Program Files\SmartGit`, execute the following command in an elevated PowerShell (Administrator mode):
+> ```
+> Add-MpPreference -AttackSurfaceReductionOnlyExclusions "C:\Program Files\SmartGit"
+> Add-MpPreference -AttackSurfaceReductionOnlyExclusions "C:\Program Files\SmartGit.new"
+> ```
+
 ## JRE Search Order (Windows)
 
 On Windows, the `smartgit.exe` launcher will search for a suitable Java Runtime Environment on your computer in the following order (from top to bottom):
