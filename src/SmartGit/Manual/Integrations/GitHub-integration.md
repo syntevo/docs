@@ -120,10 +120,7 @@ This problem is caused by:
 * being a *public* member of a GitHub organization
 * which has OAuth access restrictions configured (at least for SmartGit)
 
-It may be resolved in two ways:
-
-* go to SmartGit **Preferences**, **Low-Level Properties** and set `json.graphQL.ignoreErrorsIfDataIsPresent` and `json.graphQL.ignoreNullArrayElements` to `true`; or
-* ask your organization Administrator to change your membership (at `https://github.com/orgs/<org>/people`) from **Public** to **Private**.
+It may be resolved by asking your organization Administrator to change your membership (at `https://github.com/orgs/<org>/people`) from **Public** to **Private**.
 
 ### Private repositories do not show up/403 when trying to access an organization repository
 
