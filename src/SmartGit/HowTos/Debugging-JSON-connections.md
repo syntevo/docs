@@ -51,7 +51,7 @@ debug log sent and received JSON objects. To do so:
         output file for the failed operation in the error message
 
 8.  check the debug output directory for sent and received JSON objects:
-    -   for a single request, there may be `in.pretty` and `in.raw` files containing the received content,
+    -   for a single request, there may be an `in` files containing the received content,
         an `out` file containing the sent content and an `err` file containing the received error;
 	there may also be several `graphql.*`-files
     -   all files belonging to the same request will be labeled by a
@@ -119,21 +119,34 @@ debug log sent and received JSON objects. To do so:
 SmartGit (since version 22.1) is using GitHub's GraphQL API to access metadata from GitHub. The JSON `out`-file (see above) will contain the sent GraphQL query. For example:
 
 ```
-{"query":"query {
-  viewer {
-    id
-  }
+{"operationName":"RepositoryInfo","variables":{"user":"ocornut","project":"imgui"},"query":"query RepositoryInfo($user: String!, $project: String!) { repository(owner: $user, name: $project) { __typename ...RepositoryResult } }  fragment RepositoryResult on Repository { id name url sshUrl hasIssuesEnabled owner { login } defaultBranchRef { name } parent { name owner { login } } }"}
+```
+
+After pretty printing the content of the out file it will look similar to:
+
+```
+{
+    "operationName": "RepositoryInfo",
+    "query": "query RepositoryInfo($user: String!, $project: String!) { repository(owner: $user, name: $project) { __typename ...RepositoryResult } }  fragment RepositoryResult on Repository { id name url sshUrl hasIssuesEnabled owner { login } defaultBranchRef { name } parent { name owner { login } } }",
+    "variables": {
+        "project": "imgui",
+        "user": "ocornut"
+    }
 }
-"}
 ```
 
-You can now log into [GitHub's GraphQL Explorer](https://docs.github.com/en/graphql/overview/explorer) and run the query there to see whether the error is reproducible. For that, you will have to only copy over the actual query term of the JSON logging, or with other words drop the leading `{"query":"` and trailing `"}`. For the above example, this is what you will enter into the GraphQL Explorer:
+You can now log into [GitHub's GraphQL Explorer](https://docs.github.com/en/graphql/overview/explorer) and run the query there to see whether the error is reproducible. For that, you will have to only copy over the actual query term of the JSON logging, or with other words drop the leading `"query":"` and trailing `",`. For the above example, this is what you will enter into the GraphQL Explorer:
 
 ```
-query {
-  viewer {
-    id
-  }
+query RepositoryInfo($user: String!, $project: String!) { repository(owner: $user, name: $project) { __typename ...RepositoryResult } }  fragment RepositoryResult on Repository { id name url sshUrl hasIssuesEnabled owner { login } defaultBranchRef { name } parent { name owner { login } } }
+```
+
+You also need to specify the variables in the variables tab of the GraphQL Explorer, just copy the content of the variables object and insert it in the variables field. For the above example it should read:
+
+```
+{
+	"project": "imgui",
+	"user": "ocornut"
 }
 ```
 
