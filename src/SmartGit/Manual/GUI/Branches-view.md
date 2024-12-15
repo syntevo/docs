@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Branches-view
-  - /SmartGit/Manual/Branches-view.html
----
-
 # Branches view
 
 The **Branches** view shows *local* and *remote* branches, tags, and other *refs* from your repository and offers operations on these

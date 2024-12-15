@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/System-Properties
-  - /SmartGit/Manual/System-Properties.html
----
-
 # Changing Low Level Properties in SmartGit
 
 In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the SmartGit Properties file (`smartgit.properties`). 

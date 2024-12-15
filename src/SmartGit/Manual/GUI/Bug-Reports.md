@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Bug-Reports
-  - /SmartGit/Manual/Bug-Reports.html
----
-
 # Bug Reports
 
 ## Detailed Bug Reports

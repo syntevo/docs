@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/DevelopmentProcesses
-  - /SmartGit/Manual/DevelopmentProcesses.html
----
-
 # Support for Standard Development Processes in SmartGit
 
 Although Git's flexibility allows for almost unlimited variations in how teams work within a repository, most developers are familiar with standard branching, merging, and rebasing strategies that promote systematic and productive workflows.

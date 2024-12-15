@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Cherry-Pick
-  - /SmartGit/Manual/Cherry-Pick.html
----
-
 # Cherry-Picking in SmartGit
 
 Cherry Picking allows you to apply one or more (arbitrary) commits from other branches into the current branch in the Working Tree. Please refer to the section on **[Cherry-Picking](../../GitConcepts/Cherry-Picking.md)** for an overview.

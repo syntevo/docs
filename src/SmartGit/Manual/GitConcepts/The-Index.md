@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/The-Index
-  - /SmartGit/Manual/The-Index.html
----
-
 # The Index
 
 The *Index* is an intermediate cache for preparing a commit by identifying which file changes (including new and deleted files) you'd like to include in your next commit.

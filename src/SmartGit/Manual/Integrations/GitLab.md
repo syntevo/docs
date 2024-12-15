@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GitLab
-  - /SmartGit/Manual/GitLab.html
----
-
 # GitLab
 
 SmartGit integrates GitLab workflows in various places, very similar to [GitHub](GitHub-integration.md) integration. Some behavior can be customized by [low-level properties](../GUI/AdvancedSettings/System-Properties.md).

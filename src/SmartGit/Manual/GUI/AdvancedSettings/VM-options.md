@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/VM-options
-  - /SmartGit/Manual/VM-options.html
----
-
 # Virtual Machine (VM) options
 
 Certain configuration of SmartGit has to be done by *VM options*, in files called `smartgit.vmoptions`. Usually you will want to specify VM options just for your account (current user):

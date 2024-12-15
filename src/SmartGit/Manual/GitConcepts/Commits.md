@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Commits
-  - /SmartGit/Manual/Commits.html
----
-
 # Commits
 
 A *commit* is a set of file changes stored in a repository along with a commit message. The **[Commit command](../GUI/Local-Operations-on-the-Working-Tree.md#commit)** is used to store working tree changes (which have been staged) in the local repository, thereby creating a new commit.

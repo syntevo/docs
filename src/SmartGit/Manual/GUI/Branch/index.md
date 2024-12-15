@@ -1,7 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GUI/Branch
----
 # Working with Branches in SmartGit
 
 Branches are an essential part of git, allowing you to conceptually track and manage changes to your repository. SmartGit's UI exposes all common branch actions intuitively through views on the user interface.

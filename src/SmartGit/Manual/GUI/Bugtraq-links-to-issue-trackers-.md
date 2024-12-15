@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Bugtraq-links-to-issue-trackers-
-  - /SmartGit/Manual/Bugtraq-links-to-issue-trackers-.html
----
-
 # Bugtraq (links to issue trackers)
 
 Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, enabling integration between tools such as SmartGit and common Bug Tracking tools such as JIRA or GitHub issues.

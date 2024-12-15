@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GitHub-Actions
-  - /SmartGit/Manual/GitHub-Actions.html
----
-
 # GitHub Actions integration (only Standard window)
 
 SmartGit will display GitHub Actions workflow run results in the **My History** view of the

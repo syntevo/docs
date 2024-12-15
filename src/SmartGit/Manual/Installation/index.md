@@ -1,7 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Installation
----
 # SmartGit Installation
 
 Please select one of the below topics relating to SmartGit Installation:

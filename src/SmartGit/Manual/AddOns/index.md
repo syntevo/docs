@@ -1,7 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/AddOns
----
 # Add-Ons to SmartGit
 
 SmartGit provides the following optional Add-Ons which can be used to enhance your SmartGit installation:

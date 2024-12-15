@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Tips-and-Tricks
-  - /SmartGit/Manual/Tips-and-Tricks.html
----
-
 # Tips and Tricks
 
 Once you have mastered the basics of using SmartGit to work with git repositories, these handy tips will help you improve productivity within SmartGit. Additionally, please go through our list of [How-To articles](../../HowTos/index.md) to get the most out of SmartGit.

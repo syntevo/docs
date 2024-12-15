@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Subtrees
-  - /SmartGit/Manual/Subtrees.html
----
-
 # Subtrees
 
 Subtrees allow to integrate contents from other repositories into sub-folders of your main repository. They are an alternative to [Submodules](Submodules.md).

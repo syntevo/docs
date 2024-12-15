@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/On-premise-update-server
-  - /SmartGit/Manual/On-premise-update-server.html
----
-
 # On-premise update server
 
 If you have a large number of SmartGit installations on your corporate network, it may be convenient to replicate our way of deployment in your company.

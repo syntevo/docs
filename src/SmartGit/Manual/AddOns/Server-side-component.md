@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Server-side-component
-  - /SmartGit/Manual/Server-side-component.html
----
-
 # Server-side component
 
 The Distributes Reviews server-side component is **optional**, and is useful where your team does not have access to an interactive Pull Request review system such as GitHub, GitLab, or Azure DevOps. Once installed and configured, it will track changes to the review meta data and send appropriate emails to affected users.

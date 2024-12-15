@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GitHub-Enterprise-Integration
-  - /SmartGit/Manual/GitHub-Enterprise-Integration.html
----
-
 # GitHub Enterprise Integration
 
 Authenticating to a GitHub Enterprise instance is slightly different than to *github.com* due to the nature of *OAuth*. Basically you have to use **Personal Access Tokens** there. This approach can be performed by an individual user without needing administrative rights for the GitHub Enterprise instance.

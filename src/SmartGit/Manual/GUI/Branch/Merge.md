@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Merge
-  - /SmartGit/Manual/Merge.html
----
-
 # Merging in SmartGit
 
 For an overview of general merging techniques in Git, please refer to *[Merge](../../GitConcepts/Merging.md)*.

@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Installation-and-Files.html
-  - /SmartGit/Manual/Installation-and-Files
----
-
 # SmartGit Installation File Locations
 
 SmartGit stores its internal settings files independently for each user. 

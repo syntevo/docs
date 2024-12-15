@@ -1,7 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Integrations
----
 # SmartGit Integrations with other Applications and Git Hosting Services
 
 SmartGit works with most modern Git Hosting services, and can also be used with popular Issue Tracking systems. Please select one of the below topics for further information:

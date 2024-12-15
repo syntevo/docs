@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Bisect
-  - /SmartGit/Manual/Bisect.html
----
-
 # Bisect
 
 The Bisect command allows you to find out which previous commit introduced problematic behavior in your project's repository, e.g., to find the origin of a bug which was not present in a previous release of an application.

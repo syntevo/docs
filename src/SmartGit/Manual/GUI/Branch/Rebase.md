@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Rebase
-  - /SmartGit/Manual/Rebase.html
----
-
 # Rebasing in SmartGit
 
 [Rebasing](../../GitConcepts/Rebasing.md) is a powerful feature of Git which allows the commit history of branches and commits in a repository to be rearranged.

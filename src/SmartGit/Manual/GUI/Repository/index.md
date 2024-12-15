@@ -1,10 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GUI/Repository
-  - /SmartGit/Manual/Repository-Related
-  - /SmartGit/Manual/Repository-Related.html
----
-
 # Working with Repositories
 
 This section describes common SmartGit actions you'll need to use when working with Git Repositories on your local system.

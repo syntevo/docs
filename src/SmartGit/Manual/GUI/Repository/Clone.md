@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Clone
-  - /SmartGit/Manual/Clone.html
----
-
 # Cloning Repositories
 
 Use the **Repository \| Clone** option to create a clone of an existing Git repository.

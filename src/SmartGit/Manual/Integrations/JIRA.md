@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/JIRA
-  - /SmartGit/Manual/JIRA.html
----
-
 # JIRA
 
 The SmartGit integration to Atlassian JIRA allows you to select a commit message (including JIRA key) directly from (open) JIRA issues and to optionally mark issues as resolved on **Push**.

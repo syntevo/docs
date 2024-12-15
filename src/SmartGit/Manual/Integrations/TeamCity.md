@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/TeamCity
-  - /SmartGit/Manual/TeamCity.html
----
-
 # TeamCity integration (Standard Window only)
 
 SmartGit will display JetBrains TeamCity build results in the **My History** view of the [*Standard Window*](../GUI/Standard-Window.md), if configured.

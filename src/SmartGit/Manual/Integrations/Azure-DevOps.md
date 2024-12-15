@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Azure-DevOps
-  - /SmartGit/Manual/Azure-DevOps.html
----
-
 # Azure DevOps
 
 SmartGit integrates Azure DevOps workflows in several places, very similar to [GitHub](GitHub-integration.md) integration. 

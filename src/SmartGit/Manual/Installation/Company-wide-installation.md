@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Company-wide-installation.html
-  - /SmartGit/Manual/Company-wide-installation
----
-
 # Company-wide installation
 
 For company-wide installations, the administrator may install SmartGit on a read-only location or network share or customize the installation process by e.g. using batch files. To set up a custom initial configuration for the users, certain settings files can be prepared and put into a directory named `default`. For MacOS this `default` directory must be located in `SmartGit.app/Contents/Resources/` (parallel to the `Java` directory). For other operating systems, the `default` directory must be located within SmartGit's installation directory, and parallel to the `lib` and `bin` directories.

@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Tools
-  - /SmartGit/Manual/Tools.html
----
-
 # Tools
 
 The **Tools** preferences settings allow you to define external tools to assist you when using SmartGit:

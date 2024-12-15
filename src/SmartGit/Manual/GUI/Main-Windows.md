@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Main-Windows
-  - /SmartGit/Manual/Main-Windows.html
----
-
 # Main Windows
 
 SmartGit provides three different Main Windows, all of which can execute Git commands, but each is tailored to a different type of git usage.

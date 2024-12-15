@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Git-Flow-Light
-  - /SmartGit/Manual/Git-Flow-Light.html
----
-
 # Git-Flow Light
 
 Git-Flow Light is a SmartGit-specific subset of Git-Flow, simplifying the branching model to just one long-lived **Development** trunk branch and short-lived **Feature** branches.

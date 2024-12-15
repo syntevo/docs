@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Synchronizing-with-Remote-Repositories
-  - /SmartGit/Manual/Synchronizing-with-Remote-Repositories.html
----
-
 # Synchronizing with Remote Repositories
 
 Synchronizing the states of local and remote repositories involves *Pull*ing from, and *Push*ing to, a remote repository(ies). SmartGit also has a *Synchronize* command that combines pulling and pushing.

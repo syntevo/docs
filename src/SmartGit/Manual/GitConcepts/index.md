@@ -1,10 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GitConcepts
-  - /SmartGit/Manual/Git-Concepts
-  - /SmartGit/Manual/Git-Concepts.html
----
-
 # Git Concepts
 
 This section aims to help you get started with Git and gives you an understanding of the fundamental concepts of the Git version control system.

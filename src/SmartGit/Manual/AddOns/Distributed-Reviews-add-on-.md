@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Distributed-Reviews-add-on-
-  - /SmartGit/Manual/Distributed-Reviews-add-on-.html
----
-
 # Distributed Reviews (add-on)
 
 The *Distributed Reviews* add-on allows your team to create a *Pull Request* from one branch to another and to *comment* on pull requests and individual commits. Contrary to *centralized* code reviewing systems like GitHub, no dedicated server is required: all review metadata is stored in the Git repository itself and distributed the same way as your primary content/commits. This gives you all the benefits of Git: you can work offline and you can prepare your pull requests and comments locally and only push them when ready, or discard them if you change your mind, without affecting anyone else.

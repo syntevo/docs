@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Repository-Settings
-  - /SmartGit/Manual/Repository-Settings.html
----
-
 # Repository Settings
 
 After selecting a Repository, you can use the **Repository \| Settings** menu command or the Settings context menu on the highlighted repository. This opens a dialog to configure certain options of your repository (`<repository>/.git/config`) file.

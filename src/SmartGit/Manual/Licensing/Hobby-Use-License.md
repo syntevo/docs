@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Hobby-Use-License
-  - /SmartGit/Manual/Hobby-Use-License.html
----
-
 # Hobby-Use License
 
 The Hobby-Use license limits repository access to specific conditions. Every accessed repository (including submodules) must satisfy at least one of these conditions.

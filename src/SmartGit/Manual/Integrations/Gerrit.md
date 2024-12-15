@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Gerrit
-  - /SmartGit/Manual/Gerrit.html
----
-
 # Gerrit
 
 SmartGit provides integration with Gerrit in the *Log* and the *Working Tree* windows. You can invoke the **Push to Gerrit** command in the **Branches** view if a Gerrit remote has been detected. It will offer a dialog with special Gerrit-related Push options.

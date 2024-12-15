@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Local-Operations-on-the-Working-Tree
-  - /SmartGit/Manual/Local-Operations-on-the-Working-Tree.html
----
-
 # Local Operations on the Working Tree
 
 After making changes in the Working Tree, the next step is to prepare a new commit by identifying which changes you want to include in the commit.
