@@ -9,7 +9,7 @@ redirect_from:
 In addition to the options available in the [SmartGit Preferences](../Preferences/index.md), additional customization options are accessible through the SmartGit Properties file (`smartgit.properties`). 
 This article describes these additional properties.
 
-Most low-level properties below can be edited directly in the **Edit | Preferences** settings dialog under the **Low-Level Properties** section. 
+Most low-level properties below can be edited directly in the **Edit \| Preferences** settings dialog under the **Low-Level Properties** section. 
 Changing these values updates the `smartgit.properties` file, which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
 
 In rare instances, you may need to edit the `smartgit.properties` file directly.
@@ -32,12 +32,20 @@ The file encoding is `UTF-8`.
 #### Note
 
 >- The `smartgit.properties` file contains only SmartGit-specific settings.
-> To configure the underlying behavior of *Git*, use [**Edit | Preferences | Git Config**](../Preferences/Commands.md#git-config)
-> to change common `git.config` settings. Alternatively, you can edit Git configuration files,
-> such as `.git/config` (for individual Git repository settings) and `~\.gitconfig` (in your HOME directory for global configuration options).
+>  To configure the underlying behavior of *Git*, use [**Edit \| Preferences \| Git Config**](../Preferences/Commands.md#git-config)
+>  to change common `git.config` settings.
+> Alternatively, you can edit Git configuration files, such as `.git/config` (for individual Git repository settings) and `~\.gitconfig` (in your HOME directory for global configuration options).
+
+## Changes View
+
+### changes.maximumFileSize
+
+File comparison can be disabled for very large files, for performance reasons.
+Use this setting to adjust the size (in bytes) at which a file is considered too large for the [**Changes View**](../Changes-View.md). 
+The default value is approximately 1 MB.
 
 #### Note
-> - It is recommended to keep this setting at a reasonable level (a few MB), as setting it too high could negatively impact the performance of the user interface.
+> It is recommended to keep this setting at a reasonable level (a few MB), as setting it too high could negatively impact the performance of the user interface.
 
 ## Networking
 
