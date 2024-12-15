@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Command-Line-Options
-  - /SmartGit/Manual/Command-Line-Options.html
----
-
 # Command-Line Options
 
 This section gives an overview of the various command-line options which can be passed as parameters to the SmartGit launcher at start-up. The launcher used by SmartGit depends on your platform:

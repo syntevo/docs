@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Working-Tree-States
-  - /SmartGit/Manual/Working-Tree-States.html
----
-
 # Working Tree States
 
 The Working Tree is the folder structure into which files in your repository will be placed after a check out.

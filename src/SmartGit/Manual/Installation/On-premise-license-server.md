@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/On-premise-license-server
-  - /SmartGit/Manual/On-premise-license-server.html
----
-
 # On-premise License Server
 
 To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server. Additionally, the bundled frontend is great to quickly monitor the usage of our products within your organization.

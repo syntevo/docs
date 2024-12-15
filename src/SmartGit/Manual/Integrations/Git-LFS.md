@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Git-LFS
-  - /SmartGit/Manual/Git-LFS.html
----
-
 # Git-LFS
 
 SmartGit provides support for common Git Large File Storage (Git-LFS) operations, provided that Git-LFS has been installed on your system and it's configured in your Git config files, so that Git-LFS is already configured and tested to be working from the command line.

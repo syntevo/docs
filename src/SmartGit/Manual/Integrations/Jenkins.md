@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Jenkins
-  - /SmartGit/Manual/Jenkins.html
----
-
 # Jenkins integration (Standard Window only)
 
 SmartGit will display Jenkins job results in the **My History** view of *Standard* window, if configured. Currently, *free style projects* and *multibranch pipelines* are supported.

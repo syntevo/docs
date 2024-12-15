@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Check-Out
-  - /SmartGit/Manual/Check-Out.html
----
-
 # Using Check Out in SmartGit
 
 The [Git Checkout Command](../../GitConcepts/Branches.md#working-with-branches-using-checkout) is used to switch between branches in a repository.

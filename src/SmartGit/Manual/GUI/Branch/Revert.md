@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Revert
-  - /SmartGit/Manual/Revert.html
----
-
 # Reverting Commits in SmartGit
 
 The [`git revert`](../../GitConcepts/Reverting.md) command allows you to 'undo' the effects of unwanted commits in the current branch by creating a new commit that represents the work needed to reverse the changes from previous commits.

@@ -1,10 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GUI/Preferences
-  - /SmartGit/Manual/Preferences
-  - /SmartGit/Manual/Preferences.html
----
-
 # Preferences
 
 The preferences dialog in SmartGit (**Edit \| Preferences**) allows you to customize SmartGit to suit your workflow and personal preferences. This will open a dialog where you can adjust settings such as user-interface options, additional tools, proxy settings and keyboard shortcuts.

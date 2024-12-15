@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Repositories-Directories-and-Files
-  - /SmartGit/Manual/Repositories-Directories-and-Files.html
----
-
 # Repositories, Directories and Files
 
 The *Repositories view* shows all local repositories known to SmartGit in a tree structure. Repositories which are opened by SmartGit will appear in **Bold** in this window, and the directory structure, and states of folders in the repository Working Tree will appear nested underneath each opened repository.

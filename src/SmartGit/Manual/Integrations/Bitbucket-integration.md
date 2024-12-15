@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Bitbucket-integration
-  - /SmartGit/Manual/Bitbucket-integration.html
----
-
 # Bitbucket integration
 
 SmartGit integrates Bitbucket workflows in various places, very similar to the [GitHub](GitHub-integration.md) integration. 

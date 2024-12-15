@@ -1,7 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/GUI
----
 # SmartGit User Interface Reference
 
 This article aims to provide a starting point for using the SmartGit application.

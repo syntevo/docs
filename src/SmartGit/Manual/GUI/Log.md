@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Log
-  - /SmartGit/Manual/Log.html
----
-
 # Git Log
 
 The SmartGit Log display provides interactive visualization of the Git Log, allowing you to view the structure of the commit history in a repository, and to visualize the changes made to files and directories as commits are added.

@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/BitBucket-Server-Atlassian-Stash-integration
-  - /SmartGit/Manual/BitBucket-Server-Atlassian-Stash-integration.html
----
-
 # BitBucket Server (Atlassian Stash) integration
 
 SmartGit integrates BitBucket Server (Atlassian Stash) workflows in several places, very similar to the [GitHub](GitHub-integration.md) integration.

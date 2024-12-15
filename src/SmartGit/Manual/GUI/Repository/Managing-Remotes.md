@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Managing-Remotes
-  - /SmartGit/Manual/Managing-Remotes.html
----
-
 # Managing Remotes
 
 Frequently, developers may [Clone](Clone.md) a remote repository, and will always pull or push new commits and branches in your local repository only to this remote (with a default name of *origin*).

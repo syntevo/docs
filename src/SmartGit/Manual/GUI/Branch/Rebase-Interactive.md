@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Rebase-Interactive
-  - /SmartGit/Manual/Rebase-Interactive.html
----
-
 # Interactive Rebasing in SmartGit
 
 As the name suggests, Interactive Rebasing (`git rebase -i`) allows fine-level control over what should happen with each commit.

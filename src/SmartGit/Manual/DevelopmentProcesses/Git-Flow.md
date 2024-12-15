@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Git-Flow
-  - /SmartGit/Manual/Git-Flow.html
----
-
 # Git-Flow
 
 ## Overview

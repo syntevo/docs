@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Journal-View
-  - /SmartGit/Manual/Journal-View.html
----
-
 # Journal View
 
 The Journal View in SmartGit shows a compact history for the current branch, in linear fashion. This differs from the [Log view](Log.md) in that only the commits in the current branch are displayed.

@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Commercial-only-features
-  - /SmartGit/Manual/Commercial-only-features.html
----
-
 # Commercial-only features
 
 A commercial license is in general required when running SmartGit in a commercial environment, see sections 3.2.1 and 3.2.2 of the [license agreement](https://www.syntevo.com/documents/smartgit-license.html).

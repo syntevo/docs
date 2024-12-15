@@ -1,9 +1,3 @@
----
-redirect_from:
-  - /SmartGit/Manual/Manipulating-branches-tags
-  - /SmartGit/Manual/Manipulating-branches-tags.html
----
-
 # Manipulating Branches and Tags
 
 In Git, Branches and Tags provide human-readable pointers / references to specific commits in a repository. The key differentiation is that *Tags* will remain pointed to a specific commit, whereas *Branches* will move to point to the most recent HEAD commit when a new commit is added to a branch.
