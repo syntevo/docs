@@ -14,8 +14,10 @@ Use the `<<` and `>>` arrow buttons to move changed *Hunks* between panes, or us
 > - You can't move staged changes directly into **HEAD**, as that will require a new commit.
 > - The **Changes View** has only 2 panes, and as a result, the **HEAD** (repository) file version does NOT appear in the **Changes View** unless the file has been staged.
 >   To view the 3 panes at once, please use the [**Index Editor**](Stage-Unstage-IndexEditor.md#the-index-editor).
-> - **Changes View** won't automatically compare files larger than the configured *maximum file size* setting.
->   The value can be changed in the [*Low Level Properties* preferences](AdvancedSettings/Low-Level-Properties.md#changesmaximumfilesize)
+> - **Changes View** won't automatically compare files larger than the configured `changes.maximumFileSize` low-level setting.
+>   If you attempt to compare a file larger than this setting, SmartGit will warn that the *'File size exceeds the configured limit'*.
+>   Clicking **Force Compare** will override the limit temporarily for this file, and perform the comparison.
+>   The value can be changed more permanently in the [*Low Level Properties* preferences](AdvancedSettings/Low-Level-Properties.md#changesmaximumfilesize).
 
 There are several options to customize the layout of the **Changes View**:
 - Select between *Unified* and *Side by Side* mode to view the Index and Working Tree versions either as separate panes, or as a unified change.
