@@ -81,17 +81,19 @@ To hide a specific page, set the corresponding property to `false`.
 
 ### smartgit.contactSupportEnabled
 
-Set this option to `false` to hide the menu item **Help\|Contact Support**.
+Set this option to `false` to hide the menu item **Help \| Contact Support**.
 
 ### smartgit.registerEnabled
 
-Set this option to `false` to hide the menu item **Help\|Register**.
+Set this option to `false` to hide the menu item **Help \| Register**.
 
 ## Update Check
 
 ### smartgit.updateCheck.enabled
 
-Set to `false` to disable the automatic checking and disallow the manual checking for new program versions by hiding the corresponding menu items **Help\|Check for New Version** and **Help\|Check for Latest Build**. You should only turn this check off for network installations where SmartGit users may not be able to perform the update themselves. When settings this option, you will probably also want to hide the corresponding page from the **Preferences**, using [smartgit.preferences.updateCheck.visible](#smartgitpreferencescategoryvisible).
+Set to `false` to disable the automatic checking and disallow the manual checking for new program versions by hiding the corresponding menu items **Help \| Check for New Version** and **Help \| Check for Latest Build**. 
+You should only turn this check off for network installations where SmartGit users may not be able to perform the update themselves. 
+When settings this option, you will probably also want to hide the corresponding page from the **Preferences**, using [smartgit.preferences.updateCheck.visible](#smartgitpreferencescategoryvisible).
 
 Note that this will also disable notifications of new bugfix releases which you can upgrade to for free and which improve the stability or reliability of SmartGit.
 
@@ -99,26 +101,30 @@ If you just want to switch off automatic checking, use `smartgit.updateCheck.aut
 
 ### smartgit.updateCheck.automatic
 
-Set to `false` to disable the **automatic** check for new versions on a global level which can be convenient e.g. for network installations. To disable the check for an individual installation/user, better do that in the **Preferences**, section **SmartGit Updates**.
+Set to `false` to disable the **automatic** check for new versions on a global level which can be convenient e.g. for network installations. 
+To disable the check for an individual installation/user, better do that in the **Preferences**, section **SmartGit Updates**.
 
 ### smartgit.updateCheck.alwaysUpgradeToLatestBuild
 
 Set to `true` to make SmartGit check for the availability of a new *latest build* on start up.
-*Latest Builds* are the "bleeding edge" builds between subsequent (minor) *release* builds, like between version 8.0.1 and 8.0.2 or 8.1 preview 3 and 8.1 preview 4. They will contain the latest improvements and bugfixes. Usually we will ask you to manually fetch the latest build using **Help\|Check for Latest Builds**.
+*Latest Builds* are the "bleeding edge" builds between subsequent (minor) *release* builds, like between version 8.0.1 and 8.0.2 or 8.1 preview 3 and 8.1 preview 4. They will contain the latest improvements and bugfixes. 
+Usually we will ask you to manually fetch the latest build using **Help \| Check for Latest Builds**.
 
 ### smartgit.updateCheck.checkForLatestBuildVisible
 
-Set to `false` to hide **Help\|Check for Latest Build**.
+Set to `false` to hide **Help \| Check for Latest Build**.
 
 ### smartgit.installation.update.workingArea
 
-Use this property to customize the [program updater](../../Installation/Installation-and-Files.md)'s temporary directory, which is by default located in your home directory/profile. This should only be necessary if updating is not possible due to (file system) restrictions in this default directory, e.g. if execution of files is prevented by the system. On Windows, paths have to be specified using forward-slashes, like `c:/temp`.
+Use this property to customize the [program updater](../../Installation/Installation-and-Files.md)'s temporary directory, which is by default located in your home directory/profile. This should only be necessary if updating is not possible due to (file system) restrictions in this default directory, e.g. if execution of files is prevented by the system. 
+On Windows, paths have to be specified using forward-slashes, like `c:/temp`.
 
 ## Bug Reporting
 
 ### smartgit.disableBugReporting
 
-Set to `true` to disable sending of [crash footprints](../Bug-Reports.md) (even if configured in the **Preferences**) and skip the option to send bug reports to us. When setting this option, you will probably also want to hide the corresponding page from the **Preferences**, see [smartgit.preferences.bugReports.visible](#smartgitpreferencescategoryvisible).
+Set to `true` to disable sending of [crash footprints](../Bug-Reports.md) (even if configured in the **Preferences**) and skip the option to send bug reports to us. 
+When setting this option, you will probably also want to hide the corresponding page from the **Preferences**, see [smartgit.preferences.bugReports.visible](#smartgitpreferencescategoryvisible).
 
 #### Warning
 

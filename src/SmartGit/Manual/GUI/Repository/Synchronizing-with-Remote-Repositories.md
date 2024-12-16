@@ -6,7 +6,7 @@ Synchronizing the states of local and remote repositories involves *Pull*ing fro
 
 The Pull command fetches commits from a remote repository, stores them in the remote branches, and optionally 'integrates' these commits (i.e. by fast-forwarding, or by adding merge or rebase commits) into the local branch, depending on the nature of divergence of the branches, and the [configured preference](Repository-Settings.md#fetch-and-pull) for merge types.
 
-Use **Remote\|Pull** (or the corresponding toolbar button) to invoke the Pull command.
+Use **Remote \| Pull** (or the corresponding toolbar button) to invoke the Pull command.
 
 This will open the Pull dialog, where you can specify what SmartGit will do after the commits have been fetched:
 
@@ -14,7 +14,7 @@ This will open the Pull dialog, where you can specify what SmartGit will do afte
 - You can click **More Options** to customize the Pull (Note: These are only relevant if you select **Pull**. The options below are ignored with **Fetch Only**):
     - If a fast-forward is not possible, you have the choice whether to [Merge](../Branch/Merge.md) the local commits with the fetched commits, or [Rebase](../Branch/Rebase.md) the local commits onto the fetched commits.
     - **Update existing and fetch new tags** will also integrate any tag changes detected in the remote. By default, Git (and hence SmartGit) will only pull new tags, but won't update any changed tags in the remote repository.
-    - **Remember as default for repository** will update the **Repository\|Settings** with the above new preferences. Additional options are available when working with the remote, which can be configured in the [Repository Settings](Repository-Settings.md).
+    - **Remember as default for repository** will update the **Repository \| Settings** with the above new preferences. Additional options are available when working with the remote, which can be configured in the [Repository Settings](Repository-Settings.md).
 
 The Pull Dialog has 3 buttons:
 
@@ -52,9 +52,9 @@ If you try to push commits from a new local branch, you will be asked whether to
 
 The Push commands listed above can be invoked from several places:
 
-- **Menu and toolbar** In the menu, you can invoke the various Pull, and Push commands with **Remote\|Pull**, **Remote\|Push**, **Remote\|Push To** and **Remote\|Push Commits**.
-  **Remote\|Push** and **Remote\|Push To** may also be available as toolbar buttons, depending on your toolbar configuration.
-  **Remote\|Push Commits** is only enabled if the **Journal** view is focused.
+- **Menu and toolbar** In the menu, you can invoke the various Pull, and Push commands with **Remote \| Pull**, **Remote \| Push**, **Remote \| Push To** and **Remote \| Push Commits**.
+  **Remote \| Push** and **Remote \| Push To** may also be available as toolbar buttons, depending on your toolbar configuration.
+  **Remote \| Push Commits** is only enabled if the **Journal** view is focused.
 - **Repositories view** You can invoke **Push** in the **Repositories** view by selecting the open repository and choosing
   **Push** from the context menu.
 - **Branches view** In the context menu of the **Branches** view, you can invoke **Push** and **Push To** on local branches. Additionally, you can invoke **Push** on tags.
@@ -103,7 +103,7 @@ With the Synchronize command, you can push local commits to a remote repository 
 
 The Synchronize command can be invoked as follows:
 
-- from the menu via **Remote\|Synchronize**,
+- from the menu via **Remote \| Synchronize**,
 - with the Synchronize toolbar button,
 - and in the **Repositories** view via **Synchronize** in the repository's context menu.
 

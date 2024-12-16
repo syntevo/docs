@@ -133,7 +133,7 @@ This tab-set allows you to edit your `.gitconfig` file, which controls a number 
 
 #### Note
 
-> Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository\|Edit Git Config** menu Option
+> Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository \| Edit Git Config** menu Option
 > and then select the **User** or **Repository** option respectively.
 
 

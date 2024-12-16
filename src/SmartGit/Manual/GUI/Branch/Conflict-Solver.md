@@ -4,7 +4,7 @@ SmartGit comes with a Conflict Solver tool that allows merge conflict resolution
 
 For details on how Git manages merge conflicts, and the meaning of `ours`, `theirs`, `common`, and `base` files, refer to the [Git manual](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging).
 
-SmartGit's Conflict Solver view is invoked from the **Query | Conflict Solver** command, and consists of the following elements:
+SmartGit's Conflict Solver view is invoked from the **Query \| Conflict Solver** command, and consists of the following elements:
 
 - The **left pane** shows the local branch commit version of the file (`ours`, also referred to as `:2` in git)
 - The **center pane** shows the file's current conflicted Working Tree version, including the merge conflict markers.  
@@ -31,4 +31,4 @@ The following commands are available in the SmartGit conflict resolver (commands
 - **Merge Below:** Moves the `Working Tree` pane to the bottom. This is useful for merging files with long lines.
 - **Close:** Closes the Conflict Solver. You will be prompted to do so if you haven't saved changes. The Conflict Solver will warn you if unresolved conflicts remain in the Working Tree file.
 
-You can substitute the SmartGit Conflict Solver with another standalone tool if you prefer another three-way merge tool to resolve conflicts. Please refer to [Preferences | Tools](../../Preferences/Tools.md#conflict-solvers) for instructions on how to do this.
+You can substitute the SmartGit Conflict Solver with another standalone tool if you prefer another three-way merge tool to resolve conflicts. Please refer to [Preferences \| Tools](../../Preferences/Tools.md#conflict-solvers) for instructions on how to do this.

@@ -141,7 +141,7 @@ By default, the list of tools is searched from top to bottom and the first match
 
 ## Conflict Solvers
 
-SmartGit comes with a built-in conflict solver (three-way-merge) which will be used by default when invoking **Query\|Conflict Solver**. If you prefer, you can configure external three-way-merge tools which should be used instead. The following **Arguments** can be passed to the configured **External Conflict Solver**:
+SmartGit comes with a built-in conflict solver (three-way-merge) which will be used by default when invoking **Query \| Conflict Solver**. If you prefer, you can configure external three-way-merge tools which should be used instead. The following **Arguments** can be passed to the configured **External Conflict Solver**:
 
 - `${mergeFile}` represents the resulting conflicting file, as-is in the working tree
 - `${leftFile}` represents Git's "ours" version of the file (:2)

@@ -17,7 +17,7 @@ such as entire folders, and files matching wild card patterns to be ignored.
 
 #### Tip
 
-> To view a list of ignored files or to understand why a specific file is *ignored*, use **Local\|Edit Ignore File**.
+> To view a list of ignored files or to understand why a specific file is *ignored*, use **Local \| Edit Ignore File**.
 
 ## Assume Unchanged
 

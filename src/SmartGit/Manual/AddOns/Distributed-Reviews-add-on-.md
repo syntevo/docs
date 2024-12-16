@@ -1,15 +1,18 @@
 # Distributed Reviews (add-on)
 
-The *Distributed Reviews* add-on allows your team to create a *Pull Request* from one branch to another and to *comment* on pull requests and individual commits. Contrary to *centralized* code reviewing systems like GitHub, no dedicated server is required: all review metadata is stored in the Git repository itself and distributed the same way as your primary content/commits. This gives you all the benefits of Git: you can work offline and you can prepare your pull requests and comments locally and only push them when ready, or discard them if you change your mind, without affecting anyone else.
+The *Distributed Reviews* add-on allows your team to create a *Pull Request* from one branch to another and to *comment* on pull requests and individual commits. 
+Contrary to *centralized* code reviewing systems like GitHub, no dedicated server is required: all review metadata is stored in the Git repository itself and distributed the same way as your primary content/commits. 
+This gives you all the benefits of Git: you can work offline and you can prepare your pull requests and comments locally and only push them when ready, or discard them if you change your mind, without affecting anyone else.
 
 ## Initialization
 
-To initialize the Review system for your local repository invoke
-**Review\|Configure**.
+To initialize the Review system for your local repository invoke **Review \| Configure**.
 
-SmartGit will query all currently configured *remotes* to see whether any of them already contains a *Review database*. If this is the case, SmartGit will clone this database and *connect* the local Review system to it. If none of the remotes contains a Review database, a completely new database will be created and the [users database](#users) will be populated from the repository log.
+SmartGit will query all currently configured *remotes* to see whether any of them already contains a *Review database*. 
+If this is the case, SmartGit will clone this database and *connect* the local Review system to it. 
+If none of the remotes contains a Review database, a completely new database will be created and the [users database](#users) will be populated from the repository log.
 
-For a *shared* repository (including all its *clones*), the initialization of a completely new database should only be done once, e.g. when starting to introduce the Review system for your project. This will usually happen in one of the clones. After the initialization of the local repository, invoke **Review\|Configure** and select
+For a *shared* repository (including all its *clones*), the initialization of a completely new database should only be done once, e.g. when starting to introduce the Review system for your project. This will usually happen in one of the clones. After the initialization of the local repository, invoke **Review \| Configure** and select
 **Initialize a Remote** to push your Review database back to the selected remote, thus initializing this repository as well. From this point on, **Review\|Configure** can be invoked in all other clones of the shared repository to clone and connect to the same Review database.
 
 ## Workflows
@@ -23,11 +26,11 @@ To create a Pull Request, select your *feature branch* in the
 **Branches** view and invoke **Create Pull Request** from the context menu. In the upcoming dialog, select the **target** branch and a
 **Message** describing the purpose of the Pull Request. It's recommended to specify at least one **Assignee**, who is the right person to review and integrate this Pull Request. The Pull Request will be highlighted to all assignees in the **Branches** view (in the Project as well as the Log window).
 
-Once the Pull Request has been created, it is in *pending state* and will show up in the **Pull Requests** category of the **Branches** view as *local only*. It will be published, i.e. sent to the remote repository, for the next time you invoke **Push**. Alternatively, you can manually force publishing the Pull Request using **Review\|Sync**.
+Once the Pull Request has been created, it is in *pending state* and will show up in the **Pull Requests** category of the **Branches** view as *local only*. It will be published, i.e. sent to the remote repository, for the next time you invoke **Push**. Alternatively, you can manually force publishing the Pull Request using **Review \| Sync**.
 
 ### Reviewing and integrating a Pull Request
 
-Once a Pull Request is published (i.e. present in the remote repository), it will be fetched by all other users for their next invocation of **Pull** or by doing **Review\|Sync** manually. If you are amongst the **Assignees** of a Pull Request, it will be highlighted to you in the **Branches** view.
+Once a Pull Request is published (i.e. present in the remote repository), it will be fetched by all other users for their next invocation of **Pull** or by doing **Review \| Sync** manually. If you are amongst the **Assignees** of a Pull Request, it will be highlighted to you in the **Branches** view.
 
 To review or integrate a Pull Request, open the Log and select and reveal the Pull Request from the **Pull Requests** category. The Pull Request is represented by a merge commit which connects its source (the feature branch) with the *merge base* between the source and the Pull Request's target (probably `master` or `develop`). When selecting this Pull Request commit in the **Commits** graph, the **Files** view will show all affected files of the Pull Request and you can drill down to content changes in the **Changes** view.
 
@@ -70,7 +73,7 @@ and switch to the **Commit** view. Here you will also be able to display older h
 
 After integrating or closing a pull request, the pull request will still be present in the Review database, but by default be hidden from the
 **Branches** view. To display *closed* pull requests, select
-**Review\|Show Closed Pull Requests**.
+**Review \| Show Closed Pull Requests**.
 
 As long as a pull request is still present in the database, SmartGit maintains *refs* pointing to all of its heads, thus preventing Git from garbage collecting the corresponding commits, see [Historic Commit Refs](#historic-commit-refs). Only by invoking **Delete** on a *closed*
 pull request, it will be removed from the database and correspondings
@@ -119,13 +122,15 @@ The resolution of these 'conflicts' is done by the user when editing the entity:
 From the difference between `refs/meta/smartgit/reviews` and
 `refs/meta/smartgit/remotes/<remote-id>/reviews`, SmartGit will derive which pull requests and comments ('entities') are *local*.
 
-After pushing regular commits to a certain remote or when invoking
-**Review\|Sync**, SmartGit will include only those entities for which their referred commits (or refs) are already present in the corresponding remote. In this way, you can create local commits together with local review data and push them only all at once. Before pushing local review data, SmartGit will squash all your local review tree commits into a single commit: this especially means that additions followed by deletions of certain entities or some back and forth while editing entities will be skipped. Thus, similar as for 'normal' Git commits, you have freedom in how to assemble your review data; only the final result will matter.
+After pushing regular commits to a certain remote or when invoking **Review \| Sync**, SmartGit will include only those entities for which their referred commits (or refs) are already present in the corresponding remote. 
+In this way, you can create local commits together with local review data and push them only all at once. 
+Before pushing local review data, SmartGit will squash all your local review tree commits into a single commit: this especially means that additions followed by deletions of certain entities or some back and forth while editing entities will be skipped. 
+Thus, similar as for 'normal' Git commits, you have freedom in how to assemble your review data; only the final result will matter.
 
 ### Historic Commit Refs
 
-SmartGit maintains a list of special refs
-`refs/meta/smartgit/commits/<sha>` for all commits which are representing pull request heads (current heads as well as historic heads) and for all commits to which a comment is assigned. This happens to (1) make such commits *pushable* and *pullable* and (2) to preserve them from being garbage-collected by Git: while on the client-side, the
+SmartGit maintains a list of special refs `refs/meta/smartgit/commits/<sha>` for all commits which are representing pull request heads (current heads as well as historic heads) and for all commits to which a comment is assigned. 
+This happens to (1) make such commits *pushable* and *pullable* and (2) to preserve them from being garbage-collected by Git: while on the client-side, the
 *reflog*-files are usually preventing a garbage collection, this is by default not the case on the server-side.
 
 By default, historic commit refs will be removed, once the corresponding entity will be removed from the database. To disabling pruning of such commits, you have to unset the `prune-commit-refs` option in the review database:
@@ -149,9 +154,10 @@ git commit -m "configuration changed to prune obsolete commit refs"
 git update-ref refs/meta/smartgit/reviews `git rev-parse HEAD` 
 ```
 
-- Finally, sync this change using SmartGit's **Review\|Sync**.
+- Finally, sync this change using SmartGit's **Review \| Sync**.
 
-Once this change has been pulled to a different clone for which Distributed Reviews are enabled, obsolete refs won't be removed anymore from now on. To confirm that the option actually works, you may invoke following command *before* adding and *after* removing a comment locally:
+Once this change has been pulled to a different clone for which Distributed Reviews are enabled, obsolete refs won't be removed anymore from now on. 
+To confirm that the option actually works, you may invoke following command *before* adding and *after* removing a comment locally:
 
 ``` text
 git show-ref | grep -c refs/meta/smartgit/commits        
@@ -161,7 +167,8 @@ If the displayed number remains increased after having removed the comment, you 
 
 ## Disposing your local Review Database
 
-Sometimes it may be desirable to reinitialize your local review database from the server's database. For that, it's necessary to first dispose your local database using **Review\|Configure** and select **Dispose Database** there.
+Sometimes it may be desirable to reinitialize your local review database from the server's database. 
+For that, it's necessary to first dispose your local database using **Review \| Configure** and select **Dispose Database** there.
 
 #### Note
 
@@ -177,12 +184,13 @@ To get rid of Distributed Reviews data not just for your local clone, but also f
 - on the server, delete all `refs/meta/smartgit/*`-refs
     - usually there are no packed refs on the server, hence you can simply delete these refs from the file system
     - alternatively, if you do not have access to the server's file system, you may use `git push --delete <remote> <ref>` to delete them remotely
-- on every clone, invoke **Review\|Configure** and select **Dispose Database**
+- on every clone, invoke **Review \| Configure** and select **Dispose Database**
 
 ## Customizing the pull request integration message
 
-The default message which will be set for the **Integrate Pull Request**
-dialog can be customized by using a message template. The message template will be specified using [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md) `smartgit.reviews.integrateMessageTemplate`. Following variables can be used:
+The default message which will be set for the **Integrate Pull Request** dialog can be customized by using a message template. 
+The message template will be specified using [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md) `smartgit.reviews.integrateMessageTemplate`. 
+The following variables can be used:
 
 - `${id}:` the short pull request ID
 - `${message}:` the entire pull request message (including new lines)

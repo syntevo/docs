@@ -2,7 +2,7 @@
 
 The SmartGit Log display provides interactive visualization of the Git Log, allowing you to view the structure of the commit history in a repository, and to visualize the changes made to files and directories as commits are added.
 
-Log is invoked from the **Query\|Log** menu option.
+Log is invoked from the **Query \| Log** menu option.
 
 #### Tip
 
