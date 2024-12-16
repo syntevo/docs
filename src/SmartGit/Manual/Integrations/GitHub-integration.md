@@ -67,7 +67,8 @@ When selecting this *merge* node in the **Commits** view, you can see the entire
 
 For a pull request which had been fetched once, there was a special *ref* created which will make it show up in the **Pull Requests** category, even if it is not present on the server anymore. In this case, you may use **Drop Local** on such a pull request to get rid of the corresponding ref, the local merge commit, all other commits of the pull request and the entry in **Pull Requests** as well. It's safe to use **Drop Local**, as it will only affect the local repository and you can re-fetch a pull request anytime you like using **Fetch** again.
 
-You can invoke **Review\|Sync** to manually update the displayed information. Usually you will want to do that, if you know that server-side information has changed since the Log has been opened.
+You can invoke **Review \| Sync** to manually update the displayed information. 
+Usually you will want to do that, if you know that server-side information has changed since the Log has been opened.
 
 To create a pull request, use **Create Pull Request** from the context menu of the **Branches** view.
 
@@ -154,7 +155,9 @@ Typical Git error messages hinting to this kind of problem:
 
 ### Distributed Reviews interference
 
-When using GitHub, be sure to have [Distributed Reviews](../AddOns/Distributed-Reviews-add-on-.md) disabled for your repository, otherwise there may be confusion about GitHub vs. Distributed Reviews pull requests. To be sure to have Distributed Reviews disabled, invoke **Review\|Configure**:
+When using GitHub, be sure to have [Distributed Reviews](../AddOns/Distributed-Reviews-add-on-.md) disabled for your repository, 
+otherwise there may be confusion about GitHub vs. Distributed Reviews pull requests. 
+To be sure to have Distributed Reviews disabled, invoke **Review \| Configure**:
 
 - if SmartGit asks you whether to initialize the Review database, Distributed Reviews are not enabled (as it should be). Select **Cancel** to keep it disabled.
 - if SmartGit asks you what to configure, Distributed Reviews are enabled. Select **Dispose Database** to disable it.

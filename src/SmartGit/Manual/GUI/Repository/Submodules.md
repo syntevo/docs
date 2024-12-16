@@ -15,36 +15,42 @@ Submodules offer a way to link one or embedded repositories into a parent reposi
 
 A submodule usually shows up in SmartGit's UI at the same time in the [*Repositories View*](../Repositories-View.md) and in the **Files** view. Available Operations on the main menu will depend on whether the **Repositories** view or the **Files** is in focus:
 
-- The **Repositories** view offers operations in the submodule repository itself: e.g. you can invoke a **Log** here to see the history of the submodule repository or you can invoke **Remote\|Submodule\|Initialize** to initialize all sub-submodules contained in the selected submodule.
+- The **Repositories** view offers operations in the submodule repository itself: 
+  e.g. you can invoke a **Log** here to see the history of the submodule repository or you can invoke **Remote \| Submodule \| Initialize** to initialize all sub-submodules contained in the selected submodule.
 - The **Files** view offers operations on the submodule pointer from perspective of the parent repository: e.g. you can invoke a **Log**
-  here to see how the submodule-pointer has changed over time or you can invoke **Remote\|Submodule\|Initialize** to initialize the selected submodule itself (if it is not yet initialized).
+  here to see how the submodule-pointer has changed over time or you can invoke **Remote \| Submodule \| Initialize** to initialize the selected submodule itself (if it is not yet initialized).
 
 ## Cloning Repositories with Submodules
 
-If you clone an existing repository containing one or more submodules via **Repository\|Clone**, make sure the option **Include Submodules**
-is selected, so that all first-level submodules are automatically initialized and updated. Without this option, you may initialize the submodules later by hand via **Remote\|Submodule\|Initialize**. Only performing the initialization will leave the submodule directory empty. For a fully functional submodule, you'll also need to do a pull on it, as described in [Updating Submodules](#updating-submodules).
+If you clone an existing repository containing one or more submodules via **Repository \| Clone**, make sure the option **Include Submodules**
+is selected, so that all first-level submodules are automatically initialized and updated. 
+Without this option, you may initialize the submodules later by hand via **Remote \| Submodule \| Initialize**. 
+Only performing the initialization will leave the submodule directory empty. 
+For a fully functional submodule, you'll also need to do a pull on it, as described in [Updating Submodules](#updating-submodules).
 
 ## Adding, Removing and Synchronizing Submodules
 
 #### Note
-
 >
 >Submodules will show up in the **Repositories** view, as well as the **Files** view.
 > Submodule operations (from the parent repository perspective) will be performed in the **Files** view.
 > 'Normal' Git operations on the submodule repository itself will be performed in the **Repositories** view.
 >
 
-To "ignore" a not-yet initialized submodule which you are not interested in, invoke **Remote\|Submodule\|Deactivate**. This will hide the submodule from the **Files** view, unless **View\|Show Ignored Files** is selected.
+To "ignore" a not-yet initialized submodule which you are not interested in, invoke **Remote \| Submodule \| Deactivate**. 
+This will hide the submodule from the **Files** view, unless **View\|Show Ignored Files** is selected.
 (Technically, SmartGit will set `submodule.<name>.active=false` in the parent repository `.git/config`.)
 
-To remove a submodule from the working tree, select the submodule in the **Files** view, invoke **Remote\|Submodule\|Deinit**. After *deiniting* you will probably want to **Deactivate** it, too.
+To remove a submodule from the working tree, select the submodule in the **Files** view, invoke **Remote \| Submodule \| Deinit**. 
+After *deiniting* you will probably want to **Deactivate** it, too.
 
-To add a new submodule to a repository, invoke **Remote\|Submodule\|Add** on the repository in the **Repositories**
+To add a new submodule to a repository, invoke **Remote \| Submodule \| Add** on the repository in the **Repositories**
 view and follow the dialog instructions.
 
-To remove a submodule from the repository, select the submodule in the **Files** view, invoke **Remote\|Submodule\|Unregister**, and then commit your changes. After the submodule is unregistered, you may delete the entire submodule directory.
+To remove a submodule from the repository, select the submodule in the **Files** view, invoke **Remote \| Submodule \| Unregister**, and then commit your changes. 
+After the submodule is unregistered, you may delete the entire submodule directory.
 
-If the URL of a submodule's remote repository has changed, you need to modify the URL in the `.gitmodules` file and then *synchronize* the submodule, via **Remote\|Submodule\|Synchronize**, so that the new URL is written into Git's configuration.
+If the URL of a submodule's remote repository has changed, you need to modify the URL in the `.gitmodules` file and then *synchronize* the submodule, via **Remote \| Submodule \| Synchronize**, so that the new URL is written into Git's configuration.
 
 ## Updating Submodules
 
@@ -53,11 +59,15 @@ After a submodule has been set up, the usual workflow is that some files in the 
 
 ### Pulling on the Submodule
 
-Select the submodule in the **Repositories** view and invoke **Remote\|Pull**. After the pull, the submodule will have a different appearance in the **Repositories** view if new commits have been fetched and a rebase or merge has been performed. This different appearance indicates that the submodule has changed and that you need to [commit](../Local-Operations-on-the-Working-Tree.md#commit) the change in the outer repository.
+Select the submodule in the **Repositories** view and invoke **Remote \| Pull**. After the pull, the submodule will have a different appearance in the **Repositories** view if new commits have been fetched and a rebase or merge has been performed. This different appearance indicates that the submodule has changed and that you need to [commit](../Local-Operations-on-the-Working-Tree.md#commit) the change in the outer repository.
 
 ### Pulling on the Outer Repository
 
-Open the repository settings via **Repository\|Settings**, and in the **Pull** section, enable **Update registered submodules**, so that SmartGit automatically updates all registered submodules when pulling on the outer repository. Additionally, you may also enable **And initialize new submodules**; with this, SmartGit will update not only registered submodules when pulling, but also uninitialized submodules, after having initialized them. The aforementioned **Update** option will only fetch commits as needed, i.e. when a commit is referenced by the outer repository as the current state of the submodule. If you want to fetch all new commits instead, enable the option **Always fetch new commits, tags and branches from submodule**. Note that when you do a pull on the outer repository, you need to pull with subsequent rebase or merge, otherwise new submodule commits will only be fetched, without changing the submodule state (i.e. the commit the submodule is currently pointing at).
+Open the repository settings via **Repository \| Settings**, and in the **Pull** section, enable **Update registered submodules**, so that SmartGit automatically updates all registered submodules when pulling on the outer repository. 
+Additionally, you may also enable **And initialize new submodules**; with this, SmartGit will update not only registered submodules when pulling, but also uninitialized submodules, after having initialized them. 
+The aforementioned **Update** option will only fetch commits as needed, i.e. when a commit is referenced by the outer repository as the current state of the submodule. 
+If you want to fetch all new commits instead, enable the option **Always fetch new commits, tags and branches from submodule**. 
+Note that when you do a pull on the outer repository, you need to pull with subsequent rebase or merge, otherwise new submodule commits will only be fetched, without changing the submodule state (i.e. the commit the submodule is currently pointing at).
 
 ## Working within Submodules
 

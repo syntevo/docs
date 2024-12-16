@@ -176,7 +176,7 @@ URLs for all files mentioned in the `CONTENT` section will be composed by concat
 `autoupdate` and `control`-files can easily be fetched from our website. To fetch all files listed in the `control` file, you have two options:
 
 - write a script which will fetch all these files from our website and put it onto your update server
-- have a temporary SmartGit installation, let it fetch all necessary files using `Help|Check for New Version` and copy files over from SmartGit's local update "repository" (see [Installation and Files](Installation-and-Files.md)) to your update server.
+- have a temporary SmartGit installation, let it fetch all necessary files using `Help \| Check for New Version` and copy files over from SmartGit's local update "repository" (see [Installation and Files](Installation-and-Files.md)) to your update server.
 
 # Required and helpful SmartGit system properties
 

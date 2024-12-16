@@ -46,17 +46,20 @@ Below are the locations of SmartGit's settings files, depending on the OS:
 To reset certain parts of SmartGit's configuration ("settings") back to installation defaults:
 
 1. Locate the appropriate configuration file (`*.yml`)
-2. Exit SmartGit, using **Repository\|Exit**
+2. Exit SmartGit, using **Repository \| Exit**
 3. Move or delete the file(s)
 4. Restart SmartGit
 
 ### Synchronizing settings when running multiple SmartGit versions in parallel
 
-A common case where you might be running two SmartGit versions in parallel is when having the latest release installed ("*older version*", e.g. 18.2) and you are giving the current preview version a try ("*newer version*", e.g. 19.1). Once you are first installing/starting the *newer version* it will copy over settings from the *older version*. From that point of time, settings will diverge. You may synchronize the settings of the *newer version* from the *older version* at any time by the following procedure:
+A common case where you might be running two SmartGit versions in parallel is when having the latest release installed ("*older version*", e.g. 18.2) and you are giving the current preview version a try ("*newer version*", e.g. 19.1). 
+Once you are first installing/starting the *newer version* it will copy over settings from the *older version*. 
+From that point in time, settings will diverge. 
+You may synchronize the settings of the *newer version* from the *older version* at any time by the following procedure:
 
-1. Start the *older version*, invoke **Help\|About** and from **Information** page and write down the **Settings Path** ("*old settings directory*")
+1. Start the *older version*, invoke **Help \| About** and from **Information** page and write down the **Settings Path** ("*old settings directory*")
 2. Shutdown the *older version*
-3. Start the *newer version,* invoke **Help\|About** and from **Information** page and write down the **Settings Path** ("*new settings directory*")
+3. Start the *newer version,* invoke **Help \| About** and from **Information** page and write down the **Settings Path** ("*new settings directory*")
 4. Shutdown the *newer version*
 5. From the command line or file manager, make a backup of all files from the *new settings directory*, then delete all files to finally have an empty directory
 6. Copy over all files from the *old settings directory* to the *new settings directory*
@@ -68,7 +71,11 @@ A common case where you might be running two SmartGit versions in parallel is wh
 
 ## Program Updates
 
-SmartGit stores program updates which have been downloaded automatically through SmartGit itself by default in your home directory/profile. This allows "light weight", *patch-like* updates which do not require write access to the actual SmartGit installation directory. As a consequence, your SmartGit installation directory is usually not up-to-date, but it will detect and launch the downloaded updates from the `updates` directory. Occasionally, SmartGit will detect that an upgrade of the installation directory itself is necessary ("installation update"). Depending on your operating system, the *updates cache* can be found at:
+SmartGit stores program updates which have been downloaded automatically through SmartGit itself by default in your home directory/profile. 
+This allows "light weight", *patch-like* updates which do not require write access to the actual SmartGit installation directory. 
+As a consequence, your SmartGit installation directory is usually not up-to-date, but it will detect and launch the downloaded updates from the `updates` directory. 
+Occasionally, SmartGit will detect that an upgrade of the installation directory itself is necessary ("installation update"). 
+Depending on your operating system, the *updates cache* can be found at:
 
 - **Windows**: `%APPDATA%\syntevo\SmartGit\updates`
 - **MacOS**: `~/Library/Application Support/SmartGit/updates`

@@ -31,5 +31,5 @@ See [Interactive Rebase](Branch/Rebase-Interactive.md) for details on how to cha
 
 >
 >To just change the commit message of the last commit (even for a merge commit or if the working copy is not clean),
-> invoke **Local\|Edit Last Commit Message**.
+> invoke **Local \| Edit Last Commit Message**.
 >

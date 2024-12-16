@@ -9,20 +9,20 @@ category. The root commits of a subtree will be denoted by a *folder*-symbol in 
 
 ## Basic Subtree operations
 
-To add a new subtree, select the root directory of the repository in the **Repositories** view and invoke **Remote\|Subtree\|Add**.
+To add a new subtree, select the root directory of the repository in the **Repositories** view and invoke **Remote \| Subtree \| Add**.
 
-To fetch new (remote) changes from the subtree repository, select the subtree remote in the **Branches** view and invoke **Pull** from the context menu. Alternatively, you can invoke **Remote\|Pull** from the main menu and for **Fetch From** select the subtree remote there.
+To fetch new (remote) changes from the subtree repository, select the subtree remote in the **Branches** view and invoke **Pull** from the context menu. Alternatively, you can invoke **Remote \| Pull** from the main menu and for **Fetch From** select the subtree remote there.
 
 To merge, or cherry-pick, a subtree use the **Merge** or **Cherry-Pick** command. SmartGit will understand whether the source commit is a subtree and in this case perform a subtree merge / cherry-pick as applicable.
 
-To push commits back to a subtree, select the (remote) subtree branch in the **Branches** view and invoke **Remote\|Subtree\|Push**. Pushing a subtree involves splitting changes back from main repository to subtree repository (more details can be found below).
+To push commits back to a subtree, select the (remote) subtree branch in the **Branches** view and invoke **Remote \| Subtree \| Push**. Pushing a subtree involves splitting changes back from main repository to subtree repository (more details can be found below).
 
-To reset your main repository to a certain subtree commit or branch, first **Check Out** the branch which should be reset. Then, in the **Branches** view, select the subtree branch to which your main repository should be reset to and invoke **Subtree\|Reset** from the context menu.
+To reset your main repository to a certain subtree commit or branch, first **Check Out** the branch which should be reset. Then, in the **Branches** view, select the subtree branch to which your main repository should be reset to and invoke **Subtree \| Reset** from the context menu.
 
 #### Note
 
 > If there are already existing subtrees in your main repository you will
-> have to add corresponding remotes for these subtrees using **Remote\|Add**.
+> have to add corresponding remotes for these subtrees using **Remote \| Add**.
 
 ## Synchronizing changes back to the subtree repository
 
@@ -30,7 +30,7 @@ After having applied changes to files in your main repository which actually bel
 
 1. **Check Out** the main repository's branch which should be split back.
 
-2. In the **Branches** view, select the subtree branch to which the changes should be split back and invoke **Subtree\|Split** from the context menu. The commits created by the *Split*-command will be written to the **Subtree-Branch to update**. If you have selected a remote subtree branch, you will have to select **Subtree-Branch to update** or enter the name of a new branch there; in either case the selected branch will then be updated/created.
+2. In the **Branches** view, select the subtree branch to which the changes should be split back and invoke **Subtree \| Split** from the context menu. The commits created by the *Split*-command will be written to the **Subtree-Branch to update**. If you have selected a remote subtree branch, you will have to select **Subtree-Branch to update** or enter the name of a new branch there; in either case the selected branch will then be updated/created.
 
 	#### Note
 	> SmartGit will not actually split changes back to this

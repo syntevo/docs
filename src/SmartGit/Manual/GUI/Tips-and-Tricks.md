@@ -12,13 +12,14 @@ Feel free to cast your vote to [this Eclipse issue](https://bugs.eclipse.org/bug
 
 In input fields for files and directories when typing the file path, you will get completion hints after a (back) slash. On Unix-like systems you can use `~/` to complete content in the home directory.
 
-For the input field to add or edit the path of a Git remote (**Remote\|Add** and **Remote\|Edit URL**) you can use `../` to complete relative paths in case you've cloned a repository parallel to another.
+For the input field to add or edit the path of a Git remote (**Remote \| Add** and **Remote \| Edit URL**) you can use `../` to complete relative paths in case you've cloned a repository parallel to another.
 
 To complete file names in the **Commit Message** input field of the **Commit** dialog, use *\<Ctrl>+\<Space>*-keystroke.
 
 ## Text Editors
 
-To select words or larger parts of text, you can press *\<Ctrl>+\<W>*-keystroke multiple times until you have expanded the selection as desired. To copy or cut the whole line to the clipboard, set the caret inside the line without selecting anything and press the *\<Ctrl/Cmd>+\<C>*-keystroke or the *\<Ctrl/Cmd>+\<X>*-keystroke.
+To select words or larger parts of text, you can press *\<Ctrl>+\<W>*-keystroke multiple times until you have expanded the selection as desired. 
+To copy or cut the whole line to the clipboard, set the caret inside the line without selecting anything and press the *\<Ctrl/Cmd>+\<C>*-keystroke or the *\<Ctrl/Cmd>+\<X>*-keystroke.
 
 ## Compare
 

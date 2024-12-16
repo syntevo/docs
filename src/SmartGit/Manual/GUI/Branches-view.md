@@ -19,4 +19,4 @@ If "Recyclable Commits" is selected, all commits not reachable by refs are shown
 
 ## Tag-Grouping
 
-The **Tags**-part of the **Branches** view will be grouped according to a *tag-grouping configuration*. This configuration is stored in your repository's `.git/config` and can be edited in **Repository\|Settings**, under the [**Tag-Grouping**](Repository/Repository-Settings.md#tag-grouping) section. To disable this grouping feature for the current repository, set both **Pattern** fields empty.
+The **Tags**-part of the **Branches** view will be grouped according to a *tag-grouping configuration*. This configuration is stored in your repository's `.git/config` and can be edited in **Repository \| Settings**, under the [**Tag-Grouping**](Repository/Repository-Settings.md#tag-grouping) section. To disable this grouping feature for the current repository, set both **Pattern** fields empty.

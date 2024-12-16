@@ -147,7 +147,7 @@ If required, users can configure the license server on-the-fly during setup:
 
 ### Configuration after Setup
 
-If SmartGit has already been started in evaluation mode and you want to switch to the license server, invoke **Help\|Register** and follow the instructions from the above section.
+If SmartGit has already been started in evaluation mode and you want to switch to the license server, invoke **Help \| Register** and follow the instructions from the above section.
 
 ### Distribution of License Files
 
