@@ -24,7 +24,7 @@ To run our on-premise server, only Docker is required. This document describes h
 
 1. Create a GitHub Personal Access Token to log in with Docker:
 
-    1. Go to https://github.com/settings/tokens
+    1. Open your [GitHub Personal Access Tokens](https://github.com/settings/tokens)
 
     1. Click on **Generate Token** and select **Generate new token (classic)**
 
