@@ -183,7 +183,6 @@
 /SmartGit/Latest/GUI/ /SmartGit/Latest/Manual/GUI 301
 /SmartGit/Latest/GUI/AdvancedSettings /SmartGit/Latest/Manual/GUI/AdvancedSettings 301
 /SmartGit/Latest/GUI/AdvancedSettings/ /SmartGit/Latest/Manual/GUI/AdvancedSettings 301
-/SmartGit/Latest/GUI/AdvancedSettings/System-Properties /SmartGit/Latest/Manual/GUI/AdvancedSettings/System-Properties 301
 /SmartGit/Latest/GUI/AdvancedSettings/Theme-Customization /SmartGit/Latest/Manual/GUI/AdvancedSettings/Theme-Customization 301
 /SmartGit/Latest/GUI/AdvancedSettings/VM-options /SmartGit/Latest/Manual/GUI/AdvancedSettings/VM-options 301
 /SmartGit/Latest/GUI/Bisect /SmartGit/Latest/Manual/GUI/Bisect 301
@@ -331,8 +330,8 @@
 /SmartGit/Latest/Subtrees.html /SmartGit/Latest/Manual/GUI/Repository/Subtrees 301
 /SmartGit/Latest/Synchronizing-with-Remote-Repositories /SmartGit/Latest/Manual/GUI/Repository/Synchronizing-with-Remote-Repositories 301
 /SmartGit/Latest/Synchronizing-with-Remote-Repositories.html /SmartGit/Latest/Manual/GUI/Repository/Synchronizing-with-Remote-Repositories 301
-/SmartGit/Latest/System-Properties /SmartGit/Latest/Manual/GUI/AdvancedSettings/System-Properties 301
-/SmartGit/Latest/System-Properties.html /SmartGit/Latest/Manual/GUI/AdvancedSettings/System-Properties 301
+/SmartGit/Latest/System-Properties /SmartGit/Latest/Manual/GUI/AdvancedSettings/Low-Level-Properties 301
+/SmartGit/Latest/System-Properties.html /SmartGit/Latest/Manual/GUI/AdvancedSettings/Low-Level-Properties 301
 /SmartGit/Latest/TeamCity /SmartGit/Latest/Manual/Integrations/TeamCity 301
 /SmartGit/Latest/TeamCity.html /SmartGit/Latest/Manual/Integrations/TeamCity 301
 /SmartGit/Latest/The-Index /SmartGit/Latest/Manual/GitConcepts/The-Index 301
