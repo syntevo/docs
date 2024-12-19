@@ -10,11 +10,13 @@ To run our on-premise server, only Docker is required. This document describes h
 
 ## Server-side installation
 
-1. Contact sales@syntevo.com and provide a short explanation of your environment and SmartGit setup to understand whether an on-premise license server will be appropriate for your company.
+1. Contact sales@syntevo.com and provide:
+   1. A short explanation of your environment and SmartGit setup to understand whether an on-premise license server will be appropriate for your company.
+   1. Your GitHub username:
+      1. You need *GitHub credentials* to access the [GitHub packages](https://github.com/users/syntevo/packages/container/package/license-opserver).
+      2. We will have to configure access for your GitHub account.
 
-1. If appropriate, you will receive a new *on-premise license file*
-
-1. Provide your GitHub username: You need *GitHub credentials* to access the [GitHub packages](https://github.com/users/syntevo/packages/container/package/license-opserver).
+1. If appropriate, you will receive a new *on-premise license file*.
 
 1. Create a GitHub Personal Access Token to log in with Docker:
 
