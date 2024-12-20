@@ -46,7 +46,7 @@ To run our on-premise server, only Docker is required. This document describes h
 
     1. In this directory, create sub-directories named `licenses` and `data`.
 
-    1. Put the *on-premise license file* you have received from us into this directory. Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
+    1. Put the *on-premise license file* you have received from us into the `licenses` sub-directory. Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
 
 1. Start the license server:
 
