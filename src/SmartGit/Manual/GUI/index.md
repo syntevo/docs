@@ -22,7 +22,7 @@ Additional Topics:
 - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree.md)
 - [General Concepts in Git](../GitConcepts/index.md)
 - [Installing SmartGit](../Installation/index.md)
-- [SmartGit's Integration with Git Hosting and Issue Tracking systems](../Installation/index.md) such as GitHub, JIRA, Azure DevOps, TeamCity and Jenkins.
+- [SmartGit's Integration with Git Hosting and Issue Tracking systems](../Integrations/index.md) such as GitHub, JIRA, Azure DevOps, TeamCity and Jenkins.
 
 Also Available:
 
