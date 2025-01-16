@@ -14,6 +14,7 @@ Please follow one of the below links to get started with one of the following to
     - [SmartGit Bisect](Bisect.md)
     - [SmartGit Investigate](Investigate.md)
     - [SmartGit Conflict Solver](Branch/Conflict-Solver.md)
+    - [SmartGit as Credential Helper](Credential-Helper.md)
 
 Additional Topics:
 
