@@ -1,14 +1,16 @@
 # Cloning Repositories
 
-Use the **Repository \| Clone** option to create a clone of an existing Git repository.
+Use the **Repository \| Clone** option to create a clone of an existing Git repository on your local computer.
 
-Specify the repository to clone by providing a remote URL, for example:
+In the **Repository** tab, specify the repository to clone by either:
+- Providing a remote URL, for example:
+  - `ssh://user@server:port/path` if using SSH.
+  - `https://user@server:port/path` if using HTTPS.
+- If the repository is locally available on your file system, by specifying the file path.
+- If one or more [Hosting Provider integrations](../../Integrations/Integrated-Cloning.md) have been configured, click on the connected Hosting Provider icon and use the navigation to select an available repository.
 
-- `ssh://user@server:port/path` if using SSH.
-- `https://user@server:port/path` if using HTTPS.
-- or, if the repository is locally available on your file system, by specifying the file path.
-
-In the **Selection** step, you can configure whether the repository's submodules should also be cloned. Typically, this option should be selected, as submodules are an integral part of the main repository you are cloning.
+Clicking *Next* will display the **Selection** step, where you can configure whether the repository's submodules should also be cloned.
+Typically, this option should be selected, as submodules are an integral part of the main repository you are cloning.
 
 **Include Submodules** should be deselected only when you do not need to clone specific submodules. For more details, refer to the [Submodules documentation](../../GitConcepts/Submodules.md).
 
