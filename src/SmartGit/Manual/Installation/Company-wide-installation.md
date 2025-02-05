@@ -31,9 +31,12 @@ When a user starts SmartGit for the first time, the following files will be copi
 - `ui-config.yml`
 - `ui-state.yml`
 
-The `license` file (only for 10+ user *Commercial* licenses) can also be placed into the `default` directory.
+The `license` file (only for valid, 10+ user *Commercial* licenses) can also be placed into the `default` directory.
 In the latter case, SmartGit will prefill the **License** field in the **Set Up** wizard when a user starts SmartGit for the first time.
 When upgrading SmartGit, this `license` file will also be used, so users won't be prompted with a 'license expired' message, but can continue working seamlessly.
+
+Note, this only will work for **valid** license files.
+Hence, for subscriptions you will need to replace the license file monthly/yearly.
 
 #### Note
 
