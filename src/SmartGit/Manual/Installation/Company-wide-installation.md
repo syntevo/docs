@@ -42,7 +42,7 @@ When upgrading SmartGit, this `license` file will also be used, so users won't b
 
 To preconfigure only a subset of default options to custom values and leave initialization of other defaults to SmartGit, you may provide reduced versions of the settings `.yml` files in the `default` directory.
 
-Example
+##### Example
 
 If you want to preconfigure the used Git executable to `C:\path\to\your\preferred\bin\git.exe`, you may use following `settings.yml` file:
 
