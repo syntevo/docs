@@ -97,6 +97,7 @@ jobs:
           cp main/_redirects .upload/
           cp main/404.html .upload/
           cp main/favicon.ico .upload/
+          cp main/robots.txt .upload/
 
       - name: Delete HTML stub files from jekyll-redirect-from plugin and Markdown files
         run: |
