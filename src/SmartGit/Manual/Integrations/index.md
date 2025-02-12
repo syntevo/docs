@@ -60,6 +60,7 @@ The following visual indicators and productivity aids are made available once a 
 - A branch marked witht the `CI` indicator can be clicked to open a context menu, allowing navigation to the latest CI Result on the CI/CD service provider
 
 ## Integration with other Software
+- [Bugtraq links to Web Issue Trackers](Bugtraq-links-to-issue-trackers-.md) - Enables hyperlinks between commit messages in SmartGit and web-based issue trackers such as JIRA or Azure Boards.
 - [Atlassian JIRA](JIRA.md) - Allows commit messages to be extracted from an open JIRA ticket
 - [Gerrit](Gerrit.md) - **TODO**
 - [Git Large File Storage](Git-LFS.md)
