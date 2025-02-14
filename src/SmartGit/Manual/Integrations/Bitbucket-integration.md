@@ -1,21 +1,35 @@
 # Bitbucket integration
 
-SmartGit integrates Bitbucket workflows in various places, very similar to the [GitHub](GitHub-integration.md) integration. 
-Some behavior can be customized by [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md#SystemProperties-properties.bitbucket).
+Once Bitbucket integration is configured, the following integrated functionality is available from within SmartGit:
+
+- [Integrated Cloning](Integrated-Cloning.md)
+- [Integrated Pull Requests](Integrated-PullRequests.md)
+- [Integrated Commenting](Integrated-Comments.md)
+
+Some integration behavior can be customized by [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md#systemproperties-properties.bitbucket).
 
 ### Setup
 
-To set up the Bitbucket integration, go to **Preferences**, section **Hosting Providers** and use **Add** there. In the **Add Hosting Provider** dialog, have **Bitbucket** selected and invoke **Generate API token**. This should open up your default web browser where you will have to confirm by **Grant**.
+To set up the Bitbucket integration, go to **Preferences**, section **Hosting Providers** and select *Bitbucket* from the **Add** dropdown.
 
-![](../attachments/bitbucket-oauth-grant.png)
+In the **Add Hosting Provider** dialog, click on the *Generate Token* button.
 
-Once you have confirmed this page, you will be redirected to a specific port on `localhost`, where SmartGit is waiting to intercept a one-time authorization code. The code will be used to create an *application access token* which will be used to populate the
-**Token** field. Finally, confirm the **Add Hosting Provider** dialog using **Add**.
+SmartGit should open your default web browser and navigate to Bitbucket, where you will have to confirm access by selecting **Grant**.
 
-Once you have authorized SmartGit, it will show up in your GitHub
-**Settings**, section **OAuth**. If you need to rerun through the Authorization process outlined above, you have to **Revoke** access there first and start over.
+![Bitbucket access request](../attachments/bitbucket-oauth-grant.png)
 
-![](../attachments/bitbucket-oauth-overview.png)
+Once confirmed, you will be redirected to a specific port on `localhost`, where SmartGit is waiting to intercept a one-time authorization code. 
+
+The code will be used to create an *application access token* which will be used to populate the **Token** field. 
+
+Finally, confirm the **Add Hosting Provider** dialog by clicking **Add**.
+
+Once you have authorized SmartGit, it will show up in your Bitbucket **Settings**, under section **App Authorizations**.
+
+![Bitbucket App Authorizations](../attachments/bitbucket-oauth-overview.png)
+
+#### Note
+> If you need to rerun through the Authorization process outlined above, you have to **Revoke** access to the SmartGit application and start over.
 
 ### Setup using App Password (only basic repository access)
 
