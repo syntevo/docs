@@ -16,7 +16,7 @@ Once integration is configured, the following features become available in Smart
 
 - [Integrated Cloning](Integrated-Cloning.md)
 - [Integrated Pull Requests](Integrated-PullRequests.md)
-- [Integrated Commenting](Integrated-Comments.md)
+- [Integrated Commenting on Pull Requests](Integrated-PullRequest-Comments.md)
 
 
 #### Terminology Differences
@@ -35,22 +35,22 @@ Once integration is configured, the following features become available in Smart
 
 ### Feature Support Matrix:
 
-|                                       | GitHub | Azure DevOps | BitBucket | GitLab    |
-| ------------------------------------- | ------ | ------------ |---------- |---------- |
-| Repository Selection & Cloning        |   Yes  |     Yes      |     Yes   |     Yes   |
-| Inbound & Outbound PR Notifications |   Yes  |              |           |           |
-| Initiate Pull Request                 |   Yes  |     Yes      |     Yes   |     Yes   |
-| View, Add, Edit, and Delete Comments   |   Yes  |     Yes      |     Yes   |     Yes   |
-| Approve Pull Request                  |   Yes  |     Yes      |     Yes   |     Yes   |
-| Merge Pull Request                    |   Yes  |     Yes      |     Yes   |     Yes   |
-| Close Pull Request                    |   Yes  |     Yes      |     Yes   |     Yes   |
+|                                                        | GitHub | Azure DevOps | BitBucket | GitLab    |
+| ------------------------------------------------------ | ------ | ------------ |---------- |---------- |
+| Repository Selection & Cloning                         |   Yes  |     Yes      |     Yes   |     Yes   |
+| Inbound & Outbound PR Notifications (Standard Window)  |   Yes  |              |           |           |
+| Initiate Pull Request                                  |   Yes  |     Yes      |     Yes   |     Yes   |
+| View, Add, Edit, and Delete Comments on PRs            |   Yes  |     Yes      |     Yes   |     Yes   |
+| Approve Pull Request                                   |   Yes  |     Yes      |     Yes   |     Yes   |
+| Merge Pull Request                                     |   Yes  |     Yes      |     Yes   |     Yes   |
+| Close Pull Request                                     |   Yes  |     Yes      |     Yes   |     Yes   |
 
 
 ### Visual Indicators and Navigation
 Once a repository is cloned from a linked hosting provider, SmartGit provides the following visual indicators and productivity aids:
 - In the **Working Tree Window**, a [shortcut link and provider icon](Integrated-PullRequests.md#additional-pr-features-in-the-working-tree-window) above the *Branches View* allows quick navigation to pull requests in the **Log Window**.
 - In the **Log Window**, the *Branches View* [shows available pull requests](Integrated-PullRequests.md#additional-pr-features-in-the-log-window) on the remote repository on the hosting provider.
-  In addition, many additional [comment and review features](Integrated-Comments.md) become available.
+  In addition, many additional [comment and review features](Integrated-PullRequest-Comments.md) become available.
 - In the **Standard Window**, *Incoming* and *Outgoing* pull requests [are shown](Integrated-PullRequests.md#additional-pr-features-in-the-standard-window-currently-available-for-github-only).
 
 ## Supported Continuous Integration / Continuous Deployment services:

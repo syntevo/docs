@@ -42,16 +42,12 @@ Finally, confirm the **Add Hosting Provider** dialog by clicking using **Add**.
 > To resolve this problem, remove any entries for `127.0.0.1` and try again.
 > For more details on how to do this for various browsers, refer to [this blog post](https://weblog.west-wind.com/posts/2022/Oct/24/HSTS-Fix-automatic-rerouting-of-http-to-https-on-localhost-in-Web-Browsers).
 
-**TODO - Confirm with Marc / Daniel**
-
 By default, **Use OAuth token for repository authentication** will be selected. 
 This will return the generated OAuth-token when Git asks for credentials (username and password) when connecting to your GitHub repository. 
 
 Using the OAuth-token has following advantages:
 - Its scope is more limited than a plain password or more powerful personal access token.
 - It eliminates the need to create or enter a second set of credentials for SmartGit.
-
-**End TODO**
 
 #### Info
 
