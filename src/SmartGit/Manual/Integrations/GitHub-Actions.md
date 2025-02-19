@@ -1,4 +1,4 @@
-# GitHub Actions integration (only Standard window)
+# GitHub Actions integration (Standard window only)
 
 SmartGit will display GitHub Actions workflow run results in the **My History** view of the
 [*Standard Window*](../GUI/Standard-Window.md), if the [GitHub integration](GitHub-integration.md) is correctly configured.

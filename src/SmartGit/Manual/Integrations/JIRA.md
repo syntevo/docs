@@ -4,7 +4,7 @@ The SmartGit integration to Atlassian JIRA allows you to select a commit message
 
 ## Prerequisites
 
-The JIRA integration is only available for **commercial** licenses and will only be present, if the [Bugtraq configuration](../GUI/Bugtraq-links-to-issue-trackers-.md) has been set up properly for your JIRA server.
+The JIRA integration is only available for **commercial** licenses and will only be present if [Bugtraq configuration](../Integrations/Bugtraq-links-to-issue-trackers-.md) has been set up correctly to your JIRA server.
 
 #### Note
 

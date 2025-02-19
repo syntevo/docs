@@ -19,6 +19,18 @@ Use the `<<` and `>>` arrow buttons to move changed *Hunks* between panes, or us
 >   Clicking **Force Compare** will override the limit temporarily for this file, and perform the comparison.
 >   The value can be changed more permanently in the [*Low Level Properties* preferences](AdvancedSettings/Low-Level-Properties.md#changesmaximumfilesize).
 
+## Additional features in Changes View when Integrations are Enabled
+
+(**Log Window** only)
+
+In the **Log Window** only, when the *Virtual Merge Commit* (diamond icon) has been selected in the **Graph View**:
+- the **Changes View** will allow you to view, and add comments on the Pull Request.
+- Comments on the PR can be viewed and selected on the *Comments* tab of the **Files View**.
+
+Please refer to [Integrated Pull Requests](../Integrations/Integrated-PullRequests.md) for details.
+
+## Customizing the Layout of the Changes View
+
 There are several options to customize the layout of the **Changes View**:
 - Select between *Unified* and *Side by Side* mode to view the Index and Working Tree versions either as separate panes, or as a unified change.
 - *Compact mode* hides sections of the file which are unchanged.
