@@ -155,8 +155,8 @@
 /SmartGit/Latest/Branches.html /SmartGit/Latest/Manual/GitConcepts/Branches 301
 /SmartGit/Latest/Bug-Reports /SmartGit/Latest/Manual/GUI/Bug-Reports 301
 /SmartGit/Latest/Bug-Reports.html /SmartGit/Latest/Manual/GUI/Bug-Reports 301
-/SmartGit/Latest/Bugtraq-links-to-issue-trackers- /SmartGit/Latest/Manual/GUI/Bugtraq-links-to-issue-trackers- 301
-/SmartGit/Latest/Bugtraq-links-to-issue-trackers-.html /SmartGit/Latest/Manual/GUI/Bugtraq-links-to-issue-trackers- 301
+/SmartGit/Latest/Bugtraq-links-to-issue-trackers- /SmartGit/Latest/Manual/Integrations/Bugtraq-links-to-issue-trackers 301
+/SmartGit/Latest/Bugtraq-links-to-issue-trackers-.html /SmartGit/Latest/Manual/Integrations/Bugtraq-links-to-issue-trackers 301
 /SmartGit/Latest/Check-Out /SmartGit/Latest/Manual/GUI/Branch/Check-Out 301
 /SmartGit/Latest/Check-Out.html /SmartGit/Latest/Manual/GUI/Branch/Check-Out 301
 /SmartGit/Latest/Cherry-Pick /SmartGit/Latest/Manual/GUI/Branch/Cherry-Pick 301
@@ -199,7 +199,7 @@
 /SmartGit/Latest/GUI/Branch/Revert /SmartGit/Latest/Manual/GUI/Branch/Revert 301
 /SmartGit/Latest/GUI/Branches-view /SmartGit/Latest/Manual/GUI/Branches-view 301
 /SmartGit/Latest/GUI/Bug-Reports /SmartGit/Latest/Manual/GUI/Bug-Reports 301
-/SmartGit/Latest/GUI/Bugtraq-links-to-issue-trackers- /SmartGit/Latest/Manual/GUI/Bugtraq-links-to-issue-trackers- 301
+/SmartGit/Latest/GUI/Bugtraq-links-to-issue-trackers- /SmartGit/Latest/Manual/Integrations/Bugtraq-links-to-issue-trackers 301
 /SmartGit/Latest/GUI/Command-Line-Options /SmartGit/Latest/Manual/GUI/Command-Line-Options 301
 /SmartGit/Latest/GUI/Commit-View /SmartGit/Latest/Manual/GUI/Commit-View 301
 /SmartGit/Latest/GUI/Graph-View /SmartGit/Latest/Manual/GUI/Graph-View 301
@@ -302,6 +302,8 @@
 /SmartGit/Latest/Managing-Remotes.html /SmartGit/Latest/Manual/GUI/Repository/Managing-Remotes 301
 /SmartGit/Latest/Manipulating-branches-tags /SmartGit/Latest/Manual/GUI/Branch/Manipulating-branches-tags 301
 /SmartGit/Latest/Manipulating-branches-tags.html /SmartGit/Latest/Manual/GUI/Branch/Manipulating-branches-tags 301
+/SmartGit/Latest/Manual/GUI/Bugtraq-links-to-issue-trackers- /SmartGit/Latest/Manual/Integrations/Bugtraq-links-to-issue-trackers 301
+/SmartGit/Latest/Manual/GUI/Bugtraq-links-to-issue-trackers-.html /SmartGit/Latest/Manual/Integrations/Bugtraq-links-to-issue-trackers 301
 /SmartGit/Latest/Merge /SmartGit/Latest/Manual/GUI/Branch/Merge 301
 /SmartGit/Latest/Merge.html /SmartGit/Latest/Manual/GUI/Branch/Merge 301
 /SmartGit/Latest/On-premise-license-server /SmartGit/Latest/Manual/Installation/On-premise-license-server 301
