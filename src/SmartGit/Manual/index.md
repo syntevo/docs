@@ -87,7 +87,7 @@ Alternatively, you can follow one of the below topics:
   - [JIRA](Integrations/JIRA.md)
   - [Jenkins](Integrations/Jenkins.md)
   - [TeamCity](Integrations/TeamCity.md)
-  - [Linking SmartGit to Issue Trackers using BugTraq](Integrations/Bugtraq-links-to-issue-trackers-.md)
+  - [Linking SmartGit to Issue Trackers using BugTraq](Integrations/Bugtraq-links-to-issue-trackers.md)
   - [Cloning features available when Integrated](Integrations/Integrated-Cloning.md)
   - [Pull Requests features available when Integrated](Integrations/Integrated-PullRequests.md)
   - [Commenting features available when Integrated](Integrations/Integrated-PullRequest-Comments.md)

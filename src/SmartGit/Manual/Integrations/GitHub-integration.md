@@ -6,7 +6,7 @@ Once integration with GitHub has been [set up](#Setup), SmartGit provides the fo
 - [Integrated Pull Requests](Integrated-PullRequests.md)
 - [Integrated Commenting](Integrated-Comments.md)
 
-In addition to integrating with GitHub's repository features, it is possible to set up [Bugtraq](Bugtraq-links-to-issue-trackers-.md) integration.
+In addition to integrating with GitHub's repository features, it is possible to set up [Bugtraq](Bugtraq-links-to-issue-trackers.md) integration.
 
 ## Setup
 
