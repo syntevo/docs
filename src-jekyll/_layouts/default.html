@@ -5,9 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% unless page.path contains '/Latest/' %}
-  <meta name="robots" content="noindex">
-  {% endunless %}
+
+  {% assign last_char = page.url | slice: -1, 1 %}
+  {% assign trailing_slash = "" %}
+  {% if last_char == "/" %}
+    {% assign trailing_slash = "/" %}
+  {% endif %}
+
+  {% assign parts = page.url | split: '/' %}
+
+  {% if parts.size <= 2 %}
+    {% assign canonical = page.url %}
+  {% else %}
+    {% assign canonical = "/" | append: parts[1] | append: "/Latest" %}
+    {% for segment in parts offset:3 %}
+      {% if segment != "" %}
+        {% assign canonical = canonical | append: "/" | append: segment %}
+      {% endif %}
+    {% endfor %}
+    {% if canonical contains ".html" %}
+      {% assign canonical = canonical | replace: ".html", "" %}
+    {% endif %}
+    {% if trailing_slash == "/" %}
+      {% assign canonical = canonical | append: "/" %}
+    {% endif %}
+  {% endif %}
+  <link rel="canonical" href="{{ canonical | absolute_url }}">
 
   <link rel="stylesheet" href="/assets/css/style.css">
   <script defer data-domain="syntevo.com" data-api="https://www.syntevo.com/cf-workers/a/api/query" src="https://www.syntevo.com/cf-workers/a/js/query.js"></script>

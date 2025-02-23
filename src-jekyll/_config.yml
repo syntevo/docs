@@ -5,4 +5,4 @@ kramdown:
   toc_levels: 1..6
 repository: syntevo/docs
 
-url: "" # GitHub Actions may inject URLs, probably from the repository settings
+url: "https://docs.syntevo.com" # We need that for absolute-URL logic

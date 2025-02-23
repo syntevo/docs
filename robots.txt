@@ -1,9 +1,2 @@
 User-Agent: *
-Allow: /SmartGit/Latest/
-Allow: /SmartSVN/Latest/
-Allow: /SmartSynchronize/Latest/
-Allow: /DeepGit/Latest/
-Disallow: /SmartGit/
-Disallow: /SmartSVN/
-Disallow: /DeepGit/
-Disallow: /SmartSynchronize/
+Allow: /
