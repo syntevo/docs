@@ -3,7 +3,6 @@ markdown: kramdown
 kramdown:
   auto_ids: true
   toc_levels: 1..6
-plugins:
-  - jekyll-redirect-from
+repository: syntevo/docs
 
 url: "" # GitHub Actions may inject URLs, probably from the repository settings
