@@ -3,6 +3,8 @@ markdown: kramdown
 kramdown:
   auto_ids: true
   toc_levels: 1..6
+plugins:
+  - jekyll-sitemap
 repository: syntevo/docs
 
 url: "https://docs.syntevo.com" # We need that for absolute-URL logic
