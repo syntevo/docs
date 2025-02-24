@@ -139,6 +139,12 @@ You may try to disable the credential helper by executing `git config --global -
 Then invoke the pull/push again.
 See also **Step "Check Credential Manager"**, above.
 
+# Error: "invalid credential line" when pushing (or pulling)
+
+If you encounter an **"invalid credential line"** error (the Push operation may still succeed),
+this may be due to unintended output in shell profile files, such as `~/.profile`.
+Removing unnecessary output-producing commands from these files may resolve the issue.
+
 # SmartGit only stores one pair of credentials for a single domain (e.g. github.com)
 
 If:
