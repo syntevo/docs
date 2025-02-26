@@ -47,6 +47,7 @@ The following functionality is unique to the Standard Window:
 - Support for [GitHub Actions](../Integrations/GitHub-Actions.md), if you have the GitHub integration enabled and configured
 - Support for showing [Jenkins job results](../Integrations/Jenkins.md), if you have the Jenkins integration enabled and configured
 - Support for showing [Team City Build results](../Integrations/TeamCity.md), if you have the TeamCity integration enabled and configured
+- Pull will update **all** unchanged local branches, so even with forced push there are no diverged branches any more after pulling
 
 ## Commit View behavior in the Standard Window
 The behavior of the **Commit View** is different in the **Standard Window**:
