@@ -8,10 +8,16 @@
 > - Version 25.1.013: Revised Git configuration, additional interaction modes and options.
 > - Version 25.1.012: GitHub LLM support, Root URLs changed(!), improved error processing, improved default prompt (mainly for `gpt-4o-mini`).
 > - Version 25.1.010: Initial versions
+>   
 
 SmartGit offers optional integration with AI services to enhance its functionality.
 All AI-based features are disabled by default, ensuring no data is shared without user consent.
 Users must **opt-in** and configure these services explicitly. 
+
+> A key objective of this initiative is to empower users with full control over how large language
+> models (LLMs) interact with their code versioning. You have the freedom to make informed 
+> decisions about which parts of your codebase can be used alongside specific LLM or AI services 
+> that you trust and have access to.
 
 The AI features in SmartGit do not operate through an AI Assistant like ChatGPT.
 Instead, SmartGit directly interacts with AI models using their APIs.
@@ -19,7 +25,7 @@ An API account will be required to use these services.
 
 ## Commit Message Generation
 
-SmartGit can leverage AI to generate or otherwise analyze commit messages based on your working tree modifications or staged changes.
+SmartGit utilizes AI-powered Large Language Models (LLMs) to generate or analyze commit messages based on your working tree modifications or staged changes.
 This involves transmitting the complete `git diff` (or `git diff --cached`) to an AI service.
 Once enabled, you'll find an AI button with a drop-down menu in the [Commit View](../GUI/Commit-View.md).
 This menu lists all configured AI services, indicating the currently active one.
@@ -29,7 +35,7 @@ Pressing the button or selecting a different AI will send the Git diff to the ch
 
 - If there are staged files, only these files will be included in the Git diff.
 - Otherwise:
-  - If you are using the [Standard Window](../GUI/Standard-Window.md), the Git diff will automatically include your untracked files.
+  - If you are using the [Standard Window](../GUI/Standard-Window.md), the Git diff will automatically include all your untracked files.
   - If you are using the [Log Window](../GUI/Log-Window.md) or [Working Tree Window](../GUI/Working-Tree-Window.md),
     it depends on the [Preferences](../GUI/Preferences/index.md) option: Commands -> Log and Working Tree window -> Commit View -> If nothing is staged.
 
@@ -41,7 +47,7 @@ By default, the generated commit message will be inserted at the current cursor 
 
 - **Stop** will stop an active commit message generation upon any manual intervention (typing text or changing the cursor location)
 - **Continue in Background** will allow the commit message generation to continue and store the AI message in a buffer instead of displaying it immediately. A buffered message will cause the AI button icon to blink green, providing options when clicked to proceed with the message.
-- **Continue with Description** will continue writing the commit description as long as you are only writing the subject line (first line). This allows concurrent editing of the subject and description. This mode is especially efficient when used with `Submit on Focus`.
+- **Continue with Description** will continue writing the commit description as long as you are only writing the subject line (first line). This allows concurrent editing of the subject and description. This mode is especially efficient when used with `Submit on Focus`. 
 
 #### Automatic Triggers
 
@@ -117,7 +123,7 @@ The API key required to authenticate with the service's API. API keys are typica
 - [Generate Anthropic API Key](https://console.anthropic.com/settings/keys)
 
 For the _GitHub Models_, GitHub provides [free, rate-limited access to certain models](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits).
-Once you have set up SmartGit's [GitHub Integration](./GitHub-integration.md), you can begin using these models with minimal configuration (see below).
+Once you have set up SmartGit's [GitHub Integration](./GitHub-integration.md), you can begin using these models with minimal configuration (see below). If you have a paid GitHub Copilot subscription, you’ll have access to more models. Check the available [Models on GitHub](https://github.com/marketplace/models).
 
 #### parameters
 
@@ -151,6 +157,8 @@ Defines the mode of how the generated commit message will be applied to the exis
 #### maxDiffSize
 
 Sets the maximum permitted Git diff size for AI submission, defaulting to a conservative value to avoid inadvertently sharing large parts of your codebase. Ensure it remains within the model's context window size; otherwise, parts of your diff won't be processed, and/or the model may return confusing results.
+
+==We could add a recommendation==
 
 #### prompt and promptFile
 
