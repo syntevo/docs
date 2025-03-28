@@ -59,6 +59,12 @@ To fix the branching, drag the `q2a` commit onto the `A [main]` commit. This wil
      .
 ```
 
+#### Note
+
+By default, dragging a commit onto one of its own ancestors does not offer the *Rebase* operation. This is because commits themselves are not considered drop targets—only the space between them is. Supporting such drag operations would require changing this behavior, which could negatively impact usability for most users due to the increased complexity.
+
+To still be able to perform such a Rebase for a single commit, you can enable advanced drag-and-drop operations by configuring [Low-level property](../AdvancedSettings/Low-Level-Properties.md) `log.graph.dragAndDrop.offerAdvancedOperationsForDropsOntoAncestors`.
+
 ## Resolving Conflicts
 
 When a merge conflict occurs during Git Rebasing, rebase conflicts differ from regular merge conflicts because the *left* and *right* files are swapped in the 3 way merge process.
