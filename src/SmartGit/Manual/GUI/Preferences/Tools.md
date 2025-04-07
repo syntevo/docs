@@ -15,7 +15,7 @@ Alternatively, the configuration is stored in `tools.yml` file in the [settings 
 
 When first installed, SmartGit will configure a set of default tools:
 
-- The **Open File** tool will invoke the system's default open command, e.g. to launch a graphic viewer for `.png` files.
+- The **Open File** tool will invoke the system's default open command, e.g. to launch a browser for `.html` files.
 - The **Open in Terminal** tool will open the selected directory in the terminal application.
 - The **Open Git-Shell** tool will open the repository in the Git shell.
 
