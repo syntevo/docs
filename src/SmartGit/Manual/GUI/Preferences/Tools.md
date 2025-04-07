@@ -3,8 +3,8 @@
 The **Tools** preferences settings allow you to define external tools to assist you when using SmartGit:
 
 - [External Tools](#external-tools) on the Tools menu
-- [Diff Tools](#diff-tools) on the Tools menu
-- [Conflict Solvers](#conflict-solvers) on the Tools menu
+- [Diff Tools](#diff-tools) for the Compare command
+- [Conflict Solvers](#conflict-solvers) for the Conflict Solver command
 
 You can share your tools configuration with team members by using the **Export** button, and then **Import** the settings on your colleague's computer.
 Alternatively, the configuration is stored in `tools.yml` file in the [settings directory](../../Installation/Installation-and-Files.md).
