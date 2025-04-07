@@ -6,7 +6,8 @@ The **Tools** preferences settings allow you to define external tools to assist 
 - [Diff Tools](#diff-tools) on the Tools menu
 - [Conflict Solvers](#conflict-solvers) on the Tools menu
 
-You can share your tools configuration with team members by using the **Export** button, and then **Import** the settings on your colleague's computer. Alternatively, the configuration is stored in `tools.yml` file in the [settings directory](../../Installation/Installation-and-Files.md).
+You can share your tools configuration with team members by using the **Export** button, and then **Import** the settings on your colleague's computer.
+Alternatively, the configuration is stored in `tools.yml` file in the [settings directory](../../Installation/Installation-and-Files.md).
 
 ## External Tools
 
@@ -31,7 +32,8 @@ If the Tool setup is not to your liking, you can revert the original default too
 
 Use **Add** or **Copy** to create a new tool (using the latter will copy all values from the currently selected tool for easier application of tiny changes).
 
-The **Command** means just the executable file without any argument. The **Arguments** can contain following variables accessible using the drop-down button at the right:
+The **Command** means just the executable file without any argument.
+The **Arguments** can contain following variables accessible using the drop-down button at the right:
 
 - `${filePath}` = the path of the selected file or directory, e.g. `C:\repository\readme.txt`
 - `${fileName}` = the name of the selected file or directory, e.g. `readme.txt`
@@ -49,7 +51,8 @@ The **Command** means just the executable file without any argument. The **Argum
 - `${gitDir}` = the (root) path configured Git installation, e.g. `C:\Program Files\SmartGit\git`
 - `${smartGitDir}` = the (root) path of the SmartGit installation, e.g. `C:\Program Files\SmartGit`
 
-The *working directory* when launching the tool will be the root directory of the corresponding repository (which may also be a submodule). When launching a tool on a set of files which belong to different repositories, it will be the closest common directory of all affected repositories.
+The *working directory* when launching the tool will be the root directory of the corresponding repository (which may also be a submodule).
+When launching a tool on a set of files which belong to different repositories, it will be the closest common directory of all affected repositories.
 
 If **Can be used by the Open command** is selected, SmartGit will consider to use this tool when invoking **Open** (or **Open from Working Tree**) in the **Files** view. The **Handles: Files, Directories, Both** and **Handles: Refs, Commits, Both** options determines on what selection the tool should operate, e.g. on file, directory, ref (tags or branches) or commit selection.
 
