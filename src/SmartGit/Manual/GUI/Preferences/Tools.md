@@ -51,6 +51,9 @@ The **Arguments** can contain following variables accessible using the drop-down
 - `${gitDir}` = the (root) path configured Git installation, e.g. `C:\Program Files\SmartGit\git`
 - `${smartGitDir}` = the (root) path of the SmartGit installation, e.g. `C:\Program Files\SmartGit`
 
+If space-separated options should be one argument, you need to use double quotes (`"`) to surround this argument.
+If you need to use a double-quote in the output, use two double quotes (`""`).
+
 The *working directory* when launching the tool will be the root directory of the corresponding repository (which may also be a submodule).
 When launching a tool on a set of files which belong to different repositories, it will be the closest common directory of all affected repositories.
 
