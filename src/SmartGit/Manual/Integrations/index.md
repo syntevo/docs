@@ -68,6 +68,7 @@ Once a repository is cloned from a linked hosting provider, SmartGit provides th
 - [Codebeamer](Codebeamer.md) - TODO
 - [Gerrit](Gerrit.md)
 - [Git Large File Storage](Git-LFS.md)
+- [AI Services](AI.md) (experimental)
 
 ## Tips
 - If you have multiple identities/logins for the same hosting provider, you can add multiple hosting provider accounts in SmartGit.

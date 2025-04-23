@@ -94,6 +94,7 @@ Alternatively, you can follow one of the below topics:
   - [Cloning features available when Integrated](Integrations/Integrated-Cloning.md)
   - [Pull Requests features available when Integrated](Integrations/Integrated-PullRequests.md)
   - [Commenting features available when Integrated](Integrations/Integrated-PullRequest-Comments.md)
+  - [AI Services](Integrations/AI.md) (experimental)  
 - [Add Ons](AddOns/index.md)
   - [Distributed Reviews Add-On](AddOns/Distributed-Reviews-add-on-.md)
   - [Server Side Component](AddOns/Server-side-component.md)
