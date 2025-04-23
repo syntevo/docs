@@ -311,7 +311,7 @@ They require specific adjustments to get working configurations.
 ```
 [ai-commit-message "o3-mini"]
     llm = o3-mini 
-    promptGenerateCommitMessage = \
+    prompt = \
       Summarize the following Git diff in one concise sentence:\n\
       \n\
       Use imperative language.\n\
