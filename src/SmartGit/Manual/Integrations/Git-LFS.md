@@ -97,7 +97,7 @@ The following screenshot shows how this display appears:
 - To enable the **LFS | Lock** command, set the property status.lfs.locks under Preferences > Low-Level Properties.
 >
 - If your git-lfs executable is not detected by SmartGit, try using absolute paths for the `Git-LFS` executable in your gitconfig file (where the Git-LFS filter is defined).
-Alternatively, configure SmartGit to use the bundled Git under the [Command Preferences](../GUI/Preferences/Commands#git-executable) options.
+Alternatively, configure SmartGit to use the bundled Git under the [Command Preferences](../GUI/Preferences/Commands.md#git-executable) options.
 >
 - If you experience unexpected errors when using the **Lock** or **Unlock** commands, this may be due to a known behavior in Git-LFS v2.5. It may fail if the working directory path has incorrect case sensitivity.
 To work around this issue, ensure that the path in `repositories.xml` has the correct case. The drive letter must be uppercase. Example:

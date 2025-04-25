@@ -5,7 +5,7 @@ to be stored on a designated LFS Server, instead of within the Git repository.
 Once a file has been marked for LFS tracking, the committed file will be replaced by a 'pointer' file in the repository.
 
 When working locally, if a Git-LFS aware client has been installed, files stored in LFS will be downloaded and will replace the pointer files 
-in the [Working Tree](), providing a seamless user experience.
+in the [Working Tree](Working-Tree-States.md), providing a seamless user experience.
 
 LFS files are stored using a **Content-Addressable Storage** schema, which computes the SHA-256 hash of the uploaded file to identify the file's content uniquely.
 
