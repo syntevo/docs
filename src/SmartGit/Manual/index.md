@@ -82,6 +82,7 @@ Alternatively, you can follow one of the below topics:
 - [Integrations with other Applications and Services](Integrations/index.md)
   - [Azure DevOps](Integrations/Azure-DevOps.md)
   - [Bitbucket Cloud](Integrations/Bitbucket-integration.md) and [Bitbucket and Atlassian Stash On Premises](Integrations/BitBucket-Server-Atlassian-Stash-integration.md)
+  - [Codebeamer](Integrations/Codebeamer.md)
   - [GitHub](Integrations/GitHub-integration.md), [GitHub Actions](Integrations/GitHub-Actions.md) and [GitHub Enterprise On Premises](Integrations/GitHub-Enterprise-Integration.md)
   - [GitLab](Integrations/GitLab.md)
   - [Gerrit](Integrations/Gerrit.md)
