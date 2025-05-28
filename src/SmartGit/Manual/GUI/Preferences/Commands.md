@@ -1,12 +1,14 @@
 # Commands
 
-This page shows options influencing Git commands executed by SmartGit.
+This dialog shows options influencing Git commands executed by SmartGit.
+
+Use the navigation structure or the search tool to select the required page to view or make changes to a setting.
 
 #### Note
 
 > Some highlighted options require an application restart to be applied.
 
-## Main Tab
+## Main Commands Tab
 
 ![Commands](../../images/Preferences-commands.png)
 
@@ -104,9 +106,11 @@ Options on this page define which operations SmartGit can perform automatically 
 
 #### Note
 
-> Selecting **Detect Remote Changes** without also selecting either of the **Fetch** options, will enable SmartGit to poll the favorited remote Git repositories for changes at regular intervals. To avoid excessive overhead, only the lightweight `git ls-remote` command is invoked, so you only get a *notification*
-about changes. The lightweight option does not detect all remote activities, for example, whether a currently checked out feature branch has been merged and removed.
-> However, if  **Fetch closed 'favorite' repositories** or **Fetch open repositories when idle** is selected, SmartGit also will perform fetch-operations which actually will *fetch* the changes from the remote repositories, which is more comprehensive in detecting changes, but is also more resource-hungry.
+> Selecting **Detect Remote Changes** without also selecting either of the **Fetch** options, will enable SmartGit to poll the favorited remote Git repositories for changes at regular intervals. 
+> To avoid excessive overhead, only the lightweight `git ls-remote` command is invoked, so you only get a *notification* about changes.
+> The lightweight option does not detect all remote activities, for example, whether a currently checked out feature branch has been merged and removed.
+> However, if  **Fetch closed 'favorite' repositories** or **Fetch open repositories when idle** is selected, SmartGit also will perform fetch-operations which actually will *fetch*
+> the changes from the remote repositories, which is more comprehensive in detecting changes, but is also more resource-hungry.
 
 #### Garbage Collector
 
@@ -124,21 +128,26 @@ You can specify which **Git Executable** should be used by SmartGit.
 
 #### Note
 
-> Git version requirements - SmartGit uses the selected Git executable for performing both local and remote activities. If the bundled Git executable is NOT used, some features in SmartGit may not function correctly.
+> Git version requirements - SmartGit uses the selected Git executable for performing both local and remote activities.
+> If the bundled Git executable is NOT used, some features in SmartGit may not function correctly.
 > It is recommended that you keep your git executable version up to date to maximize your SmartGit experience.
 
 ## Git Config
 
-This tab-set allows you to edit your `.gitconfig` file, which controls a number of standard git settings. These settings will be applied as a default across all repositories. Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting. However, you can also customize or override these settings at a per-repository level. Please refer to [Repository Settings](../Repository/Repository-Settings.md) for further details.
+This tab-set allows you to edit your Global (User) `.gitconfig` file, which controls a number of standard git settings.
+These settings will be applied as a default across all repositories that you work in.
+Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting. 
 
 #### Note
+> - This tab customizes User Git configuration. You can also customize or override these settings at a per-repository, System (affecting all users on the local system), and Super (Portable) level.
+>   Please refer to [Repository Settings](../Repository/Repository-Settings.md) for further details about repository-specific git configuration.
+> - Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository \| Edit Git Config** menu Option
+>   and then select the **User** or **Repository** option respectively.
 
-> Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository \| Edit Git Config** menu Option
-> and then select the **User** or **Repository** option respectively.
-
-
-#### Tip - Feature Branch Prefixing
-> For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md), it is possible to provide a standard branch prefix across all 3 [Development Processes](../../DevelopmentProcesses/index.md) through the following `.gitconfig` setting:
+#### Tips
+> - SmartGit shows the physical file location of each of the User (Global), System, and Super (Portable) git configuration files at the bottom of the **Git Config** tab.
+> - **Feature Branch Prefixing** - For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md),
+>   it is possible to provide a standard branch prefix across all 3 [Development Processes](../../DevelopmentProcesses/index.md) through the following `.gitconfig` setting:
 
 ```
 [smartgit "gui"]

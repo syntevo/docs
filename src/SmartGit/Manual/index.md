@@ -56,6 +56,8 @@ Alternatively, you can follow one of the below topics:
     - [Ignoring, Skipping, and Assuming Unchanged](GUI/Ignore-Skip-AssumeUnchanged.md)
     - [Removing, Moving, and Renaming Files](GUI/Moving-Deleting.md)
     - [Working with Stashes](GUI/Stash.md)
+    - [AI Assisted Commit Messages](GUI/AI-Commit-Messages.md) (experimental)
+    - [AI Commit Message Tutorial](GUI/AI-Commenting-Tutorial.md) (experimental)
   - Other Tools and Commands
     - [Viewing the Git Log](GUI/Log.md)
     - [Bisect](GUI/Bisect.md)
@@ -91,7 +93,7 @@ Alternatively, you can follow one of the below topics:
   - [Cloning features available when Integrated](Integrations/Integrated-Cloning.md)
   - [Pull Requests features available when Integrated](Integrations/Integrated-PullRequests.md)
   - [Commenting features available when Integrated](Integrations/Integrated-PullRequest-Comments.md)
-  - [AI Services](Integrations/AI.md) (experimental)  
+  - [AI Services](Integrations/AI.md) (experimental)
 - [Add Ons](AddOns/index.md)
   - [Distributed Reviews Add-On](AddOns/Distributed-Reviews-add-on-.md)
   - [Server Side Component](AddOns/Server-side-component.md)

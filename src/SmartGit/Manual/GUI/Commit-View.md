@@ -27,6 +27,20 @@ The hamburger icon (☰) at the top right of the commit view provides additional
   - *Clear History* - Selecting this will clear the recent commit messages from the menu.
   - *Reset to default* - Selecting this will reset any text in the commit message input
 
+#### AI Assisted Commenting (experimental)
+
+SmartGit is able to integrate with popular LLM services, which allows optional AI-generated assistance when adding commit messages.
+
+The ![AI](../images/AI-Commit-Button.png) button allows:
+- Automatical AI inference of a suitable commit message from the staged diff
+- Processing of `@ai` and `WIP` placeholders in a user provided commit message
+
+Please consult [AI Commit Messages](AI-Commit-Messages.md) for details on how to get started.
+
+#### Note
+>
+> AI features are **opt-in** and must be enabled.
+
 ### View Existing Commit
 
 However, if an existing commit is selected, it shows details for the selected commit:
