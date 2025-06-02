@@ -10,16 +10,29 @@
   _Rationale_ : Even though the sentences will be run into each other in the final output, the newline assists Markdown authors clarify the content and focus on specific points. 
 -- Shorter line widths also make side by side review easier to read e.g. in GitHub pull requests.
 
-## Deciding on whether a topic belongs under GitConcepts or not
+## Deciding on whether a topic belongs under GUI, or other root folders like GitConcepts, Integration etc
+
+### SmartGit App Commands and Actions (e.g. /GUI/Commiting.md)
+
+- These articles describe the user interface of SmartGit, and are typically aligned to a specific SmartGit screen, view, window or feature.
+- These articles can / should repeat a brief summary paragraph of the concept, with a LINK to the Concept the feature addresses, but not go into any conceptual detail.
+- The objective is to ensure the user understands what the described feature is intended to do, and how to use that feature in SmartGit.
 
 ### Concepts (i.e. /GitConcepts)
 
-- Topics in the GitConcepts section need to be agnostic of SmartGit (other than perhaps a link from a Concept Article to a GUI Command article where SmartGit implements the concept)
+- These articles are not specific to SmartGit, but provide a background to concepts needed to understand the Git ecosystem.
+- Topics in the GitConcepts section need to be agnostic of SmartGit
 - GitConcept articles should be ‘version’ agnostic and thus do not need to be re-checked or re-written on new releases of SmartGit
+- Concept articles may have some diagrams (e.g. to showing branching concepts), but should not include screenshots of SmartGit
+- Concept Articles should link to the SmartGit implementation of a concept where appropriate (e.g. to a GUI Command article)
+- Bonus: Concept Articles are great for SEO, so ensure that the headings, summary and focus of the article is maintained, and be sure to link externally where a definitive / de-facto reference on a concept is available.
 
-### SmartGit Commands and Actions (e.g. /GUI/Commiting.md)
+### Integrations
 
-- These articles can / should repeat a brief summary paragraph of the concept, with a LINK to the Concept the feature addresses, but not go into any conceptual detail.
+- Articles under this section are generally very technical and low-level, and are used as reference guides, examples, and step by step assistance to connecting SmartGit to an external application, service, or API.
+- These articles typically involve changing or adding settings in various configuration files, or configuring 
+- Many of these integrations will be once-off, so they need to be thorough enough to ensure users can complete the integration needed.
+- Where applicable, include screenshots and instructions on how to configure external systems in order to allow SmartGit connectivity (e.g. setting up API keys, PAT tokens, or other necessary configurations in the external system)
 
 ## Header Usage (1,2,3)
 - Only 1 x H1 per article
@@ -68,7 +81,7 @@ e.g. `*Virtual Merge Commit*` or when the repository is in a merging state.
 
 In general, try to use normal English capitalization (i.e. Capitalize the start of sentences) and Proper Nouns (London) and where branding requires it (e.g. GitHub and Bitbucket - note Atlassian’s preference for casing).
 
-In some cases, when a word or phrase has been used to mean a ‘special’ context in the documentation, beyond it’s normal meaning, consider capitalizing it, e.g. Hosting Provider conceptually refers to any generic Git hosting service such as GitHub or Bitbucket).
+In some cases, when a word or phrase has been used to mean a ‘special’ context in the documentation, beyond it’s normal meaning, consider capitalizing it, e.g. Hosting Provider may be conceptually repurposed to refer to generic Git hosting service such as GitHub or Bitbucket).
 
 ## Notes, Warnings, Tips
 
@@ -103,7 +116,31 @@ If there are multiple points to make under Notes / Warnings / Tips, use dashes f
 ## Bullets and Numbering
 
 Use Bullets or Numbers wherever makes sense to do so. 
-Generally as soon as there are more than 2 points to be made, then use bullets or numbers.
+Generally as soon as there are more than 2 points to be made in a paragraph, then use bullets or numbers.
+
+## Topic Summaries
+
+- If an article consists of more than 2 second level (i.e. H2) topics, then consider adding a brief summary introduction at the top of the article (under the H1)
+- Use relative anchor links to each of the 2nd level topics (note that the link casing must be lower case and spaces are hyphenated, e.g. a link to heading 2 "This is a topic" becomes `[This is a topic](#this-is-a-topic)`
+- If felt appropriate, the 3rd level topics can be indented beneath the H2 headings
+
+e.g.
+
+> Please refer to one of the below links
+> - [Topic 1]()
+>   - [Topic 1 Subtopic 1]()
+>   - [Topic 1 Subtopic 2]()
+> - [Topic 2]()
+>   - [Topic 2 Subtopic 1]()
+>   - [Topic 2 Subtopic 2]()
+
+## Folder Structure
+If an article or topic expands to such an extent that multiple article pages are required, consider creating a folder and moving the articles into a new subfolder (Rationale - this will be easier to maintain the documentation, and also will introduce navigation on BreadCrumb for the folder).
+
+#### Note
+> Changing the folder structure and file names of existing articles will impact on SEO and redirection, so needs to be done with extreme care and collaboration.
+> Where an existing article will be subdivided, the original article name / link should remain as the 'landing' page with the topic, with links to the new subtopic article pages. A redirect from the old page to the new landing article inside the new folder will need to be established to maintain external navigation compatability.
+> However, once a page has been moved into a subfolder, the current documentation should be scanned and updated to the new relative URL (i.e. internal navigation should NOT rely on redirection).
 
 ## Images
 
