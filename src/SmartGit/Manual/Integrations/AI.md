@@ -96,22 +96,6 @@ Please consult your LLM service provider for a list of models offered.
 >   the size of the diff submitted, and the volume of output generated.
 > - Some hosting services may require an LLM vendor prefix, e.g., `openai/gpt-4.1`, which would be an example of a GitHub model selection.
 
-#### apiKey (Not required for free-to-use AI services)
-
-API keys are typically required for API authentication when using commercial, secured on-premises, or cloud services that enforce access control.
-
-Please consult your LLM service provider's instructions on how to obtain an API key for their API, for example:
-
-- [Generate OpenAI API Key](https://platform.openai.com/settings/organization/api-keys)
-- [Generate Anthropic API Key](https://console.anthropic.com/settings/keys)
-
-For the _GitHub Models_, GitHub provides [free, rate-limited access to certain models](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits).
-
-Once you have set up SmartGit's [GitHub Integration](./GitHub-integration.md), you can begin using these models with minimal configuration (see below).
-
-If you have a paid GitHub Copilot subscription, you’ll have access to additional models.
-Please refer to this link for available [GitHub Models](https://github.com/marketplace/models).
-
 #### parameters
 
 The _parameters_ setting allows for additional model-specific parameters defined in JSON format (see examples below).
@@ -181,6 +165,10 @@ Set `autoTransferOptions = true` to enable the **Submit on Stage** and ****Submi
 - Enabling `autoTransferOptions` may cause additional background interactions between SmartGit and the configured LLM, which can incur additional cost.
 - The `autoTransferOptions` must be set in the [global `ai-commit-message`](#global-configuration-options) section.
 
+#### apiKey
+
+By default, SmartGit will prompt you for the [API Key](#api-keys) and save it in its password store. Alternatively, you can configure the API key in plain text here.
+
 ### Global Configuration Options
 
 Suppose you provide an _ai-commit-message_ section with no _<name>_ value. In that case, any settings beneath it will be regarded as global settings
@@ -198,6 +186,22 @@ The following settings can be placed in the global _ai-commit-message_ section:
 - `enabled`
 - `debug`
 - `autoTransferOptions`
+
+#### API keys
+
+API keys are typically required for API authentication when using commercial, secured on-premises, or cloud services that enforce access control.
+
+Please consult your LLM service provider's instructions on how to obtain an API key for their API, for example:
+
+- [Generate OpenAI API Key](https://platform.openai.com/settings/organization/api-keys)
+- [Generate Anthropic API Key](https://console.anthropic.com/settings/keys)
+
+For the _GitHub Models_, GitHub provides [free, rate-limited access to certain models](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits).
+
+Once you have set up SmartGit's [GitHub Integration](./GitHub-integration.md), you can begin using these models with minimal configuration (see below).
+
+If you have a paid GitHub Copilot subscription, you’ll have access to additional models.
+Please refer to this link for available [GitHub Models](https://github.com/marketplace/models).
 
 ## Configuration Best Practices
 
@@ -276,7 +280,6 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
 	type = mistral
 	model = codestral-latest
 	url = https://api.mistral.ai/v1
-	apiKey = ...
 ```
 
 ### OpenAI o3-mini
@@ -286,7 +289,6 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 ### OpenAI o1-mini
@@ -296,7 +298,6 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
     type = openai
     model = o1-mini
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 ### OpenAI GPT-4o
@@ -306,7 +307,6 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
     type = openai
     model = gpt-4o
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 ### Anthropic Claude Sonnet 3.5
@@ -316,7 +316,6 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
     type = anthropic
     model = claude-3-5-sonnet-20241022
     url = https://api.anthropic.com/v1
-    apiKey = ...
 ```
 
 ## Advanced Example Configurations
@@ -350,7 +349,6 @@ They require specific adjustments to get working configurations.
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 ### OpenAI o3-mini "high"
@@ -360,7 +358,6 @@ They require specific adjustments to get working configurations.
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
-    apiKey = ...
     parameters = "{ \"reasoning_effort\" : \"high\" }"
 ```
 
@@ -381,7 +378,6 @@ They require specific adjustments to get working configurations.
     type = openai
     model = gpt-4o
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 ### Verification using o3-mini
@@ -410,7 +406,6 @@ This example will attempt to determine whether the user has provided a commit me
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 Alternatively, using `promptFile`:
@@ -425,7 +420,6 @@ Alternatively, using `promptFile`:
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 The file `.gitai-commit-message` would be located next to the Git configuration file and contain the following content:
@@ -455,7 +449,6 @@ ${gitDiff}
     type = openai
     model = gpt-4.5-preview
     url = https://api.openai.com/v1
-    apiKey = ...
 ```
 
 The file `.gitai-sg-with-hints-prompt` would be located next to the Git configuration file and contain the following content:
