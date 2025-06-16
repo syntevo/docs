@@ -96,6 +96,10 @@ Please consult your LLM service provider for a list of models offered.
 >   the size of the diff submitted, and the volume of output generated.
 > - Some hosting services may require an LLM vendor prefix, e.g., `openai/gpt-4.1`, which would be an example of a GitHub model selection.
 
+#### urlQueryParams
+
+The _urlQueryParams_ allows you to specify additional URL query parameters which should be appended to the final endpoint.
+
 #### parameters
 
 The _parameters_ setting allows for additional model-specific parameters defined in JSON format (see examples below).
@@ -316,6 +320,17 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
     type = anthropic
     model = claude-3-5-sonnet-20241022
     url = https://api.anthropic.com/v1
+```
+
+### Custom GPT-4o instance at Microsoft Azure
+
+```
+[ai-llm "testing"]
+    type = openai
+    model = gpt-4o
+    url = https://{your-resource-name}.openai.azure.com/openai/deployments/gpt-4o
+    urlQueryParams = "api-version=2023-05-15"
+    enabled = true
 ```
 
 ## Advanced Example Configurations
