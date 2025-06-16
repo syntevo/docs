@@ -84,17 +84,6 @@ Interaction between the existing commit message, any manual modifications, and t
 - **Stop** - Stops commit message generation upon any manual change (e.g., typing text or moving the cursor).
 - **Continue in Background** - Allows generation to continue and stores the message in a buffer, instead of displaying it immediately. 
   The AI button will blink green to indicate that buffered content is available.
-- **Continue with Description** - Continue generating the description while you edit the subject line (first line). 
-  This allows concurrent editing of the subject and description. 
-  This mode is particularly useful when used in conjunction with **`Submit on Focus`**. 
-
-#### Automatic Triggers
-
-Automatic triggers are enabled if you add the `autoTransferOptions = true` [global Git config setting](../Integrations/AI.md#autoTransferOptions).
-These options aim to improve concurrency between you and the AI working together and reduce delays where you would have to wait for the AI to complete its operation.
-
-- **Submit on Stage** will (re-)generate the AI commit message for the currently staged Git diff as soon as files (or parts of files) are staged or unstaged.
-- **Submit on Focus** will submit the current Git diff once the Commit Message text area receives the focus and is empty (any files which have been staged will have precedence over unstaged files).
 
 #### Commit Message Line Wrapping
 

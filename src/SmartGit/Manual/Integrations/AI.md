@@ -161,14 +161,6 @@ following a specific naming pattern beginning with `ai-`.
 This setting can be used to disable the use of this configuration forcibly; this is especially useful when defining LLMs in your user `~/.gitconfig` file.
 If all _ai-commit-message_ configurations are disabled, the AI button above the **Commit View** in SmartGit will be hidden.
 
-#### autoTransferOptions
-
-Set `autoTransferOptions = true` to enable the **Submit on Stage** and ****Submit on Focus** [Automatic Trigger](../GUI/AI-Commit-Messages.md#automatic-triggers) options on the AI message options next to the AI button above the **Commit View**.
-
-#### Note
-- Enabling `autoTransferOptions` may cause additional background interactions between SmartGit and the configured LLM, which can incur additional cost.
-- The `autoTransferOptions` must be set in the [global `ai-commit-message`](#global-configuration-options) section.
-
 #### apiKey
 
 By default, SmartGit will prompt you for the [API Key](#api-keys) and save it in its password store. Alternatively, you can configure the API key in plain text here.
@@ -189,7 +181,6 @@ The following settings can be placed in the global _ai-commit-message_ section:
 - `maxDiffSize`
 - `enabled`
 - `debug`
-- `autoTransferOptions`
 
 #### API keys
 
