@@ -475,15 +475,3 @@ ${commitMessage}
 ${gitDiff}
 ```
 ~~~
-
-## SmartGit Release History
-> #### Note
-> 
-> - Version 25.1.024: Dedicated error dialog in case of problems and some fixes
-> - Version 25.1.021: Commit Message Rewording and some Generation fixes
-> - Version 25.1.019: Mistral support and some fixes
-> - Version 25.1.015: Support for `promptFile` and some bugfixes
-> - Version 25.1.013: Revised Git configuration, additional interaction modes and options.
-> - Version 25.1.012: GitHub LLM support, Root URLs changed(!), improved error processing, improved default prompt (mainly for `gpt-4o-mini`).
-> - Version 25.1.010: Initial versions
-
