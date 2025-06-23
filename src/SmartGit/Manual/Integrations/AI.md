@@ -137,6 +137,10 @@ Defines the mode of how the generated commit message will be applied to an exist
 Sets the maximum permitted Git diff size for AI submission, defaulting to a conservative value to avoid inadvertently sharing large parts of your codebase. 
 Ensure it remains within the model's context window size; otherwise, parts of your diff won't be processed, and/or the model may return confusing results.
 
+#### diffContextLines
+
+Sets the number of diff context lines to be used when generating diffs (`git diff --unified=<n>`). If not specified, Git's default will be used. 
+
 #### prompt and promptFile
 
 By default, SmartGit sends a predefined prompt for the commit message generation, which may evolve based on user feedback.
