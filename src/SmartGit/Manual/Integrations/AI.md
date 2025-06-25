@@ -495,8 +495,10 @@ Each subsection’s *id* becomes the category name that is shown in the **Log Wi
 | **`matchCommitMessage`** | no | Java RegEx; run this annotator **only** when the commit message matches. |
 | **`notesGraphMessageRegex`** | no | see Notes |
 | **`notesResolveRegex`** | no | Java RegEx which, if matching the AI response, will mark the Notes as *resolved*. |
-| **`autoStart`** | no | If `true`, SmartGit starts the annotator automatically for "annotatable" as soon as you open a repository. In the Std, the annotatable commits are exactly all commits of your current feature branch, regardless whether pushed or not. In the Log window, it's only the unpushed commits of the current branch. |
+| **`mode`** | no | If `autoStart`, SmartGit starts the annotator automatically for "annotatable" as soon as you open a repository. In the Std, the annotatable commits are exactly all commits of your current feature branch, regardless whether pushed or not. In the Log window, it's only the unpushed commits of the current branch. If `commitDiff`, for a selection of two commits, SmartGit will create the diff between these commits instead of doing two independent analysis for each commit vs. its parent commit. |
+| **`timeout`** | no | An optional timeout (defaults to 60 seconds). When running mutliple prompts (e.g. ibn background by `autoStart`), the maximum timeout of all prompts will apply for the entire set of AI invocations. |
 | **`maxDiffSize`**, **`debug`**, **`enabled`** | no | Same meaning as in `ai‑commit‑message` sections. |
+
 
 #### Global settings
 
