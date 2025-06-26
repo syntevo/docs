@@ -105,6 +105,7 @@ There are two different operational modes here:
 > - You can reset SmartGit's AI configuration by removing all `ai-llm` and `ai-commit-message` sections from your Git configuration files (global, personal and/or repository).
 > - `@ai` and `WIP` placeholders are only substituted when you add a commit - not interactively and not by clicking the AI button.
 > - The `WIP` token must be the only text in the commit message - no additional text or whitespace.
+> - When `@ai` is immediately followed by `<` (e.g. `@ai<some input`), the marker is trimmed before the commit message is passed to the prompt (i.e. only `some input` will remain). The generated message will completely replace the original `@ai`-prefixed message, not just the `@ai` token.
 > - If SmartGit does not substitute the `@ai` or `WIP` tokens, re-enable token substitution by clicking the drop down arrow next to the AI icon and the Hamburger menu above the Commit View, and selecting the **Reword '@ai'** and **'WIP' commits** options.
 > - Use the [low-level property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
 >   to change the `@ai` token.
