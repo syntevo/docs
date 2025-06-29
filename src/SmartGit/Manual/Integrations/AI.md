@@ -252,8 +252,8 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 
 ```
 [ai-llm "gh-4o-mini"]
-    type = openai/github
-    model = gpt-4o-mini
+    type = github
+    model = openai/gpt-4o-mini
     url = https://models.github.ai/inference
 ```
 
@@ -265,8 +265,8 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 
 ```
 [ai-llm "gh-o3-mini"]
-    type = openai/github
-    model = o3-mini
+    type = github
+    model = openai/o3-mini
     url = https://models.github.ai/inference
 ```
 
