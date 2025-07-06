@@ -60,6 +60,7 @@ Alternatively, you can follow one of the below topics:
     - [Working with Stashes](GUI/Stash.md)
     - [AI Assisted Commit Messages](GUI/AI-Commit-Messages.md) (experimental)
     - [AI Commit Message Tutorial](GUI/AI-Commenting-Tutorial.md) (experimental)
+    - [AI Commit Annotations](GUI/AI-Commit-Annotations.md) (experimental)
   - Other Tools and Commands
     - [Viewing the Git Log](GUI/Log.md)
     - [Bisect](GUI/Bisect.md)
