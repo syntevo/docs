@@ -40,10 +40,10 @@ AI settings can be configured in a repository's local `.git/config`file, user (g
 > SmartGit will automatically detect and reload changes made to the local repository's `.git/config` file.
 > However, you may need to restart SmartGit for changes to take effect in the user or system git configuration files.
 
-A minimal setup in a git configuration file contains an `ai-llm` section like this:
+A minimal setup in a git configuration file contains an `smartgit-ai-llm` section like this:
 
 ```
-[ai-llm "<id>"]
+[smartgit-ai-llm "<id>"]
     type = <type>
     url = <url>
     model = <model>
@@ -52,19 +52,19 @@ A minimal setup in a git configuration file contains an `ai-llm` section like th
 Optionally, a commit message section allows customization of SmartGit's commit message ai features.
 
 ```
-[ai-commit-message "<name>"]
+[smartgit-ai-commit-message "<name>"]
     llm = <id>
 ```
 
 Where:
-- `ai-llm` configuration is a general-purpose configuration used across all SmartGit AI features.
-- `ai-commit-message` links to a specific `llm` section (via the _id_ key) and contains configuration specifically for SmartGit's AI-generated commit message features.
+- `smartgit-ai-llm` configuration is a general-purpose configuration used across all SmartGit AI features.
+- `smartgit-ai-commit-message` links to a specific `llm` section (via the _id_ key) and contains configuration specifically for SmartGit's AI-generated commit message features.
 
-Suppose you don't provide any _ai-commit-message_ sections. In that case, SmartGit will display the available _ai-llm_ and assume default settings, such as prompts, when invoking the LLM for commit message generation.
+Suppose you don't provide any _smartgit-ai-commit-message_ sections. In that case, SmartGit will display the available _smartgit-ai-llm_ and assume default settings, such as prompts, when invoking the LLM for commit message generation.
 
-### `ai-llm` Configuration Options
+### `smartgit-ai-llm` Configuration Options
 
-Each `ai-llm` configuration section has an _id_ that can be linked from other configuration sections using the `llm` key, and can have the following specific settings:
+Each `smartgit-ai-llm` configuration section has an _id_ that can be linked from other configuration sections using the `llm` key, and can have the following specific settings:
 
 #### type (mandatory)
 
@@ -108,15 +108,15 @@ The _parameters_ setting allows for additional model-specific parameters defined
 
 Can be used to disable the usage of this LLM configuration forcefully; this is especially useful when defining LLMs in your global `~/.gitconfig`.
 
-### `ai-commit-message` Configuration Options
+### `smartgit-ai-commit-message` Configuration Options
 
-An `ai-commit-message` corresponds to a _commit message generation_ option as available on the GUI.
+An `smartgit-ai-commit-message` corresponds to a _commit message generation_ option as available on the GUI.
 Each entry has an _id_ that will be used for display on the GUI and can have the following specific settings:
 
 > #### Note
 >
-> The `ai-commit-message` can be configured to allow further customization. For convenience, you can omit their configuration. 
-> If there is no `ai-commit-message` entry present, SmartGit will automatically create default configurations for every configured `ai-llm` entry.
+> The `smartgit-ai-commit-message` can be configured to allow further customization. For convenience, you can omit their configuration. 
+> If there is no `smartgit-ai-commit-message` entry present, SmartGit will automatically create default configurations for every configured `smartgit-ai-llm` entry.
 
 #### llm (mandatory)
 
@@ -163,7 +163,7 @@ following a specific naming pattern beginning with `ai-`.
 #### enabled
 
 This setting can be used to disable the use of this configuration forcibly; this is especially useful when defining LLMs in your user `~/.gitconfig` file.
-If all _ai-commit-message_ configurations are disabled, the AI button above the **Commit View** in SmartGit will be hidden.
+If all _smartgit-ai-commit-message_ configurations are disabled, the AI button above the **Commit View** in SmartGit will be hidden.
 
 #### apiKey
 
@@ -171,16 +171,16 @@ By default, SmartGit will prompt you for the [API Key](#api-keys) and save it in
 
 ### Global Configuration Options
 
-Suppose you provide an _ai-commit-message_ section with no _<name>_ value. In that case, any settings beneath it will be regarded as global settings
-and will be applied to all other _ai-commit-message_ configurations.
+Suppose you provide an _smartgit-ai-commit-message_ section with no _<name>_ value. In that case, any settings beneath it will be regarded as global settings
+and will be applied to all other _smartgit-ai-commit-message_ configurations.
 
 ```
-[ai-commit-message]
+[smartgit-ai-commit-message]
    option = value
    ...
 ```
 
-The following settings can be placed in the global _ai-commit-message_ section:
+The following settings can be placed in the global _smartgit-ai-commit-message_ section:
 
 - `maxDiffSize`
 - `enabled`
@@ -206,7 +206,7 @@ Please refer to this link for available [GitHub Models](https://github.com/marke
 
 - If you wish to enable AI integration for multiple repositories, it's advisable to include a common core configuration in your user `~/.gitconfig` file.
 
-- However, you may find it better to leave the `ai-commit-message` configurations in your repository's `.git/config` files,
+- However, you may find it better to leave the `smartgit-ai-commit-message` configurations in your repository's `.git/config` files,
   as this will allow you to fine-tune prompts and other settings specific to each repository.
 
 - As more elaborate configurations may consist of multiple sections and values, it is good practice to place this core configuration into a dedicated file, 
@@ -221,7 +221,7 @@ Custom _prompt_ files should also be located in your Git HOME directory. For exa
 
 ```
 .gitconfig        # includes .gitai
-.gitai            # contains the core configuration (ai-llm and ai-commit-message)
+.gitai            # contains the core configuration (smartgit-ai-llm and smartgit-ai-commit-message)
 .gitai-prompt-foo # custom prompt
 .gitai-prompt-bar # another custom prompt
 ...
@@ -231,7 +231,7 @@ If the AI integration should apply to every local clone, the above configuration
 If you prefer to enable the integration selectively for certain repositories, extend your core configuration in `~/.gitai` by setting the integration to be disabled by default:
 
 ```
-[ai-commit-message]
+[smartgit-ai-commit-message]
    ...
    enabled = false
 ```
@@ -239,7 +239,7 @@ If you prefer to enable the integration selectively for certain repositories, ex
 Then, for each repository where the integration should be enabled, add the following to its respective `.git/config`:
 
 ```
-[ai-commit-message]
+[smartgit-ai-commit-message]
    enabled = true
 ```
 
@@ -251,7 +251,7 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 ### GitHub gpt-4o-mini
 
 ```
-[ai-llm "gh-4o-mini"]
+[smartgit-ai-llm "gh-4o-mini"]
     type = github
     model = openai/gpt-4o-mini
     url = https://models.github.ai/inference
@@ -264,7 +264,7 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 > As of February 2025, advanced models such as `o3-mini`, will require a GitHub Copilot Business Account.
 
 ```
-[ai-llm "gh-o3-mini"]
+[smartgit-ai-llm "gh-o3-mini"]
     type = github
     model = openai/o3-mini
     url = https://models.github.ai/inference
@@ -275,7 +275,7 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 The list of available Mistral models can be [found here](https://docs.mistral.ai/getting-started/models/models_overview/).
 
 ```
-[ai-llm "codestral"]
+[smartgit-ai-llm "codestral"]
 	type = mistral
 	model = codestral-latest
 	url = https://api.mistral.ai/v1
@@ -284,7 +284,7 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
 ### OpenAI o3-mini
 
 ```
-[ai-llm "o3-mini"]
+[smartgit-ai-llm "o3-mini"]
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
@@ -293,7 +293,7 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
 ### OpenAI o1-mini
 
 ```
-[ai-llm "o1-mini"]
+[smartgit-ai-llm "o1-mini"]
     type = openai
     model = o1-mini
     url = https://api.openai.com/v1
@@ -302,7 +302,7 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
 ### OpenAI GPT-4o
 
 ```
-[ai-llm "gpt-4o"]
+[smartgit-ai-llm "gpt-4o"]
     type = openai
     model = gpt-4o
     url = https://api.openai.com/v1
@@ -311,7 +311,7 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
 ### Anthropic Claude Sonnet 3.5
 
 ```
-[ai-llm "Claude 3.5"]
+[smartgit-ai-llm "Claude 3.5"]
     type = anthropic
     model = claude-3-5-sonnet-20241022
     url = https://api.anthropic.com/v1
@@ -320,7 +320,7 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
 ### Custom GPT-4o instance at Microsoft Azure
 
 ```
-[ai-llm "testing"]
+[smartgit-ai-llm "testing"]
     type = openai
     model = gpt-4o
     url = https://{your-resource-name}.openai.azure.com/openai/deployments/gpt-4o
@@ -336,7 +336,7 @@ They require specific adjustments to get working configurations.
 ### DeepSeek on Ollama with Debugging
 
 ```
-[ai-llm "DeepSeek R1 70B"]
+[smartgit-ai-llm "DeepSeek R1 70B"]
     type = ollama
     model = deepseek-r1:70b
     url = ...
@@ -345,7 +345,7 @@ They require specific adjustments to get working configurations.
 ### Custom Prompt with OpenAI o3-mini
 
 ```
-[ai-commit-message "o3-mini"]
+[smartgit-ai-commit-message "o3-mini"]
     llm = o3-mini 
     prompt = \
       Summarize the following Git diff in one concise sentence:\n\
@@ -355,7 +355,7 @@ They require specific adjustments to get working configurations.
       \n\
       ${gitDiff}
 
-[ai-llm "o3-mini"]
+[smartgit-ai-llm "o3-mini"]
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
@@ -364,7 +364,7 @@ They require specific adjustments to get working configurations.
 ### OpenAI o3-mini "high"
 
 ```
-[ai-llm "o3-mini"]
+[smartgit-ai-llm "o3-mini"]
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
@@ -374,7 +374,7 @@ They require specific adjustments to get working configurations.
 ### Proofreading using GPT-4o
 
 ```
-[ai-commit-message "gpt-4o proofread"]
+[smartgit-ai-commit-message "gpt-4o proofread"]
   llm = gpt-4o
   mode = replace
   prompt = \
@@ -384,7 +384,7 @@ They require specific adjustments to get working configurations.
     \n\
     ${commitMessage}
 
-[ai-llm "gpt-4o"]
+[smartgit-ai-llm "gpt-4o"]
     type = openai
     model = gpt-4o
     url = https://api.openai.com/v1
@@ -395,7 +395,7 @@ They require specific adjustments to get working configurations.
 This example will attempt to determine whether the user has provided a commit message that corresponds to the actual diff being committed.
 
 ```
-[ai-commit-message "o3-mini verify"]
+[smartgit-ai-commit-message "o3-mini verify"]
     llm = o3-mini
     mode = prefix-selection
     prompt = \
@@ -412,7 +412,7 @@ This example will attempt to determine whether the user has provided a commit me
       \n\
       ${gitDiff}
 
-[ai-llm "o3-mini"]
+[smartgit-ai-llm "o3-mini"]
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
@@ -421,12 +421,12 @@ This example will attempt to determine whether the user has provided a commit me
 Alternatively, using `promptFile`:
 
 ```
-[ai-commit-message "o3-mini verify"]
+[smartgit-ai-commit-message "o3-mini verify"]
     llm = o3-mini
     mode = prefix-selection
     promptFile = .gitai-commit-message
 
-[ai-llm "o3-mini"]
+[smartgit-ai-llm "o3-mini"]
     type = openai
     model = o3-mini
     url = https://api.openai.com/v1
@@ -452,10 +452,10 @@ ${gitDiff}
 ### Commit Message with Additional Hints using GPT-4.5-preview
 
 ```
-[ai-commit-message "generate [gpt-4.5-preview]"]
+[smartgit-ai-commit-message "generate [gpt-4.5-preview]"]
     llm = gpt-4.5-preview
     promptFile = .gitai-sg-with-hints-prompt
-[ai-llm "gpt-4.5-preview"]
+[smartgit-ai-llm "gpt-4.5-preview"]
     type = openai
     model = gpt-4.5-preview
     url = https://api.openai.com/v1

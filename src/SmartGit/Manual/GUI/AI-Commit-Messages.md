@@ -46,7 +46,7 @@ The following options are shown:
  
  - **Use GitHub models for this repository** - Adds configuration to use the default LLM in the current repository's `git/config` file only.
 
- - **Configure manually** - Opens the [AI Configuration](../Integrations/AI.md) page with instructions on how to add `ai-llm` and `ai-commit-message`
+ - **Configure manually** - Opens the [AI Configuration](../Integrations/AI.md) page with instructions on how to add `smartgit-ai-llm` and `smartgit-ai-commit-message`
    sections to your Git configuration files.
 
  - **Disable AI configuration (selected by default)** - Disables SmartGit AI integration.
@@ -102,7 +102,7 @@ There are two different operational modes here:
 [Low-level properties](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.*` can be used to customize this process.
 
 #### Notes
-> - You can reset SmartGit's AI configuration by removing all `ai-llm` and `ai-commit-message` sections from your Git configuration files (global, personal and/or repository).
+> - You can reset SmartGit's AI configuration by removing all `smartgit-ai-llm` and `smartgit-ai-commit-message` sections from your Git configuration files (global, personal and/or repository).
 > - `@ai` and `WIP` placeholders are only substituted when you add a commit - not interactively and not by clicking the AI button.
 > - The `WIP` token must be the only text in the commit message - no additional text or whitespace.
 > - When `@ai` is immediately followed by `<` (e.g. `@ai<some input`), the marker is trimmed before the commit message is passed to the prompt (i.e. only `some input` will remain). The generated message will completely replace the original `@ai`-prefixed message, not just the `@ai` token.
@@ -119,13 +119,13 @@ If errors occur during the interaction with the AI, SmartGit will show that an e
 
 Common errors include:
 
-- **404 / Resource Not Found** - Indicates that the `url` setting in the `[ai-llm]` git config section may be incorrect, or possibly the LLM API is unavailable.
+- **404 / Resource Not Found** - Indicates that the `url` setting in the `[smartgit-ai-llm]` git config section may be incorrect, or possibly the LLM API is unavailable.
 
    Check the LLM provider's API instructions and verify the [integration config setting](../Integrations/AI.md).
 
    Some APIs require a prefix, e.g., `openai/gpt-4.1` would be an example model configuration for [github.ai](https://github.com/marketplace/models/).
 
-- **The Git diff is too large** - the diff exceeds the [maxDiffSize](../Integrations/AI.md#maxDiffSize) setting in `[ai-commit-message]`. 
+- **The Git diff is too large** - the diff exceeds the [maxDiffSize](../Integrations/AI.md#maxDiffSize) setting in `[smartgit-ai-commit-message]`. 
 
   Increase the `maxDiffSize` setting if needed. However, large diffs can be challenging to describe in a concise commit message, whether AI or Human generated.
 
