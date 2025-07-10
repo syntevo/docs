@@ -7,10 +7,12 @@ This article describes how to configure SmartGit to integrate with supported AI 
 - [Configuration Best Practices](#configuration-best-practices)
 - [Example LLM Model Configurations](#example-configurations)
 - [Advanced Example Configurations](#advanced-example-configurations)
+- [AI Commit Annotation settings](#ai-commit-annotation)
 
 Once AI integration has been configured correctly, please refer to 
   - [AI Assisted Commit Messages](../GUI/AI-Commit-Messages.md) for usage within SmartGit.
   - [AI Commit Message Tutorial](../GUI/AI-Commenting-Tutorial.md) for quickstart tutorials on using SmartGit's AI Commenting features.
+  - [AI Commit Annotations](../GUI/AI-Commit-Annotations.md) for an overview and starter examples of SmartGit's AI Annotation features.
 
 #### Note
 >
@@ -29,7 +31,7 @@ SmartGit supports integration with the following AI services:
 **On-premise/Self-hosted Services:**
 - [Ollama](https://ollama.com/)
 
-## Configuration
+## Configuration Summary
 
 AI settings can be configured in a repository's local `.git/config`file, user (global) `.gitconfig` file, or your system-wide `.gitconfig` files.
 
@@ -62,7 +64,7 @@ Where:
 
 Suppose you don't provide any _smartgit-ai-commit-message_ sections. In that case, SmartGit will display the available _smartgit-ai-llm_ and assume default settings, such as prompts, when invoking the LLM for commit message generation.
 
-### `smartgit-ai-llm` Configuration Options
+## `smartgit-ai-llm` Configuration Options
 
 Each `smartgit-ai-llm` configuration section has an _id_ that can be linked from other configuration sections using the `llm` key, and can have the following specific settings:
 
@@ -86,6 +88,12 @@ They are pre-defined for cloud services; verify with your administrator for self
 - **Azure** - `https://models.inference.ai.azure.com`
 - **Mistral** - `https://api.mistral.ai/v1`
 
+#### apiKey
+
+If your service provider requires an API key to authenticate its AI services, you will need to [obtain an API Key](#api-keys) from your chosen service provider.
+If SmartGit detects that an API key is required but has not been provided in the `smartgit-ai-llm` configuration, SmartGit will prompt you for the [API Key](#api-keys) and save it in its password store.
+Alternatively, you can configure the API key in plain text here.
+
 #### model (mandatory)
 
 Specifies the model name as recognized by the service, e.g., `gpt-4.1` for GPT 4.1 or `o3-mini` to select between the corresponding models.
@@ -106,9 +114,11 @@ The _parameters_ setting allows for additional model-specific parameters defined
 
 #### enabled
 
-Can be used to disable the usage of this LLM configuration forcefully; this is especially useful when defining LLMs in your global `~/.gitconfig`.
+If set to `false`, can be used to disable the usage of this LLM configuration forcefully; this is especially useful when defining LLMs in your global `~/.gitconfig`.
+Any `[smartgit-ai-commit-message]` or `[smartgit-ai-commit-annotation]` sections referencing this LLM will also be disabled.
+Default is `true`.
 
-### `smartgit-ai-commit-message` Configuration Options
+## `smartgit-ai-commit-message` Configuration Options
 
 An `smartgit-ai-commit-message` corresponds to a _commit message generation_ option as available on the GUI.
 Each entry has an _id_ that will be used for display on the GUI and can have the following specific settings:
@@ -150,9 +160,9 @@ The prompt may include one or more of the following placeholder variables:
 - `${gitDiff}` - this variable will be substituted with the actual Git diff
 - `${commitMessage}` - this variable will be substituted with the current commit message
 
-For large prompts, writing them in a Git config file may be cumbersome due to the syntax.
-In such cases, you may consider placing the prompt into a separate file using `promptFile`.
-The resolution of paths follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
+Writing large, multi-line prompts into a Git config file may be cumbersome and may be prone to cause configuration errors.
+As a result, it is recommended that you place AI prompts into a separate file using the `promptFile` config.
+The resolution of file paths for `promptFile` files follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
 
 #### debug
 
@@ -162,12 +172,8 @@ following a specific naming pattern beginning with `ai-`.
 
 #### enabled
 
-This setting can be used to disable the use of this configuration forcibly; this is especially useful when defining LLMs in your user `~/.gitconfig` file.
+This setting can be used to disable the use of this `smartgit-ai-commit-message` configuration forcibly; this is especially useful when defining global LLMs in your user `~/.gitconfig` file.
 If all _smartgit-ai-commit-message_ configurations are disabled, the AI button above the **Commit View** in SmartGit will be hidden.
-
-#### apiKey
-
-By default, SmartGit will prompt you for the [API Key](#api-keys) and save it in its password store. Alternatively, you can configure the API key in plain text here.
 
 ### Global Configuration Options
 
@@ -188,7 +194,7 @@ The following settings can be placed in the global _smartgit-ai-commit-message_ 
 
 #### API keys
 
-API keys are typically required for API authentication when using commercial, secured on-premises, or cloud services that enforce access control.
+Your AI service may require an API key to authenticate against their LLM API, especially when using commercial, secured on-premises, or cloud services that enforce access control.
 
 Please consult your LLM service provider's instructions on how to obtain an API key for their API, for example:
 
@@ -478,3 +484,53 @@ ${commitMessage}
 ${gitDiff}
 ```
 ~~~
+
+
+
+## `smartgit-ai-commit-annotation` Configuration Options {#ai-commit-annotation}
+
+Each **`smartgit-ai-commit-annotation`** entry tells SmartGit to let an LLM generate a response to the configured prompt, submitting diffs for the commit(s) as the input for each invocation.
+The AI response can then be either automatically written to *Git‑Notes* in the local repository or displayed interactively to the user in SmartGit.
+Annotations stored in Git Notes will appear in the Graph popup menu for commits.
+
+Each subsection’s *id* becomes the category name shown in the **Graph View** of the **Log Window** and **Standard Window**. It can include the following keys:
+
+| Key | Required | Purpose |
+|-----|----------|---------|
+| **`llm`** | **yes** | Selects the [_id_ of the `[smartgit-ai-llm]`](#ai-llm-configuration-options) entry which is to be used by this annotation, determining the model and endpoint to use. |
+| **`prompt`** / **`promptFile`** | **yes** | This is the same as the [*ai‑commit‑message*](#-prompt-and-promptFile) configuration keys. Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**). The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
+| **`mode`** | no | Either `interactive` or `background`. Please consult [`mode`](#note-on-mode) below. |
+| **`diff`** | no | Either `perCommit` or `pair`. Please consult [`diff`](#note-on-diff) below. |
+| **`notesRef`** | **yes** (*) | Indicates that AI annotations are to be stored beneath `refs/notes/notesRef` in the repository. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information. (*) Must only be present for `background` mode. |
+| **`notesColor`** | no | Hex *RRGGBB* colour used for this category in the commit graph. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
+| **`matchCommitMessageRegex`** | no | Java RegEx; run this annotation **only** when the commit message matches. |
+| **`notesGraphMessageRegex`** | no | Allows the default _Note_ (🗏) icon to be substituted with the provided RegEx expression. See `graphMessageRegex` in the [Git Notes](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
+| **`resolveNoteRegex`** | no | If the AI response matches this RegEx expression, any corresponding Note in this ref will will be marked as *resolved*.|
+| **`autoStart`** | no | Either `true` or `false`. Please consult [`autostart`](#note-on-autoStart) below. |
+| **`timeout`** | no | An optional timeout (defaults to 60 seconds). When running mutliple prompts (e.g. in background by `autoStart`), the maximum timeout of all prompts will apply for the entire set of AI invocations. |
+| **`maxDiffSize`** | no | Sets an upper limit on the size of the diff submitted to the LLM. See [`maxDiffSize`](#maxdiffsize) for further information.|
+| **`debug`** | no | This provides additional debugging information when accessing the AI LLM, and behaves in the same way as the [`smartgit-ai-commit-message debug`](#debug) setting.|
+| **`enabled`** | no | Can be used to disable this `smartgit-ai-commit-annotation`, and behaves in the same way as the [`smartgit-ai-commit-message enabled`](#enabled) setting.|
+
+### Global settings
+
+Suppose you add an `[smartgit-ai-commit-annotation]` section **without a name**. In that case, the keys under it act as **defaults** for every other annotation, similar to how global options work for commit message prompts.
+
+### Note on `mode`
+> The `mode` option controls how SmartGit applies the AI Annotation and how it presents or stores the output.
+> - `interactive` - After completion, the AI's response will be displayed in an interactive message dialog in SmartGit.
+> - `background` - After completion, the AI's response(s) will be automatically annotated on the selected commits.
+
+### Note on `autoStart`
+> If `autoStart` is enabled, SmartGit starts the annotation automatically for "annotatable" commits as soon as you open a repository.
+> - In the **Standard Window**,  all commits in your current feature branch are considered "annotatable", regardless of whether they've been pushed.
+> - In the **Log Window**, only unpushed commits of the current branch are regarded as "annotatable".
+
+### Note on `diff`
+The `diff` setting controls whether this AI annotation is applied per selected diff or compares the diff between two selected commits:
+> - `perCommit` - Applies the AI Annotation command independently to each diff selected. The submitted diff compares each selected commit with its immediate parent(s).
+> - `pair` - Applies the AI annotation to the diff between exactly two selected commits in the commit graph. Both commits must share a common ancestor for this option to be available.
+
+### Warning
+> - Using bulk options such as `autostart = true` or selecting a large number of commits and issuing a `perCommit` AI annotation can place considerable load on your configured LLM, and potentially incur unexpected costs.
+> - LLMs like OpenAI often impose rate limits (e.g., on tokens per time window). As a result, you may need to break up bulk the AI processing of `diff = perCommit` processing into smaller batches.
