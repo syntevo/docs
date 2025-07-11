@@ -12,7 +12,7 @@ runtime environment:
 
     **Usage**
 
-    ``` java
+    ``` bash
     {jre}/bin/java -classpath . {classname} > out.txt 
     ```
 
@@ -26,14 +26,14 @@ runtime environment:
 
     **Example**
 
-    ``` java
+    ``` text
     "C:\Program Files\SmartGit\jre\bin\java.exe" -classpath . NioFileSystemWalk "c:\temp\repo" true > out.txt 
     ```
 
 3.  If there is an error printed which is not related to a wrong command
     line usage, also pipe `stderr` to a separate file:
 
-    ``` java
+    ``` bash
     {jre}/bin/java -classpath . {classname} > out.txt 2> err.txt
     ```
 

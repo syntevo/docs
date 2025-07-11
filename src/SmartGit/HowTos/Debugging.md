@@ -44,14 +44,14 @@ To enable debug logging for a certain key `logging.foo.bar`, first decide the lo
 
 **DEBUG logging**
 
-``` java
+``` properties
 logging.foo.bar=DEBUG
 ```
 Or:
 
 **TRACE logging**
 
-``` java
+``` properties
 logging.foo.bar=TRACE
 ```
 After that, restart SmartGit and repeat the operation for which debug logging should be collected and shut down SmartGit again.

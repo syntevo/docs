@@ -114,7 +114,7 @@ Depending on the operating system, the URL-prefix will be completed to a full UR
 
 The "control" file specifies how the final SmartGit installation must look like after an update. The basic structure of a control file looks like:
 
-``` java
+``` text
 HEADER
 build=...
 minRequiredBuild=...
@@ -138,7 +138,7 @@ You will usually want to copy the control files from our website as-is and only 
 
 The `CONTENT` section describes exactly how the installation should look like and consists one line for very file which will be present in the installation:
 
-``` java
+``` text
 <sha> <type> <name-on-server> <relative-path-in-installation>
 ```
 
@@ -312,7 +312,7 @@ When replicating the `control`-files as they are and only adjusting the `sourceR
 If updates are not working as expected, it can be helpful to debug the update mechanism by adding following system property **temporarily**
 to `smartgit.properties` of your test installation:
 
-``` java
+``` properties
 logging.q.application.update=DEBUG
 ```
 

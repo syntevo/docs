@@ -13,7 +13,7 @@ The integration is configured in the repository's `.git/config`, using `smartgit
 #### Example
 
 >
->``` text
+>``` ini
 >[smartgit "teamcity"]
 >   url = https://server:8443
 >   project = SmartGit

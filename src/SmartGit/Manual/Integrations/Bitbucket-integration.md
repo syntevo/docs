@@ -51,13 +51,13 @@ Depending on your Git configuration, Git might request credentials only *per-dom
 
 If so, try to reconfigure:
 
-``` java
+``` bash
 git config --global credential.useHttpPath true
 ```
 
 Or even more selectively:
 
-``` java
+``` bash
 git config --global credential.bitbucket.com.useHttpPath true
 ```
 

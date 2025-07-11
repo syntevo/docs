@@ -103,7 +103,7 @@ Alternatively, configure SmartGit to use the bundled Git under the [Command Pref
 To work around this issue, ensure that the path in `repositories.xml` has the correct case. The drive letter must be uppercase. Example:
 `
 >
-> ``` java
+> ``` xml
 > <obj type="@Repository" id="...">
 >     <prop key="name" type="String" value="smartgit"/>
 >     <prop key="favorite" type="boolean" value="true"/>

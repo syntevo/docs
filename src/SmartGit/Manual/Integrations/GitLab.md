@@ -42,7 +42,7 @@ If you want to authenticate to your GitLab repositories, using two or more accou
 Depending on your Git configuration, Git might request credentials only
 *per-domain* instead of *per-repository*. If so, try to reconfigure:
 
-``` java
+``` bash
 git config --global credential.gitlab.com.useHttpPath true
 ```
 

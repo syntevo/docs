@@ -33,7 +33,7 @@ JIRA uses project-specific prefixes for its issue identifiers.
 An example configuration for a repository linked to a single JIRA project with prefix `SG`, the *JIRA* issue tracker at URL `https://host/jira` looks like the following.
 
 >
->``` text
+>``` ini
 > [bugtraq "jira"]
 >   url = https://host/jira/browse/SG-%BUGID%
 >   logregex = SG-(\\d+)                   
@@ -42,7 +42,7 @@ An example configuration for a repository linked to a single JIRA project with p
 The above example will make only the issue numbers as links (i.e. without `SG-`).
 Alternatively, if you want to have the entire issue ID as the link (i.e. with `SG-`), you may use:
 
->``` text
+>``` ini
 > [bugtraq "jira"]
 >   url = https://host/jira/browse/%BUGID%
 >   loglinkregex = SG-\\d+
@@ -54,7 +54,7 @@ Alternatively, if you want to have the entire issue ID as the link (i.e. with `S
 When your repository is linked to multiple *JIRA* projects, a configuration could look like:
 
 >
->``` text
+>``` ini
 > [bugtraq "jira"]
 >   projects = PRJA, PRJB
 >   url = https://host/jira/browse/%PROJECT%-%BUGID%
@@ -73,7 +73,7 @@ In the below example, we have a single project with prefix `SG` and have registe
 Here we have not set up a custom domain, so the host has its default of `myorg.atlassian.net`:
 
 >
->``` text
+>``` ini
 > [bugtraq "jira"]
 >   projects = SG
 >   url = https://myorg.atlassian.net/browse/%PROJECT%-%BUGID%
@@ -85,7 +85,7 @@ If you have registered a custom domain with JIRA cloud, the host will change as 
 For example, if we have created a subdomain `jira.myorg.com` in the `myorg.com` company DNS and configured the custom domain in JIRA, the URL will be:
 
 >
->``` text
+>``` ini
 > [bugtraq "jira"]
 >   projects = SG
 >   url = https://jira.myorg.com/browse/%PROJECT%-%BUGID%
@@ -100,7 +100,7 @@ GitHub uses numeric-only identifiers on a per-project basis. Substitute `myorg` 
 e.g. for a repository linked to a single project `myproject` for company `myorg`:
 
 >
->``` text
+>``` ini
 > [bugtraq "GitHub Issues"]
 >   url = "https://github.com/myorg/myproject/issues/%BUGID%"
 >   logregex = \\d+
@@ -112,7 +112,7 @@ e.g. for a repository linked to a single project `myproject` for company `myorg`
 For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
 
 >
->``` text
+>``` ini
 > [bugtraq "AzDevOps Issues"]
 >   url = "https://dev.azure.com/myorg/myproject/_workitems/edit/%BUGID%"
 >   logregex = \\d+
@@ -124,7 +124,7 @@ For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (Url Encod
 Another example configuration (e.g. for a trouble ticketing system) where IDs like '#213' should be matched only at the beginning of a commit message.
 Note that the `logregex` value needs to be put in quotes, because '#' serves as a comment character in Git configuration files.
 >
->``` text
+>``` ini
 > [bugtraq "otrs"]
 >   url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
 >   logregex = "^#[0-9]{1,5}"            

@@ -77,7 +77,7 @@ graph.truncatedRefs
 
 > Following `light-patch.theme` will give an almost identical palette as for version 21.2:
 >
->``` text
+>``` properties
 >graph.connector.1=derive(#80ff00, 0.7, 0.7)
 >graph.connector.2=derive(#0000ff, 0.6, 0.9)
 >graph.connector.3=derive(#ff8000, 0.6, 0.95)
@@ -99,6 +99,6 @@ graph.truncatedRefs
 #### Example
 
 > This will use a light-yellow tag symbol background in the graph as until SmartGit 21.2.
->```text
+>``` properties
 >graph.tag=#FFF1BF
 >```

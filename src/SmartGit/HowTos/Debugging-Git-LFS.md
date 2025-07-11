@@ -8,7 +8,7 @@ When working with Git Large File Storage (Git-LFS), you might occasionally encou
 
 If you are experiencing long delays, hangs, or unresponsive behavior in **SmartGit** during repository refresh operations, it could be related to the Git-LFS `smudge` filter. This typically manifests with log entries similar to the following in SmartGit's log file:
 
-```
+``` text
 killing 'c:\app\tools\git\usr\bin\sh.exe -c "git-lfs smudge ...
 ```
 
@@ -23,13 +23,13 @@ Assume the problematic file is located at `dir/file` and your Git installation i
 - Open a command prompt.
 - Navigate to the root directory of your Git repository:
   
-  ```bat
+  ``` text
   cd path\to\your\repository
   ```
 
 - Adjust the `PATH` to ensure the correct Git executable is used:
 
-  ```bat
+  ``` text
   SET PATH=C:\Portable\Git;C:\Portable\Git\mingw64\bin;%PATH%
   ```
 
@@ -37,7 +37,7 @@ Assume the problematic file is located at `dir/file` and your Git installation i
 
 Run the following command to locate the Git-LFS entry for the file:
 
-```bash
+``` bash
 git ls-files -s | grep dir/file
 ```
 
@@ -47,13 +47,13 @@ git ls-files -s | grep dir/file
 
 Retrieve the Git object associated with the file:
 
-```bash
+``` bash
 git show <sha> > out-lfs
 ```
 
 - Open the `out-lfs` file and verify that it contains content resembling this format:
 
-  ```text
+  ``` text
   version https://git-lfs.github.com/spec/v1
   oid sha256:520928654e8615ebc33bfae21f91cea3a5d04a2883af00c409f0a5f24950059b
   size 1048576
@@ -65,7 +65,7 @@ This confirms that the file is being tracked by Git-LFS.
 
 Test the `smudge` filter in isolation to observe its behavior:
 
-```bat
+``` text
 C:\Portable\Git\usr\bin\sh.exe -c "git-lfs smudge -- 'dir/file'" < out-lfs > out-blob
 ```
 

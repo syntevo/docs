@@ -68,7 +68,7 @@ The Push commands listed above can be invoked from several places:
 >
 >
 >
-> ``` java
+> ``` text
 > remote: error: refusing to update checked out branch: refs/heads/master
 > remote: error: By default, updating the current branch in a non-bare repository
 > remote: is denied, because it will make the index and work tree inconsistent

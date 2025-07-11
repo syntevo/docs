@@ -16,7 +16,7 @@ At least one project type must be configured:
 #### Example
 
 >
->``` text
+>``` ini
 >[smartgit "jenkins"]
 >   url = http://localhost:8080
 >   freeStyleProjects = tests,tests-gitimpl,tests-jgit

@@ -32,7 +32,7 @@ tree are used. The directories of bare Git repositories usually end with
 
 
 
-``` text
+``` bash
 git init --bare /path/to/repository.git
 ```
 
@@ -44,7 +44,7 @@ recursively on the created repository directory structure.
 
 
 
-``` text
+``` bash
 chgrp -R gitusers /path/to/repository.git
         chmod -R u=rwX,g=rwXs,o= /path/to/repository.git
     

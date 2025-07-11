@@ -11,7 +11,7 @@ named *origin*, your modified `config` file might look like this:
 
 
 
-``` text
+``` ini
 ...
 [remote "origin"]
     fetch = +refs/heads/*:refs/remotes/origin/*

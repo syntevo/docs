@@ -71,7 +71,7 @@ definition in Subversion's `config` file, which might look like:
 
 
 
-``` java
+``` text
 "C:\\Program Files (x86)\\PuTTY\\plink.exe" -v -P 22 -l user
 ```
 
@@ -84,7 +84,7 @@ be specified as part of the tunnel configuration:
 
 
 
-``` java
+``` text
 "C:\\Program Files (x86)\\PuTTY\\plink.exe" -v -P 22 -l user -pw passwd
 ```
 

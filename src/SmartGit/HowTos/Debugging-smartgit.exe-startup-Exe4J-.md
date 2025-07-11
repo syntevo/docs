@@ -12,7 +12,7 @@ before a log file will be written, it can be helpful to debug the
 
 
 
-    ``` java
+    ``` text
     set EXE4J_LOG=yes
     ```
 

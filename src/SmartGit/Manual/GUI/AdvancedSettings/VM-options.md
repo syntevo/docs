@@ -16,7 +16,7 @@ The `smartgit.vmoptions` file contains a list of additional VM options which sho
 
 #### Example
 
-> ```java
+> ``` text
 > -Xmx2048M
 > -Xms1024M
 > ```

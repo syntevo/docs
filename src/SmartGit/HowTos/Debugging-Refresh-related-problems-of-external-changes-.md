@@ -14,7 +14,7 @@ up external changes, do the following:
 
 
 
-``` java
+``` properties
 smartgit.debug=true
 ```
 

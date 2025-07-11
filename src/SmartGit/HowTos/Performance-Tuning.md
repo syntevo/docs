@@ -118,7 +118,7 @@ section:
 
 
 
-``` java
+``` text
 [remote ...]
   ...
   smartgitBackgroundFetch = false

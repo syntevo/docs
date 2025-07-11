@@ -138,7 +138,7 @@ By default, historic commit refs will be removed, once the corresponding entity 
 - Create a new clone of your repository, initialize the review database for this clone and use this clone for subsequent operations
 - Checkout `refs/meta/smartgit/reviews`:
 
-``` text
+``` bash
 git checkout refs/meta/smartgit/reviews         
 ```
 
@@ -148,7 +148,7 @@ Now the working tree will contain the entire content of the review database; you
 - Create top-level directory `options` (if it does not exist yet)
 - From the repository root, invoke following command (on Windows, you have to use *git bash*):
 
-``` text
+``` bash
 git rm options/prune-commit-refs
 git commit -m "configuration changed to prune obsolete commit refs"
 git update-ref refs/meta/smartgit/reviews `git rev-parse HEAD` 
@@ -159,7 +159,7 @@ git update-ref refs/meta/smartgit/reviews `git rev-parse HEAD`
 Once this change has been pulled to a different clone for which Distributed Reviews are enabled, obsolete refs won't be removed anymore from now on. 
 To confirm that the option actually works, you may invoke following command *before* adding and *after* removing a comment locally:
 
-``` text
+``` bash
 git show-ref | grep -c refs/meta/smartgit/commits        
 ```
 
