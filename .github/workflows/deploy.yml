@@ -98,6 +98,12 @@ jobs:
         run: |
           tar -czf site.tar.gz -C _site .
 
+      - name: Upload site.tar.gz artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-tar-gz
+          path: site.tar.gz
+
       - name: Copy _site to .upload
         run: |
           cp -R _site .upload
