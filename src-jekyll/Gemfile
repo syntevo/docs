@@ -1,4 +1,12 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll", "~> 4.4"
+gem "jekyll-optional-front-matter"
+gem "jekyll-relative-links", "~> 0.6"
+gem "jekyll-sass-converter", "~> 2.0"
+gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
+gem "jekyll-titles-from-headings"
+gem "minimal-mistakes-jekyll"
+gem "rouge", "~> 4.5"
+gem "sassc", "~> 2.4"

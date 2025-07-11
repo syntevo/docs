@@ -1,10 +1,27 @@
 title: Syntevo Documentation
 markdown: kramdown
+
+theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-sass-converter
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
+  
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
 kramdown:
   auto_ids: true
   toc_levels: 1..6
-plugins:
-  - jekyll-sitemap
-repository: syntevo/docs
 
 url: "https://docs.syntevo.com" # We need that for absolute-URL logic
+
+repository_url: https://github.com/syntevo/docs

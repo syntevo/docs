@@ -76,13 +76,23 @@ jobs:
             cp -r branches/legacy/SmartSVN/"$version"/* .build/SmartSVN/"$version"
           done
           cp -r main/src-inflated/* .build
-          find .build -type f -printf "%P\n"
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install Ruby gems
+        working-directory: .build
+        run: |
+          bundle config set path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
 
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: .build/
-          destination: ./_site
+        working-directory: .build
+        run: |
+          bundle exec jekyll --version
+          bundle exec jekyll build --destination ../_site
 
       - name: Compress _site directory
         run: |
