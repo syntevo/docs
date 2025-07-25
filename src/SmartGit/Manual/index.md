@@ -92,7 +92,7 @@ Alternatively, you can follow one of the below topics:
   - [GitLab](Integrations/GitLab.md)
   - [Gerrit](Integrations/Gerrit.md)
   - [Git LFS Features in SmartGit](Integrations/Git-LFS.md)
-  - [JIRA](Integrations/JIRA.md)
+  - [Jira](Integrations/JIRA.md)
   - [Jenkins](Integrations/Jenkins.md)
   - [TeamCity](Integrations/TeamCity.md)
   - [Linking SmartGit to Issue Trackers using BugTraq](Integrations/Bugtraq-links-to-issue-trackers.md)
