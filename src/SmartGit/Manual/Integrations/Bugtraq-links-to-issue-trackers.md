@@ -1,12 +1,15 @@
 # Bugtraq (links to issue trackers)
 
-Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, enabling integration between tools such as SmartGit and common web-based Bug Tracking tools such as JIRA, GitHub Issues, or Azure DevOps boards.
+Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, 
+enabling integration between tools such as SmartGit and common web-based Bug Tracking tools such as Jira, GitHub Issues, or Azure DevOps boards.
 
-If you have set up *Bugtraq Configuration* for your repository, SmartGit will detect issue IDs embedded in commit messages and display hyperlinks allowing you to quickly open the linked issue Id in the Bug tracking tool's website.
+If you have set up *Bugtraq Configuration* for your repository, SmartGit will detect issue IDs embedded in commit messages and display hyperlinks 
+allowing you to quickly open the linked issue Id in the Bug tracking tool's website.
 
 The Bugtraq configuration is stored either in the `.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you).
 
-The configuration file consists of a named `bugtraq` section, where a regular expression can be defined to match issue IDs in your commit messages, and a URL template used to create the clickable hyperlink to the specific linked Issue id in the website.
+The configuration file consists of a named `bugtraq` section, where a regular expression can be defined to match issue IDs in your commit messages, 
+and a URL template used to create the clickable hyperlink to the specific linked Issue id in the website.
 
 Examples of common Bugtraq configurations for popular web issue tracking tools are provided below.
 If your web-based issue tracking system is not listed, or if you have customized the Issue linking URLs on your tracking system,
@@ -22,15 +25,17 @@ commit message -> logfilterregex -> loglinkregex -> logregex -> BUGID
 Please refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq> for advanced configuration.
 
 #### Note
-> The `logregex` must contain only one matching group '()' matching the issue ID.
-> You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
+> - The `logregex` setting must contain only one matching group '()' matching the issue ID.
+> - You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
+> - The [BugTraq `projects`](https://github.com/mstrap/bugtraq?tab=readme-ov-file#bugtraqprojects-optional) setting allows one or more project prefixes to be defined 
+    which can then be substituted using a `PROJECT` token in the `url` and `loglinkregex` settings.
 
 ## Examples
 
-### JIRA Server (On Premise) - repository linked to a single JIRA project
+### Jira Server (On Premise) - repository linked to a single Jira project
 
-JIRA uses project-specific prefixes for its issue identifiers.
-An example configuration for a repository linked to a single JIRA project with prefix `SG`, the *JIRA* issue tracker at URL `https://host/jira` looks like the following.
+Jira uses project-specific prefixes for its issue identifiers.
+An example configuration for a repository linked to a single Jira project with prefix `SG`, the *Jira* issue tracker at URL `https://host/jira` looks like the following.
 
 >
 >``` text
@@ -49,10 +54,9 @@ Alternatively, if you want to have the entire issue ID as the link (i.e. with `S
 >   logregex = \\d+            
 >```
 
-### JIRA Server (On Premise) - repository linked to a multiple JIRA projects
+### Jira Server (On Premise) - repository linked to a multiple Jira projects
 
-When your repository is linked to multiple *JIRA* projects, a configuration could look like:
-
+When your repository is linked to multiple *Jira* projects, the `projects` setting allows multiple project prefixes to be detected, e.g.:
 >
 >``` text
 > [bugtraq "jira"]
@@ -65,12 +69,12 @@ When your repository is linked to multiple *JIRA* projects, a configuration coul
 So a commit message containing `PRJA-123` would be linked to `https://host/jira/browse/PRJA-123`, 
 and a commit message and containing `PRJB-678` would be linked to `https://host/jira/browse/PRJB-678`.
 
-### JIRA Cloud
+### Jira Cloud
 
-The JIRA Cloud issue viewing URL is slightly different to the On Premises version.
+The Jira Cloud issue viewing URL is slightly different to the On-Premises version.
 
 In the below example, we have a single project with prefix `SG` and have registered an organisation with a site name `myorg` on Jira Cloud. 
-Here we have not set up a custom domain, so the host has its default of `myorg.atlassian.net`:
+Here we have not set up a custom domain, so the host has its default of `myorg.atlassian.net`, and have used the `projects` setting to DRY up the Jira project prefix:
 
 >
 >``` text
@@ -81,8 +85,8 @@ Here we have not set up a custom domain, so the host has its default of `myorg.a
 >   logregex = \\d+
 >```
 
-If you have registered a custom domain with JIRA cloud, the host will change as per your network administrator's DNS entry.
-For example, if we have created a subdomain `jira.myorg.com` in the `myorg.com` company DNS and configured the custom domain in JIRA, the URL will be:
+If you have registered a custom domain with Jira cloud, the host will change as per your network administrator's DNS entry.
+For example, if we have created a subdomain `jira.myorg.com` in the `myorg.com` company DNS and configured the custom domain in Jira, the URL will be:
 
 >
 >``` text

@@ -1,25 +1,25 @@
-# JIRA
+# Jira
 
-The SmartGit integration to Atlassian JIRA allows you to select a commit message (including JIRA key) directly from (open) JIRA issues and to optionally mark issues as resolved on **Push**.
+The SmartGit integration to Atlassian Jira allows you to select a commit message (including Jira key) directly from (open) Jira issues and to optionally mark issues as resolved on **Push**.
 
 ## Prerequisites
 
-The JIRA integration is only available for **commercial** licenses and will only be present if [Bugtraq configuration](../Integrations/Bugtraq-links-to-issue-trackers.md) has been set up correctly to your JIRA server.
+The Jira integration is only available for **commercial** licenses and will only be present if [Bugtraq configuration](../Integrations/Bugtraq-links-to-issue-trackers.md) has been set up correctly to your Jira server.
 
 #### Note
 
-> When connecting to a cloud-based JIRA instance (\*.atlassian.net), you
+> When connecting to a cloud-based Jira instance (\*.atlassian.net), you
 > have to login with your **username**, not your email address. You can
 > find your username in your **Profile** (top-right corner).
 
 ## Authentication with API
 
-Depending on the JIRA version and/or server vs. cloud instance, authenticate with JIRA can either be:
+Depending on the Jira version and/or server vs. cloud instance, authenticate with Jira can either be:
 
 - using your username/password or
 - it may be necessary to create an API token.
 
-To create an API token, open your JIRA account and select **Security** settings.
+To create an API token, open your Jira account and select **Security** settings.
 
 #### Info
 
@@ -34,7 +34,7 @@ In the next dialog, invoke **Copy to clipboard**. Finally, the token should show
 
 ![](../attachments/53215463/53215466.png)
 
-You should now be able to authenticate to JIRA from within SmartGit by using your email address as **User Name** and the token as **Password**.
+You should now be able to authenticate to Jira from within SmartGit by using your email address as **User Name** and the token as **Password**.
 
 ![](../attachments/53215463/53215464.png)
 
@@ -46,7 +46,7 @@ The commit message selection is available in the Commit and Edit Last Commit Mes
 
 ## Resolving on Push
 
-For all **Push** operations (except of **Push To**), SmartGit checks the pushed commits for *affected* JIRA issues and offers to mark them as resolved in one or more JIRA versions. A JIRA issue is considered as *affected*, if:
+For all **Push** operations (except of **Push To**), SmartGit checks the pushed commits for *affected* Jira issues and offers to mark them as resolved in one or more Jira versions. A Jira issue is considered as *affected*, if:
 
 1. It's mentioned in at least one commit message of the *local* branch commits which are pushed; and
 
@@ -59,7 +59,7 @@ For all **Push** operations (except of **Push To**), SmartGit checks the pushed 
 
 #### Example
 
-> In JIRA's "classic workflow", an issue which is *in progress* can be
+> In Jira's "classic workflow", an issue which is *in progress* can be
 > *resolved* or *closed*. Hence, for such issues which are mentioned in a
 > commit message, SmartGit will offer both resolutions, because these are
 > reasonable transitions when pushing a commit.
@@ -74,18 +74,18 @@ For all **Push** operations (except of **Push To**), SmartGit checks the pushed 
 
 ### Custom workflows
 
-For the detection of *resolvable* issues, SmartGit supports the common default JIRA workflows. If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
+For the detection of *resolvable* issues, SmartGit supports the common default Jira workflows. If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
 
 #### Note
 
-> SmartGit will only offer resolution of issues if your JIRA credentials
-> are properly configured. To ensure this, invoke **Select from JIRA** and
+> SmartGit will only offer resolution of issues if your Jira credentials
+> are properly configured. To ensure this, invoke **Select from Jira** and
 > enter your credentials these.  
 > You can completely disable this functionality using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
 
 ## Support for 'commit.template'
 
-The JIRA integration will honor the Git `commit.template` configuration. The following keywords are substituted by the according JIRA issue attributes:
+The Jira integration will honor the Git `commit.template` configuration. The following keywords are substituted by the according Jira issue attributes:
 
 - `%BUGID%`
 - `%BUGSUMMARY%`
@@ -93,13 +93,13 @@ The JIRA integration will honor the Git `commit.template` configuration. The fol
 
 ## Miscellaneous
 
-The configuration of your JIRA connections are stored in `bugtracker.yml`, in the [Settings directory](../Installation/Installation-and-Files.md). Referenced passwords are stored in `passwords`.
+The configuration of your Jira connections are stored in `bugtracker.yml`, in the [Settings directory](../Installation/Installation-and-Files.md). Referenced passwords are stored in `passwords`.
 
 ## Solutions to troubleshoot potential problems
 
 ### "No project could be found with key '...'" or "The value '...' does not exist for the field 'project'"
 
-JIRA cloud may stop returning proper HTTP error `401` once an authentication with a token has been successful (for the first time) and the token is removed later on. This can been seen using curl:
+Jira cloud may stop returning proper HTTP error `401` once an authentication with a token has been successful (for the first time) and the token is removed later on. This can been seen using curl:
 
 Initially, the authentication with an invalid token fails with HTTP error code 401, which can be detected by SmartGit:
 
@@ -115,14 +115,14 @@ $ curl -I -H "Authorization: Basic bWFyYy5zdHJhcGV0ekBzeW50ZXZvLmNvbTpIZk9rdjhHN
 HTTP/1.1 200 OK
 ```
 
-After the token is removed from JIRA's security settings, authentication may continue to succeed for a while (it seems to remain cached for a couple of minutes):
+After the token is removed from Jira's security settings, authentication may continue to succeed for a while (it seems to remain cached for a couple of minutes):
 
 ```
 $ curl -I -H "Authorization: Basic bWFyYy5zdHJhcGV0ekBzeW50ZXZvLmNvbTpIZk9rdjhHNDdZMjlLZEl0ZmczYkYxQ0I=" https://yoursite.atlassian.net/rest/api/2/project/PROJECT/versions
 HTTP/1.1 200 OK
 ```
 
-Later, JIRA will start returning HTTP error code `404` which indicates to SmartGit that the token is good, but a non-existing project has been accessed:
+Later, Jira will start returning HTTP error code `404` which indicates to SmartGit that the token is good, but a non-existing project has been accessed:
 
 ```
 $ curl -I -H "Authorization: Basic bWFyYy5zdHJhcGV0ekBzeW50ZXZvLmNvbTpIZk9rdjhHNDdZMjlLZEl0ZmczYkYxQ0I=" https://yoursite.atlassian.net/rest/api/2/project/PROJECT/versions
