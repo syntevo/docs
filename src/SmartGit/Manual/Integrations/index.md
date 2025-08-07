@@ -66,6 +66,7 @@ Once a repository is cloned from a linked hosting provider, SmartGit provides th
 - [Bugtraq links to Web Issue Trackers](Bugtraq-links-to-issue-trackers.md) - Enables hyperlinks between commit messages in SmartGit and web-based issue trackers such as JIRA or Azure Boards.
 - [Atlassian Jira](JIRA.md) - Allows commit messages to be extracted from an open Jira ticket
 - [Codebeamer](Codebeamer.md) - TODO
+- [Codex](Codex.md)
 - [Gerrit](Gerrit.md)
 - [Git Large File Storage](Git-LFS.md)
 - [AI Services](AI.md) (experimental)
