@@ -18,6 +18,7 @@
     -   [Creating Thread Dumps](Creating-Thread-Dumps.md)
         -   [Periodical Thread Dumps](Periodical-Thread-Dumps.md)
     -   [Creating Heap Histograms](Creating-Heap-Histograms.md)
+    -   [Debugging Git-LFS](Debugging-Git-LFS.md)
     -   [Debugging JSON connections](Debugging-JSON-connections.md)
     -   [Debugging Refresh-related problems (of external changes)](Debugging-Refresh-related-problems-of-external-changes-.md)
     -   [Debugging smartgit.exe startup (Exe4J)](Debugging-smartgit.exe-startup-Exe4J-.md)

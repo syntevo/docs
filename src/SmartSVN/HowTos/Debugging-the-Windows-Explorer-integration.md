@@ -63,7 +63,7 @@ restarted, you should find a line like
 
 
 
-``` java
+``` text
 ShellNotify::_tWinMain Signaled start successfully
 ```
 

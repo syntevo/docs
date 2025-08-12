@@ -13,7 +13,7 @@ You can set up custom external 3-way diffs which can be invoked from a
 
 
 
-    ``` java
+    ``` bash
     #!/bin/bash
     includeWt=0
     windows=0

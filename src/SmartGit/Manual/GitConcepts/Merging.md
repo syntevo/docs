@@ -18,7 +18,7 @@ In the following example, we will merge the `a-branch` into `main` (`>` indicate
 - **Before the merge (left)**
 - **After the merge (right)**, where a merge commit M has been created to bring the changes in `a-branch` into the `main` branch. `M` will have two parent commits, `A` and `B`.
 
-``` text
+``` bash
 git checkout main
 git merge a-branch
 ```

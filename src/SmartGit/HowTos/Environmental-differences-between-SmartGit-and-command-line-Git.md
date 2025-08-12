@@ -46,7 +46,7 @@ this shell, too:
 
 
 
-    ``` java
+    ``` bash
     set
     ```
 

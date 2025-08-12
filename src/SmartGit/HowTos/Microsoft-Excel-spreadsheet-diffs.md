@@ -13,7 +13,7 @@ following:
 
 
 
-``` powershell
+``` text
 @ECHO OFF
 rem smartgit diff passes two arguments: old-file, new-file.
 set TEMP_FILE=%TEMP%\smartgit-excel-diff.txt

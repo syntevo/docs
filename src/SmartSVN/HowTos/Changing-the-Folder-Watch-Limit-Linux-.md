@@ -17,7 +17,6 @@ and insert the following line into the file `/etc/sysctl.conf`:
 
 ``` text
       fs.inotify.max_user_watches = 102400
-    
 ```
 
 

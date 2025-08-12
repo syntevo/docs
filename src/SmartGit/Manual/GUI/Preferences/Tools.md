@@ -95,7 +95,7 @@ This powershell script can be used to open a solution file `.sln` inside a repos
 
 **Powershell script C:\\SmartGit-Scripts\\openVS.ps1**
 
-``` java
+``` powershell
 Install-Module VSSetup -Scope CurrentUser
 $slnname = Get-ChildItem -Path $args[0] -Filter *.sln -Recurse -ErrorAction SilentlyContinue -Force | Select-Object -First 1 | Select-Object -ExpandProperty FullName
 

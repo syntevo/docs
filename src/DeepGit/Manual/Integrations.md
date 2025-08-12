@@ -109,7 +109,7 @@ open **Preferences\|Key Bindings** and add a new binding, like:
 
 
 
-``` java
+``` json
 [
     { "keys": ["alt+shift+d"], "command": "deepgit" }
 ]

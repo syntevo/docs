@@ -25,7 +25,7 @@ invoke:
 
 
 
-``` java
+``` bash
 $ git config --unset core.ignoreCase
 ```
 
@@ -36,7 +36,7 @@ somewhere else, make sure the output of following command is empty:
 
 
 
-``` java
+``` bash
 $ git config core.ignoreCase
 ```
 
@@ -47,7 +47,7 @@ operating system, invoke:
 
 
 
-``` java
+``` bash
 git config smartgit.warning.git-core-ignorecase-mismatch false
 ```
 

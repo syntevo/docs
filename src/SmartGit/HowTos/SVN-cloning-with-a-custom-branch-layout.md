@@ -6,7 +6,7 @@ sufficient. Following procedure allows you to customize the layout:
 -   Edit the `smartgit.properties` file that you can find in [SmartGit's settings directory](../Manual/Installation/Installation-and-Files.md).
 -   Add following line to the beginning of the file:
 
-``` text
+``` properties
 smartgit.debug=true
 ```
 -   Restart SmartGit.
@@ -30,7 +30,7 @@ look like as follows (there must be no line break for the whole
 
 
 
-``` text
+``` ini
 [svn-git-remote "svn"]
 url = http://servername/svn/MyRepository
 fetch = ProjectB/trunk:refs/remotes/svn/trunk

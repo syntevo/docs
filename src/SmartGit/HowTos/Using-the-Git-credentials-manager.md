@@ -13,7 +13,7 @@ Below are coarse instructions given for different operating systems, for details
 
 Use following configuration:
 
-``` java
+``` ini
 [credential]
     helper = manager
 ```
@@ -22,7 +22,7 @@ Use following configuration:
 
 Use following configuration:
 
-``` java
+``` ini
 [credential]
     helper = osxkeychain
 ```

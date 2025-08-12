@@ -12,7 +12,7 @@ By default, SmartGit will query for all GitHub Actions workflows. To limit the l
 #### Example
 
 >
->``` text
+>``` ini
 >[smartgit "github-actions"]
 >   workflows = ci
 >```

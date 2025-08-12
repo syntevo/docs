@@ -1,4 +1,4 @@
-# codebeamer
+# Codebeamer
 
 SmartGit supports integration with external issue trackers through the use of the `.gitbugtraq` configuration file. This allows you to associate Git commits with tracker items from systems like codebeamer. By configuring `.gitbugtraq` appropriately, you can enable SmartGit to recognize references to tracker items in commit messages and convert them into clickable links.
 

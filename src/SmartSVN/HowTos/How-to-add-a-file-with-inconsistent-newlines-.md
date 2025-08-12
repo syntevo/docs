@@ -10,7 +10,7 @@ newlines are by intention, you may add such a file from command line:
 
 
 
-``` java
+``` bash
 $ svn add --no-auto-props path/to/file
 ```
 

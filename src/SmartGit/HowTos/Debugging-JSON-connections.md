@@ -13,20 +13,20 @@ debug log sent and received JSON objects. To do so:
     directory's path (on Windows, be sure to use forward-slashes instead
     of back-slashes)
 
-    ``` java
+    ``` properties
     smartgit.json.debugDir=<absolute-path-to-debug-directory>
     ```
 
     Example:
 
-    ``` java
+    ``` properties
     smartgit.json.debugDir=c:/temp/json
     ```
 
 3.  optionally, you can also specify to log *sent* and *received* HTTP
     headers to the debug output file:
 
-    ``` java
+    ``` properties
     smartgit.json.debugHeaders=true
     ```
 
@@ -85,7 +85,7 @@ debug log sent and received JSON objects. To do so:
 7.  Open SmartGit and retry to **Create Pull Request**; this should
     result in an ".out.json" file like:
 
-    ``` java
+    ``` json
     https://api.github.com/repos/someone/priv/pulls
     {"head":"someone:feature\/XYZ-123","title":"file added","body":"","base":"master"}
     ```
@@ -94,13 +94,13 @@ debug log sent and received JSON objects. To do so:
     `body.json`, like `c:/temp/curl/body.json` and remove the first line
     which is the actual URL to be opened:
 
-    ``` java
+    ``` json
     {"head":"someone:feature\/XYZ-123","title":"file added","body":"","base":"master"}
     ```
 
 9.  From command line, `cd` to this directory and invoke:
 
-    ``` java
+    ``` bash
     curl -k -H "Authorization: token <token>" -H "Content-Type: application/json" --data @body.json <url> > out.log
     ```
 
@@ -108,7 +108,7 @@ debug log sent and received JSON objects. To do so:
     token and `<url>` by the URL you had removed from the JSON file
     before. For example, a real call might look like:
 
-    ``` java
+    ``` bash
     curl -k -H "Authorization: token 69460770e6251fea183b229c9a89fac616c641f9" -H "Content-Type: application/json" --data @body.json https://api.github.com/repos/someone/priv/pulls > out.log 2> err.log
     ```
 
@@ -124,7 +124,7 @@ SmartGit (since version 22.1) is using GitHub's GraphQL API to access metadata f
 
 After pretty printing the content of the out file it will look similar to:
 
-```
+``` json
 {
     "operationName": "RepositoryInfo",
     "query": "query RepositoryInfo($user: String!, $project: String!) { repository(owner: $user, name: $project) { __typename ...RepositoryResult } }  fragment RepositoryResult on Repository { id name url sshUrl hasIssuesEnabled owner { login } defaultBranchRef { name } parent { name owner { login } } }",
@@ -137,13 +137,13 @@ After pretty printing the content of the out file it will look similar to:
 
 You can now log into [GitHub's GraphQL Explorer](https://docs.github.com/en/graphql/overview/explorer) and run the query there to see whether the error is reproducible. For that, you will have to only copy over the actual query term of the JSON logging, or with other words drop the leading `"query":"` and trailing `",`. For the above example, this is what you will enter into the GraphQL Explorer:
 
-```
+``` text
 query RepositoryInfo($user: String!, $project: String!) { repository(owner: $user, name: $project) { __typename ...RepositoryResult } }  fragment RepositoryResult on Repository { id name url sshUrl hasIssuesEnabled owner { login } defaultBranchRef { name } parent { name owner { login } } }
 ```
 
 You also need to specify the variables in the variables tab of the GraphQL Explorer, just copy the content of the variables object and insert it in the variables field. For the above example it should read:
 
-```
+``` json
 {
 	"project": "imgui",
 	"user": "ocornut"

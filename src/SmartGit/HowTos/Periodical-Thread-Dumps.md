@@ -15,7 +15,7 @@ investigate a problem using periodical thread dumps, do the following:
 
 
 
-``` java
+``` properties
 smartgit.debug=true
 ```
 

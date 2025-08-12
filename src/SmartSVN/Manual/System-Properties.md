@@ -86,7 +86,7 @@ Use this property to enable debug logging for certain SmartSVN modules;
 >
 >
 >
->``` text
+>``` properties
 >log4j.smartsvn.refresh=DEBUG
 >log4j.sc.vcs.model.refresh=DEBUG
 >                    

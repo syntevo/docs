@@ -75,7 +75,7 @@ To hide a specific page, set the corresponding property to `false`.
 #### Example
 
 > To hide the **Tools** page, set:
-> ``` text
+> ``` properties
 > smartgit.preferences.externalTools.visible=false
 > ```
 
@@ -157,7 +157,7 @@ Use this property to enable debug logging for certain SmartGit modules; `[catego
 #### Example
 
 > To enable debug logging for the Refreshing modules, set following properties:
-> ``` text
+> ``` properties
 > logging.smartgit.refresh=DEBUG
 > logging.sc.vcs.model.refresh=DEBUG
 > ```
