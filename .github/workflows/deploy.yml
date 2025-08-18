@@ -136,12 +136,16 @@ jobs:
           while IFS= read -r file; do
             rel_path="${file#branches/${{ env.LATEST_BRANCH }}/src/SmartGit/}"
             url="https://docs.syntevo.com/SmartGit/Latest/${rel_path%.md}"
-            origin="$rel_path"
-            echo "<section data-source=\"$url\"" >> "$output"
-            echo "         data-origin=\"$origin\">" >> "$output"
-            echo >> "$output"
-            cat "$file" >> "$output"
-            echo >> "$output"
+            {
+              while IFS= read -r line; do
+                if [[ $line =~ ^[[:space:]]*# ]]; then
+                  echo ""
+                  echo "<!-- data-source: $url -->"
+                fi
+                echo "$line"
+              done < "$file"
+              echo
+            } >> "$output"
           done < md_files.txt
 
       - name: Upload SmartGit markdown artifact
