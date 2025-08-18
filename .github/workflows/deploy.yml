@@ -14,6 +14,7 @@ jobs:
   dispatch_job:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Trigger Deployment Workflow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,3 +25,19 @@ jobs:
             -H "Authorization: Bearer $GITHUB_TOKEN" \
             https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches \
             -d '{"ref": "main"}'
+      - name: Create consolidated SmartGit markdown
+        run: |
+          find src/SmartGit -name '*.md' | sort | tee /tmp/smartgit_md_files.txt
+          : > smartgit-lastest-all.md
+          while IFS= read -r file; do
+            url="https://docs.syntevo.com/SmartGit/${file#src/SmartGit/}"
+            url="${url%.md}"
+            echo "$url" >> smartgit-lastest-all.md
+            cat "$file" >> smartgit-lastest-all.md
+            echo >> smartgit-lastest-all.md
+          done < /tmp/smartgit_md_files.txt
+      - name: Upload consolidated markdown artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: smartgit-lastest-all.md
+          path: smartgit-lastest-all.md
