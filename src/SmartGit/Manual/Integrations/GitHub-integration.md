@@ -8,6 +8,10 @@ Once integration with GitHub has been [set up](#setup), SmartGit provides the fo
 
 In addition to integrating with GitHub's repository features, it is possible to set up [Bugtraq](Bugtraq-links-to-issue-trackers.md) integration.
 
+This enables further functionality:
+- [Bugtraq hyperlinks](Bugtraq-links-to-issue-trackers.md#githubcom-issues) in commit messages can be linked back to to an Issue in Github.
+- [Issue selection](#github-issue-selection) from GitHub projects.
+
 ## Setup
 
 To set up GitHub integration in SmartGit, go to **Edit \| Preferences**, navigate to the **Hosting Providers** section, and click the **Add** button.
@@ -87,6 +91,22 @@ If this does not solve your problem, take following steps to rerun the *OAuth* s
 3. In SmartGit, rerun through the *OAuth* setup again:
     1. open **Preferences**, section **Hosting Providers**
     2. **Add** a new **GitHub** hosting provider, as described above
+
+## GitHub Issue Selection
+
+If both of the following have been configured:
+- GitHub integration by configuring an [access token](#setup) that allows SmartGit to authenticate with GitHub.
+- [Bugtraq configuration](Bugtraq-links-to-issue-trackers.md) linking to the associated GitHub repository containing issues.
+
+SmartGit will then allow you to select an issue from the configured GitHub project at the following points:
+- From the hamburger **(≡)** menu above the **Commit View**, during **Commit** and **Amend last Commit** operations.
+- From the **Select** dropdown during interactive rebase operations, such as **Squash** in the **Journal** and **Graph Views**.
+
+> [!NOTE]
+> - Draft issues in GitHub will not be available for selection in SmartGit. These need to be converted to full issues and associated to a GitHub repository.
+> - Issues that have been closed on GitHub will not be available for selection.
+>   You may need to reopen an issue for it to be selectable within SmartGit.
+> - GitHub changed its [Project design](https://docs.github.com/en/enterprise-server@3.16/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) in 2024, and new GitHub Projects are now created at Organization level, and can be linked to one or more repositories.
 
 ## Troubleshooting Possible Problems & Solutions
 
