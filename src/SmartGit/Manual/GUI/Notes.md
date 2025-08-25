@@ -18,9 +18,7 @@ SmartGit's notes support includes the following features:
 
 ## Enabling Notes for a Repository
 
-Unless notes have been enabled for a repository via one of the below methods, SmartGit's notes features will not be enabled.
-
-Notes can be enabled for a repository through one of the following methods:
+To use the SmartGit notes feature, you need to enable it with one of the below methods:
 - Add one or more `[smartgit-notes "<category-id>"]` sections in the Git configuration file hierarchy (e.g. to the repository `.git/config` file), e.g.:
   ```
   [smartgit-notes "QA"]
