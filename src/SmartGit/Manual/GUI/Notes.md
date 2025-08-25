@@ -6,8 +6,8 @@ Notes can be used for many different purposes, such as:
 - Linking peer or AI code review comments to a commit without depending on additional review features or external persistence in a Git hosting service
   ([git-appraise](https://github.com/google/git-appraise) is an example).
 
-Although Git's notes feature only allows one note per commit per category, if required, additional categories can be to allow multiple notes can be associated with the same commit.
-Please consult 
+Although Git's notes feature permits only one note per commit per category, additional categories can be configured if necessary, allowing multiple notes to be associated with the same commit.
+Please consult the [Git Notes configuration guide](../Integrations/GitNotes-Integration.md#smartgit-notes-section-reference) for further details.
 
 SmartGit's notes support includes the following features:
 - The ability to add and remove notes through the UI.
