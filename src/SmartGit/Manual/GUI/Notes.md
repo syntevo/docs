@@ -13,7 +13,7 @@ SmartGit's notes support includes the following features:
 - The ability to add and remove notes through the UI.
 - The ability to add new categories of notes [through configuration](../Integrations/GitNotes-Integration.md#a-minimal-smartgit-notes-configuration).
 - If you wish to synchronize notes with a remote:
-   - The ability to manually synchronize notes with a remove using the **Other Refs** section of the **Branches View**.
+   - The ability to manually synchronize notes with a remote using the **Other Refs** section of the **Branches View**.
    - The ability to [configure Git to always push and fetch note refs](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes) from the repository.
 
 ## Enabling Notes for a Repository
