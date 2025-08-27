@@ -15,7 +15,7 @@ To enable the integration, you need to define the appropriate Codex environment 
 For example:
 
 ```
-[smartgit-ai-codex]
+[smartgit-codex-agent]
     environment = aaaabbbbccccddddeeeeffff00001111
 ```
 
