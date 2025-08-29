@@ -4,7 +4,7 @@ Once integration with GitHub has been [set up](#setup), SmartGit provides the fo
 
 - [Integrated Cloning](Integrated-Cloning.md)
 - [Integrated Pull Requests](Integrated-PullRequests.md)
-- [Integrated Commenting](Integrated-Comments.md)
+- [Integrated Commenting](Integrated-PullRequest-Comments.md)
 
 In addition to integrating with GitHub's repository features, it is possible to set up [Bugtraq](Bugtraq-links-to-issue-trackers.md) integration.
 
