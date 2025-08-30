@@ -4,7 +4,7 @@ Once Bitbucket integration is configured, the following integrated functionality
 
 - [Integrated Cloning](Integrated-Cloning.md)
 - [Integrated Pull Requests](Integrated-PullRequests.md)
-- [Integrated Commenting](Integrated-Comments.md)
+- [Integrated Commenting](Integrated-PullRequest-Comments.md)
 
 Some integration behavior can be customized by [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md#systemproperties-properties.bitbucket).
 
