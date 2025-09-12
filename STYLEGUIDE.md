@@ -10,6 +10,14 @@
   _Rationale_ : Even though the sentences will be run into each other in the final output, the newline assists Markdown authors clarify the content and focus on specific points. 
 -- Shorter line widths also make side by side review easier to read e.g. in GitHub pull requests.
 
+## Character Set and Symbols
+
+- Use ASCII characters only throughout the documentation.
+- Dashes: use `--` for an em-dash effect; never use Unicode dashes (`—`, `–`, `‑`).
+- Arrows: use `->`; do not use Unicode arrows (e.g. `→`).
+- Ellipsis: use `...`; do not use the Unicode ellipsis (`…`).
+- Quotes: use straight quotes `'` and `"`; avoid typographic quotes (`“ ” ‘ ’`).
+
 ## Deciding on whether a topic belongs under GUI, or other root folders like GitConcepts, Integration etc
 
 ### SmartGit App Commands and Actions (e.g. /GUI/Commiting.md)
@@ -49,7 +57,7 @@
   _Rationale_: If you don’t escape the Pipe, when published on ?Jekyll, the Pipe is interpreted as a table separator and the content is incorrectly displayed
 - Escaping is NOT needed if the content is already escaped in a code (`) block, e.g.
   ` git show-ref | grep -c refs/meta/smartgit/commits`
-- Use right arrow -> or → for smaller UI navigation e.g. tabs on a preferences sheet or cascading radio button toggles (e.g. `File -> Open -> New Window`)
+- Use right arrow `->` for smaller UI navigation e.g. tabs on a preferences sheet or cascading radio button toggles (e.g. `File -> Open -> New Window`)
 
 ## Reference to Major UI Elements (Including Main Windows and Views)
 
