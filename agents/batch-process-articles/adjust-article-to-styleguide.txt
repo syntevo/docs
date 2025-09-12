@@ -1,0 +1,4 @@
+Rewrite $FILE so it fully conforms to STYLEGUIDE.md.
+Only make syntactic edits (headings, punctuation, spacing, line breaks, list/link/code formatting, capitalization, ASCII-only where required).
+Do not alter meaning, order, examples, or code blocks.
+Preserve relative URLs.
