@@ -1,4 +1,4 @@
-# SmartGit - Latest Version - Complete Table of Contents
+# SmartGit -- Latest Version -- Complete Table of Contents
 
 Welcome to SmartGit!
 

@@ -2,15 +2,15 @@
 
 Please select one of the below topics relating to SmartGit Installation:
 
-  - [Single Computer Installation](#single-computer-installation)
-  - [SmartGit Installation File Locations](Installation-and-Files.md)
-  - [Company-wide installation](Company-wide-installation.md)
-  - [On-premise update server](On-premise-update-server.md)
-  - [On-premise license server](On-premise-license-server.md)
+- [Single Computer Installation](#single-computer-installation)
+- [SmartGit Installation File Locations](Installation-and-Files.md)
+- [Company-wide installation](Company-wide-installation.md)
+- [On-premise update server](On-premise-update-server.md)
+- [On-premise license server](On-premise-license-server.md)
 
 Other related links:
-- [Using Smart Git](../GUI/index.md)
-- [SmartGit online Help - Table of Contents](../index.md)
+- [Using SmartGit](../GUI/index.md)
+- [SmartGit online Help -- Table of Contents](../index.md)
 - [SmartGit Command-Line Options](../GUI/Command-Line-Options.md)
 
 ## Single Computer Installation
@@ -27,5 +27,3 @@ SmartGit will then prompt for confirmation to proceed with the installation.
 Installation may take several minutes to complete.
 
 After installation, you will have the option to launch SmartGit for the first time, where you will be able to customize SmartGit, including your preferred selection of [Main Window](../GUI/Main-Windows.md).
-
-

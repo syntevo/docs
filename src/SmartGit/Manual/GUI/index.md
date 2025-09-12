@@ -16,7 +16,7 @@ Please follow one of the below links to get started with one of the following to
     - [SmartGit Conflict Solver](Branch/Conflict-Solver.md)
     - [SmartGit as Credential Helper](Credential-Helper.md)
 
-Additional Topics:
+## Additional topics
 
 - [Working with Repositories](Repository/index.md)
 - [Working with Branches](Branch/index.md)
@@ -25,6 +25,6 @@ Additional Topics:
 - [Installing SmartGit](../Installation/index.md)
 - [SmartGit's Integration with Git Hosting and Issue Tracking systems](../Integrations/index.md) such as GitHub, JIRA, Azure DevOps, TeamCity and Jenkins.
 
-Also Available:
+## Also available
 
 - [Table of Contents](../index.md) for a list of all available topics.

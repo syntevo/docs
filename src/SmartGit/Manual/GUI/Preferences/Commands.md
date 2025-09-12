@@ -46,13 +46,13 @@ The 'Warn about submodule configuration changes' option provides additional conf
 
 ## Standard Window
 
-This setting controls the level of detail and the complexity in the appearance of the Standard Window.
+This setting controls the level of detail and the complexity in the appearance of the **Standard Window**.
 
-## Log and Working Tree window
+## Log and Working Tree Window
 
 ### Commit View
 
-This option configures the staging behavior when no files have been staged in the Commit View.
+This option configures the staging behavior when no files have been staged in the **Commit View**.
 
 - *Ask* will prompt you how to proceed (Default)
 - *Commit all except untracked files* will stage changes made to tracked files.
@@ -87,7 +87,7 @@ or using the [text and eol attributes](https://www.kernel.org/pub/software/scm/g
 
 ### Log
 
-The following options are available for the Log Window:
+The following options are available for the **Log Window**:
 
 - Whether or not to allow all commands on stash and pull request commits
 - Whether integration for Pull Requests and Review comments should be enabled for supported hosting providers such as GitHub
@@ -109,7 +109,7 @@ Options on this page define which operations SmartGit can perform automatically 
 > Selecting **Detect Remote Changes** without also selecting either of the **Fetch** options, will enable SmartGit to poll the favorited remote Git repositories for changes at regular intervals. 
 > To avoid excessive overhead, only the lightweight `git ls-remote` command is invoked, so you only get a *notification* about changes.
 > The lightweight option does not detect all remote activities, for example, whether a currently checked out feature branch has been merged and removed.
-> However, if  **Fetch closed 'favorite' repositories** or **Fetch open repositories when idle** is selected, SmartGit also will perform fetch-operations which actually will *fetch*
+> However, if **Fetch closed 'favorite' repositories** or **Fetch open repositories when idle** is selected, SmartGit also will perform fetch-operations which actually will *fetch*
 > the changes from the remote repositories, which is more comprehensive in detecting changes, but is also more resource-hungry.
 
 #### Garbage Collector
@@ -128,9 +128,9 @@ You can specify which **Git Executable** should be used by SmartGit.
 
 #### Note
 
-> Git version requirements - SmartGit uses the selected Git executable for performing both local and remote activities.
+> Git version requirements -- SmartGit uses the selected Git executable for performing both local and remote activities.
 > If the bundled Git executable is NOT used, some features in SmartGit may not function correctly.
-> It is recommended that you keep your git executable version up to date to maximize your SmartGit experience.
+> It is recommended that you keep your Git executable version up to date to maximize your SmartGit experience.
 
 ## Git Config
 
@@ -158,7 +158,7 @@ Please refer to the official [Git config pages](https://git-scm.com/docs/git-con
 
 SmartGit supports both SSH and HTTPS authentication to Git remotes.
 
-### SSH Client selection
+### SSH Client Selection
 
 The SSH options are only used if you use SSH to authenticate with remotes.
 
@@ -179,7 +179,7 @@ The SSH options are only used if you use SSH to authenticate with remotes.
 
 This section can be used to control the SmartGit credential helper when connecting to HTTPS repositories.
 
-#### The SmartGit Password store
+#### The SmartGit Password Store
 
 All passwords used to access repositories can optionally be stored in SmartGit's password store. This password store is located in the
 `password` file, found in SmartGit's settings directory
@@ -187,9 +187,9 @@ All passwords used to access repositories can optionally be stored in SmartGit's
 
 The password store should be protected by a *master password* you provided, it should be changed if you have reason to believe it may become compromised.
 
-- The *Known credentials* view shows all credentials stored in SmartGit.
+- The **Known Credentials** view shows all credentials stored in SmartGit.
 - Credentials can be selectively removed, or all credentials can be removed. Removing a credential will force SmartGit to re-request credentials if you connect to the repository again.
-- The *Master Password* for the password store can be set, reset, or changed through the **Change Master Password** dialog. It is highly recommended that you provide a master password to protect your remote credentials. Setting the new password to an empty (blank) string has the same effect as removing the master password.
+- The **Master Password** for the password store can be set, reset, or changed through the **Change Master Password** dialog. It is highly recommended that you provide a master password to protect your remote credentials. Setting the new password to an empty (blank) string has the same effect as removing the master password.
 
 #### Note
 

@@ -1,10 +1,12 @@
-# Server-side component
+# Server-side Component
 
-The Distributes Reviews server-side component is **optional**, and is useful where your team does not have access to an interactive Pull Request review system such as GitHub, GitLab, or Azure DevOps. Once installed and configured, it will track changes to the review meta data and send appropriate emails to affected users.
+The Distributes Reviews server-side component is **optional**, and is useful where your team does not have access to an interactive Pull Request review system such as GitHub, GitLab, or Azure DevOps.
+Once installed and configured, it will track changes to the review meta data and send appropriate emails to affected users.
 
-# Installation
+## Installation
 
-Unzip the contained files from the bundle to a new directory on the same server which is also hosting your Git repositories, let's assume this will be `/opt/reviewserver`. Make sure that `post-receive.sh` is executable – if not, make it executable using `chmod +x post-receive.sh`.
+Unzip the contained files from the bundle to a new directory on the same server which is also hosting your Git repositories, let's assume this will be `/opt/reviewserver`.
+Make sure that `post-receive.sh` is executable -- if not, make it executable using `chmod +x post-receive.sh`.
 
 #### Note
 
@@ -12,7 +14,8 @@ Unzip the contained files from the bundle to a new directory on the same server 
 > i.e. the account which will be used to write to the Git repositories,
 > the log file location in `log4j.properties` must be adjusted.
 
-Adjust the configuration file `/opt/reviewserver/config.email` for your environment. All **mandatory** parameters have to be supplied.
+Adjust the configuration file `/opt/reviewserver/config.email` for your environment.
+All **mandatory** parameters have to be supplied.
 
 Finally, following `post-receive` hook has to be set up for all repositories which should be tracked:
 
@@ -21,9 +24,9 @@ Finally, following `post-receive` hook has to be set up for all repositories whi
 /opt/reviewserver/post-receive.sh "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ```
 
-# Notifications
+## Notifications
 
-## Events
+### Events
 
 Emails will be sent for following events:
 
@@ -37,21 +40,24 @@ Emails will be sent for following events:
 - Reviewing a pull requests (`prReviewed`)
 - Other (unexpected) modifications of a pull request (`prModified`)
 
-## Style files, entities and their attributes
+### Style Files, Entities and Their Attributes
 
-For every event, `template/email` contains a corresponding style file which can be adjusted to your needs. Valid entities and their attributes are which can be used in styles files are:
+For every event, `template/email` contains a corresponding style file which can be adjusted to your needs.
+Valid entities and their attributes are which can be used in styles files are:
 
 - The affected repository name `repo.name`
 - Details of the current (new, updated):
-  `pr.{name, source, target, integrationCommit, assignees, createdAt, createdBy, updatedAt, updatedBy, text, sourceHead, targetHead, rawAttributes}`Note that not all attributes will be available for every type of event. For instance, `pr.updatedAt` is not available for` prCreated`, the creation of a pull request.
-- Details of the old pull request, similar as above: `prOld.{name ... rawAttributes}`  
+  `pr.{name, source, target, integrationCommit, assignees, createdAt, createdBy, updatedAt, updatedBy, text, sourceHead, targetHead, rawAttributes}`
+  Note that not all attributes will be available for every type of event.
+  For instance, `pr.updatedAt` is not available for `prCreated`, the creation of a pull request.
+- Details of the old pull request, similar as above: `prOld.{name ... rawAttributes}`
   Note that all of these attributes will only be available for pull requests which have been existing before, what is not the case for the `prCreated` event.
 - For `prReviewed`, details about the review:
   `review.{reviewer, kind, text, commentCount}`
 - For `prReviewed`, detailed information about all affected comments: `comments.{path, text}`.
 - The SHA of the meta-ref commit `meta.commit`; this will usually just be interesting for debugging purposes.
 
-## Roles
+### Roles
 
 The role mapping `config.roles` defines which events should be delivered to which kinds of users (*roles*):
 
@@ -60,7 +66,7 @@ The role mapping `config.roles` defines which events should be delivered to whic
 - Last updater of pull request (`updater`)
 - Curator of the affected repository (`curator`); curators are defined in the user mapping `config.users`.
 
-## User mapping
+### User Mapping
 
 The user mapping `config.users` specifies one or more *curators* for a specific repository using lines like:
 
@@ -76,23 +82,18 @@ In addition to *repository-specific* curators, *global* curators can be defined 
 curator: curator1@domain1 [,curator2@domain2 ...]
 ```
 
-## (Debug) Logging
+### (Debug) Logging
 
-The server component's log can be found in `log.txt.0` files. The
-(debug) log level can be configured in `logger.properties`.
+The server component's log can be found in `log.txt.0` files.
+The (debug) log level can be configured in `logger.properties`.
 
 #### Example
 
+> ```
+> ...
+> # Root level:
+> .level= INFO
 >
->
->
->```
->...
-># Root level:
->.level= INFO
->
->smartgit.reviewserver.level=FINE
->...
->```
->
-
+> smartgit.reviewserver.level=FINE
+> ...
+> ```

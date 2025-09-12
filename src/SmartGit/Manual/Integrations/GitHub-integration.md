@@ -1,6 +1,6 @@
 # GitHub Integration
 
-Once integration with GitHub has been [set up](#Setup), SmartGit provides the following additional integrated functionality:
+Once integration with GitHub has been [set up](#setup), SmartGit provides the following additional integrated functionality:
 
 - [Integrated Cloning](Integrated-Cloning.md)
 - [Integrated Pull Requests](Integrated-PullRequests.md)
@@ -15,7 +15,7 @@ In the list of available providers, select **GitHub** to bring up a dialog allow
 SmartGit then prompts for an access token.
 
 There are two ways to generate this access token:
-- Allow SmartGit to [autogenerate and manage an OAuth token](#autogeneration-of-oauth-token) (Recommended).
+- Allow SmartGit to [autogenerate and manage an OAuth token](#autogeneration-of-oauth-token) (recommended).
 - Manually generate a [Personal Access Token (PAT)](#creating-a-github-personal-access-token) in GitHub.
 
 ### Autogeneration of OAuth Token
@@ -51,7 +51,7 @@ Using the OAuth-token has following advantages:
 
 #### Info
 
-> Once you have authorized SmartGit to integrate with GitHub, you can manage access under [GitHub](https://github.com/settings/applications) **Settings**, **Applications \| Authorized OAuth Apps**.
+> Once you have authorized SmartGit to integrate with GitHub, you can manage access under [GitHub](https://github.com/settings/applications) **Settings** -> **Applications** -> **Authorized OAuth Apps**.
 > If you need to repeat the Authorization process outlined above, you should first **Revoke** SmartGit's access on GitHub and start over.
 
 ![Revoking SmartGit access in GitHub](../images/GitHubIntegration-RevokeAppAccess.png)
@@ -82,7 +82,7 @@ If this does not solve your problem, take following steps to rerun the *OAuth* s
 1. In SmartGit:
     1. remove all GitHub-related credentials from **Preferences**, section **Authentication**
     2. remove the GitHub hosting provider from **Preferences**, section **Hosting Providers**
-2. In GitHub, open the [SmartGit application](https://github.com/settings/connections/applications/99bbba5634b1f1ef3b57) from your profile **Settings**, **Applications**, tab **Authorized OAuth Apps**:
+2. In GitHub, open the [SmartGit application](https://github.com/settings/connections/applications/99bbba5634b1f1ef3b57) from your profile **Settings** -> **Applications** -> **Authorized OAuth Apps**:
     1. Select "SmartGit" there:
        ![](../attachments/53215440/53215441.png)
     2. Invoke **Revoke Access**
@@ -112,7 +112,7 @@ If you are authenticating using *OAuth* and you can't see private repositories o
 
 ![](../attachments/53215440/53215446.png)
 
-Note that the screenshot above shows the interface of the organization's manager. If you are not the manager, but just a member of the organization, you can request access for the [SmartGit application](https://github.com/settings/connections/applications/d9f33087e985e76e9029) to this organization from your **Settings - Applications**, tab **Authorized OAuth Apps**:
+Note that the screenshot above shows the interface of the organization's manager. If you are not the manager, but just a member of the organization, you can request access for the [SmartGit application](https://github.com/settings/connections/applications/d9f33087e985e76e9029) to this organization from your **Settings** -> **Applications** -> **Authorized OAuth Apps**:
 select **SmartGit** here and check for which organizations you may request access. The screenshot below shows `syntdev2` for which access can be requested. Once done so, the organization manager will receive a notification and may confirm.
 
 ![](../attachments/53215440/53215442.png)

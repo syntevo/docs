@@ -9,9 +9,9 @@ This article explains how to configure and enable [**SmartGit's Notes features**
 - [A minimal [smartgit-notes] configuration](#a-minimal-smartgit-notes-configuration)
 - [`smartgit-notes` section reference](#smartgit-notes-section-reference)
 - [Example configurations](#example-configurations)
-  - [1 – Override Classic *commits* notes](#1--override-classic-commits-notes)
-  - [2 – Separate *code-reviews* category with filtering](#2--separate-code-reviews-category-with-filtering)
-  - [3 – Multiple categories side-by-side](#3--multiple-categories-side-by-side)
+  - [1 -- Override Classic *commits* notes](#1--override-classic-commits-notes)
+  - [2 -- Separate *code-reviews* category with filtering](#2--separate-code-reviews-category-with-filtering)
+  - [3 -- Multiple categories side-by-side](#3--multiple-categories-side-by-side)
 - [Advanced Configurations](#advanced-configurations)
   - [Configuring automatic note synchronization with remotes](#configuring-automatic-note-synchronization-with-remotes)
   - [Copying Git notes during rewriting activity (e.g. rebase)](#copying-git-notes-during-rewriting-activity-eg-rebase)
@@ -41,7 +41,7 @@ Add one or more subsections under `smartgit-notes` to describe the *categories* 
     color            = <RRGGBB>
 ```
 
-SmartGit reads these directives from the repository’s local `.git/config`, the user-wide `~/.gitconfig`, or the system config – and reloads changes automatically for the local repo.
+SmartGit reads these directives from the repository's local `.git/config`, the user-wide `~/.gitconfig`, or the system config -- and reloads changes automatically for the local repo.
 A restart is only needed when you edit user or system-wide configs.
 
 ## `smartgit-notes` section reference
@@ -53,7 +53,7 @@ Each notes category configured in SmartGit requires the following configuration:
 
 | Key | Required | Purpose |
 |-----|----------|---------|
-| **`ref`** | no (defaults to the `<category-id>` of the containing `[smartgit-notes]` section ) | Path **relative to `refs/notes/`** that stores the notes for this category. You may also specify the full ref (`refs/notes/xyz`); the leading prefix will be stripped automatically. |
+| **`ref`** | no (defaults to the `<category-id>` of the containing `[smartgit-notes]` section) | Path **relative to `refs/notes/`** that stores the notes for this category. You may also specify the full ref (`refs/notes/xyz`); the leading prefix will be stripped automatically. |
 | **`graphMessageRegex`** | no | Java regular expression; must contain exactly one [capturing matching group](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Capturing_group) i.e. `(x)`; if present, SmartGit shows the extracted text instead of the generic notes icon. |
 | **`color`** | no | Hex RGB triplet (e.g. `FFCC00`), rendered in the log graph for this category. The value is parsed as a 24-bit integer, so **omit the leading `#`**. |
 
@@ -61,7 +61,7 @@ Each notes category configured in SmartGit requires the following configuration:
 
 ## Example configurations
 
-### 1 – Override Classic *commits* notes
+### 1 -- Override Classic *commits* notes
 
 The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
 
@@ -72,7 +72,7 @@ The name and colour of the default `commits` ref category can be overridden in t
     color = 5DADEC   # light-blue in the graph
 ```
 
-### 2 – Separate *code-reviews* category with filtering
+### 2 -- Separate *code-reviews* category with filtering
 
 ```ini
 [smartgit-notes "reviews"]
@@ -80,12 +80,12 @@ The name and colour of the default `commits` ref category can be overridden in t
     color             = FF8800              # orange
 ```
 
-### 3 – Multiple categories side-by-side
+### 3 -- Multiple categories side-by-side
 
 ```ini
 [smartgit-notes "qa"]
     ref               = qa                  # refs/notes/qa
-    graphMessageRegex = ^State: (.*)        # extract review state (e.g. "Pass" or "Fail") directly to graph
+    graphMessageRegex = ^State: (.*)        # extract review state (e.g. \"Pass\" or \"Fail\") directly to graph
     color             = 66CC66              # green
 
 [smartgit-notes "design"]
@@ -112,7 +112,7 @@ By amending the configuration for a remote's `fetch` and `push` settings, it is 
 Using the _<category>_ name, or the `*` wildcard to specify which categories of note are to be synchronized.
 
 ### Copying Git notes during rewriting activity (e.g. rebase)
-As notes are attached to specific commit ids, any time the commit history is rewritten, e.g. to squash or other rebase activity, 
+As notes are attached to specific commit ids, any time the commit history is rewritten, e.g. to squash or other rebase activity,
 any notes attached to rewritten commits will become orphaned from the resulting commit.
 
 This orphan note behavior can be changed by adding a _rewriteRef_ configuration for the repository, e.g.:
@@ -137,9 +137,10 @@ To completely remove notes support, run the following `git update-ref -d` comman
 
 ## Configuration best practices
 
-1. **Global vs. local** – You can keep common categories (e.g. *commits*) in `~/.gitconfig` but declare project-specific ones in each repo’s `.git/config`.
-2. **Ref naming** – Use short, descriptive subsection names; if you omit `ref`, SmartGit will fall back to that name, keeping your config concise.
-3. **Color palette** – Pick sufficiently different colours so each category is recognisable in the log graph.
-4. **Regular expressions** – Keep `graphMessageRegex` simple and anchored (`^…`) to avoid accidental matches that hide or show unexpected commits.
+1. **Global vs. local** -- You can keep common categories (e.g. *commits*) in `~/.gitconfig` but declare project-specific ones in each repo's `.git/config`.
+2. **Ref naming** -- Use short, descriptive subsection names; if you omit `ref`, SmartGit will fall back to that name, keeping your config concise.
+3. **Color palette** -- Pick sufficiently different colours so each category is recognisable in the log graph.
+4. **Regular expressions** -- Keep `graphMessageRegex` simple and anchored (`^...`) to avoid accidental matches that hide or show unexpected commits.
 
 With these settings in place you can toggle the notes display in SmartGit's **Log** and **Standard** windows and enjoy a colour-coded, filtered view of your notes alongside normal commit data.
+

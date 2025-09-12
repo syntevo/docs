@@ -1,12 +1,18 @@
 # On-premise License Server
 
-To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*. An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server. Additionally, the bundled frontend is great to quickly monitor the usage of our products within your organization.
+To monitor seat usage for a large number of users, it may be convenient to install our *On-premise License Server*.
+An On-Premise License Server will be essential if a firewall or company policy prevents SmartGit installations from connecting to our central cloud license server.
+Additionally, the bundled frontend is great to quickly monitor the usage of our products within your organization.
 
-![](../images/OpLicenseServer-frontend.png)
+![On-premise License Server frontend](../images/OpLicenseServer-frontend.png)
 
 ## Requirements
 
-To run our on-premise server, only Docker is required. This document describes how to set up the *On-premise License Server* in a plain docker environment. If you need to run the server in a more sophisticated environment, like in Kubernetes, please contact our support. Please also note, by default the *On-premise License Server* uses an embedded database that will store data in a volume. Running multiple instances of the *On-premise License Server* in a Kubernetes environment is not supported.
+To run our on-premise server, only Docker is required.
+This document describes how to set up the *On-premise License Server* in a plain docker environment.
+If you need to run the server in a more sophisticated environment, like in Kubernetes, please contact our support.
+Please also note, by default the *On-premise License Server* uses an embedded database that will store data in a volume.
+Running multiple instances of the *On-premise License Server* in a Kubernetes environment is not supported.
 
 ## Server-side installation
 
@@ -46,7 +52,8 @@ To run our on-premise server, only Docker is required. This document describes h
 
     1. In this directory, create sub-directories named `licenses` and `data`.
 
-    1. Put the *on-premise license file* you have received from us into the `licenses` sub-directory. Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
+    1. Put the *on-premise license file* you have received from us into the `licenses` sub-directory.
+       Use a reasonable name that reflects the product, e.g., `smartgit` in the case of a SmartGit license.
 
 1. Start the license server:
 
@@ -86,7 +93,9 @@ To run our on-premise server, only Docker is required. This document describes h
 
 ### URL Customization
 
-The On-premise License Server will work flawlessly behind a reverse proxy setup that customizes the **hostname** including subdomains and **port** as long as X-Forwarded headers are used properly. Note that simple docker port mappings using the `-p` or `--publish` flags are also supported. Additionally, you can easily change the **context path** by setting the `SERVER_SERVLET_CONTEXT_PATH` container environment variable to a value like "/some/context/path".
+The On-premise License Server will work flawlessly behind a reverse proxy setup that customizes the **hostname** including subdomains and **port** as long as X-Forwarded headers are used properly.
+Note that simple docker port mappings using the `-p` or `--publish` flags are also supported.
+Additionally, you can easily change the **context path** by setting the `SERVER_SERVLET_CONTEXT_PATH` container environment variable to a value like "/some/context/path".
 
 Here is a minimal example if you want the License Server to be available on `http://<host-IP>:80/licensing`:
 
@@ -153,18 +162,22 @@ If SmartGit has already been started in evaluation mode and you want to switch t
 
 ### Distribution of License Files
 
-Once the license server has been configured properly in SmartGit, SmartGit will request a new license file on every startup and at regular intervals during the program run. A license file is valid for 30 days. To ensure that there are no interruptions, it will be necessary to allow SmartGit to connect to the license server during the current license file's validity to update to a new license file.
+Once the license server has been configured properly in SmartGit, SmartGit will request a new license file on every startup and at regular intervals during the program run.
+A license file is valid for 30 days.
+To ensure that there are no interruptions, it will be necessary to allow SmartGit to connect to the license server during the current license file's validity to update to a new license file.
 
 ## Checking user permissions against LDAP/Active Directory
 
-You can configure the on-premise license server to check authorization to use SmartGit against an LDAP/Active Directory. **Be advised that this is not an authentication!** SmartGit just reads the name of the currently logged-in user from the system environment and transmits this to the server as a string, without any password checks involved:
+You can configure the on-premise license server to check authorization to use SmartGit against an LDAP/Active Directory.
+**Be advised that this is not an authentication!** SmartGit just reads the name of the currently logged-in user from the system environment and transmits this to the server as a string, without any password checks involved:
 
 * On Windows, this is `USERNAME`
 * On MacOS/Linux, this is `USER`
 
 ### Configure SmartGit
 
-Configure SmartGit to read the logged-in user on the client and send it to the license server. For this, just append `?verify=ldap` to the property `smartgit.opLicenseServer.url`, e.g.:
+Configure SmartGit to read the logged-in user on the client and send it to the license server.
+For this, just append `?verify=ldap` to the property `smartgit.opLicenseServer.url`, e.g.:
 
 ```
 smartgit.opLicenseServer.url=http://localhost:8080/public/v1?verify=ldap
@@ -181,11 +194,16 @@ You can configure the on-premise server LDAP functionality using environment var
 * `SPRING_LDAP_PASSWORD`: the password (you are advised to use Docker/Kubernetes secrets for this)
 * `SPRING_LDAP_BASE`: root node to start the search in; we'll always do a subtree search
 
-We use Spring Boot (currently at version 2.7) with its built-in LDAP functionality. Please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/application-properties.html#appendix.application-properties) to find additional LDAP properties that the framework supports.
+We use Spring Boot (currently at version 2.7) with its built-in LDAP functionality.
+Please refer to the [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/application-properties.html#appendix.application-properties) to find additional LDAP properties that the framework supports.
 
 #### LDAP over SSL
 
-In case you want to connect to your LDAP using SSL, you need to use a custom truststore by setting the `SYNTEVO_OPSERVER_TRUSTSTORE_PATH` and `SYNTEVO_OPSERVER_TRUSTSTORE_PASSWORD` environment variables. Don't forget to mount the truststore itself by adding something along the lines of `-v /path/to/opserver_truststore.p12:/opserver_truststore.p12` to the docker run arguments. Note though, that this will fully replace the default truststore. In case you still want to use services like automatically checking for updates, it's best if you inherit from the default one installed with your JVM. Here is an example script to create such a truststore:
+In case you want to connect to your LDAP using SSL, you need to use a custom truststore by setting the `SYNTEVO_OPSERVER_TRUSTSTORE_PATH` and `SYNTEVO_OPSERVER_TRUSTSTORE_PASSWORD` environment variables.
+Don't forget to mount the truststore itself by adding something along the lines of `-v /path/to/opserver_truststore.p12:/opserver_truststore.p12` to the docker run arguments.
+Note though, that this will fully replace the default truststore.
+In case you still want to use services like automatically checking for updates, it's best if you inherit from the default one installed with your JVM.
+Here is an example script to create such a truststore:
 
 ```
 keytool -importkeystore -srckeystore /usr/lib/jvm/java-11-openjdk-amd64/lib/security/cacerts -destkeystore opserver_truststore.p12 -srcstoretype PKCS12 -deststoretype PKCS12
@@ -219,9 +237,13 @@ keytool -importcert -alias ldap_server_cert -file ldap_server_certificate.pem -k
 
 ## Reporting
 
-The license server provides a reporting endpoint which is meant to be used by administrators only. It is protected by HTTP basic authentication.
+The license server provides a reporting endpoint which is meant to be used by administrators only.
+It is protected by HTTP basic authentication.
 
-1. Look up your admin password: This is the admin password you have specified as the value of the `ADMIN_PASSWORD` environment variable back when you first installed the server. In case you did not set this environment variable a random password is generated for every startup which is logged to the Docker log file. To find out the password, invoke:
+1. Look up your admin password:
+   This is the admin password you have specified as the value of the `ADMIN_PASSWORD` environment variable back when you first installed the server.
+   In case you did not set this environment variable a random password is generated for every startup which is logged to the Docker log file.
+   To find out the password, invoke:
 
    ```
    docker logs license-opserver | grep "Reporting: "
@@ -245,7 +267,8 @@ The report type `raw` provides detailed, low-level usage information and has the
 curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=raw[&from=<from>&to=<to>]
 ```
 
-Optional parameters `<from>` and `<to>` specify the time range for the `raw` report. If either `<from>` or `<to>` is present, the other must also be included.
+Optional parameters `<from>` and `<to>` specify the time range for the `raw` report.
+If either `<from>` or `<to>` is present, the other must also be included.
 
 #### Example
 
@@ -273,7 +296,8 @@ curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=masterLicen
 
 ### Manually requesting a license file from the command line
 
-For testing purposes, it may be convenient to manually perform the same kind of license request that SmartGit will use. For a server running at `http://localhost:8080`, sending an example request using *curl* might look like:
+For testing purposes, it may be convenient to manually perform the same kind of license request that SmartGit will use.
+For a server running at `http://localhost:8080`, sending an example request using *curl* might look like:
 
 ```
 curl -X POST http://localhost:8080/public/v1/licenseOp -H "Content-Type: application/json" -d "{ \"Build\": 20118, \"Email\": \"someone@example.com\", \"HardwareHashes\": { \"wmg\": \"foo\", \"wvi\": \"bar\" }, \"MajorVersion\": \"23.1\", \"MinorVersion\": \"23.1.1\", \"OperatingSystem\": \"windows\", \"Product\": \"SmartGit\" }"

@@ -6,7 +6,7 @@ The SmartGit integration to Atlassian Jira allows you to select a commit message
 
 The Jira integration is only available for **commercial** licenses and will only be present if [Bugtraq configuration](../Integrations/Bugtraq-links-to-issue-trackers.md) has been set up correctly to your Jira server.
 
-#### Note
+### Note
 
 > When connecting to a cloud-based Jira instance (\*.atlassian.net), you
 > have to login with your **username**, not your email address. You can
@@ -21,7 +21,7 @@ Depending on the Jira version and/or server vs. cloud instance, authenticate wit
 
 To create an API token, open your Jira account and select **Security** settings.
 
-#### Info
+### Info
 
 > For the cloud instance, you can find security settings at:
 > <https://id.atlassian.com/manage-profile/security>
@@ -30,7 +30,8 @@ In the **API token** section, select **Create and manage API tokens**, then sele
 
 ![](../attachments/53215463/53215465.png)
 
-In the next dialog, invoke **Copy to clipboard**. Finally, the token should show up in the list.
+In the next dialog, invoke **Copy to clipboard**.
+Finally, the token should show up in the list.
 
 ![](../attachments/53215463/53215466.png)
 
@@ -40,13 +41,14 @@ You should now be able to authenticate to Jira from within SmartGit by using you
 
 ## Commit Message Selection
 
-The commit message selection is available in the Commit and Edit Last Commit Message commands as well in some interactive rebase commands of the **Journal** view.
+The commit message selection is available in the **Commit** and **Edit Last Commit Message** commands as well in some interactive rebase commands of the **Journal** view.
 
 ![](../attachments/53215463/53215467.png)
 
 ## Resolving on Push
 
-For all **Push** operations (except of **Push To**), SmartGit checks the pushed commits for *affected* Jira issues and offers to mark them as resolved in one or more Jira versions. A Jira issue is considered as *affected*, if:
+For all **Push** operations (except of **Push To**), SmartGit checks the pushed commits for *affected* Jira issues and offers to mark them as resolved in one or more Jira versions.
+A Jira issue is considered as *affected*, if:
 
 1. It's mentioned in at least one commit message of the *local* branch commits which are pushed; and
 
@@ -54,10 +56,9 @@ For all **Push** operations (except of **Push To**), SmartGit checks the pushed 
 
 3. when using Git-Flow, you are not pushing into a *feature* branch or a *hotfix* branch (SmartGit will ask you whether to resolve such commits when **Finishing** the feature or hotfix, i.e. integrating the commits into `develop` or `master`).
 
-4. The issue is actually *resolvable* (or more precisely: there is at least one *Transition* available which puts the issue into a
-   *resolved* state. Note that, this is usually not the case for all issues, especially not for issues which are already resolved/closed.
+4. The issue is actually *resolvable* (or more precisely: there is at least one *Transition* available which puts the issue into a *resolved* state. Note that, this is usually not the case for all issues, especially not for issues which are already resolved/closed.
 
-#### Example
+### Example
 
 > In Jira's "classic workflow", an issue which is *in progress* can be
 > *resolved* or *closed*. Hence, for such issues which are mentioned in a
@@ -68,7 +69,7 @@ For all **Push** operations (except of **Push To**), SmartGit checks the pushed 
 > For such issues which are mentioned in a commit message, SmartGit will
 > not offer any resolution.
 
-#### Info
+### Info
 
 > You can disable the Resolve-check by configuring `jira.resolveOnPush` in the Preferences, section **Low-Level Properties**.
 
@@ -76,14 +77,13 @@ For all **Push** operations (except of **Push To**), SmartGit checks the pushed 
 
 For the detection of *resolvable* issues, SmartGit supports the common default Jira workflows. If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
 
-#### Note
+### Note
 
-> SmartGit will only offer resolution of issues if your Jira credentials
-> are properly configured. To ensure this, invoke **Select from Jira** and
-> enter your credentials these.  
+> SmartGit will only offer resolution of issues if your Jira credentials are properly configured.
+> To ensure this, invoke **Select from Jira** and enter your credentials these.
 > You can completely disable this functionality using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
 
-## Support for 'commit.template'
+## Support for `commit.template`
 
 The Jira integration will honor the Git `commit.template` configuration. The following keywords are substituted by the according Jira issue attributes:
 
@@ -129,9 +129,9 @@ $ curl -I -H "Authorization: Basic bWFyYy5zdHJhcGV0ekBzeW50ZXZvLmNvbTpIZk9rdjhHN
 HTTP/1.1 404 Not Found
 ``` 
 
-#### Solution
+### Solution
 
-* Shutdown SmartGit
-* Get rid of the corresponding configuration from `bugtracker.yml` (see above)
-* Restart SmartGit
-* Now SmartGit will ask for new credentials
+- Shutdown SmartGit
+- Get rid of the corresponding configuration from `bugtracker.yml` (see above)
+- Restart SmartGit
+- Now SmartGit will ask for new credentials

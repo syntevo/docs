@@ -2,9 +2,9 @@
 
 The **Tools** preferences settings allow you to define external tools to assist you when using SmartGit:
 
-- [External Tools](#external-tools) on the Tools menu
-- [Diff Tools](#diff-tools) for the Compare command
-- [Conflict Solvers](#conflict-solvers) for the Conflict Solver command
+- [External Tools](#external-tools) on the **Tools** menu
+- [Diff Tools](#diff-tools) for the **Compare** command
+- [Conflict Solvers](#conflict-solvers) for the **Conflict Solver** command
 
 You can share your tools configuration with team members by using the **Export** button, and then **Import** the settings on your colleague's computer.
 Alternatively, the configuration is stored in `tools.yml` file in the [settings directory](../../Installation/Installation-and-Files.md).
@@ -21,12 +21,12 @@ When first installed, SmartGit will configure a set of default tools:
 
 If the Tool setup is not to your liking, you can revert the original default tool settings by clicking the **Re-Add Defaults** button.
 
-#### Note
+### Note
 
 > On SmartGit 22.1 and later, default tools have been cleaned up.
 > The Git version is now displayed in the preferences, *Fast-forward Merge* has been implemented as SmartGit command.
 >
-> If you are missing further tools from SmartGit version before 22.1 (e.g. Set Executable Flag, Format Patch, Apply Patch, Verify Database or Git Config), please download this file for [Windows](../../pre-22.1-tools-win.yml) or [Linux/MacOS](../../pre-22.1-tools-nix.yml) and *Import* that in SmartGit.
+> If you are missing further tools from SmartGit version before 22.1 (e.g. Set Executable Flag, Format Patch, Apply Patch, Verify Database or Git Config), please download this file for [Windows](../../pre-22.1-tools-win.yml) or [Linux/macOS](../../pre-22.1-tools-nix.yml) and *Import* that in SmartGit.
 
 ### Configure a Tool
 
@@ -61,7 +61,7 @@ If **Can be used by the Open command** is selected, SmartGit will consider to us
 
 A file or directory name pattern may be specified in **Applies To**.
 
-#### Note
+### Note
 
 > For repository root directories, the name "" (empty string) is used as name which only is matched by the pattern "*".
 
@@ -69,11 +69,11 @@ If **Request confirmation before invoking** is selected and a message is provide
 
 ### Example Tools
 
-#### Format Patch
+### Format Patch
 
 Save this content to a file `format-patch.yml` and use the *Import* button on the Tools page of the preferences to restore the *Format Patch* feature from SmartGit versions < 22.1.
 
-``` yml
+```yml
 tools:
 - name: Format Patch
   fileStarter: {command: '${git}', parameters: 'format-patch -o "${dirSelect}" -1 ${commit}'}
@@ -87,15 +87,15 @@ tools:
   filePattern: '*'
 ```
 
-#### Open top-most Visual Studio solution from current repository
+### Open top-most Visual Studio solution from current repository
 
-This powershell script can be used to open a solution file `.sln` inside a repository, in Visual Studio. The script iterates through the repository folders and looks for a `.sln` file. It stops at the first match and then launches Visual Studio.
+This PowerShell script can be used to open a solution file `.sln` inside a repository, in Visual Studio. The script iterates through the repository folders and looks for a `.sln` file. It stops at the first match and then launches Visual Studio.
 
 ![](../../attachments/53215435/53215436.png)
 
-**Powershell script C:\\SmartGit-Scripts\\openVS.ps1**
+**PowerShell script C:\\SmartGit-Scripts\\openVS.ps1**
 
-``` powershell
+```powershell
 Install-Module VSSetup -Scope CurrentUser
 $slnname = Get-ChildItem -Path $args[0] -Filter *.sln -Recurse -ErrorAction SilentlyContinue -Force | Select-Object -First 1 | Select-Object -ExpandProperty FullName
 
@@ -124,7 +124,7 @@ Start-Process -FilePath $devenv -ArgumentList $slnname
 
 ## Diff Tools
 
-#### Info
+### Info
 
 > Diff tools are (GUI) viewers of diff results. Diff tools are not related
 > to the internal diff machinery of Git. If you want to customize the diff
@@ -134,14 +134,14 @@ SmartGit comes with a built-in diff tool which will be used by default to displa
 
 - `${leftFile}` represents the left (or usually "old") version of the file
 - `${rightFile}` represents the right (or usually "new") version of the file
-- `${baseFile`} represents the *common base* version of the file; depending on the context from which the diff tool is invoked, the *common base* is defined as:
+- `${baseFile}` represents the *common base* version of the file; depending on the context from which the diff tool is invoked, the *common base* is defined as:
     - the Index version, for a working-tree vs. Index comparison
     - the HEAD version, for a working-tree vs. HEAD or a Index vs. HEAD comparison
     - the version before the commit, for a single-commit comparison
     - the *merge base* version of the two commits, when comparing two commits; this is similar to what SmartGit would display in case of conflicts
 
 For certain files, like graphic files, there may be no appropriate left-right diff tool available. In this case you can configure an
-**External viewer** which has only a single **${file}** argument and which will be launched by SmartGit two times: once for the old and once for the new file.
+**External viewer** which has only a single `${file}` argument and which will be launched by SmartGit two times: once for the old and once for the new file.
 
 By default, the list of tools is searched from top to bottom and the first matching tool will be used. Alternatively, you can select **Show chooser dialog if multiple entries match**.
 

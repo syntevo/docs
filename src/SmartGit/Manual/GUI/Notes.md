@@ -2,8 +2,8 @@
 SmartGit supports the [Git notes](../GitConcepts/GitNotes.md) feature available in Git, which allows additional information such as metadata to be associated with a commit.
 
 Notes can be used for many different purposes, such as:
-- Storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
-- Linking peer or AI code review comments to a commit without depending on additional review features or external persistence in a Git hosting service
+- Storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message).
+- Linking peer or AI code review comments to a commit without depending on additional review features or external persistence in a Git hosting service.
   ([git-appraise](https://github.com/google/git-appraise) is an example).
 
 Although Git's notes feature permits only one note per commit per category, additional categories can be configured if necessary, allowing multiple notes to be associated with the same commit.
@@ -13,8 +13,8 @@ SmartGit's notes support includes the following features:
 - The ability to add and remove notes through the UI.
 - The ability to add new categories of notes [through configuration](../Integrations/GitNotes-Integration.md#a-minimal-smartgit-notes-configuration).
 - If you wish to synchronize notes with a remote:
-   - The ability to manually synchronize notes with a remote using the **Other Refs** section of the **Branches View**.
-   - The ability to [configure Git to always push and fetch note refs](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes) from the repository.
+  - The ability to manually synchronize notes with a remote using the **Other Refs** section of the **Branches View**.
+  - The ability to [configure Git to always push and fetch note refs](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes) from the repository.
 
 ## Enabling Notes for a Repository
 
@@ -31,9 +31,9 @@ Please consult the [Git Notes configuration guide](../Integrations/GitNotes-Inte
 #### Note
 > - Git notes are not automatically pushed or fetched from the remote by default.
 >   However, it is possible to [configure your local repository]() to automatically synchronize note refs any time push and fetch activity is performed.
-> - Not all Git hosting services will show notes on their web portal UI. 
+> - Not all Git hosting services will show notes on their web portal UI.
 >   However, all major hosting services will retain the notes refs where they can be synchronized with other repositories.
-> - SmartGit refers to the default `commits` notes category ref as `Notes` on the UI
+> - SmartGit refers to the default `commits` notes category ref as **Notes** on the UI.
 
 ## Using Notes in SmartGit
 Once enabled, notes will appear via an icon in the color configured for the notes category, in the **Graph View** of the **Log Window** and the **Standard Window**.
@@ -42,20 +42,18 @@ Once enabled, notes will appear via an icon in the color configured for the note
 
 The following UI options are available:
 
-- **Add** a new Note by selecting the target commit in the Graph View, and right clicking the **Add Note...** command.
-  SmartGit will prompt you for the note contents, and the category of note can be selected from one of the configured categories.
-  
+- **Add** a new note by selecting the target commit in the **Graph View**, and right clicking the **Add Note...** command.
+  SmartGit will prompt you for the note contents.
+  The category of note can be selected from one of the configured categories.
+
 - **Hover** the mouse over the note icon to see the contents of the note.
 
-- A note can be **Removed** by right clicking on the note and selecting `Remove <category> note`.
+- A note can be **removed** by right clicking on the note and selecting **Remove &lt;category&gt; note**.
+  If there is more than one category of note on the same commit, be sure to select the correct note category.
 
-  If there is more than one category of note on the same commit, be sure to select the correct note category!
+- If the commit already contains a note of the same category, when you **Add** a note of the same category, SmartGit will prompt you to either **Append** additional note content to the existing note, or you can choose to replace the existing note with the new content by choosing **Overwrite**.
 
-- If the commit already contains a note of the same category, when you **Add** a note of the same category, 
-   SmartGit will prompt you to either **Append** additional note content to the existing note, or, 
-   you can choose to replace the existing note with the new content by choosing **Overwrite**.
-
-- When a commit is selected, the [**Commit View**](Commit-View.md) will also show all _Note_ data beneath the commit message.
+- When a commit is selected, the [**Commit View**](Commit-View.md) will also show all **Note** data beneath the commit message.
 
 ## Troubleshooting
 
@@ -67,16 +65,16 @@ The following UI options are available:
 
 > By design, Git notes only allows a single note per commit, per category to be added.
 >
-> However, SmartGit has the ability to merge new Note content with existing and replace the previous note of the same category on this commit.
-  
+> However, SmartGit has the ability to merge new note content with existing and replace the previous note of the same category on this commit.
+
 - I've pushed a branch containing notes in my repository to a remote, however when others clone the repository, they do not see the notes?
 
 > Git notes are not stored on the current branch, and must be pushed and fetched separately.
-  In the **Log Window**, under the **Branches View**, open the *Other Refs* section and push the `notes/<category>` ref to the remote.
-  Similarly, other users need to fetch *Other Refs* in order to obtain all notes for the repository
+> In the **Log Window**, under the **Branches View**, open the **Other Refs** section and push the `notes/<category>` ref to the remote.
+> Similarly, other users need to fetch **Other Refs** in order to obtain all notes for the repository.
 
-- I've rebased several commits containing notes using the squash option, and now I don't see my notes!
+- I've rebased several commits containing notes using the squash option, and now I don't see my notes.
 
-> As notes are linked to a specific commit id, rewriting commands such as rebase will create new commits.
-  You can use the [notes rewriteRef configuration](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase) to instruct git to copy (or append) notes on squashed commits across to the newly rewritten commit.
-  
+> As notes are linked to a specific commit ID, rewriting commands such as rebase will create new commits.
+> You can use the [notes rewriteRef configuration](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase) to instruct git to copy (or append) notes on squashed commits across to the newly rewritten commit.
+

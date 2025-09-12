@@ -2,15 +2,14 @@
 
 This article explains how Git implements the _notes_ feature.
 
-See also :
+See also:
 - [SmartGit Notes features](../GUI/Notes.md)
 - [Setting up and Configuring Git Notes in SmartGit](../Integrations/GitNotes-Integration.md)
 
 ## Background
 
 An often overlooked feature in Git is `git notes`, which allows text or binary meta-data to be attached to a commit.
-As notes are linked to an existing commit, and do not affect the commit history of the working branch, 
-notes can be added and removed after the commit is created without modify the branch's commit history.
+As notes are linked to an existing commit, and do not affect the commit history of the working branch, notes can be added and removed after the commit is created without modify the branch's commit history.
 
 Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository, where `<category>` is the customizable 'type' of note that is to be added.
 
@@ -24,7 +23,7 @@ For example:
 
 will do the following:
 
-- Create a new ref in the repository for the default 'commits' category `refs/notes/commits` (if it does not already exist)
+- Create a new ref in the repository for the default 'commits' category `refs/notes/commits` (if it does not already exist).
 - Create a new commit on this ref `refs/notes/commits`.
   Commits on the notes refs are orphaned from your usual code base branch refs.
 
@@ -55,3 +54,4 @@ Please refer to SmartGit's configuration guide for any of the following advanced
   - [Configuring automatic note synchronization with remotes](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes)
   - [Copying Git notes during rewriting activity (e.g. rebase)](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase)
   - [Removing Git Notes support from a repository](../Integrations/GitNotes-Integration.md#removing-git-notes-support-from-a-repository)
+
