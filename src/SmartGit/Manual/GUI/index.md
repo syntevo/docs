@@ -12,6 +12,7 @@ Please follow one of the below links to get started with one of the following to
 - Additional Features of SmartGit
     - [SmartGit Blame](Blame.md)
     - [SmartGit Bisect](Bisect.md)
+    - [SmartGit File Compare](File-Compare.md)
     - [SmartGit Investigate](Investigate.md)
     - [SmartGit Conflict Solver](Branch/Conflict-Solver.md)
     - [SmartGit as Credential Helper](Credential-Helper.md)
