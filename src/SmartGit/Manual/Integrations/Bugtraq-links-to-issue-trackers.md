@@ -1,34 +1,29 @@
 # Bugtraq (links to issue trackers)
 
-Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, 
-enabling integration between tools such as SmartGit and common web-based Bug Tracking tools such as Jira, GitHub Issues, or Azure DevOps boards.
+Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git repository, enabling integration between tools such as SmartGit and common web-based bug tracking tools such as Jira, GitHub Issues, or Azure DevOps boards.
 
-If you have set up *Bugtraq Configuration* for your repository, SmartGit will detect issue IDs embedded in commit messages and display hyperlinks 
-allowing you to quickly open the linked issue Id in the Bug tracking tool's website.
+If you have set up *Bugtraq Configuration* for your repository, SmartGit will detect issue IDs embedded in commit messages and display hyperlinks allowing you to quickly open the linked issue ID in the bug tracking tool's website.
 
 The Bugtraq configuration is stored either in the `.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you).
 
-The configuration file consists of a named `bugtraq` section, where a regular expression can be defined to match issue IDs in your commit messages, 
-and a URL template used to create the clickable hyperlink to the specific linked Issue id in the website.
+The configuration file consists of a named `bugtraq` section, where a regular expression can be defined to match issue IDs in your commit messages, and a URL template used to create the clickable hyperlink to the specific linked issue ID in the website.
 
 Examples of common Bugtraq configurations for popular web issue tracking tools are provided below.
-If your web-based issue tracking system is not listed, or if you have customized the Issue linking URLs on your tracking system,
-you can determine the `url` template string by clicking on an issue, and then copying the resultant URL from the browser address bar.
-Replace the specific issue identifier in the `url` template with a `%BUGID%` token, which SmartGit will use to insert the linked issue id.
+If your web-based issue tracking system is not listed, or if you have customized the issue linking URLs on your tracking system, you can determine the `url` template string by clicking on an issue, and then copying the resultant URL from the browser address bar.
+Replace the specific issue identifier in the `url` template with a `%BUGID%` token, which SmartGit will use to insert the linked issue ID.
 
 For more advanced parsing requirements, Bugtraq supports a multi-step regex processing pipeline to extract the BUGID from commit messages:
 
-``
+```
 commit message -> logfilterregex -> loglinkregex -> logregex -> BUGID
-``
+```
 
 Please refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq> for advanced configuration.
 
 #### Note
 > - The `logregex` setting must contain only one matching group '()' matching the issue ID.
 > - You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
-> - The [BugTraq `projects`](https://github.com/mstrap/bugtraq?tab=readme-ov-file#bugtraqprojects-optional) setting allows one or more project prefixes to be defined 
-    which can then be substituted using a `PROJECT` token in the `url` and `loglinkregex` settings.
+> - The [BugTraq `projects`](https://github.com/mstrap/bugtraq?tab=readme-ov-file#bugtraqprojects-optional) setting allows one or more project prefixes to be defined which can then be substituted using a `PROJECT` token in the `url` and `loglinkregex` settings.
 
 ## Examples
 
@@ -41,7 +36,7 @@ An example configuration for a repository linked to a single Jira project with p
 >``` ini
 > [bugtraq "jira"]
 >   url = https://host/jira/browse/SG-%BUGID%
->   logregex = SG-(\\d+)                   
+>   logregex = SG-(\\d+)
 >```
 
 The above example will make only the issue numbers as links (i.e. without `SG-`).
@@ -51,7 +46,7 @@ Alternatively, if you want to have the entire issue ID as the link (i.e. with `S
 > [bugtraq "jira"]
 >   url = https://host/jira/browse/%BUGID%
 >   loglinkregex = SG-\\d+
->   logregex = \\d+            
+>   logregex = \\d+
 >```
 
 ### Jira Server (On Premise) - repository linked to a multiple Jira projects
@@ -63,17 +58,16 @@ When your repository is linked to multiple *Jira* projects, the `projects` setti
 >   projects = PRJA, PRJB
 >   url = https://host/jira/browse/%PROJECT%-%BUGID%
 >   loglinkregex = %PROJECT%-\\d+
->   logregex = \\d+            
+>   logregex = \\d+
 >```
 
-So a commit message containing `PRJA-123` would be linked to `https://host/jira/browse/PRJA-123`, 
-and a commit message and containing `PRJB-678` would be linked to `https://host/jira/browse/PRJB-678`.
+So a commit message containing `PRJA-123` would be linked to `https://host/jira/browse/PRJA-123`, and a commit message and containing `PRJB-678` would be linked to `https://host/jira/browse/PRJB-678`.
 
 ### Jira Cloud
 
 The Jira Cloud issue viewing URL is slightly different to the On-Premises version.
 
-In the below example, we have a single project with prefix `SG` and have registered an organisation with a site name `myorg` on Jira Cloud. 
+In the below example, we have a single project with prefix `SG` and have registered an organisation with a site name `myorg` on Jira Cloud.
 Here we have not set up a custom domain, so the host has its default of `myorg.atlassian.net`, and have used the `projects` setting to DRY up the Jira project prefix:
 
 >
@@ -99,7 +93,8 @@ For example, if we have created a subdomain `jira.myorg.com` in the `myorg.com` 
 
 ### GitHub.com issues
 
-GitHub uses numeric-only identifiers on a per-project basis. Substitute `myorg` and `myproject` for your organisation / user and project identifiers - these should be visible on the address bar when viewing your GitHub issues.
+GitHub uses numeric-only identifiers on a per-project basis.
+Substitute `myorg` and `myproject` for your organisation / user and project identifiers - these should be visible on the address bar when viewing your GitHub issues.
 
 e.g. for a repository linked to a single project `myproject` for company `myorg`:
 
@@ -113,7 +108,7 @@ e.g. for a repository linked to a single project `myproject` for company `myorg`
 
 ### Azure DevOps boards Workitems
 
-For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
+For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (URL-encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
 
 >
 >``` ini
@@ -123,7 +118,7 @@ For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (Url Encod
 >```
 >
 
-### Matching #ids (i.e. hash prefix) at the beginning of the commit message
+### Matching #IDs (i.e. hash prefix) at the beginning of the commit message
 
 Another example configuration (e.g. for a trouble ticketing system) where IDs like '#213' should be matched only at the beginning of a commit message.
 Note that the `logregex` value needs to be put in quotes, because '#' serves as a comment character in Git configuration files.
@@ -131,5 +126,6 @@ Note that the `logregex` value needs to be put in quotes, because '#' serves as 
 >``` ini
 > [bugtraq "otrs"]
 >   url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
->   logregex = "^#[0-9]{1,5}"            
+>   logregex = "^#[0-9]{1,5}"
 >```
+

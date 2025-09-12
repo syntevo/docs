@@ -1,8 +1,8 @@
 # Working with Repositories
 
-This section describes common SmartGit actions you'll need to use when working with Git Repositories on your local system.
+This section describes common SmartGit actions you'll need to use when working with Git repositories on your local system.
 
-**Contents:**
+## Contents
 
 - [SmartGit's Repositories View](../Repositories-View.md)
 - [Opening a Repository](#opening-a-repository)
@@ -29,7 +29,7 @@ Specify the local directory you want to open. If the specified directory is not 
 
 ## Settings
 
-Once you have a opened a repository, use [**Repository \| Settings**](Repository-Settings.md) to configure repository-specific settings.
+Once you have opened a repository, use [**Repository \| Settings**](Repository-Settings.md) to configure repository-specific settings.
 
 ## The Garbage Collector
 
@@ -41,4 +41,4 @@ The Git Garbage Collector performs housekeeping tasks such as deleting commits w
 
 The Git Garbage Collector usually runs in the background, however, you can choose to explicitly execute the **Run Garbage Collector** command to force the garbage collector (`git gc`) to run immediately.
 
-You can view commits eligible for garbage collection in SmartGit's Log by selecting the **Recyclable Commits** option in the *Branches* view of the [Log Window](../Log-Window.md).
+You can view commits eligible for garbage collection in SmartGit's Log by selecting the **Recyclable Commits** option in the **Branches** view of the [Log Window](../Log-Window.md).

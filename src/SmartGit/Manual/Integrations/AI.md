@@ -3,11 +3,11 @@
 This article describes how to configure SmartGit to integrate with supported AI services and tailor tokenization and prompting to suit the needs of your organization and repository.
 
 - [Supported Services](#supported-services)
-- [Git configuration settings](#configuration)
+- [Configuration Summary](#configuration-summary)
 - [Configuration Best Practices](#configuration-best-practices)
-- [Example LLM Model Configurations](#example-configurations)
+- [Example Configurations](#example-configurations)
 - [Advanced Example Configurations](#advanced-example-configurations)
-- [AI Commit Annotation settings](#ai-commit-annotation)
+- [AI Commit Annotation Settings](#ai-commit-annotation)
 
 Once AI integration has been configured correctly, please refer to 
   - [AI Assisted Commit Messages](../GUI/AI-Commit-Messages.md) for usage within SmartGit.
@@ -205,7 +205,7 @@ For the _GitHub Models_, GitHub provides [free, rate-limited access to certain m
 
 Once you have set up SmartGit's [GitHub Integration](./GitHub-integration.md), you can begin using these models with minimal configuration (see below).
 
-If you have a paid GitHub Copilot subscription, you’ll have access to additional models.
+If you have a paid GitHub Copilot subscription, you'll have access to additional models.
 Please refer to this link for available [GitHub Models](https://github.com/marketplace/models).
 
 ## Configuration Best Practices
@@ -490,23 +490,23 @@ ${gitDiff}
 ## `smartgit-ai-commit-annotation` Configuration Options {#ai-commit-annotation}
 
 Each **`smartgit-ai-commit-annotation`** entry tells SmartGit to let an LLM generate a response to the configured prompt, submitting diffs for the commit(s) as the input for each invocation.
-The AI response can then be either automatically written to *Git‑Notes* in the local repository or displayed interactively to the user in SmartGit.
+The AI response can then be either automatically written to *Git Notes* in the local repository or displayed interactively to the user in SmartGit.
 Annotations stored in Git Notes will appear in the Graph popup menu for commits.
 
-Each subsection’s *id* becomes the category name shown in the **Graph View** of the **Log Window** and **Standard Window**. It can include the following keys:
+Each subsection's *id* becomes the category name shown in the **Graph View** of the **Log Window** and **Standard Window**. It can include the following keys:
 
 | Key | Required | Purpose |
 |-----|----------|---------|
-| **`llm`** | **yes** | Selects the [_id_ of the `[smartgit-ai-llm]`](#ai-llm-configuration-options) entry which is to be used by this annotation, determining the model and endpoint to use. |
-| **`prompt`** / **`promptFile`** | **yes** | This is the same as the [*ai‑commit‑message*](#-prompt-and-promptFile) configuration keys. Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**). The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
+| **`llm`** | **yes** | Selects the [_id_ of the `[smartgit-ai-llm]`](#smartgit-ai-llm-configuration-options) entry which is to be used by this annotation, determining the model and endpoint to use. |
+| **`prompt`** / **`promptFile`** | **yes** | This is the same as the [*ai-commit-message*](#prompt-and-promptfile) configuration keys. Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**). The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
 | **`mode`** | no | Either `interactive` or `background`. Please consult [`mode`](#note-on-mode) below. |
 | **`diff`** | no | Either `perCommit` or `pair`. Please consult [`diff`](#note-on-diff) below. |
 | **`notesRef`** | **yes** (*) | Indicates that AI annotations are to be stored beneath `refs/notes/notesRef` in the repository. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information. (*) Must only be present for `background` mode. |
 | **`notesColor`** | no | Hex *RRGGBB* colour used for this category in the commit graph. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
 | **`matchCommitMessageRegex`** | no | Java RegEx; run this annotation **only** when the commit message matches. |
-| **`notesGraphMessageRegex`** | no | Allows the default _Note_ (🗏) icon to be substituted with the provided RegEx expression. See `graphMessageRegex` in the [Git Notes](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
+| **`notesGraphMessageRegex`** | no | Allows the default Note icon to be substituted with the provided RegEx expression. See `graphMessageRegex` in the [Git Notes](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
 | **`resolveNoteRegex`** | no | If the AI response matches this RegEx expression, any corresponding Note in this ref will will be marked as *resolved*.|
-| **`autoStart`** | no | Either `true` or `false`. Please consult [`autostart`](#note-on-autoStart) below. |
+| **`autoStart`** | no | Either `true` or `false`. Please consult [`autostart`](#note-on-autostart) below. |
 | **`timeout`** | no | An optional timeout (defaults to 60 seconds). When running mutliple prompts (e.g. in background by `autoStart`), the maximum timeout of all prompts will apply for the entire set of AI invocations. |
 | **`maxDiffSize`** | no | Sets an upper limit on the size of the diff submitted to the LLM. See [`maxDiffSize`](#maxdiffsize) for further information.|
 | **`debug`** | no | This provides additional debugging information when accessing the AI LLM, and behaves in the same way as the [`smartgit-ai-commit-message debug`](#debug) setting.|

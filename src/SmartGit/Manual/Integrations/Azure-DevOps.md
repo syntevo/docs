@@ -19,7 +19,7 @@ This will the **Add Hosting Provider** dialog, prompting for an access token.
 There are 3 ways to authenticate to Azure DevOps:
 - Allowing SmartGit to automatically obtain a Token via [OAuth](#setup-using-oauth) (Recommended)
 - Manually obtaining a [Personal Access Token (PAT)](#setup-via-personal-access-token) from Azure DevOps
-- Setting up a [custom Azure DevOps Application](#setting-up-a-custom-azure-devops-application-for-smartgit) for SmartGit (For Azure DevOps Server - on prem / Advanced Users).
+- Setting up a [custom Azure DevOps Application](#setting-up-a-custom-azure-devops-application-for-smartgit) for SmartGit (For Azure DevOps Server -- on prem / Advanced Users).
 
 ### Setup using OAuth
 
@@ -27,11 +27,11 @@ Clicking the **Generate token** button will open a Web Browser where you will ne
 
 ![Azure DevOps Application](../attachments/53215478/53215480.png)
 
-Once you have confirmed this page, you will be redirected to *syntevo.com*, where the generated access code will be displayed on screen.
+Once you have confirmed this page, you will be redirected to syntevo.com, where the generated access code will be displayed on screen.
 
-Use the **Copy to Clipboard** button to copy the access token to the clipboard, and then paste the token into the 'Code' field in the *Add Azure DevOps Account* dialog, and click **OK**.
+Use the **Copy to Clipboard** button to copy the access token to the clipboard, and then paste the token into the 'Code' field in the **Add Azure DevOps Account** dialog, and click **OK**.
 
-The code will be used to create an *application access token* which will be used to populate the **Token** field in the Add Hosting Provider dialog.
+The code will be used to create an *application access token* which will be used to populate the **Token** field in the **Add Hosting Provider** dialog.
 
 SmartGit will place the masked token in the Token input, and you can click **Add** to complete the integration to Azure DevOps.
 
@@ -45,9 +45,9 @@ SmartGit will place the masked token in the Token input, and you can click **Add
 
 #### Re-setup OAuth
 
-Sometimes you may need to re-run the *OAuth* setup, e.g. if a more recent version of SmartGit requires additional scopes. 
+Sometimes you may need to re-run the *OAuth* setup, e.g. if a more recent version of SmartGit requires additional scopes.
 Often, it is sufficient to just open **Preferences \| Hosting Providers**, select your Azure DevOps connection, and click **Edit**.
-This will bring up the Configure Azure DevOps Account, where you can regenerate the access token using one of the methods listed under [Setup](#setup)
+This will bring up the **Configure Azure DevOps Account** dialog, where you can regenerate the access token using one of the methods listed under [Setup](#setup).
 
 If this does not work as intended, take following steps to rerun the *OAuth* setup from scratch:
 
@@ -65,7 +65,7 @@ If this does not work as intended, take following steps to rerun the *OAuth* set
 If you have multiple Azure DevOps accounts, you can run through the above procedure for each of your accounts.
 This requires to login for every account in your web browser before invoking **Generate Token**.
 
-To have the **OAuth** token to work for multiple accounts, Git has to request credentials per-repository. 
+To have the **OAuth** token to work for multiple accounts, Git has to request credentials per-repository.
 
 To check if the proper configuration is already set, invoke:
 
@@ -73,7 +73,8 @@ To check if the proper configuration is already set, invoke:
 git pull
 ```
 
-in your repository. If Git request credentials only for `dev.azure.com`, try to configure:
+in your repository.
+If Git request credentials only for `dev.azure.com`, try to configure:
 
 ```
 git config --global credential.dev.azure.com.useHttpPath true
@@ -84,12 +85,13 @@ Then run `git pull` again to confirm that Git will now ask for the complete repo
 ### Setup via Personal Access Token
 
 As an alternative to OAuth, you can establish Azure DevOps integration by providing SmartGit with a Personal Access Token ("PAT").
-PATs can be generated in the User Settings area of the Azure DevOps portal - please refer to Microsoft's [PAT documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+PATs can be generated in the User Settings area of the Azure DevOps portal -- please refer to Microsoft's [PAT documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
 
-#### Note:
+#### Note
 > - For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization).
-> - The scopes can be limited to **Code** - **Read&Write**.
-> - PATs are valid for a maximum of 1 year. When a PAT expires, you will need to regenerate it.
+> - The scopes can be limited to **Code** -- **Read&Write**.
+> - PATs are valid for a maximum of 1 year.
+> When a PAT expires, you will need to regenerate it.
 
 ![Azure DevOps PAT Scopes](../images/Integrations-DevOps-PAT.png)
 
@@ -99,25 +101,30 @@ To get OAuth authentication working for Azure DevOps On-Premise instances or to 
 
 #### Azure DevOps configuration
 
-First, you have to create the application in your [Azure DevOps profile](https://app.vsaex.visualstudio.com/me?mkt=en-US). Click **Create new application**.
+First, you have to create the application in your [Azure DevOps profile](https://app.vsaex.visualstudio.com/me?mkt=en-US).
+Click **Create new application**.
 
-![](../attachments/azure-app-overview.png)
+![Azure DevOps application overview](../attachments/azure-app-overview.png)
 
 Then configure the application, with your custom **Authorization callback URL** and scopes **Code (read and write)** selected.
 
-![](../attachments/azure-app-create-1.png)
+![Azure DevOps application create step 1](../attachments/azure-app-create-1.png)
 
-![](../attachments/azure-app-create-2.png)
+![Azure DevOps application create step 2](../attachments/azure-app-create-2.png)
 
-Once SmartGit initiates the OAuth authentication, Azure DevOps will return the initial code to the **Authorization callback URL**. The code will be passed as URL parameter `code`. This is what the user has to copy over to SmartGit's **Generate Token** dialog.
+Once SmartGit initiates the OAuth authentication, Azure DevOps will return the initial code to the **Authorization callback URL**.
+The code will be passed as URL parameter `code`.
+This is what the user has to copy over to SmartGit's **Generate Token** dialog.
 
-Finally, confirm with **Create Application**. Next, Azure DevOps will display the application details.
+Finally, confirm with **Create Application**.
+Next, Azure DevOps will display the application details.
 
-![](../attachments/azure-app-details.png)
+![Azure DevOps application details](../attachments/azure-app-details.png)
 
 #### SmartGit configuration
 
-Now SmartGit has to be configured to authenticate with this custom application. Add following lines to `smartgit.properties` (in [SmartGit's settings directory](../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory)):
+Now SmartGit has to be configured to authenticate with this custom application.
+Add following lines to `smartgit.properties` (in [SmartGit's settings directory](../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory)):
 
 ```
 smartgit.azure.oauth.appId=33A0E667-FA23-4759-A184-32FFA0F090E6
@@ -129,4 +136,5 @@ Note, that `clientSecret` is actually the **Client Secret** from Azure DevOps, n
 
 ### Repository access using "Generate Git Credentials"
 
-If you are only interested in accessing your Azure DevOps Git repositories, but you don't need the additional *Azure DevOps Hosting Provider functionality* (e.g. managing pull requests in SmartGit), you may open the Azure website, navigate to your Azure DevOps repository, invoke **Clone** and then **Generate Git Credentials**. When SmartGit asks you for **User Name** and **Password** enter these credentials.
+If you are only interested in accessing your Azure DevOps Git repositories, but you don't need the additional *Azure DevOps Hosting Provider functionality* (e.g. managing pull requests in SmartGit), you may open the Azure website, navigate to your Azure DevOps repository, invoke **Clone** and then **Generate Git Credentials**.
+When SmartGit asks you for **User Name** and **Password** enter these credentials.

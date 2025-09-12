@@ -2,7 +2,7 @@
 
 SmartGit's AI Annotations are a powerful feature that allows custom extension of SmartGit's functionality.
 
-Each AI Annotation instructs SmartGit to run a custom AI action, either interactively or in the background, 
+Each AI Annotation instructs SmartGit to run a custom AI action, either interactively or in the background,
 using one or more selected (or inferred) _diffs_ in the commit history as input.
 
 The output of the AI generated annotations can be displayed interactively in the UI or linked to the relevant commit(s) using [SmartGit's Notes](Notes.md) capabilities.
@@ -11,8 +11,9 @@ Some examples of what AI Commit Annotations can do:
 - Describe the contents of a diff (e.g., the latest commit on a branch or the diff between 2 commits).
 - Analyze a commit and provide feedback or descriptive metadata about quality factors introduced in the code.
 - Instruct the LLM to generate icons to augment the visualization of Notes.
-  
-Because AI annotations can run in the background, SmartGit can automate checks while you work. The AI's responses are added to Git Notes, which can be viewed in the **Graph View** of the **Log and Standard Windows**.
+
+Because AI annotations can run in the background, SmartGit can automate checks while you work.
+The AI's responses are added to Git Notes, which can be viewed in the **Graph View** of the **Log and Standard Windows**.
 
 ## Getting Started
 
@@ -24,9 +25,9 @@ Before using AI Annotations, it's recommended to familiarize yourself with:
 
 To add a new AI Commit Annotation command in SmartGit, define a new [configuration](../Integrations/AI.md#ai-commit-annotation-configuration-options) section for each AI-Annotation you want to set up.
 
-Configuration Options include:
+Configuration options include:
 - Standard LLM configuration settings.
-- The `mode` in which the AI Annotation should run - either _interactively_, showing the output on the UI, or in the _background_, by appending the results to Git notes.
+- The `mode` in which the AI Annotation should run -- either _interactively_, showing the output on the UI, or in the _background_, by appending the results to Git notes.
 - The prompt to be executed by the AI when the annotation command is invoked, along with additional context such as the contents of the _diff_ and _commit message_.
 - For background annotations:
   - The Notes refs where the annotation outputs should be stored.
@@ -34,9 +35,9 @@ Configuration Options include:
 
 ### Example - Analyzing the difference between two selected diffs and displaying the difference interactively
 
-Adding the `[smartgit-ai-commit-annotations]` section below to your git config creates a new 'Describe Diff' command in the menu when exactly two commits are selected in the **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the `[smartgit-ai-commit-annotations]` section below to your Git config creates a new 'Describe Diff' command in the menu when exactly two commits are selected in the **Graph View** of the **Log Window** or the **Standard Window**.
 
-This command uses an existing LLM configuration called `openai` (tested on `gpt-4.1` on Open AI).
+This command uses an existing LLM configuration called `openai` (tested on `gpt-4.1` on OpenAI).
 
 ```
 [smartgit-ai-llm "openai"]
@@ -58,7 +59,9 @@ This command uses an existing LLM configuration called `openai` (tested on `gpt-
 ```
 
 #### Note
-> With `diff = pair`, if the selected diffs have both diverged from the common ancestor commit, SmartGit will prompt you to select the order of comparison of the diffs. You can swap the order if needed. A Git diff must be possible between the two commits, i.e., they must share a common ancestor.
+> With `diff = pair`, if the selected diffs have both diverged from the common ancestor commit, SmartGit will prompt you to select the order of comparison of the diffs.
+> You can swap the order if needed.
+> A Git diff must be possible between the two commits, i.e., they must share a common ancestor.
 
 ### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
 
@@ -67,7 +70,7 @@ Adding the following `[smartgit-ai-commit-annotation]` section to your Git confi
 The same LLM configuration is used as in the previous example.
 
 After saving the configuration, if you run the `Check Todos` AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
-An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed (in place of the standard 'Note' icon), and a Git note will be added to the commit, showing the file location(s) of any TODO comments found.
+An appropriate thumbs up (U+1F44D) or thumbs down (U+1F44E) icon will be displayed (in place of the standard 'Note' icon), and a Git note will be added to the commit, showing the file location(s) of any TODO comments found.
 
 ![AI Annotations in Standard Window](../images/AI-Annotations-StandardWindow.png)
 
@@ -94,7 +97,8 @@ An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed
 #### Tips
 > - Add a prefix such as `ai/` to the `notesRef` setting to distinguish AI-generated notes from 'standard' [Git Notes](Notes.md) clearly.
 > - As with other SmartGit AI features, move any shared configuration (like `smartgit-ai-llm` definitions or reusable `smartgit-ai-commit-annotation` commands) to your global `~/.gitconfig` file for use across multiple repositories.
-> - By default, SmartGit sets a small `maxDiffSize` to avoid sending large commits to LLMs, which may result in unexpected expenses. Adjust this value as needed.
+> - By default, SmartGit sets a small `maxDiffSize` to avoid sending large commits to LLMs, which may result in unexpected expenses.
+>   Adjust this value as needed.
 > - Rerunning the same background AI Annotation on a commit will replace the previous note.
-> - AI Notes can be removed just like standard GIT notes.
+> - AI Notes can be removed just like standard Git notes.
 > - Avoid using the same notes `ref` for different annotation categories, and do not mix AI-generated Notes refs with manually created [Git Notes](Notes.md).

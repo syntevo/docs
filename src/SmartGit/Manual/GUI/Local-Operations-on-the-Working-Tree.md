@@ -1,6 +1,7 @@
 # Local Operations on the Working Tree
 
-After making changes in the Working Tree, the next step is to prepare a new commit by identifying which changes you want to include in the commit.
+After making changes in the Working Tree, the next step is to prepare a new commit.
+Identify which changes you want to include in the commit.
 
 Please select one of the following topics:
 

@@ -1,19 +1,21 @@
 # Rebasing
 
-The git `rebase` command allows you to apply commits from a source branch to another target branch *WITHOUT* creating a merge commit, resulting in a linear commit history on the target branch. Rebase can be viewed as more powerful version of [Cherry-Pick](Cherry-Picking.md), optimized to apply multiple commits from one branch to another.
+The Git `rebase` command allows you to apply commits from a source branch to another target branch *WITHOUT* creating a merge commit, resulting in a linear commit history on the target branch.
+Rebase can be viewed as more powerful version of [Cherry-Pick](Cherry-Picking.md), optimized to apply multiple commits from one branch to another.
 
-Since rebasing can be difficult to visualize, it is recommended that you use SmartGit when rebasing, where rebase operations can be performed in the UI, e.g. by simply selecting commits and dragging them to the required parent. See [Rebasing in SmartGit](../GUI/Branch/Rebase.md).
+Since rebasing can be difficult to visualize, it is recommended that you use SmartGit when rebasing, where rebase operations can be performed in the UI, e.g., by simply selecting commits and dragging them to the required parent.
+See [Rebasing in SmartGit](../GUI/Branch/Rebase.md).
 
 Depending on the state of the source and target branches, rebase may result in:
 
-- **Fast Forward** of new commits - if there are no new commits on the target branch which are not present in the source branch, the target branch can simply be updated to 'point' at HEAD of the source branch without creating new commits.
-- **Rewritten Commits** - if there are new commits in both source and target branches, git will need to rewrite commits in the target branch (assigning new SHA hashes).
+- **Fast Forward** of new commits -- if there are no new commits on the target branch which are not present in the source branch, the target branch can simply be updated to 'point' at HEAD of the source branch without creating new commits.
+- **Rewritten Commits** -- if there are new commits in both source and target branches, Git will need to rewrite commits in the target branch (assigning new SHA hashes).
 
 In addition, `rebase` allows for advanced history rewriting and cleanup operations, such as squashing, deleting and modification of existing commits.
 
 When rebase is used with the `onto` parameter, additional precision can be specified as to controlling which commits are to be rewritten, as well as to change the parent commit from which a branch is created.
 
-After a successful rebase, the HEAD of the current branch will point to the re-written fork containing the changes.
+After a successful rebase, the HEAD of the current branch will point to the rewritten fork containing the changes.
 
 ## Example
 
@@ -39,11 +41,11 @@ o C                        o C
 ...                        ...
 ```
 
-#### Notes
+### Notes
 > - Commits `D` and `E` are rewritten (to `E'` and `F'`) such that the parent of `E'` is now `A` (i.e. to reference the HEAD of `main`).
-> In this rebase scenario, Git will automatically determine the common parent commit between the branches (i.e. `C`) and calculate that commits `E` and `D` need to be rewritten (since `C` is already present in `main`).
-> - Branch `main` (including commits `A`, `B` and `C`) is not modified by the rebase
-> - After the above rebase, it is now possible to [Fast Forward](Merging.md#fast-forward-merge) `main` up to commit `D'`
+>   In this rebase scenario, Git will automatically determine the common parent commit between the branches (i.e. `C`) and calculate that commits `E` and `D` need to be rewritten (since `C` is already present in `main`).
+> - Branch `main` (including commits `A`, `B` and `C`) is not modified by the rebase.
+> - After the above rebase, it is now possible to [Fast Forward](Merging.md#fast-forward-merge) `main` up to commit `D'`.
 > - As can be seen, the effect is to create a linear commit history.
 
 ## Rebase Onto
@@ -73,19 +75,20 @@ o C                           o C'
 o F                           o F
 ```
 
-#### Notes
-> - The commit history of `main` will be rewritten - although the commits `A'`, `B'` and `C'` have the same changes as the original commits `A`, `B` and `C` respectively, a new SHA hash will be assigned for each commit rewritten after the rebase is completed.
-> - The commit history of `feature` is unchanged in this scenario - commits `D`, `E` and `F` aren't modified by the above rebase.
+### Notes
+> - The commit history of `main` will be rewritten -- although the commits `A'`, `B'` and `C'` have the same changes as the original commits `A`, `B` and `C` respectively, a new SHA hash will be assigned for each commit rewritten after the rebase is completed.
+> - The commit history of `feature` is unchanged in this scenario -- commits `D`, `E` and `F` aren't modified by the above rebase.
 
 ## Interactive Rebase
 
 Rebase with the `--interactive` switch allows a specified range of commits to be rewritten, and then, interactively, you will then need to specify how each commit in the range will be handled, with options such as:
-- **pick** - i.e. to include the commit
-- **reword** - i.e. to include the commit but to change the commit message
-- **edit** - i.e. to amend the contents of the commit
-- **squash** - i.e. to combine the contents of the commit into the previous commit, i.e. reducing the number of commits. Squash can be applied successively, so that any number of commits are combined into one commit.
-- **drop** - i.e. remove the commit
+- **pick** -- i.e., to include the commit.
+- **reword** -- i.e., to include the commit but to change the commit message.
+- **edit** -- i.e., to amend the contents of the commit.
+- **squash** -- i.e., to combine the contents of the commit into the previous commit, i.e., reducing the number of commits.
+  Squash can be applied successively, so that any number of commits are combined into one commit.
+- **drop** -- i.e., remove the commit.
 
-Additionally, the order of the commits can be changed during an interactive rebase
+Additionally, the order of the commits can be changed during an interactive rebase.
 
-See Also: [Interactive Rebasing in SmartGit](../GUI/Branch/Rebase-Interactive.md).
+See also: [Interactive Rebasing in SmartGit](../GUI/Branch/Rebase-Interactive.md).

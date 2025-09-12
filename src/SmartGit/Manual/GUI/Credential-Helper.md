@@ -1,6 +1,7 @@
 # SmartGit as Credential Helper
 
-SmartGit can be used as a Git credential helper. This allows you to use the command-line Git client while letting SmartGit handle authentication.
+SmartGit can be used as a Git credential helper.
+This allows you to use the command-line Git client while letting SmartGit handle authentication.
 
 ## Enable the Credential Helper
 
@@ -23,5 +24,7 @@ During cloning, the following entry is added to the `.git/config` of the freshly
 	useHttpPath = true
 ```
 
-Whenever you invoke an action from the command line, SmartGit will be asked for credentials for the repository. When SmartGit is not running, it will be started in the background. When you have configured a [Master Password](Preferences/Commands.md#smartgit-credential-helper-https), you will be asked to enter it.
+Whenever you invoke an action from the command line, SmartGit will be asked for credentials for the repository.
+When SmartGit is not running, it will be started in the background.
+When you have configured a [**Master Password**](Preferences/Commands.md#smartgit-credential-helper-https), you will be asked to enter it.
 When you have multiple [Hosting Provider](../Integrations/index.md) profiles configured, SmartGit will ask you to select the right Hosting Provider once; after that, SmartGit will remember that setting.

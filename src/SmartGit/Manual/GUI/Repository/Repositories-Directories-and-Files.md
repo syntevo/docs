@@ -1,12 +1,13 @@
 # Repositories, Directories and Files
 
-The *Repositories view* shows all local repositories known to SmartGit in a tree structure. Repositories which are opened by SmartGit will appear in **Bold** in this window, and the directory structure, and states of folders in the repository Working Tree will appear nested underneath each opened repository.
+The *Repositories view* shows all local repositories known to SmartGit in a tree structure.
+Repositories which are opened by SmartGit will appear in bold in this window, and the directory structure, and states of folders in the repository Working Tree will appear nested underneath each opened repository.
 
 Similarly, the *Files view* displays the status of your working tree (and Index).
 
-Double clicking a repository in the *Repositories view* will open the repository - this is usually quick, although SmartGit may take a while to open a large repository.
+Double clicking a repository in the *Repositories view* will open the repository -- this is usually quick, although SmartGit may take a while to open a large repository.
 
-For a reference on what the various state colours and and icons mean, please consult:
+For a reference on what the various state colours and icons mean, please consult:
 
 - [Primary Directory States](#directory-states) for the primary directory states in the [Repositories view](../Repositories-View.md).
 - [File States](#file-states) for the possible file states.
@@ -22,22 +23,23 @@ To add existing or new local repositories to SmartGit, please take a look at [Wo
 
 Files listed in the **Files** view can be filtered by file state and name by using the `File Filter` search input above the Files view.
 
-- To filter by name, use the input field (or shortcut *\<Ctrl/Cmd>+\<F>*-keystroke) to enter a filename search pattern - files will be filtered automatically as you type.
-- The search pattern supports regular expressions (RegEx)
+- To filter by name, use the input field (or shortcut *\<Ctrl/Cmd>+\<F>*-keystroke) to enter a filename search pattern -- files will be filtered automatically as you type.
+- The search pattern supports regular expressions (RegEx).
 - The `.*` button can be toggled to find files with any file extension.
-- You can save common search patterns for later usage by clicking on the search icon in the File Filter and selecting **Remember Pattern** (similarly, **Forget Pattern** will remove the current pattern if it has been saved previously.
+- You can save common search patterns for later usage by clicking on the search icon in the File Filter and selecting **Remember Pattern** (similarly, **Forget Pattern** will remove the current pattern if it has been saved previously).
 
 ### State Filter
 
-The state filters can be set using the small toolbar buttons above the table as well as the menu items in the **View** menu. Please refer to [File States](#file-states) for the meaning of each filter icon, or alternately hover the mouse over an icon to see its purpose.
+The state filters can be set using the small toolbar buttons above the table as well as the menu items in the **View** menu.
+Please refer to [File States](#file-states) for the meaning of each filter icon, or alternately hover the mouse over an icon to see its purpose.
 
 ### Background Color highlighting
 
 SmartGit will change the background color of the *File view* when files are hidden, as a reminder that files it considers important are being filtered from view:
 
-- Light red - This means commitable files (e.g. *index-only changed* or *untracked*) are being hidden by one of the *Files State* filters.
-- Light yellow - This means that files are being name-filtered by the *File Filter* search pattern.
-- Gray - Even if unchanged files are hidden, they can be found by filtering by name - files matching by name but not by state are shown in gray.
+- Light red -- This means commitable files (e.g. *index-only changed* or *untracked*) are being hidden by one of the *Files State* filters.
+- Light yellow -- This means that files are being name-filtered by the *File Filter* search pattern.
+- Gray -- Even if unchanged files are hidden, they can be found by filtering by name -- files matching by name but not by state are shown in gray.
 
 **Note**
 
@@ -75,10 +77,10 @@ Icon | State | Description
 ![](../../attachments/53215375/53215393.png) | Removed | File has been removed from the Index. Use **Unstage** to un-schedule the removal from the Index.
 ![](../../attachments/53215375/53215388.png) | Renamed | File is scheduled for addition and has been detected as renamed, see [Preferences, section Refresh](../Preferences/Commands.md#refresh)
 ![](../../attachments/53215375/53215384.png) | Renamed (untracked) | File is untracked and has been detected as renamed, see [Preferences, section Refresh](../Preferences/Commands.md#refresh)
-![](../../attachments/53215375/53215389.png) | Renamed (modified) | File is scheduled for addition, has been detected as renamed (in the Index) and – on top of that – is modified in the working tree. Use will probably want to use **Stage** to add the working tree changes to the Index.
+![](../../attachments/53215375/53215389.png) | Renamed (modified) | File is scheduled for addition, has been detected as renamed (in the Index) and -- on top of that -- is modified in the working tree. You will probably want to use **Stage** to add the working tree changes to the Index.
 ![](../../attachments/53215375/53215383.png) | Rename Source | File is the added (or missing) source of a detected **Renamed** file.
 ![](../../attachments/53215375/53215382.png) | Rename Source (untracked) | File is the added (or missing) source of a detected **Renamed (untracked)** file.
-![](../../attachments/53215375/53215376.png) | Missing | File is under version control, but does not exist in the working tree. Use **Stage** or **Remove** to remove from the Index or **Discard** to restore in the wirking tree.
+![](../../attachments/53215375/53215376.png) | Missing | File is under version control, but does not exist in the working tree. Use **Stage** or **Remove** to remove from the Index or **Discard** to restore in the working tree.
 ![](../../attachments/53215375/53215391.png) | Added Modified | File has been added to the Index and there is an additional change in the working tree. Use **Commit** to either commit just the addition or commit addition and change.
 ![](../../attachments/53215375/53215390.png) | Intent-to-Add | File is planned to be added to the Index. Use **Add** or **Stage** to add actually or **Discard** to revert to untracked.
 ![](../../attachments/53215375/53215395.png) | Conflicted | A merge-like command resulted in conflicting changes. Use the **Conflict Solver** to fix the conflicts.
@@ -88,7 +90,8 @@ Icon | State | Description
 
 ## Submodule States
 
-Many of the file states also apply to submodules. In addition, there are following notable submodule states which may either refer to the *state of the submodule point* relative to the parent repository, or to the *contents of the submodule working tree*, or to a combination of both of them.
+Many of the file states also apply to submodules.
+In addition, there are following notable submodule states which may either refer to the *state of the submodule point* relative to the parent repository, or to the *contents of the submodule working tree*, or to a combination of both of them.
 
 Icon | State | Description
 -------- | -------- | --------
@@ -101,10 +104,12 @@ Icon | State | Description
 
 ## File table "duplicate(!)" marker
 
-If the file table shows a **duplicate(!)** marker after a file name, this means that you are on a case insensitive file system such as Windows or on MacOS and your repository contains the same file in the same directory, but with different casing. Using filenames with the same names, but differing only in case is not advised in SmartGit, when the repository will be worked on by users with case insensitive file systems. If you encounter **duplicate(!)** the duplicate marker, it is recommended that you rename one or both files on a case-sensitive file system such as Linux (or WSL on Windows) and then push a new commit to the remote, where developers working on case-sensitive file systems can pull to resolve the issue.
+If the file table shows a **duplicate(!)** marker after a file name, this means that you are on a case insensitive file system such as Windows or on MacOS and your repository contains the same file in the same directory, but with different casing.
+Using filenames with the same names, but differing only in case is not advised in SmartGit, when the repository will be worked on by users with case insensitive file systems.
+If you encounter **duplicate(!)** the duplicate marker, it is recommended that you rename one or both files on a case-sensitive file system such as Linux (or WSL on Windows) and then push a new commit to the remote, where developers working on case-sensitive file systems can pull to resolve the issue.
 
 ## Fixing 'Modified (File Mode)' on Windows
 
 On Windows, the *Modified (File Mode)* state is usually caused due to a misconfiguration of your local repository, when not having `core.filemode` configuration option explicitly set to `false` (the default value is `true`).
 
-You can add address the issue by invoking `git config core.filemode false` in the root directory of your repository to fix this problem - this adds the setting to the `.git/config` of your repository.
+You can address the issue by invoking `git config core.filemode false` in the root directory of your repository to fix this problem -- this adds the setting to the `.git/config` of your repository.

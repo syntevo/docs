@@ -19,12 +19,12 @@ Use the `<<` and `>>` arrow buttons to move changed *Hunks* between panes, or us
 >   Clicking **Force Compare** will override the limit temporarily for this file, and perform the comparison.
 >   The value can be changed more permanently in the [*Low Level Properties* preferences](AdvancedSettings/Low-Level-Properties.md#changesmaximumfilesize).
 
-## Additional features in Changes View when Integrations are Enabled
+## Additional Features in Changes View When Integrations Are Enabled
 
 (**Log Window** only)
 
 In the **Log Window** only, when the *Virtual Merge Commit* (diamond icon) has been selected in the **Graph View**:
-- the **Changes View** will allow you to view, and add comments on the Pull Request.
+- The **Changes View** will allow you to view, and add comments on the Pull Request.
 - Comments on the PR can be viewed and selected on the *Comments* tab of the **Files View**.
 
 Please refer to [Integrated Pull Requests](../Integrations/Integrated-PullRequests.md) for details.
@@ -34,10 +34,10 @@ Please refer to [Integrated Pull Requests](../Integrations/Integrated-PullReques
 There are several options to customize the layout of the **Changes View**:
 - Select between *Unified* and *Side by Side* mode to view the Index and Working Tree versions either as separate panes, or as a unified change.
 - *Compact mode* hides sections of the file which are unchanged.
-- *Ignore WS* will hide whitespace changes such as space, tab and newline characters
+- *Ignore WS* will hide whitespace changes such as space, tab and newline characters.
 - Use the *Up* and *Down* arrows to move to the previous, and next hunk of changes, respectively.
-- Additionally, the hamburger icon (☰) at the top right provides further customization:
-  - Ignore case changes during line comparisons
-  - Ignore line ending changes during line comparisons
-  - Changing the Syntax Highlighting language
+- Additionally, the hamburger icon at the top right provides further customization:
+  - Ignore case changes during line comparisons.
+  - Ignore line ending changes during line comparisons.
+  - Changing the Syntax Highlighting language.
   - Further settings, such as tab sizing and whitespace visualization.
