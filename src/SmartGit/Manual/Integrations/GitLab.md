@@ -21,7 +21,7 @@ Once you have confirmed this page, you will be redirected to a specific port on 
 #### Personal Access Tokens
 
 Instead of an OAuth token, you may alternatively use a personal access token which has to be created manually in your [GitLab User Settings](https://gitlab.com/-/profile/personal_access_tokens). Make sure that your personal access token has at least following scopes assigned:
-**api**, **read_user**, **write_repository**.
+**api**, **write_repository**.
 
 ## Possible Problems & Solutions
 
