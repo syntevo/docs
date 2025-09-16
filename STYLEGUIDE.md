@@ -93,20 +93,12 @@ In some cases, when a word or phrase has been used to mean a ‘special’ conte
 
 ## Notes, Warnings, Tips
 
-Use a H4 with Quotes below, e.g.
+Use GitHub-style admonitions, e.g.
 
 ```
-#### Note / Warning / Tip
+> [!NOTE]
 > Description goes here.
 > Can be multiline
-```
-
-If there are multiple points to make under Notes / Warnings / Tips, use dashes for creating bullet points, e.g.
-
-```
-#### Note / Warning / Tip
-> - Bullet Point 1
-> - Bullet Point 2
 ```
 
 ## Links
