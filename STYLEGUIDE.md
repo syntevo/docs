@@ -91,12 +91,20 @@ In general, try to use normal English capitalization (i.e. Capitalize the start 
 
 In some cases, when a word or phrase has been used to mean a ‘special’ context in the documentation, beyond it’s normal meaning, consider capitalizing it, e.g. Hosting Provider may be conceptually repurposed to refer to generic Git hosting service such as GitHub or Bitbucket).
 
-## Notes, Warnings, Tips
+## Notes, Warnings, Tips, Examples
 
 Use GitHub-style admonitions, e.g.
 
 ```
 > [!NOTE]
+> Description goes here.
+> Can be multiline
+```
+
+For examples, use our custom `[!EXAMPLE]` admonition:
+
+```
+> [!EXAMPLE]
 > Description goes here.
 > Can be multiline
 ```
