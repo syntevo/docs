@@ -45,7 +45,7 @@ This is the best and easiest way to diagnose.
 5.  If these steps didn't help you, please send us a mail!
 
 
-#### Note
+> [!NOTE]
 > If you found the program, please let us know! This lets us help other
 > users better.
 
@@ -73,7 +73,7 @@ These are reasonable values for typical workflows:
     continue investigation.
 5.  If unsure, please send script output to us and we'll try to help. 
 
-#### Note
+> [!NOTE]
 > If you found the program, please let us know! This lets us help other
 > users better.
 

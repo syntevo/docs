@@ -10,11 +10,12 @@ The integration is configured in the repository's `.git/config`, using `smartgit
 - `project`: the TeamCity project name for your Git repository
 - `buildConfigurations`: a comma-separated list of TeamCity build configuration names which should be queried
 
-### Example
-
-``` ini
-[smartgit "teamcity"]
-   url = https://server:8443
-   project = SmartGit
-   buildConfigurations = tests,tests-gitimpl,tests-jgit
-```
+> [!EXAMPLE]
+> Example configuration in `.git/config`:
+>
+> ``` ini
+> [smartgit "teamcity"]
+>    url = https://server:8443
+>    project = SmartGit
+>    buildConfigurations = tests,tests-gitimpl,tests-jgit
+> ```

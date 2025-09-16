@@ -66,8 +66,7 @@ If you try to push commits from a new local branch, you will be asked whether to
 In most cases it is recommended to set up tracking, as it will allow you to receive changes from the remote repository and make use of Git's branch synchronization mechanism (see [Branches](../Branch/index.md)).
 The preferences contains an option to avoid this dialog and always configure the tracking.
 
-### Info
-
+> [!NOTE]
 > The tracking will **not** be configured if the git option `push.default` is set to `matching`.
 
 The Push commands listed above can be invoked from several places:
@@ -80,8 +79,7 @@ The Push commands listed above can be invoked from several places:
   Additionally, you can invoke **Push** on tags.
 - **Journal view** To push a range of commits up to a certain commit, select that commit in the **Journal** view and invoke **Push Commits** from the context menu.
 
-### Note
-
+> [!NOTE]
 > If a Push fails with error:
 >
 >

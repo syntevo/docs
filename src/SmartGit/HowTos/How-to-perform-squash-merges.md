@@ -29,10 +29,8 @@ commit** or a **Simple commit ("squash")**. Select the latter option and
 enter a commit message, then click on the **Commit** button.
 
 
-#### Info 
-> Don't be puzzled if the resulting Git commands (reported in the
-> **Output** view) do not mention a **--squash** option. Before
-> committing, SmartGit simply deletes `.git/MERGE_HEAD` to convert the
-> scheduled merge to a simple commit.
+> [!NOTE]
+> Don't be puzzled if the resulting Git commands (reported in the **Output** view) do not mention a `--squash` option.
+> Before committing, SmartGit simply deletes `.git/MERGE_HEAD` to convert the scheduled merge to a simple commit.
 
 

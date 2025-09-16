@@ -13,8 +13,7 @@ In Git-Flow, there are two primary long-lived (trunk) branches, always expected 
 - `develop`
 - `main` (historically also referred to as `master`)
 
-#### Note
-
+> [!NOTE]
 > Although branch names can be changed, it is strongly recommended that the default names `develop` and `main` be retained when using Git-Flow.
 
 ### Develop Branch
@@ -67,7 +66,7 @@ o  | ... interim commit into [develop]
 o  ... commit forked from [develop] to create branch [feature/feature-A]
 ```
 
-#### Tip
+> [!TIP]
 > For users who use a combination of [Feature-Flow](Feature-Flow.md), [Git-Flow](Git-Flow.md) or [Git-Flow-Light](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
 
 ### Release Branches
@@ -126,8 +125,7 @@ o    \ | ... [develop] new feature commit in develop for a future release
 When the repository represents software where multiple versions (including legacy versions) need to be actively supported, it may be necessary apply fixes to legacy releases.
 This introduces additional discipline and complexity to the repository.
 
-#### Note
-
+> [!NOTE]
 > According to the Git-Flow documentation, support branches are still in the  'experimental' state.
 
 By convention, support branches should follow the naming convention: `support/version.patch`
@@ -140,8 +138,7 @@ Instead, another long-lived branch (e.g., `release 3.x`) will need to be created
 This `release` branch should remain until the software version is no longer supported, at which point it can be deleted.
 (In some support variations of Git-Flow, multiple named `release` branches are created instead of using `main`).
 
-#### Note
-
+> [!NOTE]
 > Common sense should be applied when deciding whether or not to merge the hotfix made in the support branch back into `develop` or merge the hotfix into more recent product releases (which could trigger new releases for all subsequent versions).
 > The divergence between legacy support releases and the current version in the repository means that changes made in the support branch may no longer be relevant to the current release.
 
@@ -180,8 +177,7 @@ The format of this `.gitflow` file is the same as a Git-Flow-configured `.git/co
 This command initiates work on a new [feature](#feature-branches).
 After providing a name for the feature, a corresponding feature branch will be forked off the `develop` branch, and the new feature branch will be checked out.
 
-#### Info
-
+> [!NOTE]
 > If the `develop` branch is currently check out, the **Flow** toolbar button defaults to this command.
 > You can configure a custom prefix for features by the Git config option `gui.prefixStartFeature`.
 
@@ -197,8 +193,7 @@ There are three ways to do this:
 > When merging or squashing, you need to enter the commit message for the new commit.
 > Usually, you need to push the `develop` branch later.
 
-#### Info
-
+> [!NOTE]
 > To change the merge message template, define the [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md) `gitflow.finishFeature.message`.
 
 ### Integrate Develop

@@ -31,12 +31,11 @@ For a fully functional submodule, you'll also need to do a pull on it, as descri
 
 ## Adding, Removing and Synchronizing Submodules
 
-#### Note
->
+> [!NOTE]
 > Submodules will show up in the **Repositories** view, as well as the **Files** view.
 > Submodule operations (from the parent repository perspective) will be performed in the **Files** view.
 > 'Normal' Git operations on the submodule repository itself will be performed in the **Repositories** view.
->
+
 
 To "ignore" a not-yet initialized submodule which you are not interested in, invoke **Remote \| Submodule \| Deactivate**.
 This will hide the submodule from the **Files** view, unless **View \| Show Ignored Files** is selected.

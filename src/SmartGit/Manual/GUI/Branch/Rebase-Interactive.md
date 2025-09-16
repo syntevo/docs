@@ -6,7 +6,7 @@ SmartGit provides comprehensive tools to keep your repository's history clean an
 
 SmartGit packages the interactive rebase functionality of Git in simple yet powerful ways through its user interface, accessible from both the [Log Graph](../Log.md) and the [Journal View](../Journal-View.md).
 
-### Note
+> [!NOTE]
 > During many rebasing operations, your Working Directory will be left in a `Rebasing` state, allowing for manual user operations.
 > Once finished, you will need to commit and *complete* the rebase operation, or *abort* the rebase.
 > Please refer to [Working Tree States](../../GitConcepts/Working-Tree-States.md) for further information.
@@ -70,4 +70,3 @@ Alternatively, the **Auto-Squash** button offers the following options:
 For example, if you set the commit message prefix to `fixup! `, when using **Commit Message** (from the Log's or Journal's context menu), SmartGit will prefix the commit message with `fixup! `.
 The Interactive Rebase process will then treat `foo` and `fixup! foo` as equally named commits.
 - The low-level configuration property **git.rebaseInteractive.autoSquash** controls whether Interactive Rebasing will automatically squash adjacent commits whenever subsequent commits have a `fixup! *msg*` message, where `*msg*` matches the previous commit's message (independent of the low-level property **log.useCommitMessage.prefix**).
-

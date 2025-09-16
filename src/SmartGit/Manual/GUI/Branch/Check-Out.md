@@ -27,8 +27,6 @@ For more information on merging, see [Merge](Merge.md).
 - If a `.gitattributes` file is present in your repository and its content differs between the checkout source commit (old commit) and the checkout target commit (new commit), SmartGit will inspect the line endings in your working tree.
   Changes in `.gitattributes` may require line endings for certain files to be modified.
 
-#### Note
-
+> [!NOTE]
 > In most cases, line-ending corrections won't be necessary, and this part of the **Check Out** process is quick (you may not even notice it).
 > However, certain changes to `.gitattributes` can affect many (or all) files, which may cause line-ending correction to take more time.
-

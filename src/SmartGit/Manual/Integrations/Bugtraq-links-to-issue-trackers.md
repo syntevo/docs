@@ -20,7 +20,7 @@ commit message -> logfilterregex -> loglinkregex -> logregex -> BUGID
 
 Please refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq> for advanced configuration.
 
-#### Note
+> [!NOTE]
 > - The `logregex` setting must contain only one matching group '()' matching the issue ID.
 > - You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
 > - The [BugTraq `projects`](https://github.com/mstrap/bugtraq?tab=readme-ov-file#bugtraqprojects-optional) setting allows one or more project prefixes to be defined which can then be substituted using a `PROJECT` token in the `url` and `loglinkregex` settings.
@@ -32,7 +32,7 @@ Please refer to the complete Bugtraq specification at <https://github.com/mstrap
 Jira uses project-specific prefixes for its issue identifiers.
 An example configuration for a repository linked to a single Jira project with prefix `SG`, the *Jira* issue tracker at URL `https://host/jira` looks like the following.
 
->
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "jira"]
 >   url = https://host/jira/browse/SG-%BUGID%
@@ -42,6 +42,7 @@ An example configuration for a repository linked to a single Jira project with p
 The above example will make only the issue numbers as links (i.e. without `SG-`).
 Alternatively, if you want to have the entire issue ID as the link (i.e. with `SG-`), you may use:
 
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "jira"]
 >   url = https://host/jira/browse/%BUGID%
@@ -52,7 +53,7 @@ Alternatively, if you want to have the entire issue ID as the link (i.e. with `S
 ### Jira Server (On Premise) - repository linked to a multiple Jira projects
 
 When your repository is linked to multiple *Jira* projects, the `projects` setting allows multiple project prefixes to be detected, e.g.:
->
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "jira"]
 >   projects = PRJA, PRJB
@@ -70,7 +71,7 @@ The Jira Cloud issue viewing URL is slightly different to the On-Premises versio
 In the below example, we have a single project with prefix `SG` and have registered an organisation with a site name `myorg` on Jira Cloud.
 Here we have not set up a custom domain, so the host has its default of `myorg.atlassian.net`, and have used the `projects` setting to DRY up the Jira project prefix:
 
->
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "jira"]
 >   projects = SG
@@ -82,7 +83,7 @@ Here we have not set up a custom domain, so the host has its default of `myorg.a
 If you have registered a custom domain with Jira cloud, the host will change as per your network administrator's DNS entry.
 For example, if we have created a subdomain `jira.myorg.com` in the `myorg.com` company DNS and configured the custom domain in Jira, the URL will be:
 
->
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "jira"]
 >   projects = SG
@@ -98,7 +99,7 @@ Substitute `myorg` and `myproject` for your organisation / user and project iden
 
 e.g. for a repository linked to a single project `myproject` for company `myorg`:
 
->
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "GitHub Issues"]
 >   url = "https://github.com/myorg/myproject/issues/%BUGID%"
@@ -110,7 +111,7 @@ e.g. for a repository linked to a single project `myproject` for company `myorg`
 
 For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (URL-encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
 
->
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "AzDevOps Issues"]
 >   url = "https://dev.azure.com/myorg/myproject/_workitems/edit/%BUGID%"
@@ -122,10 +123,9 @@ For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (URL-encod
 
 Another example configuration (e.g. for a trouble ticketing system) where IDs like '#213' should be matched only at the beginning of a commit message.
 Note that the `logregex` value needs to be put in quotes, because '#' serves as a comment character in Git configuration files.
->
+> [!EXAMPLE]
 >``` ini
 > [bugtraq "otrs"]
 >   url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
 >   logregex = "^#[0-9]{1,5}"
 >```
-

@@ -32,7 +32,7 @@ you will have the latest commits present. Now select `origin` in the
 Repository**, select `upstream` here.
 
 
-#### Warning
+> [!WARNING]
 > Do not use **Force pushing** nor **Remove remote branches which don't
 > have a local counterpart** unless you are the owner of the `upstream`
 > repository and you are aware of the consequences.

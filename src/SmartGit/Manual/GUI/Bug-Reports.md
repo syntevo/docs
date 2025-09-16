@@ -3,15 +3,18 @@
 ## Detailed Bug Reports
 
 In case of a crash, SmartGit offers to send a detailed bug report directly to syntevo.com.
-If you prefer to have a look at the file first, you may locate the given ZIP file in the file system, inspect its contents, remove possibly sensitive data and finally send the file by email to redacted@syntevo.com.
+> [!TIP]
+> If you prefer to have a look at the file first, you may locate the given ZIP file in the file system, inspect its contents, remove possibly sensitive data and finally send the file by email to redacted@syntevo.com.
 
 ## Crash Footprints
 
 SmartGit by default automatically transfers the footprint of a crash to a *crash server* for the purpose of quality assurance.
 The sent information contains details about the user machine (e.g. version of operating system), SmartGit version/build, the JVM state and where the error occurred.
-*It contains no potentially sensitive information like user names, email addresses, file contents, file paths or server names.*
+> [!NOTE]
+> It contains no potentially sensitive information like user names, email addresses, file contents, file paths or server names.
 
-A Java crash footprint file looks like this:
+> [!EXAMPLE]
+> A Java crash footprint file looks like this:
 
 ``` text
 This crash footprint has been created automatically and will be sent to
@@ -57,7 +60,8 @@ Caused by: java.lang.InternalError
   at smartgit.Yd.run(SourceFile:28)
 ```
 
-A native crash footprint looks like this:
+> [!EXAMPLE]
+> A native crash footprint looks like this:
 
 ``` text
 This crash footprint has been created automatically and will be sent to
@@ -137,4 +141,3 @@ siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x000000000000
 
 java_command: SmartGit
 ```
-

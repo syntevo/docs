@@ -24,7 +24,7 @@ Once you have authorized SmartGit, it will show up in your Bitbucket **Settings*
 
 ![Bitbucket App Authorizations](../attachments/bitbucket-oauth-overview.png)
 
-### Note
+> [!NOTE]
 > If you need to rerun through the Authorization process outlined above, you have to **Revoke** access to the SmartGit application and start over.
 
 ## Setup using App Password (only basic repository access)

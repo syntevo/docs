@@ -38,7 +38,7 @@ echo "The sum is: $sum"
 
 6. You can now accept the AI-generated commit message or tailor it as needed, then commit the changes to your repository.
 
-### Tip
+> [!TIP]
 > Clicking the **AI** button when a commit message already exists will insert the AI-generated message at the current cursor position.
 
 ## Tutorial : Using the '@ai' placeholder to Reword Commit Messages

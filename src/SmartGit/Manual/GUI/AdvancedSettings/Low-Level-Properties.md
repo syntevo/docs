@@ -8,7 +8,7 @@ Changing these values updates the `smartgit.properties` file, which is located i
 
 In rare instances, you may need to edit the `smartgit.properties` file directly.
 
-### Warning
+> [!WARNING]
 > - Changing settings in `smartgit.properties` with an invalid value can cause issues with the normal operation of SmartGit.
 > It is strongly recommended that a backup copy of the `smartgit.properties` file be made before making direct changes.
 > - You can reset a setting by selecting it and clicking the **Reset** command in the context menu.
@@ -23,8 +23,7 @@ If a line starts with `#`, the entire line is treated as a comment and ignored b
 
 The file encoding is `UTF-8`.
 
-### Note
-
+> [!NOTE]
 >- The `smartgit.properties` file contains only SmartGit-specific settings.
 >  To configure the underlying behavior of *Git*, use [**Edit \| Preferences \| Git Config**](../Preferences/Commands.md#git-config) to change common `git.config` settings.
 >  Alternatively, you can edit Git configuration files, such as `.git/config` (for individual Git repository settings) and `~\.gitconfig` (in your HOME directory for global configuration options).
@@ -37,7 +36,7 @@ File comparison can be disabled for very large files, for performance reasons.
 Use this setting to adjust the size (in bytes) at which a file is considered too large for the [**Changes View**](../Changes-View.md).
 The default value is approximately 1 MB.
 
-### Note
+> [!NOTE]
 > It is recommended to keep this setting at a reasonable level (a few MB), as setting it too high could negatively impact the performance of the user interface.
 
 ## Networking
@@ -50,8 +49,9 @@ To instead connect via IPv6, set this option to `false`.
 ### http.nonProxyHosts
 
 Use these properties to specify servers to connect directly to, bypassing the configured proxy, for example: `*.foo.com|localhost`.
-Note: This only affects the behavior of SmartGit.
-Any git usage outside of SmartGit will not use the `http.nonProxyHosts`.
+> [!NOTE]
+> This only affects the behavior of SmartGit.
+> Any git usage outside of SmartGit will not use the `http.nonProxyHosts`.
 
 ## Company-Wide Configuration
 
@@ -75,8 +75,7 @@ Available categories are:
 
 To hide a specific page, set the corresponding property to `false`.
 
-### Example
-
+> [!EXAMPLE]
 > To hide the **Tools** page, set:
 > ``` properties
 > smartgit.preferences.externalTools.visible=false
@@ -131,8 +130,7 @@ On Windows, paths have to be specified using forward-slashes, like `c:/temp`.
 Set to `true` to disable sending of [crash footprints](../Bug-Reports.md) (even if configured in the **Preferences**) and skip the option to send bug reports to us.
 When setting this option, you will probably also want to hide the corresponding page from the **Preferences**, see [smartgit.preferences.bugReports.visible](#smartgitpreferencescategoryvisible).
 
-### Warning
-
+> [!WARNING]
 > When using this option, be sure to provide an alternative way for your users to report SmartGit bugs to you, otherwise they will go unnoticed.
 
 ### smartgit.license.defaultPath
@@ -140,8 +138,7 @@ When setting this option, you will probably also want to hide the corresponding 
 By default, SmartGit will look for a "default" license file in the [installation default directory](../../Installation/Company-wide-installation.md).
 You can use this low-level property to specify a different **file system path** for the default license to look for.
 
-### Example
-
+> [!EXAMPLE]
 > To have SmartGit take the default license from `\\license-server\smartgit\license`, set:
 > `smartgit.license.defaultPath=\\\\license-server\\smartgit\\license`
 
@@ -151,8 +148,7 @@ By default, SmartGit will only look for a default license, if there is **no** or
 Sometimes, it may be desirable to replace even **valid** licenses by newer default licenses.
 To do so, set:
 
-### Example
-
+> [!EXAMPLE]
 > `smartgit.license.alwaysCheckForNewerDefaultLicense=true`
 
 ## Debug Properties
@@ -161,8 +157,7 @@ To do so, set:
 
 Use this property to enable debug logging for certain SmartGit modules; `[category]` has to be replaced by the appropriate module identifier.
 
-### Example
-
+> [!EXAMPLE]
 > To enable debug logging for the Refreshing modules, set following properties:
 > ``` properties
 > logging.smartgit.refresh=DEBUG

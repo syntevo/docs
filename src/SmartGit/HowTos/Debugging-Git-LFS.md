@@ -72,14 +72,12 @@ C:\Portable\Git\usr\bin\sh.exe -c "git-lfs smudge -- 'dir/file'" < out-lfs > out
 - This command simulates the `smudge` process that (Smart)Git would normally perform during checkout.
 - Review `out-blob` to ensure the expected file content is present and no errors occurred.
 
-## Final Notes
+> [!NOTE]
+> This procedure is particularly useful for isolating whether the issue lies within Git-LFS, the Git executable, or SmartGit's handling of Git commands.
+> If the manual `smudge` operation succeeds but SmartGit continues to hang, the problem may be related to the Git integration within SmartGit or environmental path configurations.
 
-- This procedure is particularly useful for isolating whether the issue lies within Git-LFS, the Git executable, or SmartGit's handling of Git commands.
-- If the manual `smudge` operation succeeds but SmartGit continues to hang, the problem may be related to the Git integration within SmartGit or environmental path configurations.
-
-## Additional Tips
-
-- Try with SmartGit's bundle Git Executable
-- Always ensure you are using compatible versions of Git and Git-LFS.
-- Consider updating Git if persistent issues occur.
-- Review SmartGit's settings to verify the configured Git executable matches the one you are debugging with.
+> [!TIP]
+> - Try with SmartGit's bundle Git Executable
+> - Always ensure you are using compatible versions of Git and Git-LFS.
+> - Consider updating Git if persistent issues occur.
+> - Review SmartGit's settings to verify the configured Git executable matches the one you are debugging with.

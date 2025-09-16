@@ -30,15 +30,9 @@ refreshing:
     command line.
 
 
-#### Warning
->
->
->Be sure that you have no *local* nor *staged* changes, before doing so!
->
->If you encounter wrong .git/index timestamps frequently, please contact
->`           smartgit@syntevo.com         `
->
->
+> [!WARNING]
+> Be sure that you have no *local* nor *staged* changes, before doing so!
+> If you encounter wrong .git/index timestamps frequently, please contact smartgit@syntevo.com
 
 If an invocation of `git status` is *rather* slow, too, you may also
 want to try the following:
@@ -55,18 +49,12 @@ want to try the following:
     [Topic #630](http://smartgit.userecho.com/topics/630).
 
 
-#### Example
-> 
-> 
+> [!EXAMPLE]
 > If many of your ignored files are located directly in the
 > `out`/-directory, following `.gitignore` line will be *efficient*:
-> 
 > `out/`
-> 
 > while this line will be *inefficient*:
-> 
 > `out/*`
-> 
 > Furthermore, if there is just a single tracked file located in `out/` or
 > one of its subdirectories, the ignore-processing will be *inefficient*.
 
@@ -90,7 +78,7 @@ will be included, no matter whether the excluding pattern matches.
 
 
 
-#### Note
+> [!NOTE]
 > Remember to replace `\` with `\\` according to [git config rules](https://git-scm.com/docs/git-config#_syntax). If you do any
 > mistakes, SmartGit will say that repository is missing, and no git
 > commands will work.

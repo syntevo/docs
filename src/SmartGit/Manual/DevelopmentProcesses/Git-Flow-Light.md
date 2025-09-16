@@ -30,5 +30,5 @@ To start using Git-Flow Light for your repository, go to **Branch \| Git-Flow \|
 For existing repositories, you can set `main` as your development branch (historically referred to as 'master').
 Since Git-Flow Light is a subset of Git-Flow, refer to [the Git-Flow documentation](Git-Flow.md#git-flow-commands) for the meaning and purpose of each command.
 
-### Tip
+> [!TIP]
 > For users who use a combination of [**Feature-Flow**](Feature-Flow.md), [**Git-Flow**](Git-Flow.md) or [**Git-Flow-Light**](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).

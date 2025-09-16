@@ -4,14 +4,8 @@ This page gives an overview of the various ways in which you can use
 SmartGit to modify your repository's history.
 
 
-#### Warning
->
->
->It is generally a bad idea to modify the *remote* history (i.e. to
->modify commits you have already pushed to remote repositories), since
->this may cause a lot of trouble for other people working in them.
->
->
+> [!WARNING]
+> It is generally a bad idea to modify the *remote* history (i.e. to modify commits you have already pushed to remote repositories), since this may cause a lot of trouble for other people working in them.
 
 ## Modifying the last commit
 

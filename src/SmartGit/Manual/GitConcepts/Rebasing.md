@@ -17,31 +17,30 @@ When rebase is used with the `onto` parameter, additional precision can be speci
 
 After a successful rebase, the HEAD of the current branch will point to the rewritten fork containing the changes.
 
-## Example
+> [!EXAMPLE]
+> In the below common scenario, after forking at commit `C`, branches `main` and `feature` are now both 2 commits ahead of `C`, and the commits in `feature` cannot be fast-forwarded onto `main` because of commits `A` and `B`.
+>
+> As we prefer a linear commit history, we wish to rebase the commits `E` and `F` (on the `feature` branch) onto the `main` branch, as follows:
+>
+> ```
+> git checkout feature
+> git rebase main
+> ```
+>
+> ``` text
+>                            o D' [>feature]
+> o A [main]                 |
+> |                          o E'
+> |      o D [>feature]      |
+> o B    |                   o A [main]
+> |      o  E      ===>      |
+> |    /                     o B
+> |  /                       |
+> o C                        o C
+> ...                        ...
+> ```
 
-In the below common scenario, after forking at commit `C`, branches `main` and `feature` are now both 2 commits ahead of `C`, and the commits in `feature` cannot be fast-forwarded onto `main` because of commits `A` and `B`.
-
-As we prefer a linear commit history, we wish to rebase the commits `E` and `F` (on the `feature` branch) onto the `main` branch, as follows:
-
-```
-git checkout feature
-git rebase main
-```
-
-``` text
-                           o D' [>feature]
-o A [main]                 |
-|                          o E'
-|      o D [>feature]      |
-o B    |                   o A [main]
-|      o  E      ===>      |
-|    /                     o B
-|  /                       |
-o C                        o C
-...                        ...
-```
-
-### Notes
+> [!NOTE]
 > - Commits `D` and `E` are rewritten (to `E'` and `F'`) such that the parent of `E'` is now `A` (i.e. to reference the HEAD of `main`).
 >   In this rebase scenario, Git will automatically determine the common parent commit between the branches (i.e. `C`) and calculate that commits `E` and `D` need to be rewritten (since `C` is already present in `main`).
 > - Branch `main` (including commits `A`, `B` and `C`) is not modified by the rebase.
@@ -75,7 +74,7 @@ o C                           o C'
 o F                           o F
 ```
 
-### Notes
+> [!NOTE]
 > - The commit history of `main` will be rewritten -- although the commits `A'`, `B'` and `C'` have the same changes as the original commits `A`, `B` and `C` respectively, a new SHA hash will be assigned for each commit rewritten after the rebase is completed.
 > - The commit history of `feature` is unchanged in this scenario -- commits `D`, `E` and `F` aren't modified by the above rebase.
 

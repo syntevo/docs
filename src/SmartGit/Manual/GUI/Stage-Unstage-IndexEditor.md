@@ -29,10 +29,10 @@ The outcome of the **Stage** command depends on whether the file is tracked or u
 
 Conversely, the **Unstage** command (via **Local \| Unstage**) removes the selected file from in the Index, ensuring its changes are not included in the next commit.
 
-#### Tip
+> [!TIP]
 > The behavior of the **Changes View** varies depending on the file's staging status:
->- **Unstaged file**: The **Changes View** shows differences between the **Working Tree** and the **Index**.
->- **Staged file**: The **Changes View** shows differences between the repository's **Index** and the **HEAD** commit.
+> - **Unstaged file**: The **Changes View** shows differences between the **Working Tree** and the **Index**.
+> - **Staged file**: The **Changes View** shows differences between the repository's **Index** and the **HEAD** commit.
 
 Once staging is complete, you can [Commit](Committing.md) changes via the [Commit View](Commit-View.md) or by selecting the Working Tree root in the **Repositories View** and invoking the **[Commit](Committing.md)** command.
 
@@ -59,9 +59,9 @@ In addition to staging entire files and *Hunks*, the **Index Editor** allows:
 - **Staging a selection of lines**.
 - **Direct editing**: Modify the file's contents in the *Index* and the *Working Tree* areas, though the Repository area remains uneditable.
 
-#### Note
+> [!NOTE]
 > - If a File is only partly staged (i.e., not all change *Hunks* are added to the Index) or if subsequent changes are made to the Index version, the **Files View** will show the file in both the Unstaged and Staged panes.
-  This enables you to use the **Changes View** to see the relative differences between:
+>   This enables you to use the **Changes View** to see the relative differences between:
 >   - The *Working Tree* and *Index*.
 >   - The *Index* and *HEAD*.
 > - Editing the *Working Tree* and *Index* independently can result in changes in the *Index* not present in the *Working Tree* file. After committing changes from the Index, the Working Tree file may appear *Modified*.

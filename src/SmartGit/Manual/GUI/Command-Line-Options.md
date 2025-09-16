@@ -17,31 +17,28 @@ There may be additional options available that mainly serve debugging purposes a
 
 With either of the two following commands you can print all command-line options on the console that are specifically supported by the version of SmartGit you are using:
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe -?`
 >
 > `smartgitc.exe --help`
 
-### Note
-
-> On Windows, make sure to call `smartgitc.exe` (with 'c' on the end), otherwise when calling `smartgit.exe` this parameter has no effect, since the SmartGit process will not be attached to any console to print the help output to.
+> [!NOTE]
+> On Windows, make sure to call `smartgitc.exe` (with 'c' on the end).
+> Otherwise when calling `smartgit.exe` this parameter has no effect,
+> since the SmartGit process will not be attached to any console to print the help output to.
 
 ## Option "--open"
 
 This option launches SmartGit and opens the repository in the specified location.
 It is the default option and may be omitted.
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --open C:\path\to\repository`
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --cwd C:\path --open to\repository`
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe .`
 
 ## Option "--cwd"
@@ -59,26 +56,22 @@ If the path is relative, it will be ignored.
 
 This option opens SmartGit's Log window for the repository or file in the specified location.
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --log C:\path\to\repository\path\to\file`
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --cwd C:\path --log to\repository`
 
 ## Option "--blame"
 
 This option opens SmartGit's Blame window for the specified file.
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --blame C:\path\to\repository\path\to\file`
 
 When adding a colon with the line number at the file end, it will scroll to the specified line.
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --blame C:\path\to\repository\path\to\file:400`
 
 ## Option "--investigate"
@@ -86,8 +79,7 @@ When adding a colon with the line number at the file end, it will scroll to the 
 This option opens the built-in DeepGit for the specified file.
 When adding a colon with the line number at the file end, it will scroll to the specified line.
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --investigate C:\path\to\repository\path\to\file:400`
 
 ## Option "--anchor-commit"
@@ -95,8 +87,7 @@ When adding a colon with the line number at the file end, it will scroll to the 
 This option can be optionally specified in addition to "--log", "--blame" and "--investigate" and defines the *anchor commit* of the Log.
 The anchor commit will be made visible and preselected in the **Commits** view.
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --log C:\path\to\repository\path\to\file --anchor-commit=10de7ee0313e79c406d729f4c3e11f286df54f05`
 
 ## Option "--write-default-theme-file"
@@ -112,29 +103,22 @@ You can SmartGit tell to load this file by selecting it in the preferences:
 
 ![Preferences theme selection](../attachments/53215487/53215488.png)
 
-### Example
-
+> [!EXAMPLE]
 > To create a theme that uses a green background color for selection, uncomment the line
->
 > `#selection.background=#5968B2`
->
-> by removing the leading \# and change the value to a green value:
->
+> Remove the leading \# and change the value to a green value:
 > `selection.background=#3DAF3F`
->
-> and restart SmartGit.
+> Restart SmartGit.
 
 ## Option "--add-tool"
 
 Use this option to add a new *diff tool* or *conflict solver* (see **Preferences**, **Diff Tools** and **Conflict Solvers**).
 To add a *diff tool*, invoke:
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --add-tool type=diff pattern=*.eap "command=<local-path-to-your-diff-tool>" "parameters=${leftFile} ${rightFile}"`
 
 To add a *conflict solver*, invoke:
 
-### Example
-
+> [!EXAMPLE]
 > `smartgitc.exe --add-tool type=merge pattern=*.eap "command=<local-path-to-your-conflict-solver>`" "parameters=${leftFile} ${rightFile} ${baseFile} ${mergedFile}"`

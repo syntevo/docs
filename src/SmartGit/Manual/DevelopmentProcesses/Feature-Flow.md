@@ -11,8 +11,7 @@ The main differences of Feature-Flow are:
 - If the trunk branch has conflicts that will prevent the local feature changes from being merged, Feature-Flow requires that any merge conflicts be resolved before finishing the feature, rather than waiting to resolve them after the new feature has been pushed to the remote and a new pull request opened.
 - Local feature branch names are not reserved on the remote when starting features.
 
-#### Note
-
+> [!NOTE]
 > In this article we refer to 'trunk' branches as any long-lived branch in a repository, such as `main`, `master`, `develop` or release support branches.
 > On the SmartGit UI, the term 'trunk' branch and 'main' branch are used interchangeably, but note that the concept extends to **any** trunk branch, and there is no requirement to use a branch with the name *main* when using the Feature-Flow process.
 
@@ -22,8 +21,7 @@ From the **Branch \| Configure Features** menu option, you can inform SmartGit a
 More than one trunk branch can be specified, e.g. `main` and `hotfix`.
 RegEx patterns can also be specified as a branch pattern, e.g. If you need to support multiple production releases, specifying `release-.*` will recognize branches with names such as `release-1.1`, `release-2.3.4` as trunk branches from which hotfix branches can be created.
 
-#### Note
-
+> [!NOTE]
 > The trunk branch identified must exist at the time of setting configuration.
 > When working with a fresh repository, you may need to set up your trunk branch(es) before starting new features.
 
@@ -31,15 +29,14 @@ In addition, you can specify the Feature Prefix to be used on new features.
 This will default to `feature/`, which is the Git-Flow standard.
 You can leave the Feature Prefix blank to remove any prefix from your feature branch names when you start new features.
 
-#### Tip
+> [!TIP]
 > For users who use a combination of [**Feature-Flow**](Feature-Flow.md), [**Git-Flow**](Git-Flow.md) or [**Git-Flow-Light**](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
 
 ![Feature-Flow configuration](../images/Feature-Flow-Configuration.png)
 
 ## Starting a New Feature
 
-#### Note
-
+> [!NOTE]
 > Your local repository must be up to date with the remote trunk branch from which you are branching the new feature.
 > If the remote has diverged, you will need to use a command such as pull to obtain the most recent commits from your main trunk branch.
 
@@ -47,7 +44,7 @@ After opening a repository from the Standard Window, use the **Start** button on
 SmartGit will append the defined Feature Prefix to your feature branch name.
 If you have not yet defined any trunk branches for this repository, SmartGit will also prompt you to identify the trunk branch(es) from which you will be creating features.
 
-#### Note
+> [!NOTE]
 > If you haven't yet configured trunk branch(es) and an optional feature branch prefix, the [Configure Features](#configuring-feature-flow) dialog will be shown.
 
 Once the feature has been started, SmartGit will checkout a branch named *feature prefix + feature name*, and you can now make the changes needed to the working tree as needed to implement the feature.

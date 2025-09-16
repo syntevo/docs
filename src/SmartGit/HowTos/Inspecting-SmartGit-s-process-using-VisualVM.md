@@ -6,7 +6,7 @@ For Linux and macOS, paths have to be adjusted accordingly.
 
 -   Download *JDK 17 (LTS)*, e.g. from [azul.com](https://www.azul.com/downloads/?package=jdk) (unless you already have a JDK 17 installed) and uncompress to e.g. `C:\jdk`.
 
-	#### Warning
+	> [!WARNING]
 	> Be sure to select the correct platform, architecture (x86/x64 for Windows) and bundle: *.zip* for Windows, *.tar.gz* for Linux and *.dmg* for macOS.
 
 -   Download VisualVM from [visualvm.github.io](https://visualvm.github.io/download.html) and uncompress to e.g. `C:\visualvm`
@@ -17,7 +17,7 @@ For Linux and macOS, paths have to be adjusted accordingly.
     -XX:+UsePerfData
     ```
 
-    #### Warning
+    > [!WARNING]
     > Without this step, SmartGit will not occur in the list of local applications in VisualVM.
 
 -   Run VisualVM:
@@ -29,7 +29,7 @@ For Linux and macOS, paths have to be adjusted accordingly.
     If a SmartGit upgrade is in progress, there will be an additional VM (on Windows showing up as `SmartGitUpdater`).
     If SSH connections are currently in progress, there may be more VMs.
 
-#### Note
+> [!NOTE]
 > If you can't connect to *SmartGitUpdater* VM, try again running VisualVM as administrator, because SmartGitUpdater is usually invoked with administrative privileges, too.
 
 #### Taking thread dumps
@@ -65,7 +65,7 @@ Heap dumps are useful to investigate memory-related problems.
 
 -   To take a full heap dump for debug purposes, select the **Monitor** section and hit the **Heap Dump** button there.
 
-#### Note
+> [!NOTE]
 > For heap dumps, it's expected to see a lot of `char[]`, `byte[]` and `String` objects, as version control is more or less all about bytes and texts (paths, file contents, commit messages).
 
 Heap dumps are usually huge, so first thing to do is to store them locally using **Save As** from the context menu in the **Applications** view.

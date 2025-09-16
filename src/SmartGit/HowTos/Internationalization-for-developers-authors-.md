@@ -5,7 +5,7 @@
 > This page is only intended to be read by internationalization developers/authors.
 > If you are a user who is interested in a localized SmartGit GUI, vote for [smartgit.userecho.com/communities/1/topics/76-](https://smartgit.userecho.com/communities/1/topics/76-internationalization-support).
 
-#### Note
+> [!NOTE]
 > If you want to help us to translate SmartGit to your language, please contact us at <smartgit@syntevo.com> (in English, please ![](images/icons/emoticons/smile.png)).
 
 # Switching the SmartGit GUI to a certain locale
@@ -46,13 +46,12 @@ This requires an initial setup effort but rewards you by seeing your translation
     Replace `<locale>` by the locale you want to work with and set `<development-directory>` to the appropriate locale's sub-directory of the translation repository.
     For example:
 
-    **Example**
-
-    ```
-    smartgit.i18n=zh-CN
-    smartgit.debug.i18n.development=D:/smartgit-translations/zh-CN
-    smartgit.debug.i18n.master=D:/smartgit-translations/mapping
-    ```
+> [!EXAMPLE]
+> ```
+> smartgit.i18n=zh-CN
+> smartgit.debug.i18n.development=D:/smartgit-translations/zh-CN
+> smartgit.debug.i18n.master=D:/smartgit-translations/mapping
+> ```
 
 
 
@@ -71,7 +70,7 @@ In i18n development mode following files will be created in the development dire
 **All other files will be rewritten by SmartGit and thus changes will be lost!**
 
 
-#### Warning
+> [!WARNING]
 > The `mapping_dev.<locale>` will be reread by SmartGit when creating GUI elements, hence it will usually work well to modify and save this file, reopen a dialog or window and already see the results of the modification.
 
 ### Content of a mapping file
@@ -82,9 +81,7 @@ Keys may consist of prefixes, hard-coded constants and (dynamic) text which has 
 (Dynamic) text will be enclosed in quotes.
 
 
-#### Example
-
-
+> [!EXAMPLE]
 > `dlgSgCommit.btn"Commit"=提交       `
 > 
 > consists of the prefix `dlg` which denotes a dialog, the hard-coded
@@ -96,8 +93,7 @@ There are also special mappings, called "macros" which are starting with ':' and
 Macros will be used to substitute regular mapping values when writing the `mapping.<locale>` file.
 
 
-#### Example
-
+> [!EXAMPLE]
 > ```
 > :\*"Git-Flow"=Git工作流
 > ```
@@ -134,7 +130,7 @@ Actually, the `*` is even the reason why macros exist: instead of having many `*
 Variables are of the form `$1`, `$2`, ... and can be used to match a piece of text in the key and substitute the corresponding variable in the translation by this text.
 
 
-#### Example
+> [!EXAMPLE]
 > `dlgSgSvnClientCertificate.wrn"Authentication to the SVN repository '$1' failed with error: $2"= 对SVN版本库'$1'的身份验证失败，错误：$2'`
 
 For certain, unique keys, the matching happens indirectly by using the master mapping.
@@ -142,21 +138,19 @@ This allows to skip the dynamic text part from the key.
 Still it's necessary to declare the variables used in the mapped translation and this is where `%` will be used.
 
 
-#### Example
-
+> [!EXAMPLE]
 > `dlgQProxyConnectionFailed.hdl%1=无法连接到 $1.`
 
 "or"-groups are used to summarize identical translations for a set of keys.
 
 
-#### Example
-
+> [!EXAMPLE]
 > `wnd(Log|Project|Compare|ConflictSolver).mniWindow-fullScreen=全屏`
 
 If a special character needs to be used *literally* in a key or value, it has to be escaped using `\`.
 
 
-#### Example
+> [!EXAMPLE]
 > ```
 > wnd(Log|Project).tab"Changes of $1 - $2"=$1 的变化 - $2
 > wnd(Log|Project).tab"Changes of $1 - $2 \($3\)"=\
@@ -173,7 +167,7 @@ If a special character needs to be used *literally* in a key or value, it has to
 For long mappings, `\` after the `=`-separator can be used to wrap the mapping.
 
 
-#### Tip
+> [!TIP]
 > If SmartGit suddenly fails to pick up modifications of the mapping file, this may be caused by invalid/unparsable lines.
 > In this case try to restart SmartGit.
 > If anything is wrong with the mapping file, SmartGit won't start up and a corresponding error message is logged to `logs/log.txt.0` in the Settings directory.
@@ -207,9 +201,9 @@ Contributing changes to this file is similar to language mapping files:
     2.  by **variable count (%) in key and variable ($) in value** if the key does not contain the dynamic text (i.e. if there are no quotes)
 
 
-		#### Tip
-		> Usually, it's a good idea to trigger the display of the text with dynamic content in a way that the dynamic content changes (e.g. by applying a certain operation to two different branches or commits).
-		> This way, SmartGit will log both text pieces (which only differ in the dynamic part) to `unknown` and it will become easy to join these separate lines into one line by substituting with variables.
+> [!TIP]
+> Usually, it's a good idea to trigger the display of the text with dynamic content in a way that the dynamic content changes (e.g. by applying a certain operation to two different branches or commits).
+> This way, SmartGit will log both text pieces (which only differ in the dynamic part) to `unknown` and it will become easy to join these separate lines into one line by substituting with variables.
 
 
 6.  exit SmartGit

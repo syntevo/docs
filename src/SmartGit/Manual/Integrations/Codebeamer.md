@@ -26,8 +26,7 @@ To enable the linking from SmartGit to PTC codebeamer tracker items, we need to 
   logregex = \\d+
 ```
 
-### Note
-
+> [!NOTE]
 > The [Bugtraq configuration](../Integrations/Bugtraq-links-to-issue-trackers.md) offers extensive customization options, allowing you to tailor the integration to your specific needs.
 > While this example uses PTC codebeamer, the same approach can be applied to many other issue tracking tools that support similar URL and pattern-matching schemes.
 

@@ -4,10 +4,10 @@ SmartGit offers basic hyperlink integration with the [OpenAI Codex Agent](https:
 
 Once correctly configured, an **Open in Codex** option will appear when you right-click a branch in the **Branches** view.
 
-### Note
-> - At time of writing, OpenAI Codex only supports integration with GitHub repositories.
-> - SmartGit will open your default browser -- if you have multiple browser identities, switch the identity which you use to access Codex before invoking the **Open in Codex** option in SmartGit.
-> - Only branches which track a known branch on the remote can be accessed by Codex.
+> [!NOTE]
+> At time of writing, OpenAI Codex only supports integration with GitHub repositories.
+> SmartGit will open your default browser -- if you have multiple browser identities, switch the identity which you use to access Codex before invoking the **Open in Codex** option in SmartGit.
+> Only branches which track a known branch on the remote can be accessed by Codex.
 
 ## Setup
 

@@ -58,7 +58,7 @@ This command uses an existing LLM configuration called `openai` (tested on `gpt-
                 ${gitDiff}
 ```
 
-#### Note
+> [!NOTE]
 > With `diff = pair`, if the selected diffs have both diverged from the common ancestor commit, SmartGit will prompt you to select the order of comparison of the diffs.
 > You can swap the order if needed.
 > A Git diff must be possible between the two commits, i.e., they must share a common ancestor.
@@ -94,7 +94,7 @@ An appropriate thumbs up (U+1F44D) or thumbs down (U+1F44E) icon will be display
                 ${gitDiff}
 ```
 
-#### Tips
+> [!TIP]
 > - Add a prefix such as `ai/` to the `notesRef` setting to distinguish AI-generated notes from 'standard' [Git Notes](Notes.md) clearly.
 > - As with other SmartGit AI features, move any shared configuration (like `smartgit-ai-llm` definitions or reusable `smartgit-ai-commit-annotation` commands) to your global `~/.gitconfig` file for use across multiple repositories.
 > - By default, SmartGit sets a small `maxDiffSize` to avoid sending large commits to LLMs, which may result in unexpected expenses.

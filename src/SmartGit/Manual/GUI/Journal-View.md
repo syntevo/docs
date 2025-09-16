@@ -23,12 +23,9 @@ You can permanently change the default number of displayed commits using by chan
 
 See [Interactive Rebase](Branch/Rebase-Interactive.md) for details on how to change/rewrite these commits.
 
-#### Note
+> [!NOTE]
+> The behavior of how commit times will (or will not) be adjusted can be configured by low-level properties ([smartgit.pushableCommits.preserveAuthorDate](AdvancedSettings/System-Properties.md)).
 
-> The behavior of how commit times will (or will not) be adjusted can be configured by low-level properties
-> ([smartgit.pushableCommits.preserveAuthorDate](AdvancedSettings/System-Properties.md)).
-
-#### Tip
-
+> [!TIP]
 > To just change the commit message of the last commit (even for a merge commit or if the working copy is not clean),
 > invoke **Local \| Edit Last Commit Message**.

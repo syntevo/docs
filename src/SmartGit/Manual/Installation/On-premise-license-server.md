@@ -169,7 +169,9 @@ To ensure that there are no interruptions, it will be necessary to allow SmartGi
 ## Checking user permissions against LDAP/Active Directory
 
 You can configure the on-premise license server to check authorization to use SmartGit against an LDAP/Active Directory.
-**Be advised that this is not an authentication!** SmartGit just reads the name of the currently logged-in user from the system environment and transmits this to the server as a string, without any password checks involved:
+> [!WARNING]
+> This is not an authentication.
+> SmartGit reads the name of the currently logged-in user from the system environment and transmits this to the server as a string, without any password checks involved:
 
 * On Windows, this is `USERNAME`
 * On MacOS/Linux, this is `USER`
@@ -210,25 +212,25 @@ keytool -importkeystore -srckeystore /usr/lib/jvm/java-11-openjdk-amd64/lib/secu
 keytool -importcert -alias ldap_server_cert -file ldap_server_certificate.pem -keystore opserver_truststore.p12
 ```
 
-#### Example
+> [!EXAMPLE]
 
 > A Linux/MacOS example for starting the on-premise license server which queries the Active Directory:
 >```
 >docker run --restart unless-stopped --name syntevo-license-server -d -v /var/syntevo-license-server/data:/data -v /var/syntevo-license-server/licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY='(&(objectClass=user)(userPrincipalName={0}))' -e SPRING_LDAP_URLS=ldap://ad.syntevo.com -e SPRING_LDAP_USERNAME='uid=admin' -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE='dc=syntevo,dc=com' ghcr.io/syntevo/license-opserver:stable
 >```
 >
-> Notes:
+> [!NOTE]
 > * Some parameters are enclosed by single-quotes (`'`). On Windows, you will have to use double-quotes (`"`).
 > * The Active Directory server is located at `ldap://ad.syntevo.com` and runs on the default port.
 
-#### Example
+> [!EXAMPLE]
 
 > A Windows example for connecting to a local LDAP server (e.g. for testing):
 > ```
 > docker run --rm --network syntevo-op-server --name syntevo-license-server -v D:\license-server\.op\data:/data -v D:\license-server\.op\licenses:/licenses -p 8080:8080 -e LDAPACTIVE=true -e LDAPQUERY="(&(objectClass=person)(uid={0}))" -e SPRING_LDAP_URLS="ldap://syntevo-license-ldap-server:8389" -e SPRING_LDAP_USERNAME="uid=admin" -e SPRING_LDAP_PASSWORD=secret -e SPRING_LDAP_BASE="dc=springframework,dc=org" ghcr.io/syntevo/license-opserver:stable
 > ```
 >
-> Notes:
+> [!NOTE]
 > * We are using double-quotes (`"`). On Windows, you will have to use single-quotes (`'`).
 > * We are assuming that `D:\license-server\.op` contains both `data` and `licenses`.
 > * Both, the local LDAP server and the on-premise license server run on the same Docker network `syntevo-op-server`.
@@ -270,7 +272,7 @@ curl -u admin:<password> <license-server-url>/admin/v1/reportOp?type=raw[&from=<
 Optional parameters `<from>` and `<to>` specify the time range for the `raw` report.
 If either `<from>` or `<to>` is present, the other must also be included.
 
-#### Example
+> [!EXAMPLE]
 
 > ```
 > curl -u admin:ebc89b1511c6eaf29921d7f9219b608e383384df3ac161287d80c39911e10eb4 "https://opserver.syntevo.com/admin/v1/reportOp?type=raw&from=2000-01-01&to=2030-12-31"

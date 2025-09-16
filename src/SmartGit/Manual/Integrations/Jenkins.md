@@ -14,10 +14,11 @@ At least one project type must be configured:
 - `freeStyleProjects`: a comma-separated list of free style project names which should be queried
 - `multiBranchPipelines`: a comma-separated list of multibranch pipeline project names which should be queried
 
-### Example
-
-``` ini
-[smartgit "jenkins"]
-   url = http://localhost:8080
-   freeStyleProjects = tests,tests-gitimpl,tests-jgit
-```
+> [!EXAMPLE]
+> Example configuration:
+>
+> ``` ini
+> [smartgit "jenkins"]
+>    url = http://localhost:8080
+>    freeStyleProjects = tests,tests-gitimpl,tests-jgit
+> ```

@@ -19,9 +19,8 @@ Usually, you will want to fetch the entire commit history of the repository, inc
 However, deselect **Fetch all Heads and Tags** if you are only interested in a specific branch (head) or tag for very large repositories.
 This allows you to control which branch to fetch and optionally choose not to **Fetch all commits** but instead **Fetch Only the Latest x commits** for a shallow clone to a depth of **x** commits.
 
-#### Note
-
-- Some Git commands do not work correctly with partial repositories (e.g., Pull with Rebase), and tools like GitVersion may not work correctly with partial clones.
+> [!NOTE]
+> - Some Git commands do not work correctly with partial repositories (e.g., Pull with Rebase), and tools like GitVersion may not work correctly with partial clones.
 
 In the subsequent steps, you must provide the path to the local directory where the clone should be created and configure a few options.
 
@@ -32,12 +31,11 @@ If your server supports [partial clones](https://git-scm.com/docs/partial-clone)
 Partial Clones are an effective way to reduce the amount of space required by your clone and the time needed to perform the clone.
 They are beneficial if your repository contains large (binary) files that are not interesting.
 
-#### Note
-
-- Partial Clones provide an optimization to reduce the size of local clones, and by definition, they will not clone the entire repository to the local file system.
-  SmartGit will require a connection to the remote repository when any operation relating to the omitted files is attempted.
-- Not all Git servers support partial clones.
-  If you try to **Skip large files** on a server that does not support partial clones, SmartGit will report an error.
+> [!NOTE]
+> - Partial Clones provide an optimization to reduce the size of local clones, and by definition, they will not clone the entire repository to the local file system.
+>   SmartGit will require a connection to the remote repository when any operation relating to the omitted files is attempted.
+> - Not all Git servers support partial clones.
+>   If you try to **Skip large files** on a server that does not support partial clones, SmartGit will report an error.
 
 Once the clone is complete, SmartGit will fetch all required blobs (regardless of size) to perform subsequent Git operations on this clone.
 For example, let's assume that your repository contains a large file named `large`:

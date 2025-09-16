@@ -4,7 +4,7 @@ This page is dedicated to running SmartGit on Windows Subsystem for Linux with G
 WSLg allows running GUI based Linux applications, such as SmartGit, in emulated Linux environment on Windows.
 This is convenient if you need to mix Windows and Linux development and prefer Windows as main OS.
 
-#### Note
+> [!NOTE]
 > You'll need **Win10 update 21H2** or a recent **Win11 or higher**, because older versions will only support plain WSL.
 
 # WSLg installation
@@ -16,15 +16,15 @@ wsl --install -d Ubuntu
 After a Windows reboot, a console starts automatically to continue installing Ubuntu, especially to create a user account.
 Also, find the new Start menu item `Ubuntu` to launch it.
 
-#### Tip
->Run these commands in WSL terminal to make sure that WSLg and the GUI, especially GTK3, works as intended:
->```
->sudo apt update
->sudo apt install gedit
->gedit
->```
+> [!TIP]
+> Run these commands in WSL terminal to make sure that WSLg and the GUI, especially GTK3, works as intended:
+> ```
+> sudo apt update
+> sudo apt install gedit
+> gedit
+> ```
 >
->You should see `gedit` window open in your Windows. If this doesn't happen, then either you don't have WSLg or it's broken in some way.
+> You should see `gedit` window open in your Windows. If this doesn't happen, then either you don't have WSLg or it's broken in some way.
 
 # SmartGit installation
 
@@ -89,12 +89,12 @@ Also, find the new Start menu item `Ubuntu` to launch it.
      Note that you need to run it with `sudo`, because Windows only picks up info from system `/usr/share/applications` and ignores user `~/.local/share/applications`.
 3. Run and set up SmartGit
    * Run `SmartGit (Ubuntu)` in Windows Start menu or directly from WSL command line using `smartgit/bin/smartgit.sh`.
-     #### Note
-     >If you are not able to finish the Setup due to a missing `machine-id` file and `sudo apt update` does not resolve your problem,
-     >you can create the file from command line:
-     >```
-     >sudo systemd-machine-id-setup
-     >```
+    > [!NOTE]
+    > If you are not able to finish the Setup due to a missing `machine-id` file and `sudo apt update` does not resolve your problem,
+    > you can create the file from command line:
+    > ```
+    > sudo systemd-machine-id-setup
+    > ```
    * When asked for license, know that you can pick your Windows license from inside WSLg. To do that, navigate to
      `/mnt/c/Users/win-user/AppData/Roaming/syntevo/SmartGit/22.1/license`<br>
      (here, `win-user` is your Windows username, and `22.1` with your SmartGit version. Just use directory browser button)

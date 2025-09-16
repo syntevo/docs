@@ -9,5 +9,5 @@ For instance, you can toggle the visibility of ignored files and directories (i.
 
 If a file is is shown as ignored and you wonder why, use **Local\|Edit Ignore File** to see the ignore files and which one is matching (that you then can edit).
 
-#### Note
+> [!NOTE]
 > For performance reasons SmartGit does not scan into directories that are ignored.

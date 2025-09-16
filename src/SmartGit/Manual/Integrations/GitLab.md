@@ -15,8 +15,7 @@ Once you have confirmed this page, you will be redirected to a specific port on 
 The code will be used to create an *application access token* which will be used to populate the **Token** field.
 Finally, confirm the **Add Hosting Provider** dialog using **Add**.
 
-### Info
-
+> [!NOTE]
 > Once you have authorized SmartGit, it will show up in your GitLab -> **Settings**, section **Applications**.
 > If you need to rerun through the Authorization process outlined above, you have to **Revoke** access there first and start over.
 >
@@ -31,6 +30,7 @@ Make sure that your personal access token has at least following scopes assigned
 
 ### Authenticating with two or more accounts
 
+> [!NOTE]
 > SmartGit currently does not support having two **Hosting Providers** configured for "gitlab.com", hence for the extended integration you have to decide for one of your accounts.
 > It's however possible to access repositories of multiple GitLab accounts, as explained below.
 
@@ -45,4 +45,3 @@ If so, try to reconfigure:
 ```bash
 git config --global credential.gitlab.com.useHttpPath true
 ```
-

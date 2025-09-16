@@ -44,7 +44,8 @@ To create a new local branch from an existing remote branch, specify the remote-
 `git checkout -b NewFeature origin/main`
 
 This will create a local branch `NewFeature`, that tracks the upstream `origin/main`.
-*(Note: In some teams, development etiquette requires that you `reserve` the new branch name on the remote before checking it out locally).* 
+> [!NOTE]
+> In some teams, development etiquette requires that you `reserve` the new branch name on the remote before checking it out locally.
 
 In addition to checking out existing remote branches, Git allows you to create new local branches from an existing commit hash or tag, e.g.:
 
@@ -52,9 +53,8 @@ In addition to checking out existing remote branches, Git allows you to create n
 
 Where `ce1067054f` is the SHA hash of the commit that you would like the `NewFeature` local branch to be created from.
 
-### Tip
-
-> After a creating a new release, tagging the commit that produced that release with an identifier is good practice.
+> [!TIP]
+> After creating a new release, tagging the commit that produced that release with an identifier is good practice.
 > This makes it easier to identify where to branch from when creating bug-fix commits for that release.
 
 When you push changes from your local branch to the origin repository, these changes will be propagated to the tracked (remote) branch.
@@ -63,8 +63,7 @@ To get the tracked branch changes into your local branch, the remote changes mus
 This can be done directly when invoking the **Pull** command in SmartGit or later by explicitly invoking the **Merge** command.
 An alternative to the **Merge** command is the **Rebase** command.
 
-### Tip
-
+> [!TIP]
 > The method to be used by **Pull** (either **Merge** or **Rebase**) can be configured in **Repository \| Settings** on the **Pull** tab.
 
 ## Branches are just pointers to commits
@@ -99,18 +98,17 @@ You can also `checkout` a previous commit **without** creating a new branch by p
 
 Since no branch has been specified in this case, Git refers to the Working Tree status as a *detached HEAD*.
 
-**Note**:
-
-- Detached HEAD status should be regarded as a 'readonly' view of a commit in the repository.
-When making changes and adding commits, it is recommended to use a named branch.
-- Commits added while in detached HEAD are prone to being garbage collected, if you switch branches before adding a branch or tag to label the commits.
-- However, if you accidentally make changes / add new commits while in a detached HEAD status, BEFORE switching to another branch, you can create a new branch from the current HEAD status:
-
-`git checkout -b NewBranch`
-
-Then, stage and commit the changes to the `NewBranch`.
-
-You can later use tools such as [Merge](Merging.md), cherry-pick, or [Rebase](Rebasing.md) to integrate these changes into another branch.
+> [!NOTE]
+> - Detached HEAD status should be regarded as a 'readonly' view of a commit in the repository.
+> When making changes and adding commits, it is recommended to use a named branch.
+> - Commits added while in detached HEAD are prone to being garbage collected, if you switch branches before adding a branch or tag to label the commits.
+> - However, if you accidentally make changes / add new commits while in a detached HEAD status, BEFORE switching to another branch, you can create a new branch from the current HEAD status:
+>
+> `git checkout -b NewBranch`
+>
+> Then, stage and commit the changes to the `NewBranch`.
+>
+> You can later use tools such as [Merge](Merging.md), cherry-pick, or [Rebase](Rebasing.md) to integrate these changes into another branch.
 
 ## Merge Commits have multiple parent commits
 

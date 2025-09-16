@@ -27,7 +27,7 @@ To create a group folder, right-click in the **Repositories View** and select **
 To move a repository into a group, right-click the repository, go to the **Move To** submenu, and select the target group.
 Alternatively, you can drag and drop the repository into the desired group folder (see [autoscroll](Tips-and-Tricks.md#autoscrolling-while-drag-and-drop)).
 
-### Tips
+> [!TIP]
 > - Groups can be nested inside other groups by selecting the parent group and then adding a new group.
 > - To move a nested group back to the top level, use **Move To** and choose **No Group**.
 > - You can select multiple repositories by holding **Control** or **Shift**.

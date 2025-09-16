@@ -63,35 +63,38 @@ Each notes category configured in SmartGit requires the following configuration:
 
 ### 1 -- Override Classic *commits* notes
 
-The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
-
-```ini
-[smartgit-notes "Personal Notes"]
-    # same as the default, but defined explicitly
-    ref              = commits
-    color = 5DADEC   # light-blue in the graph
-```
+> [!EXAMPLE]
+> The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
+>
+> ```ini
+> [smartgit-notes "Personal Notes"]
+>     # same as the default, but defined explicitly
+>     ref              = commits
+>     color = 5DADEC   # light-blue in the graph
+> ```
 
 ### 2 -- Separate *code-reviews* category with filtering
 
-```ini
-[smartgit-notes "reviews"]
-    ref               = code-reviews        # stored at refs/notes/code-reviews
-    color             = FF8800              # orange
-```
+> [!EXAMPLE]
+> ```ini
+> [smartgit-notes "reviews"]
+>     ref               = code-reviews        # stored at refs/notes/code-reviews
+>     color             = FF8800              # orange
+> ```
 
 ### 3 -- Multiple categories side-by-side
 
-```ini
-[smartgit-notes "qa"]
-    ref               = qa                  # refs/notes/qa
-    graphMessageRegex = ^State: (.*)        # extract review state (e.g. \"Pass\" or \"Fail\") directly to graph
-    color             = 66CC66              # green
-
-[smartgit-notes "design"]
-    ref   = ux-design   # refs/notes/ux-design
-    color = CC66CC      # purple
-```
+> [!EXAMPLE]
+> ```ini
+> [smartgit-notes "qa"]
+>     ref               = qa                  # refs/notes/qa
+>     graphMessageRegex = ^State: (.*)        # extract review state (e.g. \"Pass\" or \"Fail\") directly to graph
+>     color             = 66CC66              # green
+>
+> [smartgit-notes "design"]
+>     ref   = ux-design   # refs/notes/ux-design
+>     color = CC66CC      # purple
+> ```
 
 ---
 
@@ -143,4 +146,3 @@ To completely remove notes support, run the following `git update-ref -d` comman
 4. **Regular expressions** -- Keep `graphMessageRegex` simple and anchored (`^...`) to avoid accidental matches that hide or show unexpected commits.
 
 With these settings in place you can toggle the notes display in SmartGit's **Log** and **Standard** windows and enjoy a colour-coded, filtered view of your notes alongside normal commit data.
-

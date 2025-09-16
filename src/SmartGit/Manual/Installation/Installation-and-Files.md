@@ -15,8 +15,7 @@ Below are the locations of SmartGit's settings files, depending on the OS:
 - **Linux** `${XDG_CONFIG_HOME}/smartgit/<major-smartgit-version>`
   (if the environment variable `XDG_CONFIG_HOME` is not defined, `~/.config` is used instead).
 
-### Tip
-
+> [!TIP]
 > You can change the directory where the settings files are stored by changing the property [smartgit.settings](../GUI/AdvancedSettings/VM-options.md#location-of-the-settings-directory).
 > This is used by the portable bundle for Windows.
 
@@ -74,8 +73,7 @@ You may synchronize the settings of the *newer version* from the *older version*
 6. Copy over all files from the *old settings directory* to the *new settings directory*.
 7. Restart the *newer version*.
 
-### Note
-
+> [!NOTE]
 > It is not possible to synchronize settings from a *newer version* to an *older version*, as the newer version may have new settings which are incompatible with the older version.
 
 ## Program Updates
@@ -90,8 +88,7 @@ Depending on your operating system, the *updates cache* can be found at:
 - **macOS**: `~/Library/Application Support/SmartGit/updates`.
 - **Linux**: `${XDG_DATA_HOME}/.local/share/smartgit/updates`.
 
-### Tip
-
+> [!TIP]
 > You can manually trigger the update of the installation directory from the **About** dialog, section **Information**, **...**-button right beside **Version**.
 >
 > If you prefer to keep your SmartGit installation *always* up-to-date, you can select **Update SmartGit application in place** in the Preferences, section **SmartGit Updates**.
@@ -111,21 +108,11 @@ After download, the content will be verified with the hash from the control file
 When starting SmartGit, the `bootloader.jar` from the installation directory is launched.
 This uses the `control` file from the *Updates* directory to determine which updated SmartGit files to launch that contain the actual application code.
 
-Each new build has a corresponding, digitally-signed control file which contains information about all required application files with their download location and the expected file content hash. To reduce bandwidth, application files only will be downloaded if they are not yet locally available. After download, the content will be verified with the hash from the control file.
-
-When starting SmartGit, the `bootloader.jar` from the installation directory is launched. This uses the `control` file from the *Updates* directory to determine which updated SmartGit files to launch that contain the actual application code.
-
-#### Warning
-
->
->
->Modifying the `control` file or any other contents within the *Updates* directory, may easily break your SmartGit installation, causing unexpected behaviour.
+> [!WARNING]
+> Modifying the `control` file or any other contents within the *Updates* directory, may easily break your SmartGit installation, causing unexpected behaviour.
 > Do not touch files in the *Updates* directory unless you have good reasons to do so.
->
->
 
-### Tip
-
+> [!TIP]
 > On Windows, if you encounter file system access issues during an installation update, it might be related to Windows itself or the Attack Surface Reduction (ASR) feature in Windows Security.
 > In such cases, you can try excluding the `SmartGit` and `SmartGit.new` directories from this feature.
 > For example, if SmartGit is installed at `C:\\Program Files\\SmartGit`, execute the following command in an elevated PowerShell (Administrator mode):
@@ -167,4 +154,3 @@ To update the Portable Bundle manually:
 - Recreate the installation from the new Portable Bundle
 - Move `.settings` and `.updates` back into place
 - Start SmartGit
-

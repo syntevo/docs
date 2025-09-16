@@ -35,10 +35,9 @@ Let's assume that the custom update server's URL is `http://updateserver/smartgi
 - `http://updateserver/smartgit/updates`
 - `http://updateserver/smartgit/info`
 
-### Info
-
-If you want to use `file://`-protocol instead of `http://`-protocol, for example, the URL for local file `d:\update-server\autoupdate` would be `file://localhost/d:/update-server/autoupdate`.
-The URL for a network share file `\\update-server\autoupdate` would be `file://update-server/autoupdate`.
+> [!NOTE]
+> If you want to use `file://`-protocol instead of `http://`-protocol, for example, the URL for local file `d:\update-server\autoupdate` would be `file://localhost/d:/update-server/autoupdate`.
+> The URL for a network share file `\\update-server\autoupdate` would be `file://update-server/autoupdate`.
 
 ## Autoupdate file
 
@@ -78,22 +77,22 @@ A `<product>`-element will usually contain a `<version>`-element which gives det
 You will usually want to copy these elements over from our main `autoupdate`-file and only adjust the `<location>`-element and the `<update-url>`-element to your company-internal URLs.
 An example `<version>`-element for SmartGit 17.1.2 with adjusted paths might look like:
 
-### Example
-
-```xml
-<version>
-    <major-version>17.1</major-version>
-    <major-date>2017-10-12</major-date>
-    <build>11190</build>
-    <name>17.1.2</name>
-    <date>2017-11-14</date>
-    <location>http://updateserver/smartgit/info</location>
-    <update-url>http://updateserver/smartgit/updates/control-11190</update-url>
-    <update-delay>3600</update-delay>
-    <update-density>100</update-density>
-    <update-density-max>100</update-density-max>
-</version>
-```
+> [!EXAMPLE]
+> Example `<version>`-element with adjusted paths.
+> ```xml
+> <version>
+>     <major-version>17.1</major-version>
+>     <major-date>2017-10-12</major-date>
+>     <build>11190</build>
+>     <name>17.1.2</name>
+>     <date>2017-11-14</date>
+>     <location>http://updateserver/smartgit/info</location>
+>     <update-url>http://updateserver/smartgit/updates/control-11190</update-url>
+>     <update-delay>3600</update-delay>
+>     <update-density>100</update-density>
+>     <update-density-max>100</update-density-max>
+> </version>
+> ```
 
 The important URL is `<update-url>` which specifies the URL-prefix for the update "control"-files.
 The `<location>`-URL is of minor importance and will just be displayed by SmartGit if an automatic upgrade is not possible (which should almost never be the case).
@@ -104,11 +103,9 @@ Depending on the operating system, the URL-prefix will be completed to a full UR
 - `-gen` for Linux.
 - `-macos-aarch64` or `-macos-x86_64` for macOS.
 
-### Example
-
-The complete URL for the Windows update control file will look like:
-
-`http://updateserver/smartgit/updates/control-11190-win`
+> [!EXAMPLE]
+> The complete URL for the Windows update control file:
+> `http://updateserver/smartgit/updates/control-11190-win`
 
 ## Control file
 
@@ -129,24 +126,24 @@ CONTENT
 You will usually want to copy the control files from our website as-is and only adjust the `sourceRoolUrl` to your company-internal URL.
 An example Windows update control file for SmartGit 17.1.2 with adjusted URL might look like:
 
-### Example
-
-```text
-HEADER
-build=11190
-minRequiredBuild=11170
-versionName=17.1.2
-majorName=17.1
-majorDate=2017-10-12
-executable32bit=bin/smartgit.exe
-executable64bit=bin/smartgit64.exe
-sourceRootUrl=http://updateserver/smartgit/updates
-copyPatterns=bin/*.vmoptions,.settings/*,.updates/*,unins???.dat,unins???.exe
-skipPatterns=lib/hgext/*.pyc
-CONTENT
-e6971f3e69c064e0468f13ae02a332b913f8e659    f    changelog.txt    changelog.txt
-...
-```
+> [!EXAMPLE]
+> Example control file with adjusted URL.
+> ```text
+> HEADER
+> build=11190
+> minRequiredBuild=11170
+> versionName=17.1.2
+> majorName=17.1
+> majorDate=2017-10-12
+> executable32bit=bin/smartgit.exe
+> executable64bit=bin/smartgit64.exe
+> sourceRootUrl=http://updateserver/smartgit/updates
+> copyPatterns=bin/*.vmoptions,.settings/*,.updates/*,unins???.dat,unins???.exe
+> skipPatterns=lib/hgext/*.pyc
+> CONTENT
+> e6971f3e69c064e0468f13ae02a332b913f8e659    f    changelog.txt    changelog.txt
+> ...
+> ```
 
 The `CONTENT` section describes exactly how the installation should look and consists of one line for every file which will be present in the installation:
 
@@ -156,15 +153,12 @@ The `CONTENT` section describes exactly how the installation should look and con
 
 URLs for all files mentioned in the `CONTENT` section will be composed by concatenating the `sourceUrl + / + <name-on-server> + . + <sha>`.
 
-### Example
-
-The complete URL for `changelog.txt` from the above example will be:
-
-`http://updateserver/smartgit/updates/changelog.txt.e6971f3e69c064e0468f13ae02a332b913f8e659`
-
-The file can be obtained from:
-
-`http://www.syntevo.com/updates/smartgit/changelog.txt.e6971f3e69c064e0468f13ae02a332b913f8e659`
+> [!EXAMPLE]
+> The complete URL for `changelog.txt` from the above example will be:
+> `http://updateserver/smartgit/updates/changelog.txt.e6971f3e69c064e0468f13ae02a332b913f8e659`
+>
+> The file can be obtained from:
+> `http://www.syntevo.com/updates/smartgit/changelog.txt.e6971f3e69c064e0468f13ae02a332b913f8e659`
 
 ### Details on control file HEADER fields
 
@@ -197,27 +191,27 @@ To fetch all files listed in the `control` file, you have two options:
 
 ## Required and helpful SmartGit system properties
 
-### Note
-
-The following system properties should be added to `bin/smartgit.vmoptions`, so they will be part of the installation and automatically present for every user.
+> [!NOTE]
+> The following system properties should be added to `bin/smartgit.vmoptions`, so they will be part of the installation and automatically present for every user.
 
 ### smartgit.updateCheckUrl (required)
 
 The URL of the `autoupdate` file which SmartGit will access can be configured by system property `smartgit.updateCheckUrl`.
 
-### Example
-
-```text
--Dsmartgit.updateCheckUrl=http://updateserver/smartgit/autoupdate
-```
+> [!EXAMPLE]
+> Configure the `autoupdate` URL via system property.
+> ```text
+> -Dsmartgit.updateCheckUrl=http://updateserver/smartgit/autoupdate
+> ```
 
 ### smartgit.autoupdate.checkSignature (required)
 
 Every `control` file ends with a `<signature>` which secures this file against tampering.
 By default, SmartGit will reject `control` files for which the signature does not match.
 To make SmartGit accept such `control` files, you have to set system property `smartgit.autoupdate.checkSignature=false`.
-Be careful!
-By switching off this important check, everyone who gains control over the update server can deploy arbitrarily modified and possibly harmful SmartGit binaries.
+> [!WARNING]
+> Be careful!
+> By switching off this important check, everyone who gains control over the update server can deploy arbitrarily modified and possibly harmful SmartGit binaries.
 
 ### smartgit.updateCheck.force smartgit.updateCheck.intervalSecs (optional)
 
@@ -233,68 +227,69 @@ However, it's better to not rely on this mechanism and instead make these system
 This way you will be able to add additional system properties on demand.
 In a similar way you may add, replace or remove additional files on demand, like the `default/license` file.
 
-### Example
-
-Let's assume that our customized `bin/smartgit.vmoptions` looks like:
-
-```text
--Dsmartgit.updateCheckUrl=http://updateserver/smartgit/autoupdate
--Dsmartgit.autoupdate.checkSignature=false
-```
-
-SHA-1 of this file is FCF5C579466B184693A1305FD161008203F82CA1.
-
-Let's assume we want to place following `license` file into the `default` directory:
-
-```text
-Format=2
-Name=Joe
-Address=Average
-Email=joe.average@company.com
-...
-```
-
-SHA-1 of this file is 44737F607645106D5F52C097CE21E69025E8BDBB.
-
-The official `control-11190-win` file serves as starting point, which looks like:
-
-```text
-HEADER
-build=11190
-minRequiredBuild=11170
-versionName=17.1.2
-majorName=17.1
-majorDate=2017-10-12
-executable32bit=bin/smartgit.exe
-executable64bit=bin/smartgit64.exe
-sourceRootUrl=http://www.syntevo.com/updates/smartgit
-copyPatterns=bin/*.vmoptions,.settings/*,.updates/*,unins???.dat,unins???.exe
-skipPatterns=lib/hgext/*.pyc
-CONTENT
-e6971f3e69c064e0468f13ae02a332b913f8e659    f    changelog.txt    changelog.txt
-...
-```
-
-We will apply following modifications (highlighted in bold):
-
-```text
-HEADER
-build=11190
-minRequiredBuild=11190
-versionName=17.1.2
-majorName=17.1
-majorDate=2017-10-12
-executable32bit=bin/smartgit.exe
-executable64bit=bin/smartgit64.exe
-sourceRootUrl=http://updateserver/smartgit/updates
-copyPatterns=.settings/*,.updates/*,unins???.dat,unins???.exe
-skipPatterns=lib/hgext/*.pyc,bin/*.vmoptions
-CONTENT
-fcf5c579466b184693a1305fd161008203f82ca1    f    smartgit.vmoptions    bin/smartgit.vmoptions
-44737f607645106d5f52c097ce21e69025e8bdbb    f    license    default/license
-e6971f3e69c064e0468f13ae02a332b913f8e659    f    changelog.txt    changelog.txt
-...
-```
+> [!EXAMPLE]
+> Customize the installation by providing `vmoptions` and `license` files, and by adjusting the control file.
+>
+> Let's assume that our customized `bin/smartgit.vmoptions` looks like:
+>
+> ```text
+> -Dsmartgit.updateCheckUrl=http://updateserver/smartgit/autoupdate
+> -Dsmartgit.autoupdate.checkSignature=false
+> ```
+>
+> SHA-1 of this file is FCF5C579466B184693A1305FD161008203F82CA1.
+>
+> Let's assume we want to place following `license` file into the `default` directory:
+>
+> ```text
+> Format=2
+> Name=Joe
+> Address=Average
+> Email=joe.average@company.com
+> ...
+> ```
+>
+> SHA-1 of this file is 44737F607645106D5F52C097CE21E69025E8BDBB.
+>
+> The official `control-11190-win` file serves as starting point, which looks like:
+>
+> ```text
+> HEADER
+> build=11190
+> minRequiredBuild=11170
+> versionName=17.1.2
+> majorName=17.1
+> majorDate=2017-10-12
+> executable32bit=bin/smartgit.exe
+> executable64bit=bin/smartgit64.exe
+> sourceRootUrl=http://www.syntevo.com/updates/smartgit
+> copyPatterns=bin/*.vmoptions,.settings/*,.updates/*,unins???.dat,unins???.exe
+> skipPatterns=lib/hgext/*.pyc
+> CONTENT
+> e6971f3e69c064e0468f13ae02a332b913f8e659    f    changelog.txt    changelog.txt
+> ...
+> ```
+>
+> We will apply following modifications (highlighted in bold):
+>
+> ```text
+> HEADER
+> build=11190
+> minRequiredBuild=11190
+> versionName=17.1.2
+> majorName=17.1
+> majorDate=2017-10-12
+> executable32bit=bin/smartgit.exe
+> executable64bit=bin/smartgit64.exe
+> sourceRootUrl=http://updateserver/smartgit/updates
+> copyPatterns=.settings/*,.updates/*,unins???.dat,unins???.exe
+> skipPatterns=lib/hgext/*.pyc,bin/*.vmoptions
+> CONTENT
+> fcf5c579466b184693a1305fd161008203f82ca1    f    smartgit.vmoptions    bin/smartgit.vmoptions
+> 44737f607645106d5f52c097ce21e69025e8bdbb    f    license    default/license
+> e6971f3e69c064e0468f13ae02a332b913f8e659    f    changelog.txt    changelog.txt
+> ...
+> ```
 
 Reasons:
 
@@ -315,4 +310,3 @@ logging.q.application.update=DEBUG
 ```
 
 After restarting SmartGit, you may grep `log.txt.0` for `q.application.update`.
-

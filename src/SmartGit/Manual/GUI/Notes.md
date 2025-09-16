@@ -28,7 +28,7 @@ To use the SmartGit notes feature, you need to enable it with one of the below m
 
 Please consult the [Git Notes configuration guide](../Integrations/GitNotes-Integration.md#enabling-notes-features-in-smartgit-on-a-repository) on how to set up SmartGit notes categories.
 
-#### Note
+> [!NOTE]
 > - Git notes are not automatically pushed or fetched from the remote by default.
 >   However, it is possible to [configure your local repository]() to automatically synchronize note refs any time push and fetch activity is performed.
 > - Not all Git hosting services will show notes on their web portal UI.
@@ -77,4 +77,3 @@ The following UI options are available:
 
 > As notes are linked to a specific commit ID, rewriting commands such as rebase will create new commits.
 > You can use the [notes rewriteRef configuration](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase) to instruct git to copy (or append) notes on squashed commits across to the newly rewritten commit.
-

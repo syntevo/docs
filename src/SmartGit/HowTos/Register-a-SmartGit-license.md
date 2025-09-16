@@ -11,9 +11,9 @@ To register this license file,
 Click **Register** and SmartGit will confirm the license details.
 
 
-#### Note
+> [!NOTE]
 > `.lic` files are binary files.
-> There are not expected to be *opened* by the user, except to be registered in SmartGit.
+> They are not expected to be *opened* by the user, except to be registered in SmartGit.
 
 
 

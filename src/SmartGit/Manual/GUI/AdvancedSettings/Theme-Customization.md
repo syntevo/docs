@@ -5,16 +5,14 @@ The custom colors are configured in files `light-patch.theme` and `dark-patch.th
 Depending on the selected theme from the **Preferences**, the appropriate file will be used.
 In case of automatic theme selection (which is the default), your system theme (light or dark) will determine the used file.
 
-### Note
-
+> [!NOTE]
 > These files only will be read on SmartGit start.
 
 ## List of Customizable Colors
 
 To get a complete list of customizable colors, you can run SmartGit from command line using parameter `--write-default-theme-file`.
 
-### Example
-
+> [!EXAMPLE]
 > On Windows, you have to run `smartgitc.exe`:
 > ```
 > smartgitc.exe --write-default-theme-file
@@ -76,8 +74,7 @@ graph.truncatedBackground
 graph.truncatedRefs
 ```
 
-### Example
-
+> [!EXAMPLE]
 > Following `light-patch.theme` will give an almost identical palette as for version 21.2:
 >
 > ``` properties
@@ -99,8 +96,7 @@ graph.truncatedRefs
 > graph.connector.16=derive(#ff0000, 0.8, 0.7)
 > ```
 
-### Example
-
+> [!EXAMPLE]
 > This will use a light-yellow tag symbol background in the graph as until SmartGit 21.2.
 > ``` properties
 > graph.tag=#FFF1BF

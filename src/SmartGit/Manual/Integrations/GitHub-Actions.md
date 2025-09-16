@@ -9,9 +9,10 @@ To limit the list of workflows, you can use `smartgit.github-actions.` keys in y
 
 - `workflows`: a comma-separated list of GitHub Actions workflow names which should be queried
 
-### Example
-
-``` ini
-[smartgit "github-actions"]
-   workflows = ci
-```
+> [!EXAMPLE]
+> Configure SmartGit to query only the `ci` workflow.
+>
+> ```ini
+> [smartgit "github-actions"]
+>    workflows = ci
+> ```

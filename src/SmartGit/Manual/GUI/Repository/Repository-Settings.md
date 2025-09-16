@@ -3,12 +3,11 @@
 After selecting a Repository, you can use the **Repository \| Settings** menu command or the Settings context menu on the highlighted repository.
 This opens a dialog to configure certain options of your repository (`<repository>/.git/config`) file.
 
-**Note:**
-
-- Changes made to a repository's configuration only affects the selected repository.
-  You can set option defaults globally by using **Edit \| Preferences \| Git Config** [settings](../Preferences/Commands.md#git-config).
-  This will become the configuration default for **all** repositories, although you can still override settings on individual repositories through **Repository \| Settings** on that repository.
-- You can also edit the Git configuration directly by manualy updating your `.gitconfig` file, although you will lose the validation safety net that SmartGit provides.
+> [!NOTE]
+> - Changes made to a repository's configuration only affects the selected repository.
+>   You can set option defaults globally by using **Edit \| Preferences \| Git Config** [settings](../Preferences/Commands.md#git-config).
+>   This will become the configuration default for **all** repositories, although you can still override settings on individual repositories through **Repository \| Settings** on that repository.
+> - You can also edit the Git configuration directly by manualy updating your `.gitconfig` file, although you will lose the validation safety net that SmartGit provides.
 
 ## User Tab
 
@@ -34,7 +33,8 @@ This configuration allows you to choose what happens when you attempt to push, a
   Submodule changes will NOT be pushed to the remote.
 - **Push submodules first** -- SmartGit will automatically attempt to push changes to submodules, before pushing changes to your current repository.
 
-**Note:** If your changes depend on the changes you've made to your local submodule repository, and you choose Ignore submodule changes, other users may not be able to compile your changes.
+> [!NOTE]
+> If your changes depend on the changes you've made to your local submodule repository, and you choose Ignore submodule changes, other users may not be able to compile your changes.
 
 ## Signing Tab
 
@@ -42,7 +42,7 @@ This allows you to configure the GPG program and your private signing key to Sig
 
 Please refer to [Signing](../../../HowTos/Sign-Tags-and-Commits.md) for further information.
 
-**Note:**
+> [!NOTE]
 > You need to ensure the specified GPG program is configured to use an agent that can ask you for your key's passphrase using a GUI.
 >
 > Otherwise you may get a gpg error "cannot open tty '/dev/tty': Device not configured".

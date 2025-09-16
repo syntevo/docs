@@ -19,7 +19,6 @@ In the **Add Hosting Provider** dialog, have **Bitbucket Server** selected:
 - for **Password** use the generated access token
 - for **Server URL** enter the same top-level **URL** which you are using in your browser to access Bitbucket
 
-#### Note
-
+> [!NOTE]
 > Unless your server is using 2-way-SSL, you don't need to provide **Client Certificate** and **Client Password**.
 > Authentication using *SSH* is unrelated to this configuration.

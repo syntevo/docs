@@ -30,12 +30,11 @@ o   |  D       ===>        o   |  D
 o                          o
 ```
 
-### Note
-
-- Cherry-picking commits should be done carefully.
-  In the above example, after cherry-picking `C`, a future attempt to merge `a-branch` into `main` could result in merge-conflicts because `C` and `C'` may conflict.
-- If a conflict occurs during cherry-picking, the working tree will enter 'Cherry-Picking' status.
-  You'll either need to resolve the conflict (e.g., using the [SmartGit Conflict Resolver](../GUI/Branch/Conflict-Solver.md)) and complete the cherry-pick or abort the cherry-pick attempt.
+> [!NOTE]
+> Cherry-picking commits should be done carefully.
+> In the above example, after cherry-picking `C`, a future attempt to merge `a-branch` into `main` could result in merge-conflicts because `C` and `C'` may conflict.
+> If a conflict occurs during cherry-picking, the working tree will enter 'Cherry-Picking' status.
+> You'll either need to resolve the conflict (e.g., using the [SmartGit Conflict Resolver](../GUI/Branch/Conflict-Solver.md)) and complete the cherry-pick or abort the cherry-pick attempt.
 
 ### See also
 

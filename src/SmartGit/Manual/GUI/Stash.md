@@ -12,8 +12,7 @@ The resulting stash will show up in the **Branches View**.
 By default, after the stash operation, SmartGit will clear the *Index* and *Working Tree* (allowing checkout of another branch).
 However, SmartGit offers the option of retaining changes to the *Index* and *Working Tree* if required.
 
-#### Note
-
+> [!NOTE]
 > The option **Include untracked files** (Preferences, page **Commands**) is convenient to include *untracked* files for the stash as well.
 > Depending on the operating system it may take significantly longer to execute the operation.
 

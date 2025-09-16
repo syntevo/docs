@@ -17,11 +17,11 @@ debug log sent and received JSON objects. To do so:
     smartgit.json.debugDir=<absolute-path-to-debug-directory>
     ```
 
-    Example:
-
-    ``` properties
-    smartgit.json.debugDir=c:/temp/json
-    ```
+    > [!EXAMPLE]
+    > Example property configuration.
+    > ``` properties
+    > smartgit.json.debugDir=c:/temp/json
+    > ```
 
 3.  optionally, you can also specify to log *sent* and *received* HTTP
     headers to the debug output file:
@@ -30,15 +30,15 @@ debug log sent and received JSON objects. To do so:
     smartgit.json.debugHeaders=true
     ```
 
-    #### Note
+    > [!NOTE]
     > Debug headers are not supported for certain types of integrations, notably
     > not for GraphQL-related integrations, such as GitHub.
 
-    #### Note
+    > [!NOTE]
     > If enabled, the debug log of *sent* headers will also include `Authorization`
-	> and similar headers which contain your username/password or similar
-	> credentials. Thus, be sure to remove the debug output files from
-	> your disk as soon as you have finished the debugging.
+    > and similar headers which contain your username/password or similar
+    > credentials. Thus, be sure to remove the debug output files from
+    > your disk as soon as you have finished the debugging.
 
 4.  shutdown SmartGit
 

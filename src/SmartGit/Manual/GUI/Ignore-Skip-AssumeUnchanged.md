@@ -6,8 +6,7 @@ The **Local \| Ignore** command marks selected untracked files as `ignored`, whi
 Ignored files will no longer be indicated as 'untracked', so this reduces visual clutter and the risk of unintentionally adding these files.
 If the option **Show Ignored Files** is selected, ignored files will still be displayed.
 
-### Note
-
+> [!NOTE]
 > SmartGit only displays ignored files in versioned directories.
 > Ignored files or sub-directories within ignored directories are not shown for performance reasons.
 
@@ -15,8 +14,7 @@ When a file is marked as ignored in SmartGit, an entry is added to the `.gitigno
 The `.gitignore` file will be added to the repository if it isn't present.
 To use more advanced Git ignore options, you may need to edit the `.gitignore` file(s) by hand, which will allow advanced patterns, such as entire folders, and files matching wild card patterns to be ignored.
 
-### Tip
-
+> [!TIP]
 > To view a list of ignored files or to understand why a specific file is *ignored*, use **Local \| Edit Ignore File**.
 
 ## Assume Unchanged
@@ -28,7 +26,7 @@ This can be used on large files and slow O/S or I/O devices, where it is expensi
 
 To reverse this, toggle **Assume Unchanged** command again.
 
-### Note
+> [!NOTE]
 > By default, SmartGit will hide files tagged with *Assume Unchanged* in the files view.
 > *Assume Unchanged* files can be displayed by enabling **Show Assume-Unchanged Files** in the hamburger menu on the **Files View**.
 
@@ -40,6 +38,6 @@ This is similar to **Assume Unchanged** but is more persistent, especially for c
 
 Use the toggle command again to bring a file back into the *Index*.
 
-### Note
+> [!NOTE]
 > By default, SmartGit will hide files tagged with *Skip Worktree* in the files view.
 > *Skipped* files can be displayed by enabling **Show Skipped Files** in the hamburger menu on the **Files View**.

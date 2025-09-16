@@ -14,13 +14,8 @@ U+FFFD). If the *Index* contains two byte sequences which differ only in
 *Index* entries are confusing (not only SmartGit) and need to be fixed.
 
 
-#### Note
->
->
->This kind of problem might occur after updating to *msysgit 1.7.10* and
->not properly converting non-unicode file names.
->
->
+> [!NOTE]
+> This kind of problem might occur after updating to *msysgit 1.7.10* and not properly converting non-unicode file names.
 
 ## Resolution
 
@@ -45,15 +40,8 @@ The resolution is performed using Git from the command line:
     the quotes are necessary!).
 
 
-#### Note
->
->
->On Windows, you may also work without `bash.exe`: just open a *command
->line (DOS box)* and invoke `git rm --cached <path-to-file-pattern>` with
->`<path-to-file-pattern>` being an unambiguous pattern of the file's path
->where the non-ASCII characters are replaced by `?`. E.g.: `x?y.txt`.
->
->
+> [!NOTE]
+> On Windows, you may also work without `bash.exe`: just open a *command line (DOS box)* and invoke `git rm --cached <path-to-file-pattern>` with `<path-to-file-pattern>` being an unambiguous pattern of the file's path where the non-ASCII characters are replaced by `?`. E.g.: `x?y.txt`.
 
 -   After all entries have been removed, invoke
     `git commit -m "clean up bad encoding of file names"`.

@@ -15,6 +15,6 @@
 - if necessary, select "Sign all commits"
 - when committing a file or tagging, a popup of GPG will occur and ask you for the key's passphrase
 
-#### Note
+> [!NOTE]
 > If you encounter errors like "Couldn't load public key &lt;my-key&gt;", please check whether `gpg.format` is set correctly.
 > If in doubt, unset it.

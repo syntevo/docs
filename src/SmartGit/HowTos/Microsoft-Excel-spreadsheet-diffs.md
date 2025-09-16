@@ -25,9 +25,7 @@ ECHO %2 >> %TEMP_FILE%
 
 
 
-#### Note
+> [!NOTE]
 > For older/ 32-Bit MS Office versions, the executable's path may be:
-> 
 > `"C:\Program Files (x86)\Microsoft Office\root\Office16\DCF\spreadsheetcompare"`
-
 

@@ -62,7 +62,7 @@ The _Branch Label_ consists of:
 - Branch name
 - Ahead/behind indicators
 
-#### Note
+> [!NOTE]
 > - You can change the tracked upstream branch in the [Branches View](Branches-view.md#upstream-tracked-branch).
 >   This affects how the commit ahead/behind _Puzzle Piece_ icons and indicators appear in the _Branch Label_.
 > - Commit ahead/behind indicators may vary slightly across different **Graph View** variations.

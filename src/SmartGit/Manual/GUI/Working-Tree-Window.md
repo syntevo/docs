@@ -16,6 +16,7 @@ The **Working Tree Window** consists of the following views:
 
 ## Tips
 
+> [!TIP]
 > - Selecting a file in the **Files View** will show the differences made since the previous commit in the **Changes View**.
 > - The **Journal View** shows the latest commits in the current branch and one optional other branch (e.g., to cherry-pick commits from).
 

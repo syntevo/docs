@@ -182,8 +182,7 @@ If the displayed number remains increased after having removed the comment, you 
 Sometimes it may be desirable to reinitialize your local review database from the server's database.
 For that, it's necessary to first dispose your local database using **Review \| Configure** and select **Dispose Database** there.
 
-### Note
-
+> [!NOTE]
 > To dispose the review database from command line (not recommended),
 > invoke:
 >

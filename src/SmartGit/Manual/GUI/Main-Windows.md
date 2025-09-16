@@ -11,7 +11,7 @@ However, you always have the option to change your selection in the **Startup Wi
   The Log Window is ideal for power users who wish to have complete control over their repository's commit history, using features such as Rebase, Squashing commits together, and re-writing commits.
 - The [Working Tree Window](Working-Tree-Window.md) focuses on a file-centric display of changes; it also shows the [**Journal**](Journal-View.md), a log of the latest commits in the current branch, and a baseline/comparative branch (e.g., for cherry-picking).
 
-#### Tip
+> [!TIP]
 > The theme used throughout SmartGit can be customized under the **User Interface** settings in the **Edit \| Preferences** menu, where you can select between themes such as Light, Dark or Custom [theme selections](Preferences/User-Interface.md#theme-selection).
 
 ## Default SmartGit Startup Behaviour

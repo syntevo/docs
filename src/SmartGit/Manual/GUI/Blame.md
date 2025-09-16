@@ -52,7 +52,5 @@ The detection of a link between a *past* and a *future* version of a line depend
 - For the case where a line has been detected as *added* in a commit (instead of *replacing* another line, what might be more appropriate), the history contains a trailing *commit before line has been added*
   entry to which you can navigate.
 
-### Note
-
+> [!NOTE]
 > For lines having a '\~'-mark in the **Document** view, the **History** view will always show *past* commits.
-

@@ -4,8 +4,9 @@ The **Commit View** in SmartGit's [Working Tree](Working-Tree-Window.md) and [Lo
 - If the Working Tree node is selected, the view is used to [create a new commit](#create-new-commit) on the currently checked out branch or HEAD.
 - If an existing commit node is selected, the view will show important commit audit and metadata [information about this commit](#view-existing-commit).
 
-#### Note
-> The **Commit View** in the **Standard Window** is slightly different. Please refer to the [Standard Window](Standard-Window.md) documentation.
+> [!NOTE]
+> The **Commit View** in the **Standard Window** is slightly different.
+> Refer to the [Standard Window](Standard-Window.md) documentation.
 
 The layout of the **Commit View** depends on the **Graph** selection:
 
@@ -37,8 +38,7 @@ The ![AI](../images/AI-Commit-Button.png) button allows:
 
 Please consult [AI Commit Messages](AI-Commit-Messages.md) for details on how to get started.
 
-#### Note
->
+> [!NOTE]
 > AI features are **opt-in** and must be enabled.
 
 ## View Existing Commit
@@ -53,8 +53,7 @@ However, if an existing commit is selected, it shows details for the selected co
 - **on branches** shows all branch-refs for which the selected commit is an ancestor reachable by following only "primary" parents, i.e. is part of the branch's "natural" history.
 - **merged to branches** shows all branch-refs for which the selected commit is an ancestor, but only reachable by following at least one merge parent (2nd or higher parent of a commit).
 
-#### Tip
-
+> [!TIP]
 > You can select 2 commits for viewing side by side -- the **Commit View** will show both commits.
 
 ## Variations of the Commit View

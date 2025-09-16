@@ -9,6 +9,7 @@ Repositories generally<sup>1</sup> start with an initial root commit, and each s
 This creates a 'commit graph' (technically a Directed Acyclic Graph (DAG) consisting of of commit nodes), with each commit being a direct or indirect descendant of the initial commit.
 Hence, a commit is not just a set of changes; due to its fixed location in the commit graph, it also represents a unique repository state.
 
+> [!NOTE]
 > <sup>1</sup> It is possible for a Git repository to contain more than one root commit (`git checkout --orphan`) and therefore contain multiple unrelated commit graphs.
 > The wisdom of having more than one root commit needs to be balanced against creating separate repositories for each project.
 

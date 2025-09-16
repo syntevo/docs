@@ -31,7 +31,7 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
 
 `git notes --ref reviews add -m "Please remove unused imports on MyFile.java"`
 
-#### Note
+> [!NOTE]
 > - Like tags, by default, notes are not pushed or fetched by default when you synchronize your branches to a remote.
 >   Notes will require manual synchronization with the remote, OR configuration changes need to be made to automatically synchronize notes with the remote.
 >   e.g. Manually push notes in the default _commits_ category to the _origin_ remote:
@@ -54,4 +54,3 @@ Please refer to SmartGit's configuration guide for any of the following advanced
   - [Configuring automatic note synchronization with remotes](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes)
   - [Copying Git notes during rewriting activity (e.g. rebase)](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase)
   - [Removing Git Notes support from a repository](../Integrations/GitNotes-Integration.md#removing-git-notes-support-from-a-repository)
-

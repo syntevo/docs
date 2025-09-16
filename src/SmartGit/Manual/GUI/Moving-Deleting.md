@@ -7,7 +7,7 @@ Use **Local \| Remove** to remove files from the local repository and optionally
 
 If the local file in the working tree is already removed, [staging](Stage-Unstage-IndexEditor.md#stage-unstage-and-the-index-editor) the file deletion will have the same effect, however, the Remove command also allows you to remove files from the repository while keeping them locally.
 
-#### Tip
+> [!TIP]
 > If you remove a file from a repository but wish to keep the file in your local *Working Tree*, you should consider ignoring the file in order to prevent it from being accidentally re-added to the repository in a future commit.
 
 ## Moving/Renaming Files
@@ -19,7 +19,7 @@ As a result, there is no need for an explicit *move* operation: just move your f
 However, Git does possess a `git move` command for convenience which performs a normal file system move and then stages the removed and the newly added file to the *Index*.
 Due to demand from users for access to the Git `move` operation, SmartGit provides **Local \| Move or Rename**.
 
-#### Note
+> [!NOTE]
 > It is recommended not to make major changes to the contents of a file in the same commit as a move/rename on the file, as this may cause Git to be unable to follow the file through the rename.
 > Consider instead splitting the content changes, and the move/rename into two distinct commits.
 

@@ -5,8 +5,7 @@ It allows you to view the structure of the commit history in a repository, and t
 
 Log is invoked from the **Query \| Log** menu option.
 
-### Tip
-
+> [!TIP]
 > If you make frequent use of the Log, you should consider configuring the [Log Window](Log-Window.md) as your default window when using SmartGit in the [Preferences](Preferences/User-Interface.md).
 
 SmartGit's Log extends changes to not just your local repository's commits, but also allows you to use the **Working Tree/Index** node to operate on local changes which are not yet committed.
@@ -54,8 +53,7 @@ Use the checkboxes in the **Branches View** to control what is displayed in the 
 The **Recyclable Commits** checkbox at the bottom of the **Branch View** will display all commits no longer accessible from a branch or tag.
 This can be useful for accessing "lost" commits.
 
-### Note
-
+> [!NOTE]
 > Git does not keep record of the (current) branch as part of a commit.
 > However, when creating merge commits, Git always uses the currently checked out (branch that points to a) commit as first parent and the merged one as second parent.
 > This way it's possible to find out which commits belong to the same branch (first parent) and which were merged (second parent).
@@ -77,8 +75,7 @@ The difference from the newer commit compared to the older commit will be displa
 By selecting a file you can see detailed change in the **Changes View**.
 In a similar way, you can compare the Index against a specific commit.
 
-### Tip
-
+> [!TIP]
 > When comparing branches you can also invoke **Reveal Commit** from the context menu of the first branch in the **Branches View**, then invoke **Compare with Selected Commit** on the second branch.
 
 ## Recyclable Commits

@@ -33,7 +33,7 @@ In that case, they will see only the pointer files in their local working tree.
 
 The following command line options may be useful if you prefer manual interaction or want to understand the equivalent behavior in SmartGit:
 
-#### Tip
+> [!TIP]
 > If you are new to Git-LFS, there's a [GitHub tutorial](https://github.com/git-lfs/git-lfs/wiki/Tutorial) on how to use Git LFS from the command line.
 > However, we recommend using **[SmartGit's LFS features](../Integrations/Git-LFS.md)** to handle much of the complexity involved in installing and managing LFS.
 
@@ -60,8 +60,8 @@ Be sure to add it to the repository:
 
 `git add .gitattributes`
 
-#### Note
-> Is is recommended not to manually edit the `.gitattributes` file.
+> [!NOTE]
+> It is recommended not to manually edit the `.gitattributes` file.
 > Instead, use SmartGit's File View or the `git lfs track` command to manage file tracking.
 
 ## Git LFS File Locking
@@ -85,7 +85,6 @@ To release the lock, use the `unlock` command.
 
 `git lfs unlock myfile.png`
 
-#### Tip
+> [!TIP]
 > If a file is locked by another user, use the `--force` flag to attempt to override the lock (requires appropriate permissions on the LFS server).
 > `git lfs unlock myfile.png --force`
-

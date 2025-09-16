@@ -8,11 +8,8 @@ Once installed and configured, it will track changes to the review meta data and
 Unzip the contained files from the bundle to a new directory on the same server which is also hosting your Git repositories, let's assume this will be `/opt/reviewserver`.
 Make sure that `post-receive.sh` is executable -- if not, make it executable using `chmod +x post-receive.sh`.
 
-#### Note
-
-> If the selected directory is not writable by the *system Git account*,
-> i.e. the account which will be used to write to the Git repositories,
-> the log file location in `log4j.properties` must be adjusted.
+> [!NOTE]
+> If the selected directory is not writable by the *system Git account*, i.e. the account which will be used to write to the Git repositories, the log file location in `log4j.properties` must be adjusted.
 
 Adjust the configuration file `/opt/reviewserver/config.email` for your environment.
 All **mandatory** parameters have to be supplied.
@@ -87,8 +84,7 @@ curator: curator1@domain1 [,curator2@domain2 ...]
 The server component's log can be found in `log.txt.0` files.
 The (debug) log level can be configured in `logger.properties`.
 
-#### Example
-
+> [!EXAMPLE]
 > ```
 > ...
 > # Root level:

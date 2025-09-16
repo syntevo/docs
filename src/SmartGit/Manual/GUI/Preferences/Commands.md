@@ -4,8 +4,7 @@ This dialog shows options influencing Git commands executed by SmartGit.
 
 Use the navigation structure or the search tool to select the required page to view or make changes to a setting.
 
-#### Note
-
+> [!NOTE]
 > Some highlighted options require an application restart to be applied.
 
 ## Main Commands Tab
@@ -34,8 +33,7 @@ If selected, SmartGit will replace the configured `credential.helper` in the `.g
 
 Executing remote Git commands (e.g. pull or push) in the terminal or a shell script will then use the credentials known to SmartGit.
 
-#### Tip
-
+> [!TIP]
 > The `Configure SmartGit as credential helper` setting is recommended if SmartGit is the only GUI client (along with using Git command line) used.
 > This will simplify the authentication process when accessing platforms like GitHub.
 > However, if you also use other GUI clients, using the SmartGit credential helper may disrupt the authentication of other GUI tools.
@@ -81,8 +79,7 @@ The EOL-change information will be displayed in the **Files** table **State**. I
 [core.autocrlf = true](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
 or using the [text and eol attributes](https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html) in a `.gitattributes` file to control EOL behavior.
 
-#### Info
-
+> [!NOTE]
 > If you encounter problems with auto-stashing, e.g. SmartGit no longer shows a prompt, you may try to **Restore all confirmation dialogs** in section **User Interface**.
 
 ### Log
@@ -104,8 +101,7 @@ Options on this page define which operations SmartGit can perform automatically 
     - **Fetch Closed favorite repositories** will `fetch` favorite repositories even when closed.
     - **Fetch Open repositories when idle** will fetch open repositories during periods of inactivity.
 
-#### Note
-
+> [!NOTE]
 > Selecting **Detect Remote Changes** without also selecting either of the **Fetch** options, will enable SmartGit to poll the favorited remote Git repositories for changes at regular intervals. 
 > To avoid excessive overhead, only the lightweight `git ls-remote` command is invoked, so you only get a *notification* about changes.
 > The lightweight option does not detect all remote activities, for example, whether a currently checked out feature branch has been merged and removed.
@@ -126,8 +122,7 @@ You can specify which **Git Executable** should be used by SmartGit.
 - **Use SmartGit for authentication** - This option will use the SmartGit credential helper for authenticating with remotes, and the Git `credential.helper` configuration will be ignored.
 - **Use pre-installed GitFlow** - By default, SmartGit will use its own internal implementation of Git-Flow, however, set this option to instead use an existing GitFlow executable on your local computer.
 
-#### Note
-
+> [!NOTE]
 > Git version requirements -- SmartGit uses the selected Git executable for performing both local and remote activities.
 > If the bundled Git executable is NOT used, some features in SmartGit may not function correctly.
 > It is recommended that you keep your Git executable version up to date to maximize your SmartGit experience.
@@ -138,13 +133,13 @@ This tab-set allows you to edit your Global (User) `.gitconfig` file, which cont
 These settings will be applied as a default across all repositories that you work in.
 Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting. 
 
-#### Note
+> [!NOTE]
 > - This tab customizes User Git configuration. You can also customize or override these settings at a per-repository, System (affecting all users on the local system), and Super (Portable) level.
 >   Please refer to [Repository Settings](../Repository/Repository-Settings.md) for further details about repository-specific git configuration.
 > - Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository \| Edit Git Config** menu Option
 >   and then select the **User** or **Repository** option respectively.
 
-#### Tips
+> [!TIP]
 > - SmartGit shows the physical file location of each of the User (Global), System, and Super (Portable) git configuration files at the bottom of the **Git Config** tab.
 > - **Feature Branch Prefixing** - For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md),
 >   it is possible to provide a standard branch prefix across all 3 [Development Processes](../../DevelopmentProcesses/index.md) through the following `.gitconfig` setting:
@@ -164,15 +159,13 @@ The SSH options are only used if you use SSH to authenticate with remotes.
 
 - **Use system SSH client** will use your existing system SSH client, and you will be responsible for managing keys on the local and remote server (e.g., as stored in the `~/.ssh` folder). This is the recommended setting if you have an existing SSH setup and are comfortable with managing SSH keys and passwords. SmartGit will automatically re-use the system SSH credentials in this configuration.
 
-#### Note
-
+> [!NOTE]
 > When using the system SSH client, it is necessary that the system SSH is configured so that it won't prompt for any additional
 > user input on the console. SmartGit is unable to interact with SSH prompts, and SSH operations may fail.
 
 - **Use SmartGit as SSH client** simplifies access to remotes, as SmartGit will manage the complexity of encryption key pairs. This option is recommended if you interact exclusively with SmartGit and do not use the Git command line or other Git tooling when connecting to SSH repositories.
 
-#### Note
-
+> [!NOTE]
 > The built-in SSH client requires the private key file to be provided in PEM format. Please see also the [SSH-How-To](../../../HowTos/SSH.md).
 
 ### SmartGit Credential Helper (HTTPS)
@@ -191,14 +184,12 @@ The password store should be protected by a *master password* you provided, it s
 - Credentials can be selectively removed, or all credentials can be removed. Removing a credential will force SmartGit to re-request credentials if you connect to the repository again.
 - The **Master Password** for the password store can be set, reset, or changed through the **Change Master Password** dialog. It is highly recommended that you provide a master password to protect your remote credentials. Setting the new password to an empty (blank) string has the same effect as removing the master password.
 
-#### Note
-
+> [!NOTE]
 > If you have forgotten the master password, you can use the command **Edit \| Preferences \| Commands \| Authentication \| Change Master Password \| Set new master password**,
 > without providing the existing password.
 > However, this will cause all stored passwords to be discarded, and you will again be prompted for credentials when dealing with each repository.
 
-#### Warning
-
+> [!WARNING]
 > The option NOT to provide a master password during installation (**Don't use a master password**),
 > or removing the master password by leaving the password blank is not recommended as this will leave passwords unprotected in plaintext.
 

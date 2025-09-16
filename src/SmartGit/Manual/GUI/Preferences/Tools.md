@@ -23,6 +23,7 @@ If the Tool setup is not to your liking, you can revert the original default too
 
 ### Note
 
+> [!NOTE]
 > On SmartGit 22.1 and later, default tools have been cleaned up.
 > The Git version is now displayed in the preferences, *Fast-forward Merge* has been implemented as SmartGit command.
 >
@@ -63,6 +64,7 @@ A file or directory name pattern may be specified in **Applies To**.
 
 ### Note
 
+> [!NOTE]
 > For repository root directories, the name "" (empty string) is used as name which only is matched by the pattern "*".
 
 If **Request confirmation before invoking** is selected and a message is provided, the user needs to confirm this dialog's message before the command is invoked. If **Show output and wait until finished** is selected, SmartGit waits until the command is finished and shows the output.
@@ -126,6 +128,7 @@ Start-Process -FilePath $devenv -ArgumentList $slnname
 
 ### Info
 
+> [!NOTE]
 > Diff tools are (GUI) viewers of diff results. Diff tools are not related
 > to the internal diff machinery of Git. If you want to customize the diff
 > machinery itself, have a look at [Git's 'diff.external' config option](https://git-scm.com/docs/diff-config).
@@ -158,7 +161,8 @@ SmartGit comes with a built-in conflict solver (three-way-merge) which will be u
 
 For details on how Git manages merge conflicts, and the meaning of `ours`, `theirs`, `common` and `base` files, refer to the [Git manual](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging).
 
-Note: When launched, the external conflict solver should be configured to run as a background child process, as otherwise it will block SmartGit.
+> [!NOTE]
+> When launched, the external conflict solver should be configured to run as a background child process, as otherwise it will block SmartGit.
 
 To avoid this (on Windows), use the `bin\open.exe` helper as follows:
 

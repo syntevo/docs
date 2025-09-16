@@ -20,7 +20,7 @@ When you launch the SmartGit installer, depending on your operating system, you 
 - Where the SmartGit application will be launched from on your operating system's UI, for instance on Microsoft Windows, by providing the Start Menu folder name for SmartGit, and whether a SmartGit Icon should be placed on your desktop.
 - Whether to install SmartGit as a context menu, for instance, on Windows, right-clicking on a folder will allow you choose `Open in SmartGit` to launch SmartGit at this folder location.
 
-#### Note
+> [!NOTE]
 > Depending on your operating system, you will need up to 500MB of available disk space for a full installation.
 
 SmartGit will then prompt for confirmation to proceed with the installation.

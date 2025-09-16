@@ -7,7 +7,7 @@ After making changes to preferences, select **OK** to confirm and apply changes.
 
 ![SmartGit User Interface Preferences](../../images/Preferences-user-interface-themes.png)
 
-#### Note
+> [!NOTE]
 > After changing global features such as [language](#language) or [the theme](#theme-selection), you will need to restart SmartGit in order for the new setting to take effect.
 
 ### Language
@@ -25,7 +25,7 @@ However, you can override the operating system preference, e.g., **Dark Mode** i
 
 Once a theme has been selected, it is also possible to override individual theme attributes using the [Built-in Text Editors](#built-in-text-editors).
 
-#### Advanced Users Only
+> [!TIP]
 > It is possible to provide custom `.theme` files, in addition to the standard Light and Dark mode themes.
 > Refer to [Theme Customization](../AdvancedSettings/Theme-Customization.md) for details.
 

@@ -3,12 +3,10 @@
 The preferences dialog in SmartGit (**Edit \| Preferences**) allows you to customize SmartGit to suit your workflow and personal preferences.
 This will open a dialog where you can adjust settings such as user-interface options, additional tools, proxy settings and keyboard shortcuts.
 
-## Note
-
+> [!NOTE]
 > Some highlighted options require an application restart to be applied.
 
-## Tip
-
+> [!TIP]
 > Use the 'Search' function to change the theme of SmartGit e.g., type in "Theme" to take you to the directly to the available theme settings.
 > Under [User Interface](User-Interface.md), the 'Theme' setting will be highlighted.
 

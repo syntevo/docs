@@ -14,8 +14,7 @@ Once AI integration has been configured correctly, please refer to
   - [AI Commit Message Tutorial](../GUI/AI-Commenting-Tutorial.md) for quickstart tutorials on using SmartGit's AI Commenting features.
   - [AI Commit Annotations](../GUI/AI-Commit-Annotations.md) for an overview and starter examples of SmartGit's AI Annotation features.
 
-#### Note
->
+> [!NOTE]
 > AI integration in SmartGit is experimental in version 25.1 and may be subject to change in future updates.
 
 ## Supported Services
@@ -35,10 +34,10 @@ SmartGit supports integration with the following AI services:
 
 AI settings can be configured in a repository's local `.git/config`file, user (global) `.gitconfig` file, or your system-wide `.gitconfig` files.
 
-#### Tip
+> [!TIP]
 > SmartGit shows the location of the user and system git config files on your file system in the **Edit \| Preferences \| Commands \| Git Config** [preferences settings](../GUI/Preferences/Commands.md).
 
-#### Note
+> [!NOTE]
 > SmartGit will automatically detect and reload changes made to the local repository's `.git/config` file.
 > However, you may need to restart SmartGit for changes to take effect in the user or system git configuration files.
 
@@ -99,7 +98,7 @@ Alternatively, you can configure the API key in plain text here.
 Specifies the model name as recognized by the service, e.g., `gpt-4.1` for GPT 4.1 or `o3-mini` to select between the corresponding models.
 Please consult your LLM service provider for a list of models offered.
 
-#### Note
+> [!NOTE]
 > - Pricing for commercial AI services varies depending on factors such as the model type selected, the size of the prompt, 
 >   the size of the diff submitted, and the volume of output generated.
 > - Some hosting services may require an LLM vendor prefix, e.g., `openai/gpt-4.1`, which would be an example of a GitHub model selection.
@@ -123,8 +122,7 @@ Default is `true`.
 An `smartgit-ai-commit-message` corresponds to a _commit message generation_ option as available on the GUI.
 Each entry has an _id_ that will be used for display on the GUI and can have the following specific settings:
 
-> #### Note
->
+> [!NOTE]
 > The `smartgit-ai-commit-message` can be configured to allow further customization. For convenience, you can omit their configuration. 
 > If there is no `smartgit-ai-commit-message` entry present, SmartGit will automatically create default configurations for every configured `smartgit-ai-llm` entry.
 
@@ -265,8 +263,7 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 
 ### GitHub o3-mini
 
-> #### Note
->
+> [!NOTE]
 > As of February 2025, advanced models such as `o3-mini`, will require a GitHub Copilot Business Account.
 
 ```
@@ -517,20 +514,23 @@ Each subsection's *id* becomes the category name shown in the **Graph View** of 
 Suppose you add an `[smartgit-ai-commit-annotation]` section **without a name**. In that case, the keys under it act as **defaults** for every other annotation, similar to how global options work for commit message prompts.
 
 ### Note on `mode`
+> [!NOTE]
 > The `mode` option controls how SmartGit applies the AI Annotation and how it presents or stores the output.
 > - `interactive` - After completion, the AI's response will be displayed in an interactive message dialog in SmartGit.
 > - `background` - After completion, the AI's response(s) will be automatically annotated on the selected commits.
 
 ### Note on `autoStart`
+> [!NOTE]
 > If `autoStart` is enabled, SmartGit starts the annotation automatically for "annotatable" commits as soon as you open a repository.
 > - In the **Standard Window**,  all commits in your current feature branch are considered "annotatable", regardless of whether they've been pushed.
 > - In the **Log Window**, only unpushed commits of the current branch are regarded as "annotatable".
 
 ### Note on `diff`
-The `diff` setting controls whether this AI annotation is applied per selected diff or compares the diff between two selected commits:
+> [!NOTE]
+> The `diff` setting controls whether this AI annotation is applied per selected diff or compares the diff between two selected commits:
 > - `perCommit` - Applies the AI Annotation command independently to each diff selected. The submitted diff compares each selected commit with its immediate parent(s).
 > - `pair` - Applies the AI annotation to the diff between exactly two selected commits in the commit graph. Both commits must share a common ancestor for this option to be available.
 
-### Warning
+> [!WARNING]
 > - Using bulk options such as `autostart = true` or selecting a large number of commits and issuing a `perCommit` AI annotation can place considerable load on your configured LLM, and potentially incur unexpected costs.
 > - LLMs like OpenAI often impose rate limits (e.g., on tokens per time window). As a result, you may need to break up bulk the AI processing of `diff = perCommit` processing into smaller batches.

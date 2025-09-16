@@ -35,8 +35,8 @@ However, the tracked upstream branch can be changed by right-clicking on the loc
 
 ![Set Tracked Remote Upstream](../images/Branch-View-Set-Remote-Upstream.png)
 
-#### Note
-> You may need to refresh the remote refs to get the latest status of the tracked branch, e.g. by using the _Fetch_ or _Pull_ commands.
+> [!NOTE]
+> You may need to refresh the remote refs to get the latest status of the tracked branch, e.g. by using the **Fetch** or **Pull** commands.
 
 ## Tag-Grouping
 

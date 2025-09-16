@@ -9,7 +9,7 @@ The layout of the **Changes View** depends on whether the selected file has been
 
 Use the `<<` and `>>` arrow buttons to move changed *Hunks* between panes, or use the `x` button to revert the *Hunk*.
 
-#### Note
+> [!NOTE]
 > - If you need to stage only specific lines within a *Hunk*, use the **Index Editor**.
 > - You can't move staged changes directly into **HEAD**, as that will require a new commit.
 > - The **Changes View** has only 2 panes, and as a result, the **HEAD** (repository) file version does NOT appear in the **Changes View** unless the file has been staged.

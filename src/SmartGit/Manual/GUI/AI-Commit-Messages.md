@@ -29,7 +29,7 @@ When using a custom or commercial Large Language Model (LLM), an account with an
 
 If you wish to configure SmartGit to use different or custom LLMs, or need to customize LLM prompting and other options, please consult the [AI Integration](../Integrations/AI.md) reference documentation.
 
-### Warning
+> [!WARNING]
 > SmartGit will submit the contents of the staged diff as part of a prompt to the configured Large Language Model (LLM) to obtain AI-generated output.
 >
 > It is recommended that you evaluate the level of trust and confidentiality appropriate for your repository before enabling SmartGit's AI features.
@@ -102,7 +102,7 @@ There are two different operational modes here:
 
 [Low-level properties](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.*` can be used to customize this process.
 
-### Notes
+> [!NOTE]
 > - You can reset SmartGit's AI configuration by removing all `smartgit-ai-llm` and `smartgit-ai-commit-message` sections from your Git configuration files (global, personal and/or repository).
 > - `@ai` and `WIP` placeholders are only substituted when you add a commit - not interactively and not by clicking the AI button.
 > - The `WIP` token must be the only text in the commit message - no additional text or whitespace.
@@ -134,7 +134,7 @@ Common errors include:
 - **AI generation of the commit message failed - Request body too large for <model>** - The LLM's token limit was exceeded.
   Free/public LLMs may allow ~8,000 tokens; commercial LLMs may allow 100,000+.
 
-### Tips + Notes
+> [!TIP]
 > - Align the `maxDiffSize` setting with typical commit sizes for your team and within the token limits of your [chosen LLM provider](https://github.com/taylorwilsdon/llm-context-limits).
 >
 > - Code has a higher token density than natural language, depending on the programming language.

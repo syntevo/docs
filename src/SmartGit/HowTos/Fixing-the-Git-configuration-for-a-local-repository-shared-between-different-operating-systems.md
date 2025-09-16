@@ -1,7 +1,7 @@
 # Fixing the Git configuration for a local repository shared between different operating systems
 
 
-#### Warning
+> [!WARNING]
 > This article is just about sharing the same **local** repository between
 > different operating system, i.e. accessing a shared folder from these
 > different systems.

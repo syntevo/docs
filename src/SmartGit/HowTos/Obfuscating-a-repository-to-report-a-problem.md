@@ -1,7 +1,7 @@
 # Obfuscating a repository to report a problem
 
 
-#### Warning
+> [!WARNING]
 > This article refers to SmartGit version 7.1.4 which is the last version
 > for which "obfuscation" is available. You can download this version from
 > <https://www.syntevo.com/smartgit/download/archive/>.

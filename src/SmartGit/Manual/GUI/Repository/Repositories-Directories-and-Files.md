@@ -41,10 +41,9 @@ SmartGit will change the background color of the *File view* when files are hidd
 - Light yellow -- This means that files are being name-filtered by the *File Filter* search pattern.
 - Gray -- Even if unchanged files are hidden, they can be found by filtering by name -- files matching by name but not by state are shown in gray.
 
-**Note**
-
-- If files that are not intended for staging the next commit are highlighted by the *State filter*, consider adding them to `.gitignore`.
-- You can elect to turn off the background colour in the **Low-level Properties** [advanced configuration](../AdvancedSettings/System-Properties.md), using option **filteredTable.useBackgroundColor**.
+> [!NOTE]
+> If files that are not intended for staging the next commit are highlighted by the *State filter*, consider adding them to `.gitignore`.
+> You can elect to turn off the background colour in the **Low-level Properties** [advanced configuration](../AdvancedSettings/System-Properties.md), using option **filteredTable.useBackgroundColor**.
 
 ## Directory States
 

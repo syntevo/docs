@@ -27,7 +27,7 @@ status detection and Git's status.
     backslashes by forward slashes.
 
 
-	#### Example
+	> [!EXAMPLE]
 	> On Windows, for example for file `C:\vss\Project\FOO\bar\file` with
 	> repository root `C:\vss\Project`, you should add line:
 	> 

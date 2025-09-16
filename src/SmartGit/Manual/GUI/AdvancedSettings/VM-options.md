@@ -16,8 +16,8 @@ Alternatively (but **not recommended**), VM options can also be specified system
 The `smartgit.vmoptions` file contains a list of additional VM options which should be passed to the Java VM.
 VM options are basically arguments to Java and every argument must be declared on a separate line.
 
-### Example
-
+> [!EXAMPLE]
+>
 > ``` text
 > -Xmx2048M
 > -Xms1024M
@@ -28,15 +28,15 @@ VM options are basically arguments to Java and every argument must be declared o
 See [Installation and Files](../../Installation/Installation-and-Files.md) for information about the default location and contents of the settings directory.
 On Windows and Linux, you can change its location by modifying the VM option `-Dsmartgit.settings`.
 
-### Note
-
+> [!NOTE]
+>
 > Changing the settings directory's location is *not* supported on macOS
 
 Within the value of `smartgit.settings`, certain Java system properties are allowed, such as `user.home`.
 Another accepted value is the special `smartgit.installation` property, which refers to the SmartGit installation directory.
 
-### Example
-
+> [!EXAMPLE]
+>
 > To tell SmartGit to store its settings in the subdirectory `.settings` of the SmartGit installation directory, add follow line to `smartgit.vmoptions`:
 >
 >`-Dsmartgit.settings=${smartgit.installation}\.settings` (Windows)
@@ -49,8 +49,8 @@ The *Updates* directory contains downloaded program updates.
 See [Installation and Files](../../Installation/Installation-and-Files.md) for information about the default location and contents of the *Updates* directory.
 On Windows and Linux, you can change its location by modifying the VM option `-Dsmartboot.sourceDirectory`.
 
-### Example
-
+> [!EXAMPLE]
+>
 > To tell SmartGit to store its program updates in the subdirectory `.updates` of the SmartGit installation directory, add follow line to `smartgit.vmoptions`:
 >
 >`-Dsmartgit.settings=.updates`
@@ -60,8 +60,8 @@ On Windows and Linux, you can change its location by modifying the VM option `-D
 The memory limit (also known as maximum heap size) specifies how much RAM the SmartGit process is allowed to use.
 The memory limit can be configured by the VM option `-Xmx`.
 
-### Example
-
+> [!EXAMPLE]
+>
 > To change the maximum memory limit to 1GB, add following line to `smartgit.vmoptions`:
 >
 >`-Xmx1024m`
@@ -73,14 +73,13 @@ If the set value is too low, SmartGit may run out of memory during memory-intens
 On Linux and macOS, you can extend the PATH used by SmartGit (and all processes invoked by SmartGit, especially Git itself) by adding `path=/additional/path` to `smartgit.vmoptions`.
 This `path=` lines can be used multiple times and will be **appended** to the PATH in the order of occurrence.
 
-### Example
-
+> [!EXAMPLE]
+>
 > To make the file `/usr/local/bin/git-lfs` accessible without full path specification, add following line to `smartgit.vmoptions`:
 >
 >`path=/usr/local/bin`
 
-### Warning
-
+> [!WARNING]
+>
 > Do not specify the Git-LFS file path, but its parent directory's path -- as for all usual path modifications!
-
 

@@ -21,6 +21,7 @@ Once integration is configured, the following features become available in Smart
 
 ### Terminology Differences
 
+> [!NOTE]
 > The terminology used by different hosting providers varies for features.
 > SmartGit automatically adapts the terminology based on the connected hosting provider.
 > However, for brevity, SmartGit's online documentation uses GitHub's terminology when referencing features linked to online hosting providers.
@@ -72,7 +73,8 @@ Once a repository is cloned from a linked hosting provider, SmartGit provides th
 - [AI Services](AI.md) (experimental)
 
 ## Tips
-- If you have multiple identities/logins for the same hosting provider, you can add multiple hosting provider accounts in SmartGit.
-- The default name for each hosting provider connection is the provider's name (e.g., github.com).
-  You can change this name under **Preferences \| Hosting Providers** by selecting the connection and clicking **Edit**.
+> [!TIP]
+> If you have multiple identities/logins for the same hosting provider, you can add multiple hosting provider accounts in SmartGit.
+> The default name for each hosting provider connection is the provider's name (e.g., github.com).
+> You can change this name under **Preferences \| Hosting Providers** by selecting the connection and clicking **Edit**.
   

@@ -8,17 +8,14 @@ Every accessed repository (including submodules) must satisfy at least one of th
 If there is only a single author and committer in the repository (both names *and* email addresses must be unique), the repository can be accessed without restrictions.
 There is a certain tolerance for the first couple of commits, i.e. authors for these commits may be different from the main author.
 
-### Note
-
+> [!NOTE]
 > To see all authors of your repository, you may invoke `git shortlog -sne`.
 
-### Note
-
+> [!EXAMPLE]
 > Authors registered in the _reflog_ considered, too.
 > Hence, in case of problems, try to run `git gc`.
 
-### Note
-
+> [!NOTE]
 > If your repository contains more authors than tolerated *by accident* (e.g. if you have changed your name or email too often), you may consider to convert the repository to a single author using SmartGit's command line option `--convert-repository-to-single-user`.
 > **Use with care! This will rewrite your entire repository.**
 
@@ -44,7 +41,6 @@ To protect our infrastructure, the certification-process is rate-limited to 5 re
     * If you are not interested in your repository's submodules, in the **Preferences**, section **Low-level Properties**, you can set `refresh.scanIntoSubmodules` to `false`.
       This prevents scanning into submodules and thus will not require certificates for these repositories.
 
-### Note
-
+> [!NOTE]
 > If you are running into the rate limit, be patient and give SmartGit some pauses between certificate-batches.
 > This will be the fastest way to get multiple certificates and prevents you from becoming blocked.

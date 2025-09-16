@@ -54,8 +54,7 @@ The **Working Tree Window** contains a light-weight GitHub integration at the to
   Clicking on the **Icon** will refresh the state of remote branches and pull requests.
 - In the **Working Tree Window**, if open pull requests are present, a hyperlink will be shown taking you to the pull request on the **Branches View** of the **Log Window**.
 
-#### Note
-
+> [!NOTE]
 > Detailed pull request information and operations on pull requests are only available in the **Log** (see below).
 
 ## Additional PR features in the Log Window

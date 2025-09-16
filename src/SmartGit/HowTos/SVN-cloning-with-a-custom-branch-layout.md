@@ -22,22 +22,20 @@ press Pull once finished, but exit SmartGit (**Repository\|Exit**).
     key.
 -   Start SmartGit, reopen your project and invoke **Pull**.
 
-#### Example: trunk has been copied from different project
-
-To fetch an *old* trunk from a different project, a configuration could
-look like as follows (there must be no line break for the whole
-`additional-branches` key).
-
-
-
-``` ini
-[svn-git-remote "svn"]
-url = http://servername/svn/MyRepository
-fetch = ProjectB/trunk:refs/remotes/svn/trunk
-branches = ProjectB/branches/*:refs/remotes/svn/branches/*
-tags = ProjectB/tags/*:refs/remotes/svn/tags/*
-additional-branches =
-"ProjectA/trunk:refs/remotes/svn-old/trunk;ProjectA/branches/*:refs/remotes/svn-old/branches/*;ProjectA/tags/*:refs/remotes/svn-old/tags/*"
-```
+> [!EXAMPLE]
+> Example: trunk has been copied from different project
+> To fetch an *old* trunk from a different project, a configuration could
+> look like as follows (there must be no line break for the whole
+> `additional-branches` key).
+>
+> ``` ini
+> [svn-git-remote "svn"]
+> url = http://servername/svn/MyRepository
+> fetch = ProjectB/trunk:refs/remotes/svn/trunk
+> branches = ProjectB/branches/*:refs/remotes/svn/branches/*
+> tags = ProjectB/tags/*:refs/remotes/svn/tags/*
+> additional-branches =
+> "ProjectA/trunk:refs/remotes/svn-old/trunk;ProjectA/branches/*:refs/remotes/svn-old/branches/*;ProjectA/tags/*:refs/remotes/svn-old/tags/*"
+> ```
 
 

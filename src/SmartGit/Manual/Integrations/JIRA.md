@@ -6,8 +6,7 @@ The SmartGit integration to Atlassian Jira allows you to select a commit message
 
 The Jira integration is only available for **commercial** licenses and will only be present if [Bugtraq configuration](../Integrations/Bugtraq-links-to-issue-trackers.md) has been set up correctly to your Jira server.
 
-### Note
-
+> [!NOTE]
 > When connecting to a cloud-based Jira instance (\*.atlassian.net), you
 > have to login with your **username**, not your email address. You can
 > find your username in your **Profile** (top-right corner).
@@ -21,8 +20,7 @@ Depending on the Jira version and/or server vs. cloud instance, authenticate wit
 
 To create an API token, open your Jira account and select **Security** settings.
 
-### Info
-
+> [!TIP]
 > For the cloud instance, you can find security settings at:
 > <https://id.atlassian.com/manage-profile/security>
 
@@ -58,8 +56,7 @@ A Jira issue is considered as *affected*, if:
 
 4. The issue is actually *resolvable* (or more precisely: there is at least one *Transition* available which puts the issue into a *resolved* state. Note that, this is usually not the case for all issues, especially not for issues which are already resolved/closed.
 
-### Example
-
+> [!EXAMPLE]
 > In Jira's "classic workflow", an issue which is *in progress* can be
 > *resolved* or *closed*. Hence, for such issues which are mentioned in a
 > commit message, SmartGit will offer both resolutions, because these are
@@ -69,16 +66,14 @@ A Jira issue is considered as *affected*, if:
 > For such issues which are mentioned in a commit message, SmartGit will
 > not offer any resolution.
 
-### Info
-
+> [!TIP]
 > You can disable the Resolve-check by configuring `jira.resolveOnPush` in the Preferences, section **Low-Level Properties**.
 
 ### Custom workflows
 
 For the detection of *resolvable* issues, SmartGit supports the common default Jira workflows. If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
 
-### Note
-
+> [!NOTE]
 > SmartGit will only offer resolution of issues if your Jira credentials are properly configured.
 > To ensure this, invoke **Select from Jira** and enter your credentials these.
 > You can completely disable this functionality using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).

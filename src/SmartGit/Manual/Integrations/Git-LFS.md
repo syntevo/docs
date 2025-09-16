@@ -4,7 +4,7 @@ SmartGit provides support for common Git Large File Storage (Git-LFS) operations
 
 Please refer to [Git LFS concepts](../GitConcepts/GitLargeFileStorage.md) for background information and benefits of using Git-LFS on selected files in your repository.
 
-#### Tip
+> [!TIP]
 > The Git LFS extension must be installed on your local computer, and LFS filters must be enabled for any repository where LFS file storage will be used.
 >
 > It is recommended that you use the version of the Git executable [bundled with SmartGit](../GUI/Preferences/Commands.md#git-executable) and use SmartGit to enable and configure LFS in your repositories for best compatability.
@@ -29,13 +29,13 @@ SmartGit will display a **LFS Track** dialog, prompting you to provide a trackin
 
 SmartGit will add the pattern into the `.gitattributes` file, which identifies files tracked by LFS.
 
-#### Note
+> [!NOTE]
 > Remember to add and commit the `.gitattributes` file into your Git repository!
 
 ## Locking LFS Files for Exclusive Editing
 To prevent other users from concurrently editing a file tracked by LFS in your Git repository, you can **[lock](../GitConcepts/GitLargeFileStorage.md#git-lfs-file-locking)** the file on the LFS server to obtain exclusive modification access.
 
-#### Note
+> [!NOTE]
 > The ability to perform LFS locking is disabled by default in SmartGit.
 > To use LFS locking, toggle the **[Low-Level Property](../GUI/AdvancedSettings/Low-Level-Properties.md)** `status.lfs.locks` to `true` to enable the **Lock** command in SmartGit.
 >
@@ -81,19 +81,17 @@ Once these files are present, additional information is shown when viewing files
 - The icon under the **Name** column will indicate the lock state of LFS files.
 - In the **Standard Window**, when viewing **Local Files**, the LFS status will be shown on the right of the file name.
 
-#### Example
+> [!EXAMPLE]
+> The following screenshot shows how this display appears:
+>
+> - `file` - a normal file to which no LFS lock information applies
+> - `huge` - locked by someone else
+> - `huge2` - locked by you
+> - `huge3` - lockable (configured in `.gitattributes`)
+>
+> ![SmartGit LFS Icons](../images/LfsSmartGitLockIcons.png)
 
-The following screenshot shows how this display appears:
-
-- `file` - a normal file to which no LFS lock information applies
-- `huge` - locked by someone else
-- `huge2` - locked by you
-- `huge3` - lockable (configured in `.gitattributes`)
-
-![SmartGit LFS Icons](../images/LfsSmartGitLockIcons.png)
-
-#### Note
-
+> [!NOTE]
 > In the **Log** window, lock states are only displayed for the **Working Tree node**.
 
 ## Troubleshooting
@@ -117,4 +115,3 @@ The following screenshot shows how this display appears:
       <prop key="expanded" type="boolean" value="false"/>
   </obj>
   ```
-
