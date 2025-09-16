@@ -1,5 +1,8 @@
 .jekyll-cache
 /Gemfile.lock
 /index.md
-/SmartGit/
 /.out/
+/SmartGit/
+/DeepGit/
+/SmartSVN/
+/SmartSynchronize/
