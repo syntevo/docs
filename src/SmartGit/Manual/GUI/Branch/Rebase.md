@@ -24,8 +24,6 @@ Please refer to [Interactive Rebasing](Rebase-Interactive.md).
 
 Rebasing Onto allows the parent commit of an existing commit to be changed.
 
-**Rebase Onto** operations can be performed from the **Log** window.
-
 Example: In the below, we've made a mistake when starting branch `quickfix2`.
 Instead of creating a new branch from `main`, we've accidentally branched off branch `quickfix1`.
 As a result, `quickfix2` also has all the commits that `quickfix1` in its branch, which means that `quickfix2` cannot be merged into `main` independently of `quickfix1`.
