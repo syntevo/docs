@@ -51,8 +51,8 @@ If you commit while the Working Tree is *merging*, you can create either a merge
 SmartGit provides several options for altering local commits:
 
 - **Undo Last Commit**: Moves the content of the last commit to the [Index](../GitConcepts/The-Index.md) without losing any changes.
-- **Edit Commit Message**: Modify the commit message of the last commit or any local commit. Select the commit and invoke **Edit Commit Message** from its context menu in the **Journal** view of the **Working Tree window** or the **Graph** view of the **Log window**.
-- **Squash Commits**: Combine multiple local commits into a single commit by selecting the range of commits in the **Journal** view (of the **Working Tree Window**) or the **Graph** view (of the **Log Window**), then invoking **Squash Commits** from the context menu.
+- **Edit Commit Message**: Modify the commit message of the last commit or any local commit. Select the commit and invoke **Edit Commit Message** from its context menu in the **Journal** view of the **Working Tree window** or the **Graph** view of the **Log window** or the **Standard window**.
+- **Squash Commits**: Combine multiple local commits into a single commit by selecting the range of commits in the **Journal** view (of the **Working Tree Window**) or the **Graph** view (of the **Log Window** or **Standard Window**), then invoking **Squash Commits** from the context menu.
 - **Reorder Commits**: Drag and drop a commit to a different location in the **Journal** or **Graph** view to change its position.
 
 > [!WARNING]

@@ -7,7 +7,7 @@ There are several ways to check out in SmartGit:
 - **Working Tree/Log Window**: Double-click on a branch in the **Branches** view and confirm the **Check Out** dialog that appears.
 - **Working Tree Window**: Invoke **Branch \| Check Out** from the menu.
   This opens a dialog containing a **Log View**, where you can select the commit to check out.
-- **Log Window**: In the [Log Window](../Log-Window.md), select the commit to check out, and then select **Check Out** from the context menu.
+- **Log Window** and **Standard Window**: Select the commit in the **Graph View** and use the **Graph** context menu -> **Check Out**.
 
 When you check out a remote branch, you can optionally create a new local branch and set up branch tracking.
 It is recommended to generally make changes in your Working Tree after checking out a branch.

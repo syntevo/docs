@@ -13,7 +13,7 @@ SmartGit packages the interactive rebase functionality of Git in simple yet powe
 
 ## Quick rearranging and squashing
 
-You can invoke various operations from the context menu depending on the type of commit(s) selected.
+In the **Log window** and **Standard window**, use the **Graph** context menu to invoke the following operations depending on the selected commit(s).
 Most notably, you can efficiently rewrite history:
 
 - **Squashing adjacent commits:** Select the commits you want to squash, invoke the **Squash...** option, and provide an updated commit message.

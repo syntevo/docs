@@ -42,5 +42,5 @@ For example, let's assume that your repository contains a large file named `larg
 
 - The initial clone (`git clone`) will not fetch any blobs related to `large`.
 - Immediately after the clone, SmartGit will scan the working tree (`git status`) and fetch the blob representing `large` in the `HEAD` commit.
-- SmartGit will fetch the two blobs representing `large` before and after the change when selecting a different commit in the Log **Graph** where `large` has changed.
+- SmartGit will fetch the two blobs representing `large` before and after the change when selecting a different commit in the **Graph** in the **Log window** or **Standard window** where `large` has changed.
 - When invoking a **File Log** on `large`, SmartGit will fetch *all* blobs related to `large`.

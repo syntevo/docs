@@ -5,7 +5,8 @@ The key differentiation is that *Tags* will remain pointed to a specific commit,
 
 ## Adding, Renaming and Deleting Branches and Tags
 
-You can add, rename and delete branches and tags both from the main window and from the [Log](../Log.md) window.
+You can add, rename and delete branches and tags in the **Working Tree Window** and the [**Log Window**](../Log.md).
+You can also add branches and tags in the **Standard Window**.
 
 ### Working Tree Window
 
@@ -17,6 +18,7 @@ Use **Branch \| Add Tag** or **Branch \| Add Branch** to create a tag or branch 
 ### Log Window
 
 On the **Log Window**, you can add a branch or tag on a commit by selecting the commit in the Log graph and invoking **Add Branch** or **Add Tag** in the commit's context menu.
+In the **Standard Window**’s History graph, the commit context menu also provides **Add Branch** and **Add Tag**.
 Similarly, you can delete a branch or tag by selecting the commit to which the branch or tag pointer is attached and invoking **Delete** in the commit's context menu.
 
 Via the context menu of the **Log Window**'s **Branches** view, you can add and delete branches and tags as well.
