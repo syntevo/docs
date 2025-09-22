@@ -40,7 +40,7 @@ This configuration allows you to choose what happens when you attempt to push, a
 
 This allows you to configure the GPG program and your private signing key to Sign Tags and Commits, to prove author identify.
 
-Please refer to [Signing](../../../HowTos/Sign-Tags-and-Commits.md) for further information.
+Please refer to [Signing](../../../HowTos/Configuration/Sign-Tags-and-Commits.md) for further information.
 
 > [!NOTE]
 > You need to ensure the specified GPG program is configured to use an agent that can ask you for your key's passphrase using a GUI.

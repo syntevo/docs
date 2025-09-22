@@ -166,7 +166,7 @@ The SSH options are only used if you use SSH to authenticate with remotes.
 - **Use SmartGit as SSH client** simplifies access to remotes, as SmartGit will manage the complexity of encryption key pairs. This option is recommended if you interact exclusively with SmartGit and do not use the Git command line or other Git tooling when connecting to SSH repositories.
 
 > [!NOTE]
-> The built-in SSH client requires the private key file to be provided in PEM format. Please see also the [SSH-How-To](../../../HowTos/SSH.md).
+> The built-in SSH client requires the private key file to be provided in PEM format. Please see also the [SSH-How-To](../../../HowTos/Misc/SSH.md).
 
 ### SmartGit Credential Helper (HTTPS)
 
