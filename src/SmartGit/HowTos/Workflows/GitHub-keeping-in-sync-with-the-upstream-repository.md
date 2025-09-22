@@ -13,8 +13,8 @@ upstream repository must be available as additional **Remote**:
 
 To incorporate changes from the upstream repository, invoke **Pull** and
 select to **Fetch From** `upstream`. This will update your `upstream/*`
-refs. To review the changes, you may open the **Log** and
-toggle `upstream` in the **Branches** view.
+refs. To review the changes, you may open the **Log Window** or the
+**Standard Window** and toggle `upstream` in the **Branches View**.
 
 You may now use **Merge**, **Rebase** or **Cherry-Pick** to incorporate
 upstream changes into your local branch.

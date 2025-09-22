@@ -122,11 +122,12 @@ SmartGit.
     **Query\|Log** from the main menu.
 -   The first thing to do is to create a new branch on the last commit
     (without switching to the branch) in order to make sure we won't
-    lose any commits while performing resets. To create the branch,
-    select the last commit, then select **Add Branch** in the commit's
-    context menu. On the dialog, enter the branch name and confirm by
-    clicking on the **Add Branch** button. This is what the Log might
-    look like afterwards:
+    lose any commits while performing resets. To create the branch, in
+    the **Log window** or the **Standard window**, select the last
+    commit, then use the **Graph** context menu -> **Add Branch**. On
+    the dialog, enter the branch name and confirm by clicking on the
+    **Add Branch** button. This is what the Log might look like
+    afterwards:
 
 ![](images/modifying-the-history-05.png)
 
@@ -162,9 +163,9 @@ SmartGit.
 -   Finally, remove *branch1* to discard the old history. There are two
     ways to do this: (1) Select **Branch\|Branch Manager** from the main
     menu, then select *branch1* on the dialog, then click on the
-    **Delete** button. (2) Open the Log window (**Query\|Log**), select
-    the commit to which *branch1* is attached, select **Delete** from
-    the commit's context menu, then follow the dialog instructions.
+    **Delete** button. (2) Open the **Log window** (**Query\|Log**),
+    select the commit to which *branch1* is attached, select **Delete**
+    from the commit's context menu, then follow the dialog instructions.
 
 ## Merging and splitting older commits
 
@@ -242,5 +243,3 @@ follows:
 This procedure is illustrated below:
 
 ![](images/modifying-the-history-11.png)
-
-

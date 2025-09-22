@@ -4,7 +4,8 @@ Open the **Log** for your repository; there you will have two possible
 ways:
 
 -   directly in the **Graph**, select the two commits you want to
-    compare (*Ctrl*-click the second commit to extend the selection);
+    compare (*Ctrl*-click the second commit to extend the selection; this
+    also works in the **Standard** window);
 -   in the **Branches** view, use **Reveal Commit** on the first branch
     you want to compare, then use **Compare with Selected Commit** on
     the second branch you want to compare (this will again result in the
