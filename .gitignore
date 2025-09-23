@@ -4,5 +4,6 @@ _site/
 /.obsidian/
 /.claude/
 /.claude-allow
+/.claude-computer-use/
 /.codex
 /.codex-allow
