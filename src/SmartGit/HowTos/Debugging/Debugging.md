@@ -5,7 +5,7 @@
 Always try to investigate problems with a fresh SmartGit setup:
 
 -   on Windows, use the *Portable* bundle: <https://www.syntevo.com/smartgit/download/>
--   on macOS and Linux, temporarily use a new [smartgit.settings](../Manual/GUI/AdvancedSettings/VM-options.md#location-of-the-settings-directory) directory
+-   on macOS and Linux, temporarily use a new [smartgit.settings](../../Manual/GUI/AdvancedSettings/VM-options.md#location-of-the-settings-directory) directory
 
 #### Why?
 > SmartGit has plenty of **Preferences** options and even more
@@ -21,7 +21,7 @@ Always try to investigate problems with a fresh SmartGit setup:
 
 Before investigating a problem, restart SmartGit with clean logs:
 
-- locate the [Settings Path](../Manual/Installation/Installation-and-Files.md) in the **Help\|About** dialog
+- locate the [Settings Path](../../Manual/Installation/Installation-and-Files.md) in the **Help\|About** dialog
 - shut down SmartGit
 - from the sub-directory `logs/` remove all `log.txt*` files
 - restart SmartGit
@@ -40,7 +40,7 @@ If the problem is not reproducible with fresh settings, try to copy the settings
 
 ## Enabling debug logging for certain keys
 
-To enable debug logging for a certain key `logging.foo.bar`, first decide the log level – whether it should be fine (`DEBUG`) or as fine as possible `TRACE`. Usually SmartGit support will tell you. After that, add the corresponding line to `smartgit.properties` (in the Settings directory, see [Installation and Files](../Manual/Installation/Installation-and-Files.md)). Depending on the log level, this will be either:
+To enable debug logging for a certain key `logging.foo.bar`, first decide the log level – whether it should be fine (`DEBUG`) or as fine as possible `TRACE`. Usually SmartGit support will tell you. After that, add the corresponding line to `smartgit.properties` (in the Settings directory, see [Installation and Files](../../Manual/Installation/Installation-and-Files.md)). Depending on the log level, this will be either:
 
 **DEBUG logging**
 

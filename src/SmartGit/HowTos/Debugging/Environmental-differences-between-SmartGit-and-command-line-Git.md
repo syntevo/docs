@@ -23,7 +23,7 @@ this shell, too:
     environment variables (see below).
 -   if not, first try to reproduce the problem with a clean SmartGit
     installation:
-    -   temporarily get rid of the [Settings directory](../Manual/Installation/Installation-and-Files.md)
+    -   temporarily get rid of the [Settings directory](../../Manual/Installation/Installation-and-Files.md)
     -   retry the problematic operation  
         -   if the problem is still reproducible, compare environment
             variables (see below)
@@ -38,7 +38,7 @@ this shell, too:
 
 3.  shutdown SmartGit
 
-4.  open `logs/log.txt.0` from the [Settings directory](../Manual/Installation/Installation-and-Files.md) and
+4.  open `logs/log.txt.0` from the [Settings directory](../../Manual/Installation/Installation-and-Files.md) and
     locate `Environment variables` in the top of the log file
 
 5.  open a terminal/command prompt directly from your operating system

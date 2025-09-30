@@ -10,4 +10,4 @@ differently from SVN:
     such, otherwise SVN will think you've created a new file/directory.
 -   **Git** In Git, you just rename or move your files/directories, and
     later Git will automatically detect renames. For details, refer to
-    [Local Operations on the Working Tree](../Manual/GUI/Local-Operations-on-the-Working-Tree.md).
+    [Local Operations on the Working Tree](../../Manual/GUI/Local-Operations-on-the-Working-Tree.md).
