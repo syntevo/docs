@@ -26,7 +26,7 @@ If there is no `.gitreview` file present, SmartGit will detect a remote as being
     - If there is no remote connecting to port 29418 but there is only a single remote overall, this remote is used.
 
 > [!TIP]
-> To have Gerrit-related commands available in context menu, set [Low-level Property](../GUI/AdvancedSettings/System-Properties.md) `ui.showPushToGerritInMenu`.
+> To display **Push to Gerrit** in the **Remote** menu of the main menu bar, set [Low-level Property](../GUI/AdvancedSettings/System-Properties.md) `ui.showPushToGerritInMenu`.
 
 > [!NOTE]
 > If **Push to Gerrit** doesn't show up for you despite of the above conditions being met, you may enable debug logging for "smartgit.gerrit".

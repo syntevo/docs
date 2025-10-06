@@ -24,7 +24,7 @@ Finally, confirm the **Add Hosting Provider** dialog using **Add**.
 ### Personal Access Tokens
 
 Instead of an OAuth token, you may alternatively use a personal access token which has to be created manually in your [GitLab User Settings](https://gitlab.com/-/profile/personal_access_tokens).
-Make sure that your personal access token has at least following scopes assigned: **api**, **read_user**, **write_repository**.
+Make sure that your personal access token has at least following scopes assigned: **api**, **write_repository**.
 
 ## Possible Problems & Solutions
 
