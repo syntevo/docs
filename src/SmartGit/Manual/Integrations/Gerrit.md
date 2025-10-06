@@ -24,7 +24,7 @@ If there is no `.gitreview` file present, SmartGit will detect a remote as being
 
 #### Tip
 
-> To have Gerrit-related commands available in context menu,
+> To display **Push to Gerrit** in the **Remote** menu of the main menu bar,
 > set [Low-level Property](../GUI/AdvancedSettings/System-Properties.md) `ui.showPushToGerritInMenu`.
 
 #### Info
