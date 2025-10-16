@@ -6,14 +6,14 @@ There exist two types of commercial licenses:
 
 | |Subscription license | Perpetual (single payment) license|
 |-|:--------------------|:----------------------------------|
-|Quotes              | not offered                                                  | you can [request quotes](https://www.syntevo.com/smartgit/purchase/#perpetual)|
+|Quotes              | not offered                                                  | you can [request quotes](https://www.smartgit.dev/purchase/#perpetual)|
 |Payment methods     | requires automatic payment methods, e.g. credit card, paypal | all supported payment types, e.g. wire transfer or purchase order |
 |Validity            | during the paid period                                       | perpetual |
 |...after paid period| SmartGit stops working, if renewal fails or has been cancelled | can be used continuesly |
 |License file fetch  | yes, if internet access is available and proxy configured      | no |
 |Offline use         | internet access is strongly recommended (especially for monthly subscription) to have optimal license file fetch | no internet access required |
 |SmartGit versions   | any SmartGit version                                         | any SmartGit version released before the end of your purchased update period |
-|Auto-renewal        | yes (same price and payment method), until cancelled | no, can be [upgraded manually](https://www.syntevo.com/smartgit/purchase/#upgrade)|
+|Auto-renewal        | yes (same price and payment method), until cancelled | no, can be [upgraded manually](https://www.smartgit.dev/purchase/#upgrade)|
 |Email support       | during the paid period                               | during the paid support period (might be shorter than update period) |
 |Additional users    | easy by contacting [sales](mailto:sales@syntevo.com); will not change the payment period | could mean to also renew the update period for existing users ([details](Purchase-Upgrades.md)); update period depends on order date|
 
@@ -48,7 +48,7 @@ The reduced user count will apply for the next renewal.
 ## Perpetual (single-payment) licenses
 You can purchase 1, 2 or 3 years of updates.
 This means you can use any SmartGit version which we release until the end of your ordered update period, as long as you like (even after the update period ended) on the operating system versions supported by these SmartGit versions.
-After the update period you can [purchase upgrade licenses](https://www.syntevo.com/smartgit/purchase/#upgrade) for a reduced price by uploading your existing (newest) license file.
+After the update period you can [purchase upgrade licenses](https://www.smartgit.dev/purchase/#upgrade) for a reduced price by uploading your existing (newest) license file.
 
 In the past there also were licenses available with lifetime updates.
 These allowed to use any future version of SmartGit.

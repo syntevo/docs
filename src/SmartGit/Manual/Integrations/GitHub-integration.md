@@ -131,7 +131,7 @@ With this option selected, the local and remote feature branch will be deleted i
 From time to time, GitHub may introduce new or change existing *OAuth permission scopes*. In this case, SmartGit's OAuth token may stop working. The solution is usually to rerun through the *OAuth* setup, [as explained above](#re-setup-oauth).
 
 > [!NOTE]
-> Always use the [latest SmartGit release](https://www.syntevo.com/smartgit/download/), as it includes the most up-to-date required *scopes*.
+> Always use the [latest SmartGit release](https://www.smartgit.dev/download/), as it includes the most up-to-date required *scopes*.
 > If you suspect that not even the latest version is requesting the scopes which are required for your scenario, you may manually change the *scopes* in the **Preferences**, **Low-Level Properties**, property "github.oauth.scopes".
 
 Typical Git error messages hinting to this kind of problem:

@@ -4,7 +4,7 @@
 
 Always try to investigate problems with a fresh SmartGit setup:
 
--   on Windows, use the *Portable* bundle: <https://www.syntevo.com/smartgit/download/>
+-   on Windows, use the *Portable* bundle: <https://www.smartgit.dev/download/>
 -   on macOS and Linux, temporarily use a new [smartgit.settings](../../Manual/GUI/AdvancedSettings/VM-options.md#location-of-the-settings-directory) directory
 
 #### Why?
