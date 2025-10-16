@@ -5,7 +5,7 @@ To renew the support and update period, you need to purchase upgrade licenses.
 Basically, upgrade licenses are the same as new perpetual SmartGit licenses, but for a discounted price.
 
 The easiest way is to use **Help\|Register** in SmartGit and click the **Purchase Update** button.
-Alternatively, you may open <https://www.syntevo.com/smartgit/purchase/#upgrade> in your browser and upload your existing license file.
+Alternatively, you may open <https://www.smartgit.dev/purchase/#upgrade> in your browser and upload your existing license file.
 
 ## Additional Users
 
@@ -16,5 +16,5 @@ If you want to add additional users to your perpetual SmartGit license, you have
     support and update periods - or
 -   also update your existing SmartGit licenses (their support and
     update period will restart) by uploading your license file at
-    <https://www.syntevo.com/smartgit/purchase/#upgrade>
+    <https://www.smartgit.dev/purchase/#upgrade>
     and increasing the user count to the overall required user count.

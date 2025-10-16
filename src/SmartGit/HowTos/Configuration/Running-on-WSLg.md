@@ -29,7 +29,7 @@ Also, find the new Start menu item `Ubuntu` to launch it.
 # SmartGit installation
 
 1. Download SmartGit to WSLg
-   * On Windows, navigate to the [SmartGit download](https://www.syntevo.com/smartgit/download/)
+   * On Windows, navigate to the [SmartGit download](https://www.smartgit.dev/download/)
    * Click `Download for Linux`
    * Start `Ubuntu` from Windows Start menu. This will open a console, you'll use it later.
    * In your Windows Explorer, notice `Linux` item on side panel.
@@ -132,7 +132,7 @@ Also, find the new Start menu item `Ubuntu` to launch it.
    gsettings set org.gnome.desktop.wm.preferences button-layout "menu:minimize,maximize,close"
    ```
 1. **SmartGit UI layout is wrong with >= 200% Windows zoom level<br>**
-   This problem is resolved in SmartGit 23.1 [preview](https://www.syntevo.com/smartgit/preview/)<br>
+   This problem is resolved in SmartGit 23.1 [preview](https://www.smartgit.dev/preview/)<br>
    In older versions, you can work around it by adding this line in `~/.config/smartgit/smartgit.vmoptions`:
    ```
    -Dswt.autoScale=100
