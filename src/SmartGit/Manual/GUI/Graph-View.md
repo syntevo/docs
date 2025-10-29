@@ -56,7 +56,7 @@ The icons in the **Graph View** represent the following:
 - ![Broken Puzzle Upstream](../images/Graph-View-BasePuzzle-Icon.png) - Indicates the position of the tracked upstream branch when the current branch has commits ahead or behind.
   Icons for both the current and tracked branches appear as _Broken Puzzle Pieces_.
 - ![Selected Branch Head](../images/Graph-View-SelectedHead-Icon.png) - Shows the position of the HEAD commit in the graph.
-- ![Pencil Squiggle](../images/Graph-View-PencilSquiggle-Icon.png) - Not sure what this one means.
+- ![Signed Commit](../images/Graph-View-SignedCommit-Icon.png) - Indicates a signed commit.
 
 The _Branch Label_ consists of:
 - Remote name (if applicable)
