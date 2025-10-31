@@ -18,6 +18,10 @@ If you are new to Git but are familiar with version control systems such as Subv
 - [Working Tree States](Working-Tree-States.md)
 - [The Git Index](The-Index.md)
 - [Working with Submodules](Submodules.md)
+- [Working with Remote Repositories](GitRemotes.md)
+  - [Fetching](GitFetch.md)
+  - [Pulling](GitPull.md)
+  - [Pushing](GitPush.md)
 
 ## Distributed Version Control Systems
 
