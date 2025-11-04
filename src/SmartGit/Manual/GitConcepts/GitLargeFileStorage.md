@@ -88,3 +88,7 @@ To release the lock, use the `unlock` command.
 > [!TIP]
 > If a file is locked by another user, use the `--force` flag to attempt to override the lock (requires appropriate permissions on the LFS server).
 > `git lfs unlock myfile.png --force`
+
+## Related How-Tos
+
+- [Debugging Git-LFS](../../HowTos/Debugging/Debugging-Git-LFS.md): Troubleshoot Git LFS issues, especially smudge filter problems that can cause delays or hangs during repository refresh operations

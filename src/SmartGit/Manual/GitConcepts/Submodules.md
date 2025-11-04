@@ -16,3 +16,7 @@ Setting submodule repositories involves an initialization process, in which the 
 The user may later adjust it, for example to fix SSH login names.
 
 Refer to [Submodules in SmartGit](../GUI/Repository/Submodules.md) to see how to work with submodules inside SmartGit.
+
+## Related How-Tos
+
+- [Setting up submodules](../../HowTos/Workflows/Setting-up-submodules.md): Step-by-step guide for adding, initializing, and updating submodules in SmartGit

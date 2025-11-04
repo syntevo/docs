@@ -24,3 +24,9 @@ Individual change hunks or inner-line changes can be staged and unstaged there (
 
 The **Index Editor** shows a three-pane-view of HEAD, the Index, and the Working Tree.
 The Index and the Working Tree states of a file can be edited freely, for example, to add further modifications to the Index that are not available in the Working Tree.
+
+## Related How-Tos
+
+- [Staging, unstaging and the Index Editor](../../HowTos/Workflows/Staging-unstaging-and-the-Index-Editor.md): Practical guide with examples on how to stage files, unstage changes, and use the Index Editor to commit specific chunks within files
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Learn how to split commits into multiple commits using the Index Editor, and other advanced history modification techniques
+- [How to fix an Index which contains the same file name multiple times](../../HowTos/TroubleShooting/How-to-fix-an-Index-which-contains-the-same-file-name-multiple-times-but-with-different-encodings.md): Troubleshooting guide for resolving Index encoding issues that may prevent SmartGit from opening your repository

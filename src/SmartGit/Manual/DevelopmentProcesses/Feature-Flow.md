@@ -65,3 +65,9 @@ Use **Finish** to complete the feature, which will push your local feature commi
 By default, if there are no interim commits by others to the remote branch, SmartGit will attempt to fast forward your feature commits onto the remote branch, however, there is the option to create a merge commit instead, and provide a commit message for the merge commit.
 
 <super>*</super> If the remote is hosted on [GitHub or GitHub Enterprise](../Integrations/GitHub-integration.md), SmartGit's integration will assist with creating a pull request.
+
+## Related How-Tos
+
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Learn how to handle merge conflicts that may occur when integrating your feature with an updated trunk branch
+- [GitHub: keeping in sync with the upstream repository](../../HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository.md): Keep your local trunk branches synchronized with upstream repositories
+- [How to compare two branches/commits](../../HowTos/Workflows/How-to-compare-two-branches-commits.md): Compare your feature branch with the trunk branch to review changes before finishing

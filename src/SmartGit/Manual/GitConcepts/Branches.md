@@ -118,3 +118,11 @@ A [Merge commit](Merging.md#normal-merge-commit) differs from a normal commit be
 - The latest commit on each of the branches being merged.
 
 For example, when branch `feature-a` is merged into `main` through a merge pull request, a new commit is added to `main`, which will trace a parent commit from both the last commits in `feature-a` and `main`.
+
+## Related How-Tos
+
+- [How to compare two branches/commits](../../HowTos/Workflows/How-to-compare-two-branches-commits.md): Compare changes between branches using SmartGit's Log window and Branches view
+- [How to perform normal merges and squash merges](../../HowTos/Workflows/How-to-perform-normal-merges-and-squash-merges.md): Practical guide to merging branches with different merge strategies
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Apply specific commits from one branch to another without a full merge
+- [GitHub: keeping in sync with the upstream repository](../../HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository.md): Work with multiple remotes and manage upstream branches in forked repositories
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Handle merge conflicts that arise when combining branches

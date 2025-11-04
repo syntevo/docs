@@ -82,3 +82,11 @@ Although every repository usage is unique, some common activities will occur at 
 And that's it -- the basics of working with Git!
 
 To make working with Git easier, **SmartGit** wraps the concepts above in an easy-to-use graphical user interface (GUI), in order to simplify working with Git repositories.
+
+## Related How-Tos
+
+- [Staging, unstaging and the Index Editor](../../HowTos/Workflows/Staging-unstaging-and-the-Index-Editor.md): Learn how to use the Git Index to stage specific files or chunks within files for your commits
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Step-by-step guide to resolving merge conflicts using SmartGit's Conflict Solver
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Apply changes from specific commits to your current branch
+- [Setting up submodules](../../HowTos/Workflows/Setting-up-submodules.md): Detailed instructions for adding and managing Git submodules in SmartGit
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Advanced techniques for modifying commits, including rebasing and reordering commits

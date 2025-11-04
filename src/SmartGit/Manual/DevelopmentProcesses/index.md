@@ -18,3 +18,10 @@ In TbD, progress is made through small, frequent commits to the trunk branch, wh
 TbD can be easily achieved in SmartGit using standard Git commands like Checkout, Commit, Rebase, and Push.
 
 In addition to all standard Git features, SmartGit provides custom support for both the **Git-Flow** and **Git-Flow Light** strategies.
+
+## Related How-Tos
+
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Learn how to rebase, squash, and reorder commits - essential techniques for maintaining clean history in feature branches and trunk-based development
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Step-by-step guide for resolving merge conflicts that commonly occur when integrating feature branches or syncing with trunk branches
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Apply specific commits from one branch to another, useful for hotfix workflows in Git-Flow and selective feature integration
+- [GitHub: keeping in sync with the upstream repository](../../HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository.md): Manage upstream repositories and collaborate effectively in fork-based development workflows

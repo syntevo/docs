@@ -39,3 +39,10 @@ o                          o
 ### See also
 
 [Cherry Pick in SmartGit](../GUI/Branch/Cherry-Pick.md)
+
+## Related How-Tos
+
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Step-by-step guide to performing cherry-pick operations in SmartGit's UI
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Resolving conflicts that may occur during cherry-picking operations
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Advanced techniques using cherry-picking to reorder commits and modify repository history
+- [Enabling the "cherry picked from commit ..." message](../../HowTos/Configuration/Enabling-the-cherry-picked-from-commit-...-message.md): Configure Git's `-x` option to track the source of cherry-picked commits

@@ -110,3 +110,11 @@ o B
 |
 o A
 ```
+
+## Related How-Tos
+
+- [Sign Tags and Commits](../../HowTos/Configuration/Sign-Tags-and-Commits.md): Configure GPG signing for your commits and tags
+- [How to compare two branches/commits](../../HowTos/Workflows/How-to-compare-two-branches-commits.md): Learn how to compare commits in the graph to see differences
+- [How to perform normal merges and squash merges](../../HowTos/Workflows/How-to-perform-normal-merges-and-squash-merges.md): Practical guide to creating merge commits in SmartGit
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Advanced techniques for working with the commit graph and history
+- [Staging, unstaging and the Index Editor](../../HowTos/Workflows/Staging-unstaging-and-the-Index-Editor.md): Learn how to stage changes before creating commits

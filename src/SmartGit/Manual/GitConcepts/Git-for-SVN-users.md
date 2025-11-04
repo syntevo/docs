@@ -33,3 +33,10 @@ Although the outcomes are similar in both Git and SVN (i.e., adding new commits 
 - In Git, performing a **[Pull](../GUI/Repository/Synchronizing-with-Remote-Repositories.md#pull)** is similar to SVN's `refresh` command.
   It allows new commits (since your last Clone or Pull) in the tracked remote branch to be merged into your working directory.
   Git Pull is equivalent to doing a `Fetch` (updating your local repository with the remote changes) and then a `Merge` (merging changes from the tracked branch into your local branch).
+
+## Related How-Tos
+
+- [Staging, unstaging and the Index Editor](../../HowTos/Workflows/Staging-unstaging-and-the-Index-Editor.md): Learn how to use Git's Index to selectively stage changes for commits
+- [What do I do if I want to rename/move files or directories?](../../HowTos/Configuration/What-do-I-do-if-I-want-to-rename-move-files-or-directories.md): Understand how Git handles file operations differently from SVN
+- [GitHub: keeping in sync with the upstream repository](../../HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository.md): Working with multiple remotes and synchronizing changes
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Handling merge conflicts that may occur during pull operations

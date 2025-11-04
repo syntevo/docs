@@ -65,3 +65,10 @@ Although not technically a Git `status`, generally, your Working Tree directory 
 However, you can also check out the Working Tree to point to a specific commit.
 The Working Tree will be in a *Detached HEAD* state in this case.
 For more information on recovering from a *Detached HEAD* state, refer to the documentation on [Branching](Branches.md#branches-are-just-pointers-to-commits).
+
+## Related How-Tos
+
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Step-by-step guide for resolving merge conflicts when the working tree is in a Merging state
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Instructions for cherry-picking commits, which can lead to a Cherry-Picking state if conflicts occur
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Advanced techniques for using rebase, reset, and other operations that put the working tree in special states
+- [How to perform normal merges and squash merges](../../HowTos/Workflows/How-to-perform-normal-merges-and-squash-merges.md): Guide to performing merge operations that may result in a Merging state

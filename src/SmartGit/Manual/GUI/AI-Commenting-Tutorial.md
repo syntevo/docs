@@ -97,3 +97,7 @@ Continuing in our 'AISample' repository:
 The commit message (e.g. in the [Graph View](Graph-View.md)) will be updated to reword the `WIP` placeholder with an AI-generated message similar to the below.
 
 > **WIP: Add placeholder script DivideNumbers.sh with TODO comment**
+
+## Related How-Tos
+
+- [Staging, unstaging and the Index Editor](../../HowTos/Workflows/Staging-unstaging-and-the-Index-Editor.md): Learn more about staging files and using Git's Index, which is referenced in the AI commenting tutorials above

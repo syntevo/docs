@@ -306,3 +306,10 @@ Alternatively, adjust the `.git/config`:
 [gitflow "release.finish"]
 	nodevelopmerge = 1
 ```
+
+## Related How-Tos
+
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Essential for applying hotfix commits from support branches to main or for selectively integrating changes between branches
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Learn how to handle merge conflicts that commonly occur when finishing features, releases, or hotfixes in Git-Flow
+- [How to perform squash merges](../../HowTos/Workflows/How-to-perform-squash-merges.md): Useful when finishing feature branches and you want to combine multiple commits into a single commit before merging to develop
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Advanced techniques for cleaning up commits on feature branches before finishing them

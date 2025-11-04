@@ -215,3 +215,10 @@ The following variables can be used:
 - `${creationTime}:` the creation time of the pull request
 
 To introduce line breaks in the message, use `\n` in the message template.
+
+## Related How-Tos
+
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Learn how to resolve conflicts that may occur when integrating pull requests or rebasing feature branches
+- [How to perform normal merges and squash merges](../../HowTos/Workflows/How-to-perform-normal-merges-and-squash-merges.md): Understand merge strategies available when integrating pull requests
+- [How to compare two branches/commits](../../HowTos/Workflows/How-to-compare-two-branches-commits.md): Compare changes between pull request source and target branches
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Rebase and modify feature branch commits before creating pull requests
