@@ -54,3 +54,8 @@ Please refer to SmartGit's configuration guide for any of the following advanced
   - [Configuring automatic note synchronization with remotes](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes)
   - [Copying Git notes during rewriting activity (e.g. rebase)](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase)
   - [Removing Git Notes support from a repository](../Integrations/GitNotes-Integration.md#removing-git-notes-support-from-a-repository)
+
+## Related How-Tos
+
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Learn about rebasing and other history-rewriting operations that can cause notes to become orphaned from their original commits
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Understand how to resolve conflicts that may occur when multiple independent note changes are made to the same commit and category

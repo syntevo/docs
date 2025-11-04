@@ -106,3 +106,10 @@ Please refer to [SmartGit's Interactive Rebase features](../GUI/Branch/Rebase-In
 >     2. The last commit from the remote tracked branch.
 > - Or, if using **rebase** instead of merge, Git applies the local commits on top of the commits from the tracked branch, avoiding a merge commit.
 >   A new commit will represent the user's changes on the local branch.
+
+## Related How-Tos
+
+- [How to perform normal merges and squash merges](../../HowTos/Workflows/How-to-perform-normal-merges-and-squash-merges.md): Step-by-step guide for performing both merge types in SmartGit
+- [How to perform squash merges](../../HowTos/Workflows/How-to-perform-squash-merges.md): Detailed instructions for creating squash merge commits
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Guide for handling merge conflicts using SmartGit's Conflict Solver
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Covers rebasing and cherry-picking as alternatives to merging

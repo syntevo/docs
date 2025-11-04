@@ -93,3 +93,7 @@ The (debug) log level can be configured in `logger.properties`.
 > smartgit.reviewserver.level=FINE
 > ...
 > ```
+
+## Related How-Tos
+
+- [How to set up a Git server](../../HowTos/Workflows/How-to-set-up-a-Git-server.md): Learn about setting up a Git server with bare repositories, user permissions, and SSH authentication - essential background for hosting the server-side component

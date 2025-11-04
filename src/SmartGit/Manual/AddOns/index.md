@@ -7,3 +7,9 @@ SmartGit provides the following optional Add-Ons which can be used to enhance yo
 
 Both of the above Add-Ons are useful in organizations where your Git remote repository hosting service does not provide an interactive Pull Request mechanism for your team.
 If you are using GitHub, Azure DevOps, or other Git hosting services which provide interactive review facilities, we suggest you use the hosting provider review mechanism instead.
+
+## Related How-Tos
+
+- [How to set up a Git server](../../HowTos/Workflows/How-to-set-up-a-Git-server.md): Guide for setting up your own Git server when not using hosted services like GitHub
+- [Debugging JSON connections](../../HowTos/Debugging/Debugging-JSON-connections.md): Troubleshooting REST API connections with GitHub, GitLab, Bitbucket, and other hosting providers
+- [Authentication problems (push/pull fail)](../../HowTos/TroubleShooting/Authentication-problems-push-pull-fail.md): Resolving authentication issues when connecting to remote repositories and hosting providers

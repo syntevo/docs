@@ -163,3 +163,10 @@ Use this property to enable debug logging for certain SmartGit modules; `[catego
 > logging.smartgit.refresh=DEBUG
 > logging.sc.vcs.model.refresh=DEBUG
 > ```
+
+## Related How-Tos
+
+- [Debugging](../../../HowTos/Debugging/Debugging.md): General debugging guide including how to enable debug logging using low-level properties
+- [Debugging Refresh-related problems](../../../HowTos/Debugging/Debugging-Refresh-related-problems-of-external-changes.md): Step-by-step guide for troubleshooting refresh issues using smartgit.properties
+- [External Tools: configuring a 3-way diff](../../../HowTos/Configuration/External-Tools-configuring-a-3-way-diff.md): Configure custom diff tools using the `tools.useFileLogPathInsteadOfRepositoryRoot` low-level property
+- [Performance Tuning](../../../HowTos/Misc/Performance-Tuning.md): Optimize SmartGit performance using various low-level properties for logs and working tree state

@@ -91,3 +91,10 @@ Rebase with the `--interactive` switch allows a specified range of commits to be
 Additionally, the order of the commits can be changed during an interactive rebase.
 
 See also: [Interactive Rebasing in SmartGit](../GUI/Branch/Rebase-Interactive.md).
+
+## Related How-Tos
+
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Comprehensive guide to using rebase and cherry-pick to modify, merge, split, and reorder commits in your repository's history
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Step-by-step instructions for resolving conflicts that may occur during rebase operations
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Learn how to apply changes from individual commits, which rebase uses internally for multiple commits
+- [GitHub: keeping in sync with the upstream repository](../../HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository.md): Guide to using rebase for incorporating upstream changes into your local branch

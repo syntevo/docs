@@ -34,3 +34,11 @@ may have a different meaning when working with Git.
 | Tracking Branch | When you checkout a remote branch to your local repository, the local branch will *track* the remote repository and branch where it originated. As time progresses, this will allow you to merge changes to the tracked branch made by others, into your local branch. |
 | Trunk Branch | A generic name given to any branch which conceptually is long-lived in a repository, e.g. `develop`, `main` or `master`. Historically, a long lived branch could also be referred to as a 'main' branch, however `trunk` has been used to avoid confusion as the name `main` is now used as an actual branch name. |
 | [Working Tree](Working-Tree-States.md) | The working tree is the folder on your local system where you can change files in a repository and then stage and commit these changes. |
+
+## Related How-Tos
+
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Learn how to apply changes from a single commit onto another branch
+- [How to perform normal merges and squash merges](../../HowTos/Workflows/How-to-perform-normal-merges-and-squash-merges.md): Step-by-step guide for joining branches using merge commits or squash merges
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Resolve merge conflicts that occur when Git cannot automatically merge changes
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Advanced techniques for rebasing, editing commits, and rewriting repository history
+- [Using the Git credentials manager](../../HowTos/Configuration/Using-the-Git-credentials-manager.md): Configure Git to handle repository authentication using OS credential storage

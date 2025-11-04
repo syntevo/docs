@@ -37,3 +37,9 @@ In some instances, such as undoing the most recent commit on a local branch that
 > |                        |
 > o A                      o  A
 > ```
+
+## Related How-Tos
+
+- [Modifying the History](../../HowTos/Workflows/Modifying-the-History.md): Comprehensive guide to alternatives like reset, rebase, and amending commits when you need to alter commit history instead of reverting
+- [How to perform a cherry-pick](../../HowTos/Workflows/How-to-perform-a-cherry-pick.md): Learn how to selectively apply specific commits from one branch to another, one of the alternatives mentioned for handling unwanted commits
+- [How to resolve conflicts](../../HowTos/Workflows/How-to-resolve-conflicts.md): Essential guide for resolving merge conflicts that may arise when reverting commits with conflicting changes
