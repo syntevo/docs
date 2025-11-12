@@ -63,6 +63,10 @@ Where:
 
 Suppose you don't provide any _smartgit-ai-commit-message_ sections. In that case, SmartGit will display the available _smartgit-ai-llm_ and assume default settings, such as prompts, when invoking the LLM for commit message generation.
 
+> [!NOTE]
+> To completely disable the AI integration at a low level, you can set the [Low-Level Property](../GUI/AdvancedSettings/Low-Level-Properties.md) `ai.enabled` to `false` (requires build 25.1.095 or higher).
+> Refer to [Company-wide installation](../Installation/Company-wide-installation.md#system-properties-vs-vm-options) for instructions on how to apply this change for all of your users.
+
 ## `smartgit-ai-llm` Configuration Options
 
 Each `smartgit-ai-llm` configuration section has an _id_ that can be linked from other configuration sections using the `llm` key, and can have the following specific settings:
