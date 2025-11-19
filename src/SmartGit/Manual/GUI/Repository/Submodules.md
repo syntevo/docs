@@ -14,13 +14,25 @@ Please refer to [Submodule Concepts](../../GitConcepts/Submodules.md) for backgr
 
 ## Submodules in the UI
 
-A submodule usually shows up in SmartGit's UI at the same time in the [*Repositories View*](../Repositories-View.md) and in the **Files** view.
-Available Operations on the main menu will depend on whether the **Repositories** view or the **Files** is in focus:
+### Standard window
+For a repository with submodules a *Submodule* toolbar button occurs.
+This allows to quickly open submodule repositories (as separate tabs).
+
+In the parent repository the submodule's pointer is displayed in the *Files* view.
+
+### Working Tree window
+Submodules shows up in the [*Repositories View*](../Repositories-View.md) at their configured directory location.
+Their files are shown, even recursively, just like normal files of the parent repository in the **Files** view.
+
+Available Operations on the main menu will depend on whether the **Repositories** view or the **Files** is focused:
 
 - The **Repositories** view offers operations in the submodule repository itself:
   e.g. you can invoke a **Log** here to see the history of the submodule repository or you can invoke **Remote \| Submodule \| Initialize** to initialize all sub-submodules contained in the selected submodule.
 - The **Files** view offers operations on the submodule pointer from perspective of the parent repository:
   e.g. you can invoke a **Log** here to see how the submodule-pointer has changed over time or you can invoke **Remote \| Submodule \| Initialize** to initialize the selected submodule itself (if it is not yet initialized).
+
+### Log window
+Submodules shows up in the [*Repositories View*](../Repositories-View.md) and are handled like other repositories (only one can be opened at the same time).
 
 ## Cloning Repositories with Submodules
 
@@ -35,7 +47,6 @@ For a fully functional submodule, you'll also need to do a pull on it, as descri
 > Submodules will show up in the **Repositories** view, as well as the **Files** view.
 > Submodule operations (from the parent repository perspective) will be performed in the **Files** view.
 > 'Normal' Git operations on the submodule repository itself will be performed in the **Repositories** view.
-
 
 To "ignore" a not-yet initialized submodule which you are not interested in, invoke **Remote \| Submodule \| Deactivate**.
 This will hide the submodule from the **Files** view, unless **View \| Show Ignored Files** is selected.
