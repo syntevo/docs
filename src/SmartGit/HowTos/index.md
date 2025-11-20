@@ -14,6 +14,7 @@
     -   [Using the Git credentials manager](Configuration/Using-the-Git-credentials-manager.md)
 	-   [What do I do if I want to rename/move files or directories?](Configuration/What-do-I-do-if-I-want-to-rename-move-files-or-directories.md)
 	-   [Running on WSLg](Configuration/Running-on-WSLg.md)
+	-   [Dark mode on Linux](Configuration/Dark-Mode-on-Linux.md)
 -   [Debugging](Debugging/Debugging.md)
     -   [Creating Thread Dumps](Debugging/Creating-Thread-Dumps.md)
         -   [Periodical Thread Dumps](Debugging/Periodical-Thread-Dumps.md)
