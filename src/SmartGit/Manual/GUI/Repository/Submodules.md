@@ -1,6 +1,6 @@
 # Submodules in SmartGit
 
-Submodules offer a way to link one or embedded repositories into a parent repository.
+Submodules offer a way to link one or more embedded repositories into a parent repository.
 Please refer to [Submodule Concepts](../../GitConcepts/Submodules.md) for background information.
 
 ## Topics
