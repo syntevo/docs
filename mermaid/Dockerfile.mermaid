@@ -1,0 +1,29 @@
+FROM node:20-alpine
+
+# Install Chromium and dependencies required for Puppeteer
+RUN apk add --no-cache \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    python3
+
+# Set Puppeteer to use system Chromium with no-sandbox (required for Docker)
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+# Install mermaid-cli (latest stable version)
+RUN npm install -g @mermaid-js/mermaid-cli
+
+WORKDIR /workspace
+
+# Copy config files
+COPY mermaid.config.json /workspace/
+COPY puppeteer-config.json /workspace/
+
+# Copy processing script
+COPY scripts/render-mermaid.py /workspace/
+
+ENTRYPOINT ["python3", "/workspace/render-mermaid.py"]

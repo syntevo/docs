@@ -24,6 +24,25 @@ if exist "%SRC%" (
   echo [build-jekyll] WARN: Source folder not found: "%SRC%". Skipping copy.
 )
 
+rem Pre-render Mermaid diagrams to SVG
+echo [build-jekyll] Building Mermaid renderer Docker image...
+docker build -t mermaid-renderer -f "%~dp0..\mermaid\Dockerfile.mermaid" "%~dp0..\mermaid"
+if !ERRORLEVEL! NEQ 0 (
+  echo [build-jekyll] Failed to build Mermaid renderer image
+  exit /b !ERRORLEVEL!
+)
+
+echo [build-jekyll] Rendering Mermaid diagrams...
+docker run --rm ^
+  -v "%DST%":/workspace/content ^
+  -v "%~dp0..\mermaid\mermaid.config.json":/workspace/mermaid.config.json ^
+  -v "%~dp0..\mermaid\puppeteer-config.json":/workspace/puppeteer-config.json ^
+  mermaid-renderer
+if !ERRORLEVEL! NEQ 0 (
+  echo [build-jekyll] Failed to render Mermaid diagrams
+  exit /b !ERRORLEVEL!
+)
+
 if not exist "%~dp0.out" mkdir "%~dp0.out"
 
 docker run --rm ^

@@ -17,6 +17,11 @@
     &[align=left] {
       padding-right: 20px;
     }
+
+    // Mermaid diagrams should have transparent backgrounds
+    &.mermaid-diagram {
+      background-color: transparent;
+    }
   }
 
   .emoji {

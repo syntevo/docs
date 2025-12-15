@@ -77,6 +77,25 @@ jobs:
           done
           cp -r main/src-inflated/* .build
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Mermaid CLI and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          npm install -g @mermaid-js/mermaid-cli
+
+      - name: Render Mermaid diagrams to SVG
+        run: |
+          python3 main/mermaid/scripts/render-mermaid.py
+        env:
+          WORKSPACE_CONTENT: .build
+          WORKSPACE_CONFIG: main/mermaid/mermaid.config.json
+          WORKSPACE_PUPPETEER_CONFIG: main/mermaid/puppeteer-config-github.json
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
