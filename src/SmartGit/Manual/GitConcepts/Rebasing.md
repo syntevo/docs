@@ -27,17 +27,31 @@ After a successful rebase, the HEAD of the current branch will point to the rewr
 > git rebase main
 > ```
 >
-> ``` text
->                            o D' [>feature]
-> o A [main]                 |
-> |                          o E'
-> |      o D [>feature]      |
-> o B    |                   o A [main]
-> |      o  E      ===>      |
-> |    /                     o B
-> |  /                       |
-> o C                        o C
-> ...                        ...
+> **Before Rebase:**
+> ```mermaid {filename="rebase-before.svg"}
+> %%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true}} }%%
+> gitGraph
+>    commit id: "..."
+>    commit id: "C"
+>    branch feature
+>    checkout main
+>    commit id: "B"
+>    commit id: "A" tag: "branch1" tag: "branch2"
+>    checkout feature
+>    commit id: "E"
+>    commit id: "D"
+> ```
+>
+> **After Rebase:**
+> ```mermaid {filename="rebase-after.svg"}
+> gitGraph
+>    commit id: "..."
+>    commit id: "C"
+>    commit id: "B"
+>    commit id: "A"
+>    branch feature
+>    commit id: "E'"
+>    commit id: "D'"
 > ```
 
 > [!NOTE]
@@ -58,20 +72,32 @@ git checkout main
 git rebase --onto E F
 ```
 
-``` text
-o A [> main]                  o A' [> main] 
-|                             |
-o B                           o B'
-|                             |
-o C                           o C'
-|                             |
-|   o  [feature] D            |   o D [feature]
-|   |                         |  /
-|   |                         | /
-|   o E (selected)   ===>     o E
-|  /                          |
-| /                           |
-o F                           o F
+**Before Rebase:**
+```mermaid {filename="rebase-onto-before.svg"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true}} }%%
+gitGraph
+   commit id: "F"
+   branch feature
+   commit id: "E"
+   commit id: "D"
+   checkout main
+   commit id: "C"
+   commit id: "B"
+   commit id: "A"
+```
+
+**After Rebase:**
+```mermaid {filename="rebase-onto-after.svg"}
+gitGraph
+   commit id: "F"
+   commit id: "E"
+   branch feature
+   checkout feature
+   commit id: "D"
+   checkout main
+   commit id: "C'"
+   commit id: "B'"
+   commit id: "A'"
 ```
 
 > [!NOTE]
