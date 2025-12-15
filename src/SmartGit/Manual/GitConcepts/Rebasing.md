@@ -29,7 +29,7 @@ After a successful rebase, the HEAD of the current branch will point to the rewr
 >
 > **Before Rebase:**
 > ```mermaid {filename="rebase-before.svg"}
-> %%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true}} }%%
+> %%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
 > gitGraph
 >    commit id: "..."
 >    commit id: "C"
