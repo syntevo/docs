@@ -18,9 +18,12 @@
       padding-right: 20px;
     }
 
-    // Mermaid diagrams should have transparent backgrounds
+    // Mermaid diagrams should have transparent backgrounds and maintain aspect ratio
     &.mermaid-diagram {
       background-color: transparent;
+      width: auto;
+      height: auto;
+      max-width: 100%;
     }
   }
 
