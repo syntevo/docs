@@ -39,7 +39,7 @@
 -   Trouble-shooting
     -   [Authentication problems (push/pull fail)](TroubleShooting/Authentication-problems-push-pull-fail.md)
     -   [git: '...' is not a git command](TroubleShooting/git-...-is-not-a-git-command.md)
-    -   [How to fix an Index which contains the same file name multiple times, but with different encodings](TroubleShooting/How-to-fix-an-Index-which-contains-the-same-file-name-multiple-times-but-with-different-encodings.md)
+    -   [Fix an Index which contains the same file name multiple times, but with different encodings](TroubleShooting/How-to-fix-an-Index-which-contains-the-same-file-name-multiple-times-but-with-different-encodings.md)
     -   [Fix duplicate Unicode file entries on macOS](TroubleShooting/Deduplicate-Unicode-Files-On-MacOS.md)
     -   [Repair a corrupted Index](TroubleShooting/Repair-a-corrupted-Index.md)
     -   [My text files are displayed with invalid characters, what can I do?](TroubleShooting/invalid-encoding.md)
