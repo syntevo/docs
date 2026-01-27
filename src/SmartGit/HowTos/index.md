@@ -10,6 +10,7 @@
 	-   [Setting up an SSH tunnel (Windows)](Configuration/Setting-up-an-SSH-tunnel-Windows.md)
     -   [Setting up Multiple URLs per Remote](Configuration/Setting-up-Multiple-URLs-per-Remote.md)
     -   [Sign Tags and Commits](Configuration/Sign-Tags-and-Commits.md)
+    -   [Setting up SSH commit signing](Configuration/Setting-up-SSH-commit-signing.md)
     -   [SVN: cloning with a custom branch layout](Configuration/SVN-cloning-with-a-custom-branch-layout.md)
     -   [Using the Git credentials manager](Configuration/Using-the-Git-credentials-manager.md)
 	-   [What do I do if I want to rename/move files or directories?](Configuration/What-do-I-do-if-I-want-to-rename-move-files-or-directories.md)
