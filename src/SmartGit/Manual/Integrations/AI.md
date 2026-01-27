@@ -36,6 +36,7 @@ AI settings can be configured in a repository's local `.git/config`file, user (g
 
 > [!TIP]
 > SmartGit shows the location of the user and system git config files on your file system in the **Edit \| Preferences \| Commands \| Git Config** [preferences settings](../GUI/Preferences/Commands.md).
+> By default, SmartGit will generate a `smartgit-ai` config file next to your (global) `.gitconfig` file and incorporate it using the Git `include` directive.
 
 > [!NOTE]
 > SmartGit will automatically detect and reload changes made to the local repository's `.git/config` file.
