@@ -2,7 +2,6 @@
 
 ## Introduction
 SSH commit signing is the preferred option on **GitHub** and **GitLab** because it is simpler, more secure by default, and better aligned with modern developer workflows. Unlike GPG, SSH keys do not require complex keyrings, manual trust management, or fragile local configuration, making them easier to set up and maintain across machines. SSH keys are already widely used for repository access, benefit from strong hardware-backed support (such as security keys), and integrate cleanly with both platforms’ verification systems—reducing friction while still providing clear, cryptographically verifiable proof of authorship.
-SSH commit signing requires Git version **2.34.0 or newer**, which introduced native support for signing commits and tags using SSH keys. Earlier Git versions only support GPG-based signing, so upgrading is necessary to use SSH-based commit signing reliably on GitHub and GitLab.
 
 ## SmartGit with signed commits
 SmartGit supports signed commits by visually indicating their presence in the commit graph: when a cryptographic signature exists, a subtle grey pen icon appears to the left of the commit, signaling that the commit is signed.
@@ -15,6 +14,12 @@ SmartGit supports signed commits by visually indicating their presence in the co
 ## Configuration
 
 To get started, you simply need to set up your local environment in a few straightforward steps.
+
+SSH commit signing requires Git version **2.34.0 or newer**.
+Please verify that your Git version is new enough:
+```bash
+git --version
+```
 
 You could re-use your existing SSH authentication key, but it is recommended to use a separate SSH signing key.
 To create one open a Git Bash (for example via the SmartGit **Tools** menu) and execute:
