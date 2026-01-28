@@ -16,15 +16,22 @@ SmartGit supports signed commits by visually indicating their presence in the co
 
 To get started, you simply need to set up your local environment in a few straightforward steps.
 
-Open a Git Bash (for example via the SmartGit **Tools** menu) and execute the following commands:
+You could re-use your existing SSH authentication key, but it is recommended to use a separate SSH signing key.
+To create one open a Git Bash (for example via the SmartGit **Tools** menu) and execute:
 
 ```bash
-git --version ssh-keygen -t ed25519 -C "$(git config user.email)"
+ssh-keygen -t ed25519 -C "$(git config user.email)"
+```
+This will create the private key `~/.ssh/id_ed25519.pub` and the public key `~/.ssh/id_ed25519.pub`.
+Register it for the signing process in Git:
+
+```bash
 git config --global gpg.format ssh
 git config --global user.signingkey ~/.ssh/id_ed25519.pub
 git config --global commit.gpgsign true
 ```
-This configures SSH commit signing for your current user. If you prefer repository-local configuration, remove the `--global` flag from the commands that modify the Git configuration.
+This configures SSH commit signing for your current user.
+If you prefer repository-local configuration, execute the commands from inside the repository and remove the `--global` flag from the commands.
 
 From this point on, every commit will be signed with your SSH key.
 
