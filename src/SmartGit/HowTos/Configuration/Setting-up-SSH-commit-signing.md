@@ -19,10 +19,10 @@ To get started, you simply need to set up your local environment in a few straig
 Open a Git Bash (for example via the SmartGit **Tools** menu) and execute the following commands:
 
 ```bash
-git --version ssh-keygen -t ed25519 -C "$(git config user.email)" 
-git config --global gpg.format ssh 
-git config --global user.signingkey ~/.ssh/id_ed25519.pub 
-git config --global commit.gpgsign true`
+git --version ssh-keygen -t ed25519 -C "$(git config user.email)"
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
 ```
 This configures SSH commit signing for your current user. If you prefer repository-local configuration, remove the `--global` flag from the commands that modify the Git configuration.
 
@@ -31,7 +31,7 @@ From this point on, every commit will be signed with your SSH key. To allow your
 You can print your public SSH key with:
 
 ```bash
-cat ~/.ssh/id_ed25519.pub`
+cat ~/.ssh/id_ed25519.pub
 ```
 Copy the output and add it to your hosting provider.
 
