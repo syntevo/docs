@@ -26,7 +26,10 @@ git config --global commit.gpgsign true
 ```
 This configures SSH commit signing for your current user. If you prefer repository-local configuration, remove the `--global` flag from the commands that modify the Git configuration.
 
-From this point on, every commit will be signed with your SSH key. To allow your hosting provider to verify these commits, you must upload your public key.
+From this point on, every commit will be signed with your SSH key.
+
+## Verification at Hosting Provider
+To allow your hosting provider to verify these commits, you must upload your public key.
 
 You can print your public SSH key with:
 
@@ -44,6 +47,7 @@ Copy the output and add it to your hosting provider.
     and add a new SSH key of type **Authentication & Signing** or **Signing**.
     
 
+## Verification in SmartGit
 If you want to validate signed commits locally, maintain a `~/.ssh/allowed_signers` file containing the public keys of your team members, and reference it from your Git configuration:
 
 ```bash
@@ -62,4 +66,5 @@ You are now set up and can inspect cryptographically verified commits locally by
 git log --show-signature -1
 ```
 
-As of version **25.1**, **SmartGit** does not display commit verification details by default. If this is important for your workflow, you can use a lightweight PowerShell script provided by **Daniel Siegl** ([https://github.com/danielsiegl/checksshsign/](https://github.com/danielsiegl/checksshsign/)). The script downloads the public keys of all contributors, verifies the authenticity of signed commits, and attaches the results as Git Notes. After running the script from the SmartGit Tools menu, the verification status becomes visible directly within the SmartGit UI for the current repository.
+As of version **25.1**, **SmartGit** does not display commit verification details by default.
+If this is important for your workflow, you can use a lightweight PowerShell script provided by **Daniel Siegl** ([https://github.com/danielsiegl/checksshsign/](https://github.com/danielsiegl/checksshsign/)). The script downloads the public keys of all contributors, verifies the authenticity of signed commits, and attaches the results as Git Notes. After running the script from the SmartGit Tools menu, the verification status becomes visible directly within the SmartGit UI for the current repository.
