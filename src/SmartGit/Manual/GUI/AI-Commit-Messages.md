@@ -113,6 +113,7 @@ There are two different operational modes here:
 >   to change the `@ai` token.
 > - Use the low-level property `ai.commitMessageRewording.wipRegex` to to modify the `WIP` token
 >   and `ai.commitMessageRewording.wipPrefix` setting to change the prefix used.
+> - There is currently a hard limit of 100 pushable commits beyond which the AI rewording won't function. This serves as a safety measure to prevent potentially querying thousands of commit messages.  
 
 ## Errors and Troubleshooting
 
