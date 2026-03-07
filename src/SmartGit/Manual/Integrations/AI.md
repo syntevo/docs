@@ -167,6 +167,13 @@ Writing large, multi-line prompts into a Git config file may be cumbersome and m
 As a result, it is recommended that you place AI prompts into a separate file using the `promptFile` config.
 The resolution of file paths for `promptFile` files follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
 
+#### api
+
+> [!NOTE]
+> This option is available only since version 25.1.123.
+
+Specifies which API to use: `responses` or `completions` (default). This option is currently supported only for OpenAI-compatible LLMs.
+
 #### debug
 
 Enable logging of communication with the AI by setting `debug = true`.
@@ -314,6 +321,15 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
     type = openai
     model = gpt-4o
     url = https://api.openai.com/v1
+```
+
+### OpenAI GPT-5.3-Codex
+
+```
+[smartgit-ai-llm  "gpt-5.3-codex"]
+    type = openai
+    model = gpt-5.3-codex
+    api = responses
 ```
 
 ### Anthropic Claude Sonnet 3.5
