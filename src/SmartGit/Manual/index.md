@@ -58,9 +58,9 @@ Alternatively, you can follow one of the below topics:
     - [Ignoring, Skipping, and Assuming Unchanged](GUI/Ignore-Skip-AssumeUnchanged.md)
     - [Removing, Moving, and Renaming Files](GUI/Moving-Deleting.md)
     - [Working with Stashes](GUI/Stash.md)
-    - [AI Assisted Commit Messages](GUI/AI-Commit-Messages.md) (experimental)
-    - [AI Commit Message Tutorial](GUI/AI-Commenting-Tutorial.md) (experimental)
-    - [AI Commit Annotations](GUI/AI-Commit-Annotations.md) (experimental)
+    - [AI Assisted Commit Messages](GUI/AI-Commit-Messages.md)
+    - [AI Commit Message Tutorial](GUI/AI-Commenting-Tutorial.md)
+    - [AI Commit Annotations](GUI/AI-Commit-Annotations.md)
   - Other Tools and Commands
     - [Viewing the Git Log](GUI/Log.md)
     - [Bisect](GUI/Bisect.md)

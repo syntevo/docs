@@ -70,7 +70,7 @@ Once a repository is cloned from a linked hosting provider, SmartGit provides th
 - [Codex](Codex.md)
 - [Gerrit](Gerrit.md)
 - [Git Large File Storage](Git-LFS.md)
-- [AI Services](AI.md) (experimental)
+- [AI Services](AI.md)
 
 ## Tips
 > [!TIP]

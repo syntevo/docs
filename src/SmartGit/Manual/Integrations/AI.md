@@ -14,9 +14,6 @@ Once AI integration has been configured correctly, please refer to
   - [AI Commit Message Tutorial](../GUI/AI-Commenting-Tutorial.md) for quickstart tutorials on using SmartGit's AI Commenting features.
   - [AI Commit Annotations](../GUI/AI-Commit-Annotations.md) for an overview and starter examples of SmartGit's AI Annotation features.
 
-> [!NOTE]
-> AI integration in SmartGit is experimental in version 25.1 and may be subject to change in future updates.
-
 ## Supported Services
 
 SmartGit supports integration with the following AI services:
