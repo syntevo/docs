@@ -1,4 +1,4 @@
-# Git-Notes Integration *(experimental in 25.1)*
+# Git-Notes Integration
 
 This article explains how to configure and enable [**SmartGit's Notes features**](../GUI/Notes.md) through ordinary Git configuration files.
 
