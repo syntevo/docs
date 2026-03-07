@@ -174,6 +174,17 @@ The resolution of file paths for `promptFile` files follows the same logic as th
 
 Specifies which API to use: `responses` or `completions` (default). This option is currently supported only for OpenAI-compatible LLMs.
 
+#### responseFilter
+
+> [!NOTE]
+> This option is available only since version 25.1.123.
+
+Configures optional filters that are applied to the raw LLM response. The following filters are currently supported:
+
+- `none`: no filtering
+- `wordAndBackticks`: trims certain special characters from the beginning and end of the response
+- `thinking`: removes the `<thinking>...</thinking>` block
+
 #### debug
 
 Enable logging of communication with the AI by setting `debug = true`.
@@ -339,6 +350,16 @@ The list of available Mistral models can be [found here](https://docs.mistral.ai
     type = anthropic
     model = claude-3-5-sonnet-20241022
     url = https://api.anthropic.com/v1
+```
+
+### MiniMax M2.5 (with thinking-filter)
+
+```
+[smartgit-ai-llm "minimax-m2.5"]
+    type = openai
+    model = minimax-M2.5
+    url = https://api.minimax.io/v1
+    responseFilter=thinking
 ```
 
 ### Custom GPT-4o instance at Microsoft Azure
