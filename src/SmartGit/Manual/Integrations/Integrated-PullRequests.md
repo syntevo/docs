@@ -11,6 +11,7 @@ The following items summarize the integrated features available directly within 
   - A *Virtual Merge Commit* representing the outcome of the pull request will allow you to view changed files in the **Files View** and **Changes View**.
   - The ability to **Approve** an incoming pull request, without providing further feedback.
     To leave feedback, use [commenting](Integrated-PullRequest-Comments.md) in the **Log Window**.
+  - Note, that in the Standard window only **GitHub** pull requests are supported.
 - In the [**Working Tree Window**](#additional-pr-features-in-the-working-tree-window) and **Log Window**:
   - Clicking on the Hosting Provider **Icon** will check for new branches and pull requests on the remote.
 - In the [**Log Window**](#additional-pr-features-in-the-log-window):
@@ -21,6 +22,9 @@ The following items summarize the integrated features available directly within 
 
 ## Creating a Pull Request
 
+> [!NOTE]
+> In the **Standard Window**, only GitHub pull requests are supported.
+
 After pushing commits to a remote branch, you may want to create a pull request on the remote by using the Hosting Provider's custom web user interface.
 
 With integration enabled, SmartGit provides linked shortcuts to create the pull request:
@@ -28,7 +32,10 @@ With integration enabled, SmartGit provides linked shortcuts to create the pull 
 - In the **My History View** of the **Standard Window**, by clicking on the pushed branch, and selecting **Create Pull Request**.
 If you have made commits subsequent to pushing the branch to the remote, SmartGit will prompt you to push the new commits before proceeding with creating the pull request.
 
-## Additional PR features in the Standard Window (currently available for GitHub only)
+## Additional PR features in the Standard Window
+
+> [!NOTE]
+> In the **Standard Window**, only GitHub pull requests are supported.
 
 Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](GitHub-integration.md), and where a pull request has been created by you, or assigned to you.
 When SmartGit detects that you are involved in a pull request, an **Icon** will be shown in the **My History** area, as well as in the **Graph View**.
