@@ -185,6 +185,10 @@ For this, just append `?verify=ldap` to the property `smartgit.opLicenseServer.u
 smartgit.opLicenseServer.url=http://localhost:8080/public/v1?verify=ldap
 ```
 
+> [!NOTE]
+> Keep in mind that URL parameters are case-sensitive.
+> As a result, `?Verify=LDAP` or similar variations will not work.
+
 ### Configure License Server
 
 You can configure the on-premise server LDAP functionality using environment variables that you set for your container:
