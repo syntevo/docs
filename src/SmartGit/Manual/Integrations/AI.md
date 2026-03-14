@@ -151,18 +151,22 @@ Ensure it remains within the model's context window size; otherwise, parts of yo
 
 Sets the number of diff context lines to be used when generating diffs (`git diff --unified=<n>`). If not specified, Git's default will be used. 
 
-#### prompt and promptFile
+#### prompt and promptTemplate
 
 By default, SmartGit sends a predefined prompt for the commit message generation, which may evolve based on user feedback.
 The `prompt` option allows you to customize the default AI prompt used for generating commit messages, enabling experimentation or tailoring message styles.
 The prompt may include one or more of the following placeholder variables:
 
-- `${gitDiff}` - this variable will be substituted with the actual Git diff
-- `${commitMessage}` - this variable will be substituted with the current commit message
+> [!NOTE]
+> Beginning with version 26.1, the variable syntax has been updated from the old `${..}$` style to the new `{{ ... }}` format.
+> Furthermore, `promptFile` (which still uses the `${..}$` format) has been updated to `promptTemplate`, which now uses the `{{ ... }}` format.
+
+- `{{ gitDiff }}` - this variable will be substituted with the actual Git diff
+- `{{ commitMessage }}` - this variable will be substituted with the current commit message
 
 Writing large, multi-line prompts into a Git config file may be cumbersome and may be prone to cause configuration errors.
-As a result, it is recommended that you place AI prompts into a separate file using the `promptFile` config.
-The resolution of file paths for `promptFile` files follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
+As a result, it is recommended that you place AI prompts into a separate file using the `promptTemplate` config.
+The resolution of file paths for `promptTemplate` files follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
 
 #### api
 
@@ -395,7 +399,7 @@ They require specific adjustments to get working configurations.
       Use imperative language.\n\
       Provide only the commit message without any explanatory notes.\n\
       \n\
-      ${gitDiff}
+      {{ gitDiff }}
 
 [smartgit-ai-llm "o3-mini"]
     type = openai
@@ -424,7 +428,7 @@ They require specific adjustments to get working configurations.
     AND do not change the markdown structure AND preserve the detected language AND do not include additional comments in the response, \n\
     but purely the correction:\n\
     \n\
-    ${commitMessage}
+    {{ commitMessage }}
 
 [smartgit-ai-llm "gpt-4o"]
     type = openai
@@ -447,12 +451,12 @@ This example will attempt to determine whether the user has provided a commit me
       Commit Message:\n\
       \n\
       ```\n\
-      ${commitMessage}\n\
+      {{ commitMessage }}\n\
       ```\n\
       \n\
       Git Diff:\n\
       \n\
-      ${gitDiff}
+      {{ gitDiff }}
 
 [smartgit-ai-llm "o3-mini"]
     type = openai
@@ -460,13 +464,13 @@ This example will attempt to determine whether the user has provided a commit me
     url = https://api.openai.com/v1
 ```
 
-Alternatively, using `promptFile`:
+Alternatively, using `promptTemplate`:
 
 ```
 [smartgit-ai-commit-message "o3-mini verify"]
     llm = o3-mini
     mode = prefix-selection
-    promptFile = .gitai-commit-message
+    promptTemplate = .gitai-commit-message
 
 [smartgit-ai-llm "o3-mini"]
     type = openai
@@ -483,12 +487,12 @@ Just response with "[GOOD]", "[ACCEPTABLE]" or "[BAD"].
 Commit Message:
 
 ```
-${commitMessage}
+{{ commitMessage }}
 ```
 
 Git Diff:
 
-${gitDiff}
+{{ gitDiff }}
 ~~~
 
 ### Commit Message with Additional Hints using GPT-4.5-preview
@@ -496,7 +500,7 @@ ${gitDiff}
 ```
 [smartgit-ai-commit-message "generate [gpt-4.5-preview]"]
     llm = gpt-4.5-preview
-    promptFile = .gitai-sg-with-hints-prompt
+    promptTemplate = .gitai-sg-with-hints-prompt
 [smartgit-ai-llm "gpt-4.5-preview"]
     type = openai
     model = gpt-4.5-preview
@@ -512,12 +516,12 @@ If any hints are provided (inside the triple backticks), use them to guide or re
 
 ### Hints:
 ```
-${commitMessage}
+{{ commitMessage }}
 ```
 
 ### Code changes:
 ```
-${gitDiff}
+{{ gitDiff }}
 ```
 ~~~
 
@@ -534,7 +538,7 @@ Each subsection's *id* becomes the category name shown in the **Graph View** of 
 | Key | Required | Purpose |
 |-----|----------|---------|
 | **`llm`** | **yes** | Selects the [_id_ of the `[smartgit-ai-llm]`](#smartgit-ai-llm-configuration-options) entry which is to be used by this annotation, determining the model and endpoint to use. |
-| **`prompt`** / **`promptFile`** | **yes** | This is the same as the [*ai-commit-message*](#prompt-and-promptfile) configuration keys. Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**). The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
+| **`prompt`** / **`promptTemplate`** | **yes** | This is the same as the [*ai-commit-message*](#prompt-and-prompttemplate) configuration keys. Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptTemplate`**). The prompt may contain `{{ gitDiff }}` and/or `{{ commitMessage }}` placeholders that SmartGit will replace before sending the request. |
 | **`mode`** | no | Either `interactive` or `background`. Please consult [`mode`](#note-on-mode) below. |
 | **`diff`** | no | Either `perCommit` or `pair`. Please consult [`diff`](#note-on-diff) below. |
 | **`notesRef`** | **yes** (*) | Indicates that AI annotations are to be stored beneath `refs/notes/notesRef` in the repository. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information. (*) Must only be present for `background` mode. |
