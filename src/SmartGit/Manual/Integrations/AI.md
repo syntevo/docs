@@ -151,7 +151,7 @@ Ensure it remains within the model's context window size; otherwise, parts of yo
 
 Sets the number of diff context lines to be used when generating diffs (`git diff --unified=<n>`). If not specified, Git's default will be used. 
 
-#### prompt and promptTemplate
+#### prompt, promptTemplate and promptMarkerReplacement
 
 By default, SmartGit sends a predefined prompt for the commit message generation, which may evolve based on user feedback.
 The `prompt` option allows you to customize the default AI prompt used for generating commit messages, enabling experimentation or tailoring message styles.
@@ -171,6 +171,15 @@ Conditionals using `{% if xxx %}` ... `{% else %}` ... `{% endif %}` are support
 Writing large, multi-line prompts into a Git config file may be cumbersome and may be prone to cause configuration errors.
 As a result, it is recommended that you place AI prompts into a separate file using the `promptTemplate` config.
 The resolution of file paths for `promptTemplate` files follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
+
+`promptMarkerReplacement` can be configured to determine how a message containing an `@ai` marker should be replaced by the LLM response. This configuration should align with the instructions given in your prompt to the LLM:
+
+- `markerOnly` (default) will only replace the `@ai` marker with the LLM response. This method is more robust and is used with prompts such as `... replace the @ai marker ... and only return the replacement result`.
+- `entireMessage` will replace the whole commit message with the LLM response. This option is more flexible and is used with prompts like `... replace the @ai marker ... and return the entire resulting commit message`.
+- `none` will not replace the `@ai` marker at all, essentially disabling `@ai` marker logic for this prompt.
+
+> [!NOTE]
+> Choosing the optimal combination of prompt and `promptMarkerReplacement` usually relies on the capability of your LLM to follow precise instructions and your tolerance for (minor) alterations outside of the `@ai` marker in your commit message.
 
 #### api
 
