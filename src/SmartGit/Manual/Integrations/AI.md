@@ -162,7 +162,11 @@ The prompt may include one or more of the following placeholder variables:
 > Furthermore, `promptFile` (which still uses the `${..}$` format) has been updated to `promptTemplate`, which now uses the `{{ ... }}` format.
 
 - `{{ gitDiff }}` - this variable will be substituted with the actual Git diff
-- `{{ commitMessage }}` - this variable will be substituted with the current commit message
+- `{{ commitMessage }}` - this variable will be substituted with the current commit message (=input commit message)
+- `{{ branch }}` - this variable will be substituted with the current branch
+- `{{ aiMarker }}` - boolean value, indicating whether the `@ai` marker is present in the input commit message
+
+Conditionals using `{% if xxx %}` ... `{% else %}` ... `{% endif %}` are supported, see examples below.
 
 Writing large, multi-line prompts into a Git config file may be cumbersome and may be prone to cause configuration errors.
 As a result, it is recommended that you place AI prompts into a separate file using the `promptTemplate` config.
@@ -525,6 +529,53 @@ If any hints are provided (inside the triple backticks), use them to guide or re
 ```
 ~~~
 
+### Conditional Prompt
+
+The following example demonstrates a complex, possible `promptTemplate` utilizing conditional logic: 
+
+~~~
+You generate a single, concise Git commit subject line.
+
+Output:
+- Exactly one line, max 70 characters (including spaces).
+- Imperative, present tense (e.g., Add, Fix, Update).
+- No trailing period, no emojis, no quotes, no code fences.
+- Do NOT add conventional type prefixes (e.g., feat:, fix:, chore:, refactor:, style:, test:, build:, ci:, perf:).
+- Do not invent issue IDs or add scopes like "(core)".
+
+{% if aiMarker %}
+Parts of the message are already given:
+
+```
+{{ commitMessage }}
+```
+
+Your task is just to complete the message by filling in for @ai-marker, so the resulting overall message satisfies all rules.
+Keep all other text of the message as is and finally return the complete, entire message.
+If the message starts with a prefix which ends with a colon (':') followed by the @ai-marker, be sure to continue the sentence starting lowercase.
+{% else %}
+File prefix rule:
+- If the diff is about one primary file, prefix the subject with that file's basename (no directories).
+  - It's "one primary file" if:
+    - The diff contains exactly one file, OR
+    - One file clearly accounts for most changed lines.
+  - If the file is a Java class, drop the ".java" extension.
+  - Format: "<FileName>: <summary>"
+  - Examples: "README.md: update install steps", "MyClass: handle null userId"
+- Otherwise (no single dominant file), omit the file prefix and just summarize the main change.
+
+Return only the final subject line, nothing else.
+If the current branch is given, prefix the commit message with [branch]: ...
+{% endif %}
+
+{% if branch %}
+Be sure to prefix the commit message by `{{ branch }}: `
+{% endif %}
+
+Input (unified Git diff):
+
+{{ gitDiff }}
+~~~
 
 
 ## `smartgit-ai-commit-annotation` Configuration Options {#ai-commit-annotation}
