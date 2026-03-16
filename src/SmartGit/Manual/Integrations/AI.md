@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 # AI Integration
 
 This article describes how to configure SmartGit to integrate with supported AI services and tailor tokenization and prompting to suit the needs of your organization and repository.
