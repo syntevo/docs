@@ -33,6 +33,7 @@ Alternatively, you can follow one of the below topics:
     - [Branches View](GUI/Branches-view.md)
     - [Journal View](GUI/Journal-View.md)
     - [Graph View](GUI/Graph-View.md)
+      - [Overlap Column](GUI/Overlap.md)
     - [Commit View](GUI/Commit-View.md)
     - [Repositories View](GUI/Repositories-View.md)
     - [Changes View](GUI/Changes-View.md)

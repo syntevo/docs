@@ -19,7 +19,7 @@ Mapped refs that are not located exactly at the commit to which they are attache
 The **Graph** can be customized in various ways using the **Options** hamburger icon above the **Graph View**.
 Please note that not all options are available in every view.
 - **Columns** - Adjust the columns shown in the Graph View.
-  You can toggle the Commit SHA ID, the date the commit was created, and committer/author.
+  You can toggle the Commit SHA ID, the date the commit was created, the committer/author and the [**Overlap Column**](Overlap.md)
 - **Avatar** - Displays either the author or committer, depending on the **Columns** selection.
   Options include avatar only, initials, full name, and name with email.
 - **Show Auxiliary Branch** (**Working Tree Journal View** only) - Allows selection of one additional branch to view in the Journal graph.
