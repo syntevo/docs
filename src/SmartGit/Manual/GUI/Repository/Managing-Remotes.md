@@ -11,9 +11,57 @@ However, there are times when you will need to perform more advanced interaction
 
 The following commands are available from the **Remote** menu:
 
-- **Add** - This allows you to add another tracked remote for your local repository. Provide a URL (SSH or HTTPS), path (if the remote is on a file system), and a friendly name by which to refer to the remote.
-    - The **Verify repository connection** checkbox will validate that the remote exists, if selected.
-- **Rename** allows you to change the name given to the remote (e.g. you can rename *origin* to *myhost*). This only affects your environment, other users of the remote repository will be unaffected.
-- **Delete** removes the local repository tracking to the selected remote. Again, other users of the remote will be unaffected. You can re-establish tracking to a remote by using the **Add Remote** command, above.
+- **Add** allows you to add another tracked remote for your local repository.
+- **Rename** allows you to change the local name of an existing remote.
+- **Delete** removes the selected remote from the local repository configuration.
+- **Properties** lets you edit the URL and related settings for an existing remote.
+- **Fetch More** lets you fetch additional remote branches which are not yet available locally.
+- **Set Depth** deepens a shallow remote fetch configuration.
 
-The **Rename** and **Delete** remote commands are also available off the **Branches** view of the **Log Window** or **Standard Window**.
+The **Rename** and **Delete** remote commands are also available from the **Branches** view of the **Log Window** or **Standard Window**.
+
+## Adding a remote
+
+Use **Remote \| Add** to open the **Add Remote Repository** dialog.
+
+Specify:
+
+- **URL or Path** for the remote repository.
+- **Name** for the local remote entry.
+- **Verify repository connection** if SmartGit should test the entered location before adding it.
+
+The **URL or Path** field also offers a popup to select a local repository or a repository from a configured hosting provider.
+This is useful when you do not want to type the URL manually.
+
+If you have cloned a fork of a GitHub repository (for simple remote setups) SmartGit will detect the original repository and suggests to add at as `upstream` repository.
+
+## Editing remote properties
+
+Use **Remote \| Properties** to adjust an existing remote.
+
+The dialog always shows the main **URL or Path**.
+Depending on the remote configuration, it may also show **Push URL**.
+Use **Push URL** if fetches and pushes should go to different locations.
+
+Some remotes also offer **Perform background Poll or Fetch**.
+Use this when you want SmartGit's background Poll or Fetch behavior for this remote to be enabled or disabled explicitly.
+
+## Fetching additional refs
+
+Use **Remote \| Fetch More** if a remote contains branches which are not yet available in the local repository.
+This command is especially relevant after a narrow clone where **Fetch all Heads and Tags** had been disabled.
+
+For a shallow repository, the dialog can also offer **Fetch all commits for existing branches ("unshallow")**.
+Otherwise, select one or more additional branches to fetch.
+
+## Changing shallow depth
+
+Use **Remote \| Set Depth** to fetch a specific depth for the selected remote.
+Enter the desired **Depth** in commits.
+A very large value effectively removes the practical depth limit.
+
+## Selecting a remote
+
+When SmartGit cannot infer the intended remote, it shows a small selector dialog with a **Remote** field.
+This is only a chooser.
+It does not change repository configuration by itself.
