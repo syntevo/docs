@@ -12,6 +12,7 @@ This section describes common SmartGit actions you'll need to use when working w
 - [Synchronizing changes with Remotes](Synchronizing-with-Remote-Repositories.md)
     - [Pull and Fetch](Synchronizing-with-Remote-Repositories.md#pull)
     - [Push](Synchronizing-with-Remote-Repositories.md#push)
+- [Worktrees](Worktrees.md)
 - [Repository Settings](Repository-Settings.md)
     - [Setting user identity information in the User Tab](Repository-Settings.md#user-tab)
     - [Fetch and Pull Options](Repository-Settings.md#fetch-and-pull-tab)
