@@ -15,13 +15,13 @@ Please refer to [Submodule Concepts](../../GitConcepts/Submodules.md) for backgr
 ## Submodules in the UI
 
 ### Standard window
-For a repository with submodules a *Submodule* toolbar button occurs.
-This allows to quickly open submodule repositories (as separate tabs).
+For a repository with submodules, a *Submodule* toolbar button appears.
+This lets you quickly open submodule repositories (as separate tabs).
 
 In the parent repository the submodule's pointer is displayed in the *Files* view.
 
 ### Working Tree window
-Submodules shows up in the [*Repositories View*](../Repositories-View.md) at their configured directory location.
+Submodules show up in the [*Repositories View*](../Repositories-View.md) at their configured directory location.
 Their files are shown, even recursively, just like normal files of the parent repository in the **Files** view.
 
 Available Operations on the main menu will depend on whether the **Repositories** view or the **Files** is focused:
@@ -32,7 +32,7 @@ Available Operations on the main menu will depend on whether the **Repositories*
   e.g. you can invoke a **Log** here to see how the submodule-pointer has changed over time or you can invoke **Remote \| Submodule \| Initialize** to initialize the selected submodule itself (if it is not yet initialized).
 
 ### Log window
-Submodules shows up in the [*Repositories View*](../Repositories-View.md) and are handled like other repositories (only one can be opened at the same time).
+Submodules show up in the [*Repositories View*](../Repositories-View.md) and are handled like other repositories (only one can be opened at the same time).
 
 ## Cloning Repositories with Submodules
 
@@ -56,11 +56,33 @@ To remove a submodule from the working tree, select the submodule in the **Files
 After *deiniting* you will probably want to **Deactivate** it, too.
 
 To add a new submodule to a repository, invoke **Remote \| Submodule \| Add** on the repository in the **Repositories** view and follow the dialog instructions.
+The wizard asks for the **Relative Path** of the submodule inside the outer repository.
+It also lets you select the remote **Branch** to check out.
+If **HEAD** is selected there, SmartGit does not force a named branch for the submodule.
+
+If SmartGit can derive more than one useful URL for the `.gitmodules` entry, the wizard also shows **URL for .gitmodules**.
+This matters when the URL stored in `.gitmodules` should differ from the URL that was used to inspect the remote repository.
+Typical examples are relative URLs or internal mirror URLs.
 
 To remove a submodule from the repository, select the submodule in the **Files** view, invoke **Remote \| Submodule \| Unregister**, and then commit your changes.
 After the submodule is unregistered, you may delete the entire submodule directory.
 
 If the URL of a submodule's remote repository has changed, you need to modify the URL in the `.gitmodules` file and then *synchronize* the submodule, via **Remote \| Submodule \| Synchronize**, so that the new URL is written into Git's configuration.
+
+If you initialize a single submodule, SmartGit shows a dialog with the configured **URL**.
+You may adjust this before continuing.
+If the submodule URL in `.gitmodules` is relative, SmartGit expands it against the outer repository's `origin` URL for convenience.
+Use **Initialize & Pull** if you want to populate the submodule working tree immediately.
+Plain **Initialize** only prepares the Git metadata.
+
+If you initialize all submodules at once, the dialog offers **Pull submodule repositories**.
+Enable this if initialization should immediately be followed by a pull for every selected submodule.
+
+If SmartGit detects a nested Git repository that is not yet registered as a submodule, it offers **Register Submodule**.
+The dialog asks for the submodule **URL** or local path that should be written to `.gitmodules`.
+
+During **Synchronize**, SmartGit can also offer **Pull submodule repository** or **Pull submodule repositories**.
+Enable this if the new URL should be synchronized and fetched in one step.
 
 ## Updating Submodules
 
@@ -120,4 +142,3 @@ Icon | State | Description
 ![](../../attachments/submodule-icons/conflict.png)| Conflict   | The submodule is in conflicting state where it's unclear to which commit it should point.<ul><li>Check the **Log** and make sure to **Check Out** the appropriate commit in the submodule repository, then confirm with **Stage**.</li><li>Use **Discard** to reset the submodule to the commit recorded in the parent repository's Index.</li><li>Use **Reset** to reset the submodule to the commit recorded in the parent repository's HEAD.</ul></li> **Note** <blockquote> Submodule conflicts are usually complex to resolve and may require additional commits in the submodule itself. Hence, if you are unsure, better contact the other authors of the conflicting submodule conflicts. </blockquote>
 ![](../../attachments/submodule-icons/nested-root.png)| Nested root   | The nested Git repository is not properly linked as submodule.<ul><li>Use **Stage** to scheduled the Git repository as submodule in the parent repository</li><li>Otherwise, if this Git repository should not be a submodule, use **Ignore** or completely get rid of the sub-directory.</ul></li>
 ![](../../attachments/submodule-icons/missing.png)| Missing   | Might happen if initializing a submodule has failed, e.g. after cancelling the credentials dialog. Use **Initialize** to initialize/fetch again.
-
