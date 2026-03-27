@@ -17,14 +17,22 @@ For more details, refer to the [Submodules documentation](../../GitConcepts/Subm
 
 Usually, you will want to fetch the entire commit history of the repository, including all branches (heads) and tags.
 However, deselect **Fetch all Heads and Tags** if you are only interested in a specific branch (head) or tag for very large repositories.
-This allows you to control which branch to fetch and optionally choose not to **Fetch all commits** but instead **Fetch Only the Latest x commits** for a shallow clone to a depth of **x** commits.
+In that case, SmartGit lets you choose the initial **Check Out Branch**.
+This keeps the initial fetch smaller.
+If you later need more remote branches, use **Remote \| Fetch More**.
+
+You can also choose not to **Fetch all commits** but instead **Fetch Only the Latest x commits** for a shallow clone to a depth of **x** commits.
 
 > [!NOTE]
 > - Some Git commands do not work correctly with partial repositories (e.g., Pull with Rebase), and tools like GitVersion may not work correctly with partial clones.
 
-In the subsequent steps, you must provide the path to the local directory where the clone should be created and configure a few options.
+In the subsequent steps, you must provide the path to the local directory where the clone should be created.
+To simplify this SmartGit asks for **Parent Directory** and **Directory Name** separately and shows the resulting **Clone Into** path.
 
-If your server supports [partial clones](https://git-scm.com/docs/partial-clone), you can select **Skip large files** to specify the maximum file size of binary files (blobs) to be fetched during the initial clone (see below).
+If you are cloning directly from a configured Hosting Provider and also use the repository from the Git command line, you may want to enable **Configure newly cloned repository to use SmartGit as credential helper**.
+For these clones, SmartGit writes itself as the repository's credential helper so Git command line operations can use the credentials known to SmartGit.
+
+If your server supports [partial clones](https://git-scm.com/docs/partial-clone), you can select **Skip large files ("partial clone")** and configure **Omit files larger than** to specify the maximum blob size to be fetched during the initial clone.
 
 ## Partial Clones
 
