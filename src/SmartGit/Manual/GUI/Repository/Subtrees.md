@@ -1,6 +1,6 @@
 # Subtrees
 
-Subtrees allow to integrate contents from other repositories into sub-folders of your main repository.
+Subtrees allow you to integrate contents from other repositories into sub-folders of your main repository.
 They are an alternative to [Submodules](Submodules.md).
 
 ## Subtrees in the UI
@@ -12,11 +12,18 @@ The root commits of a subtree will be denoted by a *folder*-symbol in the Log **
 ## Basic subtree operations
 
 To add a new subtree, select the root directory of the repository in the **Repositories** view and invoke **Remote \| Subtree \| Add**.
+The wizard asks for the subtree **Relative Path**, the remote **Branch**, and the local **Remote** name to create or reuse.
+It also offers **Squash subtree into single commit**.
+Enable that option if you want to keep the subtree import history compact instead of importing the full subtree history.
+
+The wizard can also create a local subtree branch with **Create local branch (for advanced operations)**.
+This is mainly useful if you plan to use **Subtree \| Split** or **Subtree \| Reset** later.
+SmartGit suggests a branch name based on the chosen remote and subtree branch, but you can change it.
 
 To fetch new (remote) changes from the subtree repository, select the subtree remote in the **Branches** view and invoke **Pull** from the context menu.
 Alternatively, you can invoke **Remote \| Pull** from the main menu and for **Fetch From** select the subtree remote there.
 
-To merge, or cherry-pick, a subtree use the **Merge** or **Cherry-Pick** command.
+To merge or cherry-pick a subtree, use the **Merge** or **Cherry-Pick** command.
 SmartGit will understand whether the source commit is a subtree and in this case perform a subtree merge / cherry-pick as applicable.
 
 To push commits back to a subtree, select the (remote) subtree branch in the **Branches** view and invoke **Remote \| Subtree \| Push**.
@@ -38,9 +45,16 @@ After having applied changes to files in your main repository which actually bel
    The commits created by the *Split*-command will be written to the **Subtree-Branch to update**.
    If you have selected a remote subtree branch, you will have to select **Subtree-Branch to update** or enter the name of a new branch there; in either case the selected branch will then be updated/created.
 
+   The dialog also offers **Rejoin generated history (for more efficient future splits)**.
+   Leave this enabled in the normal case.
+   It helps future splits reuse previous split information.
+
+   If you need the generated history to be easier to identify, enable **Annotate generated history with prefix** and enter a **Prefix**.
+
    > [!NOTE]
    > SmartGit will not actually split changes back to this particular *branch*, but the branch selection serves primarily to identify to which *subtree* the changes should be split back.
    > The underlying Git command will then detect the appropriate subtree commits onto which the new commits will be split back.
+   > The selected branch pointer itself will be moved to the HEAD of the generated history.
 
 3. To push changes back to your remote subtree repository, tracking between the local subtree branch which has just been updated/created in step 2 and the remote subtree branch has to be set up.
    This can optionally be done as part of the **Add** wizard or you can do it manually:
