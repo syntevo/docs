@@ -1,6 +1,12 @@
 # Project Guide for Agents
 
 - Always adhere to the writing rules in STYLEGUIDE.md.
+- Follow the existing docs history for commit messages.
+- Prefer concise topic-led messages in sentence case.
+- For Manual changes, prefer the `Manual: ...` form.
+- For narrowly scoped topic files outside the Manual, `<Topic>: ...` is acceptable when it matches the existing history.
+- Keep one logical topic per commit.
+- When adding a new article, include the related index or navigation link updates in the same commit.
 
 ## Build And Render
 
