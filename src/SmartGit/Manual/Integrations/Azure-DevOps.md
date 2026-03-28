@@ -16,48 +16,28 @@ Azure DevOps integration is set up under **Preferences**, section **Hosting Prov
 
 This will the **Add Hosting Provider** dialog, prompting for an access token.
 
-There are 3 ways to authenticate to Azure DevOps:
-- Allowing SmartGit to automatically obtain a Token via [OAuth](#setup-using-oauth) (Recommended)
-- Manually obtaining a [Personal Access Token (PAT)](#setup-via-personal-access-token) from Azure DevOps
+There are 2 ways to authenticate to Azure DevOps:
+- Manually obtaining a [Personal Access Token (PAT)](#setup-via-personal-access-token) from Azure DevOps (Recommended)
 - Setting up a [custom Azure DevOps Application](#setting-up-a-custom-azure-devops-application-for-smartgit) for SmartGit (For Azure DevOps Server -- on prem / Advanced Users).
 
-### Setup using OAuth
+### Setup via Personal Access Token
 
-Clicking the **Generate token** button will open a Web Browser where you will need to authenticate with Azure DevOps, and you will need to confirm that you wish to provide SmartGit with access to your Azure DevOps organisation(s).
+You can connect SmartGit to Azure DevOps by providing a Personal Access Token (PAT).
 
-![Azure DevOps Application](../attachments/53215478/53215480.png)
+You can create PATs in the Azure DevOps portal from **User Settings** -> **Personal access tokens**. To get there, you first need to open one of your Azure DevOps organizations. To create a suitable PAT for SmartGit:
 
-Once you have confirmed this page, you will be redirected to syntevo.com, where the generated access code will be displayed on screen.
+- Open [https://aex.dev.azure.com/me](https://aex.dev.azure.com/me) to see the organizations available for your account.
+- Navigate to any of your organizations.
+- Click **User Settings** in the top-right corner and select **Personal access tokens**.
+- Create a new token and make sure that:
+  - **Organization access** is set to **All accessible organizations**, even if you currently use only one organization.
+  - Under **Scopes**, only **Code** -> **Read & write** is required. No additional scopes need to be enabled.
+  - The maximum validity period is 1 year.
+- Copy the generated token and paste it into SmartGit.
 
-Use the **Copy to Clipboard** button to copy the access token to the clipboard, and then paste the token into the 'Code' field in the **Add Azure DevOps Account** dialog, and click **OK**.
+![Azure DevOps PAT Scopes](../images/Integrations-DevOps-PAT.png)
 
-The code will be used to create an *application access token* which will be used to populate the **Token** field in the **Add Hosting Provider** dialog.
-
-SmartGit will place the masked token in the Token input, and you can click **Add** to complete the integration to Azure DevOps.
-
-> [!NOTE]
-> - If the browser does not open to Azure DevOps automatically, or if the browser opened to a different identity to the one you use on Azure DevOps, SmartGit will also show a hyperlink which you can use to initiate the authorization process with Azure DevOps.
->   Copy the hyperlink and paste it into the browser that you use with Azure DevOps in order to resume the integration connection workflow.
-> - If above procedure fails make sure to allow **Third-party application access via OAuth** in your Azure DevOps [Organization Settings](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies).
->
->   ![Enable 3rd party Application Access via OAuth in Azure DevOps](../attachments/53215478/53215479.png)
-
-#### Re-setup OAuth
-
-Sometimes you may need to re-run the *OAuth* setup, e.g. if a more recent version of SmartGit requires additional scopes.
-Often, it is sufficient to just open **Preferences \| Hosting Providers**, select your Azure DevOps connection, and click **Edit**.
-This will bring up the **Configure Azure DevOps Account** dialog, where you can regenerate the access token using one of the methods listed under [Setup](#setup).
-
-If this does not work as intended, take following steps to rerun the *OAuth* setup from scratch:
-
-1. In SmartGit:
-    1. Remove all Azure DevOps-related credentials from **Preferences**, section **Authentication**
-    2. Remove the Azure DevOps hosting provider from **Preferences**, section **Hosting Providers**
-2. In Azure DevOps, open your [profile](https://aex.dev.azure.com/me?mkt=en-US#) from the top-right corner:
-    1. Select "Manage Authorizations":
-       ![Azure DevOps Authorizations](../attachments/azure-app-revoke.png)
-    2. Invoke **Revoke** for **SmartGit**
-3. In SmartGit, rerun through the [Setup](#setup) actions again.
+For additional details, see Microsoft's [Personal Access Token documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
 
 #### Setup with Multiple Accounts
 
@@ -80,19 +60,6 @@ git config --global credential.dev.azure.com.useHttpPath true
 ```
 
 Then run `git pull` again to confirm that Git will now ask for the complete repository URL.
-
-### Setup via Personal Access Token
-
-As an alternative to OAuth, you can establish Azure DevOps integration by providing SmartGit with a Personal Access Token ("PAT").
-PATs can be generated in the User Settings area of the Azure DevOps portal -- please refer to Microsoft's [PAT documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
-
-> [!NOTE]
-> - For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization).
-> - The scopes can be limited to **Code** -- **Read&Write**.
-> - PATs are valid for a maximum of 1 year.
->   When a PAT expires, you will need to regenerate it.
-
-![Azure DevOps PAT Scopes](../images/Integrations-DevOps-PAT.png)
 
 ### Setting up a Custom Azure DevOps Application for SmartGit
 
