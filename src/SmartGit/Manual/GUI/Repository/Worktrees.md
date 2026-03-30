@@ -12,11 +12,15 @@ The dialog contains two basic fields:
 - **Branch** selects the local branch that should be checked out in the new worktree.
 - **Directory** selects the target directory for the new working tree.
 
-Only local branches which do not already have an associated worktree are offered.
+Only existing local branches which do not already have an associated worktree are offered.
+It does not create a new branch.
+This also means that the current branch of the current worktree is not offered.
 If no eligible branch remains, SmartGit will tell you so instead of opening the dialog.
 
 SmartGit suggests a directory name automatically.
 The suggestion is based on the current worktree directory and the selected branch.
+If the current directory name already ends with the current branch name segment, SmartGit replaces that suffix.
+Otherwise, it appends the selected branch name segment.
 You can adjust it if necessary.
 
 The target **Directory** must meet all of the following conditions:
