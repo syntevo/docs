@@ -6,18 +6,18 @@ Feature-Flow aims to retain the simplicity of adding new features in process suc
 
 The main differences of Feature-Flow are:
 
-- You need to tell SmartGit which trunk ('main') branches (e.g. `main`, `develop` or `master`) that you will usually be starting new features from.
+- You need to tell SmartGit which trunk branches (e.g. `main`, `develop` or `master`) you will usually be starting new features from.
 - Feature-Flow will ensure that the local repository is up to date with the selected from trunk branch before continuing.
 - If the trunk branch has conflicts that will prevent the local feature changes from being merged, Feature-Flow requires that any merge conflicts be resolved before finishing the feature, rather than waiting to resolve them after the new feature has been pushed to the remote and a new pull request opened.
 - Local feature branch names are not reserved on the remote when starting features.
 
 > [!NOTE]
 > In this article we refer to 'trunk' branches as any long-lived branch in a repository, such as `main`, `master`, `develop` or release support branches.
-> On the SmartGit UI, the term 'trunk' branch and 'main' branch are used interchangeably, but note that the concept extends to **any** trunk branch, and there is no requirement to use a branch with the name *main* when using the Feature-Flow process.
+> SmartGit refers to these branches as 'trunk' branches in the UI.
 
 ## Configuring Feature-Flow
 
-From the **Branch \| Configure Features** menu option, you can inform SmartGit as to which main / trunk branches are allowed as a basis for new feature branches to be started from.
+From the **Branch \| Configure Features** menu option, you can inform SmartGit which trunk branches are allowed as a basis for new feature branches to be started from.
 More than one trunk branch can be specified, e.g. `main` and `hotfix`.
 RegEx patterns can also be specified as a branch pattern, e.g. If you need to support multiple production releases, specifying `release-.*` will recognize branches with names such as `release-1.1`, `release-2.3.4` as trunk branches from which hotfix branches can be created.
 
@@ -38,7 +38,7 @@ You can leave the Feature Prefix blank to remove any prefix from your feature br
 
 > [!NOTE]
 > Your local repository must be up to date with the remote trunk branch from which you are branching the new feature.
-> If the remote has diverged, you will need to use a command such as pull to obtain the most recent commits from your main trunk branch.
+> If the remote has diverged, you will need to use a command such as pull to obtain the most recent commits from that trunk branch.
 
 After opening a repository from the Standard Window, use the **Start** button on the top ribbon, or select **Branch \| Configure Features** menu option, and provide the name for the feature.
 SmartGit will append the defined Feature Prefix to your feature branch name.
