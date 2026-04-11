@@ -1,0 +1,86 @@
+.markdown-body .mermaid-figure > img.mermaid-diagram {
+  margin-bottom: 0.35rem;
+}
+
+.markdown-body img.mermaid-diagram {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem auto 1rem;
+  background-color: transparent;
+}
+
+.markdown-body p:has(img.mermaid-diagram),
+.markdown-body p:has(+ p > img.mermaid-diagram):has(> strong:only-child) {
+  text-align: center;
+}
+
+.markdown-body p:has(img.mermaid-diagram) > strong:first-child {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body p:has(+ p > img.mermaid-diagram):has(> strong:only-child) + p {
+  margin-top: 0;
+}
+
+.markdown-body .mermaid-figure > details.mermaid-source {
+  display: table;
+  max-width: 100%;
+  margin: 0 0 0.75rem auto;
+}
+
+.markdown-body details.mermaid-source > summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #57606a;
+  border: 1px solid #d0d7de;
+  border-radius: 999px;
+  background-color: #f6f8fa;
+}
+
+.markdown-body details.mermaid-source[open] > summary {
+  margin: 0.25rem 0.35rem 0;
+  padding: 0.1rem 0.3rem;
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.markdown-body details.mermaid-source pre {
+  margin: 0;
+  padding: 0.35rem 0.65rem 0.55rem;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.markdown-body details.mermaid-source code {
+  white-space: pre;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.markdown-body details.mermaid-source[open] {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background-color: #f6f8fa;
+}
+
+.markdown-body .mermaid-source-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: -0.1rem 0 0.75rem;
+}
+
+.markdown-body .mermaid-source-group > details.mermaid-source {
+  max-width: 28rem;
+  margin: 0;
+}

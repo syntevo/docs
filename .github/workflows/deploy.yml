@@ -82,6 +82,33 @@ jobs:
         with:
           ruby-version: '3.1'
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
+          install-dependencies: true
+
+      - name: Install Mermaid CLI
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Render Mermaid diagrams
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: |
+          "${PUPPETEER_EXECUTABLE_PATH}" --version
+          WORKSPACE_CONTENT="$PWD/.build" \
+          WORKSPACE_CONFIG="$PWD/main/mermaid/mermaid.config.json" \
+          WORKSPACE_PUPPETEER_CONFIG="$PWD/main/mermaid/puppeteer-config.json" \
+          python3 main/mermaid/scripts/render-mermaid.py
+
       - name: Install Ruby gems
         working-directory: .build
         run: |

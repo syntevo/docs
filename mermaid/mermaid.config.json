@@ -1,0 +1,18 @@
+{
+  "theme": "default",
+  "themeVariables": {
+    "primaryColor": "#ff6b35",
+    "primaryTextColor": "#fff",
+    "primaryBorderColor": "#ff6b35",
+    "lineColor": "#333",
+    "secondaryColor": "#4a5568",
+    "tertiaryColor": "#f7fafc",
+    "background": "transparent"
+  },
+  "flowchart": {
+    "curve": "basis"
+  },
+  "puppeteerConfig": {
+    "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
+  }
+}

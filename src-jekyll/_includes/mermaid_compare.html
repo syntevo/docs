@@ -1,0 +1,24 @@
+<div class="mermaid-compare">
+  <div class="mermaid-compare__panel">
+    <img
+      src="{{ include.before | escape }}"
+      alt="{{ include.before_alt | default: 'Mermaid diagram' | escape }}"
+      class="mermaid-diagram mermaid-compare__diagram"
+      loading="lazy"
+    />
+  </div>
+  <div class="mermaid-compare__arrow" aria-hidden="true">
+    <svg viewBox="0 0 80 24" width="72" height="24" role="presentation">
+      <path d="M2 12h52" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+      <path d="M46 4l18 8-18 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+  <div class="mermaid-compare__panel">
+    <img
+      src="{{ include.after | escape }}"
+      alt="{{ include.after_alt | default: 'Mermaid diagram' | escape }}"
+      class="mermaid-diagram mermaid-compare__diagram"
+      loading="lazy"
+    />
+  </div>
+</div>
