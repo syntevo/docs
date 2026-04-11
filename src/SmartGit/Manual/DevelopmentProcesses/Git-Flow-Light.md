@@ -14,14 +14,17 @@ This temporary branch works independently on the specific improvement ('feature'
 Once the feature is complete, the commits from the 'feature' branch are integrated (either merged or rebased) into the [develop](#develop-branch) branch, and the feature branch is usually deleted.
 This way, you can see all features currently in progress by viewing the open `feature/` branches.
 
-``` text
-o ... [> develop] merge feature A into develop
-| \
-|  o ...[featureA]  a commit on featureA
-|  |
-o  | ... subsequent commit on develop not on featureA
-| /
-o  ... commit on develop
+```mermaid {filename="git-flow-light-feature-branch.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "commit on develop"
+   branch featureA
+   checkout develop
+   commit id: "subsequent commit on develop"
+   checkout featureA
+   commit id: "a commit on featureA" tag: "featureA"
+   checkout develop
+   merge featureA id: "merge feature A into develop" tag: "develop"
 ```
 
 ## Configuration for Git-Flow Light in SmartGit

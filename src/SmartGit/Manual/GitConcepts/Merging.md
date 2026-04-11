@@ -15,25 +15,39 @@ Please refer to [Merging in SmartGit](../GUI/Branch/Merge.md) for further detail
 A common merging technique is to use the `git merge` command, where two or more parent commits (i.e., the last commit on the current branch being merged into, and the last commit from the target branch being merged from) are combined, by creating a new 'merge' commit.
 A merge commit is created when merging with `git merge --no-ff`, or when a fast-forward merge is not possible.
 
-In the following example, we will merge the `a-branch` into `main` (`>` indicates the HEAD pointer on the main branch).
-
-- **Before the merge (left)**
-- **After the merge (right)**, where a merge commit M has been created to bring the changes in `a-branch` into the `main` branch.
-  `M` will have two parent commits, `A` and `B`.
+In the following example, we will merge the `a-branch` into the current branch `main`.
+Before the merge, `main` points to `B` and `a-branch` points to `A`.
+After the merge, a merge commit `M` is created to bring the changes in `a-branch` into `main`.
+`M` will have two parent commits, `A` and `B`.
 
 ``` bash
 git checkout main
 git merge a-branch
 ```
 
-``` text
-                            o M [> main]
-                            | \
-o B [> main]                o B \
-|                  ==>      |   |
-|   o A [a-branch]          |   o A [a-branch]
-|   |                       |   |
-.   .                       .   .
+**Before and After the Merge:**
+
+{% include mermaid_compare.html before="merge-before.svg" after="merge-after.svg" before_alt="Before the merge, main points to B and a-branch points to A." after_alt="After the merge, main points to merge commit M and a-branch still points to A." %}
+
+```mermaid {filename="merge-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "..."
+   branch a-branch
+   commit id: "A" tag: "a-branch"
+   checkout main
+   commit id: "B" tag: "main"
+```
+
+```mermaid {filename="merge-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "..."
+   branch a-branch
+   commit id: "A" tag: "a-branch"
+   checkout main
+   commit id: "B"
+   merge a-branch id: "M" tag: "main"
 ```
 
 > [!NOTE]
@@ -51,10 +65,25 @@ After a successful fast-forward merge, the branch pointer of the current branch 
 In the below, we're fast-forwarding commit B on `a-branch` onto the target `main` branch.
 The HEAD of `main` and `a-branch` both now refer to commit `B`.
 
-``` text
-   o B [a-branch]               o B [> main][a-branch]
-  /                     ==>     | 
-o A [> main]                    o A
+**Before and After the Fast-Forward Merge:**
+
+{% include mermaid_compare.html before="fast-forward-before.svg" after="fast-forward-after.svg" before_alt="Before the fast-forward merge, main points to A and a-branch points to B." after_alt="After the fast-forward merge, main and a-branch both point to B." %}
+
+```mermaid {filename="fast-forward-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A" tag: "main"
+   branch a-branch
+   commit id: "B" tag: "a-branch"
+```
+
+```mermaid {filename="fast-forward-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A"
+   branch a-branch
+   checkout main
+   commit id: "B" tag: "main" tag: "a-branch"
 ```
 
 > [!NOTE]
@@ -65,15 +94,35 @@ o A [> main]                    o A
 
 A **squash merge** works like a normal merge, except that all the new commits on the merge branch are combined into a single new commit representing all changes.
 A squash merge helps to keep a remote repository clean by producing a single commit representing all the changes made on a feature branch, which is then merged into the trunk branch.
+A squash merge creates a new commit `S` on `main`, while `a-branch` remains on `C`.
 
-``` text
-                            o [> main] (changes from a-branch)
-                            |
-o [> main]                  o
-|                  ==>      |
-|  o [a-branch]             |  o [a-branch]
-|  |                        |  |
-.  .                        .  .
+**Before and After the Squash Merge:**
+
+{% include mermaid_compare.html before="squash-merge-before.svg" after="squash-merge-after.svg" before_alt="Before the squash merge, a-branch contains commits A, B, and C while main points to D." after_alt="After the squash merge, main points to S while a-branch still points to C." %}
+
+```mermaid {filename="squash-merge-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "..."
+   branch a-branch
+   commit id: "A"
+   commit id: "B"
+   commit id: "C" tag: "a-branch"
+   checkout main
+   commit id: "D" tag: "main"
+```
+
+```mermaid {filename="squash-merge-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "..."
+   branch a-branch
+   commit id: "A"
+   commit id: "B"
+   commit id: "C" tag: "a-branch"
+   checkout main
+   commit id: "D"
+   commit id: "S" tag: "main"
 ```
 
 > [!NOTE]

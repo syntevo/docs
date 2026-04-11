@@ -56,14 +56,17 @@ This ensures that the only open branches in a repository with names prefixed by 
 
 In the figure below, the left trunk branch is `develop` and the right branch is `feature/feature-A`.
 
-``` text
-o ... [> develop] merged feature A
-| \
-|  o [feature/feature-A] a commit to implement feature A
-|  |
-o  | ... interim commit into [develop]
-| /
-o  ... commit forked from [develop] to create branch [feature/feature-A]
+```mermaid {filename="git-flow-feature-branch.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "forked from develop"
+   branch feature-A
+   checkout develop
+   commit id: "interim commit into develop"
+   checkout feature-A
+   commit id: "implement feature A" tag: "feature-A"
+   checkout develop
+   merge feature-A id: "merged feature A" tag: "develop"
 ```
 
 > [!TIP]
@@ -78,21 +81,25 @@ When the `release` branch is ready for an official release, it is tagged and mer
 A new release build is created for customers (e.g., 'release_4').
 After merging into `main`, the `release` branch is typically deleted.
 
-In the below figure, the left trunk branch is `develop`, the short lived center branch is `release-4_0`, and right branch is `main`.
+In the diagram below, `develop` and `main` are the long-lived branches, while `release-4_0` is the short-lived release branch.
 
-``` text
-o ... [> develop] ... the fix applied on the release4_0 branch is reverse merged back into develop.
-| \
-|  \   o ... [main] ... merge branch release4_0 (merge commit)
-|   |/ |
-|   o  | ... <tag/release-4_0_0> hardening commit on release4_0 (e.g. a bug-fix commit encountered in UAT)
-|   |  |
-o  /   | ... feature commit on `develop` for a future release (not for 4_0)
-| /    |
-o      | ... feature commit on `develop` intended for upcoming release 4_0. Branch `release4_0` forked.
-|      |
-|      o ... release3_0_9
-|     /|
+```mermaid {filename="git-flow-release-branch.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "common base"
+   branch main
+   checkout main
+   commit id: "release3_0_9"
+   checkout develop
+   commit id: "release 4_0 feature"
+   branch release-4_0
+   checkout release-4_0
+   commit id: "hardening commit" tag: "release-4_0_0" tag: "release-4_0"
+   checkout main
+   merge release-4_0 id: "merge release-4_0" tag: "main"
+   checkout develop
+   commit id: "future develop feature"
+   merge release-4_0 id: "reverse merge into develop" tag: "develop"
 ```
 
 ### Hotfix Branches
@@ -107,17 +114,23 @@ After fixing the bug(s) in this hotfix branch, the state will be tagged and merg
 
 The hotfix branch is typically deleted after merging.
 
-``` text
-o ... [> develop] reverse merge of `hotfix/4_0_1` to prevent regression of the bug
-| \
-|  \   o ... [main] commit which fixes the bug, tagged, and new release 4.0.1 built
-|   |/ |
-|   o  | ... [hotfix/4_0_1]<tag/release4_0_1> fork from [main] and new commit which contains the fix
-|   |  |
-o    \ | ... [develop] new feature commit in develop for a future release
-|     \|
-|      o ... [main]<tag/release4_0> ... version released to customers which has subsequently been found to contain a bug
-|     /|
+```mermaid {filename="git-flow-hotfix-branch.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "common base"
+   branch main
+   checkout main
+   commit id: "release 4.0" tag: "release4_0"
+   checkout develop
+   commit id: "future develop feature"
+   checkout main
+   branch hotfix-4_0_1
+   checkout hotfix-4_0_1
+   commit id: "bug fix" tag: "release4_0_1" tag: "hotfix-4_0_1"
+   checkout main
+   merge hotfix-4_0_1 id: "release 4.0.1" tag: "main"
+   checkout develop
+   merge hotfix-4_0_1 id: "reverse merge into develop" tag: "develop"
 ```
 
 ### Support Branches

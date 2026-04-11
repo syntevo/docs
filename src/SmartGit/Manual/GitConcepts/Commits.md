@@ -19,16 +19,17 @@ Therefore:
 - Normal commits have exactly one parent commit.
 - *Merge commits* have two or more parent commits.
 
-``` text
-o ... a merge commit
-| \
-|  o ... a normal commit
-|  |
-o  | ... another normal commit
-| /
-o  ... yet another normal commit which has been branched
-|
-o ... the initial commit
+```mermaid {filename="commit-graph-structure.svg"}
+%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "the initial commit"
+   commit id: "a branched commit"
+   branch side
+   checkout side
+   commit id: "a normal commit"
+   checkout main
+   commit id: "another normal commit"
+   merge side id: "a merge commit"
 ```
 
 Each commit is identified by its unique *SHA*-ID, and Git allows *checking out* every commit using its SHA.
@@ -46,67 +47,61 @@ Both **`main`** and **`origin/main`** point to `C`, and **`HEAD`** points to **`
 In other words, the working tree has been switched to the branch **main**.
 This looks as follows:
 
-``` text
-o [> main][origin/main] C
-|
-o B
-|
-o A
+```mermaid {filename="commit-graph-initial-refs.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A"
+   commit id: "B"
+   commit id: "C" tag: "main" tag: "origin/main"
 ```
 
 Committing a set of changes results in commit `D`, which is a child of `C`.
 **`main`** now points to `D`, meaning it is one commit ahead of the tracked branch **`origin/main`**:
 
-``` text
-o [> main] D
-|
-o [origin/main] C
-|
-o B
-|
-o A
+```mermaid {filename="commit-graph-after-commit.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A"
+   commit id: "B"
+   commit id: "C" tag: "origin/main"
+   commit id: "D" tag: "main"
 ```
 
 As a result of a Push, Git sends commit `D` to the origin repository, moving **`main`** to the new commit `D`.
 Because a remote branch always refers to a branch in the remote repository, **`origin/main`** of our repository will also be set to commit `D`:
 
-``` text
-o [> main][origin/main] D
-|
-o C
-|
-o B
-|
-o A
+```mermaid {filename="commit-graph-after-push.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A"
+   commit id: "B"
+   commit id: "C"
+   commit id: "D" tag: "main" tag: "origin/main"
 ```
 
 Let's assume someone else has modified the remote repository and committed `E`, a child of `D`.
 This means the **`main`** in the origin repository now points to `E`.
 When fetching from the origin repository, we will receive commit `E`, and our repository's **`origin/main`** will be moved to `E`:
 
-``` text
-o [origin/main] E
-|
-o [> main] D
-|
-o C
-|
-o B
-|
-o A
+```mermaid {filename="commit-graph-after-fetch.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A"
+   commit id: "B"
+   commit id: "C"
+   commit id: "D" tag: "main"
+   commit id: "E" tag: "origin/main"
 ```
 
 Finally, we will now merge our local **`main`** with its tracking branch **`origin/main`**.
 Because there are no new local commits, this will simply move **`main`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merging.md#fast-forward-merge)).
 
-``` text
-o [> main][origin/main] E
-|
-o D
-|
-o C
-|
-o B
-|
-o A
+```mermaid {filename="commit-graph-after-fast-forward.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A"
+   commit id: "B"
+   commit id: "C"
+   commit id: "D"
+   commit id: "E" tag: "main" tag: "origin/main"
 ```

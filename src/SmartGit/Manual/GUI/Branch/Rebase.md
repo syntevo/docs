@@ -30,35 +30,32 @@ As a result, `quickfix2` also has all the commits that `quickfix1` in its branch
 
 To fix this, we need the `quickfix2` branch to start on the `main` branch instead of the `quickfix1` branch.
 
-``` text
-     o q2b [quickfix2]
-     |
-     o q2a
-    /
-   o q1b [quickfix1]
-   |
-   o q1a
- /
- o A [main]
- |
- .
+```mermaid {filename="rebase-ui-before.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A" tag: "main"
+   branch quickfix1
+   commit id: "q1a"
+   commit id: "q1b" tag: "quickfix1"
+   branch quickfix2
+   commit id: "q2a"
+   commit id: "q2b" tag: "quickfix2"
 ```
 
 To fix the branching, drag the `q2a` commit onto the `A [main]` commit.
-This will result in the intended branching:
+This will rewrite `q2a` and `q2b` to `q2a'` and `q2b'`, resulting in the intended branching:
 
-``` text
-
- o q1b [quickfix1]
- |
- |       o q2b [quickfix2]
- |       |
- o q1b   o q2a
-  \     /  
-   \   /  
-     o A [main]
-     |
-     .
+```mermaid {filename="rebase-ui-after.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A" tag: "main"
+   branch quickfix1
+   commit id: "q1a"
+   commit id: "q1b" tag: "quickfix1"
+   checkout main
+   branch quickfix2
+   commit id: "q2a'"
+   commit id: "q2b'" tag: "quickfix2"
 ```
 
 > [!NOTE]

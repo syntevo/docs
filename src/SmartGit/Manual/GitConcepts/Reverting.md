@@ -28,12 +28,23 @@ In some instances, such as undoing the most recent commit on a local branch that
 >
 > This will append a new commit onto `main`, representing the changes needed to undo the effects of commit `B`:
 >
-> ``` text
->                          o  reverted-B  [> main]
->                          |
-> o  [> main] C            o  C
-> |                        |
-> o B (selected)           o  B
-> |                        |
-> o A                      o  A
+> **Before Revert:**
+>
+> ```mermaid {filename="revert-before.svg" branchpointers="true"}
+> %%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+> gitGraph BT:
+>    commit id: "A"
+>    commit id: "B" tag: "selected"
+>    commit id: "C" tag: "main"
+> ```
+>
+> **After Revert:**
+>
+> ```mermaid {filename="revert-after.svg" branchpointers="true"}
+> %%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+> gitGraph BT:
+>    commit id: "A"
+>    commit id: "B"
+>    commit id: "C"
+>    commit id: "reverted-B" tag: "main"
 > ```

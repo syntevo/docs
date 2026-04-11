@@ -80,10 +80,11 @@ For example, if you add a new commit `B` based on commit `A` on the `main` branc
 - `B` becomes the new commit pointer for branch `main`
 - The `HEAD` pointer will move to `B`
 
-```
-o B
-|
-o A
+```mermaid {filename="branch-pointer-example.svg" branchpointers="true"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "A"
+   commit id: "B" tag: "main" tag: "HEAD"
 ```
 
 Some other examples of commit and branch 'pointer' operations:

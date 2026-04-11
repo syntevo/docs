@@ -13,21 +13,35 @@ git cherry-pick C  #
 
 This will append a new commit `C'`, equivalent to `C`, onto the `main` branch.
 
-``` text
-o                          o  C' [> main]
-|                          |
-o  [> main] A              o  A
-|                          |
-|   o  [a-branch]          |   o  [a-branch]
-|   |                      |   |
-o   |  B                   o   |  B
-|   |                      |   |
-|   o  C (selected)        |   o  C
-|   |                      |   |
-o   |  D       ===>        o   |  D
-|  /     cherry-pick C     |  /
-| /                        | /
-o                          o
+**Before and After Cherry-Picking:**
+
+{% include mermaid_compare.html before="cherry-pick-before.svg" after="cherry-pick-after.svg" before_alt="Before cherry-picking, main points to D while a-branch points to a later commit beyond selected commit C on a side branch from earlier shared history." after_alt="After cherry-picking, main points to C' while a-branch remains on the later commit beyond C on that side branch." %}
+
+```mermaid {filename="cherry-pick-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "..."
+   branch a-branch
+   commit id: "C" tag: "selected"
+   commit id: "…" tag: "a-branch"
+   checkout main
+   commit id: "A"
+   commit id: "B"
+   commit id: "D" tag: "main"
+```
+
+```mermaid {filename="cherry-pick-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
+%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
+gitGraph BT:
+   commit id: "..."
+   branch a-branch
+   commit id: "C"
+   commit id: "…" tag: "a-branch"
+   checkout main
+   commit id: "A"
+   commit id: "B"
+   commit id: "D"
+   commit id: "C'" tag: "main"
 ```
 
 > [!NOTE]
