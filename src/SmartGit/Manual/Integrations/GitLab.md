@@ -24,7 +24,14 @@ Finally, confirm the **Add Hosting Provider** dialog using **Add**.
 ### Personal Access Tokens
 
 Instead of an OAuth token, you may alternatively use a personal access token which has to be created manually in your [GitLab User Settings](https://gitlab.com/-/profile/personal_access_tokens).
-Make sure that your personal access token has at least following scopes assigned: **api**, **write_repository**.
+To create a suitable token for SmartGit:
+
+- Create a new token.
+- Use any descriptive token name, e.g. `smartgit`.
+- Make sure that the token has at least the scopes **api** and **write_repository**.
+- Generate the token and paste it into SmartGit's **Token** field.
+
+![GitLab personal access token scopes](../images/Integrations-GitLab-PAT.png)
 
 ## Possible Problems & Solutions
 
