@@ -1,0 +1,46 @@
+ARG BASE_IMAGE=codex-placeholder-secure-base:latest
+FROM ${BASE_IMAGE}
+
+ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright \
+    CHROME_BIN=/usr/bin/chromium \
+    CHROMIUM_BIN=/usr/bin/chromium \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+USER root
+
+COPY .agents/setup/jekyll/Gemfile /opt/jekyll/Gemfile
+
+RUN set -eux; \
+    apt-get update; \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        build-essential \
+        ca-certificates \
+        chromium \
+        fonts-liberation \
+        fonts-noto-color-emoji \
+        git \
+        python3 \
+        python3-pip \
+        ruby-full \
+        zlib1g-dev; \
+    rm -rf /var/lib/apt/lists/*; \
+    ln -sf /usr/bin/chromium /usr/bin/chromium-browser; \
+    install -d -o node -g node /home/node/.cache /exchange /workdir/.temp; \
+    PUPPETEER_SKIP_DOWNLOAD=1 npm install --global playwright @mermaid-js/mermaid-cli; \
+    gem install --no-document bundler; \
+    cd /opt/jekyll; \
+    bundle config set path /opt/jekyll-bundle; \
+    bundle install --jobs 4 --retry 3; \
+    HOME=/home/node playwright install chromium; \
+    rm -rf /ms-playwright; \
+    ln -s /home/node/.cache/ms-playwright /ms-playwright; \
+    chmod -R a+rX /opt/jekyll /opt/jekyll-bundle; \
+    chmod -R a+rX /home/node/.cache/ms-playwright; \
+    chown -R node:node /home/node/.cache/ms-playwright /exchange /workdir/.temp; \
+    chromium --version; \
+    ruby --version; \
+    bundle --version; \
+    BUNDLE_GEMFILE=/opt/jekyll/Gemfile BUNDLE_PATH=/opt/jekyll-bundle bundle exec jekyll --version; \
+    mmdc --version; \
+    playwright --version; \
+    HOME=/home/node playwright install --list

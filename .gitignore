@@ -1,4 +1,5 @@
 _site/
+/.agents-exchange/
 /.temp/
 /.idea/workspace.xml
 /.obsidian/
@@ -7,3 +8,5 @@ _site/
 /.claude-computer-use/
 /.codex
 /.codex-allow
+__pycache__/
+*.pyc
