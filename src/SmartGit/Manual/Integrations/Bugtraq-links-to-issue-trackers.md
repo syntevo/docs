@@ -45,7 +45,7 @@ Alternatively, if you want to have the entire issue ID as the link (i.e. with `S
 > [!EXAMPLE]
 >``` ini
 > [bugtraq "jira"]
->   url = https://host/jira/browse/%BUGID%
+>   url = https://host/jira/browse/SG-%BUGID%
 >   loglinkregex = SG-\\d+
 >   logregex = \\d+
 >```
