@@ -1,6 +1,6 @@
 # Synchronizing with Remote Repositories
 
-Synchronizing the states of local and remote repositories involves **Pull**ing from, and **Push**ing to, a remote repository(ies).
+Synchronizing the states of local and remote repositories involves **Pull**ing from, and **Push**ing to, remote repositories.
 SmartGit also has a **Synchronize** command that combines pulling and pushing.
 
 ## Pull
@@ -9,10 +9,14 @@ The Pull command fetches commits from a remote repository, stores them in the re
 
 Use **Remote \| Pull** (or the corresponding toolbar button) to invoke the Pull command.
 
-This will open the Pull dialog, where you can specify what SmartGit will do after the commits have been fetched:
+If neither *merge* nor *rebase* has been configured yet for the repository, SmartGit first shows **Configure Pull**.
+There, choose **Rebase** or **Merge**.
+Use **Remember as default for other repositories** if the choice should also become the default for future repositories.
 
-- If there is one remote configured for the repository, SmartGit will show the URL of the remote.
-  However, if multiple remotes are currently tracked, SmartGit will allow you to select a remote to pull or fetch from.
+### Working Tree or Log window
+The Pull dialog lets you specify where commits should be fetched from and whether or how to integrate them:
+
+- If multiple remotes are configured, SmartGit allows you to either **Fetch from all remotes** or select the remote from which to fetch.
 - You can click **More Options** to customize the Pull (Note: These are only relevant if you select **Pull**. The options below are ignored with **Fetch Only**):
     - If a fast-forward is not possible, you have the choice whether to [Merge](../Branch/Merge.md) the local commits with the fetched commits, or [Rebase](../Branch/Rebase.md) the local commits onto the fetched commits.
     - **Update existing and fetch new tags** will also integrate any tag changes detected in the remote.
@@ -25,6 +29,21 @@ The Pull Dialog has 3 buttons:
 - **Fetch Only** - will only fetch the latest commits from the selected remote.
 - **Cancel** - closes the dialog without changes.
 
+If the current branch does not track a compatible branch of the selected remote, SmartGit disables the **Pull** option, but you can still use **Fetch Only** to download commits from other branches.
+
+### Standard window
+In the Standard window no configuration dialog is shown, but the pull command will start immediately.
+
+The Pull toolbar button popup menu allows you to just fetch.
+For multi-remote repositories, it also lets you
+- select from which remote to fetch,
+- configure whether Pull should fetch from all remotes.
+
+A notable feature of Pull in the Standard window is that it can also update other (non-current) branches:
+if they were identical to their remote branch, they will be fast-forwarded to the new remote branch commit.
+This nearly completely avoids diverged states because of force-rebased (feature) branches.
+
+### Pulling
 If a merge or rebase is performed after pulling, it may fail due to conflicting changes.
 In that case SmartGit will leave the repository in a *merging* or *rebasing* state so you can either resolve the conflicts and proceed, or abort the operation.
 See [Merge](../Branch/Merge.md), [Rebase](../Branch/Rebase.md), and the SmartGit [Conflict Solver](../Branch/Conflict-Solver.md) for details.
@@ -62,9 +81,19 @@ SmartGit distinguishes between the following Push commands:
   You can also invoke **Push To** on a remote to push (or *synchronize*) all branches from the selected remote to another remote.
 - **Push Up To** (in the [Graph](../Graph-View.md) or [Journal](../Journal-View.md) Views) pushes all new commits up to, and including, the selected commit, rather than all commits, in the current branch to its tracked remote branch.
 
+When you invoke **Push To** for a single local branch, the dialog can show **Push To** options for **Tracked or matching branch** and **Custom Ref**.
+Use **Custom Ref** if the target name should differ from the tracked branch or if you need to push to a non-standard Git ref.
+If multiple remotes exist, choose the **Target Repository** first.
+The dialog can also offer **Force pushing (even if it's not fast-forward)**.
+
+When you invoke **Push To** on a remote, SmartGit pushes all branches represented by that remote to another remote.
+That dialog can also offer **Force pushing (even if it's not fast-forward)** and **Remove remote branches which don't have a local counterpart**.
+Both options are dangerous because they rewrite or delete refs on the target remote.
+Use them only if the target remote is intended to mirror the source remote.
+
 If you try to push commits from a new local branch, you will be asked whether to set up tracking for the newly created remote branch.
 In most cases it is recommended to set up tracking, as it will allow you to receive changes from the remote repository and make use of Git's branch synchronization mechanism (see [Branches](../Branch/index.md)).
-The preferences contains an option to avoid this dialog and always configure the tracking.
+The preferences contain an option to avoid this dialog and always configure the tracking.
 
 > [!NOTE]
 > The tracking will **not** be configured if the git option `push.default` is set to `matching`.
