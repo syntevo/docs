@@ -1,2 +1,0 @@
-For $FILE, fix Notes, Warnings, Tips and Examples so it fully conforms to STYLEGUIDE.md, "Notes, Warnings, Tips, Examples" specification.
-Do not touch any other parts of the file.
