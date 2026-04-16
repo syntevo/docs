@@ -20,9 +20,11 @@ The following commands are available in the SmartGit **Conflict Solver** (comman
 
 - **Base Changes:** Opens a window that shows the original Common Base version of the file (`:1`) instead of the current Working Tree file.
   (i.e., shows the original version before either our or their changes were made to the file.)
+  In that **Base Changes** window, the layout commands switch to **Left + Base**, **Base + Right**, and **Base Below**.
 - **Save:** Saves any changes to the Working Tree file, even if conflict markers remain.
 - **Prev. Change:** Moves the cursor to the previous change in the selected pane.
 - **Next Change:** Moves the cursor to the next change in the selected pane.
+- **Prev. Conflict**, **Next Conflict:** Jump to the previous or next conflict block.
 - **Take Left, Right:** Replaces the conflict with both left and right changes, first `our` change then `their` change (this command is only available in the Working Tree pane).
 - **Take Left:** Replaces the conflict with only the left (`our`) change and discards the right (`their`) change (this command is only available in the Left and Working Tree panes).
 - **Take Right:** Replaces the conflict with only the right (`their`) change and discards the left (`our`) change (this command is only available in the Working Tree and Right panes).
@@ -35,6 +37,8 @@ The following commands are available in the SmartGit **Conflict Solver** (comman
 - **Close:** Closes the **Conflict Solver**.
   You will be prompted to do so if you haven't saved changes.
   The Conflict Solver will warn you if unresolved conflicts remain in the Working Tree file.
+
+For more targeted edits, the editor also provides **Apply Inner-line Difference to Working Tree**, **Apply Line to Working Tree**, and **Apply Selection to Working Tree** so you can transfer smaller pieces instead of taking an entire conflict block.
 
 You can substitute the SmartGit **Conflict Solver** with another standalone tool if you prefer another three-way merge tool to resolve conflicts.
 Please refer to [Preferences \| Tools](../../Preferences/Tools.md#conflict-solvers) for instructions on how to do this.
