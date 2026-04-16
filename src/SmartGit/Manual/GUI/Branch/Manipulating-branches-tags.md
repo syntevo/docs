@@ -5,7 +5,7 @@ The key differentiation is that *Tags* will remain pointed to a specific commit,
 
 ## Adding, Renaming and Deleting Branches and Tags
 
-You can add, rename and delete branches and tags in the **Working Tree Window** and the [**Log Window**](../Log.md).
+You can add, rename and delete branches and tags in the **Working Tree Window** and the [Log Window](../Log.md).
 You can also add branches and tags in the **Standard Window**.
 
 ### Working Tree Window
