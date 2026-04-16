@@ -50,7 +50,7 @@ If the **Working Tree/Index** node is selected at the top of the commit tree, th
 Selecting a file will display its index or working tree changes.
 
 Use the checkboxes in the **Branches View** to control what is displayed in the **Graph View**.
-The **Recyclable Commits** checkbox at the bottom of the **Branch View** will display all commits no longer accessible from a branch or tag.
+The **Recyclable Commits** checkbox at the bottom of the **Branches View** will display all commits no longer accessible from a branch or tag.
 This can be useful for accessing "lost" commits.
 
 > [!NOTE]
@@ -87,7 +87,7 @@ These unreachable commits may be eligible for permanent deletion (garbage collec
 ## Skip Merge Optimization When Filtering
 
 By default, SmartGit will "optimize" the display of merge commits when filtering the Log Graph.
-To skip the merge optimization, in **Preferences -> Low-Level Property** you may set `log.graph.topoFilter.alwaysIncludeContainingMerges` to `true`.
+To skip the merge optimization, in **Preferences -> Low-Level Properties** you may set `log.graph.topoFilter.alwaysIncludeContainingMerges` to `true`.
 For example, for following unfiltered graph:
 
 ```                                                                                  
