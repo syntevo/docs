@@ -25,9 +25,9 @@ RegEx patterns can also be specified as a branch pattern, e.g. If you need to su
 > The trunk branch identified must exist at the time of setting configuration.
 > When working with a fresh repository, you may need to set up your trunk branch(es) before starting new features.
 
-In addition, you can specify the Feature Prefix to be used on new features.
+In addition, you can specify the **Feature Prefix** to be used on new features.
 This will default to `feature/`, which is the Git-Flow standard.
-You can leave the Feature Prefix blank to remove any prefix from your feature branch names when you start new features.
+You can leave the **Feature Prefix** blank to remove any prefix from your feature branch names when you start new features.
 
 > [!TIP]
 > For users who use a combination of [**Feature-Flow**](Feature-Flow.md), [**Git-Flow**](Git-Flow.md) or [**Git-Flow-Light**](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
@@ -40,7 +40,7 @@ You can leave the Feature Prefix blank to remove any prefix from your feature br
 > Your local repository must be up to date with the remote trunk branch from which you are branching the new feature.
 > If the remote has diverged, you will need to use a command such as pull to obtain the most recent commits from that trunk branch.
 
-After opening a repository from the Standard Window, use the **Start** button on the top ribbon, or select **Branch \| Configure Features** menu option, and provide the name for the feature.
+After opening a repository from the **Standard Window**, use the **Start** button on the top ribbon, or select **Branch \| Configure Features** menu option, and provide the name for the feature.
 SmartGit will append the defined Feature Prefix to your feature branch name.
 If you have not yet defined any trunk branches for this repository, SmartGit will also prompt you to identify the trunk branch(es) from which you will be creating features.
 
