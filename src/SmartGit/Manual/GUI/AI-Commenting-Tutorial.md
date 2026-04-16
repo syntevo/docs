@@ -44,7 +44,7 @@ echo "The sum is: $sum"
 ## Tutorial : Using the '@ai' placeholder to Reword Commit Messages
 
 When committing, you can use `@ai` as a placeholder to combine user-generated and AI-generated comments.
-SmartGit will replace the `@ai` placeholder with an AI-generated commit message, similar to the message produced by clicking the AI button.
+SmartGit will replace the `@ai` placeholder with an AI-generated commit message, similar to the message produced by clicking the **AI** button.
 This is useful when you need to include additional context, non-AI generated information in the commit message, such as a bug tracking ID, that is not related to the code changes.
 
 Continuing from the example above:
