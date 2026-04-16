@@ -29,8 +29,9 @@ gitGraph BT:
 
 ## Configuration for Git-Flow Light in SmartGit
 
-To start using Git-Flow Light for your repository, go to **Branch \| Git-Flow \| Configure**, select the **Light** type and adjust the branch names as necessary.
-For existing repositories, you can set `main` as your development branch (historically referred to as 'master').
+To start using Git-Flow Light for your repository, go to **Branch \| Git-Flow \| Configure...** and select **Light (just feature branches)** for **Git-Flow Type**.
+Use **Main Development Branch** to choose the development line and **Remote** to select the remote repository.
+For existing repositories, you can enter `main` in **Main Development Branch** if `main` is your development branch.
 Since Git-Flow Light is a subset of Git-Flow, refer to [the Git-Flow documentation](Git-Flow.md#git-flow-commands) for the meaning and purpose of each command.
 
 > [!TIP]
