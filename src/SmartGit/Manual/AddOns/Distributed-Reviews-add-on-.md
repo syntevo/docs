@@ -29,7 +29,7 @@ From this point on, **Review \| Configure** can be invoked in all other clones o
 To create a Pull Request, select your *feature branch* in the **Branches** view and invoke **Create Pull Request** from the context menu.
 In the upcoming dialog, select the **target** branch and a **Message** describing the purpose of the Pull Request.
 It's recommended to specify at least one user in **Assignees** who is the right person to review and integrate this Pull Request.
-The Pull Request will be highlighted to all assignees in the **Branches** view (in the **Standard Window** as well as the **Log Window**).
+The Pull Request will be highlighted to all assignees in the **Branches** view (in the **Working Tree Window** as well as the **Log Window**).
 
 Once the Pull Request has been created, it is in *pending state* and will show up in the **Pull Requests** category of the **Branches** view as *local only*.
 It will be published, i.e. sent to the remote repository, for the next time you invoke **Push**.
