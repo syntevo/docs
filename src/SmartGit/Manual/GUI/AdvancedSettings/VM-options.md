@@ -53,7 +53,7 @@ On Windows and Linux, you can change its location by modifying the VM option `-D
 >
 > To tell SmartGit to store its program updates in the subdirectory `.updates` of the SmartGit installation directory, add follow line to `smartgit.vmoptions`:
 >
->`-Dsmartgit.settings=.updates`
+>`-Dsmartboot.sourceDirectory=.updates`
 
 ## Memory Limit
 
