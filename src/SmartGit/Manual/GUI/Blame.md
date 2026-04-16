@@ -54,3 +54,9 @@ The detection of a link between a *past* and a *future* version of a line depend
 
 > [!NOTE]
 > For lines having a '\~'-mark in the **Document** view, the **History of current line** view will always show *past* commits.
+
+Additional navigation and context-menu commands are available in the **Blame** window:
+
+- The **Go To** menu provides **Go to First Commit**, **Go to Previous Commit**, **Go to Next Commit**, **Go to Last Commit**, **Go to Preceding Commit**, and **Undo Go To** for navigating between revisions.
+- In the **Document** view context menu for a selected line, SmartGit offers **Show Changes**, **Open Log**, **Go to Preceding Commit**, **Copy ID**, and **Copy Details**.
+- In the **History of current line** view context menu, SmartGit offers **Open Log**, **Copy ID**, and **Copy Details** for the selected history entry.
