@@ -10,7 +10,7 @@ You can open this dialog using the **Rebase** toolbar button, depending on your 
 
 - **Branches view:** In the **Branches** view, you can right-click on a branch and select **Rebase** to rebase your current HEAD onto the selected branch.
 - On the **Log Graph** of the **Log** and **Standard** window, you can use either of these approaches:
-    - **Option 1:** You can perform a rebase by using the **Graph** context menu -> **Rebase** on a selected commit.
+    - **Option 1:** You can perform a rebase by choosing **Rebase** from the **Graph** context menu on a selected commit.
     - **Option 2:** You can drag and drop commits or refs and then select to rebase in the occurring dialog after the drop.
 
 As with merge and cherry-picking, a rebasing may fail due to merge conflicts.
@@ -63,7 +63,7 @@ gitGraph BT:
 > This is because commits themselves are not considered drop targets -- only the space between them is.
 > Supporting such drag operations would require changing this behavior, which could negatively impact usability for most users due to the increased complexity.
 >
-> To still be able to perform such a **Rebase** for a single commit, you can enable advanced drag-and-drop operations by configuring [Low-level property](../AdvancedSettings/Low-Level-Properties.md) `log.graph.dragAndDrop.offerAdvancedOperationsForDropsOntoAncestors`.
+> To still be able to perform such a **Rebase** for a single commit, you can enable advanced drag-and-drop operations by configuring [Low-Level Property](../AdvancedSettings/Low-Level-Properties.md) `log.graph.dragAndDrop.offerAdvancedOperationsForDropsOntoAncestors`.
 
 ## Resolving Conflicts
 
