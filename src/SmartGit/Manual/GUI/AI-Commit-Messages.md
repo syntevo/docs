@@ -41,21 +41,14 @@ If you wish to configure SmartGit to use different or custom LLMs, or need to cu
 
 ## Enabling AI Commenting Features
 SmartGit's AI features are disabled by default and can be enabled the first time the ![AI](../images/AI-Commit-Button.png) **AI** button is clicked.
-The following options are shown:
 
- - **Use GitHub models globally** - Adds configuration to use the default LLM in your global `git.config` file, applying to all repositories on your computer.
-
- - **Use GitHub models for this repository** - Adds configuration to use the default LLM in the current repository's `git/config` file only.
-
- - **Configure manually** - Opens the [AI Configuration](../Integrations/AI.md) page with instructions on how to add `smartgit-ai-llm` and `smartgit-ai-commit-message`
-   sections to your Git configuration files.
-
- - **Disable AI configuration (selected by default)** - Disables SmartGit AI integration.
+This opens the **AI Setup** wizard. On the **Welcome** page you can choose **Enable AI integration** or **Disable AI integration globally**.
+If AI integration is enabled, you can also enable **Only for current repository** before continuing.
 
 ## Selecting between AI Models
-By default SmartGit uses the public GitHub Large Language Model (LLM) once AI commenting is enabled.
+SmartGit does not use a fixed built-in GitHub model for AI commit messages. During **AI Setup**, the **Welcome** page lets you choose the AI provider SmartGit will use.
 
-However, if additional AI models are [configured](../Integrations/AI.md), you can use the **down arrow** between the **AI** button and the **Hamburger Menu** in the **Commit View** to select the LLM that SmartGit will use for AI features.
+If additional AI commit-message prompts are [configured](../Integrations/AI.md), you can use the **down arrow** between the **AI** button and the **Hamburger Menu** in the **Commit View** to choose which configured prompt or provider SmartGit will use for commit message generation.
 
 ## Commit Message Generation
 SmartGit utilizes AI-powered Large Language Models (LLMs) to generate or analyze commit messages based on your working tree modifications or staged changes.
@@ -64,9 +57,9 @@ This involves transmitting the complete `git diff` (or `git diff --cached`) to a
 
 Once enabled, an **AI** button with a drop-down menu appears in the [Commit View](../GUI/Commit-View.md).
 
-This menu lists all configured AI services and indicates the currently active ones.
+This menu lists the configured commit-message prompts and indicates the currently active one.
 
-Clicking the button or selecting a different AI service sends the Git diff to the chosen provider, which generates a commit message and streams it back to SmartGit.
+Clicking the button or selecting a different configured prompt or provider sends the Git diff to the chosen provider, which generates a commit message and streams it back to SmartGit.
 
 ### Staged and Untracked Files
 
@@ -93,7 +86,7 @@ Wrapping can be disabled using the [Low-level property](../GUI/AdvancedSettings/
 
 ## Commit Message Rewording
 
-SmartGit can optionally reword messages for commits that have not yet been pushed (see hamburger menu); the mechanism is the same as for the Commit Message Generation, and the same configuration is utilized.
+SmartGit can optionally reword messages for commits that have not yet been pushed. This is controlled from the AI popup menu; the mechanism is the same as for the Commit Message Generation, and the same configuration is utilized.
 
 There are two different operational modes here:
 
@@ -108,7 +101,7 @@ There are two different operational modes here:
 > - The `WIP` token must be the only text in the commit message - no additional text or whitespace.
 > - When `@ai` is immediately followed by `<` (e.g. `@ai<some input`), the marker is trimmed before the commit message is passed to the prompt (i.e. only `some input` will remain).
 >   The generated message will completely replace the original `@ai`-prefixed message, not just the `@ai` token.
-> - If SmartGit does not substitute the `@ai` or `WIP` tokens, re-enable token substitution by clicking the drop down arrow next to the **AI** icon and the **Hamburger Menu** above the **Commit View**, and selecting the **Reword '@ai'** and **'WIP' commits** options.
+> - If SmartGit does not substitute the `@ai` or `WIP` tokens, re-enable commit rewording from the AI popup menu in the **Commit View**.
 > - Use the [low-level property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
 >   to change the `@ai` token.
 > - Use the low-level property `ai.commitMessageRewording.wipRegex` to to modify the `WIP` token
