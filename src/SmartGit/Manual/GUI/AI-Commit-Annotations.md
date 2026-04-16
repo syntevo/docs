@@ -33,6 +33,8 @@ Configuration options include:
   - The Notes refs where the annotation outputs should be stored.
   - Any additional Notes processing (title, options, visual representation in SmartGit's **Graph View**).
 
+For interactive annotations that are not using `diff = pair`, selecting multiple commits and configuring both `notesRef` and `notesTitle` makes SmartGit show **Annotate Commits** and offer **Run in Background** to save the results to the configured notes ref.
+
 ### Example - Analyzing the difference between two selected diffs and displaying the difference interactively
 
 Adding the `[smartgit-ai-commit-annotation "Describe Diff"]` section below to your Git config creates a new **Describe Diff** command in the **Graph** context menu when exactly two commits are selected in the **Graph View** of the **Log Window** or the **Standard Window**.
@@ -61,6 +63,8 @@ This command uses an existing LLM configuration called `openai` (tested on `gpt-
 > [!NOTE]
 > With `diff = pair`, if neither selected commit is an ancestor of the other, SmartGit will prompt you to choose the diff direction.
 > You can swap the order if needed.
+> If SmartGit cannot determine the direction automatically, it opens a dialog titled with the annotation title.
+> The dialog shows the heading **Choose the diff direction**, the read-only fields **Old (From)** and **New (To)**, and a **Swap** button.
 
 ### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
 
@@ -92,6 +96,10 @@ An appropriate thumbs up (U+1F44D) or thumbs down (U+1F44E) icon will be display
                 \n\
                 {{ gitDiff }}
 ```
+
+For background annotations, `notesTitle` controls the note title shown by SmartGit and defaults to the annotation `title` if you omit it.
+The `notesGraphMessageRegex` setting controls what SmartGit renders in the **Graph** for the note.
+SmartGit uses the first capture group, so `^(.)` shows the first character of the generated note instead of the default note marker.
 
 > [!TIP]
 > - Add a prefix such as `ai/` to the `notesRef` setting to distinguish AI-generated notes from 'standard' [Git Notes](Notes.md) clearly.
