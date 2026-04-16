@@ -16,7 +16,7 @@ SmartGit packages the interactive rebase functionality of Git in simple yet powe
 In the **Log Window** and **Standard Window**, use the **Graph** context menu to invoke the following operations depending on the selected commit(s).
 Most notably, you can efficiently rewrite history:
 
-- **Squashing adjacent commits:** Select the commits you want to squash, invoke the **Squash...** option, and provide an updated commit message.
+- **Squashing adjacent commits:** Select the commits you want to squash, invoke the **Squash** option, and provide an updated commit message.
 - **Reordering commits:** Drag a commit to the desired position and select the **Move Commit** option.
 - **Coalescing two commits:** To combine two commits (not necessarily adjacent), drag one onto the other and provide a consolidated *commit message*.
 - **Editing the commit message:** Select the commit and invoke the **Edit Message** option.
@@ -40,7 +40,7 @@ After creating the first commit, continue staging changes for the second commit 
 Once all changes have been committed, click **Continue** one final time to complete the rebase.
 
 SmartGit will warn you if the new commits do not contain all changes of the old commit.
-You may continue or let SmartGit place the missing changes into the Index.
+You may click **Continue Anyway** or **Put Changes into Index**.
 
 ## Using the interactive rebase editor
 
@@ -49,7 +49,7 @@ However, if you need to make multiple changes simultaneously, use the Interactiv
 
 Select the first commit that should be changed to start the interactive rebase and invoke **Rebase Interactive From** from the context menu.
 
-In the **Interactive Rebase** dialog, you can squash commits, reorder them using drag and drop, or edit commit messages.
+In the **Rebase Interactive** dialog, you can squash commits, reorder them using drag and drop, or edit commit messages.
 These operations will only be executed after clicking the **Rebase** button.
 
 In case of conflicts, the rebase operation will pause (just as it would in a normal rebase).
@@ -60,13 +60,13 @@ Commits with the same commit message are highlighted, making it easier to see re
 They can be amend-squashed using drag and drop.
 Alternatively, the **Auto-Squash** button offers the following options:
 
-- **To Top Commit:** Moves equally named commits to the last commit and squashes them.
+- **To Top Commit:** Moves equally named commits to the topmost commit and squashes them.
 - **Neighboring Commits:** Squashes equally named, adjacent commits.
-- **To Bottom Commit:** Moves equally named commits to the first commit and squashes them.
+- **To Bottom Commit:** Moves equally named commits to the bottommost commit and squashes them.
 
 ### Interactive Rebasing Tips
 
 - You can use the low-level configuration property **log.useCommitMessage.prefix** to specify a prefix that is used on commit messages.
-For example, if you set the commit message prefix to `fixup! `, when using **Commit Message** (from the Log's or Journal's context menu), SmartGit will prefix the commit message with `fixup! `.
+For example, if you set the commit message prefix to `fixup! `, invoking **Use Message for Commit** from the Log's or Journal's context menu will prefix the commit message with `fixup! `.
 The Interactive Rebase process will then treat `foo` and `fixup! foo` as equally named commits.
 - The low-level configuration property **git.rebaseInteractive.autoSquash** controls whether Interactive Rebasing will automatically squash adjacent commits whenever subsequent commits have a `fixup! *msg*` message, where `*msg*` matches the previous commit's message (independent of the low-level property **log.useCommitMessage.prefix**).
