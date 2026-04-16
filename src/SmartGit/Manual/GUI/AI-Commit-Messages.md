@@ -44,6 +44,7 @@ SmartGit's AI features are disabled by default and can be enabled the first time
 
 This opens the **AI Setup** wizard. On the **Welcome** page you can choose **Enable AI integration** or **Disable AI integration globally**.
 If AI integration is enabled, you can also enable **Only for current repository** before continuing.
+Depending on available credentials and configuration, the provider selector can offer **Anthropic**, **GitHub**, **Mistral**, **Ollama (self-hosted)**, **OpenAI**, or **Custom (OpenAI compatible)**.
 
 ## Selecting between AI Models
 SmartGit does not use a fixed built-in GitHub model for AI commit messages. During **AI Setup**, the **Welcome** page lets you choose the AI provider SmartGit will use.
@@ -58,8 +59,10 @@ This involves transmitting the complete `git diff` (or `git diff --cached`) to a
 Once enabled, an **AI** button with a drop-down menu appears in the [Commit View](../GUI/Commit-View.md).
 
 This menu lists the configured commit-message prompts and indicates the currently active one.
+The active entry is marked with `(active)`.
 
 Clicking the button or selecting a different configured prompt or provider sends the Git diff to the chosen provider, which generates a commit message and streams it back to SmartGit.
+After AI is configured, the same popup menu also offers **Reconfigure...** and, when SmartGit is using a generated AI configuration file, **Edit Config File...**.
 
 ### Staged and Untracked Files
 
@@ -87,6 +90,7 @@ Wrapping can be disabled using the [Low-level property](../GUI/AdvancedSettings/
 ## Commit Message Rewording
 
 SmartGit can optionally reword messages for commits that have not yet been pushed. This is controlled from the AI popup menu; the mechanism is the same as for the Commit Message Generation, and the same configuration is utilized.
+In **AI Setup**, the **Commit Rewording** page contains the **Enable commit rewording** option.
 
 There are two different operational modes here:
 
