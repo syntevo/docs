@@ -13,7 +13,8 @@ In this manner, git bisect will efficiently be able to locate the problematic co
 
 ## Bisecting Using SmartGit
 
-It is recommended that you use bisect in the SmartGit **Log** or **Standard Windows**. The **Working Tree Window** has limited bisect related functionality.
+It is recommended that you use bisect in the SmartGit **Log Window** or **Standard Window**.
+The **Working Tree Window** has limited bisect related functionality.
 
 Start a Bisect command by using the menu item **Branch \| Bisect \| Start**.
 Typically, the current branch HEAD contains the *bad* behavior, so you will usually select **Start Bisect with Bad HEAD**.
