@@ -5,6 +5,8 @@ This article describes these additional properties.
 
 Most low-level properties below can be edited directly in the **Edit \| Preferences** settings dialog under the **Low-Level Properties** section.
 Changing these values updates the `smartgit.properties` file, which is located in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
+Editing a property there opens the **Edit Property** dialog with a **Value** field.
+For Boolean properties, the dialog offers `true` and `false` options.
 
 In rare instances, you may need to edit the `smartgit.properties` file directly.
 
@@ -74,6 +76,7 @@ Available categories are:
 - `bugReports`
 
 To hide a specific page, set the corresponding property to `false`.
+In **Preferences**, these categories currently correspond to page titles such as **Git Executable** (`executables`), **Tools** (`externalTools`), **Diff Tools** (`compareTools`), **Conflict Solvers** (`conflictSolver`), **Spell Checker** (`spellCheck`), **Proxy** (`proxy`), and **SmartGit Updates** (`updateCheck`). In current SmartGit, `bugReports` affects the **Privacy** page.
 
 > [!EXAMPLE]
 > To hide the **Tools** page, set:
