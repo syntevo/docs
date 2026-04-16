@@ -14,6 +14,7 @@ Regardless of how you invoke the Merge command, you will be given a choice betwe
 - If you choose **Create Merge-Commit**, SmartGit will perform the merge and create a merge commit, assuming no merge conflicts exist.
 - If you choose **Merge to Working Tree**, SmartGit will perform the merge but leave the working tree in a *merging* state, allowing you to resolve conflicts and review changes manually.
   See the section on *[Resolving Conflicts](#resolving-conflicts)* for more information.
+- If you choose **Squash-Merge**, SmartGit will prepare a normal commit instead of a merge commit, so you can review the combined changes and commit them manually later.
 
 ## Resolving Conflicts
 
@@ -25,6 +26,8 @@ The following options are available in SmartGit:
 - **Conflict Solver:** Select a file containing conflicts and invoke **Query \| Conflict Solver**, which opens a three-way diff tool for viewing changes between the conflicting versions.
   See *[Conflict Solver](Conflict-Solver.md)* for details on resolving conflicts using this tool.
 - **Discard command:** To abort the merge, cherry-pick, revert or rebase, select the repository in the **Repositories** view and invoke **Branch \| Abort** or **Local \| Discard**.
+
+For a conflicted file selected in the **Changes** view, SmartGit also shows quick actions such as **Conflict Solver**, **Take Ours**, **Take Theirs**, **Recreate Conflict**, and **Mark Resolved**.
 
 After resolving all conflicts, you can finish a merge by selecting the repository in the **Repositories** view and invoking **Local \| Commit**.
 For [cherry-pick](Cherry-Pick.md), [revert](Revert.md), or [rebase](Rebase.md), SmartGit also provides **Branch \| Continue** once the conflicts have been resolved.
