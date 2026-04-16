@@ -13,9 +13,13 @@ You can open this dialog using the **Rebase** toolbar button, depending on your 
     - **Option 1:** You can perform a rebase by choosing **Rebase** from the **Graph** context menu on a selected commit.
     - **Option 2:** You can drag and drop commits or refs and then select to rebase in the occurring dialog after the drop.
 
+When you start a rebase from a selected commit in the **Graph**, SmartGit may first show **Rebase HEAD to Selected Commit**, offering **Rebase HEAD to** and **Rebase Interactively**.
+
 As with merge and cherry-picking, a rebasing may fail due to merge conflicts.
 
 When a conflict happens, SmartGit will leave the Working Tree in [*rebasing* state](../../GitConcepts/Working-Tree-States.md), allowing you to either [resolve the conflicts](Conflict-Solver.md) or to **Abort** the rebase manually.
+
+For a rebase already in progress, SmartGit provides the **Rebase in progress** dialog with **Continue rebase**, **Skip current patch**, and **Abort rebase**. **Continue rebase** remains disabled until all conflicts have been resolved.
 
 In addition, SmartGit provides advanced UI to support *interactive rebasing*.
 Please refer to [Interactive Rebasing](Rebase-Interactive.md).
