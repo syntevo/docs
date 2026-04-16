@@ -7,15 +7,21 @@ There are several ways to check out in SmartGit:
 - **Working Tree Window** and **Log Window**: Double-click on a branch in the **Branches** view and confirm the **Check Out** dialog that appears.
 - **Working Tree Window**: Invoke **Branch \| Check Out** from the menu.
   This opens the **Check Out** dialog, where you can select the commit to check out.
+  Use the **Branches** button to open the **Select Branches** dialog and select which refs should be shown in the graph.
+  There you can also enable **Include tracked remote branches**.
 - **Log Window** and **Standard Window**: Select the commit in the **Graph View** and use **Check Out** from the **Graph** context menu.
 
 When you check out a remote branch, you can optionally create a new local branch and set up branch tracking.
+When no local tracking branch exists yet, the **Check Out** dialog lets you select **Create local branch:**, enable **Track remote branch**, or choose **Don't create local branch (just work read-only)**.
+If SmartGit detects a single local tracking branch for the selected remote branch, it can offer **Checkout local branch '<branch>'** or **Checkout and fast-forward local branch '<branch>'** instead.
 It is recommended to generally make changes in your Working Tree after checking out a branch.
 
 If you check out a local branch that tracks a remote branch, and if the remote branch has commits ahead of the local branch, you can either:
 
 - Check out the local branch without merging new commits from the remote tracking branch, or
 - Check out the local branch and allow SmartGit to perform a fast-forward merge to the latest commit of the remote branch.
+
+SmartGit presents these choices as **Just Checkout** and **Fast-Forward-Merge**.
 
 For more information on merging, see [Merge](Merge.md).
 
