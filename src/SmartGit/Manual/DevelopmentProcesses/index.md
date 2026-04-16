@@ -15,6 +15,6 @@ The key difference with Feature Flow is that features can be started off any tru
 While short-lived branches may exist, commits on these branches are usually fast-forwarded or rebased onto the trunk to maintain a linear commit history.
 This approach is popular with smaller teams, or in environments where pair or mob team programming is common.
 In TbD, progress is made through small, frequent commits to the trunk branch, which can then be continuously built and deployed.
-TbD can be easily achieved in SmartGit using standard Git commands like Checkout, Commit, Rebase, and Push.
+TbD can be easily achieved in SmartGit using standard Git commands like **Checkout**, **Commit**, **Rebase**, and **Push**.
 
 In addition to all standard Git features, SmartGit provides custom support for both the **Git-Flow** and **Git-Flow Light** strategies.
