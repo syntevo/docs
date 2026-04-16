@@ -1,8 +1,8 @@
 # Blame
 
-SmartGit's Blame window displays the history information for a single file to help you track down the commit in which a certain portion of code was introduced into the repository.
-You can open the Blame window by selecting a file in the **Files** view and invoking **Query \| Blame** from the top menu, or by clicking the file and selecting **Blame** from the context menu.
-The Blame window consists of a **Document** view and a **History of current line** view.
+SmartGit's **Blame** window displays the history information for a single file to help you track down the commit in which a certain portion of code was introduced into the repository.
+You can open the **Blame** window by selecting a file in the **Files** view and invoking **Query \| Blame** from the top menu, or by clicking the file and selecting **Blame** from the context menu.
+The **Blame** window consists of a **Document** view and a **History of current line** view.
 
 ## Document View
 
