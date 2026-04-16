@@ -25,6 +25,9 @@ Similarly, you can delete a branch or tag by selecting the commit to which the b
 Via the context menu of the **Log Window**'s **Branches** view, you can add and delete branches and tags as well.
 In addition to that, the **Branches** view also allows you to rename local branches.
 
+For local branches, the same **Branches** view and **Branch** menu also provide **Set Tracked Branch** and **Stop Tracking**.
+When deleting a local branch that tracks a remote branch, the **Delete** confirmation can additionally offer **Delete branch '<branch>' from remote repository '<remote>'**; when deleting tags, the confirmation can offer **Delete from remote '<remote>'** or **Delete from all remotes**.
+
 ### Signing of Tags
 
 Git uses SHA1 hashing, including embedding the parent commit(s) in each new commit.
