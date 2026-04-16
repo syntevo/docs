@@ -29,7 +29,7 @@ From this point on, **Review \| Configure** can be invoked in all other clones o
 To create a Pull Request, select your *feature branch* in the **Branches** view and invoke **Create Pull Request** from the context menu.
 In the upcoming dialog, select the **target** branch and a **Message** describing the purpose of the Pull Request.
 It's recommended to specify at least one **Assignee**, who is the right person to review and integrate this Pull Request.
-The Pull Request will be highlighted to all assignees in the **Branches** view (in the Project as well as the Log window).
+The Pull Request will be highlighted to all assignees in the **Branches** view (in the Project as well as the **Log Window**).
 
 Once the Pull Request has been created, it is in *pending state* and will show up in the **Pull Requests** category of the **Branches** view as *local only*.
 It will be published, i.e. sent to the remote repository, for the next time you invoke **Push**.
@@ -40,7 +40,7 @@ Alternatively, you can manually force publishing the Pull Request using **Review
 Once a Pull Request is published (i.e. present in the remote repository), it will be fetched by all other users for their next invocation of **Pull** or by doing **Review \| Sync** manually.
 If you are amongst the **Assignees** of a Pull Request, it will be highlighted to you in the **Branches** view.
 
-To review or integrate a Pull Request, open the Log and select and reveal the Pull Request from the **Pull Requests** category.
+To review or integrate a Pull Request, open the **Log** and select and reveal the Pull Request from the **Pull Requests** category.
 The Pull Request is represented by a merge commit which connects its source (the feature branch) with the *merge base* between the source and the Pull Request's target (probably `master` or `develop`).
 When selecting this Pull Request commit in the **Commits** graph, the **Files** view will show all affected files of the Pull Request and you can drill down to content changes in the **Changes** view.
 
@@ -64,7 +64,7 @@ A main feature of the Review system is attaching comments to changes.
 Usually, you will apply comments while doing a review of a Pull Request, however you can comment on arbitrary changes (commits) as well.
 Contrary to other reviewing systems, like GitHub, there is no difference between comments on Pull Request commits and comments on any other commits and thus the procedure is identical in both cases:
 
-- To comment on a *commit* in general, use **Add Review Comment** from the graph context menu.
+- To comment on a *commit* in general, use **Add Review Comment** from the **Graph** context menu.
 - To comment on an individual change in the **Changes** view, use **Add Review Comment** from the context menu on the corresponding line.
 
 Comments will show up in the **Commits** graph, the **Files** table and the **Changes** view.
