@@ -6,9 +6,9 @@ The following tutorials demonstrate how to use the Generative AI features in Sma
 - [Using the 'WIP' placeholder to insert an AI-generated WIP commit message](#tutorial--using-the-wip-placeholder-to-insert-an-ai-generated-wip-commit-message)
 
 ## Tutorial : Getting Started with AI Generated Commenting
-SmartGit can use a default configuration to connect to a free LLM (currently, the OpenAI gpt-4.1 model is hosted on the Azure AI Model Inference services), or you can provide your own configuration for any supported LLM provider and model.
+SmartGit can use GitHub models out of the box, or you can provide your own configuration for any supported LLM provider and model.
 
-For this example, we'll use the default AI Model.
+For this example, we'll use the default GitHub models configuration.
 
 1. In SmartGit, create a new Repository called 'AISample' by using **Repository \| Add or Create** from the SmartGit menu and choosing a suitable folder on your local drive.
    Click **Initialize** to create the new repository.
@@ -28,8 +28,8 @@ echo "The sum is: $sum"
 
 4. Instead of typing a commit message, click the ![AI](../images/AI-Commit-Button.png) button above the **Commit View**.
    As this is your first time using SmartGit's AI features in this repository, SmartGit will prompt you to select from several AI options.
-   Select **Use GitHub models for this repository** so that the AI selection is only applied to 'AISample'.
-   Confirm when prompted.
+   Select **Use GitHub models for this repository** so that the AI setup is only applied to 'AISample'.
+   In the **Confirm GitHub AI Usage** dialog, click **Confirm**.
 
 5. Click the **AI** button again.
    Within a few seconds, a commit message describing the changes in the new diff will be added to the **Commit View**.
@@ -67,15 +67,15 @@ echo "The sum is: $sum"
    > **TUT-1234. AI commit message: @ai**
 
 4. Click **Commit**.
-   SmartGit will detect the `@ai` token and ask if you want to enable `@ai` and `WIP` placeholder substitution.
-   Click **Yes** (you'll only be prompted once).
+   SmartGit will detect the `@ai` token and open the **Commit Message Rewording** dialog.
+   Click **Reword** (you'll only be prompted once).
 
 5. The commit message (e.g., in the [Graph View](Graph-View.md)) should now resemble:
    > **PRO-1234. AI commit message: Rename variable num1 to number1 and variable num2 to number2**
 
 ## Tutorial : Using the 'WIP' placeholder to insert an AI-generated WIP commit message
 
-Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` (meaning "Work in Progress") with an AI generated comment prefixed with `WIP:`.
+Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` (meaning "Work in Progress") with an AI-generated commit message prefixed with `WIP:`.
 
 Continuing in our 'AISample' repository:
 
