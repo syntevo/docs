@@ -35,7 +35,7 @@ Configuration options include:
 
 ### Example - Analyzing the difference between two selected diffs and displaying the difference interactively
 
-Adding the `[smartgit-ai-commit-annotations]` section below to your Git config creates a new 'Describe Diff' command in the menu when exactly two commits are selected in the **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the `[smartgit-ai-commit-annotations]` section below to your Git config creates a new **Describe Diff** command in the menu when exactly two commits are selected in the **Graph View** of the **Log Window** or the **Standard Window**.
 
 This command uses an existing LLM configuration called `openai` (tested on `gpt-4.1` on OpenAI).
 
@@ -65,11 +65,11 @@ This command uses an existing LLM configuration called `openai` (tested on `gpt-
 
 ### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
 
-Adding the following `[smartgit-ai-commit-annotation]` section to your Git config will add a new 'Check Todos' command to the menu when a commit is selected in the **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the following `[smartgit-ai-commit-annotation]` section to your Git config will add a new **Check Todos** command to the menu when a commit is selected in the **Graph View** of the **Log Window** or the **Standard Window**.
 
 The same LLM configuration is used as in the previous example.
 
-After saving the configuration, if you run the `Check Todos` AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
+After saving the configuration, if you run the **Check Todos** AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
 An appropriate thumbs up (U+1F44D) or thumbs down (U+1F44E) icon will be displayed (in place of the standard 'Note' icon), and a Git note will be added to the commit, showing the file location(s) of any TODO comments found.
 
 ![AI Annotations in Standard Window](../images/AI-Annotations-StandardWindow.png)
