@@ -55,6 +55,9 @@ On Windows and Linux, you can change its location by modifying the VM option `-D
 >
 >`-Dsmartboot.sourceDirectory=.updates`
 
+For update-related GUI settings, see **Preferences -> SmartGit Updates**.
+That page includes **Automatically download and install updates**, **Check and report new updates**, and **Do not check for new updates**, and it also offers **Prefer light-weight updates stored in home directory**.
+
 ## Memory Limit
 
 The memory limit (also known as maximum heap size) specifies how much RAM the SmartGit process is allowed to use.
