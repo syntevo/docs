@@ -4,12 +4,12 @@
 
 In SmartGit, there are several ways to initiate a rebase:
 
-- **Menu and toolbar:** On the **Working Tree** window, select **Branch \| Rebase** to open the **Rebase** dialog, where you can select the branch to rebase the HEAD onto, or the branch to rebase onto the HEAD, respectively.
+- **Menu and toolbar:** On the **Working Tree** window, select **Branch \| Rebase** to open the **Rebase** dialog, where you can select the commit to which the HEAD commits should be rebased.
 
 You can open this dialog using the **Rebase** toolbar button, depending on your toolbar settings.
 
 - **Branches view:** In the **Branches** view, you can right-click on a branch and select **Rebase** to rebase your current HEAD onto the selected branch.
-- On the **Log Graph** of the **Log** and **Standard** window, you can use either of these approaches:
+- On the **Graph** of the **Log Window** and **Standard Window**, you can use either of these approaches:
     - **Option 1:** You can perform a rebase by choosing **Rebase** from the **Graph** context menu on a selected commit.
     - **Option 2:** You can drag and drop commits or refs and then select to rebase in the occurring dialog after the drop.
 
