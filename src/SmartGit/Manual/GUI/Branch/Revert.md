@@ -7,6 +7,7 @@ In SmartGit, there are several ways to initiate a revert operation:
 - **Menu and toolbar**: In the **Working Tree Window**, select **Branch \| Revert...** to open the **Revert** dialog, where you can choose a commit to revert.
   You can open this dialog via the **Revert** button, depending on your toolbar settings.
 - **Graph**: In the **Graph** of the **Log Window** and **Standard Window**, right-click one or more commits and select **Revert...** from the **Graph** context menu.
+  SmartGit then shows a **Revert** confirmation dialog; when the revert can be committed immediately, the dialog offers **Revert & Commit** and **Revert**.
 
 In case of a conflict, the revert process may stop in a ["reverting"](../../GitConcepts/Working-Tree-States.md) state, from which you can either:
 
