@@ -7,8 +7,12 @@ In SmartGit, there are several ways to initiate a cherry-pick:
 
 - In the **Working Tree** window, select **Branch \| Cherry-Pick** to open the **Cherry-Pick** dialog, where you can select one or more commits to cherry-pick.
   You can open this dialog via the **Cherry-Pick** button, depending on your toolbar settings.
+  The dialog also offers **Append source commit ID to commit message**.
+  If SmartGit can commit directly, it provides both **Cherry-Pick & Commit** and **Cherry-Pick**.
 - In the **Log Window** and **Standard Window**, you can perform a cherry-pick by right-clicking on one or more commits in the **Graph** view and selecting **Cherry-Pick** from the context-menu.
 - You can cherry-pick a subset of files from the **Log Window**'s **Files** view context-menu and the **Standard Window**'s **Files** view context-menu.
+  This file-based cherry-pick works on the selected files of a single commit.
+  SmartGit then confirms that only those files will be cherry-picked and that this happens without committing.
 
 In case of a conflict, the Cherry-Pick may stop in ["cherry-picking" state](../../GitConcepts/Working-Tree-States.md#cherry-picking-status), for which you can either:
 
