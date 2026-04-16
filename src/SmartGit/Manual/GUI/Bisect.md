@@ -25,6 +25,7 @@ Now you will have to find a *good* commit in the commit history that did not con
 
 If you are confident that a prior commit (e.g. the inital commit) did not contain the issue, then you can right click on that commit and select **Mark as Good**.
 If you are unsure, you will need to checkout an earlier commit.
+In the **Standard Window**, the context menu offers **Try Commit** while bisecting, which checks out the selected commit for testing.
 
 Now test your application to see whether the issue was present in this commit.
 
@@ -40,6 +41,7 @@ Verify whether your application behaves correctly at this commit, and use the bu
 
 Iterate the above to quickly find the problematic commit that causes the trouble (git bisect will automatically checkout the commits, based on a binary search).
 Once there are no remaining commits to be tested between a *good* and *bad* commit, SmartGit will show a dialog identifying the commit and author when the issue was introduced into the repository.
+The **Bisect Finished** dialog shows the commit ID, author, and message, and includes **Copy ID**, **Leave Bisect**, and **Continue Bisect**.
 You can choose to exit by selecting **Leave Bisect**, or you can abort the bisect by clicking **Abort** (in the banner).
 
 Completing or Aborting will check out the branch which was checked out when the Bisect command was first started.
