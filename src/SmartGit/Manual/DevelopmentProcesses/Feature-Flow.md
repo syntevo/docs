@@ -40,7 +40,7 @@ You can leave the **Feature Prefix** blank to remove any prefix from your featur
 > Your local repository must be up to date with the remote trunk branch from which you are branching the new feature.
 > If the remote has diverged, you will need to use a command such as pull to obtain the most recent commits from that trunk branch.
 
-After opening a repository from the **Standard Window**, use the **Start** button on the top ribbon, or select **Branch \| Configure Features** menu option, and provide the name for the feature.
+After opening a repository from the **Standard Window**, use the **Start** button on the toolbar, or select **Branch \| Start Feature** menu option, and provide the name for the feature.
 SmartGit will append the defined Feature Prefix to your feature branch name.
 If you have not yet defined any trunk branches for this repository, SmartGit will also prompt you to identify the trunk branch(es) from which you will be creating features.
 
@@ -51,7 +51,7 @@ Once the feature has been started, SmartGit will checkout a branch named *featur
 
 ## Integrate
 
-Once work has been completed on the new feature in your Working Tree, use **Integrate** (on the top ribbon, or from **Branch \| Integrate [trunk]**) to prepare the feature to be merged into the remote branch named `[trunk]`.
+Once work has been completed on the new feature in your Working Tree, use **Integrate** (on the toolbar, or from **Branch \| Integrate Main**) to prepare the feature to be merged into the remote branch named `[trunk]`.
 
 Click the **Integrate** button on the **Local Files** perspective.
 
