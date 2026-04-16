@@ -25,7 +25,7 @@ The file encoding is `UTF-8`.
 
 > [!NOTE]
 >- The `smartgit.properties` file contains only SmartGit-specific settings.
->  To configure the underlying behavior of *Git*, use [**Edit \| Preferences \| Git Config**](../Preferences/Commands.md#git-config) to change common `git.config` settings.
+>  To configure the underlying behavior of *Git*, use [Edit \| Preferences \| Git Config](../Preferences/Commands.md#git-config) to change common `git.config` settings.
 >  Alternatively, you can edit Git configuration files, such as `.git/config` (for individual Git repository settings) and `~\.gitconfig` (in your HOME directory for global configuration options).
 
 ## Changes View
@@ -33,7 +33,7 @@ The file encoding is `UTF-8`.
 ### changes.maximumFileSize
 
 File comparison can be disabled for very large files, for performance reasons.
-Use this setting to adjust the size (in bytes) at which a file is considered too large for the [**Changes View**](../Changes-View.md).
+Use this setting to adjust the size (in bytes) at which a file is considered too large for the [Changes View](../Changes-View.md).
 The default value is approximately 1 MB.
 
 > [!NOTE]
