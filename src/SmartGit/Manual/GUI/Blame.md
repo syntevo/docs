@@ -41,7 +41,7 @@ The hyperlinks can be used to navigate to the specific commit.
 
 The **History of current line** view displays the 'history' of the currently selected line from the **Document** view.
 The 'history' consists of all detected *past* and *future* versions of the line, as it is present in the select **View Commit**.
-The position of the currently selected line from the **Document** view is denoted by pale borders surrounding the corresponding line in the **History** view.
+The position of the currently selected line from the **Document** view is denoted by pale borders surrounding the corresponding line in the **History of current line** view.
 
 The detection of a link between a *past* and a *future* version of a line depends on the changes which have happened in a commit:
 
@@ -53,4 +53,4 @@ The detection of a link between a *past* and a *future* version of a line depend
   entry to which you can navigate.
 
 > [!NOTE]
-> For lines having a '\~'-mark in the **Document** view, the **History** view will always show *past* commits.
+> For lines having a '\~'-mark in the **Document** view, the **History of current line** view will always show *past* commits.
