@@ -51,6 +51,9 @@ Select the first commit that should be changed to start the interactive rebase a
 
 In the **Rebase Interactive** dialog, you can squash commits, reorder them using drag and drop, or edit commit messages.
 These operations will only be executed after clicking the **Rebase** button.
+The commit list shows the **Message** and **IDs** columns.
+Besides drag and drop, you can also use **Move Up**, **Move Down**, and **Remove** to adjust the rebase plan.
+If the selected range contains merge commits, SmartGit warns that they will be flattened and replaced by normal commits.
 
 In case of conflicts, the rebase operation will pause (just as it would in a normal rebase).
 After resolving the conflicts, click the **Continue** banner button.
