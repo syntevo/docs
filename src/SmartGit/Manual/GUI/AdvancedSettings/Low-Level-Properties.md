@@ -111,7 +111,7 @@ To disable the check for an individual installation/user, better do that in the 
 Set to `true` to make SmartGit check for the availability of a new *latest build* on start up.
 *Latest Builds* are the "bleeding edge" builds between subsequent (minor) *release* builds, like between version 8.0.1 and 8.0.2 or 8.1 preview 3 and 8.1 preview 4.
 They will contain the latest improvements and bugfixes.
-Usually we will ask you to manually fetch the latest build using **Help \| Check for Latest Builds**.
+Usually we will ask you to manually fetch the latest build using **Help \| Check for Latest Build**.
 
 ### smartgit.updateCheck.checkForLatestBuildVisible
 
