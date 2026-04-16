@@ -41,6 +41,9 @@ echo "The sum is: $sum"
 > [!TIP]
 > Clicking the **AI** button when a commit message already exists will insert the AI-generated message at the current cursor position.
 
+> [!NOTE]
+> The hamburger menu next to the **AI** button lets you **Reconfigure** the AI setup later if you want to revisit the setup pages.
+
 ## Tutorial : Using the '@ai' placeholder to Reword Commit Messages
 
 When committing, you can use `@ai` as a placeholder to combine user-generated and AI-generated comments.
@@ -69,6 +72,7 @@ echo "The sum is: $sum"
 4. Click **Commit**.
    SmartGit will detect the `@ai` token and open the **Commit Message Rewording** dialog.
    Click **Reword** (you'll only be prompted once).
+   If you skipped this during setup, open the hamburger menu next to the **AI** button, choose **Reconfigure**, and keep **Enable commit rewording** selected on the **Commit Rewording** page.
 
 5. The commit message (e.g., in the [Graph View](Graph-View.md)) should now resemble:
    > **PRO-1234. AI commit message: Rename variable num1 to number1 and variable num2 to number2**
