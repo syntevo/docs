@@ -1,187 +1,214 @@
-# SmartGit Markdown file Style Guidelines
+# SmartGit Markdown style guide
 
-## Sentencing and Whitespace
+This guide defines the required writing and formatting rules for Markdown files in this repository.
+Its purpose is to make different authors and agent instances produce materially the same result.
 
-- Keep sentences short, focusing on a single point.
-- Even where no paragraph separation is required, start sentences on a new line 
-  _Rationale_ : This makes the documentation easier to maintain by future authors.
-- As the content will be rendered in HTML, single newlines are removed in the final output, and tend to create large paragraphs.
-- Where a paragraph break is intended, insert an additional (second) newline between paragraphs.
-  _Rationale_ : Even though the sentences will be run into each other in the final output, the newline assists Markdown authors clarify the content and focus on specific points. 
--- Shorter line widths also make side by side review easier to read e.g. in GitHub pull requests.
+## Rule priority
 
-## Character Set and Symbols
+- `MUST` means required.
+- `SHOULD` means required unless following it would clearly make the page less correct or break an established page-local pattern.
+- `MAY` means optional.
+- When two rules appear to conflict, the more specific rule wins.
+- When no rule applies, choose the simplest structure that fits the existing page.
+- Do not invent new formatting conventions that are not listed in this guide.
 
-- Use ASCII characters only throughout the documentation.
-- Dashes: use `--` for an em-dash effect; never use Unicode dashes (`—`, `–`, `‑`).
-- Arrows: use `->`; do not use Unicode arrows (e.g. `→`).
-- Ellipsis: use `...`; do not use the Unicode ellipsis (`…`).
-- Quotes: use straight quotes `'` and `"`; avoid typographic quotes (`“ ” ‘ ’`).
+## Scope
 
-## Deciding on whether a topic belongs under GUI, or other root folders like GitConcepts, Integration etc
+- This guide applies to authored Markdown content in this repository.
+- Existing legacy content may violate these rules.
+- When editing an existing page, bring the touched text into compliance with this guide.
+- Do not perform broad repository-wide cleanup unless the task explicitly asks for it.
 
-### SmartGit App Commands and Actions (e.g. /GUI/Commiting.md)
+## Choosing the correct section
 
-- These articles describe the user interface of SmartGit, and are typically aligned to a specific SmartGit screen, view, window or feature.
-- These articles can / should repeat a brief summary paragraph of the concept, with a LINK to the Concept the feature addresses, but not go into any conceptual detail.
-- The objective is to ensure the user understands what the described feature is intended to do, and how to use that feature in SmartGit.
+Classify a new article by the reader's primary goal.
+Use the first rule below that matches.
 
-### Concepts (i.e. /GitConcepts)
+1. Put the article under `Integrations` if the main goal is connecting SmartGit to an external service, server, tool, or API.
+2. Put the article under `GitConcepts` if the main goal is explaining a Git concept that is valid outside SmartGit.
+3. Put the article under `GUI` if the main goal is explaining how to use SmartGit itself.
+4. Otherwise, keep the article in its current section unless the task explicitly includes restructuring.
 
-- These articles are not specific to SmartGit, but provide a background to concepts needed to understand the Git ecosystem.
-- Topics in the GitConcepts section need to be agnostic of SmartGit
-- GitConcept articles should be ‘version’ agnostic and thus do not need to be re-checked or re-written on new releases of SmartGit
-- Concept articles may have some diagrams (e.g. to showing branching concepts), but should not include screenshots of SmartGit
-- Concept Articles should link to the SmartGit implementation of a concept where appropriate (e.g. to a GUI Command article)
-- Bonus: Concept Articles are great for SEO, so ensure that the headings, summary and focus of the article is maintained, and be sure to link externally where a definitive / de-facto reference on a concept is available.
+Apply these section-specific rules:
 
-### Integrations
+- `GUI` articles MUST describe SmartGit behavior, commands, views, dialogs, or workflows.
+- `GUI` articles MAY link to a concept article for background, but MUST NOT contain long concept-only explanations.
+- `GitConcepts` articles MUST stay tool-agnostic.
+- `GitConcepts` articles MUST NOT depend on SmartGit screenshots or SmartGit-specific steps.
+- `GitConcepts` articles MAY link to the SmartGit feature that implements the concept.
+- `Integrations` articles MUST cover the SmartGit-side setup.
+- `Integrations` articles MUST also cover external-side setup when that setup is required for SmartGit to work.
 
-- Articles under this section are generally very technical and low-level, and are used as reference guides, examples, and step by step assistance to connecting SmartGit to an external application, service, or API.
-- These articles typically involve changing or adding settings in various configuration files, or configuring 
-- Many of these integrations will be once-off, so they need to be thorough enough to ensure users can complete the integration needed.
-- Where applicable, include screenshots and instructions on how to configure external systems in order to allow SmartGit connectivity (e.g. setting up API keys, PAT tokens, or other necessary configurations in the external system)
+## Article structure
 
-## Header Usage (1,2,3)
-- Only 1 x H1 per article
-- Brief intro under the H1, possibly with a  table of content links
-- H2s for the major sections in the article.
-- H3’s for minor sections under the H2 topic
-- If the H2s get too long then split the H2 into its own article
-- Do NOT use Bold or Underlinked text instead of headings 
-  _Rationale_ : This won’t generate an Anchor link and can’t be targeted by a hyperlink
+- Every article MUST have exactly one H1 heading.
+- The H1 MUST be the first Markdown heading in the file.
+- Every article MUST start with a short introduction directly below the H1.
+- The introduction SHOULD be one or two short paragraphs.
+- Use H2 headings for the major sections of the article.
+- Use H3 headings only when an H2 section naturally contains at least two distinct subsections.
+- Do not use H4 or deeper headings in normal documentation pages.
+- Do not simulate headings with bold text.
 
-## Menu Selection 
+Use this summary rule:
 
-- Use escaped Pipe `\|` to separate successive Menu drop down menu commands and bold e.g. `Edit \| Preferences`
-  _Rationale_: If you don’t escape the Pipe, when published on ?Jekyll, the Pipe is interpreted as a table separator and the content is incorrectly displayed
-- Escaping is NOT needed if the content is already escaped in a code (`) block, e.g.
-  ` git show-ref | grep -c refs/meta/smartgit/commits`
-- Use right arrow `->` for smaller UI navigation e.g. tabs on a preferences sheet or cascading radio button toggles (e.g. `File -> Open -> New Window`)
+- If an article has three or more H2 sections, add a short topic summary under the introduction.
+- The topic summary MUST be a bullet list of links to the H2 sections only.
+- Do not include H3 links in the summary unless the task explicitly requires a deep table of contents.
 
-## Reference to Major UI Elements (Including Main Windows and Views)
+If a page would need H4 headings or a very long stack of H3 sections, split the content into multiple pages instead.
 
-Use Bold
+## Sentences and paragraphs
 
-e.g. `**Standard Window**` or `**Commit View**`
+- Keep sentences short and focused on one point.
+- Write one sentence per physical line.
+- Do not manually wrap a sentence across multiple lines unless a Markdown construct forces it.
+- Separate paragraphs with one blank line.
+- Add one blank line before and after lists, admonitions, code blocks, tables, and images.
 
-## Reference to smaller UI Elements
+## Character set and punctuation
 
-Also bold
+- Use ASCII characters only.
+- Use `--` instead of Unicode dash characters.
+- Use `->` instead of Unicode arrows.
+- Use `...` instead of the Unicode ellipsis.
+- Use straight quotes `'` and `"` instead of typographic quotes.
 
-e.g. `**Commit**` button or `**Amend Last Commit**` checkbox
+## Capitalization and terminology
 
-## Code or Command Line actions
+- Use sentence case for headings.
+- Use normal English capitalization in prose.
+- Capitalize product names, company names, and other proper nouns exactly as their official branding requires.
+- Capitalize a UI term only when it is the exact visible label shown in the product.
+- Do not invent special capitalization for generic concepts.
 
-Use backticks, e.g.
+## Text styling
 
-`git checkout -b feature/NewFeature`
+Use formatting based on what the text represents.
 
-## Referring to Concepts
+- Use bold for visible UI labels when they are not links.
+- A direct link to the corresponding documentation article is sufficient formatting for a GUI label. In that case, use a normal link without bold or italics.
+- If a linked GUI label is already bold or italic, remove that emphasis and keep the link.
+- Use bold for unlinked windows, views, dialogs, buttons, tabs, checkboxes, menu items, and commands shown in the UI.
+- Generic qualifiers such as `view`, `window`, or `dialog` MAY be included or omitted when they are not part of the exact visible label.
+- If the current wording already identifies the GUI item clearly, keep the existing presence or absence of such qualifiers instead of changing it only for style.
+- Use italics for abstract concepts or repository states that are not literal UI labels.
+- Use backticks for shell commands, Git commands, file names, paths, branch names, refs, configuration keys, and literal values.
+- Do not combine link formatting with bold or italics.
 
-Use Italics
+Examples:
 
-i.e. when speaking about a concept which doesn’t directly translate to a UI view or command.
+- `**Graph**`
+- `**Branches View**`
+- `[Branches View](Branches-view.md)`
+- `**Commit View**`
+- `**Amend Last Commit**`
+- `*merge commit*`
+- `git fetch --all`
+- `smartgit.properties`
 
-e.g. `*Virtual Merge Commit*` or when the repository is in a merging state.
+## Menus and UI navigation
 
-## Capitalization
+Use these formats consistently:
 
-In general, try to use normal English capitalization (i.e. Capitalize the start of sentences) and Proper Nouns (London) and where branding requires it (e.g. GitHub and Bitbucket - note Atlassian’s preference for casing).
-
-In some cases, when a word or phrase has been used to mean a ‘special’ context in the documentation, beyond it’s normal meaning, consider capitalizing it, e.g. Hosting Provider may be conceptually repurposed to refer to generic Git hosting service such as GitHub or Bitbucket).
-
-## Notes, Warnings, Tips, Examples
-
-Use GitHub-style admonitions, e.g.
-
-```
-> [!NOTE]
-> Description goes here.
-> Can be multiline
-```
-
-For examples, use our custom `[!EXAMPLE]` admonition:
-
-```
-> [!EXAMPLE]
-> Description goes here.
-> Can be multiline
-```
+- For top-level menus and context menu paths, use bold text with escaped pipes: `**Local \| Commit**`.
+- For navigation inside a window, dialog, or preferences page, use bold text with arrows: `**Preferences -> Commands -> Git**`.
+- Do not use a raw `|` character outside code spans or code blocks.
+- Do not mix `\|` and `->` inside one continuous path.
+- If a workflow includes both a menu path and in-dialog navigation, describe them in two clauses or two sentences.
 
 ## Links
 
-- Use the form `[Target heading](Link)`
-- Target text should match the topic of the linked article (e.g. don’t link to a vague topic which is unlikely to be in context or of use to a user reading the source article)
-- Link to an anchor if possible, e.g. if the target is a H2 / H3 within the linked article.
-- (For Discussion) Do not bold or italic the target text, even if it is a Window Element (e.g. no `[**Log Window**]()`]
-- All link URLs must be relative and should target the raw `.md` file, not a re-written link 
-  _Rationale_ : This allows us to test the links in the GitHub repo source view
-- Do NOT link from the documentation to the Syntevo or SmartGit WebSites. 
-- Once published, the Jekyll / Liquid templates already link both the Syntevo logo and SmartGit icon back to appropriate web sites.
-  This makes it easier to maintain.
+- Internal documentation links MUST be relative links.
+- Internal documentation links MUST target the source `.md` file.
+- Link to a heading anchor when the reader should land on a specific subsection.
+- When writing an anchor link manually, use the lowercase hyphenated heading slug, for example `#this-is-a-topic`.
+- Link text MUST describe the destination clearly.
+- Link text SHOULD match the destination page title or heading text when practical.
+- Do not use vague link text such as `here`, `this`, or `more`.
+- Do not bold or italicize link text.
+- A plain link to a GUI article is sufficient to denote the GUI item; do not add extra bold formatting just because the link text names a UI element.
+- Do not link from the documentation to Syntevo or SmartGit marketing websites.
+- External links MAY be used only when they point to an authoritative third-party reference that the reader genuinely needs.
 
-## Bullets and Numbering
+## Lists
 
-Use Bullets or Numbers wherever makes sense to do so. 
-Generally as soon as there are more than 2 points to be made in a paragraph, then use bullets or numbers.
+- Use an unordered list for a set of related items when order does not matter.
+- Use an ordered list only when sequence matters.
+- If a sentence would otherwise contain three or more parallel items, convert it to a list.
+- If there are only one or two simple items, prefer normal prose.
+- Keep list items grammatically parallel.
+- Keep nested lists to one level at most.
+- Use nested lists only when the child items are part of the parent item and cannot be expressed clearly in prose.
+- Use a table only when the reader needs to compare the same columns across multiple rows.
+- Do not use a table for layout or for content that would be clearer as prose or a list.
 
-## Topic Summaries
+## Admonitions
 
-- If an article consists of more than 2 second level (i.e. H2) topics, then consider adding a brief summary introduction at the top of the article (under the H1)
-- Use relative anchor links to each of the 2nd level topics (note that the link casing must be lower case and spaces are hyphenated, e.g. a link to heading 2 "This is a topic" becomes `[This is a topic](#this-is-a-topic)`
-- If felt appropriate, the 3rd level topics can be indented beneath the H2 headings
+Use GitHub-style admonitions for content that deserves visual emphasis.
+Do not use an admonition when a normal paragraph is sufficient.
 
-e.g.
+Allowed admonition types:
 
-> Please refer to one of the below links
-> - [Topic 1]()
->   - [Topic 1 Subtopic 1]()
->   - [Topic 1 Subtopic 2]()
-> - [Topic 2]()
->   - [Topic 2 Subtopic 1]()
->   - [Topic 2 Subtopic 2]()
+- `NOTE` for important supporting information.
+- `TIP` for optional advice that improves the outcome.
+- `WARNING` for risks, destructive actions, or easy-to-miss side effects.
+- `EXAMPLE` for concrete sample input, output, or workflows.
 
-## Folder Structure
-If an article or topic expands to such an extent that multiple article pages are required, consider creating a folder and moving the articles into a new subfolder (Rationale - this will be easier to maintain the documentation, and also will introduce navigation on BreadCrumb for the folder).
+Use this syntax:
 
-#### Note
-> Changing the folder structure and file names of existing articles will impact on SEO and redirection, so needs to be done with extreme care and collaboration.
-> Where an existing article will be subdivided, the original article name / link should remain as the 'landing' page with the topic, with links to the new subtopic article pages. A redirect from the old page to the new landing article inside the new folder will need to be established to maintain external navigation compatability.
-> However, once a page has been moved into a subfolder, the current documentation should be scanned and updated to the new relative URL (i.e. internal navigation should NOT rely on redirection).
+```md
+> [!NOTE]
+> Description goes here.
+> A second line may follow.
+```
+
+Rules:
+
+- Put a blank line before and after each admonition.
+- Do not nest admonitions.
+- Keep each admonition focused on one point.
+
+## Code blocks
+
+- Use fenced code blocks.
+- Add a language identifier whenever Markdown supports one.
+- Keep commands in code blocks when the example spans multiple lines or needs exact copying.
+- Keep short inline commands in backticks instead of using a code block.
 
 ## Images
 
-### Screenshots
+- Add an image only when it materially improves comprehension.
+- Prefer text, links, or a short procedure over a screenshot when they are sufficient.
+- Every image MUST include meaningful alt text.
+- New images MUST be stored under the relevant `images` directory, not under `attachments`.
+- Existing `attachments` references are legacy content and SHOULD be replaced only when you are already updating that page with new image work.
+- Image links MUST be relative to the article.
+- Image file names MUST be descriptive ASCII names.
+- Do not use numeric-only or opaque attachment-style file names for new images.
+- Store small UI icon assets under the relevant `images/icons` directory.
+- Apply the same naming, alt text, and relative-link rules to icons as to other images.
 
-- Use as few screenshots as possible to convey the concept in the article 
-  _Rationale_ : Images place a large burden of maintenance
-- Provide an Alt text description for the image for SEO and accessibility reasons.
-  `![description of image](../../images/MyImage.png)`
-- Images should be High DPI (TBD actual DPI)
-- Need to be consistent about the font, theme and O/S for the screenshot images
-- Images shall be placed under the /SmartGit/Manual/images folder
-- Links to images shall be relative to the article (e.g. ../../images/FooBarBaz.png)
-- Image file name should align to the description
-- Where possible, replace images under the /attachments folder with a new image under the /images folder.
-  _Rationale_ : The /attachments folder images were inherited from older exported Confluence documentation and use numbers in the image names, which are not ideal from a maintenance and SEO viewpoint.
-- Note need to be aware of ‘where’ the images folder is relative to the current page
+For screenshots:
 
-### Icons
+- Use an English UI.
+- If the article has no existing screenshot style, use the default light theme on Windows at 100% scale.
+- Use a consistent theme, scale, and operating system within the same article.
+- Remove personal data, credentials, repository names, and other sensitive information.
+- Crop the screenshot to the relevant area.
+- Use a sharp image that remains readable when rendered in the docs.
 
-(i.e. small images used in the SmartGit app)
+## File and folder changes
 
-- These are stored in the /SmartGit/Manual/images/icons folder
-- Icons should generally follow the same rules as per images
+- Do not rename or move an existing article unless the task explicitly requires it.
+- Do not rename or move an existing article only for stylistic reasons.
+- If a topic outgrows one page, keep the original page as the landing page whenever practical.
+- When splitting content into subpages, update all touched internal links to the new relative paths.
+- Do not rely on redirects for internal documentation links.
 
-## Commits into the docs Repository
+## Commit rules for documentation changes
 
-- As with coding standards, should be one commit per meaningful ‘story’ or ‘feature’ or ‘bug’
-- Squash and rebase as necessary if multiple commits were required (e.g. using the GitHub markdown editor can create a lot of noisy commits)
-
-## Commit Messages
-
-- Do NOT use ticket numbers (e.g. GitHub issue) in the commit messages (Rationale : the docs repository is visible to public users who will not have access to the internal issue tracking system)
-- Keep the message concise, to one line (Rationale: easy to see what was changed in the log history)
-
-
+- Make one normal Git commit per requested documentation change or other coherent unit of work.
+- Do not squash, amend, or rewrite history unless the task explicitly asks for it.
+- Keep the commit message to a single concise subject line.
+- Do not include internal ticket numbers in the commit message.
