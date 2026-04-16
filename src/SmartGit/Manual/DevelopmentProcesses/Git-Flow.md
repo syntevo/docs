@@ -175,11 +175,14 @@ Before starting to use Git-Flow, run the configuration command.
 You can use the default branch names or change them according to your needs.
 This will write the Git-Flow configuration to your repository's `.git/config` file.
 
-You can rename your **Develop** and **Main** branches here, though keeping the defaults is strongly recommended.
-If you have multiple remote repositories configured, you can use the **Remotes** section to select which remote repository Git-Flow should use.
-In the **Prefixes** section, you can specify the [Feature-](#feature-branches), [Release-](#release-branches), [Hotfix-](#hotfix-branches), and [Support-](#support-branches) branches prefix.
+In the **Configure Git-Flow** dialog, keep **Git-Flow Type** set to **Full (feature, release, hotfix, support branches)**.
+Use **Develop Branch** and **Master Branch** to configure the two long-lived branches.
+If your stable release line is named `main`, enter `main` in the **Master Branch** field.
+If you have multiple remote repositories configured, use **Remote** to select which remote repository Git-Flow should use.
+In the **Prefixes** section, you can specify the values for **Feature Branches**, **Release Branches**, **Hot-Fix Branches**, **Support Branches**, and **Version Tags**.
+These correspond to the [Feature-](#feature-branches), [Release-](#release-branches), [Hotfix-](#hotfix-branches), and [Support-](#support-branches) branches described above.
 It is recommended that a sub-directory be used per category.
-A prefix can also be specified for for **Version Tags**, though no prefix is generally preferred to maintain simple tag names like `4.6.1`.
+For **Version Tags**, no prefix is generally preferred to maintain simple tag names like `4.6.1`.
 
 If a `.gitflow` file exists in the root of your working tree, the default values will be read from this file.
 When cloning a repository containing this file, Git-Flow will be initialized automatically, ensuring a quick Git-Flow setup for your team-members, even if you are using a non-default branch naming scheme.
@@ -191,7 +194,7 @@ This command initiates work on a new [feature](#feature-branches).
 After providing a name for the feature, a corresponding feature branch will be forked off the `develop` branch, and the new feature branch will be checked out.
 
 > [!NOTE]
-> If the `develop` branch is currently check out, the **Flow** toolbar button defaults to this command.
+> If the `develop` branch is currently check out, the **Git-Flow** toolbar button defaults to this command.
 > You can configure a custom prefix for features by the Git config option `gui.prefixStartFeature`.
 
 ### Finish Feature
