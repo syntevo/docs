@@ -40,7 +40,7 @@ If you wish to configure SmartGit to use different or custom LLMs, or need to cu
 > As a result, SmartGit's AI commenting feature is disabled by default.
 
 ## Enabling AI Commenting Features
-SmartGit's AI features are disabled by default and can be enabled the first time the ![AI](../images/AI-Commit-Button.png) button is clicked.
+SmartGit's AI features are disabled by default and can be enabled the first time the ![AI](../images/AI-Commit-Button.png) **AI** button is clicked.
 The following options are shown:
 
  - **Use GitHub models globally** - Adds configuration to use the default LLM in your global `git.config` file, applying to all repositories on your computer.
@@ -72,8 +72,8 @@ Clicking the button or selecting a different AI service sends the Git diff to th
 
 As with any commit staging, generally, only staged files are included in the Git diff submitted to the AI.
 However, the diff also depends on which Main Window is being used and the staging preferences:
-  - **[Standard Window](../GUI/Standard-Window.md)** - The Git diff automatically includes all untracked files.
-  - **[Log Window](../GUI/Log-Window.md) or [Working Tree Window](../GUI/Working-Tree-Window.md)** - The diff will depends on the [Preferences](../GUI/Preferences/index.md) option: `Commands | Log and Working Tree window | Commit View` if nothing is staged.
+  - [Standard Window](../GUI/Standard-Window.md) - The Git diff automatically includes all untracked files.
+  - [Log Window](../GUI/Log-Window.md) or [Working Tree Window](../GUI/Working-Tree-Window.md) - The diff depends on the [Preferences](../GUI/Preferences/index.md) option **Commands -> Log and Working Tree window -> Commit View** if nothing is staged.
 
 ### Options
 
@@ -84,7 +84,7 @@ Interaction between the existing commit message, any manual modifications, and t
 
 - **Stop** - Stops commit message generation upon any manual change (e.g., typing text or moving the cursor).
 - **Continue in Background** - Allows generation to continue and stores the message in a buffer, instead of displaying it immediately.
-  The AI button will blink green to indicate that buffered content is available.
+  The **AI** button will blink green to indicate that buffered content is available.
 
 ### Commit Message Line Wrapping
 
