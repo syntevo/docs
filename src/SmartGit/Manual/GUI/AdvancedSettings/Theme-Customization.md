@@ -8,6 +8,9 @@ With automatic theme selection (which is the default), your system theme determi
 > [!NOTE]
 > These files only will be read on SmartGit start.
 
+In **Preferences -> User Interface**, the **Theme** selector offers **Automatically select light/dark**, **Light (independent of system)**, **Dark (independent of system)**, and a custom theme entry that opens the **Open Theme Configuration File** dialog for `.theme` files.
+Changing **Theme** requires a restart; SmartGit shows a **Restart Required** notification with the **Restart SmartGit** action.
+
 ## List of Customizable Colors
 
 To get a complete list of customizable colors, you can run SmartGit from command line using parameter `--write-default-theme-file`.
