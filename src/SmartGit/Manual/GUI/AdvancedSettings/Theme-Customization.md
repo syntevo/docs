@@ -2,8 +2,8 @@
 
 You can customize certain colors in SmartGit by patching its themes.
 The custom colors are configured in files `light-patch.theme` and `dark-patch.theme` in [SmartGit's Settings Directory](../../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory).
-Depending on the selected theme from the **Preferences**, the appropriate file will be used.
-In case of automatic theme selection (which is the default), your system theme (light or dark) will determine the used file.
+Depending on the selected value of **Preferences -> User Interface -> Theme**, SmartGit will use `light-patch.theme` or `dark-patch.theme`.
+With automatic theme selection (which is the default), your system theme determines which file is used; when a custom `.theme` file is selected there, SmartGit still applies `light-patch.theme`.
 
 > [!NOTE]
 > These files only will be read on SmartGit start.
