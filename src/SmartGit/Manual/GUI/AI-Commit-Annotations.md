@@ -13,7 +13,7 @@ Some examples of what AI Commit Annotations can do:
 - Instruct the LLM to generate icons to augment the visualization of Notes.
 
 Because AI annotations can run in the background, SmartGit can automate checks while you work.
-The AI's responses are added to Git Notes, which can be viewed in the **Graph View** of the **Log and Standard Windows**.
+The AI's responses are added to Git Notes, which can be viewed in the **Graph View** of the **Log Window** and **Standard Window**.
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ Configuration options include:
 
 ### Example - Analyzing the difference between two selected diffs and displaying the difference interactively
 
-Adding the `[smartgit-ai-commit-annotations]` section below to your Git config creates a new **Describe Diff** command in the menu when exactly two commits are selected in the **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the `[smartgit-ai-commit-annotation "Describe Diff"]` section below to your Git config creates a new **Describe Diff** command in the **Graph** context menu when exactly two commits are selected in the **Graph View** of the **Log Window** or the **Standard Window**.
 
 This command uses an existing LLM configuration called `openai` (tested on `gpt-4.1` on OpenAI).
 
@@ -59,13 +59,12 @@ This command uses an existing LLM configuration called `openai` (tested on `gpt-
 ```
 
 > [!NOTE]
-> With `diff = pair`, if the selected diffs have both diverged from the common ancestor commit, SmartGit will prompt you to select the order of comparison of the diffs.
+> With `diff = pair`, if neither selected commit is an ancestor of the other, SmartGit will prompt you to choose the diff direction.
 > You can swap the order if needed.
-> A Git diff must be possible between the two commits, i.e., they must share a common ancestor.
 
 ### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
 
-Adding the following `[smartgit-ai-commit-annotation]` section to your Git config will add a new **Check Todos** command to the menu when a commit is selected in the **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the following `[smartgit-ai-commit-annotation "Check For Todos"]` section to your Git config will add a new **Check Todos** command to the **Graph** context menu when a commit is selected in the **Graph View** of the **Log Window** or the **Standard Window**.
 
 The same LLM configuration is used as in the previous example.
 
