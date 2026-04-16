@@ -12,11 +12,11 @@ SmartGit's Log extends changes to not just your local repository's commits, but 
 
 The Log display has the following elements:
 
-- The [**Branches View**](Branches-view.md), allowing you to select which branches should be include in the log display.
+- The [Branches View](Branches-view.md), allowing you to select which branches should be include in the log display.
   Toggle a branch to include/exclude as necessary.
-- The [**Graph View**](Graph-View.md), showing a visualization of the commit history and the current HEAD references of the selected branches.
+- The [Graph View](Graph-View.md), showing a visualization of the commit history and the current HEAD references of the selected branches.
   You can select one or more commits on the graph to compare changes between commits.
-- The [**Commit View**](Commit-View.md), showing audit information about who and when a commit was authored, as well as the commit SHA and message.
+- The [Commit View](Commit-View.md), showing audit information about who and when a commit was authored, as well as the commit SHA and message.
 - The **Files View**, showing state of the files as at the time of the selected commit.
 - The **Changes View**, showing differences between commits.
 
@@ -24,11 +24,11 @@ SmartGit's Log displays the working tree state and the repository's history as a
 
 ## Controlling the Scope of Files Available in the Log Tool
 
-The content displayed in the Log depends on what was selected when the Log command was invoked:
+The content displayed in the Log depends on what was selected when the **Log** command was invoked:
 
-- To view the history of the entire repository (*root* Log), select the repository in the **Repositories View** before invoking the Log command.
-- To view the history of a directory within the repository, select the directory in the **Repositories View** before invoking the Log command.
-- To view the history of a single file within the repository, select the file in the **Files View** before invoking the Log command.
+- To view the history of the entire repository (*root* Log), select the repository in the **Repositories View** before invoking the **Log** command.
+- To view the history of a directory within the repository, select the directory in the **Repositories View** before invoking the **Log** command.
+- To view the history of a single file within the repository, select the file in the **Files View** before invoking the **Log** command.
   If the file is not visible in the **Files View**, either adjust the file table's filter settings (on its top right), or enter the name of the file in the search field above the file table.
 
 A *root* Log can be invoked from other places in SmartGit as well:
@@ -42,7 +42,7 @@ A *root* Log can be invoked from other places in SmartGit as well:
   - The **Commit View** shows the audit and commit message information for the commit.
   - The **Files View** shows the files state as at the selected commit.
   - Selecting a file will show the changes committed made to this file between this commit and the previous commit, in the **Changes View**.
-- If you select any two commits Graph View:
+- If you select any two commits in the **Graph View**:
   - When you select a file in the **Files View** SmartGit will compare these two commits in the **Changes View**.
   - The **Commit View** will show the respective commit audit and message information for both commits.
 
@@ -87,7 +87,7 @@ These unreachable commits may be eligible for permanent deletion (garbage collec
 ## Skip Merge Optimization When Filtering
 
 By default, SmartGit will "optimize" the display of merge commits when filtering the Log Graph.
-To skip the merge optimization, in the **Preferences**, section **Low-Level Property** you may set `log.graph.topoFilter.alwaysIncludeContainingMerges` to `true`.
+To skip the merge optimization, in **Preferences -> Low-Level Property** you may set `log.graph.topoFilter.alwaysIncludeContainingMerges` to `true`.
 For example, for following unfiltered graph:
 
 ```                                                                                  
