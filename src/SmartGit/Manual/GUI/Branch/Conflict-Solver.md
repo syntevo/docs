@@ -21,7 +21,7 @@ The following commands are available in the SmartGit **Conflict Solver** (comman
 - **Base Changes:** Opens a window that shows the original Common Base version of the file (`:1`) instead of the current Working Tree file.
   (i.e., shows the original version before either our or their changes were made to the file.)
 - **Save:** Saves any changes to the Working Tree file, even if conflict markers remain.
-- **Prev Change:** Moves the cursor to the previous change in the selected pane.
+- **Prev. Change:** Moves the cursor to the previous change in the selected pane.
 - **Next Change:** Moves the cursor to the next change in the selected pane.
 - **Take Left, Right:** Replaces the conflict with both left and right changes, first `our` change then `their` change (this command is only available in the Working Tree pane).
 - **Take Left:** Replaces the conflict with only the left (`our`) change and discards the right (`their`) change (this command is only available in the Left and Working Tree panes).
@@ -29,7 +29,7 @@ The following commands are available in the SmartGit **Conflict Solver** (comman
 - **Take Right, Left:** Replaces the conflict with both left and right changes, first `their` change, then `our` change (this command is only available in the Working Tree pane).
 - **Left + Merge:** Hides the right (`theirs`) window pane.
 - **All:** Shows all three panes (`ours`, `Working Tree`, and `theirs`).
-- **Right + Merge:** Hides the left (`ours`) window pane.
+- **Merge + Right:** Hides the left (`ours`) window pane.
 - **Merge Below:** Moves the `Working Tree` pane to the bottom.
   This is useful for merging files with long lines.
 - **Close:** Closes the **Conflict Solver**.
