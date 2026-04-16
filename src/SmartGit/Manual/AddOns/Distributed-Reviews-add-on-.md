@@ -28,8 +28,8 @@ From this point on, **Review \| Configure** can be invoked in all other clones o
 
 To create a Pull Request, select your *feature branch* in the **Branches** view and invoke **Create Pull Request** from the context menu.
 In the upcoming dialog, select the **target** branch and a **Message** describing the purpose of the Pull Request.
-It's recommended to specify at least one **Assignee**, who is the right person to review and integrate this Pull Request.
-The Pull Request will be highlighted to all assignees in the **Branches** view (in the Project as well as the **Log Window**).
+It's recommended to specify at least one user in **Assignees** who is the right person to review and integrate this Pull Request.
+The Pull Request will be highlighted to all assignees in the **Branches** view (in the **Standard Window** as well as the **Log Window**).
 
 Once the Pull Request has been created, it is in *pending state* and will show up in the **Pull Requests** category of the **Branches** view as *local only*.
 It will be published, i.e. sent to the remote repository, for the next time you invoke **Push**.
@@ -42,15 +42,15 @@ If you are amongst the **Assignees** of a Pull Request, it will be highlighted t
 
 To review or integrate a Pull Request, open the **Log** and select and reveal the Pull Request from the **Pull Requests** category.
 The Pull Request is represented by a merge commit which connects its source (the feature branch) with the *merge base* between the source and the Pull Request's target (probably `master` or `develop`).
-When selecting this Pull Request commit in the **Commits** graph, the **Files** view will show all affected files of the Pull Request and you can drill down to content changes in the **Changes** view.
+When selecting this Pull Request commit in the **Graph**, the **Files** view will show all affected files of the Pull Request and you can drill down to content changes in the **Changes** view.
 
-- If the Pull Request is not yet ready for merge and/or there is something to object to, you may leave a comment (see section [Commenting changes](#commenting-changes)) and **Reject** the Pull Request.
+- If the Pull Request is not yet ready for merge and/or there is something to object to, you may leave a comment (see section [Commenting changes](#commenting-changes)) and choose **Reject (-1)** in **Review Pull Request**.
   At the same time, you will probably want to assign the Pull Request back to the author or someone else who you think can best deal with your comments.
   Comments may be applied to the Pull Request commit itself (either to the commit of the affected files' changes) or to individual commits of the Pull Request, whatever suits your needs better.
 - If the Pull Request is fine, you may **Integrate** the Pull Request from the **Branches** view context menu.
-  The **Integrate** dialog is similar to [Git-Flow's Finish Feature dialog](../DevelopmentProcesses/Git-Flow.md#finish-feature):
+  The **Integrate Pull Request** dialog is similar to [Git-Flow's Finish Feature dialog](../DevelopmentProcesses/Git-Flow.md#finish-feature):
   you can select how to integrate the commits and some optional cleanup tasks.
-  Alternately, you may just **Approve** the Pull Request and assign it to someone who should finally **Integrate** the Pull Request.
+  Alternately, you may just choose **Approve (+1)** in **Review Pull Request** and assign it to someone who should finally **Integrate** the Pull Request.
 - If you don't feel to be the right assignee for the Pull Request at all, you may simply **Assign** it to someone else who you think can deal with it better.
 
 In either case, it's recommended to add an optional **Comment** which explains the reason for the reassignment.
@@ -67,8 +67,8 @@ Contrary to other reviewing systems, like GitHub, there is no difference between
 - To comment on a *commit* in general, use **Add Review Comment** from the **Graph** context menu.
 - To comment on an individual change in the **Changes** view, use **Add Review Comment** from the context menu on the corresponding line.
 
-Comments will show up in the **Commits** graph, the **Files** table and the **Changes** view.
-The **Comments** table will show all comments currently present in the repository and allows to **Jump To** a comment, or **Edit** or **Delete** a comment.
+Comments will show up in the **Graph**, the **Files** table and the **Changes** view.
+The **Comments** table will show all comments currently present in the repository and allows you to **Jump To** a comment, or to use **Edit Comment** or **Delete Comment**.
 
 ### Inspecting a Pull Request history
 
@@ -78,7 +78,7 @@ By having access to all 'historical' heads, you will also have access to all (hi
 
 By default, only the most recent head will show up in the Log **Graph** when toggling the pull request in the **Branches** view.
 To view details for the pull request, select the pull request commit in the **Graph** and switch to the **Commit** view.
-Here you will also be able to display older heads by clicking the **Version** links.
+Here you will also be able to display older heads by clicking the **Versions** links.
 
 ### Closed Pull Requests
 
