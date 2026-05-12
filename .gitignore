@@ -1,11 +1,12 @@
 _site/
-/.agents/.*
-/.agents/setup/.cache/
+/.agents-exchange/
 /.temp/
 /.idea/workspace.xml
 /.obsidian/
 /.claude/
 /.claude-allow
 /.claude-computer-use/
+/.codex
+/.codex-allow
 __pycache__/
 *.pyc
