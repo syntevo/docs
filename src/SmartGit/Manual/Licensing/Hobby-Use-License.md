@@ -16,7 +16,8 @@ There is a certain tolerance for the first couple of commits, i.e. authors for t
 > Hence, in case of problems, try to run `git gc`.
 
 > [!NOTE]
-> If your repository contains more authors than tolerated *by accident* (e.g. if you have changed your name or email too often), you may consider to convert the repository to a single author using SmartGit's command line option `--convert-repository-to-single-user`.
+> If your repository contains more authors than tolerated *by accident* (e.g. if you have changed your name or email too often), you may consider to convert the repository to a single author using SmartGit's command line, e.g.: `smartgitc.exe --convert-repository-to-single-user <path-to-original-repo> --convert-target <new-repo-path>`.
+> This will recreate your repository in `<new-repo-path>` with the name and email taken from your `~/.gitconfig`.
 > **Use with care! This will rewrite your entire repository.**
 
 ## Public repositories
