@@ -22,6 +22,7 @@ This includes the text fonts, colors, and background displayed in SmartGit.
 SmartGit will automatically select a default light or dark theme based on your current operating system preference, for instance, if you are using Windows in **Dark Mode**, then SmartGit will default to using its **Dark Mode** theme.
 
 However, you can override the operating system preference, e.g., **Dark Mode** is available even if when your OS theme preference is different.
+Because our application has no full control over all parts of the GUI (some parts are drawn by the system), the "Automatically select light/dark" mode is recommended.
 
 Once a theme has been selected, it is also possible to override individual theme attributes using the [Built-in Text Editors](#built-in-text-editors).
 
