@@ -6,6 +6,16 @@ Additionally, the bundled frontend is great to quickly monitor the usage of our 
 
 ![On-premise License Server frontend](../images/OpLicenseServer-frontend.png)
 
+## Seat Allocation
+
+The initial seat count for your On-Premise License will be determined in coordination with our [Sales Team](mailto:sales@syntevo.com). The license must be renewed on an annual basis. To identify any potential changes in seat requirements for the upcoming year, we use the **Usage** metric displayed on the server frontend's **Master Licenses** area.
+
+### Usage Calculation
+
+When a user authenticates with the On-Premise License Server, they are issued a license that is valid for 60 days. This buffer ensures that users can continue working uninterrupted even if they cannot reach the License Server for extended periods. Consequently, a user is considered active as long as they are still able to use the product under their latest granted license. Your current usage is calculated as the maximum number of concurrently active users within the last 30 days.
+
+This approach provides a reliable, easy-to-understand metric that works well for the vast majority of environments. However, if your team operates under unique circumstances that conform to our licensing agreement but aren't captured realisticly by this metric, please share your concerns with our [Sales Team](mailto:sales@syntevo.com).
+
 ## Requirements
 
 To run our on-premise server, only Docker is required.
@@ -16,7 +26,7 @@ Running multiple instances of the *On-premise License Server* in a Kubernetes en
 
 ## Server-side installation
 
-1. Contact sales@syntevo.com and provide:
+1. Contact our [Sales Team](mailto:sales@syntevo.com) and provide:
    1. A short explanation of your environment and SmartGit setup to understand whether an on-premise license server will be appropriate for your company.
    1. Your GitHub username:
       1. You need *GitHub credentials* to access the [GitHub packages](https://github.com/users/syntevo/packages/container/package/license-opserver).
