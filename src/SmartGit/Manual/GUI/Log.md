@@ -31,6 +31,19 @@ The content displayed in the Log depends on what was selected when the **Log** c
 - To view the history of a single file within the repository, select the file in the **Files View** before invoking the **Log** command.
   If the file is not visible in the **Files View**, either adjust the file table's filter settings (on its top right), or enter the name of the file in the search field above the file table.
 
+### Following Copies in File Logs
+
+File Logs follow detected renames by default.
+When the displayed history reaches a commit where the file was added, SmartGit displays the `[Copied?]` link.
+This does not mean that SmartGit has determined the file was copied. It indicates that copy detection has not been performed for this added file.
+
+Click `[Copied?]` to rerun the File Log with copy detection enabled.
+SmartGit searches the parent tree for a similar pre-existing file and, if it finds one, continues the history from that possible source.
+Git does not record copy provenance, so this result is based on similarity detection and may not reflect the file's actual origin.
+Copy detection can significantly increase the time needed to open a File Log. To enable it by default, set the `log.file.followCopies` low-level property to `true` in **Preferences**, **Low-Level Properties**.
+
+## Invoking a Log
+
 A *root* Log can be invoked from other places in SmartGit as well:
 
 - In the **Branches View** (just in the **Working Tree Window**), you can right-click on a branch and select **Log** to open the Log for the selected branch.
