@@ -2,5 +2,6 @@ _site/
 /.temp/
 /.idea/workspace.xml
 /.obsidian/
-/.codex
-/.codex-allow
+
+/.agents/.*
+/agent.bat
