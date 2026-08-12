@@ -366,7 +366,7 @@ def realign_gitgraph_tags_left(svg_path):
 
 def render_mermaid(code, output_path, config_path, puppeteer_config, attrs):
     """Render mermaid code to SVG using mmdc, then apply optional SVG rewrites."""
-    temp_mmd = output_path.with_suffix('.mmd.tmp')
+    temp_mmd = None
     temp_puppeteer_config = None
     render_code = code
     branchpointer_style = truthy(attrs.get('branchpointers'))
@@ -382,7 +382,16 @@ def render_mermaid(code, output_path, config_path, puppeteer_config, attrs):
         render_code = inject_theme_css_rule(render_code, ' '.join(theme_css_rules))
 
     try:
-        temp_mmd.write_text(render_code)
+        with tempfile.NamedTemporaryFile(
+            mode='w',
+            suffix='.mmd',
+            prefix='mermaid-',
+            delete=False,
+            encoding='utf-8',
+        ) as handle:
+            handle.write(render_code)
+            temp_mmd = Path(handle.name)
+
         temp_puppeteer_config = prepare_puppeteer_config(puppeteer_config)
 
         cmd = [
@@ -424,7 +433,7 @@ def render_mermaid(code, output_path, config_path, puppeteer_config, attrs):
         return True
 
     finally:
-        if temp_mmd.exists():
+        if temp_mmd and temp_mmd.exists():
             temp_mmd.unlink()
         if temp_puppeteer_config and os.path.exists(temp_puppeteer_config):
             os.unlink(temp_puppeteer_config)
