@@ -91,13 +91,14 @@ jobs:
         id: setup-chrome
         uses: browser-actions/setup-chrome@v2
         with:
-          chrome-version: stable
+          # Keep Chrome aligned with Puppeteer 25.6.0, used by Mermaid CLI 11.16.0.
+          chrome-version: 151.0.7922.77
           install-dependencies: true
 
       - name: Install Mermaid CLI
         env:
           PUPPETEER_SKIP_DOWNLOAD: 'true'
-        run: npm install -g @mermaid-js/mermaid-cli
+        run: npm install -g @mermaid-js/mermaid-cli@11.16.0 puppeteer@25.6.0
 
       - name: Render Mermaid diagrams
         env:
