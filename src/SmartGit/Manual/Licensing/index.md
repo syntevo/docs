@@ -2,7 +2,4 @@
 
 For an overview of how to find the most suitable licensing option for SmartGit for your situation, please consult [SmartGit Licensing](../../HowTos/Licensing/Licensing.md).
 
-Below, please find guidance on:
-
-- [Features which are available only in SmartGit Commercial Licenses](Commercial-only-features.md)
-- [Hobby Use Licensing](Hobby-Use-License.md)
+For features that are available only with a commercial license, see [Commercial-only features](Commercial-only-features.md).

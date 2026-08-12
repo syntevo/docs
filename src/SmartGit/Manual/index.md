@@ -84,7 +84,6 @@ Alternatively, you can follow one of the below topics:
   - [On-premise license server](Installation/On-premise-license-server.md)
 - [Licensing](Licensing/index.md)
   - [Commercial-only features of SmartGit](Licensing/Commercial-only-features.md)
-  - [SmartGit Hobby Use License](Licensing/Hobby-Use-License.md)
 - [Integrations with other Applications and Services](Integrations/index.md)
   - [Azure DevOps](Integrations/Azure-DevOps.md)
   - [Bitbucket Cloud](Integrations/Bitbucket-integration.md) and [Bitbucket and Atlassian Stash On Premises](Integrations/BitBucket-Server-Atlassian-Stash-integration.md)
