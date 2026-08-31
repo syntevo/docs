@@ -18,6 +18,10 @@ Under the **Add** button, select **Azure DevOps**.
 This opens the **Add Hosting Provider** dialog and prompts for an access token.
 
 Use a [Personal Access Token (PAT)](#setup-via-personal-access-token) to connect SmartGit to Azure DevOps.
+For Azure DevOps Services (Cloud), SmartGit accepts a PAT pasted directly into the **Token** field.
+Leave the **Organization** field empty for a PAT with access to all accessible organizations.
+For an organization-scoped PAT, enter the organization's name in **Organization**.
+The name must match the PAT's organization access scope.
 
 > [!WARNING]
 > Azure DevOps OAuth is deprecated by Microsoft.
@@ -36,18 +40,16 @@ To create a PAT that works with SmartGit:
 - Open [https://aex.dev.azure.com/me](https://aex.dev.azure.com/me) to see the organizations available for your account.
 - Navigate to any of your organizations.
 - Click **User Settings** in the top-right corner and select **Personal access tokens**.
-- Create a new token and make sure that:
-  - **Organization access** is set to **All accessible organizations**.
+- Create a new token and configure the required organization access:
+  - Under **Organization**, choose **All accessible organizations** or a specific organization.
   - Under **Scopes**, only **Code** -> **Read & write** is required.
   - Choose an expiration date that is allowed by your Azure DevOps policy.
 - Copy the generated token and paste it into SmartGit.
 
-> [!WARNING]
-> The most important setting is **Organization access** -> **All accessible organizations**.
-> SmartGit requires this setting even if you currently use only one organization.
-> If authentication fails, first create a new PAT with **All accessible organizations** and try again.
+![Azure DevOps PAT setup with Code read and write scope](../images/Integrations-DevOps-PAT.png)
 
-![Azure DevOps PAT Scopes](../images/Integrations-DevOps-PAT.png)
+The screenshot shows **All accessible organizations**, but this setting is optional.
+If you select a specific organization, enter the same organization in SmartGit's **Organization** field.
 
 For additional details, see Microsoft's [Personal Access Token documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
 
@@ -87,7 +89,8 @@ Use a [Personal Access Token](#setup-via-personal-access-token) for SmartGit ins
 
 If Azure DevOps authentication fails in SmartGit, create a new PAT and verify the following points:
 
-- **Organization access** is set to **All accessible organizations**.
+- For an organization-scoped PAT, the SmartGit **Organization** field matches the PAT's organization access scope.
+- Leave the SmartGit **Organization** field empty for a PAT with **All accessible organizations**.
 - The PAT has **Code** -> **Read & write** scope.
 - You created the PAT while signed in to the correct Azure DevOps account.
 
