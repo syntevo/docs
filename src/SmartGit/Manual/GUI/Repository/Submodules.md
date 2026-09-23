@@ -130,15 +130,119 @@ To avoid this, check out a submodule branch before making the changes.
 
 ## Submodule States and Transitions
 
-Icon | State | Description
--------- | -------- | --------
-![](../../attachments/submodule-icons/uninitialized.png)| Uninitialized   | The submodule has not yet been initialized. <ul><li> Use **Initialize** or **Pull** to initialize/fetch this submodule.</li><li>Use **Deactivate** to get the submodule rid from the **Files** view. It will only show up if **View \| Show** Ignored Files is selected.</li><li>Use **Unregister** to remove the submodule from the repository.</li></ul>
-![](../../attachments/submodule-icons/unchanged.png)| Inactive   | The submodule has been **Deactivated**. <ul><li>Use **Initialize** or **Pull** to initialize/fetch this submodule.</li></ul>
-![](../../attachments/submodule-icons/empty.png)| Empty   | The submodule has been initialized, but contents have not been fetched yet. <ul><li>Use **Pull** to fetch this submodule.
-![](../../attachments/submodule-icons/unchanged.png)| As Index   | The submodule is correctly initialized and pointing to the same commit as registered in the parent repository's HEAD and Index.
-![](../../attachments/submodule-icons/added.png)| Added   | The submodule has been scheduled for addition in the parent repository.<ul><li>Use **Commit** to confirm the addition.</li><li>Use **Discard** to unscheduled the addition.</li></ul>
-![](../../attachments/submodule-icons/removed.png)| Removed   | The submodule has been scheduled for removal in the parent repository.<ul><li>Use **Commit** to confirm the removal.</li><li>Use **Discard** to unscheduled the removal and (if necessary) reset to the submodule commit registered in the parent repository.</li></ul>
-![](../../attachments/submodule-icons/modified.png) ![](../../attachments/submodule-icons/modified-staged.png) ![](../../attachments/submodule-icons/modified-added.png)| Modified   | The submodule points to a different commit than registered in the parent repository's Index. This is usually the result after e.g. you've done a commit in the submodule repository.<ul><li>Use **Stage** to stage the change in the parent repository's Index.</li><li>Use **Commit** to update the submodule link in the parent repository.</li><li>Use **Discard** to reset the submodule to the commit recorded in the parent repository's Index.</li><li>Use **Reset** to reset the submodule to the commit recorded in the parent repository's HEAD.</li></ul>
-![](../../attachments/submodule-icons/conflict.png)| Conflict   | The submodule is in conflicting state where it's unclear to which commit it should point.<ul><li>Check the **Log** and make sure to **Check Out** the appropriate commit in the submodule repository, then confirm with **Stage**.</li><li>Use **Discard** to reset the submodule to the commit recorded in the parent repository's Index.</li><li>Use **Reset** to reset the submodule to the commit recorded in the parent repository's HEAD.</ul></li> **Note** <blockquote> Submodule conflicts are usually complex to resolve and may require additional commits in the submodule itself. Hence, if you are unsure, better contact the other authors of the conflicting submodule conflicts. </blockquote>
-![](../../attachments/submodule-icons/nested-root.png)| Nested root   | The nested Git repository is not properly linked as submodule.<ul><li>Use **Stage** to scheduled the Git repository as submodule in the parent repository</li><li>Otherwise, if this Git repository should not be a submodule, use **Ignore** or completely get rid of the sub-directory.</ul></li>
-![](../../attachments/submodule-icons/missing.png)| Missing   | Might happen if initializing a submodule has failed, e.g. after cancelling the credentials dialog. Use **Initialize** to initialize/fetch again.
+<table>
+  <thead>
+    <tr>
+      <th>Icon</th>
+      <th>State</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/uninitialized.png" alt="Uninitialized"></td>
+      <td>Uninitialized</td>
+      <td>
+        <p>The submodule has not yet been initialized.</p>
+        <ul>
+          <li>Use <strong>Initialize</strong> or <strong>Pull</strong> to initialize/fetch this submodule.</li>
+          <li>Use <strong>Deactivate</strong> to get the submodule rid from the <strong>Files</strong> view. It will only show up if <strong>View | Show</strong> Ignored Files is selected.</li>
+          <li>Use <strong>Unregister</strong> to remove the submodule from the repository.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/unchanged.png" alt="Inactive"></td>
+      <td>Inactive</td>
+      <td>
+        <p>The submodule has been <strong>Deactivated</strong>.</p>
+        <ul>
+          <li>Use <strong>Initialize</strong> or <strong>Pull</strong> to initialize/fetch this submodule.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/empty.png" alt="Empty"></td>
+      <td>Empty</td>
+      <td>
+        <p>The submodule has been initialized, but contents have not been fetched yet.</p>
+        <ul>
+          <li>Use <strong>Pull</strong> to fetch this submodule.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/unchanged.png" alt="As Index"></td>
+      <td>As Index</td>
+      <td>The submodule is correctly initialized and pointing to the same commit as registered in the parent repository's HEAD and Index.</td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/added.png" alt="Added"></td>
+      <td>Added</td>
+      <td>
+        <p>The submodule has been scheduled for addition in the parent repository.</p>
+        <ul>
+          <li>Use <strong>Commit</strong> to confirm the addition.</li>
+          <li>Use <strong>Discard</strong> to unscheduled the addition.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/removed.png" alt="Removed"></td>
+      <td>Removed</td>
+      <td>
+        <p>The submodule has been scheduled for removal in the parent repository.</p>
+        <ul>
+          <li>Use <strong>Commit</strong> to confirm the removal.</li>
+          <li>Use <strong>Discard</strong> to unscheduled the removal and (if necessary) reset to the submodule commit registered in the parent repository.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="../../attachments/submodule-icons/modified.png" alt="Modified">
+        <img src="../../attachments/submodule-icons/modified-staged.png" alt="Modified, staged">
+        <img src="../../attachments/submodule-icons/modified-added.png" alt="Modified, added">
+      </td>
+      <td>Modified</td>
+      <td>
+        <p>The submodule points to a different commit than registered in the parent repository's Index. This is usually the result after e.g. you've done a commit in the submodule repository.</p>
+        <ul>
+          <li>Use <strong>Stage</strong> to stage the change in the parent repository's Index.</li>
+          <li>Use <strong>Commit</strong> to update the submodule link in the parent repository.</li>
+          <li>Use <strong>Discard</strong> to reset the submodule to the commit recorded in the parent repository's Index.</li>
+          <li>Use <strong>Reset</strong> to reset the submodule to the commit recorded in the parent repository's HEAD.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/conflict.png" alt="Conflict"></td>
+      <td>Conflict</td>
+      <td>
+        <p>The submodule is in conflicting state where it's unclear to which commit it should point.</p>
+        <ul>
+          <li>Check the <strong>Log</strong> and make sure to <strong>Check Out</strong> the appropriate commit in the submodule repository, then confirm with <strong>Stage</strong>.</li>
+          <li>Use <strong>Discard</strong> to reset the submodule to the commit recorded in the parent repository's Index.</li>
+          <li>Use <strong>Reset</strong> to reset the submodule to the commit recorded in the parent repository's HEAD.</li>
+        </ul>
+        <p><strong>Note</strong> Submodule conflicts are usually complex to resolve and may require additional commits in the submodule itself. Hence, if you are unsure, better contact the other authors of the conflicting submodule.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/nested-root.png" alt="Nested root"></td>
+      <td>Nested root</td>
+      <td>
+        <p>The nested Git repository is not properly linked as submodule.</p>
+        <ul>
+          <li>Use <strong>Stage</strong> to schedule the Git repository as submodule in the parent repository.</li>
+          <li>Otherwise, if this Git repository should not be a submodule, use <strong>Ignore</strong> or completely get rid of the sub-directory.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="../../attachments/submodule-icons/missing.png" alt="Missing"></td>
+      <td>Missing</td>
+      <td>Might happen if initializing a submodule has failed, e.g. after cancelling the credentials dialog. Use <strong>Initialize</strong> to initialize/fetch again.</td>
+    </tr>
+  </tbody>
+</table>
