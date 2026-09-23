@@ -148,13 +148,15 @@ jobs:
           find .upload -type f -name '*.md' -exec rm {} \;
 
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.CLOUDFLARE_PROJECT_NAME }}
-          directory: ./.upload
-          branch: ${{ env.MAIN_BRANCH }}
+          wranglerVersion: '4'
+          command: >-
+            pages deploy ./.upload
+            --project-name=${{ env.CLOUDFLARE_PROJECT_NAME }}
+            --branch=${{ env.MAIN_BRANCH }}
 
       - name: Generate combined SmartGit markdown
         run: |
