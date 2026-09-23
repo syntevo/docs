@@ -140,7 +140,7 @@ To avoid this, check out a submodule branch before making the changes.
   </thead>
   <tbody>
     <tr>
-      <td><img src="../../attachments/submodule-icons/uninitialized.png" alt="Uninitialized"></td>
+      <td><img src="../../images/submodule/uninitialized.png" alt="Uninitialized"></td>
       <td>Uninitialized</td>
       <td>
         <p>The submodule has not yet been initialized.</p>
@@ -152,7 +152,7 @@ To avoid this, check out a submodule branch before making the changes.
       </td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/unchanged.png" alt="Inactive"></td>
+      <td><img src="../../images/submodule/unchanged.png" alt="Inactive"></td>
       <td>Inactive</td>
       <td>
         <p>The submodule has been <strong>Deactivated</strong>.</p>
@@ -162,7 +162,7 @@ To avoid this, check out a submodule branch before making the changes.
       </td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/empty.png" alt="Empty"></td>
+      <td><img src="../../images/submodule/empty.png" alt="Empty"></td>
       <td>Empty</td>
       <td>
         <p>The submodule has been initialized, but contents have not been fetched yet.</p>
@@ -172,12 +172,12 @@ To avoid this, check out a submodule branch before making the changes.
       </td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/unchanged.png" alt="As Index"></td>
+      <td><img src="../../images/submodule/unchanged.png" alt="As Index"></td>
       <td>As Index</td>
       <td>The submodule is correctly initialized and pointing to the same commit as registered in the parent repository's HEAD and Index.</td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/added.png" alt="Added"></td>
+      <td><img src="../../images/submodule/added.png" alt="Added"></td>
       <td>Added</td>
       <td>
         <p>The submodule has been scheduled for addition in the parent repository.</p>
@@ -188,7 +188,7 @@ To avoid this, check out a submodule branch before making the changes.
       </td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/removed.png" alt="Removed"></td>
+      <td><img src="../../images/submodule/removed.png" alt="Removed"></td>
       <td>Removed</td>
       <td>
         <p>The submodule has been scheduled for removal in the parent repository.</p>
@@ -200,9 +200,9 @@ To avoid this, check out a submodule branch before making the changes.
     </tr>
     <tr>
       <td>
-        <img src="../../attachments/submodule-icons/modified.png" alt="Modified">
-        <img src="../../attachments/submodule-icons/modified-staged.png" alt="Modified, staged">
-        <img src="../../attachments/submodule-icons/modified-added.png" alt="Modified, added">
+        <img src="../../images/submodule/modified.png" alt="Modified">
+        <img src="../../images/submodule/modified-staged.png" alt="Modified, staged">
+        <img src="../../images/submodule/modified-added.png" alt="Modified, added">
       </td>
       <td>Modified</td>
       <td>
@@ -216,7 +216,7 @@ To avoid this, check out a submodule branch before making the changes.
       </td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/conflict.png" alt="Conflict"></td>
+      <td><img src="../../images/submodule/conflict.png" alt="Conflict"></td>
       <td>Conflict</td>
       <td>
         <p>The submodule is in conflicting state where it's unclear to which commit it should point.</p>
@@ -229,7 +229,7 @@ To avoid this, check out a submodule branch before making the changes.
       </td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/nested-root.png" alt="Nested root"></td>
+      <td><img src="../../images/submodule/nested-root.png" alt="Nested root"></td>
       <td>Nested root</td>
       <td>
         <p>The nested Git repository is not properly linked as submodule.</p>
@@ -240,7 +240,7 @@ To avoid this, check out a submodule branch before making the changes.
       </td>
     </tr>
     <tr>
-      <td><img src="../../attachments/submodule-icons/missing.png" alt="Missing"></td>
+      <td><img src="../../images/submodule/missing.png" alt="Missing"></td>
       <td>Missing</td>
       <td>Might happen if initializing a submodule has failed, e.g. after cancelling the credentials dialog. Use <strong>Initialize</strong> to initialize/fetch again.</td>
     </tr>
