@@ -62,30 +62,30 @@ Icon | State | Description
 
 Icon | State | Description
 -------- | -------- | --------
-![](../../attachments/53215375/53215378.png) | Unchanged | File is under version control and neither modified in working tree nor in Index.
-![](../../attachments/53215375/53215386.png) | Unversioned | File is not under version control, but only exists in the working tree. Use **Stage** to add the file or **Ignore** to ignore the file, or **Commit** to commit it right away.
-![](../../attachments/53215375/53215396.png) | Ignored | File is not under version control (exists only in the working tree) and is marked to be ignored.
-![](../../attachments/53215375/53215377.png) | Modified | File is modified in the working tree. Use **Stage** to add the changes to the Index or **Commit** the changes immediately.
-![](../../attachments/53215375/53215387.png) | Staged | File is modified and the changes have been staged to the Index. Either **Commit** the changes or **Unstage** changes to the working tree.
-![](../../attachments/53215375/53215392.png) | Staged Modified | File is modified in the working tree and in the Index in different ways. You may **Commit** either Index changes only or working tree changes plus Index changes.
-![](../../attachments/53215375/53215392.png) | Staged, WT as HEAD | File is modified in the working tree and in the Index in different ways, but the working tree state is identical to the HEAD state. Using **Stage** will turn the file back to unchanged again.
-![](../../attachments/53215375/53215377.png) | Modified (File Mode) | The content of the file is not modified, but the executable bits are set different than in the repository. Refer to [Fixing 'Modified (File Mode)' on Windows](#fixing-modified-file-mode-on-windows) on how to fix that state on Windows.
-![](../../attachments/53215375/53215377.png) | Modified (EOLs only) | The content of the file is modified, but only differs in line endings from the Index state. This state will only be determined/show up if [smartgit.refresh.inspectEol](../AdvancedSettings/Low-Level-Properties.md) system property is set.
-![](../../attachments/53215375/53215377.png) | Modified (EOLs only, not stageable) | The content of the file is modified, but only differs in line endings from the Index state; but, due to the Git configuration (usually `core.autocrlf`) this modification can't be staged. <br> Usually, when trying to stage, Git will issue a warning `warning: LF will be replaced by CRLF in ...` here. This state will only be determined/show up if [smartgit.refresh.inspectEol](../AdvancedSettings/Low-Level-Properties.md) system property is set.
-![](../../attachments/53215375/53215398.png) | Added | File has been added to Index. Use **Unstage** to remove from the Index.
-![](../../attachments/53215375/53215393.png) | Removed | File has been removed from the Index. Use **Unstage** to un-schedule the removal from the Index.
-![](../../attachments/53215375/53215388.png) | Renamed | File is scheduled for addition and has been detected as renamed, see [Preferences, section Refresh](../Preferences/Commands.md#refresh)
-![](../../attachments/53215375/53215384.png) | Renamed (untracked) | File is untracked and has been detected as renamed, see [Preferences, section Refresh](../Preferences/Commands.md#refresh)
-![](../../attachments/53215375/53215389.png) | Renamed (modified) | File is scheduled for addition, has been detected as renamed (in the Index) and -- on top of that -- is modified in the working tree. You will probably want to use **Stage** to add the working tree changes to the Index.
-![](../../attachments/53215375/53215383.png) | Rename Source | File is the added (or missing) source of a detected **Renamed** file.
-![](../../attachments/53215375/53215382.png) | Rename Source (untracked) | File is the added (or missing) source of a detected **Renamed (untracked)** file.
-![](../../attachments/53215375/53215376.png) | Missing | File is under version control, but does not exist in the working tree. Use **Stage** or **Remove** to remove from the Index or **Discard** to restore in the working tree.
-![](../../attachments/53215375/53215391.png) | Added Modified | File has been added to the Index and there is an additional change in the working tree. Use **Commit** to either commit just the addition or commit addition and change.
-![](../../attachments/53215375/53215390.png) | Intent-to-Add | File is planned to be added to the Index. Use **Add** or **Stage** to add actually or **Discard** to revert to untracked.
-![](../../attachments/53215375/53215395.png) | Conflicted | A merge-like command resulted in conflicting changes. Use the **Conflict Solver** to fix the conflicts.
-![](../../attachments/53215375/53215394.png) | Assume-Unchanged | File has the Assume Unchanged flag set. Use **Toggle 'Assume Unchanged'** to clear this flag.
-![](../../attachments/53215375/53215385.png) | Skipped | File has the Skip Worktree flag set. Use **Toggle 'Skip Worktree'** to clear this flag.
-![](../../attachments/53215375/53215397.png) | Inaccessible | File's working tree content is not accessible and hence its state can't be evaluated. This usually happens if another application has an exclusive file system lock on this file. To resolve, shutdown all applications which might possibly lock this file.
+![](../../images/files/unchanged.png) | Unchanged | File is under version control and neither modified in working tree nor in Index.
+![](../../images/files/unversioned.png) | Unversioned | File is not under version control, but only exists in the working tree. Use **Stage** to add the file or **Ignore** to ignore the file, or **Commit** to commit it right away.
+![](../../images/files/ignored.png) | Ignored | File is not under version control (exists only in the working tree) and is marked to be ignored.
+![](../../images/files/modified.png) | Modified | File is modified in the working tree. Use **Stage** to add the changes to the Index or **Commit** the changes immediately.
+![](../../images/files/staged.png) | Staged | File is modified and the changes have been staged to the Index. Either **Commit** the changes or **Unstage** changes to the working tree.
+![](../../images/files/modified-staged.png) | Staged Modified | File is modified in the working tree and in the Index in different ways. You may **Commit** either Index changes only or working tree changes plus Index changes.
+![](../../images/files/modified-staged.png) | Staged, WT as HEAD | File is modified in the working tree and in the Index in different ways, but the working tree state is identical to the HEAD state. Using **Stage** will turn the file back to unchanged again.
+![](../../images/files/modified.png) | Modified (File Mode) | The content of the file is not modified, but the executable bits are set different than in the repository. Refer to [Fixing 'Modified (File Mode)' on Windows](#fixing-modified-file-mode-on-windows) on how to fix that state on Windows.
+![](../../images/files/modified.png) | Modified (EOLs only) | The content of the file is modified, but only differs in line endings from the Index state. This state will only be determined/show up if [smartgit.refresh.inspectEol](../AdvancedSettings/Low-Level-Properties.md) system property is set.
+![](../../images/files/modified.png) | Modified (EOLs only, not stageable) | The content of the file is modified, but only differs in line endings from the Index state; but, due to the Git configuration (usually `core.autocrlf`) this modification can't be staged. <br> Usually, when trying to stage, Git will issue a warning `warning: LF will be replaced by CRLF in ...` here. This state will only be determined/show up if [smartgit.refresh.inspectEol](../AdvancedSettings/Low-Level-Properties.md) system property is set.
+![](../../images/files/added.png) | Added | File has been added to Index. Use **Unstage** to remove from the Index.
+![](../../images/files/removed.png) | Removed | File has been removed from the Index. Use **Unstage** to un-schedule the removal from the Index.
+![](../../images/files/renamed.png) | Renamed | File is scheduled for addition and has been detected as renamed, see [Preferences, section Refresh](../Preferences/Commands.md#refresh)
+![](../../images/files/renamed-untracked.png) | Renamed (untracked) | File is untracked and has been detected as renamed, see [Preferences, section Refresh](../Preferences/Commands.md#refresh)
+![](../../images/files/renamed-modified.png) | Renamed (modified) | File is scheduled for addition, has been detected as renamed (in the Index) and -- on top of that -- is modified in the working tree. You will probably want to use **Stage** to add the working tree changes to the Index.
+![](../../images/files/renamed-source.png) | Rename Source | File is the added (or missing) source of a detected **Renamed** file.
+![](../../images/files/renamed-source.png) | Rename Source (untracked) | File is the added (or missing) source of a detected **Renamed (untracked)** file.
+![](../../images/files/missing.png) | Missing | File is under version control, but does not exist in the working tree. Use **Stage** or **Remove** to remove from the Index or **Discard** to restore in the working tree.
+![](../../images/files/modified-added.png) | Added Modified | File has been added to the Index and there is an additional change in the working tree. Use **Commit** to either commit just the addition or commit addition and change.
+![](../../images/files/intent-to-add.png) | Intent-to-Add | File is planned to be added to the Index. Use **Add** or **Stage** to add actually or **Discard** to revert to untracked.
+![](../../images/files/conflict.png) | Conflicted | A merge-like command resulted in conflicting changes. Use the **Conflict Solver** to fix the conflicts.
+![](../../images/files/assume-unchanged.png) | Assume-Unchanged | File has the Assume Unchanged flag set. Use **Toggle 'Assume Unchanged'** to clear this flag.
+![](../../images/files/skipped.png) | Skipped | File has the Skip Worktree flag set. Use **Toggle 'Skip Worktree'** to clear this flag.
+![](../../images/files/inaccessible.png) | Inaccessible | File's working tree content is not accessible and hence its state can't be evaluated. This usually happens if another application has an exclusive file system lock on this file. To resolve, shutdown all applications which might possibly lock this file.
 
 ## Submodule States
 
