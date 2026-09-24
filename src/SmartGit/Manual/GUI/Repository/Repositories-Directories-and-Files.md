@@ -15,29 +15,25 @@ For a reference on what the various state colours and icons mean, please consult
 
 ## Repository Management
 
-To add existing or new local repositories to SmartGit, please take a look at [Working with Repositories](index.md#opening-a-repository).
+To add existing or new local repositories to SmartGit, look at [Working with Repositories](index.md#opening-a-repository).
 
 ## File Filtering in the Files view
 
-### File Filter
-
-Files listed in the **Files** view can be filtered by file state and name by using the `File Filter` search input above the Files view.
+Files listed in the **Files** view can be filtered by file state and name.
 
 - To filter by name, use the input field (or shortcut *\<Ctrl/Cmd>+\<F>*-keystroke) to enter a filename search pattern -- files will be filtered automatically as you type.
-- The search pattern supports regular expressions (RegEx).
-- The `.*` button can be toggled to find files with any file extension.
+- Filtering by name will show all matching files, even those, not matched by the state filter. That way you simply have access to any file known by name.
+- The search pattern supports regular expressions if the `.*` button is pressed.
 - You can save common search patterns for later usage by clicking on the search icon in the File Filter and selecting **Remember Pattern** (similarly, **Forget Pattern** will remove the current pattern if it has been saved previously).
 
-### State Filter
-
 The state filters can be set using the small toolbar buttons above the table as well as the menu items in the **View** menu.
-Please refer to [File States](#file-states) for the meaning of each filter icon, or alternately hover the mouse over an icon to see its purpose.
+Refer to [File States](#file-states) for the meaning of each filter icon, or alternately hover the mouse over an icon to see its tooltip.
 
 ### Background Color highlighting
 
-SmartGit will change the background color of the *File view* when files are hidden, as a reminder that files it considers important are being filtered from view:
+When filtering by name SmartGit will change the background color of the *File view* when important files are hidden, as a reminder that files it considers important are being filtered from view:
 
-- Light red -- This means commitable files (e.g. *index-only changed* or *untracked*) are being hidden by one of the *Files State* filters.
+- Light red -- This means commitable files are being hidden by one of the *Files State* filters.
 - Light yellow -- This means that files are being name-filtered by the *File Filter* search pattern.
 - Gray -- Even if unchanged files are hidden, they can be found by filtering by name -- files matching by name but not by state are shown in gray.
 
