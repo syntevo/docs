@@ -94,12 +94,12 @@ In addition, there are following notable submodule states which may either refer
 
 Icon | State | Description
 -------- | -------- | --------
-![](../../attachments/53215375/53215378.png) | Submodule | Unchanged submodule.
-![](../../attachments/53215375/53215377.png) | Modified pointer | Submodule in working tree points to a different commit than the one registered in the repository. Use **Stage** to register the new commit in the Index, or **Reset** to reset the submodule to the commit registered in the repository.
-![](../../attachments/53215375/53215377.png) | Modified contents | The working tree (or Index) of the submodule contains modifications. Select/open the submodule repository and inspect changes.
-![](../../attachments/53215375/53215380.png) | Uninitialized submodule | Use **Submodule\|Initialize** to initialize.
-![](../../attachments/53215375/53215379.png) | Foreign repository | Nested repository is not registered in the parent repository as submodule. Use **Stage** to register (and add) the submodule to the parent repository.
-![](../../attachments/53215375/53215376.png) | Missing submodule | Submodule is registered in the parent repository and initialized, but it's not locally present. Use **Submodule\|Initialize** to fix.
+![](../../images/submodule/unchanged.png) | Submodule | Unchanged submodule.
+![](../../images/submodule/modified.png) | Modified pointer | Submodule in working tree points to a different commit than the one registered in the repository. Use **Stage** to register the new commit in the Index, or **Reset** to reset the submodule to the commit registered in the repository.
+![](../../images/submodule/modified.png) | Modified contents | The working tree (or Index) of the submodule contains modifications. Select/open the submodule repository and inspect changes.
+![](../../images/submodule/uninitialized.png) | Uninitialized submodule | Use **Submodule\|Initialize** to initialize.
+![](../../images/submodule/nested-root.png) | Foreign repository | Nested repository is not registered in the parent repository as submodule. Use **Stage** to register (and add) the submodule to the parent repository.
+![](../../images/submodule/missing.png) | Missing submodule | Submodule is registered in the parent repository and initialized, but it's not locally present. Use **Submodule\|Initialize** to fix.
 
 ## File table "duplicate(!)" marker
 
