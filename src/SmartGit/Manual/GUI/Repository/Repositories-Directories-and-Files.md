@@ -49,14 +49,14 @@ SmartGit will change the background color of the *File view* when files are hidd
 
 Icon | State | Description
 -------- | -------- | --------
-![](../../attachments/53215375/53215401.png)| Default | Directory is present in the repository (more precisely: there is at least one versioned file below this directory stored in the repository).
-![](../../attachments/53215375/53215399.png)| Modified | Directory is present in the repository and there are local changes within this directory in the working tree.
-![](../../attachments/53215375/53215386.png)| Unversioned | Directory (and contained files) are present in the working tree, but have not been added to the repository yet. Use **Stage** to add the files to the repository.
-![](../../attachments/53215375/53215385.png)| Ignored | Directory is not present in the repository (exists only in the working tree) and is marked as to be ignored.
-![](../../attachments/53215375/53215376.png)| Missing | Directory is present in the repository, but does not exist in the working tree. Use **Stage** to remove the files from the repository or **Discard** to restore them in the working tree.
-![](../../attachments/53215375/53215395.png)| Conflict | Repository contains conflicting files (only displayed on the root directory). Use **Resolve** to resolve the conflict.
-![](../../attachments/53215375/53215403.png)| Merge | Repository is in 'merging' or 'rebasing' state (only displayed on the root directory). Either **Commit** the merge/rebase or use **Discard** to cancel the merge/rebase.
-![](../../attachments/53215375/53215400.png)| Root/Submodule | Directory is either the repository root or a submodule root, see [Submodule States](#submodule-states)
+![](../../images/directories/default.png)| Default | Directory is present in the repository (more precisely: there is at least one versioned file below this directory stored in the repository).
+![](../../images/directories/badge-local-direct.png)| Modified | Directory is present in the repository and there are local changes within this directory in the working tree.
+![](../../images/directories/unversioned.png)| Unversioned | Directory (and contained files) are present in the working tree, but have not been added to the repository yet. Use **Stage** to add the files to the repository.
+![](../../images/directories/ignored.png)| Ignored | Directory is not present in the repository (exists only in the working tree) and is marked as to be ignored.
+![](../../images/directories/missing.png)| Missing | Directory is present in the repository, but does not exist in the working tree. Use **Stage** to remove the files from the repository or **Discard** to restore them in the working tree.
+![](../../images/directories/conflict.png)| Conflict | Repository contains conflicting files (only displayed on the root directory). Use **Resolve** to resolve the conflict.
+![](../../images/directories/merge.png)| Merge | Repository is in 'merging' or 'rebasing' state (only displayed on the root directory). Either **Commit** the merge/rebase or use **Discard** to cancel the merge/rebase.
+![](../../images/directories/root.png)| Root/Submodule | Directory is either the repository root or a submodule root, see [Submodule States](#submodule-states)
 
 ## File States
 
