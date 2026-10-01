@@ -33,16 +33,19 @@ Instead of ordering one subscription license for multiple users, you may order s
 That way you easily can cancel subscriptions of users who leave your company.
 
 
-### Increase the Number of Licenses
+### Increase the Number of Users
 
-If you want to increase the number of subscription licenses, please contact our [sales team](mailto:sales@syntevo.com).
-The increased user count will apply immediately (after payment).
+If you've ordered the subscription license since 2024, you can increase the number of users at any time using the Cleverbridge self-service portal.
+The renewal period will be kept and you only pay the difference price for the additional users for the rest of the current period.
+
+For subscriptions older than 2024, please contact our [sales team](mailto:sales@syntevo.com).
 
 
-### Decrease the Number of Licenses
+### Decrease the Number of Users
 
-If you want to decrease the number of subscription licenses, please contact our [sales team](mailto:sales@syntevo.com).
-The reduced user count will apply for the next renewal.
+If you've ordered the subscription license since 2024, you can reduce the number of users up to 30 days before the next renewal using the Cleverbridge self-service portal.
+
+For subscriptions older than 2024, please contact our [sales team](mailto:sales@syntevo.com).
 
 
 ## Perpetual (single-payment) licenses
