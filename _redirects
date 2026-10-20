@@ -155,7 +155,7 @@
 /SmartGit/HowTos/Debugging-SSL-related-problems /SmartGit/Latest/HowTos/Debugging/Debugging-SSL-related-problems 301
 /SmartGit/HowTos/Debugging-SSL-related-problems.html /SmartGit/Latest/HowTos/Debugging/Debugging-SSL-related-problems 301
 /SmartGit/HowTos/Debugging.html /SmartGit/Latest/HowTos/Debugging/Debugging 301
-/SmartGit/HowTos/Enabling-the-cherry-picked-from-commit-...-message /SmartGit/Latest/HowTos/Configuration/Enabling-the-cherry-picked-from-commit-...-message 301
+/SmartGit/HowTos/Enabling-the-cherry-picked-from-commit-...-message /SmartGit/Latest/HowTos/Configuration/Enabling-the-cherry-picked-from-commit-/.-message 301
 /SmartGit/HowTos/Enabling-the-cherry-picked-from-commit-/.-message.html /SmartGit/Latest/HowTos/Configuration/Enabling-the-cherry-picked-from-commit-/.-message 301
 /SmartGit/HowTos/Environmental-differences-between-SmartGit-and-command-line-Git /SmartGit/Latest/HowTos/Debugging/Environmental-differences-between-SmartGit-and-command-line-Git 301
 /SmartGit/HowTos/Environmental-differences-between-SmartGit-and-command-line-Git.html /SmartGit/Latest/HowTos/Debugging/Environmental-differences-between-SmartGit-and-command-line-Git 301
@@ -167,7 +167,7 @@
 /SmartGit/HowTos/Finding-bugs-with-Application-Verifier.html /SmartGit/Latest/HowTos/Debugging/Finding-bugs-with-Application-Verifier 301
 /SmartGit/HowTos/Fixing-the-Git-configuration-for-a-local-repository-shared-between-different-operating-systems /SmartGit/Latest/HowTos/Configuration/Fixing-the-Git-configuration-for-a-local-repository-shared-between-different-operating-systems 301
 /SmartGit/HowTos/Fixing-the-Git-configuration-for-a-local-repository-shared-between-different-operating-systems.html /SmartGit/Latest/HowTos/Configuration/Fixing-the-Git-configuration-for-a-local-repository-shared-between-different-operating-systems 301
-/SmartGit/HowTos/git-...-is-not-a-git-command /SmartGit/Latest/HowTos/TroubleShooting/git-...-is-not-a-git-command 301
+/SmartGit/HowTos/git-...-is-not-a-git-command /SmartGit/Latest/HowTos/TroubleShooting/git-/.-is-not-a-git-command 301
 /SmartGit/HowTos/git-/.-is-not-a-git-command.html /SmartGit/Latest/HowTos/TroubleShooting/git-/.-is-not-a-git-command 301
 /SmartGit/HowTos/GitHub-keeping-in-sync-with-the-upstream-repository /SmartGit/Latest/HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository 301
 /SmartGit/HowTos/GitHub-keeping-in-sync-with-the-upstream-repository.html /SmartGit/Latest/HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository 301
@@ -339,8 +339,8 @@
 /SmartGit/Latest/GUI/AdvancedSettings/VM-options /SmartGit/Latest/Manual/GUI/AdvancedSettings/VM-options 301
 /SmartGit/Latest/GUI/Bisect /SmartGit/Latest/Manual/GUI/Bisect 301
 /SmartGit/Latest/GUI/Blame /SmartGit/Latest/Manual/GUI/Blame 301
-/SmartGit/Latest/GUI/Branch /SmartGit/Latest/Manual/GUI/Branch/Branching 301
-/SmartGit/Latest/GUI/Branch/ /SmartGit/Latest/Manual/GUI/Branch/Branching 301
+/SmartGit/Latest/GUI/Branch /SmartGit/Latest/Manual/GUI/Branch/ 301
+/SmartGit/Latest/GUI/Branch/ /SmartGit/Latest/Manual/GUI/Branch/ 301
 /SmartGit/Latest/GUI/Branch/Check-Out /SmartGit/Latest/Manual/GUI/Branch/Check-Out 301
 /SmartGit/Latest/GUI/Branch/Cherry-Pick /SmartGit/Latest/Manual/GUI/Branch/Cherry-Pick 301
 /SmartGit/Latest/GUI/Branch/Conflict-Solver /SmartGit/Latest/Manual/GUI/Branch/Conflict-Solver 301
@@ -379,8 +379,8 @@
 /SmartGit/Latest/GUI/Standard-Window /SmartGit/Latest/Manual/GUI/Standard-Window 301
 /SmartGit/Latest/GUI/Tips-and-Tricks /SmartGit/Latest/Manual/GUI/Tips-and-Tricks 301
 /SmartGit/Latest/GUI/Working-Tree-Window /SmartGit/Latest/Manual/GUI/Working-Tree-Window 301
-/SmartGit/Latest/Hobby-Use-License /SmartGit/Latest/Manual/Licensing/Hobby-Use-License 301
-/SmartGit/Latest/Hobby-Use-License.html /SmartGit/Latest/Manual/Licensing/Hobby-Use-License 301
+/SmartGit/Latest/Hobby-Use-License /SmartGit/Latest/Manual/Licensing/ 301
+/SmartGit/Latest/Hobby-Use-License.html /SmartGit/Latest/Manual/Licensing/ 301
 /SmartGit/Latest/HowTos/Authentication-problems-push-pull-fail- /SmartGit/Latest/HowTos/TroubleShooting/Authentication-problems-push-pull-fail 301
 /SmartGit/Latest/HowTos/Changing-the-Folder-Watch-Limit-Linux- /SmartGit/Latest/HowTos/Configuration/Changing-the-Folder-Watch-Limit-Linux 301
 /SmartGit/Latest/HowTos/Configure-Dictionary /SmartGit/Latest/HowTos/Configuration/Configure-Dictionary 301
@@ -391,13 +391,13 @@
 /SmartGit/Latest/HowTos/Debugging-Refresh-related-problems-of-external-changes- /SmartGit/Latest/HowTos/Debugging/Debugging-Refresh-related-problems-of-external-changes 301
 /SmartGit/Latest/HowTos/Debugging-smartgit.exe-startup-Exe4J- /SmartGit/Latest/HowTos/Debugging/Debugging-smartgit.exe-startup-Exe4J 301
 /SmartGit/Latest/HowTos/Debugging-SSL-related-problems /SmartGit/Latest/HowTos/Debugging/Debugging-SSL-related-problems 301
-/SmartGit/Latest/HowTos/Enabling-the-cherry-picked-from-commit-...-message /SmartGit/Latest/HowTos/Configuration/Enabling-the-cherry-picked-from-commit-...-message 301
+/SmartGit/Latest/HowTos/Enabling-the-cherry-picked-from-commit-...-message /SmartGit/Latest/HowTos/Configuration/Enabling-the-cherry-picked-from-commit-/.-message 301
 /SmartGit/Latest/HowTos/Environmental-differences-between-SmartGit-and-command-line-Git /SmartGit/Latest/HowTos/Debugging/Environmental-differences-between-SmartGit-and-command-line-Git 301
 /SmartGit/Latest/HowTos/EXCEPTION-IN-PAGE-ERROR /SmartGit/Latest/HowTos/TroubleShooting/EXCEPTION-IN-PAGE-ERROR 301
 /SmartGit/Latest/HowTos/External-Tools-configuring-a-3-way-diff /SmartGit/Latest/HowTos/Configuration/External-Tools-configuring-a-3-way-diff 301
 /SmartGit/Latest/HowTos/Finding-bugs-with-Application-Verifier /SmartGit/Latest/HowTos/Debugging/Finding-bugs-with-Application-Verifier 301
 /SmartGit/Latest/HowTos/Fixing-the-Git-configuration-for-a-local-repository-shared-between-different-operating-systems /SmartGit/Latest/HowTos/Configuration/Fixing-the-Git-configuration-for-a-local-repository-shared-between-different-operating-systems 301
-/SmartGit/Latest/HowTos/git-...-is-not-a-git-command /SmartGit/Latest/HowTos/TroubleShooting/git-...-is-not-a-git-command 301
+/SmartGit/Latest/HowTos/git-...-is-not-a-git-command /SmartGit/Latest/HowTos/TroubleShooting/git-/.-is-not-a-git-command 301
 /SmartGit/Latest/HowTos/GitHub-keeping-in-sync-with-the-upstream-repository /SmartGit/Latest/HowTos/Workflows/GitHub-keeping-in-sync-with-the-upstream-repository 301
 /SmartGit/Latest/HowTos/How-to-compare-two-branches-commits- /SmartGit/Latest/HowTos/Workflows/How-to-compare-two-branches-commits 301
 /SmartGit/Latest/HowTos/How-to-examine-the-content-of-a-stash /SmartGit/Latest/HowTos/Workflows/How-to-examine-the-content-of-a-stash 301
@@ -471,7 +471,7 @@
 /SmartGit/Latest/Licensing /SmartGit/Latest/Manual/Licensing 301
 /SmartGit/Latest/Licensing/ /SmartGit/Latest/Manual/Licensing 301
 /SmartGit/Latest/Licensing/Commercial-only-features /SmartGit/Latest/Manual/Licensing/Commercial-only-features 301
-/SmartGit/Latest/Licensing/Hobby-Use-License /SmartGit/Latest/Manual/Licensing/Hobby-Use-License 301
+/SmartGit/Latest/Licensing/Hobby-Use-License /SmartGit/Latest/Manual/Licensing/ 301
 /SmartGit/Latest/Local-Operations-on-the-Working-Tree /SmartGit/Latest/Manual/GUI/Local-Operations-on-the-Working-Tree 301
 /SmartGit/Latest/Local-Operations-on-the-Working-Tree.html /SmartGit/Latest/Manual/GUI/Local-Operations-on-the-Working-Tree 301
 /SmartGit/Latest/Log /SmartGit/Latest/Manual/GUI/Log 301
