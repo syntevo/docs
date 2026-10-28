@@ -13,6 +13,7 @@ env:
   MAIN_BRANCH: ${{ github.ref == 'refs/heads/develop' && 'develop' || 'main' }}
   LATEST_BRANCH: ${{ 'latest' }}
   CLOUDFLARE_PROJECT_NAME: docs
+  SMARTGIT_PROJECT_NAME: smartgit-docs
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -22,7 +23,8 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Keep the runner compatible with the Ruby 3.1 prebuilt release.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v3
@@ -76,6 +78,7 @@ jobs:
             cp -r branches/legacy/SmartSVN/"$version"/* .build/SmartSVN/"$version"
           done
           cp -r main/src-inflated/* .build
+          cp main/_redirects .build/_redirects
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -116,46 +119,38 @@ jobs:
           bundle config set path 'vendor/bundle'
           bundle install --jobs 4 --retry 3
 
-      - name: Build with Jekyll
+      - name: Build documentation sites with Jekyll
         working-directory: .build
         run: |
           bundle exec jekyll --version
-          bundle exec jekyll build --destination ../_site
+          bundle exec jekyll build --config _config.yml,_config.syntevo.yml --destination ../_site-syntevo
+          bundle exec jekyll build --config _config.yml,_config.smartgit.yml --destination ../_site-smartgit
 
-      - name: Compress _site directory
+      - name: Package Pages artifacts
         run: |
-          tar -czf site.tar.gz -C _site .
+          python3 main/deployment/package_site.py syntevo _site-syntevo .upload-syntevo
+          python3 main/deployment/package_site.py smartgit _site-smartgit .upload-smartgit
 
-      - name: Copy _site to .upload
-        run: |
-          cp -R _site .upload
-
-      - name: Convert redirects.json to _redirects
-        run: |
-          cp main/_redirects .upload/
-          cp main/404.html .upload/
-          cp main/favicon.ico .upload/
-          cp main/robots.txt .upload/
-
-      - name: Delete HTML stub files from jekyll-redirect-from plugin and Markdown files
-        run: |
-          find .upload -type f -name '*.html' -exec sh -c '
-            if grep -q "http-equiv=\"refresh\"" "$1" && ! grep -q "<body" "$1"; then
-              echo "Deleting: $1"
-              rm "$1"
-            fi
-          ' sh {} \;
-          find .upload -type f -name '*.md' -exec rm {} \;
-
-      - name: Publish to Cloudflare Pages
+      - name: Publish Syntevo documentation to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           wranglerVersion: '4'
           command: >-
-            pages deploy ./.upload
+            pages deploy ./.upload-syntevo
             --project-name=${{ env.CLOUDFLARE_PROJECT_NAME }}
+            --branch=${{ env.MAIN_BRANCH }}
+
+      - name: Publish SmartGit documentation to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: '4'
+          command: >-
+            pages deploy ./.upload-smartgit
+            --project-name=${{ env.SMARTGIT_PROJECT_NAME }}
             --branch=${{ env.MAIN_BRANCH }}
 
       - name: Generate combined SmartGit markdown
@@ -165,7 +160,7 @@ jobs:
           :> "$output"
           while IFS= read -r file; do
             rel_path="${file#branches/${{ env.LATEST_BRANCH }}/src/SmartGit/}"
-            url="https://docs.syntevo.com/SmartGit/Latest/${rel_path%.md}"
+            url="https://docs.smartgit.dev/Latest/${rel_path%.md}"
             origin="$rel_path"
             echo "<section data-source=\"$url\"" >> "$output"
             echo "         data-origin=\"$origin\">" >> "$output"

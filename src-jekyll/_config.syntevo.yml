@@ -1,0 +1,3 @@
+# SmartGit documentation is hosted separately at https://docs.smartgit.dev/.
+exclude:
+  - SmartGit

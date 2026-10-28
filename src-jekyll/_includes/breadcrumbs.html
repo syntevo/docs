@@ -9,6 +9,10 @@
     {% endif %}
 
     {% assign route="" %}
+    {% if site.root_product and categories.first == site.root_product %}
+    {% assign route = '/' | append: site.root_product %}
+    {% assign categories = categories | shift %}
+    {% endif %}
 
     <a href="{{ '/' | absolute_url }}">Home</a>
     {% for category in categories %}

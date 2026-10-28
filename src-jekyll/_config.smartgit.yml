@@ -1,0 +1,9 @@
+url: "https://docs.smartgit.dev"
+root_product: SmartGit
+
+# Only the top-level chooser is excluded; nested SmartGit index.md files remain.
+exclude:
+  - DeepGit
+  - SmartSVN
+  - SmartSynchronize
+  - index.md
