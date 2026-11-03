@@ -183,7 +183,7 @@ If you have `credential.helper=manager` configured on Windows, Git will first in
 6.  If the correct credentials are stored in SmartGit, they will be returned.
 7.  Otherwise, SmartGit will show its own credentials dialog:  
 
-    ![SmartGit prompt to configure a hosting provider for authentication](images/authentication-problems-push-pull-2.png)
+    <img src="images/authentication-problems-push-pull-2.png" alt="SmartGit prompt to configure a hosting provider for authentication" width="361" style="max-width: 100%; height: auto;">
 
 8.  If you will enter the correct credentials there, it's fine.
 9.  If you will enter wrong credentials there, the dialog will show up again (back to step 7, this happens a couple of times).

@@ -6,7 +6,7 @@ SSH commit signing is the preferred option on **GitHub** and **GitLab** because 
 ## SmartGit with signed commits
 SmartGit supports signed commits by visually indicating their presence in the commit graph: when a cryptographic signature exists, a subtle grey pen icon appears to the left of the commit, signaling that the commit is signed.
 
-![](images/signed-commits-2%201.png)
+<img src="images/signed-commits-2%201.png" alt="SmartGit graph with signed commits" width="909" style="max-width: 100%; height: auto;">
 
 > [!WARNING]
  Operations such as rebasing, amending commits, or other force-push actions rewrite commit history and generate new commit hashes, even if the code changes remain the same. As a result, original commits—and their associated authorship or signatures—are replaced, which can alter or obscure accountability and audit trails. As a path forward, history-rewriting operations should be limited to local work before pushing to a shared repository, and teams should consider workflows that favor merge commits, which preserve original commit identities and maintain clearer traceability over time.

@@ -6,7 +6,7 @@ operation and remain in a conflict state. The following screenshot shows
 what the *Repositories* view and *Files* view would look like in that
 state:
 
-![SmartGit Log window showing an unresolved merge conflict in README.md](images/how-to-resolve-conflicts.png)
+<img src="images/how-to-resolve-conflicts.png" alt="SmartGit Log window showing an unresolved merge conflict in README.md" width="1369" style="max-width: 100%; height: auto;">
 
 There are two ways to leave the conflict state: Resolving the conflicts
 and continuing the operation, or canceling the operation.

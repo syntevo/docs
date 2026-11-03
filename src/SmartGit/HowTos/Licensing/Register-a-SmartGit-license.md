@@ -6,7 +6,7 @@ To register this license file,
 - open SmartGit,
 	- invoke **Help\|Register** and select the **License File** there
 
-![SmartGit registration dialog for selecting a license file](images/register-a-smartgit-license.png)
+<img src="images/register-a-smartgit-license.png" alt="SmartGit registration dialog for selecting a license file" width="529" style="max-width: 100%; height: auto;">
 
 Click **Register** and SmartGit will confirm the license details.
 

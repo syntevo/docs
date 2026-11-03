@@ -129,7 +129,7 @@ SmartGit.
     **Add Branch** button. This is what the Log might look like
     afterwards:
 
-![Log window with master and the protective branch1 pointing to Commit 5](images/modifying-the-history-05.png)
+<img src="images/modifying-the-history-05.png" alt="Log window with master and the protective branch1 pointing to Commit 5" width="1600" style="max-width: 100%; height: auto;">
 
 -   Now, we need to do a hard reset on commit 3, and a soft reset on
     commit 2, in that order. After that, the *master* branch pointer
@@ -158,7 +158,7 @@ SmartGit.
     information on how to proceed here, see: [How to resolve conflicts](How-to-resolve-conflicts.md)
 -   If all went well, the Log might now look like this:
 
-![Log window with the rewritten master history and branch1 preserving the original commits](images/modifying-the-history-06.png)
+<img src="images/modifying-the-history-06.png" alt="Log window with the rewritten master history and branch1 preserving the original commits" width="1600" style="max-width: 100%; height: auto;">
 
 -   Finally, remove *branch1* to discard the old history. There are two
     ways to do this: (1) Select **Branch\|Branch Manager** from the main
