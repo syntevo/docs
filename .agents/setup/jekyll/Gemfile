@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "bigdecimal"
 gem "jekyll", "~> 4.4"
 gem "jekyll-optional-front-matter"
 gem "jekyll-relative-links", "~> 0.6"
