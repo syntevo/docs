@@ -11,7 +11,7 @@ The first time you clone a repository, SmartGit will display a dialog to enable 
 
 To change the setting, go to the [**Preferences**](Preferences/index.md) dialog under **Commands**, find the **Clone** section, and enable the **Configure SmartGit as credential helper (for repository authentication)** option.
 
-![Activate credential helper](../attachments/credential-helper-activate.png)
+![Activate credential helper](../images/credential-helper-activate.png)
 
 ## How it works
 

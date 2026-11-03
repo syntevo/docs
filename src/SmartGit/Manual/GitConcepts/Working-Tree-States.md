@@ -8,7 +8,7 @@ This leaves Git in an intermediate state, requiring manual intervention (e.g., r
 
 SmartGit will provide a visual alert as per below when the Working Tree is in one of these special states, and will provide options on how to proceed in order to get the Working Tree back to a normal status.
 
-![SmartGit Conflict Solver tool](../images/Working-Tree-Status.png)
+![Working tree files with modified, missing, untracked, staged, and removed states](../images/Working-Tree-Status.png)
 
 ## Merge Conflicts (Merging status)
 

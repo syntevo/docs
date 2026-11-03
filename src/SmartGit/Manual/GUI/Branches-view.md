@@ -3,7 +3,7 @@
 The **Branches** view shows *local* and *remote* branches, tags, and other *refs* from your repository and offers operations on these *refs*.
 *Remotes* will also be displayed and used to group the *remote branches*.
 
-![branches-view](../attachments/branches-view.png)
+![Branches view with local branches, remotes, tags, and recyclable commits](../images/branches-view.png)
 
 The current branch is shown in bold text next to a solid filled triangle (`>`).
 Any other tag or branch that points to the same commit as HEAD (the current branch) is shown with an unfilled triangle (`>`).
