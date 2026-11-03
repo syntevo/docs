@@ -30,7 +30,7 @@ Please note that not all options are available in every view.
 - **Show Branch Labels** (**Working Tree Journal View** only) - Toggles visibility of branch labels.
 - **Show only Selected Branches and Tags** (**Log Window Graph View** only) - Hides branch labels not selected in the **Branches View**.
 
-![SmartGit Graph View](../images/Graph-View.png)
+<img src="../images/Graph-View.png" alt="SmartGit Graph View" width="911" style="max-width: 100%; height: auto;">
 
 *Graph View in the Log Window, with the Recyclable Commits option enabled*
 

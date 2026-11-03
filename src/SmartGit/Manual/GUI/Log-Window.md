@@ -6,7 +6,7 @@ The **Log Window** in SmartGit (not to be confused with the [Git Log tool](Log.m
 
 The Log Window is aimed at experienced Git users who which to gain full understanding of the commit history of a repository, and ease the ability to allow history to be tidied and re-written, and has a focus on Git commands such as [Rebase](Branch/Rebase.md), and [Interactive Rebase](Branch/Rebase-Interactive.md) features such as squashing, modifying, reordering and removing commits within a repository.
 
-![Log window](../images/Log-window.png)
+<img src="../images/Log-window.png" alt="Log window" width="1600" style="max-width: 100%; height: auto;">
 
 ## Elements of the Log Window
 

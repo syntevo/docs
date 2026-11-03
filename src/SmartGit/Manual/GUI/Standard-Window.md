@@ -11,7 +11,7 @@ Additional repository tabs can be added by clicking on the `+` icon, opening the
 
 ## Elements of the Standard Window
 
-![Standard window](../images/Standard-window.png)
+<img src="../images/Standard-window.png" alt="Standard window" width="1600" style="max-width: 100%; height: auto;">
 
 There are two layouts available in the Standard Window:
 
@@ -66,13 +66,13 @@ The behavior of the **Commit View** is different in the **Standard Window**:
     - The text in the commit message input can be cleared by selecting *Reset to Default*
   - Depending on whether the **Local Files** or **History** layout toggle is selected in the **Standard Window**, the commit view will switch between adding a commit (when the **Local Files** layout is selected):
 
-![SmartGit Commit View - Adding a new Commit](../images/Commit-View-Add-Commit.png)
+<img src="../images/Commit-View-Add-Commit.png" alt="SmartGit Commit View - Adding a new Commit" width="437" style="max-width: 100%; height: auto;">
 
 *SmartGit Commit View - Adding new Commit*
 
 Or viewing a commit (when the **History** layout is selected):
     
-![SmartGit Commit View - Viewing an existing Commit](../images/Commit-View-Show-Mode.png)
+<img src="../images/Commit-View-Show-Mode.png" alt="SmartGit Commit View - Viewing an existing Commit" width="437" style="max-width: 100%; height: auto;">
 
 *SmartGit Commit View - Viewing existing Commits*
 

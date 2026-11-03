@@ -32,7 +32,7 @@ You can leave the **Feature Prefix** blank to remove any prefix from your featur
 > [!TIP]
 > For users who use a combination of [**Feature-Flow**](Feature-Flow.md), [**Git-Flow**](Git-Flow.md) or [**Git-Flow-Light**](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
 
-![Feature-Flow configuration](../images/Feature-Flow-Configuration.png)
+<img src="../images/Feature-Flow-Configuration.png" alt="Configure Features dialog with develop as the trunk branch and feature/ as the feature prefix." width="400" height="276" style="max-width: 100%; height: auto;">
 
 ## Starting a New Feature
 
@@ -61,7 +61,7 @@ Click the **Integrate** button on the **Local Files** perspective.
 
 ## Finish
 
-Use **Finish** to complete the feature, which will push your local feature commits onto the remote trunk from which you started the feature<super>*</super>.
+Use **Finish** to complete the feature, which will push your local feature commits onto the remote trunk from which you started the feature<sup>*</sup>.
 By default, if there are no interim commits by others to the remote branch, SmartGit will attempt to fast forward your feature commits onto the remote branch, however, there is the option to create a merge commit instead, and provide a commit message for the merge commit.
 
-<super>*</super> If the remote is hosted on [GitHub or GitHub Enterprise](../Integrations/GitHub-integration.md), SmartGit's integration will assist with creating a pull request.
+<sup>*</sup> If the remote is hosted on [GitHub or GitHub Enterprise](../Integrations/GitHub-integration.md) or [GitLab](../Integrations/GitLab.md), SmartGit's integration will assist with creating a pull request or merge request.

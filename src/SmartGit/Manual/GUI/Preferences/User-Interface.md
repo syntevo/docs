@@ -5,7 +5,7 @@
 The User Interface settings allow configuration of all visual elements in SmartGit.
 After making changes to preferences, select **OK** to confirm and apply changes.
 
-![SmartGit User Interface Preferences](../../images/Preferences-user-interface-themes.png)
+<img src="../../images/Preferences-user-interface-themes.png" alt="SmartGit User Interface Preferences" width="980" style="max-width: 100%; height: auto;">
 
 > [!NOTE]
 > After changing global features such as [language](#language) or [the theme](#theme-selection), you will need to restart SmartGit in order for the new setting to take effect.
@@ -83,7 +83,7 @@ Values between 8 and 12 are recommended, depending on the resolution of your scr
 
 #### Foreground and Background Color Selection
 
-![Changing Font Colors](../../images/Preferences-user-interface-fonts-and-colors.png)
+<img src="../../images/Preferences-user-interface-fonts-and-colors.png" alt="Changing Font Colors" width="980" style="max-width: 100%; height: auto;">
 
 Click on a visual text element with the right mouse button to configure the color used for that element.
 If you are not satisfied with the color setting, you can choose **Reset to default** to return the element to the default theme value.

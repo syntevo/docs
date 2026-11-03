@@ -48,7 +48,7 @@ When SmartGit detects that you are involved in a pull request, an **Icon** will 
 - *Outgoing* pull requests are those which you have initiated to other users/repositories, requesting them to merge your changes.
   On the commit, the icon below is displayed alongside the Hosting Provider's pull request reference identifier.
 
-![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
+<img src="../images/Integrations-StandardWindow-OutgoingPullRequest.png" alt="Outgoing Pull Request in the Standard Window" width="1144" style="max-width: 100%; height: auto;">
 
 Clicking on the pull request **Icon** will allow you to open the pull request in GitHub, and will also allow you to **Approve** an incoming pull request, without providing further feedback.
 To leave feedback, use the advanced [commenting review](Integrated-PullRequest-Comments.md) features in the **Log Window**.
@@ -73,7 +73,7 @@ When integrated to a repository, the **Log Window** allows interaction with pull
 - To create a pull request, click on a branch and use **Create Pull Request** from the context menu of the **Branches View**.
 - On the **Log Window**, the **Branches View** will show available pull requests.
 
-![Pull Requests under the Log Window Branches View](../images/Integrations-Branches-PullRequests.png)
+<img src="../images/Integrations-Branches-PullRequests.png" alt="Pull Requests under the Log Window Branches View" width="295" style="max-width: 100%; height: auto;">
 
 - To work with the pull request on the Hosting Provider web site, click on the pull request to open the context menu, and select **Open in Web Browser**.
 - To work with these pull requests locally in SmartGit (e.g. to review their commits, or **Merge** or **Reject** them):
@@ -81,7 +81,7 @@ When integrated to a repository, the **Log Window** allows interaction with pull
   - This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, *Virtual Merge Commit* between the base commit from which the pull request has been forked and the latest (remote) pull request commit.
   - The virtual merge commit is represented by a diamond icon in the **Graph View** of the **Log Window**.
 
-![Pull Requests under the Log Window Branches View](../images/Integrations-PullRequest-VirtualMergeCommit.png)
+<img src="../images/Integrations-PullRequest-VirtualMergeCommit.png" alt="Pull Requests under the Log Window Branches View" width="873" style="max-width: 100%; height: auto;">
 
   - Clicking on the *Virtual Merge Commit* in the **Graph View** of the **Log Window** will allow you to view the result of the pull request in the **Files View** and the [**Compare View**](../GUI/Compare-View.md) as per any normal commit.
   - You can remove the local *Virtual Merge Commit* by using the **Drop Local** command by either clicking on the pull request in the **Branches View**, or clicking on the diamond icon in the **Graph View**.

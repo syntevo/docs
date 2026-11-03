@@ -197,6 +197,9 @@ For screenshots:
 - Remove personal data, credentials, repository names, and other sensitive information.
 - Crop the screenshot to the relevant area.
 - Use a sharp image that remains readable when rendered in the docs.
+- For a screenshot captured at 2x scale, set its HTML display width to half the PNG pixel width.
+  Keep the original PNG so high-DPI displays retain its detail.
+- Allow screenshots to shrink with `max-width: 100%; height: auto;`, but do not enlarge them beyond their intended display size.
 
 ## File and folder changes
 
