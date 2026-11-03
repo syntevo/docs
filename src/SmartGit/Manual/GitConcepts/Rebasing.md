@@ -17,43 +17,56 @@ When rebase is used with the `onto` parameter, additional precision can be speci
 
 After a successful rebase, the HEAD of the current branch will point to the rewritten fork containing the changes.
 
-> [!EXAMPLE]
-> In the below common scenario, after forking at commit `A`, `main` has advanced with commits `B` and `C`, and `feature` has advanced independently with commits `D` and `E`.
-> The commits in `feature` cannot be fast-forwarded onto `main` because `main` and `feature` have diverged after `A`.
->
-> As we prefer a linear commit history, we wish to rebase the commits `D` and `E` (on the `feature` branch) onto the `main` branch, as follows:
->
-> ```
-> git checkout feature
-> git rebase main
-> ```
->
-> **Before and After the Rebase:**
->
-> {% include mermaid_compare.html before="rebase-before.svg" after="rebase-after.svg" before_alt="Before the rebase, main points to C and feature points to E after both branches diverged from A." after_alt="After the rebase, main still points to C and feature points to rewritten commits D' and E' on top of C." %}
->
-> ```mermaid {filename="rebase-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
-> %%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-> gitGraph BT:
->    commit id: "A"
->    branch feature
->    checkout main
->    commit id: "B"
->    commit id: "C" tag: "main"
->    checkout feature
->    commit id: "D"
->    commit id: "E" tag: "feature"
-> ```
->
-> ```mermaid {filename="rebase-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
-> %%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-> gitGraph BT:
->    commit id: "A"
->    commit id: "B"
->    commit id: "C" tag: "main"
->    commit id: "D'"
->    commit id: "E'" tag: "feature"
-> ```
+After branching at `A`, `main` has advanced with `B` and `C`, while `feature` has advanced with `D` and `E`.
+Apply the rebase while `feature` is checked out to replay its commits on top of `main`.
+
+{% capture rebase_before_setup %}
+```bash
+git init -b main
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+git branch feature
+echo B > b.txt
+git add b.txt
+git commit -m "B"
+echo C > c.txt
+git add c.txt
+git commit -m "C"
+git switch feature
+echo D > d.txt
+git add d.txt
+git commit -m "D"
+echo E > e.txt
+git add e.txt
+git commit -m "E"
+```
+{% endcapture %}
+
+{% capture rebase_after_commands %}
+```bash
+git rebase main
+```
+{% endcapture %}
+
+{% include git_example.html
+  title="Rebase feature onto main"
+  before="images/rebase-before.png"
+  before_alt="main points to C and feature points to E; both branches start at A."
+  before_caption="main points to C and feature points to E; both branches start at A."
+  before_width=192
+  before_height=104
+  after="images/rebase-after.png"
+  after_alt="feature contains rewritten D and E on top of C; main stays at C."
+  after_caption="feature contains rewritten D and E on top of C; main stays at C."
+  after_width=192
+  after_height=104
+  setup=rebase_before_setup
+  commands=rebase_after_commands
+%}
+
+The rewritten commits keep the messages `D` and `E` in the screenshots.
+The notation `D'` and `E'` below refers to their new commit IDs.
 
 > [!NOTE]
 > - Commits `D` and `E` are rewritten to `D'` and `E'` such that the parent of `D'` is now `C` (i.e. the HEAD of `main`).
@@ -62,47 +75,63 @@ After a successful rebase, the HEAD of the current branch will point to the rewr
 > - After the above rebase, it is now possible to [Fast Forward](Merging.md#fast-forward-merge) `main` up to commit `E'`.
 > - As can be seen, the effect is to create a linear commit history.
 
-## Rebase Onto
+## Rebase onto
+
 Rebase with the `--onto` switch allows for more advanced scenarios.
 In the below example, since forking at commit `A`, `main` has 3 commits (`D`, `E`, and `F`) ahead, and `feature` has 2 commits (`B` and `C`) ahead.
 We now wish to include commit `B` (currently on branch `feature`) into the `main` branch, but not to include commit `C`.
 Additionally, we would like to specify that commit `B` is to be included before commits `D`, `E`, and `F`.
 
+{% capture rebase_onto_before_setup %}
+```bash
+git init -b main
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+git switch -c feature
+echo B > b.txt
+git add b.txt
+git commit -m "B"
+echo C > c.txt
+git add c.txt
+git commit -m "C"
+git switch main
+echo D > d.txt
+git add d.txt
+git commit -m "D"
+echo E > e.txt
+git add e.txt
+git commit -m "E"
+echo F > f.txt
+git add f.txt
+git commit -m "F"
 ```
-git checkout main
-git rebase --onto B A
+{% endcapture %}
+
+{% capture rebase_onto_after_commands %}
+```bash
+git rebase --onto feature~1 main~3
 ```
+{% endcapture %}
 
-**Before and After the Rebase:**
+{% include git_example.html
+  title="Include B before the commits on main"
+  before="images/rebase-onto-before.png"
+  before_alt="main points to F while feature contains B and C after A."
+  before_caption="main points to F while feature contains B and C after A."
+  before_width=191
+  before_height=124
+  after="images/rebase-onto-after.png"
+  after_alt="main includes B followed by rewritten D, E, and F; feature still points to C."
+  after_caption="main includes B followed by rewritten D, E, and F; feature still points to C."
+  after_width=191
+  after_height=124
+  setup=rebase_onto_before_setup
+  commands=rebase_onto_after_commands
+%}
 
-{% include mermaid_compare.html before="rebase-onto-before.svg" after="rebase-onto-after.svg" before_alt="Before the rebase onto, main points to F while feature points to C after both branches diverged from A." after_alt="After the rebase onto, main points to F' while feature still points to C." %}
-
-```mermaid {filename="rebase-onto-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   branch feature
-   commit id: "B"
-   commit id: "C" tag: "feature"
-   checkout main
-   commit id: "D"
-   commit id: "E"
-   commit id: "F" tag: "main"
-```
-
-```mermaid {filename="rebase-onto-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   commit id: "B"
-   branch feature
-   checkout feature
-   commit id: "C" tag: "feature"
-   checkout main
-   commit id: "D'"
-   commit id: "E'"
-   commit id: "F'" tag: "main"
-```
+The rewritten commits keep the messages `D`, `E`, and `F`.
+The notation `D'`, `E'`, and `F'` below refers to their new commit IDs.
 
 > [!NOTE]
 > - The commit history of `main` will be rewritten -- although the commits `D'`, `E'`, and `F'` have the same changes as the original commits `D`, `E`, and `F` respectively, a new SHA hash will be assigned for each commit rewritten after the rebase is completed.

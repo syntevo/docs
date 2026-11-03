@@ -20,35 +20,44 @@ Before the merge, `main` points to `B` and `a-branch` points to `A`.
 After the merge, a merge commit `M` is created to bring the changes in `a-branch` into `main`.
 `M` will have two parent commits, `A` and `B`.
 
-``` bash
-git checkout main
-git merge a-branch
+{% capture merge_before_setup %}
+```bash
+git init -b main
+echo Example repository > README.md
+git add README.md
+git commit -m "..."
+git switch -c a-branch
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+git switch main
+echo B > b.txt
+git add b.txt
+git commit -m "B"
 ```
+{% endcapture %}
 
-**Before and After the Merge:**
-
-{% include mermaid_compare.html before="merge-before.svg" after="merge-after.svg" before_alt="Before the merge, main points to B and a-branch points to A." after_alt="After the merge, main points to merge commit M and a-branch still points to A." %}
-
-```mermaid {filename="merge-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "..."
-   branch a-branch
-   commit id: "A" tag: "a-branch"
-   checkout main
-   commit id: "B" tag: "main"
+{% capture merge_after_commands %}
+```bash
+git merge --no-ff a-branch -m M
 ```
+{% endcapture %}
 
-```mermaid {filename="merge-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "..."
-   branch a-branch
-   commit id: "A" tag: "a-branch"
-   checkout main
-   commit id: "B"
-   merge a-branch id: "M" tag: "main"
-```
+{% include git_example.html
+  title="Merge a-branch into main"
+  before="images/merge-before.png"
+  before_alt="main points to B and a-branch points to A."
+  before_caption="main points to B and a-branch points to A."
+  before_width=202
+  before_height=64
+  after="images/merge-after.png"
+  after_alt="main points to merge commit M, with B and A as its parents."
+  after_caption="main points to merge commit M, with B and A as its parents."
+  after_width=202
+  after_height=84
+  setup=merge_before_setup
+  commands=merge_after_commands
+%}
 
 > [!NOTE]
 > - When using merge commits, the full history of the feature branch is retained, which can be visually represented by tools such as SmartGit.
@@ -65,26 +74,41 @@ After a successful fast-forward merge, the branch pointer of the current branch 
 In the below, we're fast-forwarding commit B on `a-branch` onto the target `main` branch.
 The HEAD of `main` and `a-branch` both now refer to commit `B`.
 
-**Before and After the Fast-Forward Merge:**
-
-{% include mermaid_compare.html before="fast-forward-before.svg" after="fast-forward-after.svg" before_alt="Before the fast-forward merge, main points to A and a-branch points to B." after_alt="After the fast-forward merge, main and a-branch both point to B." %}
-
-```mermaid {filename="fast-forward-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A" tag: "main"
-   branch a-branch
-   commit id: "B" tag: "a-branch"
+{% capture fast_forward_before_setup %}
+```bash
+git init -b main
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+git switch -c a-branch
+echo B > b.txt
+git add b.txt
+git commit -m "B"
+git switch main
 ```
+{% endcapture %}
 
-```mermaid {filename="fast-forward-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   branch a-branch
-   checkout main
-   commit id: "B" tag: "main" tag: "a-branch"
+{% capture fast_forward_after_commands %}
+```bash
+git merge --ff-only a-branch
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="Fast-forward main to a-branch"
+  before="images/fast-forward-before.png"
+  before_alt="main points to A; a-branch is one commit ahead at B."
+  before_caption="main points to A; a-branch is one commit ahead at B."
+  before_width=182
+  before_height=44
+  after="images/fast-forward-after.png"
+  after_alt="main and a-branch both point to B; no merge commit was created."
+  after_caption="main and a-branch both point to B; no merge commit was created."
+  after_width=240
+  after_height=44
+  setup=fast_forward_before_setup
+  commands=fast_forward_after_commands
+%}
 
 > [!NOTE]
 > - Unlike merge commits, fast-forward merges create no additional commits in the repository.
@@ -96,34 +120,49 @@ A **squash merge** works like a normal merge, except that all the new commits on
 A squash merge helps to keep a remote repository clean by producing a single commit representing all the changes made on a feature branch, which is then merged into the trunk branch.
 A squash merge creates a new commit `S` on `main`, while `a-branch` remains on `C`.
 
-**Before and After the Squash Merge:**
-
-{% include mermaid_compare.html before="squash-merge-before.svg" after="squash-merge-after.svg" before_alt="Before the squash merge, a-branch contains commits A, B, and C while main points to D." after_alt="After the squash merge, main points to S while a-branch still points to C." %}
-
-```mermaid {filename="squash-merge-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "..."
-   branch a-branch
-   commit id: "A"
-   commit id: "B"
-   commit id: "C" tag: "a-branch"
-   checkout main
-   commit id: "D" tag: "main"
+{% capture squash_merge_before_setup %}
+```bash
+git init -b main
+echo Example repository > README.md
+git add README.md
+git commit -m "..."
+git switch -c a-branch
+echo Change A > feature.txt
+git add feature.txt
+git commit -m A
+echo Change B >> feature.txt
+git commit -am B
+echo Change C >> feature.txt
+git commit -am C
+git switch main
+echo D > d.txt
+git add d.txt
+git commit -m "D"
 ```
+{% endcapture %}
 
-```mermaid {filename="squash-merge-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "..."
-   branch a-branch
-   commit id: "A"
-   commit id: "B"
-   commit id: "C" tag: "a-branch"
-   checkout main
-   commit id: "D"
-   commit id: "S" tag: "main"
+{% capture squash_merge_after_commands %}
+```bash
+git merge --squash a-branch
+git commit -m S
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="Squash a-branch into main"
+  before="images/squash-merge-before.png"
+  before_alt="a-branch contains A, B, and C; main points to D."
+  before_caption="a-branch contains A, B, and C; main points to D."
+  before_width=202
+  before_height=104
+  after="images/squash-merge-after.png"
+  after_alt="S combines the changes from a-branch and has only D as its parent."
+  after_caption="S combines the changes from a-branch and has only D as its parent."
+  after_width=202
+  after_height=124
+  setup=squash_merge_before_setup
+  commands=squash_merge_after_commands
+%}
 
 > [!NOTE]
 > - Squash merges help reduce commit history 'noise' when multiple commits are made to complete a feature (e.g., bug fixes or code review feedback has resulted in multiple commits on a feature branch before merging into a trunk branch such as `main`).

@@ -19,32 +19,47 @@ In some instances, such as undoing the most recent commit on a local branch that
 - `git rebase --onto`: Rewrite a range of commits onto a target branch.
 - `git reset`: Undo changes in the local Repository, Index and/or Working Tree to return to a previous consistent state.
 
-## Revert Example
+## Revert example
 
-> [!EXAMPLE]
-> In the example below, we want to "undo" the effects of unwanted commit `B` on the current branch `main` by running the following command:
->
-> `git revert B`
->
-> This will append a new commit onto `main`, representing the changes needed to undo the effects of commit `B`:
->
-> **Before Revert:**
->
-> ```mermaid {filename="revert-before.svg" branchpointers="true"}
-> %%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-> gitGraph BT:
->    commit id: "A"
->    commit id: "B" tag: "selected"
->    commit id: "C" tag: "main"
-> ```
->
-> **After Revert:**
->
-> ```mermaid {filename="revert-after.svg" branchpointers="true"}
-> %%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-> gitGraph BT:
->    commit id: "A"
->    commit id: "B"
->    commit id: "C"
->    commit id: "reverted-B" tag: "main"
-> ```
+The example starts on `main` at commit `C`.
+We want to undo the changes introduced by commit `B`.
+Reverting appends `reverted-B` after `C` and keeps the earlier commits in the history.
+
+{% capture revert_before_setup %}
+```bash
+git init -b main
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+echo Change introduced by B > feature.txt
+git add feature.txt
+git commit -m B
+git tag selected
+echo C > c.txt
+git add c.txt
+git commit -m "C"
+```
+{% endcapture %}
+
+{% capture revert_after_commands %}
+```bash
+git revert --no-commit selected
+git commit -m reverted-B
+```
+{% endcapture %}
+
+{% include git_example.html
+  title="Revert commit B"
+  before="images/revert-before.png"
+  before_alt="main points to C, with B as its parent."
+  before_caption="main points to C, with B as its parent."
+  before_width=189
+  before_height=64
+  after="images/revert-after.png"
+  after_alt="main points to reverted-B, a new commit that undoes B."
+  after_caption="main points to reverted-B, a new commit that undoes B."
+  after_width=249
+  after_height=84
+  setup=revert_before_setup
+  commands=revert_after_commands
+%}

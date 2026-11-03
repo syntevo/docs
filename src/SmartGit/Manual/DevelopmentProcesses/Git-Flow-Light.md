@@ -14,18 +14,33 @@ This temporary branch works independently on the specific improvement ('feature'
 Once the feature is complete, the commits from the 'feature' branch are integrated (either merged or rebased) into the [develop](#develop-branch) branch, and the feature branch is usually deleted.
 This way, you can see all features currently in progress by viewing the open `feature/` branches.
 
-```mermaid {filename="git-flow-light-feature-branch.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "commit on develop"
-   branch featureA
-   checkout develop
-   commit id: "subsequent commit on develop"
-   checkout featureA
-   commit id: "a commit on featureA" tag: "featureA"
-   checkout develop
-   merge featureA id: "merge feature A into develop" tag: "develop"
+{% capture git_flow_light_feature_branch_setup %}
+```bash
+git init -b develop
+echo Example repository > README.md
+git add README.md
+git commit -m "commit on develop"
+git branch featureA
+echo Subsequent work on develop > develop.txt
+git add develop.txt
+git commit -m "subsequent commit on develop"
+git switch featureA
+echo Feature A > feature-a.txt
+git add feature-a.txt
+git commit -m "a commit on featureA"
+git switch develop
+git merge --no-ff featureA -m "merge feature A into develop"
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="Feature branch integrated into develop"
+  image="images/git-flow-light-feature-branch.png"
+  alt="featureA branches from develop and is merged back after an independent commit on develop."
+  width=411
+  height=84
+  setup=git_flow_light_feature_branch_setup
+%}
 
 ## Configuration for Git-Flow Light in SmartGit
 

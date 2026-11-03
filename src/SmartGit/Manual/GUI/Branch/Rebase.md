@@ -34,33 +34,54 @@ As a result, `quickfix2` also has all the commits that `quickfix1` in its branch
 
 To fix this, we need the `quickfix2` branch to start on the `main` branch instead of the `quickfix1` branch.
 
-```mermaid {filename="rebase-ui-before.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A" tag: "main"
-   branch quickfix1
-   commit id: "q1a"
-   commit id: "q1b" tag: "quickfix1"
-   branch quickfix2
-   commit id: "q2a"
-   commit id: "q2b" tag: "quickfix2"
-```
+To fix the branching in SmartGit, drag `q2a` onto commit `A` on `main`.
+The command sequence below performs the same rebase.
+The rewritten commits retain their messages `q2a` and `q2b`; their commit IDs change.
 
-To fix the branching, drag the `q2a` commit onto the `A [main]` commit.
-This will rewrite `q2a` and `q2b` to `q2a'` and `q2b'`, resulting in the intended branching:
-
-```mermaid {filename="rebase-ui-after.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A" tag: "main"
-   branch quickfix1
-   commit id: "q1a"
-   commit id: "q1b" tag: "quickfix1"
-   checkout main
-   branch quickfix2
-   commit id: "q2a'"
-   commit id: "q2b'" tag: "quickfix2"
+{% capture rebase_ui_before_setup %}
+```bash
+git init -b main
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+git switch -c quickfix1
+echo q1a > q1a.txt
+git add q1a.txt
+git commit -m "q1a"
+echo q1b > q1b.txt
+git add q1b.txt
+git commit -m "q1b"
+git switch -c quickfix2
+echo q2a > q2a.txt
+git add q2a.txt
+git commit -m "q2a"
+echo q2b > q2b.txt
+git add q2b.txt
+git commit -m "q2b"
 ```
+{% endcapture %}
+
+{% capture rebase_ui_after_commands %}
+```bash
+git rebase --onto main quickfix1
+```
+{% endcapture %}
+
+{% include git_example.html
+  title="Move quickfix2 onto main"
+  before="images/rebase-ui-before.png"
+  before_alt="quickfix2 starts at q1b and includes the commits from quickfix1."
+  before_caption="quickfix2 starts at q1b and includes the commits from quickfix1."
+  before_width=224
+  before_height=104
+  after="images/rebase-ui-after.png"
+  after_alt="quickfix2 starts at A and contains only rewritten q2a and q2b."
+  after_caption="quickfix2 starts at A and contains only rewritten q2a and q2b."
+  after_width=224
+  after_height=104
+  setup=rebase_ui_before_setup
+  commands=rebase_ui_after_commands
+%}
 
 > [!NOTE]
 > By default, dragging a commit onto one of its own ancestors does not offer the **Rebase** operation.

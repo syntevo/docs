@@ -1,10 +1,8 @@
 <figure class="git-figure">
-  <figcaption>
-    <span class="git-figure__label">{{ include.label | escape }}</span>
-    {{ include.caption | escape }}
-  </figcaption>
+  <span class="git-figure__label">{{ include.label | escape }}</span>
   <a href="{{ include.image | escape }}" title="Open full-size image">
     <img src="{{ include.image | escape }}" alt="{{ include.alt | escape }}"
       width="{{ include.width }}" height="{{ include.height }}" loading="lazy" decoding="async" />
   </a>
+  <figcaption>{{ include.caption | escape }}</figcaption>
 </figure>

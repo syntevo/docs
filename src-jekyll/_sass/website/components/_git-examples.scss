@@ -42,6 +42,7 @@
     text-align: center;
 
     figcaption {
+      margin-top: 0.75rem;
       font-size: 0.875rem;
       color: #57606a;
     }
@@ -102,8 +103,7 @@
   }
 
   .git-example pre,
-  .git-walkthrough pre,
-  .git-example-note pre {
+  .git-walkthrough pre {
     max-width: 100%;
     overflow-x: auto;
     font-size: 0.8125rem;
