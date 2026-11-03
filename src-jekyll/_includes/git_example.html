@@ -1,0 +1,24 @@
+<section class="git-example" aria-label="{{ include.title | escape }}">
+  <details class="git-example__setup">
+    <summary>{% if include.after %}Recreate the before state{% else %}Commands to create this repository{% endif %}</summary>
+    <p>Start in an empty directory and run these commands in order.</p>
+    {{ include.setup | markdownify }}
+  </details>
+  {% if include.after %}
+  <ol class="git-example__steps">
+    <li>
+      {% include git_figure.html image=include.before alt=include.before_alt label="Before" caption=include.before_caption width=include.before_width height=include.before_height %}
+    </li>
+    <li class="git-example__operation">
+      <p><strong>Apply to the same repository</strong></p>
+      {{ include.commands | markdownify }}
+      <span class="git-example__arrow" aria-hidden="true"></span>
+    </li>
+    <li>
+      {% include git_figure.html image=include.after alt=include.after_alt label="After" caption=include.after_caption width=include.after_width height=include.after_height %}
+    </li>
+  </ol>
+  {% else %}
+    {% include git_figure.html image=include.image alt=include.alt label="Result" caption=include.title width=include.width height=include.height %}
+  {% endif %}
+</section>
