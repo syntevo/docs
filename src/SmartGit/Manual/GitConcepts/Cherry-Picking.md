@@ -6,43 +6,56 @@ If you aim to merge all commits from a source branch into the current branch, yo
 
 In the example below, we want to cherry-pick commit `C` from the branch `a-branch` into the HEAD of the current (target) `main` branch.
 
-```
-git checkout main  # Set the current branch as the target branch
-git cherry-pick C  #
-```
-
 This will append a new commit `C'`, equivalent to `C`, onto the `main` branch.
 
-**Before and After Cherry-Picking:**
-
-{% include mermaid_compare.html before="cherry-pick-before.svg" after="cherry-pick-after.svg" before_alt="Before cherry-picking, main points to D while a-branch points to a later commit beyond selected commit C on a side branch from earlier shared history." after_alt="After cherry-picking, main points to C' while a-branch remains on the later commit beyond C on that side branch." %}
-
-```mermaid {filename="cherry-pick-before.svg" hidden="true" branchpointers="true" source_title="Before Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "..."
-   branch a-branch
-   commit id: "C" tag: "selected"
-   commit id: "…" tag: "a-branch"
-   checkout main
-   commit id: "A"
-   commit id: "B"
-   commit id: "D" tag: "main"
+{% capture cherry_pick_before_setup %}
+```bash
+git init -b main
+echo Example repository > README.md
+git add README.md
+git commit -m "..."
+git switch -c a-branch
+echo C > c.txt
+git add c.txt
+git commit -m "C"
+git tag selected
+echo More work on a-branch > continuation.txt
+git add continuation.txt
+git commit -m "..."
+git switch main
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+echo B > b.txt
+git add b.txt
+git commit -m "B"
+echo D > d.txt
+git add d.txt
+git commit -m "D"
 ```
+{% endcapture %}
 
-```mermaid {filename="cherry-pick-after.svg" hidden="true" branchpointers="true" source_title="After Mermaid source"}
-%%{init: { 'gitGraph': {'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "..."
-   branch a-branch
-   commit id: "C"
-   commit id: "…" tag: "a-branch"
-   checkout main
-   commit id: "A"
-   commit id: "B"
-   commit id: "D"
-   commit id: "C'" tag: "main"
+{% capture cherry_pick_after_commands %}
+```bash
+git cherry-pick selected
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="Cherry-pick C onto main"
+  before="images/cherry-pick-before.png"
+  before_alt="main points to D; C lies on a-branch."
+  before_caption="main points to D; C lies on a-branch."
+  before_width=209
+  before_height=124
+  after="images/cherry-pick-after.png"
+  after_alt="main has a new copy of C after D; a-branch retains the original C."
+  after_caption="main has a new copy of C after D; a-branch retains the original C."
+  after_width=189
+  after_height=144
+  setup=cherry_pick_before_setup
+  commands=cherry_pick_after_commands
+%}
 
 > [!NOTE]
 > Cherry-picking commits should be done carefully.

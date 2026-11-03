@@ -54,20 +54,36 @@ However, before integration, it is common to open a pull request between the `fe
 After the feature branch changes are successfully integrated into `develop`, the feature branch is usually deleted.
 This ensures that the only open branches in a repository with names prefixed by `feature` are those currently in development.
 
-In the figure below, the left trunk branch is `develop` and the right branch is `feature/feature-A`.
+The graph below shows `feature-A` merged into `develop`.
+The feature branch is retained to show its history.
 
-```mermaid {filename="git-flow-feature-branch.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "forked from develop"
-   branch feature-A
-   checkout develop
-   commit id: "interim commit into develop"
-   checkout feature-A
-   commit id: "implement feature A" tag: "feature-A"
-   checkout develop
-   merge feature-A id: "merged feature A" tag: "develop"
+{% capture git_flow_feature_branch_setup %}
+```bash
+git init -b develop
+echo Example repository > README.md
+git add README.md
+git commit -m "forked from develop"
+git branch feature-A
+echo Interim work on develop > develop.txt
+git add develop.txt
+git commit -m "interim commit into develop"
+git switch feature-A
+echo Feature A > feature-a.txt
+git add feature-a.txt
+git commit -m "implement feature A"
+git switch develop
+git merge --no-ff feature-A -m "merged feature A"
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="Feature branch merged into develop"
+  image="images/git-flow-feature-branch.png"
+  alt="feature-A contains the feature commit; develop contains a merge of feature-A after an interim commit."
+  width=329
+  height=84
+  setup=git_flow_feature_branch_setup
+%}
 
 > [!TIP]
 > For users who use a combination of [Feature-Flow](Feature-Flow.md), [Git-Flow](Git-Flow.md) or [Git-Flow-Light](Git-Flow-Light.md), it is possible to provide a standard branch prefix for all processes in the [Git Config settings](../GUI/Preferences/Commands.md#tip---feature-branch-prefixing).
@@ -83,24 +99,43 @@ After merging into `main`, the `release` branch is typically deleted.
 
 In the diagram below, `develop` and `main` are the long-lived branches, while `release-4_0` is the short-lived release branch.
 
-```mermaid {filename="git-flow-release-branch.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "common base"
-   branch main
-   checkout main
-   commit id: "release3_0_9"
-   checkout develop
-   commit id: "release 4_0 feature"
-   branch release-4_0
-   checkout release-4_0
-   commit id: "hardening commit" tag: "release-4_0_0" tag: "release-4_0"
-   checkout main
-   merge release-4_0 id: "merge release-4_0" tag: "main"
-   checkout develop
-   commit id: "future develop feature"
-   merge release-4_0 id: "reverse merge into develop" tag: "develop"
+{% capture git_flow_release_branch_setup %}
+```bash
+git init -b develop
+echo Example repository > README.md
+git add README.md
+git commit -m "common base"
+git switch -c main
+echo 3.0.9 > version.txt
+git add version.txt
+git commit -m "release3_0_9"
+git switch develop
+echo Release 4.0 feature > feature.txt
+git add feature.txt
+git commit -m "release 4_0 feature"
+git switch -c release-4_0
+echo Release hardening > hardening.txt
+git add hardening.txt
+git commit -m "hardening commit"
+git tag release-4_0_0
+git switch main
+git merge --no-ff release-4_0 -m "merge release-4_0"
+git switch develop
+echo Future development > future.txt
+git add future.txt
+git commit -m "future develop feature"
+git merge --no-ff release-4_0 -m "reverse merge into develop"
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="Release branch merged into main and develop"
+  image="images/git-flow-release-branch.png"
+  alt="release-4_0_0 tags the hardening commit; main and develop each contain a merge of release-4_0."
+  width=446
+  height=144
+  setup=git_flow_release_branch_setup
+%}
 
 ### Hotfix Branches
 
@@ -114,24 +149,41 @@ After fixing the bug(s) in this hotfix branch, the state will be tagged and merg
 
 The hotfix branch is typically deleted after merging.
 
-```mermaid {filename="git-flow-hotfix-branch.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'mainBranchName': 'develop', 'showBranches': true, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "common base"
-   branch main
-   checkout main
-   commit id: "release 4.0" tag: "release4_0"
-   checkout develop
-   commit id: "future develop feature"
-   checkout main
-   branch hotfix-4_0_1
-   checkout hotfix-4_0_1
-   commit id: "bug fix" tag: "release4_0_1" tag: "hotfix-4_0_1"
-   checkout main
-   merge hotfix-4_0_1 id: "release 4.0.1" tag: "main"
-   checkout develop
-   merge hotfix-4_0_1 id: "reverse merge into develop" tag: "develop"
+{% capture git_flow_hotfix_branch_setup %}
+```bash
+git init -b develop
+echo Example repository > README.md
+git add README.md
+git commit -m "common base"
+git switch -c main
+echo 4.0 > version.txt
+git add version.txt
+git commit -m "release 4.0"
+git tag release4_0
+git switch develop
+echo Future development > future.txt
+git add future.txt
+git commit -m "future develop feature"
+git switch -c hotfix-4_0_1 main
+echo Bug fix > fix.txt
+git add fix.txt
+git commit -m "bug fix"
+git tag release4_0_1
+git switch main
+git merge --no-ff hotfix-4_0_1 -m "release 4.0.1"
+git switch develop
+git merge --no-ff hotfix-4_0_1 -m "reverse merge into develop"
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="Hotfix merged into main and develop"
+  image="images/git-flow-hotfix-branch.png"
+  alt="release4_0_1 tags the bug fix on hotfix-4_0_1; the fix is merged into main and develop."
+  width=399
+  height=124
+  setup=git_flow_hotfix_branch_setup
+%}
 
 ### Support Branches
 

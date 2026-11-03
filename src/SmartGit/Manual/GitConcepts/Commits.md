@@ -19,18 +19,35 @@ Therefore:
 - Normal commits have exactly one parent commit.
 - *Merge commits* have two or more parent commits.
 
-```mermaid {filename="commit-graph-structure.svg"}
-%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "the initial commit"
-   commit id: "a branched commit"
-   branch side
-   checkout side
-   commit id: "a normal commit"
-   checkout main
-   commit id: "another normal commit"
-   merge side id: "a merge commit"
+{% capture commit_graph_structure_setup %}
+```bash
+git init -b main
+echo Example repository > README.md
+git add README.md
+git commit -m "the initial commit"
+echo Shared work > shared.txt
+git add shared.txt
+git commit -m "a branched commit"
+git switch -c side
+echo Work on side > side.txt
+git add side.txt
+git commit -m "a normal commit"
+git switch main
+echo Work on main > main.txt
+git add main.txt
+git commit -m "another normal commit"
+git merge --no-ff side -m "a merge commit"
 ```
+{% endcapture %}
+
+{% include git_example.html
+  title="A repository with a merge commit"
+  image="images/commit-graph-structure.png"
+  alt="Two branches diverge after the branch point and join in a merge commit with two parents."
+  width=290
+  height=104
+  setup=commit_graph_structure_setup
+%}
 
 Each commit is identified by its unique *SHA*-ID, and Git allows *checking out* every commit using its SHA.
 However, with SmartGit you can visually select the commits to check out instead of entering unwieldy SHAs manually.
@@ -38,70 +55,151 @@ Checking out sets the HEAD and working tree to the commit.
 After modifying the working tree, committing your changes will create a new commit whose parent is the one that was checked out.
 Newly created commits will also be *heads* in the DAG, because no other commits descend from them.
 
-## Putting It All Together
+## Putting it all together
 
-The following example shows how commits, branches, pushing, fetching, and (basic) merging interact.
+The following sequence shows how commits, branches, pushing, fetching, and merging interact.
 
-Let's assume we have commits `A`, `B`, and `C`.
-Both **`main`** and **`origin/main`** point to `C`, and **`HEAD`** points to **`main`**.
-In other words, the working tree has been switched to the branch **main**.
-This looks as follows:
+<ol class="git-walkthrough">
 
-```mermaid {filename="commit-graph-initial-refs.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   commit id: "B"
-   commit id: "C" tag: "main" tag: "origin/main"
+{% capture commit_graph_initial_refs_commands %}
+```bash
+git init --bare -b main origin.git
+git clone origin.git repo
+cd repo
+echo A > a.txt
+git add a.txt
+git commit -m "A"
+echo B > b.txt
+git add b.txt
+git commit -m "B"
+echo C > c.txt
+git add c.txt
+git commit -m "C"
+git push --set-upstream origin main
 ```
+{% endcapture %}
 
-Committing a set of changes results in commit `D`, which is a child of `C`.
-**`main`** now points to `D`, meaning it is one commit ahead of the tracked branch **`origin/main`**:
+{% capture commit_graph_initial_refs_description %}
+Start with commits `A`, `B`, and `C`.
+Both `main` and `origin/main` point to `C`, and `HEAD` is attached to `main`.
 
-```mermaid {filename="commit-graph-after-commit.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   commit id: "B"
-   commit id: "C" tag: "origin/main"
-   commit id: "D" tag: "main"
+To recreate this example, run this setup in an empty directory. The remaining steps continue inside `repo`.
+{% endcapture %}
+
+{% include git_step.html
+  id="commit-graph-initial-refs"
+  label="1. Initial repository"
+  caption="main and origin/main both point to C."
+  description=commit_graph_initial_refs_description
+  image="images/commit-graph-initial-refs.png"
+  alt="main and origin/main both point to C."
+  width=227
+  height=64
+  commands=commit_graph_initial_refs_commands
+%}
+
+{% capture commit_graph_after_commit_commands %}
+```bash
+echo D > d.txt
+git add d.txt
+git commit -m "D"
 ```
+{% endcapture %}
 
-As a result of a Push, Git sends commit `D` to the origin repository, moving **`main`** to the new commit `D`.
-Because a remote branch always refers to a branch in the remote repository, **`origin/main`** of our repository will also be set to commit `D`:
+{% capture commit_graph_after_commit_description %}
+Create commit `D`, a child of `C`.
+Local `main` is now one commit ahead of `origin/main`.
+{% endcapture %}
 
-```mermaid {filename="commit-graph-after-push.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   commit id: "B"
-   commit id: "C"
-   commit id: "D" tag: "main" tag: "origin/main"
+{% include git_step.html
+  id="commit-graph-after-commit"
+  label="2. After committing D"
+  caption="main points to D; origin/main stays at C."
+  description=commit_graph_after_commit_description
+  image="images/commit-graph-after-commit.png"
+  alt="main points to D; origin/main stays at C."
+  width=207
+  height=84
+  commands=commit_graph_after_commit_commands
+%}
+
+{% capture commit_graph_after_push_commands %}
+```bash
+git push origin main
 ```
+{% endcapture %}
 
-Let's assume someone else has modified the remote repository and committed `E`, a child of `D`.
-This means the **`main`** in the origin repository now points to `E`.
-When fetching from the origin repository, we will receive commit `E`, and our repository's **`origin/main`** will be moved to `E`:
+{% capture commit_graph_after_push_description %}
+Push `D` to the remote.
+Its `main` advances to `D`, and the local remote-tracking ref `origin/main` also moves to `D`.
+{% endcapture %}
 
-```mermaid {filename="commit-graph-after-fetch.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   commit id: "B"
-   commit id: "C"
-   commit id: "D" tag: "main"
-   commit id: "E" tag: "origin/main"
+{% include git_step.html
+  id="commit-graph-after-push"
+  label="3. After pushing D"
+  caption="main and origin/main both point to D."
+  description=commit_graph_after_push_description
+  image="images/commit-graph-after-push.png"
+  alt="main and origin/main both point to D."
+  width=228
+  height=84
+  commands=commit_graph_after_push_commands
+%}
+
+{% capture commit_graph_after_fetch_commands %}
+```bash
+git clone ../origin.git ../colleague
+cd ../colleague
+echo E > e.txt
+git add e.txt
+git commit -m E
+git push origin main
+cd ../repo
+git fetch origin
 ```
+{% endcapture %}
 
-Finally, we will now merge our local **`main`** with its tracking branch **`origin/main`**.
-Because there are no new local commits, this will simply move **`main`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merging.md#fast-forward-merge)).
+{% capture commit_graph_after_fetch_description %}
+A colleague creates `E` on top of `D` and pushes it.
+The first commands below simulate that work in a separate clone.
+Fetching then updates `origin/main` in `repo` without moving local `main`.
+{% endcapture %}
 
-```mermaid {filename="commit-graph-after-fast-forward.svg" branchpointers="true"}
-%%{init: { 'gitGraph': {'showBranches': false, 'showCommitLabel': true, 'useMaxWidth': false}} }%%
-gitGraph BT:
-   commit id: "A"
-   commit id: "B"
-   commit id: "C"
-   commit id: "D"
-   commit id: "E" tag: "main" tag: "origin/main"
+{% include git_step.html
+  id="commit-graph-after-fetch"
+  label="4. After fetching E"
+  caption="origin/main points to E; local main stays at D."
+  description=commit_graph_after_fetch_description
+  image="images/commit-graph-after-fetch.png"
+  alt="origin/main points to E; local main stays at D."
+  width=202
+  height=104
+  commands=commit_graph_after_fetch_commands
+%}
+
+{% capture commit_graph_after_fast_forward_commands %}
+```bash
+git merge --ff-only origin/main
 ```
+{% endcapture %}
+
+{% capture commit_graph_after_fast_forward_description %}
+Merge `origin/main` into local `main`.
+Since there are no new local commits, Git fast-forwards `main` to `E` without creating a merge commit.
+{% endcapture %}
+
+{% include git_step.html
+  id="commit-graph-after-fast-forward"
+  label="5. After fast-forwarding main"
+  caption="main and origin/main both point to E."
+  description=commit_graph_after_fast_forward_description
+  image="images/commit-graph-after-fast-forward.png"
+  alt="main and origin/main both point to E."
+  width=226
+  height=104
+  commands=commit_graph_after_fast_forward_commands
+%}
+
+</ol>
+
+See [Fast-forward merge](Merging.md#fast-forward-merge) for more details.
