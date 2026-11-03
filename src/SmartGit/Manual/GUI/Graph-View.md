@@ -7,6 +7,10 @@ For File (or Subtree) Logs, the content of the file (or subtree) at the mapped r
 For filtered Logs, when there is no relation between the mapped commit and the actual commit, you can still see which of your filtered commits are part of each ref's history.
 Mapped refs that are not located exactly at the commit to which they are attached will be denoted by `~`.
 
+- [Variants of the Graph View](#variants-of-the-graph-view)
+- [Display options](#display-options)
+- [How to read the graph view](#how-to-read-the-graph-view)
+
 ## Variants of the Graph View
 
 - The **Graph View** is the primary focus of the **Log Window** (Main Window).
@@ -40,30 +44,48 @@ Using the **Filter** field above the **Graph**, you can restrict displayed commi
 When the **Filter** field is modified, SmartGit will restart the search from the selected **Branches** and return matching commits incrementally.
 The search is performed directly in the repository, so eventually, SmartGit will find all matching commits in the entire repository.
 
-## Icons used in the Graph View
+<span id="icons-used-in-the-graph-view"></span>
 
-The icons in the **Graph View** represent the following:
+## How to read the graph view
 
-- ![Working Tree](../images/Graph-View-WorkingTree-Icon.png) - Position of the current Working Tree in the commit history.
-  The icon color indicates the Working Tree status -- e.g., green if the Working Tree is clean (no changes since the last commit), red if there are changes or merge conflicts.
-- ![Commit Node](../images/Graph-View-Node-Icon.png) - Represents each commit shown in the Graph.
-- ![Expandable Node](../images/Graph-View-NodeExpand-Icon.png) - Click to reveal collapsed commits, typically from a second parent in a merge commit.
-- ![Branch Split](../images/Graph-View-BranchFork-Icon.png) - Indicates a new branch created from the node (i.e., the node is a parent of two or more separate commits).
-- ![Branch Merge](../images/Graph-View-BranchMerge-Icon.png) - Indicates that two or more branches have been merged.
-  The converging node is the merge commit.
-- ![Same Commit](../images/Graph-View-SameCommit-Icon.png) - Indicates that the branch is equal to the tracked upstream branch on the remote (both branches are at the same commit).
-- ![Commits Ahead or Behind](../images/Graph-View-CommitsAhead-Icon.png) - Indicates that the branch has commits ahead (+) or behind (-) the tracked upstream branch on the remote.
-- ![Broken Puzzle Upstream](../images/Graph-View-BasePuzzle-Icon.png) - Indicates the position of the tracked upstream branch when the current branch has commits ahead or behind.
-  Icons for both the current and tracked branches appear as _Broken Puzzle Pieces_.
-- ![Selected Branch Head](../images/Graph-View-SelectedHead-Icon.png) - Shows the position of the HEAD commit in the graph.
-- ![Signed Commit](../images/Graph-View-SignedCommit-Icon.png) - Indicates a signed commit.
+Start by locating your working tree and checked-out commit.
+Then follow the connecting lines to understand the history and compare the branch labels to see what needs to be integrated.
 
-The _Branch Label_ consists of:
-- Remote name (if applicable)
-- Branch name
-- Ahead/behind indicators
+### Locate your working tree and HEAD
 
-> [!NOTE]
-> - You can change the tracked upstream branch in the [Branches View](Branches-view.md#upstream-tracked-branch).
->   This affects how the commit ahead/behind _Puzzle Piece_ icons and indicators appear in the _Branch Label_.
-> - Commit ahead/behind indicators may vary slightly across different **Graph View** variations.
+The working-tree entry shows where uncommitted changes sit relative to the commit history.
+Its status icon distinguishes a clean working tree from one with changes or conflicts.
+
+The **HEAD** marker identifies the checked-out commit.
+The highlighted row is the current selection, which can be a different commit.
+Selecting a row lets you inspect a commit without checking it out or moving **HEAD**.
+
+### Follow commits and their parents
+
+Each node represents a commit, and the connecting lines lead to its parents.
+When two lines share an ancestor, they show separate lines of development, even if the original branch names have since been deleted.
+A merge commit connects to two or more parents and combines their histories.
+
+Some parent histories can be collapsed to keep the graph compact.
+Use the expand control to reveal the hidden commits; expanding the display does not change the repository.
+
+A signature marker identifies a signed commit.
+The marker alone does not establish that the signature is trusted.
+See [SSH commit signature verification](../../HowTos/Configuration/Setting-up-SSH-commit-signing.md#verification-in-smartgit) for verification steps.
+
+### Compare local and upstream branches
+
+Branch labels identify which commits the branches point to.
+A remote-tracking label also includes the remote name, such as `origin` in `origin/main`.
+Several labels on one node refer to the same commit; they do not represent additional commits.
+
+For a local branch with a tracked upstream, the equality marker means that both branches point to the same commit.
+When they differ, ahead (`+`) and behind (`-`) counts show commits missing from the other branch.
+The paired puzzle-piece markers locate the local and upstream tips in the graph.
+
+For example, if `main` is two commits ahead of and one behind `origin/main`, it has two local commits to publish and one incoming commit to integrate.
+This describes the branch history, independently of any uncommitted working-tree changes.
+Remote-tracking information reflects the last fetch; fetch again to refresh it.
+
+You can change the upstream in the [Branches View](Branches-view.md#upstream-tracked-branch).
+The appearance of tracking indicators can vary between the **Graph View** variants.
