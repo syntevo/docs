@@ -1,9 +1,4 @@
 <section class="git-example" aria-label="{{ include.title | escape }}">
-  <details class="git-example__setup">
-    <summary>Recreate this repository</summary>
-    <p>Run these commands in a fresh directory.</p>
-    {{ include.setup | markdownify }}
-  </details>
   {% if include.after %}
   <ol class="git-example__steps">
     <li>
@@ -12,7 +7,9 @@
     <li class="git-example__operation">
       <p><strong>Git commands</strong></p>
       {{ include.commands | markdownify }}
-      <span class="git-example__arrow" aria-hidden="true"></span>
+      <svg class="git-example__arrow" viewBox="0 0 48 24" width="48" height="24" aria-hidden="true" focusable="false">
+        <path d="M4 12H44M34 2L44 12L34 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
     </li>
     <li>
       {% include git_figure.html image=include.after alt=include.after_alt label="After" caption=include.after_caption width=include.after_width height=include.after_height %}
@@ -21,4 +18,9 @@
   {% else %}
     {% include git_figure.html image=include.image alt=include.alt label="Result" caption=include.title width=include.width height=include.height %}
   {% endif %}
+  <details class="git-example__setup">
+    <summary>Recreate this repository</summary>
+    <p>Run these commands in a fresh directory.</p>
+    {{ include.setup | markdownify }}
+  </details>
 </section>
