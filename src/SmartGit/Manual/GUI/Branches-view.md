@@ -3,7 +3,7 @@
 The **Branches** view shows *local* and *remote* branches, tags, and other *refs* from your repository and offers operations on these *refs*.
 *Remotes* will also be displayed and used to group the *remote branches*.
 
-![Branches view with local branches, remotes, tags, and recyclable commits](../images/branches-view.png)
+<img src="../images/branches-view.png" alt="Branches view with local branches, remotes, tags, and recyclable commits" width="434" style="max-width: 100%; height: auto;">
 
 The current branch is shown in bold text next to a solid filled triangle (`>`).
 Any other tag or branch that points to the same commit as HEAD (the current branch) is shown with an unfilled triangle (`>`).
@@ -33,7 +33,7 @@ Additionally, the [Graph View](Graph-View.md#icons-used-in-the-graph-view) will 
 When a remote branch is checked out to a local repository branch, Git will automatically set the remote branch as the tracked upstream branch for the local branch.
 However, the tracked upstream branch can be changed by right-clicking on the local branch in the **Branches View** (of the **Log window** or **Working Tree window**) or the **My History** view (of the **Standard window**) and selecting **Set Tracked Branch**.
 
-![Set Tracked Remote Upstream](../images/Branch-View-Set-Remote-Upstream.png)
+<img src="../images/Branch-View-Set-Remote-Upstream.png" alt="Set Tracked Remote Upstream" width="497" style="max-width: 100%; height: auto;">
 
 > [!NOTE]
 > You may need to refresh the remote refs to get the latest status of the tracked branch, e.g. by using the **Fetch** or **Pull** commands.

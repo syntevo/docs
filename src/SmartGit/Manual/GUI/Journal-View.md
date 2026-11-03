@@ -3,7 +3,7 @@
 The **Journal View** in SmartGit shows a compact history for the current branch, in linear fashion.
 This differs from the [**Log View**](Log.md) in that only the commits in the current branch are displayed.
 
-![SmartGit Journal View](../images/Journal-View.png)
+<img src="../images/Journal-View.png" alt="SmartGit Journal View" width="1331" style="max-width: 100%; height: auto;">
 
 The colors have the following meanings:
 

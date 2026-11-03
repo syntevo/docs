@@ -9,7 +9,7 @@ Use the navigation structure or the search tool to select the required page to v
 
 ## Main Commands Tab
 
-![Commands](../../images/Preferences-commands.png)
+<img src="../../images/Preferences-commands.png" alt="Commands" width="980" style="max-width: 100%; height: auto;">
 
 ### Commit
 

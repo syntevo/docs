@@ -12,7 +12,7 @@ SmartGit's **Conflict Solver** view is invoked from the **Query \| Conflict Solv
   You can use the **Base Changes** command to view the original version of the file (Common Base, also referred to as `:1` in Git).
 - The **right pane** shows the merged source version of the file (`theirs`, also referred to as `:3` in Git).
 
-![SmartGit Conflict Solver tool](../../images/Tools-SmartGit-ConflictSolver.png)
+<img src="../../images/Tools-SmartGit-ConflictSolver.png" alt="SmartGit Conflict Solver tool" width="1496" style="max-width: 100%; height: auto;">
 
 ## SmartGit Conflict Solver Tool
 

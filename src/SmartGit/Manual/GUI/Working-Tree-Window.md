@@ -12,7 +12,7 @@ The **Working Tree Window** consists of the following views:
 - A variant of the [Changes View](Changes-View.md), showing any differences of the file selected in the **Files View**, between the Working Tree and the Index.
 - The [Journal View](Journal-View.md), showing a linear history commits in the current branch (only).
 
-![Working Tree window](../images/Working-Tree-window.png)
+<img src="../images/Working-Tree-window.png" alt="Working Tree window" width="1600" style="max-width: 100%; height: auto;">
 
 ## Tips
 

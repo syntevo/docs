@@ -75,7 +75,7 @@ The same LLM configuration is used as in the previous example.
 After saving the configuration, if you run the **Check Todos** AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
 An appropriate thumbs up (U+1F44D) or thumbs down (U+1F44E) icon will be displayed (in place of the standard 'Note' icon), and a Git note will be added to the commit, showing the file location(s) of any TODO comments found.
 
-![AI Annotations in Standard Window](../images/AI-Annotations-StandardWindow.png)
+<img src="../images/AI-Annotations-StandardWindow.png" alt="AI Annotations in Standard Window" width="875" style="max-width: 100%; height: auto;">
 
 ```
 [smartgit-ai-commit-annotation "Check For Todos"]

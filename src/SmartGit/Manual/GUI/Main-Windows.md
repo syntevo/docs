@@ -21,11 +21,11 @@ You can specify your preferred window style in two ways:
 
 1. During the **Setup wizard**:
 
-![Setup wizard, window selection](../images/Setup-wizard-window-selection.png)
+<img src="../images/Setup-wizard-window-selection.png" alt="Setup wizard, window selection" width="827" style="max-width: 100%; height: auto;">
 
 2. After setup, through **Preferences** (**Edit \| Preferences**).
 
-![Preferences, user interface](../images/Preferences-user-interface-window-selection.png)
+<img src="../images/Preferences-user-interface-window-selection.png" alt="Preferences, user interface" width="980" style="max-width: 100%; height: auto;">
 
 ### Using Multiple Windows
 

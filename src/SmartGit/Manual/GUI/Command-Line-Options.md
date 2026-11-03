@@ -101,7 +101,7 @@ The value usually is a color defined as `#rrggbb` using hexadecimal values, but 
 *inherit* means to inherit the color from the parent control, *default* forces the control to use its default color from the operating system.
 You can SmartGit tell to load this file by selecting it in the preferences:
 
-![Preferences theme selection](../images/command-line-options-theme-selection.png)
+<img src="../images/command-line-options-theme-selection.png" alt="Preferences theme selection" width="980" style="max-width: 100%; height: auto;">
 
 > [!EXAMPLE]
 > To create a theme that uses a green background color for selection, uncomment the line

@@ -38,7 +38,7 @@ Please consult the [Git Notes configuration guide](../Integrations/GitNotes-Inte
 ## Using Notes in SmartGit
 Once enabled, notes will appear via an icon in the color configured for the notes category, in the **Graph View** of the **Log Window** and the **Standard Window**.
 
-![Viewing Git Notes in SmartGit](../images/GitNotes-GraphView.png)
+<img src="../images/GitNotes-GraphView.png" alt="Viewing Git Notes in SmartGit" width="911" style="max-width: 100%; height: auto;">
 
 The following UI options are available:
 

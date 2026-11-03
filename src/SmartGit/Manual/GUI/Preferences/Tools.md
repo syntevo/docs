@@ -93,7 +93,7 @@ tools:
 
 This PowerShell script can be used to open a solution file `.sln` inside a repository, in Visual Studio. The script iterates through the repository folders and looks for a `.sln` file. It stops at the first match and then launches Visual Studio.
 
-![External tool configuration for opening a Visual Studio solution](../../images/tools-open-visual-studio-solution.png)
+<img src="../../images/tools-open-visual-studio-solution.png" alt="External tool configuration for opening a Visual Studio solution" width="1196" style="max-width: 100%; height: auto;">
 
 **PowerShell script C:\\SmartGit-Scripts\\openVS.ps1**
 
@@ -175,12 +175,12 @@ where `MyCompare\mycompare.exe` is the path to the configured Conflict Solver to
 
 To configure VSCode 1.70 or higher as conflict solver, use `--wait --merge ${leftFile} ${rightFile} ${baseFile} ${mergedFile}` as **Arguments**.
 
-![Conflict Solver Tool](../../images/conflict-solver-vscode.png)
+<img src="../../images/conflict-solver-vscode.png" alt="Conflict Solver Tool" width="553" style="max-width: 100%; height: auto;">
 
 **Example: Unity Smart Merge Tool**
 
 To configure the UnityYAMLMerge, use `merge -p ${baseFile} ${rightFile} ${leftFile} ${mergedFile}` as **Arguments**. An example configuration could look like:
 
-![Merge Tool Configuration](../../images/tools-unity-smart-merge.png)
+<img src="../../images/tools-unity-smart-merge.png" alt="Merge Tool Configuration" width="1196" style="max-width: 100%; height: auto;">
 
 Note, that a compatible 3-way merge tool has to be configured as "fallback" for the Unity merge tool in order to complete the merge if the automatic merging is not successful.
