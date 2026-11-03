@@ -123,7 +123,7 @@ Since no branch has been specified in this case, Git refers to the Working Tree 
 >
 > Then, stage and commit the changes to the `NewBranch`.
 >
-> You can later use tools such as [Merge](Merging.md), cherry-pick, or [Rebase](Rebasing.md) to integrate these changes into another branch.
+> You can later use tools such as [Merge](Merging.md), [cherry-pick](Cherry-Picking.md), or [Rebase](Rebasing.md) to integrate these changes into another branch.
 
 ## Merge Commits have multiple parent commits
 
