@@ -9,6 +9,7 @@ MAIN_REF="${MAIN_REF:-origin/main}"
 MAIN_EXPORT="${MAIN_EXPORT:-/tmp/origin-main-export}"
 BUILD_DIR="${BUILD_DIR:-/tmp/docs-build}"
 SITE_DIR="${SITE_DIR:-/tmp/site}"
+LOCAL_PREVIEW_URL="${LOCAL_PREVIEW_URL:-http://localhost:1313}"
 BUNDLE_PATH="${BUNDLE_PATH:-/tmp/docs-bundle}"
 FETCH_ORIGIN="${FETCH_ORIGIN:-0}"
 PREBUILT_GEMFILE="${PREBUILT_GEMFILE:-/opt/jekyll/Gemfile}"
@@ -158,6 +159,13 @@ overlay_inflated_content() {
   copy_dir_contents "${MAIN_EXPORT}/src-inflated" "${BUILD_DIR}"
 }
 
+write_local_preview_config() {
+  log "Configuring local preview URL ${LOCAL_PREVIEW_URL}"
+  cat > "${BUILD_DIR}/_config.local.yml" <<EOF
+url: "${LOCAL_PREVIEW_URL}"
+EOF
+}
+
 ensure_mermaid_cli() {
   if command -v mmdc >/dev/null 2>&1; then
     return 0
@@ -214,7 +222,7 @@ run_prebuilt_jekyll_build() {
   (
     cd "${BUILD_DIR}"
     BUNDLE_PATH="${PREBUILT_BUNDLE_PATH}" bundle check >/dev/null
-    BUNDLE_PATH="${PREBUILT_BUNDLE_PATH}" bundle exec jekyll build --destination "${SITE_DIR}"
+    BUNDLE_PATH="${PREBUILT_BUNDLE_PATH}" bundle exec jekyll build --config _config.yml,_config.local.yml --destination "${SITE_DIR}"
   )
 }
 
@@ -230,7 +238,7 @@ run_jekyll_build() {
     cd "${BUILD_DIR}"
     bundle config set path "${BUNDLE_PATH}"
     bundle install --jobs 4 --retry 3
-    bundle exec jekyll build --destination "${SITE_DIR}"
+    bundle exec jekyll build --config _config.yml,_config.local.yml --destination "${SITE_DIR}"
   )
 }
 
@@ -249,6 +257,7 @@ main() {
   populate_smartgit_versions
   populate_legacy_versions
   overlay_inflated_content
+  write_local_preview_config
   render_mermaid_diagrams
   run_jekyll_build
 
