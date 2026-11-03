@@ -77,7 +77,8 @@ You can set up custom external 3-way diffs which can be invoked from a
 
 3.  In the **Preferences**, configure this tool for your custom diff
     program, for example:  
-    ![](images/external-tools-3-way-diff.png)  
+
+    ![External diff tool configuration for the three-way diff wrapper](images/external-tools-3-way-diff.png)
       
     Note the optional usage of `--include-wt` which will use the current
     working tree file, instead of the clean version of the file from  

@@ -182,7 +182,9 @@ If you have `credential.helper=manager` configured on Windows, Git will first in
 5.  If you cancel the dialog, Git will invoke the `GIT_ASKPASS` environment variable callback which is set by SmartGit.
 6.  If the correct credentials are stored in SmartGit, they will be returned.
 7.  Otherwise, SmartGit will show its own credentials dialog:  
-    ![](images/authentication-problems-push-pull-2.png)
+
+    ![SmartGit prompt to configure a hosting provider for authentication](images/authentication-problems-push-pull-2.png)
+
 8.  If you will enter the correct credentials there, it's fine.
 9.  If you will enter wrong credentials there, the dialog will show up again (back to step 7, this happens a couple of times).
 

@@ -41,7 +41,7 @@ select the file in the *Files* view, then select either **Index Editor**
 in the file's context menu, or select **Local\|Index Editor** from the
 main menu. Here's what the Index Editor looks like:
 
-![](images/staging-unstaging-and-the-index-editor.png)
+![Index Editor comparing the repository, index, and working tree with staged and unstaged changes](images/staging-unstaging-and-the-index-editor.png)
 
 As you can see, the Index Editor consists of three separate text
 editors, which show the state of a particular file in the HEAD of the
