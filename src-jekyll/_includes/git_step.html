@@ -1,0 +1,9 @@
+<li id="{{ include.id | escape }}">
+  <div class="git-walkthrough__step">
+    <div>
+      {{ include.description | markdownify }}
+      {{ include.commands | markdownify }}
+    </div>
+    {% include git_figure.html image=include.image alt=include.alt label=include.label caption=include.caption width=include.width height=include.height %}
+  </div>
+</li>

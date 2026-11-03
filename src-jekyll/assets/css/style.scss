@@ -1,0 +1,162 @@
+---
+---
+
+@import "jekyll-theme-primer";
+
+// Polyfill mixins used in website styles but have no effect
+
+@mixin grid-container {}
+@mixin grid-column($columns, $grid) {}
+@mixin position($position, $dimensions) {}
+
+// Import website styles (drop-in without changes)
+
+@import "website/variables";
+@import "website/mixins";
+
+@import "website/components/page-layout";
+@import "website/components/page-footer";
+@import "website/components/page-body";
+@import "website/components/page-header";
+@import "website/components/product-page-header";
+@import "website/components/product-logo";
+@import "website/components/mermaid-diagrams";
+@import "website/components/mermaid-compare";
+@import "website/components/git-examples";
+
+// Override website components
+
+.page-header {
+  background-color: $light-gray;
+  padding: 16px 0;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+  }
+
+  @media (min-width: $breakpoint-tablet-landscape) {
+    padding: 20px 0;
+  }
+}
+
+.page-footer {
+  a { color: inherit; }
+}
+
+// Override theme styles
+
+.container-md,
+.container-lg,
+.container-xl {
+  @media (min-width: $breakpoint-tablet-portrait) {
+    width: 92%;
+  }
+}
+
+// Add custom styles
+
+*, *:before, *:after { box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+html, body {
+  color: $default-font-color;
+  background-color: $white;
+}
+
+@include responsive-steps(max-width) {
+  .hidden-lte-#{&} { display: none !important; }
+}
+
+.page-title {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1;
+  margin-left: 16px;
+  color: $white;
+  background-color: $dark-gray;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+
+  @media (min-width: $breakpoint-tablet-landscape) {
+    font-size: 1.75em;
+  }
+}
+
+.px-outer {
+  padding-left: map-get($default-grid, gutter);
+  padding-right: map-get($default-grid, gutter);
+}
+
+.improve-link {
+  text-align: right;
+}
+
+// GitHub-style Markdown alerts (admonitions)
+.markdown-alert {
+  margin: 12px 0 12px 0;
+  padding: 4px 8px 4px 4px;
+  border-left: 4px solid #d0d7de;
+  background: #F6F8FA; // as code blocks
+}
+
+.markdown-alert-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #57606a;
+}
+
+// Increase specificity so this beats `.markdown-body p` margins
+.markdown-body .markdown-alert > .markdown-alert-title {
+  margin-bottom: 4px;
+}
+
+// Ensure minimal gap between title and first content element
+.markdown-alert-title + * {
+  margin-top: 0;
+}
+
+.markdown-alert-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+// Type variants — only a colored bar and colored title/icon
+.markdown-alert-note { border-color: #0969da; }
+.markdown-alert-note > .markdown-alert-title { color: #0969da; }
+
+// Treat Example similar to Note (neutral/info)
+.markdown-alert-example { border-color: #0969da; }
+.markdown-alert-example > .markdown-alert-title { color: #0969da; }
+
+.markdown-alert-tip { border-color: #1a7f37; }
+.markdown-alert-tip > .markdown-alert-title { color: #1a7f37; }
+
+.markdown-alert-warning { border-color: #9a6700; }
+.markdown-alert-warning > .markdown-alert-title { color: #9a6700; }
+
+.markdown-alert-important { border-color: #8250df; }
+.markdown-alert-important > .markdown-alert-title { color: #8250df; }
+
+.markdown-alert-caution { border-color: #cf222e; }
+.markdown-alert-caution > .markdown-alert-title { color: #cf222e; }
+
+.markdown-body .markdown-alert div.highlight::before,
+.markdown-body .markdown-alert div.highlight::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 1px;
+  margin: 10px auto; // centered
+  background-color: #d0d7de;
+}

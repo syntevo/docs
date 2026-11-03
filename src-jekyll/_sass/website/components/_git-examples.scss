@@ -1,0 +1,127 @@
+.markdown-body {
+  .git-example {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+  }
+
+  .git-example__setup {
+    margin: 1rem 0 0;
+    color: #57606a;
+    font-size: 0.8125rem;
+
+    summary {
+      cursor: pointer;
+      font-weight: 400;
+    }
+
+    summary:focus-visible {
+      outline: 2px solid #0969da;
+      outline-offset: 4px;
+    }
+  }
+
+  .git-example__steps {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .git-example__steps > li {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .git-figure {
+    margin: 0;
+    text-align: center;
+
+    figcaption {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: #57606a;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0.75rem auto 0;
+    }
+  }
+
+  .git-figure__label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #24292f;
+  }
+
+  .git-example__operation {
+    align-self: center;
+
+    > p {
+      text-align: center;
+    }
+  }
+
+  .git-example__arrow {
+    display: block;
+    width: 3rem;
+    height: 1.5rem;
+    margin: 1rem auto;
+    color: #57606a;
+    transform: rotate(90deg);
+  }
+
+  .git-example pre,
+  .git-walkthrough pre {
+    max-width: 100%;
+    overflow-x: auto;
+    font-size: 0.8125rem;
+  }
+
+  .git-walkthrough {
+    margin: 1.5rem 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-left: 3px solid #0969da;
+      background: #f6f8fa;
+    }
+  }
+
+  .git-walkthrough__step {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+
+    > div {
+      min-width: 0;
+    }
+  }
+
+  @media (min-width: 75rem) {
+    .git-example__steps {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .git-example__arrow {
+      transform: none;
+    }
+
+    .git-walkthrough__step {
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      align-items: center;
+    }
+  }
+}
