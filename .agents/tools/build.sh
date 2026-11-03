@@ -164,6 +164,18 @@ write_local_preview_config() {
   cat > "${BUILD_DIR}/_config.local.yml" <<EOF
 url: "${LOCAL_PREVIEW_URL}"
 EOF
+  if [[ -f "${BUILD_DIR}/index.md" ]]; then
+    python3 - "${BUILD_DIR}/index.md" "${LOCAL_PREVIEW_URL%/}" <<'PY'
+from pathlib import Path
+import sys
+
+index = Path(sys.argv[1])
+preview_url = sys.argv[2]
+content = index.read_text(encoding="utf-8")
+content = content.replace("https://docs.smartgit.dev/", f"{preview_url}/SmartGit/")
+index.write_text(content, encoding="utf-8")
+PY
+  fi
 }
 
 ensure_mermaid_cli() {
